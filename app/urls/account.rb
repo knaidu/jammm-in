@@ -3,5 +3,10 @@ get '/account' do
 end
 
 get '/account/:section' do
-  erb(:"account/#{params[:section]}", :layout => :'layouts/layout_account') rescue redirect_home
+  begin
+    @layout_info = layout_info("account", params[:section])
+    erb(:"account/structure") 
+  rescue
+    redirect_home
+  end
 end

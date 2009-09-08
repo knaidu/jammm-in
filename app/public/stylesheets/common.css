@@ -35,6 +35,7 @@ hr.thin {background-color: gray; height: 1px;}
 .border1 {border: 0 groove black}
 
 .pad10 {padding: 10px 10px 10px 10px;}
+.pad-right-10{padding-right: 10px;}
 
 /* TOP BAR */
 
@@ -47,12 +48,10 @@ hr.thin {background-color: gray; height: 1px;}
 /* FOOTER */
 .footer {color: #990000}
 
+
 /* MAIN COLUMNS */
 
-.account-left-panel {width: 18%; float: left; padding-right: 10px; overflow: auto;}
-
-.account-right-panel {width: 30%; float: right;}
-
-.account-middle-panel {width: 50%; float: left;}
-
-
+.account-content-container {overflow: auto;}
+.account-content-container .left-panel {width: 20%; float: left; overflow: auto;}
+.account-content-container .middle-panel {width: 50%; float: left;}
+.account-content-container .right-panel {width: 30%; float: right;}

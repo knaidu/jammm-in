@@ -4,8 +4,7 @@ module Utils
     section = $layout_info[section]
     subsection = section[subsection] rescue section
     h = {}
-    ['layout', 'left_panel', 'right_panel', 'middle_panel'].each do |i|
-      puts i
+    ['left_panel', 'right_panel', 'middle_panel'].each do |i|
       h[i] = "account/" + (subsection[i] || section[i])
     end
     h

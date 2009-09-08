@@ -1,21 +1,16 @@
 
 account:
-    layout: layout_account
+    left_panel: menu
+    right_panel: in_progress_music
     
     home:
-        left_panel: menu
         middle_panel: home
-        right_panel: in_progress_music
         
     songs:
-        left_panel: menu
         middle_panel: songs
-        right_panel: in_progress_music
         
     jams:
-        left_panel: menu
         middle_panel: jams
-        right_panel: in_progress_music
         
 profile:
-    layout: layout_layout_profile
+    

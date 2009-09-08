@@ -17,9 +17,6 @@ get '/' do
   "Welcome to jamMm.in"
 end
 
-get '/get_layout' do
-  get_layout('account').inspect
-end
 
 # Loads all the account urls e.g: account/home
 load 'urls/account.rb'
