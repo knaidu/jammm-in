@@ -1,0 +1,39 @@
+/* DEFAULTS */
+
+.default-color {color: #990000;}
+
+/* HTML, BODY */
+
+html, body {
+  margin:0; 
+  padding:0; 
+  width:100%; 
+  height:100%; 
+  overflow:hidden; 
+  font-family: 'lucida grande',tahoma,verdana,arial,sans-serif; 
+  font-size: 11px;
+}
+
+/* HR */
+
+hr {border: 0}
+
+hr.thin {background-color: gray; height: 1px;}
+
+/* GENERAL PURPOSE */
+
+.w100 {width: 100%;}
+
+.border1 {border: 0 groove black}
+
+.pad10 {padding: 10px 10px 10px 10px;}
+
+/* MAIN COLUMNS */
+
+.account-left-panel {width: 18%; float: left; padding-right: 10px; overflow: auto;}
+
+.account-right-panel {width: 30%; float: right;}
+
+.account-middle-panel {width: 50%; float: left;}
+
+
