@@ -1,6 +1,7 @@
 /* DEFAULTS */
 
-.default-color {color: #990000;}
+.default-link-color {color: #990000;}
+-default-bg-color {background-color: blue;}
 
 /* HTML, BODY */
 
@@ -13,6 +14,13 @@ html, body {
   font-family: 'lucida grande',tahoma,verdana,arial,sans-serif; 
   font-size: 11px;
 }
+
+.container {
+  text-align: left;
+  width: 80%;
+  overflow: auto;
+}
+
 
 /* HR */
 
@@ -27,6 +35,17 @@ hr.thin {background-color: gray; height: 1px;}
 .border1 {border: 0 groove black}
 
 .pad10 {padding: 10px 10px 10px 10px;}
+
+/* TOP BAR */
+
+.top-bar {background-color: #990000; height: 40px; color: white; text-align: center}
+
+.top-bar-search {float: right; padding: 8px 10px;}
+
+.top-bar-search-container{overflow: auto; background-color: #cccccc}
+
+/* FOOTER */
+.footer {color: #990000}
 
 /* MAIN COLUMNS */
 
