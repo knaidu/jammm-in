@@ -17,6 +17,11 @@ get '/' do
   "Welcome to jamMm.in"
 end
 
+get '/stylesheets/*.css' do
+  filename = params[:splat][0]
+  erb :"stylesheets/#{filename}"
+end
+
 
 # Loads all the account urls e.g: account/home
 load 'urls/account.rb'
