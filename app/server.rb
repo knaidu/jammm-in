@@ -17,6 +17,8 @@ get '/' do
   "Welcome to jamMm.in"
 end
 
+
+# Url Catcher for .css files. If not found, it will look for a static file.
 get '/stylesheets/*.css' do
   filename = params[:splat][0]
   erb :"stylesheets/#{filename}"

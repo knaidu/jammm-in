@@ -1,19 +1,8 @@
-<%= partial :'body/header' %>
-
-<center>
-	<!-- Container DIV -->
-	<div class='container'>
-    <%= partial :'body/top_bar' %>
-
+<%= partial :"body/header_and_top_bar" %>
 	<!-- Content DIV -->
-	<br><br>
 	<div class="account-content-container">
 		<div class='left-panel'><div class='pad-right-10'><%= partial :"#{@layout_info['left_panel']}" %></div></div>
 		<div class='middle-panel'><div class='pad-right-10'><%= partial :"#{@layout_info['middle_panel']}" %></div></div>
 		<div class='right-panel'><%= partial :"#{@layout_info['right_panel']}" %></div>
 	</div>
-	<br><br>	
-	<%= partial :'body/footer' %>
-	
-  </div>
-</center>
+<%= partial :"body/footer_and_body_end" %>
