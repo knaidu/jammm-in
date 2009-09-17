@@ -1,11 +1,12 @@
 module Utils
   
   def layout_info(section, subsection=false)
+    section_str = section.to_s
     section = $layout_info[section]
     subsection = section[subsection] rescue section
     h = {}
     ['left_panel', 'right_panel', 'middle_panel'].each do |i|
-      h[i] = "account/" + (subsection[i] || section[i])
+      h[i] = "#{section_str}/" + (subsection[i] || section[i])
     end
     h
   end

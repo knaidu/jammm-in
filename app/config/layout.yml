@@ -13,3 +13,14 @@ account:
         middle_panel: jams
         
 profile:
+    left_panel: menu
+    middle_panel: profilehome
+
+    songs:
+        middle_panel: songs
+    
+    jams: 
+        middle_panel: jams
+    
+    
+    

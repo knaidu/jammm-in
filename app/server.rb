@@ -25,5 +25,8 @@ get '/stylesheets/*.css' do
 end
 
 
-# Loads all the account urls e.g: account/home
+# Loads all the account urls e.g: /account/home
 load 'urls/account.rb'
+
+# Loads all the profile urls eg: /user1, /user2
+load 'urls/profile.rb'
