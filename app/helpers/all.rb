@@ -15,3 +15,7 @@ end
 def section_header(text)
   "<b>#{text.capitalize}</b><hr class='thin'>"
 end
+
+def testhelper
+
+end
