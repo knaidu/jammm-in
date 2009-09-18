@@ -14,6 +14,11 @@ module Utils
   def subsections(section)
     $layout_info[section].map{|k, v| v.class.to_s.downcase == 'hash' ? k : nil}.compact
   end
+  
+  def get_dummy_names(id)
+    ['sd', '2323saasdd', 'ghjsdnfsdf']
+  end
+  
 end
 
 # ONE TIME OP: Loads all layout info into global variable $layout_info

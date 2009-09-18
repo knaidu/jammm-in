@@ -1,1 +1,24 @@
 <span class='profile-photo'>Profile Photo</span>
+<br><br>
+<%
+  items = [
+    {:name => "Name", :value => "Prakash Raman"},
+    {:name => "User Name", :value => "prakash_raman"},
+    {:name => "Location", :value => "Bangalore, India"}    
+  ]
+
+  items.each do |i|
+  %>
+    <%= add_profile_menu_user_info_item(i[:name], i[:value]) %>
+  <%
+  end
+%>
+
+<br><br>
+<%= section_header('Following') %>
+
+<br><br>
+<%= section_header('Collaborators') %>
+
+<br><br>
+<%= section_header('Followers') %>

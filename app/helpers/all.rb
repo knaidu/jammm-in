@@ -33,3 +33,6 @@ def add_menu_entry(text,link,image_url)
 		</a>
 	</div>"
 end
+
+
+load 'helpers/profile.rb'

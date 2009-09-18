@@ -1,10 +1,12 @@
+# Loads the user profile page
 get '/:username' do 
-  begin
+#  begin
     @layout_info = layout_info("profile")
+    @user_id = 112
     erb(:"profile/structure")
-  rescue Exception => e
-    redirect_home
-  end
+#  rescue Exception => e
+#    redirect_home
+#  end
 end
 
 # Loads eg: jammm.in/user1/songs. 
