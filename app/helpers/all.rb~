@@ -1,6 +1,6 @@
 
 def partial(page)
-  return "" if page.to_s.empty? or not page
+  return " s" if page.to_s.empty? or not page
   erb(:"#{page}", :layout => false)
 end
 
