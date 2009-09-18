@@ -5,7 +5,7 @@ def partial(page)
 end
 
 def redirect_home
-  redirect '/account'
+  redirect '/account/home'
 end
 
 def show_profile(username)
@@ -14,4 +14,18 @@ end
 
 def section_header(text)
   "<b>#{text.capitalize}</b><hr class='thin'>"
+end
+
+def add_feed_item(text)
+end
+
+def add_menu_entry(text,link,image_url)
+	"<div>
+		<a  title='#{text}' href='#{link}'>
+			<div >
+				<img src='#{image_url}' />
+				<div> #{text} <hr></div>
+			</div>
+		</a>
+	</div>"
 end
