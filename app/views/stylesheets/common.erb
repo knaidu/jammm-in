@@ -1,3 +1,7 @@
+<%
+	default_color = "#990000"
+%>
+
 /* DEFAULTS */
 
 .default-link-color {color: #990000;}
@@ -15,11 +19,17 @@ html, body {
   font-size: 11px;
 }
 
+A {
+	color: inherit;
+	text-decoration: inherit;
+}
+
 .container {
   text-align: left;
   width: 80%;
   overflow: auto;
 }
+
 
 span {display: block}
 div {display: block; overflow: auto}
@@ -40,6 +50,9 @@ hr.thin {background-color: #cccccc; height: 1px;}
 .bold {font-weight: bold}
 .grey {color: grey}
 .left-float {float: left;}
+.underline {text-decoration: underline;}
+.italic {font-style: italic;}
+.simple-link{color: <%= default_color%>; cursor: pointer; text-decoration: underline}
 
 /* TOP BAR */
 

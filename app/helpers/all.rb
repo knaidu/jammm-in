@@ -16,14 +16,10 @@ def section_header(text)
   "<b>#{text.capitalize}</b><hr class='thin'>"
 end
 
-
-def testhelper
-end
-
 def add_feed_item(text)
 end
 
-def add_menu_entry(text,link,image_url)
+def add_menu_entry(text, link, image_url)
 	"<div>
 		<a  title='#{text}' href='#{link}'>
 			<div >
@@ -34,5 +30,12 @@ def add_menu_entry(text,link,image_url)
 	</div>"
 end
 
+
+def add_link(text, href, options={})
+  class_names = (options[:class_names] or "") + " simple-link"
+  "<span class='#{class_names}'>
+    <a href='#{href}'>#{text}</a>
+  </span>"
+end
 
 load 'helpers/profile.rb'
