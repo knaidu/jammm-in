@@ -1,0 +1,8 @@
+SQL (0.1ms)  SET client_min_messages TO 'panic'
+SQL (0.1ms)  SET client_min_messages TO 'notice'
+SQL (0.4ms)  SELECT version FROM schema_migrations
+Migrating to CreateTestTable (1)
+SQL (0.1ms)  BEGIN
+SQL (6.3ms)  CREATE TABLE "test_tables" ("id" serial primary key, "test_col" character varying(255)) 
+SQL (0.8ms)  INSERT INTO schema_migrations (version) VALUES ('1')
+SQL (1.1ms)  COMMIT

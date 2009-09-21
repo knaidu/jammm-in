@@ -1,0 +1,7 @@
+dev:
+
+  adapter: postgresql
+  database: garage
+  username: postgres
+  password: 3WiseMen
+  port: 5432
