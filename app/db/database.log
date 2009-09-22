@@ -1,8 +1,10 @@
 SQL (0.1ms)  SET client_min_messages TO 'panic'
 SQL (0.1ms)  SET client_min_messages TO 'notice'
-SQL (0.4ms)  SELECT version FROM schema_migrations
+SQL (10.8ms)  CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) 
+SQL (26.3ms)  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+SQL (0.2ms)  SELECT version FROM schema_migrations
 Migrating to CreateTestTable (1)
 SQL (0.1ms)  BEGIN
-SQL (6.3ms)  CREATE TABLE "test_tables" ("id" serial primary key, "test_col" character varying(255)) 
-SQL (0.8ms)  INSERT INTO schema_migrations (version) VALUES ('1')
-SQL (1.1ms)  COMMIT
+SQL (82.0ms)  CREATE TABLE "test_tables" ("id" serial primary key, "test_col" character varying(255)) 
+SQL (2.0ms)  INSERT INTO schema_migrations (version) VALUES ('1')
+SQL (0.6ms)  COMMIT
