@@ -1,12 +1,12 @@
 # Loads the user profile page
 get '/:username' do 
-#  begin
+  begin
     @layout_info = layout_info("profile")
     @user_id = 112
     erb(:"profile/structure")
-#  rescue Exception => e
-#    redirect_home
-#  end
+  rescue Exception => e
+    redirect_home
+  end
 end
 
 # Loads eg: jammm.in/user1/songs. 
@@ -16,6 +16,7 @@ get '/:username/:section' do
   begin
     raise "Section: #{params[:section]} not found" if not sections.include?(params[:section])
     @layout_info = layout_info("profile", params[:section])
+    @data = TestTable.find(:all)
     erb(:"profile/structure")
   rescue Exception => e
     puts e.inspect

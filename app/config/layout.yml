@@ -22,5 +22,8 @@ profile:
     jams: 
         middle_panel: jams
     
+signup:
+    middle_panel: form
+    
     
     

@@ -4,7 +4,7 @@ module Utils
     section_str = section.to_s
     section = $layout_info[section]
     subsection = section[subsection] || section
-    h = {}
+    h = {'section' => section_str}
     ['left_panel', 'right_panel', 'middle_panel'].each do |i|
       h[i] = ("#{section_str}/" + (subsection[i] || section[i]) rescue "")
     end
