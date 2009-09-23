@@ -1,4 +1,3 @@
-
 account:
     left_panel: menu
     right_panel: in_progress_music
@@ -21,7 +20,12 @@ profile:
     
     jams: 
         middle_panel: jams
-    
+
+    usernotfound:
+        middle_panel: usernotfound    
+        left_panel: nil
+        right_panel: nil
+
 signup:
     middle_panel: form
     

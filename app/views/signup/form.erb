@@ -2,31 +2,34 @@
 <br>
 <span class='italic'>All fields are required.</span>
 <br>
-<table>
-	<tr>
-		<td class='bold' width='100px'>
-			Username
-		</td>
-		<td>
-			<input type='text'>
-		</td>
-	</tr>
-	<tr>
-		<td class='bold'>
-			Full Name
-		</td>
-		<td>
-			<input type='text'>
-		</td>
-	</tr>
-	<tr>
-		<td class='bold'>
-			Location
-		</td>
-		<td>
-			<input type='text'>
-		</td>
-	</tr>
-</table>
+<form method='post' action='/signup/create'>
+  <table>
+	  <tr>
+		  <td class='bold' width='100px'>
+			  Username
+		  </td>
+		  <td>
+			  <input type='text' name='form[username]'>
+		  </td>
+	  </tr>
+	  <tr>
+		  <td class='bold'>
+			  Full Name
+		  </td>
+		  <td>
+			  <input type='text' name='form[name]'>
+		  </td>
+	  </tr>
+	  <tr>
+		  <td class='bold'>
+			  Location
+		  </td>
+		  <td>
+			  <input type='text' name='form[location]'>
+		  </td>
+	  </tr>
+  </table>
+  <input type='submit'>
+</form>
 <br>
 <br>

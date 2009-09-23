@@ -6,4 +6,4 @@ libs.each do |lib| require "#{app_root}/lib/#{lib}" end
 
 # Include List
 
-[Utils].each do |lib| include lib end
+[Utils, UserUtils].each do |lib| include lib end
