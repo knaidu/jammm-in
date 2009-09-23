@@ -1,10 +1,12 @@
+
 # Loads the user profile page
 get '/:username' do 
   begin
-    @layout_info = layout_info("profile")
-    @user_id = 112
+    is_user = User.find_by_username(params[:username])
+    @layout_info = is_user ? layout_info("profile") : layout_info("profile", "usernotfound")
     erb(:"profile/structure")
   rescue Exception => e
+    puts e.inspect
     redirect_home
   end
 end

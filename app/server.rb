@@ -23,10 +23,7 @@ get '/stylesheets/*.css' do
   erb :"stylesheets/#{filename}"
 end
 
-get '/signup' do
-  @layout_info = layout_info("signup")
-  erb :"body/structure"
-end
+load 'urls/signup.rb'
 
 # Loads all the account urls e.g: /account/home
 load 'urls/account.rb'
