@@ -14,12 +14,16 @@ account:
 profile:
     left_panel: menu
     middle_panel: profilehome
+    right_panel: nil
 
     songs:
         middle_panel: songs
     
     jams: 
         middle_panel: jams
+        
+    info:
+        middle_panel: info
 
     usernotfound:
         middle_panel: usernotfound    

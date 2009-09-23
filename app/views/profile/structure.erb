@@ -1,8 +1,9 @@
+<% middle = @layout_info['middle_panel'] %>
 <%= partial :"body/header_and_top_bar" %>
 	<!-- Content DIV -->
 	<div class="profile-content-container">
 		<div class='left-panel'><div class='pad-right-10'><%= partial "#{@layout_info['left_panel']}" %></div></div>
-		<div class='middle-panel'><div class='pad-right-10'><%= partial "#{@layout_info['middle_panel']}" %></div></div>
+		<div class='middle-panel'><div class='pad-right-10'><%= partial "#{middle}" %></div></div>
 		<div class='right-panel'><%= partial "#{@layout_info['right_panel']}" %></div>
 	</div>
 <%= partial :"body/footer_and_body_end" %>
