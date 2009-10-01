@@ -8,4 +8,8 @@ class ActiveRecord::Base < Object
     self.find_by_name(name)
   end
 
+  def self.with_username(username)
+    self.find_by_username(username)
+  end
+
 end

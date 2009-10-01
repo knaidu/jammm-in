@@ -1,7 +1,7 @@
 <span class='profile-photo'>Profile Photo</span>
 <br><br>
 <%
-	p_info = @data[:personal_info]
+	p_info = @menu_data[:personal_info]
 	items = [
 		{:name => 'Full Name', :value => p_info['name']},
 		{:name => 'Location', :value => p_info['location']}
@@ -12,7 +12,7 @@
 	<%
 	end
 %>
-<%= add_link('(View Complete Information)', 'sd', {}) %>
+<%= add_link('(View Complete Information)', 'info', {}) %>
 
 <br><br>
 Updates<br>

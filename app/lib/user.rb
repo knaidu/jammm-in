@@ -18,4 +18,10 @@ module UserUtils
     }
   end
   
+  # Returns data for the information page e.g: user/info
+  def user_info(username) 
+    user = User.with_username(username)
+    user.personal_info
+  end
+  
 end
