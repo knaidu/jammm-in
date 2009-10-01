@@ -5,7 +5,7 @@ get '/:username' do
     user = params[:username]
     is_user = User.find_by_username(user)
     @layout_info = is_user ? layout_info("profile") : layout_info("profile", "usernotfound")
-    @data = profile_home_info(user) if is_user
+    @menu_data = profile_home_info(user) if is_user
     erb(:"profile/structure")
   rescue Exception => e
     puts e.inspect
@@ -13,18 +13,37 @@ get '/:username' do
   end
 end
 
-# Loads eg: jammm.in/user1/songs. 
-# :section => [songs, jams, bands]
+
+get '/:username/songs' do
+  @layout_info = layout_info("profile", 'songs')
+  @menu_data = profile_home_info(params[:username])
+  erb(:"body/structure")
+end
+
+
+get '/:username/jams' do
+  @layout_info = layout_info("profile", 'jams')
+  @menu_data = profile_home_info(params[:username])
+  erb(:"body/structure")
+end
+
+
+get '/:username/info' do
+  @layout_info = {
+    'left_panel' => 'profile/menu',
+    "middle_panel" => 'profile/info'
+  }
+  @menu_data = profile_home_info(params[:username])
+  erb(:"body/structure")
+end
+
+
+# For sections that are not found
 get '/:username/:section' do
-  sections = subsections('profile')
-  puts sections.inspect
-  begin
-    raise "Section: #{params[:section]} not found" if not sections.include?(params[:section])
-    @layout_info = layout_info("profile", params[:section])
-    @data = profile_home_info(params[:username])
-    erb(:"profile/structure")
-  rescue Exception => e
-    puts e.inspect
-    show_profile(params[:username])
-  end
+  @data = profile_home_info(params[:username])
+  @layout_info = {
+    'left_panel' => 'profile/menu',
+    "middle_panel" => 'profile/section_not_found'
+  }
+  erb :"body/structure"
 end
