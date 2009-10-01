@@ -1,6 +1,7 @@
 
 def partial(page)
-  return "&nbsp;" if page.to_s.empty? or not page or page.nil? or page.to_s.split("/").include?('nil')
+  page = page.to_s
+  return "&nbsp;" if page.empty? or not page or page.nil? or page.split("/").include?('nil')
   erb(:"#{page}", :layout => false)
 end
 
