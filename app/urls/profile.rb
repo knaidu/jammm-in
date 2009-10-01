@@ -1,6 +1,6 @@
 
-# Loads the user profile page
-get '/:username' do 
+# Loads the user profile page 
+get '/:username' do
   begin
     user = params[:username]
     is_user = User.find_by_username(user)
