@@ -1,4 +1,4 @@
-<div class='border1'>
+<div>
   <span class='left-float'><%= add_icon 'song' %></span>
   <div class='width100'>
     <span class='bold display-inline'><%= song.name %></span>
@@ -6,6 +6,5 @@
     <%= add_field_name 'Collaborators' %> <%= partial(:'common/list_artists', {:locals => {:artists => song.artists }}) %><br>
     <%= add_field_name 'Likes' %> 
   </div>
-  <span class='float-right'>Song Page</span>
 </div>
 
