@@ -1,8 +1,8 @@
 
-def partial(page)
+def partial(page, options={})
   page = page.to_s
   return "&nbsp;" if page.empty? or not page or page.nil? or page.split("/").include?('nil')
-  erb(:"#{page}", :layout => false)
+  erb(:"#{page}", options.update({:layout => false}))
 end
 
 def redirect_home
@@ -34,9 +34,19 @@ end
 
 def add_link(text, href, options={})
   class_names = (options[:class_names] or "") + " simple-link"
-  "<span class='#{class_names}'>
-    <a href='#{href}'>#{text}</a>
-  </span>"
+  "<span class='#{class_names} display-inline'><a href='#{href}'>#{text}</a></span>"
+end
+
+def add_icon(icon=false)
+  "<img src='/images/common/icon.png'>"
+end
+
+def add_field_name(text)
+  "<span class='display-inline bold grey'>" + text + "</span>:"
+end
+
+def add_profile_link(user)
+  add_link(user.name, ("/" + user.username))
 end
 
 load 'helpers/profile.rb'

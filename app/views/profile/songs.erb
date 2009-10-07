@@ -1,1 +1,5 @@
 <%= section_header('Songs') %>
+
+<% @songs.each do |song| %>
+   <%= partial(:'common/song', {:locals => {:song => song}}) %><br><br>
+<% end %>
