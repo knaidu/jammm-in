@@ -3,7 +3,9 @@ SQL (0.1ms)  SET client_min_messages TO 'notice'
 SQL (0.3ms)  SELECT version FROM schema_migrations
 Migrating to CreateTestTable (1)
 Migrating to CreateUserTable (2)
+Migrating to CreateSongsTable (3)
+Migrating to CreateSongsArtistsTable (4)
 SQL (0.1ms)  BEGIN
-SQL (41.3ms)  CREATE TABLE "users" ("id" serial primary key, "username" character varying(255), "password" character varying(255), "name" character varying(255), "location" character varying(255)) 
-SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('2')
-SQL (0.5ms)  COMMIT
+SQL (11.5ms)  CREATE TABLE "song_artists" ("id" serial primary key, "song_id" integer, "artist_id" integer) 
+SQL (0.3ms)  INSERT INTO schema_migrations (version) VALUES ('4')
+SQL (0.9ms)  COMMIT
