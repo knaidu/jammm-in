@@ -27,3 +27,8 @@ def format_dummy_data(user_id)
     "<b>" + data + "</b><br>"
   }.join('')
 end
+
+
+def set_profile_page_info(username)
+  @user = User.with_username(username)
+end

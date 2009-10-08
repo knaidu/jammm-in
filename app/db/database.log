@@ -6,7 +6,9 @@ Migrating to CreateUserTable (2)
 Migrating to CreateSongsTable (3)
 Migrating to CreateJamsTable (4)
 Migrating to CreateJamArtistsTable (5)
+Migrating to CreateSongJamsTable (6)
+Migrating to CreateFollowersTable (7)
 SQL (0.1ms)  BEGIN
-SQL (20.6ms)  CREATE TABLE "jam_artists" ("id" serial primary key, "jam_id" integer, "artist_id" integer) 
-SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('5')
-SQL (1.0ms)  COMMIT
+SQL (31.9ms)  CREATE TABLE "followers" ("id" serial primary key, "user_id" integer, "follows_user_id" integer) 
+SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('7')
+SQL (1.6ms)  COMMIT
