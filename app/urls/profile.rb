@@ -6,6 +6,7 @@ get '/:username' do
     is_user = User.find_by_username(user)
     @layout_info = is_user ? layout_info("profile") : layout_info("profile", "usernotfound")
     @menu_data = profile_home_info(user) if is_user
+    set_profile_page_info user
     erb(:"profile/structure")
   rescue Exception => e
     puts e.inspect
@@ -15,9 +16,10 @@ end
 
 
 get '/:username/songs' do
+  @user = User.with_username(params[:username])
   @layout_info = layout_info("profile", 'songs')
   @menu_data = profile_home_info(params[:username])
-  @songs = User.with_username(params[:username]).songs
+  @songs = @user.songs rescue []
   erb(:"body/structure")
 end
 
