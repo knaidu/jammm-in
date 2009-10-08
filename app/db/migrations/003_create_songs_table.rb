@@ -3,8 +3,8 @@ class CreateSongsTable < ActiveRecord::Migration
     create_table :songs do |i|
       i.column :name, :string
       i.column :description, :string
-      i.length :int
-      i.timestamp :timestamp, :default => Time.now
+      i.column :length, :int
+      i.column :created_at, :timestamp, :default => Time.now
     end
   end
   

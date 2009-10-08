@@ -1,15 +1,12 @@
-SQL (1.3ms)  SET client_min_messages TO 'panic'
-SQL (0.2ms)  SET client_min_messages TO 'notice'
-SQL (42.0ms)  SELECT version FROM schema_migrations
+SQL (0.1ms)  SET client_min_messages TO 'panic'
+SQL (0.1ms)  SET client_min_messages TO 'notice'
+SQL (0.3ms)  SELECT version FROM schema_migrations
 Migrating to CreateTestTable (1)
 Migrating to CreateUserTable (2)
 Migrating to CreateSongsTable (3)
-SQL (0.2ms)  BEGIN
-SQL (318.8ms)  CREATE TABLE "songs" ("id" serial primary key, "name" character varying(255), "description" character varying(255), "timestamp" timestamp DEFAULT '2009-10-07 23:46:20.206310') 
-SQL (14.3ms)  INSERT INTO schema_migrations (version) VALUES ('3')
+Migrating to CreateJamsTable (4)
+Migrating to CreateJamArtistsTable (5)
+SQL (0.1ms)  BEGIN
+SQL (20.6ms)  CREATE TABLE "jam_artists" ("id" serial primary key, "jam_id" integer, "artist_id" integer) 
+SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('5')
 SQL (1.0ms)  COMMIT
-Migrating to CreateSongsArtistsTable (4)
-SQL (0.6ms)  BEGIN
-SQL (18.5ms)  CREATE TABLE "song_artists" ("id" serial primary key, "song_id" integer, "artist_id" integer) 
-SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('4')
-SQL (0.9ms)  COMMIT
