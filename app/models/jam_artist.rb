@@ -1,5 +1,5 @@
 class JamArtist < ActiveRecord::Base
   belongs_to :jam
-  has_one :artist, :class_name => "User", :primary_key => 'artist_id', :foreign_key => 'id'
+  belongs_to :artist, :class_name => "User", :primary_key => 'id', :foreign_key => 'artist_id'
 
 end

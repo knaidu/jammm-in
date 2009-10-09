@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   end
 
   def songs
-    jams.map(&:song)
+    jams.map(&:song).compact
   end
   
   def personal_info

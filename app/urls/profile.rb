@@ -25,8 +25,10 @@ end
 
 
 get '/:username/jams' do
+  user = params[:username]
   @layout_info = layout_info("profile", 'jams')
-  @menu_data = profile_home_info(params[:username])
+  @menu_data = profile_home_info(user)
+  set_profile_page_info user
   erb(:"body/structure")
 end
 
@@ -38,15 +40,4 @@ get '/:username/info' do
   }
   @menu_data = profile_home_info(params[:username])
   erb(:"body/structure")
-end
-
-
-# For sections that are not found
-get '/:username/:section' do
-  @data = profile_home_info(params[:username])
-  @layout_info = {
-    'left_panel' => 'profile/menu',
-    "middle_panel" => 'profile/section_not_found'
-  }
-  erb :"body/structure"
 end

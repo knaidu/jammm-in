@@ -1,4 +1,3 @@
-<%= section_header('Independent Jams') %>
-<br><br>
+<%= section_header('Jams') %>
+<%= partial (:'common/jams', :locals => {:jams => @user.jams}) %> 
 
-<%= section_header 'Jams from songs' %>

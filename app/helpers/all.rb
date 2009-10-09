@@ -1,6 +1,7 @@
 
 def partial(page, options={})
   page = page.to_s
+  puts "page is: " + page
   return "&nbsp;" if page.empty? or not page or page.nil? or page.split("/").include?('nil')
   erb(:"#{page}", options.update({:layout => false}))
 end

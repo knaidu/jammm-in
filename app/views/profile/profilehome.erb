@@ -1,9 +1,6 @@
 <%= section_header('Updates') %>
-<br><br>
 <%= section_header('Songs') %>
-<% @user.songs.each do |song| %>
-  <%= partial(:'common/song', {:locals => {:song => song}}) %><br><br>
-<% end %>
+<%= partial (:'common/songs', :locals => {:songs => @user.songs}) %> 
 
-<br>
-<%= section_header('Independent Jams') %>
+<%= section_header('Jams') %>
+<%= partial (:'common/jams', :locals => {:jams => @user.jams}) %> 

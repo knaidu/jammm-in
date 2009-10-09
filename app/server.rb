@@ -30,3 +30,6 @@ load 'urls/account.rb'
 
 # Loads all the profile urls eg: /user1, /user2
 load 'urls/profile.rb'
+
+# Loads all the songs urls eg: /song/song_id
+load 'urls/song.rb'
