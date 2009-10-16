@@ -1,1 +1,8 @@
-SONG
+<font size='5'>Thier Streets</font><br><br>
+<%= add_field_name 'Description' %> <%= @song.description %><br>
+<%= add_field_name 'Artists' %> <%= partial(:'common/list_artists', {:locals => {:artists => @song.artists}}) %><br><br>
+
+<%= section_header 'Jams' %>
+<%= partial(:'song/jams', {:locals => {:jams => @song.jams}}) %>
+<br>
+<%= section_header 'Lyrics' %>
