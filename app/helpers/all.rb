@@ -50,4 +50,8 @@ def add_profile_link(user)
   add_link(user.name, ("/" + user.username))
 end
 
+def list_artists(artists)
+  partial(:'common/list_artists', {:locals => {:artists => artists}})
+end
+
 load 'helpers/profile.rb'

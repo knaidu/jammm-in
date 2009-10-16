@@ -5,6 +5,6 @@
     <%= add_field_name 'Jammmed with' %> <%= partial(:'common/list_artists', :locals => {:artists => song.artists}) %><br>
     <%= add_field_name 'Likes' %>
   </div>
-  <span class='float-right'>Add, Play, Maximize, Song Page</span>
+  <span class='float-right'>Add, Play, Maximize, <%= add_link('Song Page', "/song/#{song.id}") %></span>
 </div>
 
