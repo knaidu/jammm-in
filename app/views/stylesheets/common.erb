@@ -14,7 +14,7 @@ html, body {
   padding:0; 
   width:100%; 
   height:100%; 
-  overflow:hidden; 
+  overflow: auto; 
   font-family: 'lucida grande',tahoma,verdana,arial,sans-serif; 
   font-size: 11px;
 }
@@ -37,7 +37,7 @@ table {
 }
 
 
-span {display: block}
+span {display: block; overflow: auto}
 div {display: block; overflow: auto}
 a:hover {text-decoration: underline}
 
@@ -45,14 +45,17 @@ a:hover {text-decoration: underline}
 
 hr {border: 0}
 hr.thin {background-color: #cccccc; height: 1px;}
+hr.w60-align-left {width: 60%; margin-left: 0; text-align: left}
 
 
 /* GENERAL PURPOSE */
 
 .w100 {width: 100%;}
+.w60 {width: 60%}
 .width-auto {width: auto;}
 .border1 {border: thin groove grey}
 .pad10 {padding: 10px 10px 10px 10px;}
+.pad1 {padding: 1px;}
 .pad-right-10{padding-right: 10px;}
 .pad-right-5 {padding-right: 5px;}
 .pad-left-5{padding-left: 5px;}
@@ -83,7 +86,7 @@ hr.thin {background-color: #cccccc; height: 1px;}
 .common-content-container .middle-panel {width: 50%; float: left;}
 .common-content-container .right-panel {width: 30%; float: right;}
 
-.profile-photo {width: 100%; border: thin groove grey; height: 100px}
+.profile-photo {width: 100%; border: thin groove white; height: 100px}
 
 /* MAIN COLUMNS */
 
@@ -99,4 +102,3 @@ hr.thin {background-color: #cccccc; height: 1px;}
 .profile-content-container .middle-panel {width: 50%; float: left;}
 .profile-content-container .right-panel {width: 30%; float: right;}
 
-.profile-photo {width: 100%; border: thin groove grey; height: 100px}

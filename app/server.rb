@@ -33,3 +33,6 @@ load 'urls/profile.rb'
 
 # Loads all the songs urls eg: /song/song_id
 load 'urls/song.rb'
+
+# Loads all the Jams urls eg: /jam/jam_id
+load 'urls/jam.rb'
