@@ -3,6 +3,7 @@ require 'sinatra'
 require 'yaml'
 
 set :public, File.dirname(__FILE__) + '/public'
+enable :sessions
 
 load 'db/db_connect.rb'
 load 'scripts/load_libs.rb'
@@ -10,6 +11,10 @@ load 'scripts/load_models.rb'
 
 helpers do
   load('helpers/all.rb')
+end
+
+before do
+  @session_user ||= User.with_username(session[:username])
 end
 
 get '/' do
@@ -23,6 +28,7 @@ get '/stylesheets/*.css' do
   erb :"stylesheets/#{filename}"
 end
 
+load 'urls/signin.rb'
 load 'urls/signup.rb'
 
 # Loads all the account urls e.g: /account/home

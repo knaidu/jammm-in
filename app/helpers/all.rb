@@ -23,13 +23,13 @@ end
 
 def add_menu_entry(text, link, image_url)
 	"<div>
-		<a  title='#{text}' href='#{link}'>
-			<div >
-				<img src='#{image_url}' />
-				<div> #{text} <hr></div>
-			</div>
+		<a title='#{text}' href='#{link}' class='bold grey display-inline'>
+		  <div>
+  		  <span class='float-left'>#{text}</span>
+	  	  <span class='float-right'>#{add_icon()}</span>
+	  	</div>
 		</a>
-	</div>"
+	</div><br>"
 end
 
 

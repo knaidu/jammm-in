@@ -1,6 +1,6 @@
-<%= section_header('menu') %>
-<%= add_menu_entry('Home','asdasd','asdasd') %>
-<%= add_menu_entry('Songs','asdasd','asdasd') %>
-<%= add_menu_entry('Jammms','asdasd','asdasd') %>
-<%= add_menu_entry('Profile12','asdasd','asdasd') %>
-
+<div class='w60'>
+  <%= add_menu_entry('Home','asdasd','asdasd') %>
+  <%= add_menu_entry('Songs','asdasd','asdasd') %>
+  <%= add_menu_entry('Jammms','asdasd','asdasd') %>
+  <%= add_menu_entry('Profile','/' + @session_user.username,'asdasd') %>
+</div>
