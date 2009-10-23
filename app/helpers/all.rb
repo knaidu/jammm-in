@@ -7,7 +7,11 @@ def partial(page, options={})
 end
 
 def redirect_home
-  redirect '/account/home'
+  redirect '/account'
+end
+
+def redirect_signin
+  redirect '/signin'
 end
 
 def show_profile(username)
@@ -29,7 +33,7 @@ def add_menu_entry(text, link, image_url)
 	  	  <span class='float-right'>#{add_icon()}</span>
 	  	</div>
 		</a>
-	</div><br>"
+	</div>"
 end
 
 
@@ -47,11 +51,15 @@ def add_field_name(text)
 end
 
 def add_profile_link(user)
-  add_link(user.name, ("/" + user.username))
+  add_link(user.name, ("/" + user.username)) rescue ""
 end
 
 def list_artists(artists)
   partial(:'common/list_artists', {:locals => {:artists => artists}})
+end
+
+def manage_if_not_signed_in
+  redirect_signin if not session[:username]
 end
 
 load 'helpers/profile.rb'

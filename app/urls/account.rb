@@ -1,5 +1,5 @@
 get '/account' do
-  session['user']
+  redirect_signin if not session[:username]
   redirect '/account/home'
 end
 
@@ -9,10 +9,6 @@ get '/account/logout' do
 end
 
 get '/account/:section' do
-  begin
-    @layout_info = layout_info("account", params[:section])
-    erb(:"account/structure") 
-  rescue
-    redirect_home
-  end
+  @layout_info = layout_info("account", params[:section])
+  erb(:"account/structure") 
 end

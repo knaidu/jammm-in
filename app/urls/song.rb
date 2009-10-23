@@ -2,8 +2,15 @@
 # Loads a songs
 
 get '/song/create' do
+  manage_if_not_signed_in
   @layout_info = {"middle_panel" => 'song/create'}
   erb(:"body/structure")
+end
+
+post '/song/register' do
+  name = params['name']
+  desc = params['description']
+  register_song(session[:username], name, desc)
 end
 
 get '/song/:song_id' do

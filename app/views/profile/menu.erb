@@ -28,13 +28,13 @@
   
   %>
   <div class='w60'>
-    <hr class='thin'>
+    <%= section_header 'Navigate' %>
     <%
     items.each do |item| %>
       <div>
           <span class='bold grey float-left display-inline'><%= item[:name] %></span><span class='float-right display-inline'><%= add_icon '' %></span>
       </div>
-      <hr class='thin'>    
+<!--     <hr class='thin'>     -->
     <%
     end 
     %>

@@ -1,6 +1,7 @@
 <font size='5'><%= @song.name %></font><br><br>
 <%= add_field_name 'Description' %> <%= @song.description %><br>
-<%= add_field_name 'Artists' %> <%= partial(:'common/list_artists', {:locals => {:artists => @song.artists}}) %><br><br>
+<%= add_field_name 'Artists' %> <%= partial(:'common/list_artists', {:locals => {:artists => @song.artists}}) %><br>
+<%= add_field_name 'Creator' %> <%= add_profile_link @song.creator %><br><br>
 
 <%= section_header 'Jams' %>
 <%= partial(:'song/jams', {:locals => {:jams => @song.jams}}) %>
