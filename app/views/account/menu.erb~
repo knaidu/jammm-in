@@ -1,5 +1,0 @@
-<%= section_header('menu') %>
-<%= add_menu_entry('Home','asdasd','asdasd') %>
-<%= add_menu_entry('Songs','asdasd','asdasd') %>
-<%= add_menu_entry('Jammms','asdasd','asdasd') %>
-<%= add_menu_entry('Profile','asdasd','asdasd') %>
