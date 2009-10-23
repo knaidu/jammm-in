@@ -1,1 +1,14 @@
-<%= song.name %>
+<div class='w100 pad1'>
+  <span class='left-float pad-right-10'><%= add_icon 'song' %></span>
+  <div class='left-float'>
+    <span class='bold float-left'><%= song.name %>&nbsp;</span><span class='float-left'>[length]</span><br>
+    <%= add_field_name 'Jammmed with' %> <%= partial(:'common/list_artists', :locals => {:artists => song.artists}) %><br>
+    <%= add_field_name 'Date Created' %> <%= song.created_at.to_s %><br>
+    <%= add_field_name 'Last Modified' %><br>
+    <%= add_field_name 'Likes' %> 20, <%= add_field_name 'Comments' %> 10
+    
+    
+  </div>
+  <span class='float-right'>Manage, <%= add_link('Page', "/song/#{song.id}") %></span>
+</div>
+

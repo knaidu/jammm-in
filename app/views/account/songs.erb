@@ -1,7 +1,8 @@
 <%= section_header('songs') %>
-<%= @current_user %>
+<% @session_user.songs.each do |song| %>
+  <%= partial('account/song', {:locals => {:song => song}}) %><br><br>
+<% end %>
 
-<%   # partial('account/song', {:locals => {:song => song}}) %>
 
 
    

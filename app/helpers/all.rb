@@ -47,7 +47,7 @@ def add_icon(icon=false)
 end
 
 def add_field_name(text)
-  "<span class='display-inline bold grey'>" + text + "</span>:"
+  "<span class='display-inline bold grey'>" + text + ":</span>"
 end
 
 def add_profile_link(user)
