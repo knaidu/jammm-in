@@ -15,8 +15,6 @@ html, body {
   width:100%; 
   height:100%; 
   overflow: auto; 
-  font-family: 'lucida grande',tahoma,verdana,arial,sans-serif; 
-  font-size: 11px;
 }
 
 A {
@@ -35,13 +33,15 @@ table {
 	color: inherit;
 	overflow: auto;
 }
+TD {vertical-align: top}
 
+table, td, body, input, textarea {font-family: 'lucida grande',tahoma,verdana,arial,sans-serif; font-size: 11px;}
 
 span {display: block; overflow: auto}
 div {display: block; overflow: auto}
 IMG {border: 0}
 a:hover {text-decoration: underline}
-
+input[type='text'], TEXTAREA {border: thin groove grey; width: 200}
 /* HR */
 
 hr {border: 0}

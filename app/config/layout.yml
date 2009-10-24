@@ -1,6 +1,6 @@
 account:
     left_panel: menu
-    right_panel: in_progress_music
+    right_panel: right
     
     home:
         middle_panel: home

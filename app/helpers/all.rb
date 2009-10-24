@@ -18,8 +18,13 @@ def show_profile(username)
   redirect "/#{username}"
 end
 
-def section_header(text)
-  "<b>#{text.capitalize}</b><hr class='thin'>"
+def section_header(text, options={})
+  [
+    "<div>",
+      "<span class='float-left bold'>#{text.capitalize}</span>",
+    "</div>",
+    "<hr class='thin'>"
+  ].join('')
 end
 
 def add_feed_item(text)
@@ -37,7 +42,7 @@ def add_menu_entry(text, link, image_url)
 end
 
 
-def add_link(text, href, options={})
+def add_link(text, href='', options={})
   class_names = (options[:class_names] or "") + " simple-link"
   "<span class='#{class_names} display-inline'><a href='#{href}'>#{text}</a></span>"
 end

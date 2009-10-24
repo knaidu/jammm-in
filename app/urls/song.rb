@@ -20,7 +20,7 @@ get '/song/:song_id' do
 end
 
 get '/song/:song_id/manage' do
-  @layout_info = {'middle_panel' => 'song/manage'}
+  @layout_info = {'middle_panel' => 'song/manage/page'}
   @song = Song.find(params[:song_id])
   erb(:"body/structure")
 end

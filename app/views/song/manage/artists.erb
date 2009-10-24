@@ -1,0 +1,5 @@
+<%= add_link 'Invite'%> <br><br>
+<% artists.each do |artist| %>
+  <%= partial('song/manage/artist', {:locals => {:artist => artist }}) %>
+<% end %>
+<br>

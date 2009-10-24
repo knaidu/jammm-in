@@ -1,4 +1,6 @@
-<font size='4'>"<%= @song.name %>"</font><br><br>
+<font size='4'>"<%= @song.name %>"</font> 
+<span class='display-inline' style='padding-left:10px' title='Edit Song'>(<a class='simple-link' href='/song/<%= @song.id %>/manage'>manage</a>)</span>
+<br><br>
 <div class='music-desc'>
   <%= add_field_name 'Description' %> <%= @song.description %><br>
   <%= add_field_name 'Artists' %> <%= partial(:'common/list_artists', {:locals => {:artists => @song.artists}}) %><br>

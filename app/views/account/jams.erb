@@ -1,1 +1,4 @@
 <%= section_header 'jams' %>
+<% @session_user.jams.each do |jam| %>
+    <%= partial('account/jam', {:locals => {:jam => jam}}) %><br><br>
+<% end %>

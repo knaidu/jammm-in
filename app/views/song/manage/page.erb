@@ -1,0 +1,9 @@
+
+<font size=4>Song / Manage / "<%= @song.name %>"</font><br><br>
+<%= section_header 'Jams' %>
+  <%= partial('song/manage/jams', {:locals => {:jams => @song.jams}}) %>
+<%= section_header 'Information' %>
+  <%= partial('song/manage/information', {:locals => {:song => @song}}) %>
+<%= section_header 'Artists' %>
+  <%= partial('song/manage/artists', {:locals => {:artists => @song.artists}}) %>
+<%= section_header 'Lyrics' %>

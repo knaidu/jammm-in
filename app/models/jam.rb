@@ -4,4 +4,6 @@ class Jam < ActiveRecord::Base
   has_one :song_jam, :foreign_key => "jam_id"
   has_one :song, :through => :song_jam
 
+  include JamUtils
+
 end

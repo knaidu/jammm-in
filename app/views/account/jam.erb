@@ -1,0 +1,12 @@
+<div class='w100 pad1'>
+  <span class='left-float pad-right-10'><%= add_icon 'jam' %></span>
+  <div class='left-float'>
+    <span class='bold float-left'><%= jam.name %>&nbsp;</span><br>
+    <%= add_field_name 'Jammmed with' %> <%= partial(:'common/list_artists', :locals => {:artists => jam.artists}) %><br>
+    <%= add_field_name 'Date Created' %> <%= jam.created_at.to_s %><br>
+    <%= add_field_name 'Last Modified' %><br>
+    <%= add_field_name 'Likes' %> 20, <%= add_field_name 'Comments' %> 10  
+  </div>
+  <div class='float-right'>Manage, <%= add_link('Page', "/jam/#{jam.id}") %></div>
+</div>
+

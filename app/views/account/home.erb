@@ -1,5 +1,16 @@
 <%= section_header('Feed') %>
 
-<%= section_header('Requests') %>
+<%= section_header('Songs') %>
+<div style='padding: 5px'>
+  <% @session_user.songs.each do |song| %>
+    <%= partial('account/song', {:locals => {:song => song}}) %><br><br>
+  <% end %>
+</div>
+<br>
+<div style='padding: 5px'>
+  <%= section_header('Jams') %>
+    <% @session_user.jams.each do |jam| %>
+      <%= partial('account/jam', {:locals => {:jam => jam}}) %><br><br>
+  <% end %>
+</div>
 
-<%= section_header('Usage Stats') %>
