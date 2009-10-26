@@ -45,7 +45,7 @@
 <br><br>
 <%= section_header('Following') %>
 <%= partial(:'common/list_artists', :locals => {:artists => @user.follows}) %>
-<br>
+<br><br>
 
 <%= section_header('Collaborators') %>
 <%= partial(:'common/list_artists', :locals => {:artists => @user.collaborators}) %>

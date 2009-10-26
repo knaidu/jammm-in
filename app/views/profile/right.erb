@@ -1,0 +1,6 @@
+<%= section_header 'Actions' %>
+<%
+  items = ['Follow', 'Direct Message', 'Request to JAM', 'Report']
+  items.each do |item| %>
+    <%= add_user_action({:text => item}) %>
+<% end %>
