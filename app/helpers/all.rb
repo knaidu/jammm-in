@@ -43,7 +43,7 @@ end
 
 
 def add_link(text, href='', options={})
-  class_names = (options[:class_names] or "") + " simple-link"
+  class_names = "simple-link " + (options[:class_names] or "")
   "<span class='#{class_names} display-inline'><a href='#{href}'>#{text}</a></span>"
 end
 

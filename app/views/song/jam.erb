@@ -1,6 +1,6 @@
 <div>
   <span class='left-float pad-right-10'><%= add_icon 'jam' %></span>
   <div class='float-left'>
-    <span class='bold display-inline'><%= jam.name %></span> - <%= list_artists jam.artists %>
+    <span class='display-inline black'><%= add_link("#{jam.name}", "/jam/#{jam.id}", {:class_names => "black bold"}) %></span> - <%= list_artists jam.artists %>
   </div>
 </div>

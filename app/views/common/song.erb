@@ -1,11 +1,11 @@
 <div class='w100 pad1'>
   <span class='left-float pad-right-10'><%= add_icon 'song' %> </span>
   <div class='left-float'>
-    <span class='bold float-left'><%= song.name %>&nbsp;</span><span class='float-left'>[length]</span><br>
+    <span class='bold float-left'><a href='/song/<%= song.id %>'><%= song.name %></a>&nbsp;</span><span class='float-left'>[length]</span><br>
     <%= add_field_name 'Jammmed with' %> <%= partial(:'common/list_artists', :locals => {:artists => song.artists}) %><br>
     <%= add_field_name 'Likes' %> 10<br>
     <%= add_link ('Like', '') %> - <%= add_link('Comment', '') %>
   </div>
-  <span class='float-right'>Add, Play, Maximize, <%= add_link('Page', "/song/#{song.id}") %></span>
+  <span class='float-right'>Add, Play, Maximize</span>
 </div>
 
