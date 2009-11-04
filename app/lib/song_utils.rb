@@ -12,4 +12,10 @@ module SongUtils
     SongJam.create({:song_id => self.id, :jam_id => jam_id})
   end
 
+  def visited
+    self.views ||= 0
+    self.views += 1
+    self.save
+  end
+
 end 

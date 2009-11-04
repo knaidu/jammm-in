@@ -11,4 +11,10 @@ module JamUtils
     JamArtist.create({:jam_id => self.id, :artist_id => artist_id})
   end
 
+  def visited
+    self.views ||= 0
+    self.views += 1
+    self.save
+  end
+
 end 

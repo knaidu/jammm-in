@@ -1,6 +1,7 @@
 <font size='5'><%= @jam.name %></font><br><br>
 <div class='music-desc'>
-  <%= add_field_name 'Description' %> <%= "Description" %><br>
-  <%= add_field_name 'Artists' %> <%= partial(:'common/list_artists', {:locals => {:artists => @jam.artists}}) %>
+  <%= add_field_name 'Description' %> <%= @jam.description %><br>
+  <%= add_field_name 'Artists' %> <%= partial(:'common/list_artists', {:locals => {:artists => @jam.artists}}) %><br>
+  <%= add_field_name 'Views' %> <%= @jam.views %><br>
 </div>
 

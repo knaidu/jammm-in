@@ -1,3 +1,5 @@
-<% artists.each do |artist| %>
-  <%= add_profile_link(artist) %>,
+<% artists_size = artists.size
+  artists_size.times.each do |i| 
+   artist = artists[i] %>
+   <%= add_profile_link(artist) %><%= ', ' if i < (artists_size - 1)%>
 <% end %>
