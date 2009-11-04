@@ -1,0 +1,11 @@
+<table>
+  <tr>
+    <td><%= add_field_name 'Name' %></td>
+    <td><input type='text' name='jam_name' value='<%= jam.name %>'></td>
+  </tr>
+  <tr>
+    <td><%= add_field_name 'Description' %></td>
+    <td><textarea><%= jam.description %></textarea></td>
+  </tr>
+</table>
+<input type='button' value='Save'>

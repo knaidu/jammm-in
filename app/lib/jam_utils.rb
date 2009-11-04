@@ -1,6 +1,6 @@
 module JamUtils
 
-  def register_jam(username, name, description) 
+  def register_jam(username, name) 
     Jam.create({
       :name => name,
       :registered_user_id => User.with_username(username).id

@@ -1,0 +1,11 @@
+
+<font size=4>Jam / Manage / "<%= @jam.name %>"</font><br><br>
+<%= section_header 'File' %>
+<form method='post' action='/jam/uploadmp3' enctype='multipart/form-data'>
+	<input type='file' name='mefile'><br>
+	<input type='submit'>
+</form>
+<%= section_header 'Information' %>
+  <%= partial('jam/manage/information', {:locals => {:jam => @jam}}) %> <br><br>
+<%= section_header 'Artists' %>
+  <%= partial('jam/manage/artists', {:locals => {:artists => @jam.artists}}) %>

@@ -1,6 +1,6 @@
-SQL (0.1ms)  SET client_min_messages TO 'panic'
-SQL (0.1ms)  SET client_min_messages TO 'notice'
-SQL (28.7ms)  SELECT version FROM schema_migrations
+SQL (1.2ms)  SET client_min_messages TO 'panic'
+SQL (0.2ms)  SET client_min_messages TO 'notice'
+SQL (30.2ms)  SELECT version FROM schema_migrations
 Migrating to CreateTestTable (1)
 Migrating to CreateUserTable (2)
 Migrating to CreateSongsTable (3)
@@ -11,9 +11,9 @@ Migrating to CreateFollowersTable (7)
 Migrating to AddRegisteredUserIdToSongTable (8)
 Migrating to AddRegisteredUserIdToJamTable (9)
 Migrating to AddDescriptionViewsToJamSongTable (10)
-SQL (0.1ms)  BEGIN
-SQL (153.7ms)  ALTER TABLE "jams" ADD COLUMN "description" character varying(255)
-SQL (0.6ms)  ALTER TABLE "jams" ADD COLUMN "views" integer
-SQL (13.1ms)  ALTER TABLE "songs" ADD COLUMN "views" integer
-SQL (10.1ms)  INSERT INTO schema_migrations (version) VALUES ('10')
-SQL (0.8ms)  COMMIT
+SQL (0.2ms)  BEGIN
+SQL (78.1ms)  ALTER TABLE "jams" ADD COLUMN "description" character varying(255)
+SQL (4.3ms)  ALTER TABLE "jams" ADD COLUMN "views" integer
+SQL (1.0ms)  ALTER TABLE "songs" ADD COLUMN "views" integer
+SQL (7.3ms)  INSERT INTO schema_migrations (version) VALUES ('10')
+SQL (1.0ms)  COMMIT

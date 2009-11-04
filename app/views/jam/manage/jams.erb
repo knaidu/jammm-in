@@ -1,0 +1,5 @@
+<%= add_link('Publish') %>, <%= add_link 'Unpublish'%>, <%= add_link 'Add Jam'%>  <br><br>
+<% jams.each do |jam| %>
+  <%= partial('song/manage/jam', {:locals => {:jam => jam }}) %>
+<% end %>
+<br>

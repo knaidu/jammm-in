@@ -14,6 +14,10 @@ def redirect_signin
   redirect '/signin'
 end
 
+def redirect_manage_jam(jam)
+  redirect "/jam/#{jam.id}/manage"
+end
+
 def show_profile(username)
   redirect "/#{username}"
 end
