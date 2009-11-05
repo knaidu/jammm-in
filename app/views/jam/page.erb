@@ -1,4 +1,6 @@
-<font size='5'><%= @jam.name %></font><br><br>
+<font size='5'><%= @jam.name %></font>
+<span class='display-inline' style='padding-left:10px' title='Edit Jam'>(<a class='simple-link' href='/jam/<%= @jam.id %>/manage'>manage</a>)</span><br><br>
+
 <div class='music-desc'>
   <%= add_field_name 'Description' %> <%= @jam.description %><br>
   <%= add_field_name 'Artists' %> <%= partial(:'common/list_artists', {:locals => {:artists => @jam.artists}}) %><br>

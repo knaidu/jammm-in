@@ -13,9 +13,13 @@ end
 
 
 post '/jam/uploadmp3' do
+  puts 'good........'
+#  sleep 3
+  puts 'morning...........'
   file = params[:mefile][:tempfile]
-  puts file.methods.sort
-  params[:mefile].inspect
+  puts params[:mefile].inspect
+  puts 'file path: ' + file.path
+  puts file.class
 #  params[:mefile][:tempfile].methods.sort.join(", ")
 #  file.path
 end
@@ -33,4 +37,9 @@ get '/jam/:jam_id/manage' do
   @layout_info = {'middle_panel' => 'jam/manage/page'}
   @jam = Jam.find(params[:jam_id])
   erb(:"body/structure")
+end
+
+get '/where/:who' do
+  params[:who]
+
 end

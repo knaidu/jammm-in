@@ -3,7 +3,7 @@
 <%= section_header 'File' %>
 <form method='post' action='/jam/uploadmp3' enctype='multipart/form-data'>
 	<input type='file' name='mefile'><br>
-	<input type='submit'>
+	<input type='submit' value='Upload JAM'>
 </form>
 <%= section_header 'Information' %>
   <%= partial('jam/manage/information', {:locals => {:jam => @jam}}) %> <br><br>
