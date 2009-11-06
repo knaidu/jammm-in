@@ -7,6 +7,6 @@ class CreateJamArtistsTable < ActiveRecord::Migration
   end
   
   def self.down
-    drop_table :jams_artists
+    drop_table :jam_artists
   end
 end
