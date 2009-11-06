@@ -1,11 +1,15 @@
+<form id='jam-information' method='post' action='/jam/<%= jam.id %>/manage/update_information' onsubmit='return false'>
 <table>
   <tr>
     <td><%= add_field_name 'Name' %></td>
-    <td><input type='text' name='jam_name' value='<%= jam.name %>'></td>
+    <td><input type='text' name='name' value='<%= jam.name %>'></td>
   </tr>
   <tr>
     <td><%= add_field_name 'Description' %></td>
-    <td><textarea><%= jam.description %></textarea></td>
+    <td><textarea name='desc'><%= jam.description %></textarea></td>
   </tr>
 </table>
-<input type='button' value='Save'>
+
+<div id='save-information-response'></div>
+<input type='button' value='Save' onClick='saveJamInformation'>
+</form>

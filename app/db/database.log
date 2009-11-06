@@ -1,56 +1,51 @@
-SQL (0.0ms)  SET client_min_messages TO 'panic'
-SQL (0.0ms)  SET client_min_messages TO 'notice'
-SQL (0.0ms)  SELECT version FROM schema_migrations
-SQL (0.0ms)  SELECT version FROM schema_migrations
+SQL (0.1ms)  SET client_min_messages TO 'panic'
+SQL (0.1ms)  SET client_min_messages TO 'notice'
+SQL (0.6ms)  SELECT version FROM schema_migrations
 Migrating to CreateTestTable (1)
-SQL (0.0ms)  BEGIN
-SQL (24.0ms)  CREATE TABLE "test_tables" ("id" serial primary key, "test_col" character varying(255)) 
-SQL (4.0ms)  INSERT INTO schema_migrations (version) VALUES ('1')
-SQL (4.0ms)  COMMIT
 Migrating to CreateUserTable (2)
-SQL (0.0ms)  BEGIN
-SQL (12.0ms)  CREATE TABLE "users" ("id" serial primary key, "username" character varying(255), "password" character varying(255), "name" character varying(255), "location" character varying(255)) 
-SQL (0.0ms)  INSERT INTO schema_migrations (version) VALUES ('2')
-SQL (0.0ms)  COMMIT
+SQL (0.1ms)  BEGIN
+SQL (12.2ms)  CREATE TABLE "users" ("id" serial primary key, "username" character varying(255), "password" character varying(255), "name" character varying(255), "location" character varying(255)) 
+SQL (0.4ms)  INSERT INTO schema_migrations (version) VALUES ('2')
+SQL (1.4ms)  COMMIT
 Migrating to CreateSongsTable (3)
-SQL (0.0ms)  BEGIN
-SQL (8.0ms)  CREATE TABLE "songs" ("id" serial primary key, "name" character varying(255), "description" character varying(255), "length" int, "created_at" timestamp DEFAULT '2009-11-06 07:19:30.032023') 
-SQL (0.0ms)  INSERT INTO schema_migrations (version) VALUES ('3')
-SQL (4.0ms)  COMMIT
+SQL (0.4ms)  BEGIN
+SQL (5.4ms)  CREATE TABLE "songs" ("id" serial primary key, "name" character varying(255), "description" character varying(255), "length" int, "created_at" timestamp DEFAULT '2009-11-06 23:19:59.546614') 
+SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('3')
+SQL (1.1ms)  COMMIT
 Migrating to CreateJamsTable (4)
-SQL (0.0ms)  BEGIN
-SQL (8.0ms)  CREATE TABLE "jams" ("id" serial primary key, "name" character varying(255), "length" integer, "created_at" timestamp DEFAULT '2009-11-06 07:19:30.076025') 
-SQL (0.0ms)  INSERT INTO schema_migrations (version) VALUES ('4')
-SQL (4.0ms)  COMMIT
+SQL (0.4ms)  BEGIN
+SQL (3.7ms)  CREATE TABLE "jams" ("id" serial primary key, "name" character varying(255), "length" integer, "created_at" timestamp DEFAULT '2009-11-06 23:19:59.572018') 
+SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('4')
+SQL (1.1ms)  COMMIT
 Migrating to CreateJamArtistsTable (5)
-SQL (0.0ms)  BEGIN
-SQL (8.0ms)  CREATE TABLE "jam_artists" ("id" serial primary key, "jam_id" integer, "artist_id" integer) 
-SQL (4.0ms)  INSERT INTO schema_migrations (version) VALUES ('5')
-SQL (0.0ms)  COMMIT
+SQL (0.3ms)  BEGIN
+SQL (3.4ms)  CREATE TABLE "jam_artists" ("id" serial primary key, "jam_id" integer, "artist_id" integer) 
+SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('5')
+SQL (0.9ms)  COMMIT
 Migrating to CreateSongJamsTable (6)
-SQL (4.0ms)  BEGIN
-SQL (8.0ms)  CREATE TABLE "song_jams" ("id" serial primary key, "song_id" integer, "jam_id" integer) 
-SQL (0.0ms)  INSERT INTO schema_migrations (version) VALUES ('6')
-SQL (4.0ms)  COMMIT
+SQL (0.3ms)  BEGIN
+SQL (3.7ms)  CREATE TABLE "song_jams" ("id" serial primary key, "song_id" integer, "jam_id" integer) 
+SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('6')
+SQL (1.2ms)  COMMIT
 Migrating to CreateFollowersTable (7)
-SQL (0.0ms)  BEGIN
-SQL (4.0ms)  CREATE TABLE "followers" ("id" serial primary key, "user_id" integer, "follows_user_id" integer) 
-SQL (0.0ms)  INSERT INTO schema_migrations (version) VALUES ('7')
-SQL (0.0ms)  COMMIT
+SQL (0.3ms)  BEGIN
+SQL (3.4ms)  CREATE TABLE "followers" ("id" serial primary key, "user_id" integer, "follows_user_id" integer) 
+SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('7')
+SQL (1.0ms)  COMMIT
 Migrating to AddRegisteredUserIdToSongTable (8)
-SQL (0.0ms)  BEGIN
-SQL (24.0ms)  ALTER TABLE "songs" ADD COLUMN "registered_user_id" integer
-SQL (4.0ms)  INSERT INTO schema_migrations (version) VALUES ('8')
-SQL (12.0ms)  COMMIT
+SQL (0.3ms)  BEGIN
+SQL (0.5ms)  ALTER TABLE "songs" ADD COLUMN "registered_user_id" integer
+SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('8')
+SQL (0.8ms)  COMMIT
 Migrating to AddRegisteredUserIdToJamTable (9)
-SQL (0.0ms)  BEGIN
-SQL (0.0ms)  ALTER TABLE "jams" ADD COLUMN "registered_user_id" integer
-SQL (0.0ms)  INSERT INTO schema_migrations (version) VALUES ('9')
-SQL (0.0ms)  COMMIT
+SQL (0.2ms)  BEGIN
+SQL (0.5ms)  ALTER TABLE "jams" ADD COLUMN "registered_user_id" integer
+SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('9')
+SQL (1.0ms)  COMMIT
 Migrating to AddDescriptionViewsToJamSongTable (10)
-SQL (0.0ms)  BEGIN
-SQL (0.0ms)  ALTER TABLE "jams" ADD COLUMN "description" character varying(255)
-SQL (0.0ms)  ALTER TABLE "jams" ADD COLUMN "views" integer
-SQL (0.0ms)  ALTER TABLE "songs" ADD COLUMN "views" integer
-SQL (0.0ms)  INSERT INTO schema_migrations (version) VALUES ('10')
-SQL (0.0ms)  COMMIT
+SQL (0.2ms)  BEGIN
+SQL (2.6ms)  ALTER TABLE "jams" ADD COLUMN "description" character varying(255)
+SQL (0.3ms)  ALTER TABLE "jams" ADD COLUMN "views" integer
+SQL (0.3ms)  ALTER TABLE "songs" ADD COLUMN "views" integer
+SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('10')
+SQL (1.0ms)  COMMIT

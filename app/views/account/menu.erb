@@ -1,22 +1,24 @@
 
-<%= "#{add_field_name 'Username'} #{@session_user.username}" %><br><br>
-<%= "#{add_field_name 'Name'} #{@session_user.name}" %><br>
-<%= "#{add_field_name 'Location'} #{@session_user.location}" %><br>
-<br><br>
-<div class='w60'>
-<%= section_header 'navigate' %>
-  <%= add_menu_entry('Home','/account','asdasd') %>
-  <%= add_menu_entry('Songs','/account/songs','asdasd') %>
-  <%= add_menu_entry('Jams','/account/jams','asdasd') %>
-  <%= add_menu_entry('Messages','/account/jams','asdasd') %>
-  <%= add_menu_entry('Profile','/' + @session_user.username,'asdasd') %>
-  <%= add_menu_entry('Create', '#', 'a') %>
-  <div class='pad-left-10'>
-    <a href='/song/create' class='grey'>Song</a><br>
-    <a href='/jam/create' class='grey'>Jam</a><br>
-    <a href='/lyrics/create' class='grey'>Lyrics</a><br>
-  </div>
-  <br>  
-  <%= add_menu_entry('Help','/help','asdasd') %>  
-  <%= add_menu_entry('Logout','/account/logout','asdasd') %>  
+<div class='account-menu'>
+	<%= "#{add_field_name 'Username'} #{@session_user.username}" %><br>
+	<%= "#{add_field_name 'Name'} #{@session_user.name}" %><br>
+	<%= "#{add_field_name 'Location'} #{@session_user.location}" %><br>
+	<br><br>
+	<div class='w60'>
+	<%= section_header 'navigate' %>
+	  <%= add_menu_entry('Home','/account','asdasd') %>
+	  <%= add_menu_entry('Songs','/account/songs','asdasd') %>
+	  <%= add_menu_entry('Jams','/account/jams','asdasd') %>
+	  <%= add_menu_entry('Messages','/account/jams','asdasd') %>
+	  <%= add_menu_entry('Profile','/' + @session_user.username,'asdasd') %>
+	  <%= add_menu_entry('Create', '#', 'a') %>
+	  <div class='pad-left-10'>
+	    <a href='/song/create' class='grey'>Song</a><br>
+	    <a href='/jam/create' class='grey'>Jam</a><br>
+	    <a href='/lyrics/create' class='grey'>Lyrics</a><br>
+	  </div>
+	  <br>  
+	  <%= add_menu_entry('Help','/help','asdasd') %>  
+	  <%= add_menu_entry('Logout','/account/logout','asdasd') %>  
+	</div>
 </div>

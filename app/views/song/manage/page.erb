@@ -1,5 +1,7 @@
 
-<font size=4>Song / Manage / "<%= @song.name %>"</font><br><br>
+<font size=4>Song / "<%= @song.name %>" / Manage</font>
+<span class='display-inline' style='padding-left:10px' title='View Song'>(<a class='simple-link' href='/song/<%= @song.id %>'>song page</a>)</span>
+<br><br>
 <%= section_header 'Jams' %>
   <%= partial('song/manage/jams', {:locals => {:jams => @song.jams}}) %>
 <%= section_header 'Information' %>

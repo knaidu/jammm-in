@@ -1,10 +1,16 @@
+
+<form id='song-information' method='post' action='/song/<%= song.id %>/manage/update_information' onsubmit='return false'>
 <table>
   <tr>
     <td><%= add_field_name 'Name' %></td>
-    <td><input type='text' name='song_name' value='<%= song.name %>'></td>
+    <td><input type='text' name='name' value='<%= song.name %>'></td>
   </tr>
   <tr>
     <td><%= add_field_name 'Description' %></td>
-    <td><textarea><%= song.description %></textarea></td>
+    <td><textarea name='desc'><%= song.description %></textarea></td>
   </tr>
 </table>
+
+<div id='save-information-response'></div>
+<input type='button' value='Save' onClick='saveSongInformation()'>
+</form>

@@ -34,9 +34,18 @@ end
 
 
 get '/jam/:jam_id/manage' do
-  @layout_info = {'middle_panel' => 'jam/manage/page'}
+  @layout_info = {'middle_panel' => 'jam/manage/page', 'right_panel' => 'jam/manage/instructions'}
   @jam = Jam.find(params[:jam_id])
   erb(:"body/structure")
+end
+
+post '/jam/:jam_id/manage/update_information' do
+  name = params[:name]
+  desc = params[:desc]
+  jam = Jam.find(params[:jam_id])
+  ret = jam.update_information(name, desc)
+  status 700 if not ret
+  ret ? "Successfully updated JAM information" : "Failed to update JAM information"
 end
 
 get '/where/:who' do

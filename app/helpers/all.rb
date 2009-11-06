@@ -18,6 +18,10 @@ def redirect_manage_jam(jam)
   redirect "/jam/#{jam.id}/manage"
 end
 
+def redirect_manage_song(song)
+  redirect "/song/#{song.id}/manage"
+end
+
 def show_profile(username)
   redirect "/#{username}"
 end

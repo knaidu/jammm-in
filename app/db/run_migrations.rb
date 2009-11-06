@@ -1,6 +1,8 @@
 %w(rubygems yaml pg activerecord).each do |lib| require lib end
 
-VERSION = ARGV[0].to_i rescue nil
+VERSION = ARGV[0] ? ARGV[0].to_i : nil
+
+puts "Migrating to VERSION: #{VERSION.to_s}" if not VERSION.nil?
 
 puts 'Starting Migrations'
 load 'db_connect.rb'

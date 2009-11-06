@@ -1,11 +1,16 @@
 module SongUtils
 
-  def register_song(username, name, description) 
+  def register_song(username, name) 
     Song.create({
       :name => name,
-      :description => description, 
       :registered_user_id => User.with_username(username).id
     })
+  end
+  
+  def update_information(name, description)
+    self.name = name
+    self.description = description
+    self.save
   end
   
   def add_jam(jam_id)
