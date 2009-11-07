@@ -12,16 +12,36 @@ post '/jam/register' do
 end
 
 
-post '/jam/uploadmp3' do
-  puts 'good........'
-#  sleep 3
-  puts 'morning...........'
+get '/jam/:jam_id/manage/upload' do
+  @jam = Jam.find(params[:jam_id])
+  erb(:"jam/manage/upload")
+end
+
+post '/jam/:jam_id/manage/upload_file' do
   file = params[:mefile][:tempfile]
   puts params[:mefile].inspect
-  puts 'file path: ' + file.path
-  puts file.class
-#  params[:mefile][:tempfile].methods.sort.join(", ")
-#  file.path
+  jam = Jam.find(params[:jam_id]).update_file(file)
+  file.unlink
+end
+
+get '/jam/:jam_id/manage/tag_artist' do
+  jam = Jam.find(params[:jam_id])
+  jam.tag_artist(User.with_username(params[:username]).id)
+end
+
+get '/jam/:jam_id/manage/untag_artist' do
+  jam = Jam.find(params[:jam_id])
+  jam.untag_artist(User.find(params[:artist_id]))
+end
+
+get '/jam/:jam_id/manage/artists' do
+  @jam = Jam.find(params[:jam_id])
+  erb :'jam/manage/artists'
+end
+
+get '/jam/:jam_id/manage/file_actions' do
+  @jam = Jam.find(params[:jam_id])
+  erb :'jam/manage/file_actions'
 end
 
 # Loads a songs

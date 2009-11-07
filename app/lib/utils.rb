@@ -19,3 +19,4 @@ end
 
 # ONE TIME OP: Loads all layout info into global variable $layout_info
 $layout_info = YAML.load_file('config/layout.yml')
+FILES_DIR = ENV["FILES_DIR"]

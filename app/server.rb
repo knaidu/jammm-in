@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'sinatra'
+require 'ftools'
 require 'yaml'
 
 set :public, File.dirname(__FILE__) + '/public'

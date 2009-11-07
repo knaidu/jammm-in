@@ -1,14 +1,28 @@
 
-<font size=4>Jam / "<%= @jam.name %>" / Manage</font>
-<span class='display-inline' style='padding-left:10px' title='Jam Page'>(<a class='simple-link' href='/jam/<%= @jam.id %>'>jam page</a>)</span>
+<font size=4>Jam / "<%= @jam.name %>" / Manage</font><br><br>
+<%= add_field_name 'Actions' %> 
+<a href='javascript: history.go(-1)' class='simple-link'>Back</a>,
+<a class='simple-link' href='/jam/<%= @jam.id %>'>Jam Page</a>, 
+<a href='?' class='simple-link'>Refresh</a>
 <br><br>
+
+<div class='music-desc'>
+  <%= add_field_name 'Creator' %> <%= @jam.creator.name %><br>
+	<%= add_field_name 'Created On' %> <%= @jam.created_at.date %>
+</div>
+<br>
+
+<input type='button' value='Publish JAM'><br><br>
+
 <%= section_header 'File' %>
-<form id='upload-jam' method='post' action='/jam/uploadmp3' enctype='multipart/form-data' onsubmit="openProgressBar(); return true">
-	<input type='file' name='mefile'><br>
-	<input type='text' name='X-Progress-Id' id='X-Progress-Id'><br>
-	<input type='submit' value='Upload JAM'>
-</form>
+<div id='jam-file-actions'>
+	<%= partial('jam/manage/file_actions') %>
+</div>
+
 <%= section_header 'Information' %>
   <%= partial('jam/manage/information', {:locals => {:jam => @jam}}) %>
+
 <%= section_header 'Artists' %>
+<div id='jam-artists'>
   <%= partial('jam/manage/artists', {:locals => {:artists => @jam.artists}}) %>
+</div>

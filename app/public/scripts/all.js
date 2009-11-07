@@ -22,11 +22,6 @@ function loadJam(id){
 }
 
 
-function allit(){
-	alert('well');
-	return false;
-}
-
 /* Messages */
 
 function loadMessage(id, message, className){
@@ -68,7 +63,13 @@ function submitForm(formId){
 /* AJAX */
 function call(url){
 	var options = arguments[1] || {};
-	new Ajax.Request('/your/url', options);
+	new Ajax.Request(url, options);
+}
+
+function formatUrl(url){
+	var params = arguments[1] || false;
+	if(!params) return url;
+	return url + '?' + $H(params).toQueryString();
 }
 
 function getResponseText(transport){
@@ -85,51 +86,62 @@ function saveSongInformation(){
 
 /* JAMS */
 function saveJamInformation(){
-	var formId = 'song-information';
+	var formId = 'jam-information';
 	var responseId = 'save-information-response';
 	submitForm(formId, responseId);
 }
 
-
-/* UPLOAD COMPONENT */
-
-interval = null;
-
-function fetch(uuid) {
- req = new XMLHttpRequest();
- req.open("GET", "/progress", 1);
- req.setRequestHeader("X-Progress-Id", uuid);
- req.onreadystatechange = function () {
-  if (req.readyState == 4) {
-   if (req.status == 200) {
-    /* poor-man JSON parser */
-    var upload = eval(req.responseText);
-
-    /* we are done, stop the interval */
-    if (upload.state == 'done') {
-     window.clearTimeout(interval);
-    }
-   }
-  }
- }
- req.send(null);
+function loadJamManageArtists(jamId){
+	new Ajax.Updater('jam-artists', '/jam/' + jamId + '/manage/artists', {method: 'get'});
 }
 
-function openProgressBar() {
- /* generate random progress-id */
- uuid = "";
- for (i = 0; i < 32; i++) {
-  uuid += Math.floor(Math.random() * 16).toString(16);
- }
- /* patch the form-action tag to include the progress-id */
- document.getElementById("upload-jam").action += ("?" + uuid);
-// document.getElementById("X-Progress-Id").value = uuid;
+function tagArtistInJam(jamId){
+	var form = $('tag-artist-form');
+	form.request({async: 'true', method: 'get', onSuccess: function() {loadJamManageArtists(jamId)}});
+}
 
- /* call the progress-updater every 1000ms */
- interval = window.setInterval(
-   function () {
-     fetch(uuid);
-   },
-   1000
- );
+function untagArtistInJam(jamId, artistId){
+	var url = formatUrl('/jam/' + jamId + '/manage/untag_artist', {artist_id: artistId});
+	call(url, {async: 'true', method: 'get', onSuccess: function() {loadJamManageArtists(jamId)}});
+}
+
+/* UPLOAD */
+function getNewXProgressId(){
+	var uuid = "";
+	for (i = 0; i < 32; i++) {
+		uuid += Math.floor(Math.random() * 16).toString(16);
+	}	
+	return uuid;
+}
+
+function loadJamManageFileActions(jamId){
+	new Ajax.Updater('jam-file-actions', '/jam/' + jamId + '/manage/file_actions', {method: 'get'});
+}
+
+function uploadJam(jamId){
+	var progressId = getNewXProgressId();
+	var iframeId = 'upload-jam-iframe';
+	var iframe = $('upload-jam-iframe-id');
+	iframe.hide();
+	window.frames[iframeId].$('upload-jam-form').action += ('?' + progressId);
+	window.setTimeout(function(){showUploadProgress(progressId, 'divId', jamId)}, 1000);
+	$('upload-progress').innerHTML = 'Uploading....<br><br>';
+	return true;
+}
+
+function showUploadProgress(progressId, divId, jamId){
+	var onSuccess = function(response){
+		aaa = response;
+		var status = eval(response.transport.responseText);
+		if(status.state != 'done') window.setTimeout(function(){showUploadProgress(progressId, divId)}, 1000);
+		else if(status.state == 'done') {
+			$('upload-progress').innerHTML = 'Upload Complete<br><br>';
+			loadJamManageFileActions(jamId);
+		};
+	};
+	call('/progress', {
+		onSuccess: onSuccess,
+		method: 'get',
+		requestHeaders: {"X-Progress-Id": progressId}
+	});
 }

@@ -1,9 +1,15 @@
-<font size='4'>JAM / "<%= @jam.name %>"</font>
-<span class='display-inline' style='padding-left:10px' title='Edit Jam'>(<a class='simple-link' href='/jam/<%= @jam.id %>/manage'>manage</a>)</span><br><br>
+<font size='4'>JAM / "<%= @jam.name %>"</font><br><br>
+
+<%= add_field_name 'Actions' %> 
+<a href='javascript: history.go(-1)' class='simple-link'>Back</a>,
+<a class='simple-link' href='/jam/<%= @jam.id %>/manage'>Manage Jam</a>, 
+<a href='?' class='simple-link'>Refresh</a>
+<br><br>
 
 <div class='music-desc'>
   <%= add_field_name 'Description' %> <%= @jam.description %><br>
   <%= add_field_name 'Artists' %> <%= partial(:'common/list_artists', {:locals => {:artists => @jam.artists}}) %><br>
+  <%= add_field_name 'Creator' %> <%= @jam.creator.name %><br>
   <%= add_field_name 'Views' %> <%= @jam.views %><br>
 </div>
 

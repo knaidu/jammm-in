@@ -1,0 +1,13 @@
+<html>
+<head>
+	<%= partial('body/includes') %>
+</head>
+<body>
+
+<form id='upload-jam-form' method='post' action='/jam/<%= @jam.id %>/manage/upload_file' enctype='multipart/form-data' onsubmit="return window.top.uploadJam('<%= @jam.id %>')">
+	<input type='file' name='mefile'><br><br>
+	<input type='submit' value='Upload JAM'>
+</form>
+
+</body>
+</html>

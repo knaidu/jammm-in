@@ -1,6 +1,8 @@
-<%= add_link 'Invite'%> <br><br>
+<form id='tag-artist-form' action='/jam/<%= @jam.id %>/manage/tag_artist' onsubmit='tagArtistInJam("<%= @jam.id %>"); return false'>
+	<input type='text' name='username' style='width: 120'> <input type='submit' value='Tag Artist'>
+</form>
+<% artists ||= @jam.artists rescue [] # Added if this view is called directly %>
 <% artists.each do |artist| %>
-  <%= partial('song/manage/artist', {:locals => {:artist => artist }}) %>
+  <%= partial('jam/manage/artist', {:locals => {:artist => artist }}) %>
 <% end %>
-<%= "(<i>There are no artists added</i>)" if artists.empty? %>
-<br>
+<%= "(<i>There are no artists tagged in this JAM</i>)" if artists.empty? %>
