@@ -3,8 +3,9 @@
 <span class='display-inline' style='padding-left:10px' title='Jam Page'>(<a class='simple-link' href='/jam/<%= @jam.id %>'>jam page</a>)</span>
 <br><br>
 <%= section_header 'File' %>
-<form method='post' action='/jam/uploadmp3' enctype='multipart/form-data'>
+<form id='upload-jam' method='post' action='/jam/uploadmp3' enctype='multipart/form-data' onsubmit="openProgressBar(); return true">
 	<input type='file' name='mefile'><br>
+	<input type='text' name='X-Progress-Id' id='X-Progress-Id'><br>
 	<input type='submit' value='Upload JAM'>
 </form>
 <%= section_header 'Information' %>
