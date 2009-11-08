@@ -3,7 +3,7 @@
     <span class='left-float pad-right-10'><%= add_icon 'artist' %></span>
     <div>
       <span class='bold float-left'><%= artist.name %>&nbsp;</span>
-      <span class='float-right simple-link'>x</span>
+      <span class='float-right simple-link' onclick="removeArtistFromSong('<%= @song.id %>', '<%= artist.id %>')">x</span>
     </div>
   </span>
 </div>

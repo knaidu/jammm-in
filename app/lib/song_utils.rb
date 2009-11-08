@@ -16,11 +16,27 @@ module SongUtils
   def add_jam(jam_id)
     SongJam.create({:song_id => self.id, :jam_id => jam_id})
   end
+  
+  def remove_jam(jam)
+    SongJam.find_by_song_id_and_jam_id(self.id, jam.id).destroy
+  end
 
   def visited
     self.views ||= 0
     self.views += 1
     self.save
+  end
+  
+  def jams_of_user(user)
+    self.jams.select do |jam| jam.artists.include?(user) end 
+  end
+  
+  def add_manager(manager)
+    SongManager.add(self, manager)
+  end
+  
+  def remove_artist(artist)
+    SongManager.find_by_song_id_and_manager_id(self.id, artist.id).destroy
   end
 
 end 

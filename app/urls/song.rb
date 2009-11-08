@@ -39,6 +39,30 @@ get '/song/:song_id/manage/add_jam' do
   song.add_jam(jam.id) ? "Successfully added JAM" : "Error in adding JAM"
 end
 
+get '/song/:song_id/manage/remove_jam' do
+  song = get_passed_song
+  jam = get_passed_jam
+  song.remove_jam(jam) ? "Successfully removed JAM" : "Error in removing JAM"
+end
+
+
+get '/song/:song_id/manage/artists' do
+  @song = get_passed_song
+  @artists = @song.managers
+  erb :'song/manage/artists'
+end
+
+get '/song/:song_id/manage/invite_artist' do
+  song = get_passed_song
+  user = User.with_username(params[:username])
+  song.add_manager(user) ? "Successfully added user" : "Error in adding user"
+end
+
+get '/song/:song_id/manage/remove_artist' do
+  song = get_passed_song
+  artist = User.find(params[:artist_id])
+  song.remove_artist(artist) ? "Successfully removed user" : "Error in removing user"
+end
 
 post '/song/:song_id/manage/update_information' do
   name = params[:name]

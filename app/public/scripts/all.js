@@ -99,8 +99,40 @@ function addJamToSong(songId) {
 	var jamId = combo.getValue();
 	var url = $A(["/song", songId, 'manage', 'add_jam']).join('/');
 	url = formatUrl(url, {jam_id: jamId});
-	call(url, {onSuccess: function(){loadSongManageJams(songId)}});
+	var onSuccess = function(){
+		loadSongManageJams(songId);
+		loadSongManageArtists(songId)
+	};
+	call(url, {onSuccess: onSuccess});
 };
+
+function removeJamFromSong(songId, jamId) {
+	var url = formatController('song', songId, 'manage', 'remove_jam');
+	url = formatUrl(url, {jam_id: jamId});
+	call(url, {onSuccess: function(){loadSongManageJams(songId)}})
+};
+
+
+function loadSongManageArtists(songId) {
+	var url = formatController('song', songId, 'manage', 'artists');
+	new Ajax.Updater('song-manage-artists-div', url, {method: 'get'});
+};
+
+function inviteArtistToSong(songId) {
+	var form = $('song-manage-invite-artist-form');
+	if(!form) return false;
+	form.request({method: 'get', onSuccess: function() {loadSongManageArtists(songId)}});
+};
+
+function removeArtistFromSong(songId, artistId){
+	var url = formatController('song', songId, 'manage', 'remove_artist');
+	url = formatUrl(url, {artist_id: artistId});
+	var onSuccess = function() {
+		loadSongManageArtists(songId);
+		loadSongManageJams(songId);
+	}
+	call(url, {onSuccess: onSuccess});
+}
 
 
 /* JAMS */

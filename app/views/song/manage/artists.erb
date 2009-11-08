@@ -1,4 +1,8 @@
-<%= add_link 'Invite'%> <br><br>
+<% artists ||= @artists %>
+<form id='song-manage-invite-artist-form' action='/song/<%= @song.id %>/manage/invite_artist' onsubmit="inviteArtistToSong('<%= @song.id %>'); return false">
+	<input type='text' style='width: 120' name='username'> 
+	<input type='submit' value='Invite Artist'>
+</form>
 <% artists.each do |artist| %>
   <%= partial('song/manage/artist', {:locals => {:artist => artist }}) %>
 <% end %>

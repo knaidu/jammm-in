@@ -5,9 +5,11 @@
   <span class='pad1'>
     <span class='left-float pad-right-10'><%= add_icon 'jam' %></span>
     <div class='left-float'>
-      <span class='bold float-left'><%= jam.name %>&nbsp;</span><span class='float-left'></span><br>
+      <span class='bold float-left'><%= jam.name %>&nbsp;</span><span class='float-left'></span>
+			<br>
       <%= add_field_name 'Jammmed by' %> <%= partial(:'common/list_artists', :locals => {:artists => jam.artists}) %><br>
     </div>
+		<span class='float-right simple-link' title='Remove JAM' onclick="removeJamFromSong('<%= @song.id %>', '<%= jam.id %>')">x</span>
   </span>
 </div>
 
