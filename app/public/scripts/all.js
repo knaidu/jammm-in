@@ -21,6 +21,10 @@ function loadJam(id){
   loadUrl("/jam/" + id);
 }
 
+function formatController(){
+	return ("/" + $A(arguments).map(function(arg){return arg}).join("/"));
+}
+
 
 /* Messages */
 
@@ -62,7 +66,8 @@ function submitForm(formId){
 
 /* AJAX */
 function call(url){
-	var options = arguments[1] || {};
+	var defaultOptions = {method: 'get'};
+	var options = $H(defaultOptions).update(arguments[1] || {}).toObject();
 	new Ajax.Request(url, options);
 }
 
@@ -82,6 +87,20 @@ function saveSongInformation(){
 	var responseId = 'save-information-response';
 	submitForm(formId, responseId);
 }
+
+function loadSongManageJams(songId) {
+	var url = formatController('song', songId, 'manage', 'jams');
+	new Ajax.Updater('song-manage-jams', url, {method: 'get'});
+};
+
+function addJamToSong(songId) {
+	var combo = $('song-manage-my-jams'); 
+	if(!combo || !combo.getValue()) return;
+	var jamId = combo.getValue();
+	var url = $A(["/song", songId, 'manage', 'add_jam']).join('/');
+	url = formatUrl(url, {jam_id: jamId});
+	call(url, {onSuccess: function(){loadSongManageJams(songId)}});
+};
 
 
 /* JAMS */

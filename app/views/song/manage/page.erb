@@ -1,9 +1,27 @@
 
-<font size=4>Song / "<%= @song.name %>" / Manage</font>
-<span class='display-inline' style='padding-left:10px' title='View Song'>(<a class='simple-link' href='/song/<%= @song.id %>'>song page</a>)</span>
+<font size=4>Song / "<%= @song.name %>" / Manage</font><br><br>
+
+<%= add_field_name 'Actions' %> 
+<a href='javascript: history.go(-1)' class='simple-link'>Back</a>,
+<a class='simple-link' href='/song/<%= @song.id %>'>Song Page</a>, 
+<a href='?' class='simple-link'>Refresh</a>
 <br><br>
+
+<div class='music-desc'>
+  <%= add_field_name 'Creator' %> <%= @song.creator.name %><br>
+	<%= add_field_name 'Created On' %> <%= @song.created_at.date %>
+</div>
+<br>
+
+<div class='text-right's style='padding: 5px'>
+	<input type='button' value='Delete Song'>
+</div>
+
 <%= section_header 'Jams' %>
+<div id='song-manage-jams'>
   <%= partial('song/manage/jams', {:locals => {:jams => @song.jams}}) %>
+</div>
+
 <%= section_header 'Information' %>
   <%= partial('song/manage/information', {:locals => {:song => @song}}) %>
 <%= section_header 'Artists' %>

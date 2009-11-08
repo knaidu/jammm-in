@@ -1,5 +1,15 @@
-<%= add_link('Publish') %>, <%= add_link 'Unpublish'%>, <%= add_link 'Add Jam'%>  <br><br>
+<% jams ||= @jams %>
+
+<select id='song-manage-my-jams'>
+	<option>My JAMS</option>
+	<option>-------</option>
+	<% @session_user.jams.each { |jam| %>
+		<option value='<%= jam.id %>'><%= jam.name %></option>
+	<% } %>
+</select>
+&nbsp;<input type='button' value='Add JAM'  onclick='addJamToSong("<%= @song.id %>")'><br><br>
 <% jams.each do |jam| %>
-  <%= partial('song/manage/jam', {:locals => {:jam => jam }}) %>
+  <%= partial('song/manage/jam', {:locals => {:jam => jam }}) %><br>
 <% end %>
-<br>
+<input type='button' value='Publish Song'>
+<br><br>

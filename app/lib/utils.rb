@@ -1,5 +1,13 @@
 module Utils
   
+  def get_passed_song
+    Song.find(params[:song_id])
+  end
+  
+  def get_passed_jam
+    Jam.find(params[:jam_id])
+  end
+  
   def layout_info(section, subsection=false)
     section_str = section.to_s
     section = $layout_info[section]

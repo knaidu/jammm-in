@@ -26,6 +26,19 @@ get '/song/:song_id/manage' do
   erb(:"body/structure")
 end
 
+get '/song/:song_id/manage/jams' do
+  @song = Song.find(params[:song_id])
+  @jams = @song.jams
+  erb(:"song/manage/jams")
+end
+
+
+get '/song/:song_id/manage/add_jam' do
+  song = get_passed_song
+  jam = Jam.find(params[:jam_id])
+  song.add_jam(jam.id) ? "Successfully added JAM" : "Error in adding JAM"
+end
+
 
 post '/song/:song_id/manage/update_information' do
   name = params[:name]
