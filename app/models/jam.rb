@@ -6,6 +6,7 @@ class Jam < ActiveRecord::Base
   has_one :creator, :primary_key => 'registered_user_id', :foreign_key => 'id', :class_name => "User"
   has_one :published, :class_name => "PublishedJam", :dependent => :destroy
   
+  after_create {|jam| jam.tag_artist(jam.creator)}
   after_destroy :delete_file_handle
 
   include JamUtils
@@ -15,11 +16,15 @@ class Jam < ActiveRecord::Base
   end
   
   def file_handle_exists?
-    file_handle and File.exists(file_handle_path(self))
+    file_handle and File.exists?(file_handle_path(self))
   end
   
   def delete_file_handle
     File.delete(file_handle_path(self))
+  end
+  
+  def song_jam_active?
+    song_jam.active rescue nil
   end
   
   def visited

@@ -1,15 +1,19 @@
-<% jams ||= @jams %>
+<% 
+	jams ||= @jams
+	jams = jams.sort_by(&:id)
+%>
 
 <select id='song-manage-my-jams'>
 	<option>My JAMS</option>
 	<option>-------</option>
-	<% @session_user.jams.each { |jam| %>
+	<% (@session_user.jams - jams).each { |jam| %>
 		<option value='<%= jam.id %>'><%= jam.name %></option>
 	<% } %>
 </select>
-&nbsp;<input type='button' value='Add JAM'  onclick='addJamToSong("<%= @song.id %>")'><br><br>
+&nbsp;<input type='button' value='Add JAM' onclick='addJamToSong("<%= @song.id %>")'><br><br>
 <% jams.each do |jam| %>
   <%= partial('song/manage/jam', {:locals => {:jam => jam }}) %><br>
 <% end %>
-<input type='button' value='Publish Song'>
+<input type='button' value='Publish Song' onclick='publishSong("<%= @song.id %>")'song.>
 <br><br>
+

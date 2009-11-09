@@ -32,8 +32,8 @@ post '/jam/:jam_id/manage/upload_file' do
 end
 
 get '/jam/:jam_id/manage/tag_artist' do
-  jam = Jam.find(params[:jam_id])
-  jam.tag_artist(User.with_username(params[:username]).id)
+  jam = get_passed_jam
+  jam.tag_artist(User.with_username(params[:username]))
 end
 
 get '/jam/:jam_id/manage/untag_artist' do

@@ -10,13 +10,16 @@
 <div class='music-desc'>
   <%= add_field_name 'Creator' %> <%= @song.creator.name %><br>
 	<%= add_field_name 'Created On' %> <%= @song.created_at.date %><br>
-	<%= add_field_name 'Status' %> <b style='color: green'>PUBLISHED</b>
+	<%= add_field_name 'Status' %> 
 </div>
 <br>
 
 <div class='text-right's style='padding: 5px'>
 	<input type='button' value='Delete Song'>
 </div>
+
+<%= section_header 'File' %>
+<%= partial('song/manage/file_information') %>
 
 <%= section_header 'Jams' %>
 <div id='song-manage-jams'>

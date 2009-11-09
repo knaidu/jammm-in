@@ -72,3 +72,10 @@ post '/song/:song_id/manage/update_information' do
   status 700 if not ret
   ret ? "Successfully updated song information" : "Failed to update song information"
 end
+
+
+get '/song/:song_id/manage/publish' do
+  song = get_passed_song
+  jams = params[:jam_ids].split(',').map do |id| Jam.find(id) end
+  song.publish(jams) ? "Successfully removed user" : "Error in removing user"
+end

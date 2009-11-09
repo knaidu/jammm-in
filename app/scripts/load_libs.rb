@@ -6,4 +6,11 @@ libs.each do |lib| require "#{app_root}/lib/#{lib}" end
 
 # Include List
 
-[Utils, UserUtils, SongUtils, JamUtils, Extensions].each do |lib| include lib end
+to_load = [Utils, Extensions]
+if ARGV[0] == 'all'
+  to_load << [UserUtils, SongUtils, JamUtils]
+end
+
+to_load.each do |lib| include lib end
+  
+

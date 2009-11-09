@@ -13,9 +13,9 @@ module JamUtils
     self.save
   end
   
-  def tag_artist(artist_id)
+  def tag_artist(artist)
     return nil if not self.class.to_s == "Jam"
-    JamArtist.create({:jam_id => self.id, :artist_id => artist_id})
+    JamArtist.create({:jam_id => self.id, :artist_id => artist.id})
   end
 
   def untag_artist(user)
@@ -44,6 +44,11 @@ module JamUtils
     file_path = ENV['FILES_DIR'] + "/" + self.file_handle if file_handle
     File.delete(file_path) if file_handle and File.exists?(file_path)
     self.save
+  end
+  
+  def make_copy_of_file_handle(newname=nil)
+    puts file_handle
+    Utils.make_copy_of_file_handle(self.file_handle, newname)
   end
   
   def make_copy(newname=nil)

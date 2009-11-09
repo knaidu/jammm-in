@@ -138,6 +138,15 @@ function removeArtistFromSong(songId, artistId){
 	call(url, {onSuccess: onSuccess});
 }
 
+function publishSong(songId){
+	var songJams = document.getElementsByName('song-publish-form-song-jam');
+	var checkedJamIds = $A(songJams).map(function(el){
+		return el.checked ? el.value : null 
+	}).compact();
+	var url = formatController('song', songId, 'manage', 'publish');
+	url = formatUrl(url, {jam_ids: $A(checkedJamIds).join(",")});
+	call(url, {onSuccess: reload});
+}
 
 /* JAMS */
 function saveJamInformation(){

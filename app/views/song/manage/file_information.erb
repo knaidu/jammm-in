@@ -1,0 +1,3 @@
+<%= add_field_name('Current File Handle') %> <%= @song.file_handle or '-' %><br>
+<% file_size = (@song.file.size.to_f / 1024 / 1024).round(2) rescue nil %>
+<%= add_field_name('Current File Size') %> <%= file_size ? "#{file_size} MB" : '-' %><br><br>
