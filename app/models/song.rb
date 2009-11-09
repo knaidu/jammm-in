@@ -19,11 +19,19 @@ class Song < ActiveRecord::Base
   end
   
   def remove_tenticles
-    File.delete(file.path)
+    delete_file_handle
   end
   
   def file
     File.open(file_handle_path(self)) rescue nil
+  end
+  
+  def delete_file_handle
+    File.delete(file.path) if file_handle
+  end
+  
+  def file_handle_exists?
+    file_handle and File.exists?(file_handle_path(self))
   end
   
 end
