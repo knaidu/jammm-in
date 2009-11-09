@@ -12,6 +12,13 @@ post '/jam/register' do
 end
 
 
+get '/jam/:jam_id/manage' do
+  @layout_info = {'middle_panel' => 'jam/manage/page', 'right_panel' => 'jam/manage/instructions', 'left_panel' => 'account/menu'}
+  @jam = Jam.find(params[:jam_id])
+  erb(:"body/structure")
+end
+
+
 get '/jam/:jam_id/manage/upload' do
   @jam = Jam.find(params[:jam_id])
   erb(:"jam/manage/upload")
@@ -52,12 +59,6 @@ get '/jam/:jam_id' do
   erb(:"body/structure")
 end
 
-
-get '/jam/:jam_id/manage' do
-  @layout_info = {'middle_panel' => 'jam/manage/page', 'right_panel' => 'jam/manage/instructions'}
-  @jam = Jam.find(params[:jam_id])
-  erb(:"body/structure")
-end
 
 post '/jam/:jam_id/manage/update_information' do
   name = params[:name]
