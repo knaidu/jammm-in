@@ -1,6 +1,13 @@
 <font size='4'>Song / "<%= @song.name %>"</font> 
-<span class='display-inline' style='padding-left:10px' title='Edit Song'>(<a class='simple-link' href='/song/<%= @song.id %>/manage'>manage</a>)</span>
 <br><br>
+
+<%= add_field_name 'Actions' %> 
+<a href='javascript: history.go(-1)' class='simple-link'>Back</a>,
+<a class='simple-link' href='/song/<%= @song.id %>/manage'>Manage</a>, 
+<a href='?' class='simple-link'>Refresh</a>
+<br><br>
+
+
 <div class='music-desc'>
   <%= add_field_name 'Description' %> <%= @song.description %><br>
   <%= add_field_name 'Artists' %> <%= partial(:'common/list_artists', {:locals => {:artists => @song.artists}}) %><br>

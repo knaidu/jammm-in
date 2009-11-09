@@ -8,6 +8,14 @@ module Utils
     Jam.find(params[:jam_id])
   end
   
+  def new_file_handle_name
+    Time.now.to_f.to_s.gsub('.', '-')
+  end
+  
+  def file_handle_path(obj)
+    FILES_DIR + "/" + obj.file_handle if obj.file_handle
+  end
+  
   def layout_info(section, subsection=false)
     section_str = section.to_s
     section = $layout_info[section]

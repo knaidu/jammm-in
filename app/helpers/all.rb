@@ -75,4 +75,12 @@ def manage_if_not_signed_in
   redirect_signin if not session[:username]
 end
 
+def display_published
+  "<span class='bold display-inline' style='color: green'>PUBLISHED</span>"
+end
+
+def display_unpublished
+  "<span class='bold display-inline' style='color: red'>UNPUBLISHED</span>"  
+end
+
 load 'helpers/profile.rb'

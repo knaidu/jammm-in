@@ -8,6 +8,10 @@ function loadUrl(url){
   window.location = url;
 }
 
+function reload(){
+	window.location = window.location.href;
+}
+
 
 // Redirects to a particular song page
 function loadSong(id){
@@ -154,6 +158,23 @@ function tagArtistInJam(jamId){
 function untagArtistInJam(jamId, artistId){
 	var url = formatUrl('/jam/' + jamId + '/manage/untag_artist', {artist_id: artistId});
 	call(url, {async: 'true', method: 'get', onSuccess: function() {loadJamManageArtists(jamId)}});
+}
+
+function publishJam(jamId){
+	var url = formatController('jam', jamId, 'manage', 'publish');
+	call(url, {onSuccess: reload});
+}
+
+
+function unpublishJam(jamId){
+	var url = formatController('jam', jamId, 'manage', 'unpublish');
+	call(url, {onSuccess: reload});
+}
+
+
+function deleteJam(jamId){
+	var url = formatController('jam', jamId, 'manage', 'delete_jam');
+	call(url, {onSuccess: function(){loadUrl("/account/jams")}});
 }
 
 /* UPLOAD */

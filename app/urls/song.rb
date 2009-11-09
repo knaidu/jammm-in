@@ -35,8 +35,7 @@ end
 
 get '/song/:song_id/manage/add_jam' do
   song = get_passed_song
-  jam = Jam.find(params[:jam_id])
-  song.add_jam(jam.id) ? "Successfully added JAM" : "Error in adding JAM"
+  song.add_jam(get_passed_jam) ? "Successfully added JAM" : "Error in adding JAM"
 end
 
 get '/song/:song_id/manage/remove_jam' do

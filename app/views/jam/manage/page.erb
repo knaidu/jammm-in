@@ -8,11 +8,20 @@
 
 <div class='music-desc'>
   <%= add_field_name 'Creator' %> <%= @jam.creator.name %><br>
-	<%= add_field_name 'Created On' %> <%= @jam.created_at.date %>
+	<%= add_field_name 'Created On' %> <%= @jam.created_at.date %><br>
+	<%= add_field_name 'Status' %> <%= @jam.published ? display_published : display_unpublished %>
 </div>
 <br>
 
-<input type='button' value='Publish JAM'><br><br>
+<div class='text-right pad-5'>
+<% if not @jam.published %>
+	<input type='button' value='Publish' onclick='publishJam("<%= @jam.id %>")'>
+<% else %>
+	<input type='button' value='Unpublish' onclick='unpublishJam("<%= @jam.id %>")'>
+<% end %>
+<input type='button' value='Delete' onclick='deleteJam("<%= @jam.id %>")'>
+<input type='button' value='Make Copy'>
+</div>
 
 <%= section_header 'File' %>
 <div id='jam-file-actions'>

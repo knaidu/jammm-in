@@ -13,8 +13,9 @@ module SongUtils
     self.save
   end
   
-  def add_jam(jam_id)
-    SongJam.create({:song_id => self.id, :jam_id => jam_id})
+  def add_jam(jam)
+    jam = jam.make_copy(jam.name + " (copy for song: #{self.name})") if jam.published # Adds a copy of a jam to the song, if jam already published
+    SongJam.create({:song_id => self.id, :jam_id => jam.id})
   end
   
   def remove_jam(jam)

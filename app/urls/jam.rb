@@ -51,6 +51,19 @@ get '/jam/:jam_id/manage/file_actions' do
   erb :'jam/manage/file_actions'
 end
 
+get '/jam/:jam_id/manage/publish' do
+  get_passed_jam.publish ? "Jam successfully published" : "Jam could not be published"
+end
+
+get '/jam/:jam_id/manage/unpublish' do
+  get_passed_jam.unpublish ? "Jam successfully unpublished" : "Jam could not be unpublished"
+  erb(:"jam/manage/upload")
+end
+
+get '/jam/:jam_id/manage/delete_jam' do
+  get_passed_jam.destroy ? "Jam successfully deleted" : "Jam could not be deleted"
+end
+
 # Loads a songs
 get '/jam/:jam_id' do
   @layout_info = {"middle_panel" => 'jam/page', "right_panel" => 'jam/right'}
