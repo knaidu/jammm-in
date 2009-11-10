@@ -1,6 +1,6 @@
 SQL (0.1ms)  SET client_min_messages TO 'panic'
 SQL (0.1ms)  SET client_min_messages TO 'notice'
-SQL (0.5ms)  SELECT version FROM schema_migrations
+SQL (25.7ms)  SELECT version FROM schema_migrations
 Migrating to CreateTestTable (1)
 Migrating to CreateUserTable (2)
 Migrating to CreateSongsTable (3)
@@ -16,7 +16,9 @@ Migrating to CreateSongManagersTable (12)
 Migrating to CreatePublishedJamsTable (13)
 Migrating to AddActiveForSongJamsTable (14)
 Migrating to AddFileHandleForSongsTable (15)
-SQL (0.1ms)  BEGIN
-SQL (20.7ms)  ALTER TABLE "songs" ADD COLUMN "file_handle" character varying(255)
-SQL (0.3ms)  INSERT INTO schema_migrations (version) VALUES ('15')
-SQL (0.9ms)  COMMIT
+Migrating to CreateJamAndSongLikesTable (16)
+SQL (0.2ms)  BEGIN
+SQL (216.2ms)  CREATE TABLE "jam_likes" ("id" serial primary key, "jam_id" integer, "user_id" integer) 
+SQL (5.0ms)  CREATE TABLE "song_likes" ("id" serial primary key, "song_id" integer, "user_id" integer) 
+SQL (13.9ms)  INSERT INTO schema_migrations (version) VALUES ('16')
+SQL (2.9ms)  COMMIT

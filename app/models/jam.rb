@@ -5,6 +5,8 @@ class Jam < ActiveRecord::Base
   has_one :song, :through => :song_jam
   has_one :creator, :primary_key => 'registered_user_id', :foreign_key => 'id', :class_name => "User"
   has_one :published, :class_name => "PublishedJam", :dependent => :destroy
+  has_many :jam_likes, :dependent => :destroy
+  has_many :liked_by, :through => :jam_likes
   
   after_create {|jam| jam.tag_artist(jam.creator)}
   after_destroy :delete_file_handle
@@ -20,7 +22,7 @@ class Jam < ActiveRecord::Base
   end
   
   def delete_file_handle
-    File.delete(file_handle_path(self))
+    File.delete(file_handle_path(self)) if file_handle_exists?
   end
   
   def song_jam_active?

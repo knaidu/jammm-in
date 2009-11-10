@@ -4,6 +4,8 @@ class Song < ActiveRecord::Base
   has_many :song_managers, :dependent => :destroy
   has_many :managers, :through => :song_managers
   belongs_to :creator, :class_name => "User", :foreign_key => "registered_user_id"
+  has_many :song_likes
+  has_many :liked_by, :through => :song_likes, :dependent => :destroy
   
   after_create :add_to_manager_list
   after_destroy :remove_tenticles

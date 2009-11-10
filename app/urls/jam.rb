@@ -7,7 +7,7 @@ end
 
 post '/jam/register' do
   name = params['name']
-  jam = register_jam(session[:username], name)
+  jam = JamUtils.register_jam(session[:username], name)
   jam ? redirect_manage_jam(jam) : "false"
 end
 
