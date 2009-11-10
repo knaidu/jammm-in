@@ -39,16 +39,5 @@ module SongUtils
   def remove_artist(artist)
     SongManager.find_by_song_id_and_manager_id(self.id, artist.id).destroy
   end
-  
-  def publish(jams=[])
-    ids = jams.map(&:id)
-    song_jams.each do |song_jam|
-      ids.include?(song_jam.jam_id) ? song_jam.activate : song_jam.deactivate
-    end
-    delete_file_handle if file_handle_exists?
-    self.file_handle = jams[0].make_copy_of_file_handle(new_file_handle_name)
-    puts "the last file handle #{self.file_handle.to_s}"
-    self.save
-  end
 
 end 

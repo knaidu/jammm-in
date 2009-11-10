@@ -16,7 +16,7 @@ module Utils
     FILES_DIR + "/" + obj.file_handle if obj.file_handle
   end
   
-  def make_copy_of_file_handle(old_handle_name, new_handle_name=nil)
+  def utils_make_copy_of_file_handle(old_handle_name, new_handle_name=nil)
     new_handle_name ||= new_file_handle_name
     puts "old: #{old_handle_name}, new #{new_handle_name}"
     new_handle_name if File.copy(FILES_DIR + "/" + old_handle_name, FILES_DIR + "/" + new_handle_name)

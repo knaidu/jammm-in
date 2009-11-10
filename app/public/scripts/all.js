@@ -148,6 +148,16 @@ function publishSong(songId){
 	call(url, {onSuccess: reload});
 }
 
+function unpublishSong(songId) {
+	var url = formatController('song', songId, 'manage', 'unpublish');
+	call(url, {onSuccess: reload});
+};
+
+function deleteSong(songId) {
+	var url = formatController('song', songId, 'manage', 'delete_song');
+	call(url, {onSuccess: function() {loadUrl("/account/songs")}});
+};
+
 /* JAMS */
 function saveJamInformation(){
 	var formId = 'jam-information';

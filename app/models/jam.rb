@@ -35,5 +35,10 @@ class Jam < ActiveRecord::Base
     self.save
   end
 
+  def publish
+    jam = self.song ? self.make_copy_and_publish("#{self.name} (published)") : self # If jam part of a song, then a copy of the jam will be published 
+    PublishedJam.add(jam)
+  end
+
 end
 

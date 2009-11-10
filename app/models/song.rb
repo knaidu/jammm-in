@@ -29,11 +29,34 @@ class Song < ActiveRecord::Base
   end
   
   def delete_file_handle
-    File.delete(file.path) if file_handle
+    File.delete(self.file.path) if self.file_handle
+    puts 'huh'
+    self.file_handle = nil
+    self.save
   end
   
   def file_handle_exists?
     file_handle and File.exists?(file_handle_path(self))
+  end
+  
+  def publish(jams=[])
+    ids = jams.map(&:id)
+    song_jams.each do |song_jam|
+      ids.include?(song_jam.jam_id) ? song_jam.activate : song_jam.deactivate
+    end
+    delete_file_handle if file_handle_exists?
+    self.file_handle = jams[0].make_copy_of_file_handle(new_file_handle_name) if jams[0].file_handle_exists?
+    puts "the last file handle #{self.file_handle.to_s}"
+    self.save
+  end
+  
+  def published
+    song_jams.any?(&:active?)
+  end
+  
+  def unpublish
+    song_jams.each(&:deactivate)
+    delete_file_handle
   end
   
 end

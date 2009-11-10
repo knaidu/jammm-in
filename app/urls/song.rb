@@ -76,6 +76,17 @@ end
 
 get '/song/:song_id/manage/publish' do
   song = get_passed_song
+  jams_arr = params[:jam_ids].split(',')
   jams = params[:jam_ids].split(',').map do |id| Jam.find(id) end
-  song.publish(jams) ? "Successfully removed user" : "Error in removing user"
+  song.publish(jams) ? "Successfully published song" : "Error in publishing song"
+end
+
+get '/song/:song_id/manage/unpublish' do
+  song = get_passed_song
+  song.unpublish ? "Successfully removed song" : "Error in removing song"
+end
+
+get '/song/:song_id/manage/delete_song' do
+  song = get_passed_song
+  song.destroy ? "Successfully removed song" : "Error in removing song"
 end

@@ -1,5 +1,6 @@
 <%
 	default_color = "#990000"
+	default_line_color = "#cccccc"
 %>
 
 /* DEFAULTS */
@@ -45,7 +46,7 @@ input[type='text'], TEXTAREA {border: thin groove grey; width: 200}
 /* HR */
 
 hr {border: 0}
-hr.thin {background-color: #cccccc; height: 1px;}
+hr.thin {background-color: <%= default_line_color %>; height: 1px;}
 hr.w60-align-left {width: 60%; margin-left: 0; text-align: left}
 
 
@@ -116,10 +117,16 @@ hr.w60-align-left {width: 60%; margin-left: 0; text-align: left}
 /* ACCOUNT */
 .account-menu {
 	background-color: white; 
-	padding: 10px 0px 10px 5px;
+	padding: 0px 0px 10px 5px;
 	border-color: #cccccc;
 	border-width: 0px 1px 0px 0;
 	border-style: solid;
+}
+
+.account-menu .header {
+	background-color: <%= default_line_color %>;
+	text-align: right;
+	font-weight: bold;
 }
 
 /* MUSIC, i.e: songs, jams, lyrics */
