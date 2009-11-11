@@ -7,6 +7,7 @@ class Jam < ActiveRecord::Base
   has_one :published, :class_name => "PublishedJam", :dependent => :destroy
   has_many :jam_likes, :dependent => :destroy
   has_many :liked_by, :through => :jam_likes
+  has_many :comments, :class_name => "JamComment"
   
   after_create {|jam| jam.tag_artist(jam.creator)}
   after_destroy :delete_file_handle
@@ -38,6 +39,18 @@ class Jam < ActiveRecord::Base
   def publish
     jam = self.song ? self.make_copy_and_publish("#{self.name} (published)") : self # If jam part of a song, then a copy of the jam will be published 
     PublishedJam.add(jam)
+  end
+
+  def like(user)
+    JamLike.add(self, user)
+  end
+  
+  def unlike(user)
+    JamLike.remove(self, user)
+  end
+  
+  def comment(user, comment)
+    JamComment.add(self, user, comment)
   end
 
 end

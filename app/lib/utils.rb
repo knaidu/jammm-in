@@ -22,6 +22,10 @@ module Utils
     new_handle_name if File.copy(FILES_DIR + "/" + old_handle_name, FILES_DIR + "/" + new_handle_name)
   end
   
+  def session_user
+    User.with_username(session[:username]) or nil
+  end
+  
   def layout_info(section, subsection=false)
     section_str = section.to_s
     section = $layout_info[section]

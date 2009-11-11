@@ -7,5 +7,10 @@ class JamLike < ActiveRecord::Base
   def self.add(jam, user)
     self.create({:jam_id => jam.id, :user_id => user.id})
   end
+
+  def self.remove(jam, user)
+    self.find_by_jam_id_and_user_id(jam.id, user.id).destroy
+  end
+
   
 end

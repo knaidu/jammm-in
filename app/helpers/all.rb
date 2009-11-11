@@ -55,6 +55,12 @@ def add_link(text, href='', options={})
   "<span class='#{class_names} display-inline'><a href='#{href}'>#{text}</a></span>"
 end
 
+def link(text, options={})
+  options[:class] = "simple-link display-inline " + (options[:class] || "")
+  attrs = options.map{|k,v| "#{k.to_s}='#{v}'"}.join(' ')
+  "<span #{attrs}>" + text + "</span>"
+end
+
 def add_icon(icon=false)
   "<img src='/images/common/icon.png'>"
 end

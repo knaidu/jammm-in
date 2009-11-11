@@ -59,4 +59,12 @@ class Song < ActiveRecord::Base
     delete_file_handle
   end
   
+  def like(user)
+    SongLike.add(self, user)
+  end
+  
+  def unlike(user)
+    SongLike.remove(self, user)
+  end
+  
 end
