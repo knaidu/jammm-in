@@ -18,12 +18,12 @@
 
 <%
   items = [
-    {:name => 'Update'},
-    {:name => 'Songs'},
-    {:name => 'Jams'},
-    {:name => 'Following'},
-    {:name => 'Jammmed With'},
-    {:name => 'Followers'}    
+    {:name => 'Update', :link => ""},
+    {:name => 'Songs', :link => "/#{@user.username}/songs"},
+    {:name => 'Jams', :link => "/#{@user.username}/jams"},
+    {:name => 'Following', :link => "/#{@user.username}/following"},
+    {:name => 'Jammmed With', :link => "/#{@user.username}/jammmed_with"},
+    {:name => 'Followers', :link => "/#{@user.username}/followers"}    
   ]
   
   %>
@@ -32,7 +32,11 @@
     <%
     items.each do |item| %>
       <div>
-          <span class='bold grey float-left display-inline'><%= item[:name] %></span><span class='float-right display-inline'><%= add_icon '' %></span>
+					<a href='#'>
+          	<span class='bold grey float-left display-inline simple-link' onclick="window.location='<%= item[:link] %>'">
+							<%= item[:name] %></span><span class='float-right display-inline'><%= add_icon '' %>
+						</span>
+					</a>
       </div>
 <!--     <hr class='thin'>     -->
     <%

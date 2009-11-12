@@ -1,0 +1,10 @@
+<%= section_header 'messages' %>
+
+<div class='text-right pad-5'>
+	<input type='button' value='New'>
+	<input type='button' value='Delete'>
+</div>
+
+<% @session_user.messages.each do |message| %>
+	<%= partial('account/message', :locals => {:message => message}) %><br><br>
+<% end %>

@@ -6,6 +6,7 @@ class Song < ActiveRecord::Base
   belongs_to :creator, :class_name => "User", :foreign_key => "registered_user_id"
   has_many :song_likes
   has_many :liked_by, :through => :song_likes, :dependent => :destroy
+  has_many :comments, :class_name => "SongComment", :dependent => :destroy
   
   after_create :add_to_manager_list
   after_destroy :remove_tenticles
@@ -65,6 +66,10 @@ class Song < ActiveRecord::Base
   
   def unlike(user)
     SongLike.remove(self, user)
+  end
+  
+  def comment(user, comment)
+    SongComment.add(self, user, comment)
   end
   
 end

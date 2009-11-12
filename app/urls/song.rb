@@ -20,6 +20,18 @@ get '/song/:song_id' do
   erb(:"body/structure")
 end
 
+post '/song/:song_id/comment' do
+  comment = params[:comment]
+  get_passed_song.comment(session_user, comment)
+end
+
+
+get '/song/:song_id/comments' do
+  @song = get_passed_song
+  erb(:'song/comments')
+end
+
+
 get '/song/:song_id/manage' do
   @layout_info = {'middle_panel' => 'song/manage/page', 'left_panel' => 'account/menu'}
   @song = Song.find(params[:song_id])

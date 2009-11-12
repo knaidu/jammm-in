@@ -176,6 +176,19 @@ function unlikeSong(songId) {
 	call(url);
 };
 
+function commentOnSong(songId) {
+	var comment = $('song-comment-textarea');
+	if(!comment) return;
+	comment = comment.getValue();
+	var url = formatController('song', songId, 'comment');
+	call(url, {method: 'post', parameters: {comment: comment}, onSuccess: function() {loadSongComments(songId)}});
+};
+
+function loadSongComments(songId){
+	var url = formatController('song', songId, 'comments');
+	updateEl('song-comments', url);
+}
+
 /* JAMS */
 function saveJamInformation(){
 	var formId = 'jam-information';

@@ -3,6 +3,11 @@ get '/account' do
   redirect '/account/home'
 end
 
+get '/account/messages' do
+  @layout_info = {"left_panel" => "account/menu", "middle_panel" => "account/messages"}
+  erb(:'body/structure')
+end
+
 get '/account/logout' do
   session[:user] = nil
   redirect '/'

@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   has_many :jam_likes
   has_many :likes_songs, :through => :song_likes, :source => "song"
   has_many :likes_jams, :through => :jam_likes, :source => "jam"
+  has_many :messages, :foreign_key => "to_id", :dependent => :destroy
 
   def collaborators
     artists = jams.map(&:artists).flatten.uniq.reject do |user| user == self end

@@ -1,0 +1,13 @@
+<div class='w100'>
+	<div class='float-left' style='width: 32px'>
+		<%= add_icon %>
+	</div>
+	<div class='float-left'%>
+		<a class='bold black simple-link' href='/<%= user.username %>'><%= user.name %></a>, <%= user.location %><br>
+		<a class='simple-link' href='/<%= user.username %>/songs'>Songs</a>: <%= user.songs.size %><br>
+		<a class='simple-link' href='/<%= user.username %>/jams'>Jams</a>: <%= user.jams.size %><br>
+		<%= add_field_name 'Actions' %> 
+		  <a class='simple-link' href='/<%= user.username %>'>Profile</a>,
+			<a class='simple-link' href='/<%= user.username %>'>Message</a>
+	</div>
+</div>
