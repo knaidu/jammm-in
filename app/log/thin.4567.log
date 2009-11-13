@@ -1,0 +1,113 @@
+>> Writing PID to /home/jammmin/webserver/app/processes.4567
+>> Changing process privilege to root:root
+Couldn't change user and group to root:root: Operation not permitted
+DBCONFIG: {"port"=>5432, "username"=>"jammmin", "adapter"=>"postgresql", "database"=>"garage", "password"=>"3WiseMen"}
+DB CONNECTION: #<ActiveRecord::ConnectionAdapters::ConnectionPool:0xb70d6134 @connection_mutex=#<Monitor:0xb70d60f8 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>, @size=5, @reserved_connections={}, @spec=#<ActiveRecord::Base::ConnectionSpecification:0xb70ff1d8 @config={:port=>5432, :adapter=>"postgresql", :username=>"jammmin", :password=>"3WiseMen", :database=>"garage"}, @adapter_method="postgresql_connection">, @timeout=5, @queue=#<MonitorMixin::ConditionVariable:0xb70d60bc @monitor=#<Monitor:0xb70d60f8 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>, @waiters=[]>, @connections=[], @checked_out=[]>
+libs are: ["active_record.rb", "extensions.rb", "jam_utils.rb", "song_utils.rb", "user.rb", "utils.rb"]
+models are: ["follower.rb", "jam_artist.rb", "jam.rb", "published_jam.rb", "song_jam.rb", "song_manager.rb", "song.rb", "test_tables.rb", "user.rb"]
+>> Thin web server (v1.2.2 codename I Find Your Lack of Sauce Disturbing)
+>> Maximum connections set to 1024
+>> Listening on 127.0.0.1:4567, CTRL+C to stop
+>> Exiting!
+>> Writing PID to /home/jammmin/webserver/app/processes.4567
+>> Changing process privilege to root:root
+Couldn't change user and group to root:root: Operation not permitted
+DBCONFIG: {"port"=>5432, "username"=>"jammmin", "adapter"=>"postgresql", "database"=>"garage", "password"=>"3WiseMen"}
+DB CONNECTION: #<ActiveRecord::ConnectionAdapters::ConnectionPool:0xb712f054 @connection_mutex=#<Monitor:0xb712f018 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>, @size=5, @reserved_connections={}, @spec=#<ActiveRecord::Base::ConnectionSpecification:0xb71580f8 @config={:port=>5432, :adapter=>"postgresql", :username=>"jammmin", :password=>"3WiseMen", :database=>"garage"}, @adapter_method="postgresql_connection">, @timeout=5, @queue=#<MonitorMixin::ConditionVariable:0xb712efdc @monitor=#<Monitor:0xb712f018 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>, @waiters=[]>, @connections=[], @checked_out=[]>
+libs are: ["active_record.rb", "extensions.rb", "jam_utils.rb", "song_utils.rb", "user.rb", "utils.rb"]
+models are: ["follower.rb", "jam_artist.rb", "jam.rb", "published_jam.rb", "song_jam.rb", "song_manager.rb", "song.rb", "test_tables.rb", "user.rb"]
+>> Thin web server (v1.2.2 codename I Find Your Lack of Sauce Disturbing)
+>> Maximum connections set to 1024
+>> Listening on 127.0.0.1:4567, CTRL+C to stop
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: profile/nil
+page is: profile/usernotfound
+page is: profile/nil
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [13/Nov/2009 18:28:09] "GET /favicon.ico HTTP/1.1" 200 963 0.0987
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: profile/nil
+page is: profile/usernotfound
+page is: profile/nil
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [13/Nov/2009 18:28:09] "GET /favicon.ico HTTP/1.1" 200 963 0.0108
+127.0.0.1 - - [13/Nov/2009 18:28:10] "GET / HTTP/1.1" 200 19 0.0021
+#<NoMethodError: undefined method `profile_home_info' for #<Sinatra::Application:0xb6ff38fc>>
+127.0.0.1 - - [13/Nov/2009 18:28:14] "GET /prakashraman HTTP/1.1" 302 - 0.0171
+127.0.0.1 - - [13/Nov/2009 18:28:14] "GET /account HTTP/1.1" 302 - 0.0015
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: 
+page is: signin/page
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [13/Nov/2009 18:28:14] "GET /signin HTTP/1.1" 200 1371 0.0281
+127.0.0.1 - - [13/Nov/2009 18:28:14] "GET /stylesheets/common.css HTTP/1.1" 200 3391 0.0034
+127.0.0.1 - - [13/Nov/2009 18:28:15] "GET /scripts/all.js HTTP/1.1" 200 6250 0.0024
+127.0.0.1 - - [13/Nov/2009 18:28:15] "GET /scripts/prototype.js HTTP/1.1" 200 139854 0.0163
+127.0.0.1 - - [13/Nov/2009 18:28:15] "GET /images/logos/logo.jpg HTTP/1.1" 200 5116 0.0065
+127.0.0.1 - - [13/Nov/2009 18:28:20] "POST /signin/process HTTP/1.1" 302 - 0.0034
+127.0.0.1 - - [13/Nov/2009 18:28:20] "GET /account HTTP/1.1" 302 - 0.0026
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: account/menu
+page is: account/home
+page is: account/song
+page is: common/list_artists
+page is: account/jam
+page is: common/list_artists
+page is: account/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [13/Nov/2009 18:28:20] "GET /account/home HTTP/1.1" 200 5472 0.1574
+127.0.0.1 - - [13/Nov/2009 18:28:20] "GET /stylesheets/common.css HTTP/1.1" 200 3391 0.0063
+127.0.0.1 - - [13/Nov/2009 18:28:20] "GET /images/common/icon.png HTTP/1.1" 200 709 0.0060
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: account/menu
+page is: account/home
+page is: account/song
+page is: common/list_artists
+page is: account/jam
+page is: common/list_artists
+page is: account/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [13/Nov/2009 18:28:23] "GET /account/home HTTP/1.1" 200 5472 0.0310
+127.0.0.1 - - [13/Nov/2009 18:28:23] "GET /stylesheets/common.css HTTP/1.1" 200 3391 0.0064
+127.0.0.1 - - [13/Nov/2009 18:28:23] "GET /scripts/all.js HTTP/1.1" 304 - 0.0014
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: account/menu
+page is: account/home
+page is: account/song
+page is: common/list_artists
+page is: account/jam
+page is: common/list_artists
+page is: account/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [13/Nov/2009 18:28:24] "GET /account/home HTTP/1.1" 200 5472 0.0290
+127.0.0.1 - - [13/Nov/2009 18:28:24] "GET /stylesheets/common.css HTTP/1.1" 200 3391 0.0643
+127.0.0.1 - - [13/Nov/2009 18:28:25] "GET /scripts/all.js HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [13/Nov/2009 18:28:25] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [13/Nov/2009 18:28:25] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [13/Nov/2009 18:28:25] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0022
+>> Exiting!
