@@ -1,7 +1,7 @@
 
 get '/jam/create' do
   manage_if_not_signed_in
-  @layout_info = {"middle_panel" => 'jam/create'}
+  @layout_info = {"middle_panel" => 'jam/create', "left_panel" => "account/menu"}
   erb(:"body/structure")
 end
 

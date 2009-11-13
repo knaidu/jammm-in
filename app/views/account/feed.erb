@@ -1,0 +1,14 @@
+<%= add_field_name 'Show Only' %>
+<%
+	show_items = [
+		{:text => "Songs", :id => "songs"},
+		{:text => "Jams", :id => "jams"},
+		{:text => "Requests / Invites", :id => "requests"},
+		{:text => "Messages", :id => "messages"}
+	]
+
+	show_items.each_index do |i| 
+		item = show_items[i]
+	%>
+	<input type='checkbox'> <%= item[:text] %><%= "&nbsp; " if i < (show_items.size - 1) %>
+<% end %>

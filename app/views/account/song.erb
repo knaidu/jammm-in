@@ -4,9 +4,7 @@
   <div class='left-float'>
     <span class='bold float-left'><a href='/song/<%= song.id %>'><%= song.name %></a>&nbsp;</span><br>
     <%= add_field_name 'Jammmed with' %> <%= partial(:'common/list_artists', :locals => {:artists => song.artists}) %><br>
-    <%= add_field_name 'Date Created' %> <%= song.created_at.to_s %><br>
-    <%= add_field_name 'Last Modified' %><br>
-    <%= add_field_name 'Likes' %> 20, <%= add_field_name 'Comments' %> 10  
+    <%= add_field_name 'Date Created' %> <%= song.created_at.date %><br>
   </div>
 </div>
 
