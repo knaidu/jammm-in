@@ -12,6 +12,9 @@ function reload(){
 	window.location = window.location.href;
 }
 
+function mergeHash(hash1, hash2){
+	return $H(hash1).update(hash2).toObject();
+}
 
 // Redirects to a particular song page
 function loadSong(id){
@@ -73,6 +76,11 @@ function call(url){
 	var defaultOptions = {method: 'get'};
 	var options = $H(defaultOptions).update(arguments[1] || {}).toObject();
 	new Ajax.Request(url, options);
+}
+
+function updateEl(el, url){
+	var options = mergeHash({method: 'get'}, (arguments[2] || {}));
+	new Ajax.Updater(el, url, options);
 }
 
 function formatUrl(url){
@@ -148,6 +156,39 @@ function publishSong(songId){
 	call(url, {onSuccess: reload});
 }
 
+function unpublishSong(songId) {
+	var url = formatController('song', songId, 'manage', 'unpublish');
+	call(url, {onSuccess: reload});
+};
+
+function deleteSong(songId) {
+	var url = formatController('song', songId, 'manage', 'delete_song');
+	call(url, {onSuccess: function() {loadUrl("/account/songs")}});
+};
+
+function likeSong(songId) {
+	var url = formatController('song', songId, 'manage', 'like');
+	call(url);
+};
+
+function unlikeSong(songId) {
+	var url = formatController('song', songId, 'manage', 'unlike');
+	call(url);
+};
+
+function commentOnSong(songId) {
+	var comment = $('song-comment-textarea');
+	if(!comment) return;
+	comment = comment.getValue();
+	var url = formatController('song', songId, 'comment');
+	call(url, {method: 'post', parameters: {comment: comment}, onSuccess: function() {loadSongComments(songId)}});
+};
+
+function loadSongComments(songId){
+	var url = formatController('song', songId, 'comments');
+	updateEl('song-comments', url);
+}
+
 /* JAMS */
 function saveJamInformation(){
 	var formId = 'jam-information';
@@ -186,6 +227,28 @@ function deleteJam(jamId){
 	call(url, {onSuccess: function(){loadUrl("/account/jams")}});
 }
 
+function likeJam(jamId) {
+	var url = formatController('jam', jamId, 'manage', 'like');
+	call(url);
+};
+
+function unlikeJam(jamId) {
+	var url = formatController('jam', jamId, 'manage', 'unlike');
+	call(url);
+};
+
+function commentOnJam(jamId) {
+	var comment = $('jam-comment-textarea');
+	if(!comment) return;
+	comment = comment.getValue();
+	var url = formatController('jam', jamId, 'comment');
+	call(url, {method: 'post', parameters: {comment: comment}, onSuccess: function() {loadJamComments(jamId)}});
+};
+
+function loadJamComments(jamId){
+	var url = formatController('jam', jamId, 'comments');
+	updateEl('jam-comments', url);
+}
 /* UPLOAD */
 function getNewXProgressId(){
 	var uuid = "";

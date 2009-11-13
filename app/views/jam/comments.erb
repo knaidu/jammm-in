@@ -1,0 +1,6 @@
+<% comments ||= @jam.comments %>
+<% comments.each do |comment| %>
+	<%= partial('jam/comment', {:locals => {:comment => comment}}) %><br><br>
+<% end %>
+<textarea id='jam-comment-textarea'></textarea><br><br>
+<input type='button' value='Comment' onclick="commentOnJam('<%= @jam.id %>')">

@@ -1,5 +1,9 @@
 
 <div class='account-menu'>
+<div class='header'>
+	&nbsp;
+</div>
+<br>
 	<%= "#{add_field_name 'Username'} #{@session_user.username}" %><br>
 	<%= "#{add_field_name 'Name'} #{@session_user.name}" %><br>
 	<%= "#{add_field_name 'Location'} #{@session_user.location}" %><br>
@@ -9,7 +13,7 @@
 	  <%= add_menu_entry('Home','/account','asdasd') %>
 	  <%= add_menu_entry('Songs','/account/songs','asdasd') %>
 	  <%= add_menu_entry('Jams','/account/jams','asdasd') %>
-	  <%= add_menu_entry('Messages','/account/jams','asdasd') %>
+	  <%= add_menu_entry('Messages','/account/messages','asdasd') %>
 	  <%= add_menu_entry('Profile','/' + @session_user.username,'asdasd') %>
 	  <%= add_menu_entry('Create', '#', 'a') %>
 	  <div class='pad-left-10'>

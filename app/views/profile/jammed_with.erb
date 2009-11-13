@@ -1,0 +1,5 @@
+<%= section_header ('Collaborators / Jammed With') %>
+<% collaborators = @user.collaborators %>
+<%= add_field_name 'Total' %> <%= collaborators.size %>
+<br><br>
+<%= partial("common/users", :locals => {:users => collaborators}) %>

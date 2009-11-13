@@ -7,16 +7,28 @@ end
 
 post '/jam/register' do
   name = params['name']
-  jam = register_jam(session[:username], name)
+  jam = JamUtils.register_jam(session[:username], name)
   jam ? redirect_manage_jam(jam) : "false"
 end
 
+
+post '/jam/:jam_id/comment' do
+  comment = params[:comment]
+  get_passed_jam.comment(session_user, comment)
+end
+
+
+get '/jam/:jam_id/comments' do
+  @jam = get_passed_jam
+  erb(:'jam/comments')
+end
 
 get '/jam/:jam_id/manage' do
   @layout_info = {'middle_panel' => 'jam/manage/page', 'right_panel' => 'jam/manage/instructions', 'left_panel' => 'account/menu'}
   @jam = Jam.find(params[:jam_id])
   erb(:"body/structure")
 end
+
 
 
 get '/jam/:jam_id/manage/upload' do
@@ -82,7 +94,15 @@ post '/jam/:jam_id/manage/update_information' do
   ret ? "Successfully updated JAM information" : "Failed to update JAM information"
 end
 
-get '/where/:who' do
-  params[:who]
-
+get '/jam/:jam_id/manage/like' do
+  jam = get_passed_jam
+  jam.like(session_user) ? "Successfully liked jam" : "Error in liking jam"
 end
+
+
+get '/jam/:jam_id/manage/unlike' do
+  jam = get_passed_jam
+  jam.unlike(session_user) ? "Successfully unliked jam" : "Error in unliking jam"
+end
+
+

@@ -3,4 +3,6 @@
 
 <br><br>
 <%= section_header 'Comments' %>
-<%= partial :'common/comments' %>
+<div id='jam-comments' class='pad-5'>
+	<%= partial(:'jam/comments', {:locals => {:comments => @jam.comments}})%>
+</div>

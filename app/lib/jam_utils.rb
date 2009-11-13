@@ -3,7 +3,8 @@ module JamUtils
   def register_jam(username, name) 
     Jam.create({
       :name => name,
-      :registered_user_id => User.with_username(username).id
+      :registered_user_id => User.with_username(username).id,
+      :created_at => Time.now
     })
   end
 
@@ -20,11 +21,6 @@ module JamUtils
 
   def untag_artist(user)
     JamArtist.find_by_jam_id_and_artist_id(self.id, user.id).destroy
-  end
-  
-  def publish
-    jam = self.song ? self.make_copy_and_publish("#{self.name} (published)") : self # If jam part of a song, then a copy of the jam will be published 
-    PublishedJam.add(jam)
   end
   
   def unpublish
@@ -48,7 +44,7 @@ module JamUtils
   
   def make_copy_of_file_handle(newname=nil)
     puts file_handle
-    Utils.make_copy_of_file_handle(self.file_handle, newname)
+    utils_make_copy_of_file_handle(file_handle, newname)
   end
   
   def make_copy(newname=nil)
