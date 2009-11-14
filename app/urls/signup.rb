@@ -5,5 +5,8 @@ get '/signup' do
 end
 
 post '/signup/create' do
-   create_new_user(params['form'])
+   if user = create_new_user(params['form'])
+     set_session_user(user)
+     redirect_home
+   end
 end

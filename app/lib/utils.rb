@@ -26,6 +26,10 @@ module Utils
     User.with_username(session[:username]) or nil
   end
   
+  def set_session_user(user)
+    session[:username] = user.username
+  end
+  
   def layout_info(section, subsection=false)
     section_str = section.to_s
     section = $layout_info[section]
