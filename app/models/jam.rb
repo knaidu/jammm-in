@@ -57,6 +57,10 @@ class Jam < ActiveRecord::Base
     return :song_jam if song_jam
     published ? :published : :unpublished
   end
+  
+  def self.published_jams
+    self.find_all.select(&:published)
+  end
 
 end
 

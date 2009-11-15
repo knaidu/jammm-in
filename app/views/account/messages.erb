@@ -1,10 +1,14 @@
 <%= section_header 'messages' %>
 
 <div class='text-right pad-5'>
-	<input type='button' value='New'>
-	<input type='button' value='Delete'>
+	<input type='button' value='New' onclick='window.location="/account/messages/new"'>
+	<input type='button' value='Delete' onclick="deleteMessages()">
 </div>
 
-<% @session_user.messages.each do |message| %>
+<% messages = @session_user.messages %>
+
+<% messages.each do |message| %>
 	<%= partial('account/message', :locals => {:message => message}) %><br><br>
 <% end %>
+
+<%= "<i>You have no messages.</i>" if messages.empty? %>

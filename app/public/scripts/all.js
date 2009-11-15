@@ -16,6 +16,10 @@ function mergeHash(hash1, hash2){
 	return $H(hash1).update(hash2).toObject();
 }
 
+function loadAccountMessages(){
+	loadUrl("/account/messages")
+}
+
 // Redirects to a particular song page
 function loadSong(id){
   if(!id) return;
@@ -34,6 +38,22 @@ function formatController(){
 
 
 /* Messages */
+
+function sendMessage(formId){
+	var form = $(formId);
+	if(!form) return;
+	form.request({onSuccess: loadAccountMessages})
+}
+
+function deleteMessages() {
+	var els = document.getElementsByName('message-checkbox');
+	var ids = $A(els).map(function(id){
+		var el = $(id);
+		return el.checked ? el.getValue() : null
+	}).compact().join(',');
+	var url = formatUrl('/account/messages/delete', {ids: ids});
+	call(url, {onSuccess: reload});
+};
 
 function loadMessage(id, message, className){
 	var el = $(id);

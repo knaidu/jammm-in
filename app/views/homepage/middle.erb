@@ -1,0 +1,5 @@
+<%= section_header('published songs') %>
+	<%= partial('common/songs', :locals => {:songs => Song.published_songs}) %>
+
+<%= section_header('published jams') %>
+	<%= partial('common/jams', :locals => {:jams => Jam.published_jams}) %>

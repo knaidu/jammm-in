@@ -1,10 +1,10 @@
 <div class='w100'>
-	<span class='float-left pad1'><input type='checkbox'></span>
+	<span class='float-left pad1'><input type='checkbox' name='message-checkbox' value='<%= message.id %>'></span>
 	<span class='float-left' style='width: 25px'><%= add_icon %></span>
 	<div class='float-left'>
 		<span class='bold'><%= message.subject %></span>
-		<%= add_field_name 'From' %> <%= add_profile_link message.from %>
-		<span class='grey'><%= message.created_at.date %></span>
+		<%= add_field_name 'From' %> <%= add_profile_link message.from %>, 
+		<span class='grey display-inline'><%= message.created_at.date %></span>
 		<div style='padding-left: 0px;'>
 			<%= message.body %>
 		</div>

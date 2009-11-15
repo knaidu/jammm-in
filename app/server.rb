@@ -19,7 +19,8 @@ before do
 end
 
 get '/' do
-  "Welcome to jamMm.in"
+  @layout_info = {"left_panel" => "homepage/left", "middle_panel" => "homepage/middle", "right_panel" => "homepage/right"}
+  erb(:'body/structure')
 end
 
 

@@ -72,4 +72,8 @@ class Song < ActiveRecord::Base
     SongLike.remove(self, user)
   end
   
+  def self.published_songs
+    self.find_all.select(&:published)
+  end
+  
 end

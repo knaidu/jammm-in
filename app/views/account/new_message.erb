@@ -1,0 +1,18 @@
+<%= section_header('new message') %>
+<% form_id = "form-#{rand.to_s}" %>
+<br>
+<form id="<%= form_id %>" action='/account/messages/send' method='post' onsubmit='return false'>
+	<span class='bold grey'>To:</span>
+	<input type='text' name='to'>
+	
+	<br><br>
+	<span class='bold grey'>Subject</span>
+	<input type='text' name='subject'>
+	
+	<br><br>
+	<span class='bold grey' >Body</span>
+	<textarea name='body' style='height: 100px'></textarea>
+	
+	<br><br>
+	<input type='button' value='Send Message' onclick="sendMessage('<%= form_id %>')">
+</form>

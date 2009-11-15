@@ -3,7 +3,7 @@
   <div class='left-float'>
     <span class='bold float-left'><a href='/song/<%= song.id %>'><%= song.name %></a>&nbsp;</span><span class='float-left'>[length]</span><br>
     <%= add_field_name 'Jammmed with' %> <%= partial(:'common/list_artists', :locals => {:artists => song.artists}) %><br>
-    <%= add_field_name 'Likes' %> 10<br>
+    <%= add_field_name 'Likes' %> <%= song.liked_by.size  %><br>
     <%= add_link ('Like', '') %> - <%= add_link('Comment', '') %>
   </div>
   <span class='float-right'>Add, Play, Maximize</span>
