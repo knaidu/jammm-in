@@ -9,7 +9,7 @@
 <div class='music-desc'>
   <%= add_field_name 'Creator' %> <%= @jam.creator.name %><br>
 	<%= add_field_name 'Created On' %> <%= @jam.created_at.date %><br>
-	<%= add_field_name 'Status' %> <%= @jam.published ? display_published : display_unpublished %>
+	<%= add_field_name 'Type' %> <%= display_jam_type(@jam) %>
 </div>
 <br>
 

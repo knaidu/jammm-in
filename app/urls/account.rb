@@ -25,7 +25,7 @@ get '/account/messages/delete' do
 end
 
 get '/account/logout' do
-  session[:user] = nil
+  unset_session_user
   redirect '/'
 end
 

@@ -42,7 +42,8 @@ span {display: block; overflow: auto}
 div {display: block; overflow: auto}
 IMG {border: 0}
 a:hover {text-decoration: underline}
-input[type='text'], TEXTAREA {border: thin groove grey; width: 200}
+input[type='text'], input[type='password'], TEXTAREA {border: thin groove <%= default_line_color %>; width: 200}
+input[type='text'], input[type='password'] {height: 22px}
 /* HR */
 
 hr {border: 0}

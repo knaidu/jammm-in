@@ -30,6 +30,11 @@ module Utils
     session[:username] = user.username
   end
   
+  def unset_session_user
+    session[:username] = nil
+    @session_user = nil
+  end
+  
   def sql(str)
     ActiveRecord::Migration.execute str
   end

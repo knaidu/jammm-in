@@ -10,7 +10,8 @@
 <form id='<%= form_id %>' method='post' action='/comments/add'>
 	<input type='hidden' name='for_type' value="<%= for_type %>">
 	<input type='hidden' name='for_type_id' value="<%= for_type_id %>">
-	<textarea id='jam-comment-textarea' name='comment'></textarea><br>
+	<textarea id='jam-comment-textarea' name='comment' <%= "disabled" if not session_user? %>></textarea><br><br>
+	<input type='button' value='Comment' onclick="addComment('<%= form_id %>', '<%= comments_div_id %>')" <%= "disabled" if not session_user? %>>
+
 </form>
 	
-<input type='button' value='Comment' onclick="addComment('<%= form_id %>', '<%= comments_div_id %>')">

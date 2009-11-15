@@ -2,7 +2,9 @@
 
 <%= add_field_name 'Actions' %> 
 <a href='javascript: history.go(-1)' class='simple-link'>Back</a>,
-<a class='simple-link' href='/jam/<%= @jam.id %>/manage'>Manage Jam</a>, 
+<% if session_user? and @jam.artists.include?(session_user?) %>
+	<a class='simple-link' href='/jam/<%= @jam.id %>/manage'>Manage Jam</a>, 
+<% end %>
 <a href='?' class='simple-link'>Refresh</a>
 <br><br>
 

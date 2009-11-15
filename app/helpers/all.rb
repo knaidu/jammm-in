@@ -94,4 +94,8 @@ def display_jam_type(jam)
   jam.jam_type == :published ? "Published" : "Unpublished"
 end
 
+def session_user? 
+  @session_user if @session_user
+end
+
 load 'helpers/profile.rb'
