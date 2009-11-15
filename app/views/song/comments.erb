@@ -1,6 +1,0 @@
-<% comments ||= @song.comments %>
-<% comments.each do |comment| %>
-	<%= partial('song/comment', {:locals => {:comment => comment}}) %><br><br>
-<% end %>
-<textarea id='song-comment-textarea'></textarea><br><br>
-<input type='button' value='Comment' onclick="commentOnSong('<%= @song.id %>')">
