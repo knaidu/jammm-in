@@ -11,7 +11,7 @@
   <%= add_field_name 'Artists' %> <%= partial(:'common/list_artists', {:locals => {:artists => @jam.artists}}) %><br>
   <%= add_field_name 'Creator' %> <%= @jam.creator.name %><br>
   <%= add_field_name 'Views' %> <%= @jam.views %><br>
-	<%= add_field_name 'Status' %> <%= @jam.published ? display_published : display_unpublished %><br>
+	<%= add_field_name 'Type' %> <%= display_jam_type(@jam) %><br>
 	<%= add_field_name 'Likes' %> <%= @jam.liked_by.size %><br>
 	<br>
 	<% if @session_user and not @session_user.likes_jam?(@jam) %>
@@ -21,3 +21,6 @@
 	<% end %>
 </div>
 
+<br>
+<%= section_header 'Artists' %>
+<%= partial('common/users', :locals => {:users => @jam.artists }) %>

@@ -55,6 +55,41 @@ function loadFailureMessage(id, message){
 	loadMessage(id, message, "failure-message");
 }
 
+/* Comments */
+
+function displayComments(for_type, for_type_id, comments_div_id){
+	var params = {for_type: for_type, for_type_id: for_type_id, comments_div_id: comments_div_id};
+	var url = formatUrl('/comments/fetch', params);
+	updateEl(comments_div_id, url);
+}
+
+function addComment(formId){
+	var form = $(formId);
+	if(!form) return;
+	var getValueOf = function(name){
+		var el = $A(form.getElements()).find(function(i){return i.name == name});
+		if(el) return el.getValue();
+	}
+	var comments_div_id = arguments[1] || false;
+	var for_type = getValueOf('for_type');
+	var for_type_id = getValueOf('for_type_id');
+	form.request({onSuccess: function() {displayComments(for_type, for_type_id, comments_div_id)}});
+}
+
+function deleteComment(id, commentsDivId, formId){
+	var form = $(formId);
+	if(!form) return;
+	var getValueOf = function(name){
+		var el = $A(form.getElements()).find(function(i){return i.name == name});
+		if(el) return el.getValue();
+	}
+	var comments_div_id = arguments[1] || false;
+	var for_type = getValueOf('for_type');
+	var for_type_id = getValueOf('for_type_id');
+	var url = formatUrl('/comments/delete', {id: id});
+	call(url, {onSuccess: function() {displayComments(for_type, for_type_id, comments_div_id)}})
+}
+
 /* FORM */
 function submitForm(formId){
 	var form = $(formId);
@@ -249,6 +284,7 @@ function loadJamComments(jamId){
 	var url = formatController('jam', jamId, 'comments');
 	updateEl('jam-comments', url);
 }
+
 /* UPLOAD */
 function getNewXProgressId(){
 	var uuid = "";
@@ -268,16 +304,22 @@ function uploadJam(jamId){
 	var iframe = $('upload-jam-iframe-id');
 	iframe.hide();
 	window.frames[iframeId].$('upload-jam-form').action += ('?' + progressId);
-	window.setTimeout(function(){showUploadProgress(progressId, 'divId', jamId)}, 1000);
-	$('upload-progress').innerHTML = 'Uploading....<br><br>';
+	var progressBar = new ProgressBar({width: '400px'});
+	progressBar.render('upload-progress');
+	window.setTimeout(function(){showUploadProgress(progressId, progressBar, jamId)}, 1000);
 	return true;
 }
 
-function showUploadProgress(progressId, divId, jamId){
+function showUploadProgress(progressId, progressBar, jamId){
 	var onSuccess = function(response){
-		aaa = response;
 		var status = eval(response.transport.responseText);
-		if(status.state != 'done') window.setTimeout(function(){showUploadProgress(progressId, divId)}, 1000);
+		if(status.state != 'done') {
+			if(status.size && status.received){
+				var percent = (status.received / status.size ) * 100;
+				progressBar.update(percent + '%');
+			}
+			window.setTimeout(function(){showUploadProgress(progressId, progressBar, jamId)}, 1000);
+		}
 		else if(status.state == 'done') {
 			$('upload-progress').innerHTML = 'Upload Complete<br><br>';
 			loadJamManageFileActions(jamId);

@@ -1,0 +1,16 @@
+<% 
+	form_id = "comment-#{rand.to_s}" 
+	comments_div_id ||= nil
+%>
+
+<% comments.each do |comment| %>
+	<%= partial('common/comment', {:locals => {:comment => comment, :form_id => form_id, :comments_div_id => comments_div_id}}) %><br><br>
+<% end %>
+
+<form id='<%= form_id %>' method='post' action='/comments/add'>
+	<input type='hidden' name='for_type' value="<%= for_type %>">
+	<input type='hidden' name='for_type_id' value="<%= for_type_id %>">
+	<textarea id='jam-comment-textarea' name='comment'></textarea><br>
+</form>
+	
+<input type='button' value='Comment' onclick="addComment('<%= form_id %>', '<%= comments_div_id %>')">

@@ -89,4 +89,9 @@ def display_unpublished
   "<span class='bold display-inline' style='color: red'>UNPUBLISHED</span>"  
 end
 
+def display_jam_type(jam)
+  return "Song Jam" if jam.jam_type == :song_jam
+  jam.jam_type == :published ? "Published" : "Unpublished"
+end
+
 load 'helpers/profile.rb'

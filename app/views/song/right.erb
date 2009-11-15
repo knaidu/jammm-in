@@ -4,5 +4,13 @@
 <br><br>
 <%= section_header 'Comments' %>
 <div id='song-comments' class='pad-5'>
-	<%= partial :'song/comments' %>
+	<%= partial(:'common/comments', {
+		:locals => {
+			:comments => @song.comments, 
+			:for_type => 'song', 
+			:for_type_id => @song.id,
+			:comments_div_id => 'song-comments'
+			}
+		}
+	)%>
 </div>

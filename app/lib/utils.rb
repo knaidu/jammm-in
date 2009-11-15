@@ -30,6 +30,10 @@ module Utils
     session[:username] = user.username
   end
   
+  def sql(str)
+    ActiveRecord::Migration.execute str
+  end
+  
   def layout_info(section, subsection=false)
     section_str = section.to_s
     section = $layout_info[section]

@@ -7,7 +7,11 @@ class Jam < ActiveRecord::Base
   has_one :published, :class_name => "PublishedJam", :dependent => :destroy
   has_many :jam_likes, :dependent => :destroy
   has_many :liked_by, :through => :jam_likes
-  has_many :comments, :class_name => "JamComment"
+  has_many :comments, :class_name => "Comment", :dependent => :destroy, :finder_sql => %q(
+    select * from comments 
+    where for_type='jam' and 
+    for_type_id=#{id}
+  )
   
   after_create {|jam| jam.tag_artist(jam.creator)}
   after_destroy :delete_file_handle
@@ -49,8 +53,9 @@ class Jam < ActiveRecord::Base
     JamLike.remove(self, user)
   end
   
-  def comment(user, comment)
-    JamComment.add(self, user, comment)
+  def jam_type
+    return :song_jam if song_jam
+    published ? :published : :unpublished
   end
 
 end
