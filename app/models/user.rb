@@ -8,10 +8,7 @@ class User < ActiveRecord::Base
   has_many :follows, :through => :following
   has_many :registered_songs, :class_name => "Song", :foreign_key => "registered_user_id"
   has_many :registered_jams, :class_name => "Jam", :foreign_key => "registered_user_id"
-  has_many :song_likes
-  has_many :jam_likes
-  has_many :likes_songs, :through => :song_likes, :source => "song"
-  has_many :likes_jams, :through => :jam_likes, :source => "jam"
+  has_many :likes
   has_many :messages, :foreign_key => "to_id", :dependent => :destroy
 
   def collaborators
@@ -37,6 +34,10 @@ class User < ActiveRecord::Base
   
   def personal_info
     attributes
+  end
+  
+  def likes_jams
+    likes.select{ |like| like.for_type == 'jam'}.map{|jam_like| Jam.find(jam_like.for_type_id)}
   end
   
   def likes_song?(song)

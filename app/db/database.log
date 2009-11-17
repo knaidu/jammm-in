@@ -17,13 +17,17 @@ Migrating to CreatePublishedJamsTable (13)
 Migrating to AddActiveForSongJamsTable (14)
 Migrating to AddFileHandleForSongsTable (15)
 Migrating to CreateJamAndSongLikesTable (16)
-Migrating to CreateCommentsTable (17)
 SQL (0.1ms)  BEGIN
-SQL (28.7ms)  CREATE TABLE "comments" ("id" serial primary key, "user_id" integer, "comment" character varying(255), "for_type" character varying(255), "for_type_id" integer) 
-SQL (0.4ms)  INSERT INTO schema_migrations (version) VALUES ('17')
-SQL (0.9ms)  COMMIT
+SQL (232.2ms)  CREATE TABLE "likes" ("id" serial primary key, "user_id" integer, "for_type" character varying(255), "for_type_id" integer) 
+SQL (15.5ms)  INSERT INTO schema_migrations (version) VALUES ('16')
+SQL (1.6ms)  COMMIT
+Migrating to CreateCommentsTable (17)
+SQL (0.5ms)  BEGIN
+SQL (7.0ms)  CREATE TABLE "comments" ("id" serial primary key, "user_id" integer, "comment" character varying(255), "for_type" character varying(255), "for_type_id" integer) 
+SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('17')
+SQL (1.4ms)  COMMIT
 Migrating to CreateMessagesTable (18)
-SQL (0.4ms)  BEGIN
-SQL (6.9ms)  CREATE TABLE "messages" ("id" serial primary key, "from_id" integer, "to_id" integer, "subject" character varying(255), "body" character varying(255), "read" boolean, "created_at" timestamp DEFAULT '2009-11-15 16:02:08.933486') 
+SQL (0.6ms)  BEGIN
+SQL (7.5ms)  CREATE TABLE "messages" ("id" serial primary key, "from_id" integer, "to_id" integer, "subject" character varying(255), "body" character varying(255), "read" boolean, "created_at" timestamp DEFAULT '2009-11-18 00:13:52.211270') 
 SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('18')
 SQL (1.2ms)  COMMIT
