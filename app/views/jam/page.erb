@@ -8,6 +8,7 @@
 <a href='?' class='simple-link'>Refresh</a>
 <br><br>
 
+
 <div class='music-desc'>
   <%= add_field_name 'Description' %> <%= @jam.description %><br>
   <%= add_field_name 'Artists' %> <%= partial(:'common/list_artists', {:locals => {:artists => @jam.artists}}) %><br>

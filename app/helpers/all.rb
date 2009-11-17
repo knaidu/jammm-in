@@ -98,4 +98,8 @@ def session_user?
   @session_user if @session_user
 end
 
+def load_player(player_type=nil)
+  
+end
+
 load 'helpers/profile.rb'

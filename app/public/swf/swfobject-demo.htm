@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+
+<head>
+	<link href="styles.css" rel="stylesheet" type="text/css" />
+
+	<script type="text/javascript" src="swfobject.js"></script>
+	<script type="text/javascript" src="jammmin.js"></script>
+
+
+</head>
+
+<body>
+<div id='something'></div>
+	<div id="playerdiv">
+		<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="380" height="70" id="player" align="middle">
+			<param name="allowScriptAccess" value="sameDomain" />
+			<param name="movie" value="player.swf" /><param name="quality" value="high" /><param name="bgcolor" value="#ffffff" /><embed src="player.swf" quality="high" bgcolor="#ffffff" width="380" height="70" name="player" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+		</object>
+	</div>
+	<input type=button onClick='playSong("Song title","C:\\1.mp3","large")'value="play song">
+</body>
+</html>
