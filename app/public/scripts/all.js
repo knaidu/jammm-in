@@ -411,7 +411,7 @@ function playerinit(type)
 }
 
 function play(filehandle){
-	var filepath = "http://localhost/file/" + filehandle;
+	var filepath = $A([window.location.protocol, "//", window.location.host, "/file/", filehandle]).join('');
 	log(filepath);
 	playerinit(GLOBAL.playerType);
 	playSong("file", filepath, "large");
