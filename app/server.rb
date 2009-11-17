@@ -47,3 +47,6 @@ load 'urls/jam.rb'
 
 # Loads all the Jams urls eg: /jam/jam_id
 load 'urls/comment.rb'
+
+# Loads all the files urls eg: /files/:file_handle
+load 'urls/file.rb'

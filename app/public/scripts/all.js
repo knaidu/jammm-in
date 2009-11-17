@@ -1,3 +1,6 @@
+
+var GLOBAL = {playerType: "large"};
+
 /* Debug */
 
 function log(message){
@@ -405,4 +408,11 @@ function playerinit(type)
 			swfobject.embedSWF("/swf/player.swf", "playerdiv", "380", "70", "7.0.0", false, flashvars, params, attributes);
 		else
 			swfobject.embedSWF("/swf/player-small.swf", "playerdiv", "200", "70", "7.0.0", false, flashvars, params, attributes);
+}
+
+function play(filehandle){
+	var filepath = "http://localhost/file/" + filehandle;
+	log(filepath);
+	playerinit(GLOBAL.playerType);
+	playSong("file", filepath, "large");
 }

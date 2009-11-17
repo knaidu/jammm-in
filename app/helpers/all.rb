@@ -1,4 +1,5 @@
 
+
 def partial(page, options={})
   page = page.to_s
   puts "page is: " + page
@@ -99,7 +100,7 @@ def session_user?
 end
 
 def load_player(player_type=nil)
-  
+  partial("common/player", {:locals => {:player_type => player_type}})
 end
 
 load 'helpers/profile.rb'
