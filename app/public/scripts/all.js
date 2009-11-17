@@ -4,7 +4,9 @@ var GLOBAL = {playerType: "large"};
 /* Debug */
 
 function log(message){
-	if(console && console.log) console.log(message)
+	try{
+		if(console && console.log) console.log(message)	
+	}catch(e){}
 }
 
 function loadUrl(url){
