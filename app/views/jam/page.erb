@@ -6,24 +6,10 @@
 	<a class='simple-link' href='/jam/<%= @jam.id %>/manage'>Manage Jam</a>, 
 <% end %>
 <a href='?' class='simple-link'>Refresh</a>
-<br>
+<br><br>
 
-<%= load_player("large") %>
-
-<div class='music-desc'>
-  <%= add_field_name 'Description' %> <%= @jam.description %><br>
-  <%= add_field_name 'Artists' %> <%= partial(:'common/list_artists', {:locals => {:artists => @jam.artists}}) %><br>
-  <%= add_field_name 'Creator' %> <%= @jam.creator.name %><br>
-  <%= add_field_name 'Views' %> <%= @jam.views %><br>
-	<%= add_field_name 'Type' %> <%= display_jam_type(@jam) %><br>
-	<%= add_field_name 'Likes' %> <%= @jam.liked_by.size %><br>
-	<br>
-	<% if @session_user and not @session_user.likes_jam?(@jam) %>
-  	<span class='simple-link display-inline' onClick='likeJam("<%= @jam.id %>")'>Like</span>,
-	<% elsif @session_user %>
-		<span class='simple-link display-inline' onClick='unlikeJam("<%= @jam.id %>")'>Unlike</span>,
-	<% end %>
-	<a class='simple-link' href="javascript:play('<%= @jam.file_handle %>')">PLAY</a>
+<div id='basic-info'>
+	<%= partial('jam/basic_info', :locals => {:jam => @jam}) %>
 </div>
 
 <br>

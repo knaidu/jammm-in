@@ -226,28 +226,24 @@ function deleteSong(songId) {
 	call(url, {onSuccess: function() {loadUrl("/account/songs")}});
 };
 
+function updateSongSections(songId, sections){
+	$H(sections).each(function(kv){
+		var url = formatController('song', songId, kv[1]);
+		updateEl(kv[0], url)
+	});
+}
+
 function likeSong(songId) {
 	var url = formatController('song', songId, 'manage', 'like');
-	call(url);
+	var updateSections = {'basic-info': 'basic_info', 'song-likes': 'likes'}
+	call(url, {onSuccess: function() {updateSongSections(songId, updateSections)}});
 };
 
 function unlikeSong(songId) {
 	var url = formatController('song', songId, 'manage', 'unlike');
-	call(url);
+	var updateSections = {'basic-info': 'basic_info', 'song-likes': 'likes'}
+	call(url, {onSuccess: function() {updateSongSections(songId, updateSections)}});
 };
-
-function commentOnSong(songId) {
-	var comment = $('song-comment-textarea');
-	if(!comment) return;
-	comment = comment.getValue();
-	var url = formatController('song', songId, 'comment');
-	call(url, {method: 'post', parameters: {comment: comment}, onSuccess: function() {loadSongComments(songId)}});
-};
-
-function loadSongComments(songId){
-	var url = formatController('song', songId, 'comments');
-	updateEl('song-comments', url);
-}
 
 /* JAMS */
 function saveJamInformation(){
@@ -287,14 +283,23 @@ function deleteJam(jamId){
 	call(url, {onSuccess: function(){loadUrl("/account/jams")}});
 }
 
+function updateJamSections(jamId, sections){
+	$H(sections).each(function(kv){
+		var url = formatController('jam', jamId, kv[1]);
+		updateEl(kv[0], url)
+	});
+}
+
 function likeJam(jamId) {
 	var url = formatController('jam', jamId, 'manage', 'like');
-	call(url);
+	var updateSections = {'basic-info': 'basic_info', 'jam-likes': 'likes'}
+	call(url, {onSuccess: function() {updateJamSections(jamId, updateSections)}});
 };
 
 function unlikeJam(jamId) {
 	var url = formatController('jam', jamId, 'manage', 'unlike');
-	call(url);
+	var updateSections = {'basic-info': 'basic_info', 'jam-likes': 'likes'}
+	call(url, {onSuccess: function() {updateJamSections(jamId, updateSections)}});
 };
 
 function commentOnJam(jamId) {

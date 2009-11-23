@@ -1,5 +1,7 @@
 <%= section_header 'Likes' %>
-<%= partial :'song/likes' %>
+<div id='song-likes'>
+	<%= partial(:'song/likes', :locals => {:song => @song}) %>
+</div>
 
 <br><br>
 <%= section_header 'Comments' %>

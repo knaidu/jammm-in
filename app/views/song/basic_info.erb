@@ -1,0 +1,12 @@
+<div class='music-desc'>
+  <%= add_field_name 'Description' %> <%= song.description %><br>
+  <%= add_field_name 'Artists' %> <%= partial(:'common/list_artists', {:locals => {:artists => song.artists}}) %><br>
+  <%= add_field_name 'Creator' %> <%= add_profile_link song.creator %><br>
+  <%= add_field_name 'Views' %> <%= song.views %><br>
+  <%= add_field_name 'Likes' %> <%= song.liked_by.size %><br><br>
+	<% if @session_user and not @session_user.likes_song?(song) %>
+  	<span class='simple-link' onClick='likeSong("<%= song.id %>")'>Like</span>
+	<% elsif @session_user %>
+		<span class='simple-link' onClick='unlikeSong("<%= song.id %>")'>Unlike</span>
+	<% end %>
+</div>

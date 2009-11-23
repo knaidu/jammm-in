@@ -5,11 +5,7 @@ class Jam < ActiveRecord::Base
   has_one :song, :through => :song_jam
   has_one :creator, :primary_key => 'registered_user_id', :foreign_key => 'id', :class_name => "User"
   has_one :published, :class_name => "PublishedJam", :dependent => :destroy
-  has_many :likes, :class_name => "Like", :dependent => :destroy, :finder_sql => %q(
-    select * from likes 
-    where for_type='jam' and 
-    for_type_id=#{id}
-  )
+
   has_many :liked_by, :class_name => "User", :finder_sql => %q(
       SELECT "users".* FROM "users"  
       INNER JOIN "likes" ON "users".id = "likes".user_id    
@@ -54,11 +50,11 @@ class Jam < ActiveRecord::Base
   end
 
   def like(user)
-    Like.add(user, 'jam', self)
+    Like.add(user, 'jam', self.id)
   end
   
   def unlike(user)
-    JamLike.remove(self, user)
+    Like.remove(user, 'jam', self.id)
   end
   
   def jam_type

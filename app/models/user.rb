@@ -40,6 +40,10 @@ class User < ActiveRecord::Base
     likes.select{ |like| like.for_type == 'jam'}.map{|jam_like| Jam.find(jam_like.for_type_id)}
   end
   
+  def likes_songs
+    likes.select{ |like| like.for_type == 'song'}.map{|song_like| Song.find(song_like.for_type_id)}
+  end
+  
   def likes_song?(song)
     likes_songs.include?(song)
   end

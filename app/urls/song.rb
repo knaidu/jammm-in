@@ -20,15 +20,12 @@ get '/song/:song_id' do
   erb(:"body/structure")
 end
 
-post '/song/:song_id/comment' do
-  comment = params[:comment]
-  get_passed_song.comment(session_user, comment)
+get '/song/:song_id/basic_info' do
+  erb(:"song/basic_info", :locals => {:song => get_passed_song})
 end
 
-
-get '/song/:song_id/comments' do
-  @song = get_passed_song
-  erb(:'song/comments')
+get '/song/:song_id/likes' do 
+  erb(:"song/likes", :locals => {:song => get_passed_song})
 end
 
 

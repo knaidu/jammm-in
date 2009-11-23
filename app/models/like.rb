@@ -9,4 +9,8 @@ class Like < ActiveRecord::Base
     })
   end  
   
+  def self.remove(user, for_type, for_type_id)
+    self.find_by_user_id_and_for_type_and_for_type_id(user.id, for_type, for_type_id).destroy
+  end
+  
 end

@@ -1,5 +1,7 @@
 <%= section_header 'Likes' %>
-<%= partial :'common/likes' %>
+<div id='jam-likes'>
+	<%= partial(:'common/likes', :locals => {:artists => @jam.liked_by}) %>
+</div>
 
 <br><br>
 <%= section_header 'Comments' %>

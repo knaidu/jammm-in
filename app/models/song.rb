@@ -9,6 +9,11 @@ class Song < ActiveRecord::Base
     where for_type='song' and 
     for_type_id=#{id}
   )
+  has_many :liked_by, :class_name => "User", :finder_sql => %q(
+      SELECT "users".* FROM "users"  
+      INNER JOIN "likes" ON "users".id = "likes".user_id    
+      WHERE (("likes".for_type_id = #{id}))
+  )
   
   after_create :add_to_manager_list
   after_destroy :remove_tenticles
@@ -63,15 +68,11 @@ class Song < ActiveRecord::Base
   end
   
   def like(user)
-    SongLike.add(self, user)
+    Like.add(user, 'song', self.id)
   end
   
   def unlike(user)
-    SongLike.remove(self, user)
-  end
-  
-  def liked_by
-    []
+    Like.remove(user, 'song', self.id)
   end
   
   def self.published_songs

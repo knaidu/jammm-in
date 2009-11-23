@@ -11,16 +11,12 @@ post '/jam/register' do
   jam ? redirect_manage_jam(jam) : "false"
 end
 
-
-post '/jam/:jam_id/comment' do
-  comment = params[:comment]
-  get_passed_jam.comment(session_user, comment)
+get '/jam/:jam_id/basic_info' do
+  erb(:"jam/basic_info", :locals => {:jam => get_passed_jam})
 end
 
-
-get '/jam/:jam_id/comments' do
-  @jam = get_passed_jam
-  erb(:'jam/comments')
+get '/jam/:jam_id/likes' do 
+  erb(:"common/likes", :locals => {:artists => get_passed_jam.liked_by})
 end
 
 get '/jam/:jam_id/manage' do

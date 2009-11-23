@@ -6,7 +6,7 @@ get '/:username' do
   @layout_info = is_user ? layout_info("profile") : layout_info("profile", "usernotfound")
   @menu_data = profile_home_info(user) if is_user
   set_profile_page_info user
-  erb(:"profile/structure")
+  erb(:"body/structure")
 end
 
 
