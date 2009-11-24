@@ -16,3 +16,4 @@
 <%= partial(:'song/jams', {:locals => {:jams => @song.jams}}) %>
 <br>
 <%= section_header 'Lyrics' %>
+<%= format_lyrics(@song.lyrics) %>

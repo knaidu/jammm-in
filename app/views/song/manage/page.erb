@@ -38,3 +38,9 @@
 </div>
 
 <%= section_header 'Lyrics' %>
+<form action='/song/<%= @song.id %>/manage/add_lyrics' method='post' onsubmit='return false' id='song-lyrics-form'>
+	<textarea name='lyrics'><%= @song.lyrics %></textarea>
+	<br><br>
+	<input type='submit' value='Save' onclick="submitForm('song-lyrics-form', 'song-lyrics-form-response')">
+</form>  
+<div id='song-lyrics-form-response'></div>

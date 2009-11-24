@@ -4,6 +4,7 @@ class Song < ActiveRecord::Base
   has_many :song_managers, :dependent => :destroy
   has_many :managers, :through => :song_managers
   belongs_to :creator, :class_name => "User", :foreign_key => "registered_user_id"
+  has_one :song_lyric, :dependent => :destroy
   has_many :comments, :class_name => "Comment", :dependent => :destroy, :finder_sql => %q(
     select * from comments 
     where for_type='song' and 
@@ -73,6 +74,14 @@ class Song < ActiveRecord::Base
   
   def unlike(user)
     Like.remove(user, 'song', self.id)
+  end
+  
+  def add_lyrics(user, lyrics)
+    SongLyric.add(user, self, lyrics)
+  end
+  
+  def lyrics
+    song_lyric.lyrics rescue nil
   end
   
   def self.published_songs

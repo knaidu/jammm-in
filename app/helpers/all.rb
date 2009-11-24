@@ -103,4 +103,9 @@ def load_player(player_type=nil)
   partial("common/player", {:locals => {:player_type => player_type}})
 end
 
+def format_lyrics(lyrics)
+  return "" if not lyrics
+  lyrics.gsub("\n", "<br>")
+end
+
 load 'helpers/profile.rb'

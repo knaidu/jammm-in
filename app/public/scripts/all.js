@@ -70,6 +70,7 @@ function loadMessage(id, message, className){
 	var items = ["<center>", "<br>", div, "<br>", "</center>"];	
 	el.innerHTML = '';
 	$A(items).each(function(item){el.insert(item)});
+	window.setTimeout(function(){el.innerHTML = ''}, 2000); // empties the window after 2 seconds
 }
 
 function loadSuccessMessage(id, message){
@@ -244,6 +245,7 @@ function unlikeSong(songId) {
 	var updateSections = {'basic-info': 'basic_info', 'song-likes': 'likes'}
 	call(url, {onSuccess: function() {updateSongSections(songId, updateSections)}});
 };
+
 
 /* JAMS */
 function saveJamInformation(){

@@ -11,5 +11,10 @@ class ActiveRecord::Base < Object
   def self.with_username(username)
     self.find_by_username(username)
   end
+  
+  def append(attrs)
+    self.update_attributes(attrs)
+    self.save
+  end
 
 end

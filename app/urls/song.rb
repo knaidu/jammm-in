@@ -109,3 +109,8 @@ get '/song/:song_id/manage/unlike' do
   song = get_passed_song
   song.unlike(session_user) ? "Successfully unliked song" : "Error in unliking song"
 end
+
+post '/song/:song_id/manage/add_lyrics' do
+  song = get_passed_song
+  song.add_lyrics(session_user, params[:lyrics]) ? "saved lyrics" : "could not save lyrics"
+end
