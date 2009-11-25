@@ -1,4 +1,8 @@
-require 'load_needed.rb'
+require "#{ENV["WEBSERVER_ROOT"]}/scripts/load_needed.rb"
+require 'daemons'
+
+puts "Running script in the background"
+Daemons.daemonize # Runs the script in the background
 
 options = {}
 ARGV.each do |arg|
@@ -9,6 +13,7 @@ end
 puts options.inspect
 
 jams = options[:jams].split(',').map do |id| Jam.find(id.to_i) end
+song = Song.find(options[:song])
 
 if jams.empty?
   puts "No Jams provided."
@@ -16,13 +21,7 @@ if jams.empty?
   exit
 end
 
-if not options[:process_info_id]
-  puts "Process Info Not provided."
-  puts "Exiting..."
-  exit 
-end
-
-process_info = ProcessInfo.find_by_process_id(options[:process_info_id].to_i) || ProcessInfo.add(options[:process_info_id].to_i)
+process_info = ProcessInfo.find_by_process_id(options[:process_id].to_i) || ProcessInfo.add(options[:process_id].to_i)
 process_info.clear
 
 process_info.set_message "Processing songs"
@@ -34,13 +33,12 @@ end
 if jams.size == 1
   puts "single jam"
   ids = jams.map(&:id)
-  song_jams.each do |song_jam|
+  song.song_jams.each do |song_jam|
     ids.include?(song_jam.jam_id) ? song_jam.activate : song_jam.deactivate
   end
-  song.delete_file_handle if file_handle_exists?
+  song.delete_file_handle if song.file_handle_exists?
   song.file_handle = jams[0].make_copy_of_file_handle(new_file_handle_name) if jams[0].file_handle_exists?
-  puts "the last file handle #{self.file_handle.to_s}"
-  self.save
+  song.save
   
   process_info.set_done "Song has been successfully published."
   exit

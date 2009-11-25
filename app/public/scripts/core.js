@@ -66,7 +66,10 @@ var Poll = Class.create({
 	},
 	
 	start: function(){return Poll.start(this)},
-	loadMessage: function(message) {this.messageDivEl.innerHTML = message},
+	loadMessage: function(message) {
+		if(!this.messageDiv || this.messageDivEl) return;
+		this.messageDivEl.innerHTML = message
+	},
 	stop: function(){this._completed = true}
 });
 

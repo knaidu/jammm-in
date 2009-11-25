@@ -54,3 +54,6 @@ load 'urls/comment.rb'
 
 # Loads all the files urls eg: /files/:file_handle
 load 'urls/file.rb'
+
+# Loads all the process_info urls
+load 'urls/process_info.rb'

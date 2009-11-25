@@ -212,9 +212,19 @@ function publishSong(songId){
 	var checkedJamIds = $A(songJams).map(function(el){
 		return el.checked ? el.value : null 
 	}).compact();
+	
+	var callback = function(response){
+		var config = {
+			url: "/process_info/" + response.responseText,
+			onSuccess: reload
+		};
+		var poll = new Poll(config);
+		poll.start();
+	}
+	
 	var url = formatController('song', songId, 'manage', 'publish');
 	url = formatUrl(url, {jam_ids: $A(checkedJamIds).join(",")});
-	call(url, {onSuccess: reload});
+	call(url, {onSuccess: callback});
 }
 
 function unpublishSong(songId) {

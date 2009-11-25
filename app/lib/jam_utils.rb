@@ -49,14 +49,14 @@ module JamUtils
   
   def make_copy(newname=nil)
     attrs = self.attributes
-    new_file_handle_name = Utils.new_file_handle_name
+    file_handle_name = new_file_handle_name
     newattrs = attrs.keys_to_sym.delete_keys(:id, :created_at, :views, :file_handle)
     newattrs[:created_at] = Time.now # WORK AROUND. As CREATED_AT was taking the old CREATED_AT value
     
     newjam = Jam.new(newattrs)
-    File.copy(file_handle_path(self), (FILES_DIR + "/" + new_file_handle_name)) if file_handle_exists? # Makes a copy of the physical file
+    File.copy(file_handle_path(self), (FILES_DIR + "/" + file_handle_name)) if file_handle_exists? # Makes a copy of the physical file
     newjam.name = newname || ("#{self.name} (copy)")
-    newjam.file_handle = new_file_handle_name if file_handle_exists?
+    newjam.file_handle = file_handle_name if file_handle_exists?
     newjam.save    
     
     # Tags all the Artists of the orginal song in the copy

@@ -87,7 +87,7 @@ get '/song/:song_id/manage/publish' do
   song = get_passed_song
   jams_arr = params[:jam_ids].split(',')
   jams = params[:jam_ids].split(',').map do |id| Jam.find(id) end
-  song.publish(jams) ? "Successfully published song" : "Error in publishing song"
+  song.publish(jams).to_json
 end
 
 get '/song/:song_id/manage/unpublish' do
