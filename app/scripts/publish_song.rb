@@ -30,13 +30,20 @@ def file_path(file_handle)
   ENV["FILES_DIR"] + "/" + file_handle
 end
 
-if jams.size == 1
-  puts "single jam"
+def mark_jams_as_active(song, jams)
   ids = jams.map(&:id)
   song.song_jams.each do |song_jam|
     ids.include?(song_jam.jam_id) ? song_jam.activate : song_jam.deactivate
   end
-  song.delete_file_handle if song.file_handle_exists?
+end
+
+def delete_old_song_file_handle(song, jams)
+  song.delete_file_handle if song.file_handle_exists?  
+end
+
+if jams.size == 1
+  mark_jams_as_active(song, jams)
+  delete_old_song_file_handle(song, jams)
   song.file_handle = jams[0].make_copy_of_file_handle(new_file_handle_name) if jams[0].file_handle_exists?
   song.save
   
@@ -44,6 +51,9 @@ if jams.size == 1
   exit
   
 end
+
+mark_jams_as_active(song, jams)
+delete_old_song_file_handle(song, jams)
 
 sox_output = new_file_handle_name + ".wav"
 lame_output = new_file_handle_name + ".mp3"

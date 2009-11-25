@@ -14,6 +14,6 @@
 <% jams.each do |jam| %>
   <%= partial('song/manage/jam', {:locals => {:jam => jam }}) %><br>
 <% end %>
-<input type='button' value='Publish Song' onclick='publishSong("<%= @song.id %>")'song.>
+<input type='button' value='Publish Song' onclick='publishSong("<%= @song.id %>")'> <span id='publish-response'>progress...</span>
 <br><br>
 

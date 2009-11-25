@@ -61,13 +61,13 @@ var Poll = Class.create({
 		
 		Object.applyHash(this, config);
 		if(this.messageDiv)
-			this.messageDivEl = $(this.messageDiv)
+			this.messageDivEl = $(this.messageDiv);
 		this.period *= 1000
 	},
 	
 	start: function(){return Poll.start(this)},
 	loadMessage: function(message) {
-		if(!this.messageDiv || this.messageDivEl) return;
+		if(!this.messageDiv || !this.messageDivEl) return;
 		this.messageDivEl.innerHTML = message
 	},
 	stop: function(){this._completed = true}

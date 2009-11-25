@@ -216,6 +216,7 @@ function publishSong(songId){
 	var callback = function(response){
 		var config = {
 			url: "/process_info/" + response.responseText,
+			messageDiv: "publish-response",
 			onSuccess: reload
 		};
 		var poll = new Poll(config);
