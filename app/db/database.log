@@ -1,6 +1,6 @@
 SQL (0.1ms)  SET client_min_messages TO 'panic'
 SQL (0.1ms)  SET client_min_messages TO 'notice'
-SQL (39.1ms)  SELECT version FROM schema_migrations
+SQL (0.5ms)  SELECT version FROM schema_migrations
 Migrating to CreateTestTable (1)
 Migrating to CreateUserTable (2)
 Migrating to CreateSongsTable (3)
@@ -20,7 +20,8 @@ Migrating to CreateJamAndSongLikesTable (16)
 Migrating to CreateCommentsTable (17)
 Migrating to CreateMessagesTable (18)
 Migrating to CreateSongLyricsTable (19)
+Migrating to CreateProcessInfoTable (20)
 SQL (0.1ms)  BEGIN
-SQL (305.3ms)  CREATE TABLE "song_lyrics" ("id" serial primary key, "song_id" integer, "user_id" integer, "lyrics" text) 
-SQL (2.6ms)  INSERT INTO schema_migrations (version) VALUES ('19')
-SQL (1.6ms)  COMMIT
+SQL (7.2ms)  CREATE TABLE "process_info" ("id" serial primary key, "done" boolean, "process_id" integer, "failed" boolean, "message" character varying(255)) 
+SQL (2.0ms)  INSERT INTO schema_migrations (version) VALUES ('20')
+SQL (1.7ms)  COMMIT

@@ -1,3 +1,10 @@
+
+Ajax.Response.addMethods({
+  evalJSON: function() {
+    return this.transport.responseText.evalJSON()
+  }
+});
+
 Object.extend(Object, function(){
 	function applyHash(object, hash){
 		$H(hash).each(function(kv){object[kv[0]] = kv[1];});
@@ -38,3 +45,52 @@ ProgressBar._constructHtml = function(progressBar){
 		"</div>"
 	]).join('');
 }
+
+
+/* Poll */
+
+var Poll = Class.create({
+	initialize: function(config){
+		
+		this.onSuccess = function() {};
+		this.onFailure = function() {};
+		this.period = 5;
+		this.url = false;
+		this._completed = false;
+		this.messageDiv = false;
+		
+		Object.applyHash(this, config);
+		if(this.messageDiv)
+			this.messageDivEl = $(this.messageDiv)
+		this.period *= 1000
+	},
+	
+	start: function(){return Poll.start(this)},
+	loadMessage: function(message) {this.messageDivEl.innerHTML = message},
+	stop: function(){this._completed = true}
+});
+
+Poll._processUrl = function(poll){
+	if(poll._completed) return;
+	
+	var callback = function(response){
+		var json = response.evalJSON();
+		if(json.message)
+			poll.loadMessage(json.message);
+		if(json.failed){
+			poll.onFailure(json);
+			poll.stop();
+		}
+		if(json.done){
+			poll.onSuccess(json);
+			poll.stop();
+		}
+		window.setTimeout(function(){Poll._processUrl(poll)}, poll.period);
+	}
+	call(poll.url, {onSuccess: callback});
+}.bind(Poll);
+
+Poll.start = function(poll){
+	this._completed = false;
+	this._processUrl(poll);
+}.bind(Poll);

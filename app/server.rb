@@ -30,6 +30,10 @@ get '/stylesheets/*.css' do
   erb :"stylesheets/#{filename}"
 end
 
+get '/test' do
+  {:done => true, :failed => false}.to_json
+end
+
 load 'urls/signin.rb'
 load 'urls/signup.rb'
 
