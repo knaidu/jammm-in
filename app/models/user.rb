@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :registered_jams, :class_name => "Jam", :foreign_key => "registered_user_id"
   has_many :likes
   has_many :messages, :foreign_key => "to_id", :dependent => :destroy
+  validates_uniqueness_of :username, :message => "has already been registered"
 
   def collaborators
     artists = jams.map(&:artists).flatten.uniq.reject do |user| user == self end

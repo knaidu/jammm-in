@@ -66,3 +66,12 @@ end
 def subsections(section)
   $layout_info[section].map{|k, v| v.class.to_s.downcase == 'hash' ? k : nil}.compact
 end
+
+def md5(str)
+  Digest::MD5.hexdigest(str)
+end
+
+def allow_login?(username, password)
+  password = md5(password)
+  true if User.find_by_username_and_password(username, password)
+end

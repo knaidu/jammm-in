@@ -1,7 +1,8 @@
 module UserUtils
 
   def create_new_user(user_info)
-    User.create(user_info)
+    user_info[:password] = md5(user_info[:password])
+    User.create!(user_info)
   end
   
   def profile_home_info(username)

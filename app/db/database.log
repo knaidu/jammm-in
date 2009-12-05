@@ -1,6 +1,6 @@
-SQL (0.1ms)  SET client_min_messages TO 'panic'
+SQL (0.2ms)  SET client_min_messages TO 'panic'
 SQL (0.1ms)  SET client_min_messages TO 'notice'
-SQL (0.5ms)  SELECT version FROM schema_migrations
+SQL (23.8ms)  SELECT version FROM schema_migrations
 Migrating to CreateTestTable (1)
 Migrating to CreateUserTable (2)
 Migrating to CreateSongsTable (3)
@@ -21,7 +21,8 @@ Migrating to CreateCommentsTable (17)
 Migrating to CreateMessagesTable (18)
 Migrating to CreateSongLyricsTable (19)
 Migrating to CreateProcessInfoTable (20)
-SQL (0.1ms)  BEGIN
-SQL (7.2ms)  CREATE TABLE "process_info" ("id" serial primary key, "done" boolean, "process_id" integer, "failed" boolean, "message" character varying(255)) 
-SQL (2.0ms)  INSERT INTO schema_migrations (version) VALUES ('20')
-SQL (1.7ms)  COMMIT
+Migrating to AddPasswordToUserTable (21)
+SQL (0.2ms)  BEGIN
+SQL (0.0ms)  PGError: ERROR: column "password" of relation "users" already exists
+: ALTER TABLE "users" ADD COLUMN "password" character varying(255)
+SQL (0.2ms)  ROLLBACK

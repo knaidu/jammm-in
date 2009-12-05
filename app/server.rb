@@ -2,6 +2,8 @@ require 'rubygems'
 require 'sinatra'
 require 'ftools'
 require 'yaml'
+require 'digest/md5'
+
 
 set :public, File.dirname(__FILE__) + '/public'
 enable :sessions

@@ -39,9 +39,10 @@ class Song < ActiveRecord::Base
   
   def delete_file_handle
     File.delete(self.file.path) if self.file_handle
-    puts 'huh'
     self.file_handle = nil
     self.save
+  rescue
+    nil
   end
   
   def file_handle_exists?
