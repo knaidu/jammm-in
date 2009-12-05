@@ -18,7 +18,7 @@ def get_passed_jam
 end
 
 def new_file_handle_name
-  Time.now.to_f.to_s.gsub('.', '-')
+  Time.now.to_f.to_s.gsub('.', '-') + ".mp3"
 end
 
 def file_handle_path(obj)
