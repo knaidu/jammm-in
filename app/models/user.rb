@@ -65,7 +65,6 @@ class User < ActiveRecord::Base
         "FROM feeds f, user_feeds uf",
         "WHERE f.id = uf.feed_id",
         "AND uf.user_id=#{self.id}",
-        "OR f.scope = 'global'",
         "ORDER BY created_at DESC"
       ].join(' ')
     ).uniq
