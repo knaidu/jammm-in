@@ -16,10 +16,15 @@ class Song < ActiveRecord::Base
       WHERE (("likes".for_type_id = #{id}))
   )
   
-  after_create :add_to_manager_list
   after_destroy :remove_tenticles
 
   include SongUtils
+  
+  def after_create
+    add_to_manager_list
+    feed = Feed.add({:song_id => self.id, :user_ids => [self.creator.id]}, "song_created")
+    feed.add_users([self.creator])
+  end
   
   def artists
     jams.map(&:artists).flatten.uniq

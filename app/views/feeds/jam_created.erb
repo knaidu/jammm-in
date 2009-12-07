@@ -1,0 +1,11 @@
+<% jam = fhlp_get_jam(feed) %>
+<div>
+	<span class='float-left'>
+		<%= add_icon_with_pad %>
+	</span>
+	<% if jam.creator == session_user? and not is_update %>
+		You have created a new jam <a href="/jam/<%= jam.id %>" class='simple-link'><%= jam.name %></a>
+	<% else %>
+		<%= add_profile_link(fhlp_get_users(feed)[0]) %> has created a new jam <%= jam_link(jam) %>
+	<% end %>
+</div>

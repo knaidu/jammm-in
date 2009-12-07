@@ -17,10 +17,15 @@ class Jam < ActiveRecord::Base
     for_type_id=#{id}
   )
   
-  after_create {|jam| jam.tag_artist(jam.creator)}
   after_destroy :delete_file_handle
 
   include JamUtils
+  
+  def after_create
+    self.tag_artist(self.creator)
+    feed = Feed.add({:jam_id => self.id, :user_ids => [self.creator.id]}, "jam_created")
+    feed.add_users([self.creator])
+  end
 
   def file
     File.open(ENV['FILES_DIR'] + "/" + file_handle) rescue nil

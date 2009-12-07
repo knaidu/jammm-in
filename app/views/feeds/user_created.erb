@@ -1,0 +1,11 @@
+<% user = fhlp_get_users(feed)[0] %>
+<div>
+	<span class='float-left'>
+		<%= add_icon_with_pad %>
+	</span>
+	<% if session_user? and not is_update %>
+		Welcome to Jammm.in
+	<% else %>
+		<%= add_profile_link(user) %> has has joined Jammm.in
+	<% end %>
+</div>

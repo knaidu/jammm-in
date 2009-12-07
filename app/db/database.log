@@ -23,7 +23,7 @@ Migrating to CreateSongLyricsTable (19)
 Migrating to CreateProcessInfoTable (20)
 Migrating to CreateFeedsAndUserFeedsTables (21)
 SQL (0.1ms)  BEGIN
-SQL (11.8ms)  CREATE TABLE "feeds" ("id" serial primary key, "data" character varying(255), "feed_type" character varying(255), "created_at" timestamp DEFAULT '2009-12-07 20:05:22.673659') 
-SQL (3.7ms)  CREATE TABLE "user_feeds" ("id" serial primary key, "feed_id" integer, "user_id" integer) 
-SQL (0.3ms)  INSERT INTO schema_migrations (version) VALUES ('21')
-SQL (1.2ms)  COMMIT
+SQL (10.8ms)  CREATE TABLE "feeds" ("id" serial primary key, "data_str" character varying(255), "feed_type" character varying(255), "scope" character varying(255), "created_at" timestamp DEFAULT '2009-12-07 23:17:36.970977') 
+SQL (4.6ms)  CREATE TABLE "user_feeds" ("id" serial primary key, "feed_id" integer, "user_id" integer) 
+SQL (0.4ms)  INSERT INTO schema_migrations (version) VALUES ('21')
+SQL (2.1ms)  COMMIT

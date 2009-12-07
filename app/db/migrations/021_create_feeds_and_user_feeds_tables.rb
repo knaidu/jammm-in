@@ -3,8 +3,9 @@ class CreateFeedsAndUserFeedsTables < ActiveRecord::Migration
   def self.up
     # Song Song Lyrics
     create_table :feeds do |i|
-      i.column :data, :string
+      i.column :data_str, :string
       i.column :feed_type, :string
+      i.column :scope, :string
       i.column :created_at, :timestamp, :default => Time.now
     end    
     

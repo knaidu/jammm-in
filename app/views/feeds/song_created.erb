@@ -1,0 +1,11 @@
+<% song = fhlp_get_song(feed) %>
+<div>
+	<span class='float-left'>
+		<%= add_icon_with_pad %>
+	</span>
+	<% if song.creator == session_user? and not is_update %>
+		You have created a new song <%= song_link(song) %>
+	<% else %>
+		<%= add_profile_link(fhlp_get_users(feed)[0]) %> has created a new song <%= song_link(song) %>
+	<% end %>
+</div>

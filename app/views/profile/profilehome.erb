@@ -1,4 +1,7 @@
 <%= section_header('Updates') %>
+<%= partial("common/feeds", :locals => {:feeds => @user.updates, :show_as_updates => true}) %>
+<br>
+
 <%= section_header('Songs') %>
 <%= partial (:'common/songs', :locals => {:songs => @user.songs}) %> 
 

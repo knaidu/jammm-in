@@ -12,6 +12,11 @@ class User < ActiveRecord::Base
   has_many :messages, :foreign_key => "to_id", :dependent => :destroy
   validates_uniqueness_of :username, :message => "has already been registered"
 
+  def after_create
+    feed = Feed.add({:user_ids => [self.id]}, "user_created", "global")
+    feed.add_users([self.id])
+  end
+
   def collaborators
     artists = jams.map(&:artists).flatten.uniq.reject do |user| user == self end
   end
@@ -59,7 +64,22 @@ class User < ActiveRecord::Base
         "SELECT f.*",
         "FROM feeds f, user_feeds uf",
         "WHERE f.id = uf.feed_id",
-        "AND uf.user_id=#{self.id} OR uf.user_id = 0"
+        "AND uf.user_id=#{self.id}",
+        "OR f.scope = 'global'",
+        "ORDER BY created_at DESC"
+      ].join(' ')
+    ).uniq
+  end
+  
+  # Determines the Updates for the User
+  def updates
+    (Feed.find_by_sql [
+        "SELECT f.*",
+        "FROM feeds f, user_feeds uf",
+        "WHERE f.id = uf.feed_id",
+        "AND uf.user_id=#{self.id}",
+        "AND (f.scope = 'public' OR f.scope = 'protected')",
+        "ORDER BY created_at DESC"
       ].join(' ')
     ).uniq
   end

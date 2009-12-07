@@ -1,5 +1,5 @@
 <%= section_header('Feed') %>
-<%= partial("common/feeds", :locals => {:feeds => @session_user.feeds}) %>
+<%= partial("common/feeds", :locals => {:feeds => @session_user.feeds, :show_as_updates => false}) %>
 <br>
 
 <%= section_header('Songs') %>

@@ -66,12 +66,25 @@ def add_icon(icon=false)
   "<img src='/images/common/icon.png'>"
 end
 
+def add_icon_with_pad(icon=false)
+  "<span class='left-float pad-right-10'>#{add_icon(icon)}</span>"
+end
+
 def add_field_name(text)
   "<span class='display-inline bold grey'>" + text + ":</span>"
 end
 
 def add_profile_link(user)
   add_link(user.name, ("/" + user.username)) rescue ""
+end
+alias profile_link add_profile_link
+
+def jam_link(jam)
+  add_link(jam.name, ("/jam/" + jam.id.to_s))
+end
+
+def song_link(song)
+  add_link(song.name, ("/song/" + song.id.to_s))
 end
 
 def list_artists(artists)
