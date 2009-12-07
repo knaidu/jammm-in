@@ -53,4 +53,15 @@ class User < ActiveRecord::Base
     likes_jams.include?(jam)    
   end
   
+  # Determines the Feeds for the User
+  def feeds
+    (Feed.find_by_sql [
+        "SELECT f.*",
+        "FROM feeds f, user_feeds uf",
+        "WHERE f.id = uf.feed_id",
+        "AND uf.user_id=#{self.id} OR uf.user_id = 0"
+      ].join(' ')
+    ).uniq
+  end
+  
 end

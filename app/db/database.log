@@ -1,6 +1,6 @@
-SQL (0.2ms)  SET client_min_messages TO 'panic'
+SQL (0.1ms)  SET client_min_messages TO 'panic'
 SQL (0.1ms)  SET client_min_messages TO 'notice'
-SQL (23.8ms)  SELECT version FROM schema_migrations
+SQL (0.5ms)  SELECT version FROM schema_migrations
 Migrating to CreateTestTable (1)
 Migrating to CreateUserTable (2)
 Migrating to CreateSongsTable (3)
@@ -21,8 +21,9 @@ Migrating to CreateCommentsTable (17)
 Migrating to CreateMessagesTable (18)
 Migrating to CreateSongLyricsTable (19)
 Migrating to CreateProcessInfoTable (20)
-Migrating to AddPasswordToUserTable (21)
-SQL (0.2ms)  BEGIN
-SQL (0.0ms)  PGError: ERROR: column "password" of relation "users" already exists
-: ALTER TABLE "users" ADD COLUMN "password" character varying(255)
-SQL (0.2ms)  ROLLBACK
+Migrating to CreateFeedsAndUserFeedsTables (21)
+SQL (0.1ms)  BEGIN
+SQL (11.8ms)  CREATE TABLE "feeds" ("id" serial primary key, "data" character varying(255), "feed_type" character varying(255), "created_at" timestamp DEFAULT '2009-12-07 20:05:22.673659') 
+SQL (3.7ms)  CREATE TABLE "user_feeds" ("id" serial primary key, "feed_id" integer, "user_id" integer) 
+SQL (0.3ms)  INSERT INTO schema_migrations (version) VALUES ('21')
+SQL (1.2ms)  COMMIT
