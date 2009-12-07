@@ -111,3 +111,343 @@ page is: body/footer
 127.0.0.1 - - [13/Nov/2009 18:28:25] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0023
 127.0.0.1 - - [13/Nov/2009 18:28:25] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0022
 >> Exiting!
+>> Writing PID to /home/jammmin/webserver/app/processes.4567
+>> Changing process privilege to root:root
+Couldn't change user and group to root:root: Operation not permitted
+DBCONFIG: {"port"=>5432, "username"=>"jammmin", "adapter"=>"postgresql", "database"=>"garage", "password"=>"3WiseMen"}
+DB CONNECTION: #<ActiveRecord::ConnectionAdapters::ConnectionPool:0x7fa2c6ed5fd8 @checked_out=[], @connection_mutex=#<Monitor:0x7fa2c6ed5f60 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>, @size=5, @reserved_connections={}, @spec=#<ActiveRecord::Base::ConnectionSpecification:0x7fa2c6f27ec8 @config={:port=>5432, :adapter=>"postgresql", :database=>"garage", :username=>"jammmin", :password=>"3WiseMen"}, @adapter_method="postgresql_connection">, @timeout=5, @connections=[], @queue=#<MonitorMixin::ConditionVariable:0x7fa2c6ed5ee8 @waiters=[], @monitor=#<Monitor:0x7fa2c6ed5f60 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>>>
+libs are: ["active_record.rb", "extensions.rb", "jam_utils.rb", "song_utils.rb", "user.rb", "utils.rb"]
+models are: ["comment.rb", "feed.rb", "follower.rb", "jam.rb", "jam_artist.rb", "like.rb", "message.rb", "process_info.rb", "published_jam.rb", "song.rb", "song_jam.rb", "song_lyric.rb", "song_manager.rb", "test_tables.rb", "user.rb", "user_feed.rb"]
+>> Thin web server (v1.2.2 codename I Find Your Lack of Sauce Disturbing)
+>> Maximum connections set to 1024
+>> Listening on 127.0.0.1:4567, CTRL+C to stop
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: homepage/left
+page is: homepage/middle
+page is: common/songs
+/home/jammmin/webserver/app/views/common/songs.erb:2: warning: don't put space before argument parentheses
+page is: common/jams
+/home/jammmin/webserver/app/views/common/jams.erb:2: warning: don't put space before argument parentheses
+page is: homepage/right
+page is: common/feeds
+page is: body/footer_and_body_end
+page is: body/footer
+59.92.185.216 - - [07/Dec/2009 18:42:08] "GET / HTTP/1.1" 200 2183 0.0440
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: homepage/left
+page is: homepage/middle
+page is: common/songs
+/home/jammmin/webserver/app/views/common/songs.erb:2: warning: don't put space before argument parentheses
+page is: common/jams
+/home/jammmin/webserver/app/views/common/jams.erb:2: warning: don't put space before argument parentheses
+page is: homepage/right
+page is: common/feeds
+page is: body/footer_and_body_end
+page is: body/footer
+59.92.185.216 - - [07/Dec/2009 18:42:08] "GET / HTTP/1.1" 200 2183 0.0120
+59.92.185.216 - - [07/Dec/2009 18:42:09] "GET /stylesheets/common.css HTTP/1.1" 200 3833 0.0040
+59.92.185.216 - - [07/Dec/2009 18:42:09] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0000
+59.92.185.216 - - [07/Dec/2009 18:42:09] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0040
+59.92.185.216 - - [07/Dec/2009 18:42:09] "GET /scripts/all.js HTTP/1.1" 304 - 0.0040
+59.92.185.216 - - [07/Dec/2009 18:42:09] "GET /scripts/core.js HTTP/1.1" 304 - 0.0040
+59.92.185.216 - - [07/Dec/2009 18:42:10] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0000
+59.92.185.216 - - [07/Dec/2009 18:42:10] "GET /swf/player.swf HTTP/1.1" 304 - 0.0000
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/nil
+page is: profile/usernotfound
+page is: profile/nil
+page is: body/footer_and_body_end
+page is: body/footer
+59.92.185.216 - - [07/Dec/2009 18:42:10] "GET /undefined HTTP/1.1" 200 1953 0.0120
+>> Exiting!
+>> Writing PID to /home/jammmin/webserver/app/processes.4567
+>> Changing process privilege to root:root
+Couldn't change user and group to root:root: Operation not permitted
+DBCONFIG: {"port"=>5432, "username"=>"jammmin", "adapter"=>"postgresql", "database"=>"garage", "password"=>"3WiseMen"}
+DB CONNECTION: #<ActiveRecord::ConnectionAdapters::ConnectionPool:0x7f3aba698fd8 @checked_out=[], @connection_mutex=#<Monitor:0x7f3aba698f60 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>, @size=5, @reserved_connections={}, @spec=#<ActiveRecord::Base::ConnectionSpecification:0x7f3aba6eaec8 @config={:port=>5432, :adapter=>"postgresql", :database=>"garage", :username=>"jammmin", :password=>"3WiseMen"}, @adapter_method="postgresql_connection">, @timeout=5, @connections=[], @queue=#<MonitorMixin::ConditionVariable:0x7f3aba698ee8 @waiters=[], @monitor=#<Monitor:0x7f3aba698f60 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>>>
+libs are: ["active_record.rb", "extensions.rb", "jam_utils.rb", "song_utils.rb", "user.rb", "utils.rb"]
+models are: ["comment.rb", "feed.rb", "follower.rb", "jam.rb", "jam_artist.rb", "like.rb", "message.rb", "process_info.rb", "published_jam.rb", "song.rb", "song_jam.rb", "song_lyric.rb", "song_manager.rb", "test_tables.rb", "user.rb", "user_feed.rb"]
+>> Thin web server (v1.2.2 codename I Find Your Lack of Sauce Disturbing)
+>> Maximum connections set to 1024
+>> Listening on 127.0.0.1:4567, CTRL+C to stop
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: homepage/left
+page is: homepage/middle
+page is: common/songs
+/home/jammmin/webserver/app/views/common/songs.erb:2: warning: don't put space before argument parentheses
+page is: common/jams
+/home/jammmin/webserver/app/views/common/jams.erb:2: warning: don't put space before argument parentheses
+page is: homepage/right
+ActiveRecord::StatementInvalid - PGError: ERROR:  syntax error at or near "AND"
+LINE 1: SELECT f.* FROM feeds f WHERE AND f.scope = 'global' OR f.sc...
+                                      ^
+: SELECT f.* FROM feeds f WHERE AND f.scope = 'global' OR f.scope = 'public' ORDER BY created_at DESC:
+ helpers/feed.rb:14:in `global_feeds'
+ /home/jammmin/webserver/app/views/homepage/right.erb:2:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/body/structure.erb:9:in `render_erb'
+ /home/jammmin/webserver/app/server.rb:26:in `GET /'59.92.185.216 - - [07/Dec/2009 18:44:46] "GET / HTTP/1.1" 500 30 0.0320
+>> Exiting!
+>> Writing PID to /home/jammmin/webserver/app/processes.4567
+>> Changing process privilege to root:root
+Couldn't change user and group to root:root: Operation not permitted
+DBCONFIG: {"port"=>5432, "username"=>"jammmin", "adapter"=>"postgresql", "database"=>"garage", "password"=>"3WiseMen"}
+DB CONNECTION: #<ActiveRecord::ConnectionAdapters::ConnectionPool:0x7f9bbb4a8fb8 @checked_out=[], @connection_mutex=#<Monitor:0x7f9bbb4a8f40 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>, @size=5, @reserved_connections={}, @spec=#<ActiveRecord::Base::ConnectionSpecification:0x7f9bbb4faea8 @config={:port=>5432, :adapter=>"postgresql", :database=>"garage", :username=>"jammmin", :password=>"3WiseMen"}, @adapter_method="postgresql_connection">, @timeout=5, @connections=[], @queue=#<MonitorMixin::ConditionVariable:0x7f9bbb4a8ec8 @waiters=[], @monitor=#<Monitor:0x7f9bbb4a8f40 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>>>
+libs are: ["active_record.rb", "extensions.rb", "jam_utils.rb", "song_utils.rb", "user.rb", "utils.rb"]
+models are: ["comment.rb", "feed.rb", "follower.rb", "jam.rb", "jam_artist.rb", "like.rb", "message.rb", "process_info.rb", "published_jam.rb", "song.rb", "song_jam.rb", "song_lyric.rb", "song_manager.rb", "test_tables.rb", "user.rb", "user_feed.rb"]
+>> Thin web server (v1.2.2 codename I Find Your Lack of Sauce Disturbing)
+>> Maximum connections set to 1024
+>> Listening on 127.0.0.1:4567, CTRL+C to stop
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: homepage/left
+page is: homepage/middle
+page is: common/songs
+/home/jammmin/webserver/app/views/common/songs.erb:2: warning: don't put space before argument parentheses
+page is: common/jams
+/home/jammmin/webserver/app/views/common/jams.erb:2: warning: don't put space before argument parentheses
+page is: homepage/right
+ActiveRecord::StatementInvalid - PGError: ERROR:  syntax error at or near "AND"
+LINE 1: SELECT f.* FROM feeds f WHERE AND f.scope = 'global' OR f.sc...
+                                      ^
+: SELECT f.* FROM feeds f WHERE AND f.scope = 'global' OR f.scope = 'public' ORDER BY created_at DESC:
+ helpers/feed.rb:14:in `global_feeds'
+ /home/jammmin/webserver/app/views/homepage/right.erb:2:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/body/structure.erb:9:in `render_erb'
+ /home/jammmin/webserver/app/server.rb:26:in `GET /'59.92.185.216 - - [07/Dec/2009 18:44:55] "GET / HTTP/1.1" 500 30 0.0280
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: homepage/left
+page is: homepage/middle
+page is: common/songs
+/home/jammmin/webserver/app/views/common/songs.erb:2: warning: don't put space before argument parentheses
+page is: common/jams
+/home/jammmin/webserver/app/views/common/jams.erb:2: warning: don't put space before argument parentheses
+page is: homepage/right
+ActiveRecord::StatementInvalid - PGError: ERROR:  syntax error at or near "AND"
+LINE 1: SELECT f.* FROM feeds f WHERE AND f.scope = 'global' OR f.sc...
+                                      ^
+: SELECT f.* FROM feeds f WHERE AND f.scope = 'global' OR f.scope = 'public' ORDER BY created_at DESC:
+ helpers/feed.rb:14:in `global_feeds'
+ /home/jammmin/webserver/app/views/homepage/right.erb:2:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/body/structure.erb:9:in `render_erb'
+ /home/jammmin/webserver/app/server.rb:26:in `GET /'59.92.185.216 - - [07/Dec/2009 18:44:58] "GET / HTTP/1.1" 500 30 0.0160
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: homepage/left
+page is: homepage/middle
+page is: common/songs
+/home/jammmin/webserver/app/views/common/songs.erb:2: warning: don't put space before argument parentheses
+page is: common/jams
+/home/jammmin/webserver/app/views/common/jams.erb:2: warning: don't put space before argument parentheses
+page is: homepage/right
+ActiveRecord::StatementInvalid - PGError: ERROR:  syntax error at or near "AND"
+LINE 1: SELECT f.* FROM feeds f WHERE AND f.scope = 'global' OR f.sc...
+                                      ^
+: SELECT f.* FROM feeds f WHERE AND f.scope = 'global' OR f.scope = 'public' ORDER BY created_at DESC:
+ helpers/feed.rb:14:in `global_feeds'
+ /home/jammmin/webserver/app/views/homepage/right.erb:2:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/body/structure.erb:9:in `render_erb'
+ /home/jammmin/webserver/app/server.rb:26:in `GET /'59.92.185.216 - - [07/Dec/2009 18:45:00] "GET / HTTP/1.1" 500 30 0.0080
+>> Exiting!
+>> Writing PID to /home/jammmin/webserver/app/processes.4567
+>> Changing process privilege to root:root
+Couldn't change user and group to root:root: Operation not permitted
+DBCONFIG: {"port"=>5432, "username"=>"jammmin", "adapter"=>"postgresql", "database"=>"garage", "password"=>"3WiseMen"}
+DB CONNECTION: #<ActiveRecord::ConnectionAdapters::ConnectionPool:0x7f5de186dff8 @checked_out=[], @connection_mutex=#<Monitor:0x7f5de186df80 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>, @size=5, @reserved_connections={}, @spec=#<ActiveRecord::Base::ConnectionSpecification:0x7f5de18bfee8 @config={:port=>5432, :adapter=>"postgresql", :database=>"garage", :username=>"jammmin", :password=>"3WiseMen"}, @adapter_method="postgresql_connection">, @timeout=5, @connections=[], @queue=#<MonitorMixin::ConditionVariable:0x7f5de186df08 @waiters=[], @monitor=#<Monitor:0x7f5de186df80 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>>>
+libs are: ["active_record.rb", "extensions.rb", "jam_utils.rb", "song_utils.rb", "user.rb", "utils.rb"]
+models are: ["comment.rb", "feed.rb", "follower.rb", "jam.rb", "jam_artist.rb", "like.rb", "message.rb", "process_info.rb", "published_jam.rb", "song.rb", "song_jam.rb", "song_lyric.rb", "song_manager.rb", "test_tables.rb", "user.rb", "user_feed.rb"]
+>> Thin web server (v1.2.2 codename I Find Your Lack of Sauce Disturbing)
+>> Maximum connections set to 1024
+>> Listening on 127.0.0.1:4567, CTRL+C to stop
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: homepage/left
+page is: homepage/middle
+page is: common/songs
+/home/jammmin/webserver/app/views/common/songs.erb:2: warning: don't put space before argument parentheses
+page is: common/jams
+/home/jammmin/webserver/app/views/common/jams.erb:2: warning: don't put space before argument parentheses
+page is: homepage/right
+page is: common/feeds
+page is: common/feed
+page is: feeds/user_created
+NoMethodError - undefined method `[]' for nil:NilClass:
+ /home/jammmin/webserver/app/views/feeds/user_created.erb:1:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/common/feed.erb:1:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/common/feeds.erb:2:in `render_erb'
+ /home/jammmin/webserver/app/views/common/feeds.erb:1:in `each'
+ /home/jammmin/webserver/app/views/common/feeds.erb:1:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/homepage/right.erb:2:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/body/structure.erb:9:in `render_erb'
+ /home/jammmin/webserver/app/server.rb:26:in `GET /'59.92.185.216 - - [07/Dec/2009 18:45:36] "GET / HTTP/1.1" 500 30 0.0320
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: homepage/left
+page is: homepage/middle
+page is: common/songs
+/home/jammmin/webserver/app/views/common/songs.erb:2: warning: don't put space before argument parentheses
+page is: common/jams
+/home/jammmin/webserver/app/views/common/jams.erb:2: warning: don't put space before argument parentheses
+page is: homepage/right
+page is: common/feeds
+page is: body/footer_and_body_end
+page is: body/footer
+59.92.185.216 - - [07/Dec/2009 18:47:04] "GET / HTTP/1.1" 200 2183 0.0080
+59.92.185.216 - - [07/Dec/2009 18:47:05] "GET /stylesheets/common.css HTTP/1.1" 200 3833 0.0080
+59.92.185.216 - - [07/Dec/2009 18:47:05] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0040
+59.92.185.216 - - [07/Dec/2009 18:47:05] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0040
+59.92.185.216 - - [07/Dec/2009 18:47:05] "GET /scripts/all.js HTTP/1.1" 304 - 0.0000
+59.92.185.216 - - [07/Dec/2009 18:47:05] "GET /scripts/core.js HTTP/1.1" 304 - 0.0040
+59.92.185.216 - - [07/Dec/2009 18:47:06] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0000
+59.92.185.216 - - [07/Dec/2009 18:47:06] "GET /swf/player.swf HTTP/1.1" 304 - 0.0000
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/nil
+page is: profile/usernotfound
+page is: profile/nil
+page is: body/footer_and_body_end
+page is: body/footer
+59.92.185.216 - - [07/Dec/2009 18:47:06] "GET /undefined HTTP/1.1" 200 1953 0.0120
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: 
+page is: signup/form
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+59.92.185.216 - - [07/Dec/2009 18:47:10] "GET /signup HTTP/1.1" 200 2727 0.0080
+59.92.185.216 - - [07/Dec/2009 18:47:10] "GET /stylesheets/common.css HTTP/1.1" 200 3833 0.0040
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/nil
+page is: profile/usernotfound
+page is: profile/nil
+page is: body/footer_and_body_end
+page is: body/footer
+59.92.185.216 - - [07/Dec/2009 18:47:11] "GET /undefined HTTP/1.1" 200 1953 0.0120
+59.92.185.216 - - [07/Dec/2009 18:47:14] "POST /signup/create HTTP/1.1" 302 - 0.0640
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: 
+page is: signup/form
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+59.92.185.216 - - [07/Dec/2009 18:47:14] "GET /signup HTTP/1.1" 200 2727 0.0080
+59.92.185.216 - - [07/Dec/2009 18:47:15] "GET /stylesheets/common.css HTTP/1.1" 200 3833 0.0040
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/nil
+page is: profile/usernotfound
+page is: profile/nil
+page is: body/footer_and_body_end
+page is: body/footer
+59.92.185.216 - - [07/Dec/2009 18:47:16] "GET /undefined HTTP/1.1" 200 1953 0.0120
+/home/jammmin/webserver/app/models/feed.rb:20: warning: Object#id will be deprecated; use Object#object_id
+59.92.185.216 - - [07/Dec/2009 18:47:31] "POST /signup/create HTTP/1.1" 302 - 0.0360
+59.92.185.216 - - [07/Dec/2009 18:47:31] "GET /account HTTP/1.1" 302 - 0.0040
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+page is: account/home
+page is: common/feeds
+page is: common/feed
+page is: feeds/user_created
+NoMethodError - undefined method `[]' for nil:NilClass:
+ /home/jammmin/webserver/app/views/feeds/user_created.erb:1:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/common/feed.erb:1:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/common/feeds.erb:2:in `render_erb'
+ /home/jammmin/webserver/app/views/common/feeds.erb:1:in `each'
+ /home/jammmin/webserver/app/views/common/feeds.erb:1:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/account/home.erb:2:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/account/structure.erb:5:in `render_erb'
+ urls/account.rb:34:in `GET /account/:section'59.92.185.216 - - [07/Dec/2009 18:47:32] "GET /account/home HTTP/1.1" 500 30 0.0120
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: homepage/left
+page is: homepage/middle
+page is: common/songs
+/home/jammmin/webserver/app/views/common/songs.erb:2: warning: don't put space before argument parentheses
+page is: common/jams
+/home/jammmin/webserver/app/views/common/jams.erb:2: warning: don't put space before argument parentheses
+page is: homepage/right
+page is: common/feeds
+page is: common/feed
+page is: feeds/user_created
+NoMethodError - undefined method `[]' for nil:NilClass:
+ /home/jammmin/webserver/app/views/feeds/user_created.erb:1:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/common/feed.erb:1:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/common/feeds.erb:2:in `render_erb'
+ /home/jammmin/webserver/app/views/common/feeds.erb:1:in `each'
+ /home/jammmin/webserver/app/views/common/feeds.erb:1:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/homepage/right.erb:2:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/body/structure.erb:9:in `render_erb'
+ /home/jammmin/webserver/app/server.rb:26:in `GET /'59.92.185.216 - - [07/Dec/2009 18:47:36] "GET / HTTP/1.1" 500 30 0.0720

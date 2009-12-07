@@ -13,9 +13,9 @@ end
 def global_feeds
   (Feed.find_by_sql [
       "SELECT f.*",
-      "FROM feeds f, user_feeds uf",
-      "WHERE f.id = uf.feed_id",
-      "AND f.scope = 'global' OR f.scope = 'public'",
+      "FROM feeds f",
+      "WHERE",
+      "f.scope = 'global' OR f.scope = 'public'",
       "ORDER BY created_at DESC"
     ].join(' ')
   ).uniq

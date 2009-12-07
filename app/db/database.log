@@ -1,6 +1,6 @@
-SQL (0.1ms)  SET client_min_messages TO 'panic'
-SQL (0.1ms)  SET client_min_messages TO 'notice'
-SQL (0.5ms)  SELECT version FROM schema_migrations
+SQL (0.0ms)  SET client_min_messages TO 'panic'
+SQL (0.0ms)  SET client_min_messages TO 'notice'
+SQL (0.0ms)  SELECT version FROM schema_migrations
 Migrating to CreateTestTable (1)
 Migrating to CreateUserTable (2)
 Migrating to CreateSongsTable (3)
@@ -22,8 +22,8 @@ Migrating to CreateMessagesTable (18)
 Migrating to CreateSongLyricsTable (19)
 Migrating to CreateProcessInfoTable (20)
 Migrating to CreateFeedsAndUserFeedsTables (21)
-SQL (0.1ms)  BEGIN
-SQL (10.8ms)  CREATE TABLE "feeds" ("id" serial primary key, "data_str" character varying(255), "feed_type" character varying(255), "scope" character varying(255), "created_at" timestamp DEFAULT '2009-12-07 23:17:36.970977') 
-SQL (4.6ms)  CREATE TABLE "user_feeds" ("id" serial primary key, "feed_id" integer, "user_id" integer) 
-SQL (0.4ms)  INSERT INTO schema_migrations (version) VALUES ('21')
-SQL (2.1ms)  COMMIT
+SQL (0.0ms)  BEGIN
+SQL (20.0ms)  CREATE TABLE "feeds" ("id" serial primary key, "data_str" character varying(255), "feed_type" character varying(255), "scope" character varying(255), "created_at" timestamp DEFAULT '2009-12-07 18:38:58.556606') 
+SQL (24.0ms)  CREATE TABLE "user_feeds" ("id" serial primary key, "feed_id" integer, "user_id" integer) 
+SQL (0.0ms)  INSERT INTO schema_migrations (version) VALUES ('21')
+SQL (32.0ms)  COMMIT
