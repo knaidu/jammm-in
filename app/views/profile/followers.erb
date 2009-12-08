@@ -1,0 +1,2 @@
+<%= section_header 'Followers' %>
+<%= partial("common/users", :locals => {:users => @user.followed_by}) %>

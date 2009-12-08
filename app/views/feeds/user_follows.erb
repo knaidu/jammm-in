@@ -1,0 +1,11 @@
+<% users = fhlp_get_users(feed) %>
+<div>
+	<span class='float-left'>
+		<%= add_icon_with_pad %>
+	</span>
+	<% if not is_update %>
+		You are now following <%= profile_link(users[1]) %>
+	<% else %>
+		<%= add_profile_link(users[0]) %> is now following <%= profile_link(users[1]) %>
+ 	<% end %>
+</div>

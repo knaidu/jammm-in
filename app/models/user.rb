@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
 
   def after_create
     feed = Feed.add({:user_ids => [self.id]}, "user_created", "global")
-    feed.add_users([self.id])
+    feed.add_users([self])
   end
 
   def collaborators
