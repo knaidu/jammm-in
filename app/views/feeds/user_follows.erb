@@ -4,7 +4,11 @@
 		<%= add_icon_with_pad %>
 	</span>
 	<% if not is_update %>
-		You are now following <%= profile_link(users[1]) %>
+		<% if users[1] == session_user? %>
+			You are being followed by <%= profile_link(users[0]) %>
+		<% else %>
+			You are now following <%= profile_link(users[1]) %>
+		<% end %>
 	<% else %>
 		<%= add_profile_link(users[0]) %> is now following <%= profile_link(users[1]) %>
  	<% end %>
