@@ -1,5 +1,2 @@
-<%= section_header('published songs') %>
-	<%= partial('common/songs', :locals => {:songs => Song.published_songs}) %>
-
-<%= section_header('published jams') %>
-	<%= partial('common/jams', :locals => {:jams => Jam.published_jams}) %>
+<%= section_header('Feed') %>
+<%= partial("common/feeds", :locals => {:feeds => global_feeds, :show_as_updates => true}) %>

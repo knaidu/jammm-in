@@ -37,6 +37,11 @@ get '/test' do
   {:done => true, :failed => false}.to_json
 end
 
+get '/aboutus' do
+  @layout_info = {"left_panel" => "", "middle_panel" => "help/aboutus"}
+  erb(:'body/structure')
+end
+
 load 'urls/signin.rb'
 load 'urls/signup.rb'
 
