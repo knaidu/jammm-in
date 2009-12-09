@@ -3677,3 +3677,224 @@ page is: account/right
 page is: body/footer_and_body_end
 page is: body/footer
 127.0.0.1 - - [09/Dec/2009 16:20:22] "GET /account/undefined HTTP/1.1" 200 4784 0.0063
+>> Exiting!
+>> Writing PID to /home/jammmin/webserver/app/processes.4567
+>> Changing process privilege to root:root
+Couldn't change user and group to root:root: Operation not permitted
+DBCONFIG: {"port"=>5432, "username"=>"jammmin", "adapter"=>"postgresql", "database"=>"garage", "password"=>"3WiseMen"}
+DB CONNECTION: #<ActiveRecord::ConnectionAdapters::ConnectionPool:0xb71525b8 @queue=#<MonitorMixin::ConditionVariable:0xb7152540 @waiters=[], @monitor=#<Monitor:0xb715257c @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>>, @size=5, @checked_out=[], @connection_mutex=#<Monitor:0xb715257c @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>, @spec=#<ActiveRecord::Base::ConnectionSpecification:0xb717b65c @config={:database=>"garage", :port=>5432, :adapter=>"postgresql", :username=>"jammmin", :password=>"3WiseMen"}, @adapter_method="postgresql_connection">, @timeout=5, @reserved_connections={}, @connections=[]>
+libs are: ["active_record.rb", "extensions.rb", "jam_utils.rb", "song_utils.rb", "user.rb", "utils.rb"]
+models are: ["comment.rb", "feed.rb", "follower.rb", "jam_artist.rb", "jam.rb", "like.rb", "message.rb", "process_info.rb", "published_jam.rb", "song_jam.rb", "song_lyric.rb", "song_manager.rb", "song.rb", "test_tables.rb", "user_feed.rb", "user.rb"]
+>> Thin web server (v1.2.2 codename I Find Your Lack of Sauce Disturbing)
+>> Maximum connections set to 1024
+>> Listening on 127.0.0.1:4567, CTRL+C to stop
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+page is: account/home
+page is: account/feeds
+page is: common/feeds
+page is: common/feed
+page is: feeds/user_follows
+page is: common/feed
+page is: feeds/user_created
+page is: account/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:22:55] "GET /account/home HTTP/1.1" 200 5463 0.0794
+127.0.0.1 - - [09/Dec/2009 16:22:55] "GET /stylesheets/common.css HTTP/1.1" 200 3833 0.0078
+127.0.0.1 - - [09/Dec/2009 16:22:56] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [09/Dec/2009 16:22:56] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [09/Dec/2009 16:22:56] "GET /scripts/all.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [09/Dec/2009 16:22:56] "GET /scripts/core.js HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [09/Dec/2009 16:22:56] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [09/Dec/2009 16:22:56] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [09/Dec/2009 16:22:56] "GET /swf/player.swf HTTP/1.1" 304 - 0.0018
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+page is: 
+page is: account/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:22:56] "GET /account/undefined HTTP/1.1" 200 4818 0.0110
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+page is: account/home
+page is: account/feeds
+page is: common/feeds
+page is: common/feed
+page is: feeds/user_follows
+page is: common/feed
+page is: feeds/user_created
+page is: account/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:23:02] "GET /account/home HTTP/1.1" 200 5459 0.0266
+127.0.0.1 - - [09/Dec/2009 16:23:02] "GET /stylesheets/common.css HTTP/1.1" 200 3833 0.0069
+127.0.0.1 - - [09/Dec/2009 16:23:03] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [09/Dec/2009 16:23:03] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0024
+127.0.0.1 - - [09/Dec/2009 16:23:03] "GET /scripts/all.js HTTP/1.1" 304 - 0.0024
+127.0.0.1 - - [09/Dec/2009 16:23:03] "GET /scripts/core.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [09/Dec/2009 16:23:03] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0024
+127.0.0.1 - - [09/Dec/2009 16:23:03] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0586
+127.0.0.1 - - [09/Dec/2009 16:23:04] "GET /swf/player.swf HTTP/1.1" 304 - 0.0015
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+page is: 
+page is: account/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:23:04] "GET /account/undefined HTTP/1.1" 200 4814 0.0114
+>> Exiting!
+>> Writing PID to /home/jammmin/webserver/app/processes.4567
+>> Changing process privilege to root:root
+Couldn't change user and group to root:root: Operation not permitted
+DBCONFIG: {"port"=>5432, "username"=>"jammmin", "adapter"=>"postgresql", "database"=>"garage", "password"=>"3WiseMen"}
+DB CONNECTION: #<ActiveRecord::ConnectionAdapters::ConnectionPool:0xb70916b0 @queue=#<MonitorMixin::ConditionVariable:0xb7091638 @waiters=[], @monitor=#<Monitor:0xb7091674 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>>, @size=5, @checked_out=[], @connection_mutex=#<Monitor:0xb7091674 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>, @spec=#<ActiveRecord::Base::ConnectionSpecification:0xb70ba754 @config={:database=>"garage", :port=>5432, :adapter=>"postgresql", :username=>"jammmin", :password=>"3WiseMen"}, @adapter_method="postgresql_connection">, @timeout=5, @reserved_connections={}, @connections=[]>
+libs are: ["active_record.rb", "extensions.rb", "jam_utils.rb", "song_utils.rb", "user.rb", "utils.rb"]
+models are: ["comment.rb", "feed.rb", "follower.rb", "jam_artist.rb", "jam.rb", "like.rb", "message.rb", "process_info.rb", "published_jam.rb", "song_jam.rb", "song_lyric.rb", "song_manager.rb", "song.rb", "test_tables.rb", "user_feed.rb", "user.rb"]
+>> Thin web server (v1.2.2 codename I Find Your Lack of Sauce Disturbing)
+>> Maximum connections set to 1024
+>> Listening on 127.0.0.1:4567, CTRL+C to stop
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+page is: account/home
+page is: account/feeds
+page is: common/feeds
+page is: common/feed
+page is: feeds/user_follows
+page is: common/feed
+page is: feeds/user_created
+page is: account/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:23:33] "GET /account/home HTTP/1.1" 200 5478 0.0732
+127.0.0.1 - - [09/Dec/2009 16:23:33] "GET /stylesheets/common.css HTTP/1.1" 200 3833 0.0068
+127.0.0.1 - - [09/Dec/2009 16:23:34] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0028
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+page is: account/home
+page is: account/feeds
+page is: common/feeds
+page is: common/feed
+page is: feeds/user_follows
+page is: common/feed
+page is: feeds/user_created
+page is: account/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:23:34] "GET /account/home HTTP/1.1" 200 5478 0.0259
+127.0.0.1 - - [09/Dec/2009 16:23:34] "GET /stylesheets/common.css HTTP/1.1" 200 3833 0.0070
+127.0.0.1 - - [09/Dec/2009 16:23:35] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [09/Dec/2009 16:23:35] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [09/Dec/2009 16:23:35] "GET /scripts/all.js HTTP/1.1" 304 - 0.0024
+127.0.0.1 - - [09/Dec/2009 16:23:36] "GET /scripts/core.js HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [09/Dec/2009 16:23:36] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [09/Dec/2009 16:23:36] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [09/Dec/2009 16:23:36] "GET /swf/player.swf HTTP/1.1" 304 - 0.0014
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+page is: 
+page is: account/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:23:36] "GET /account/undefined HTTP/1.1" 200 4833 0.0110
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+page is: account/home
+page is: account/feeds
+page is: common/feeds
+page is: common/feed
+page is: feeds/user_follows
+page is: common/feed
+page is: feeds/user_created
+page is: account/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:24:08] "GET /account/home HTTP/1.1" 200 5521 0.0788
+127.0.0.1 - - [09/Dec/2009 16:24:08] "GET /stylesheets/common.css HTTP/1.1" 200 3833 0.0070
+127.0.0.1 - - [09/Dec/2009 16:24:09] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [09/Dec/2009 16:24:09] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [09/Dec/2009 16:24:09] "GET /scripts/all.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [09/Dec/2009 16:24:09] "GET /scripts/core.js HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [09/Dec/2009 16:24:09] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [09/Dec/2009 16:24:09] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [09/Dec/2009 16:24:09] "GET /swf/player.swf HTTP/1.1" 304 - 0.0015
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+page is: 
+page is: account/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:24:10] "GET /account/undefined HTTP/1.1" 200 4876 0.0109
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+page is: account/home
+page is: account/feeds
+page is: common/feeds
+page is: common/feed
+page is: feeds/user_follows
+page is: common/feed
+page is: feeds/user_created
+page is: account/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:24:22] "GET /account/home HTTP/1.1" 200 5541 0.0260
+127.0.0.1 - - [09/Dec/2009 16:24:22] "GET /stylesheets/common.css HTTP/1.1" 200 3833 0.0083
+127.0.0.1 - - [09/Dec/2009 16:24:23] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [09/Dec/2009 16:24:23] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [09/Dec/2009 16:24:23] "GET /scripts/all.js HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [09/Dec/2009 16:24:24] "GET /scripts/core.js HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [09/Dec/2009 16:24:24] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [09/Dec/2009 16:24:24] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [09/Dec/2009 16:24:24] "GET /swf/player.swf HTTP/1.1" 304 - 0.0015
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+page is: 
+page is: account/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:24:24] "GET /account/undefined HTTP/1.1" 200 4896 0.0108

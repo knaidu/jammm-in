@@ -84,7 +84,7 @@ class User < ActiveRecord::Base
   end
   
   def url
-    "/" + self.username
+    "http://www.jammm.in/" + self.username
   end
   
 end

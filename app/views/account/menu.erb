@@ -7,9 +7,9 @@
 	<%= "#{add_field_name 'Username'} #{@session_user.username}" %><br>
 	<%= "#{add_field_name 'Name'} #{@session_user.name}" %><br>
 	<%= "#{add_field_name 'Location'} #{@session_user.location}" %><br>
-	<br><br>
+	<br>
 	
-	session_user?.url
+	<a class='simple-link' href='<%= session_user?.url %>'><%= session_user?.url %></a>
 	
 	<br><br>
 	<div class='w60'>
