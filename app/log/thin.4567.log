@@ -3218,3 +3218,462 @@ page is: profile/nil
 page is: body/footer_and_body_end
 page is: body/footer
 127.0.0.1 - - [09/Dec/2009 16:08:24] "GET /undefined HTTP/1.1" 200 2154 0.0110
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: 
+page is: signin/page
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:13:27] "GET /signin HTTP/1.1" 200 2574 0.0082
+127.0.0.1 - - [09/Dec/2009 16:13:27] "GET /stylesheets/common.css HTTP/1.1" 200 3833 0.0059
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/nil
+page is: profile/usernotfound
+page is: profile/nil
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:13:28] "GET /undefined HTTP/1.1" 200 2154 0.0109
+127.0.0.1 - - [09/Dec/2009 16:13:30] "POST /signin/process HTTP/1.1" 302 - 0.0054
+127.0.0.1 - - [09/Dec/2009 16:13:30] "GET /account HTTP/1.1" 302 - 0.0023
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+page is: account/home
+page is: account/feeds
+page is: common/feeds
+page is: common/feed
+page is: feeds/user_follows
+page is: common/feed
+page is: feeds/user_created
+page is: account/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:13:31] "GET /account/home HTTP/1.1" 200 5351 0.0144
+127.0.0.1 - - [09/Dec/2009 16:13:31] "GET /stylesheets/common.css HTTP/1.1" 200 3833 0.0037
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+page is: 
+page is: account/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:13:31] "GET /account/undefined HTTP/1.1" 200 4706 0.0104
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+page is: account/home
+page is: account/feeds
+page is: common/feeds
+page is: common/feed
+page is: feeds/user_follows
+page is: common/feed
+page is: feeds/user_created
+page is: account/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:13:59] "GET /account/home HTTP/1.1" 200 5388 0.0253
+127.0.0.1 - - [09/Dec/2009 16:13:59] "GET /stylesheets/common.css HTTP/1.1" 200 3833 0.0068
+127.0.0.1 - - [09/Dec/2009 16:14:00] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [09/Dec/2009 16:14:00] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [09/Dec/2009 16:14:00] "GET /scripts/all.js HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [09/Dec/2009 16:14:00] "GET /scripts/core.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [09/Dec/2009 16:14:00] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [09/Dec/2009 16:14:00] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [09/Dec/2009 16:14:00] "GET /swf/player.swf HTTP/1.1" 304 - 0.0015
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+page is: 
+page is: account/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:14:01] "GET /account/undefined HTTP/1.1" 200 4743 0.0689
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+page is: account/home
+page is: account/feeds
+page is: common/feeds
+page is: common/feed
+page is: feeds/user_follows
+page is: common/feed
+page is: feeds/user_created
+page is: account/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:14:43] "GET /account/home HTTP/1.1" 200 5440 0.0268
+127.0.0.1 - - [09/Dec/2009 16:14:43] "GET /stylesheets/common.css HTTP/1.1" 200 3833 0.0070
+127.0.0.1 - - [09/Dec/2009 16:14:44] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [09/Dec/2009 16:14:44] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [09/Dec/2009 16:14:44] "GET /scripts/all.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [09/Dec/2009 16:14:44] "GET /scripts/core.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [09/Dec/2009 16:14:44] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [09/Dec/2009 16:14:45] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [09/Dec/2009 16:14:45] "GET /swf/player.swf HTTP/1.1" 304 - 0.0015
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+page is: 
+page is: account/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:14:45] "GET /account/undefined HTTP/1.1" 200 4795 0.0105
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+page is: account/home
+page is: account/feeds
+page is: common/feeds
+page is: common/feed
+page is: feeds/user_follows
+page is: common/feed
+page is: feeds/user_created
+page is: account/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:14:55] "GET /account/home HTTP/1.1" 200 5443 0.0255
+127.0.0.1 - - [09/Dec/2009 16:14:55] "GET /stylesheets/common.css HTTP/1.1" 200 3833 0.0219
+127.0.0.1 - - [09/Dec/2009 16:14:56] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0024
+127.0.0.1 - - [09/Dec/2009 16:14:56] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [09/Dec/2009 16:14:56] "GET /scripts/all.js HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [09/Dec/2009 16:14:56] "GET /scripts/core.js HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [09/Dec/2009 16:14:56] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0031
+127.0.0.1 - - [09/Dec/2009 16:14:56] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0016
+127.0.0.1 - - [09/Dec/2009 16:14:56] "GET /swf/player.swf HTTP/1.1" 304 - 0.0015
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+page is: 
+page is: account/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:14:57] "GET /account/undefined HTTP/1.1" 200 4798 0.0060
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+page is: account/home
+page is: account/feeds
+page is: common/feeds
+page is: common/feed
+page is: feeds/user_follows
+page is: common/feed
+page is: feeds/user_created
+page is: account/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:18:04] "GET /account/home HTTP/1.1" 200 5431 0.0257
+127.0.0.1 - - [09/Dec/2009 16:18:05] "GET /stylesheets/common.css HTTP/1.1" 200 3833 0.0313
+127.0.0.1 - - [09/Dec/2009 16:18:06] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [09/Dec/2009 16:18:06] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [09/Dec/2009 16:18:06] "GET /scripts/all.js HTTP/1.1" 304 - 0.0024
+127.0.0.1 - - [09/Dec/2009 16:18:06] "GET /scripts/core.js HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [09/Dec/2009 16:18:06] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0016
+127.0.0.1 - - [09/Dec/2009 16:18:06] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [09/Dec/2009 16:18:06] "GET /swf/player.swf HTTP/1.1" 304 - 0.0015
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+page is: 
+page is: account/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:18:06] "GET /account/undefined HTTP/1.1" 200 4786 0.0103
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+page is: account/home
+page is: account/feeds
+page is: common/feeds
+page is: common/feed
+page is: feeds/user_follows
+page is: common/feed
+page is: feeds/user_created
+page is: account/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:18:19] "GET /account/home HTTP/1.1" 200 5429 0.0227
+127.0.0.1 - - [09/Dec/2009 16:18:19] "GET /stylesheets/common.css HTTP/1.1" 200 3833 0.0079
+127.0.0.1 - - [09/Dec/2009 16:18:20] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0026
+127.0.0.1 - - [09/Dec/2009 16:18:21] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [09/Dec/2009 16:18:21] "GET /scripts/all.js HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [09/Dec/2009 16:18:21] "GET /scripts/core.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [09/Dec/2009 16:18:21] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0024
+127.0.0.1 - - [09/Dec/2009 16:18:21] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [09/Dec/2009 16:18:21] "GET /swf/player.swf HTTP/1.1" 304 - 0.0015
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+page is: 
+page is: account/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:18:21] "GET /account/undefined HTTP/1.1" 200 4784 0.0106
+127.0.0.1 - - [09/Dec/2009 16:18:30] "GET /account HTTP/1.1" 302 - 0.0024
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+page is: account/home
+page is: account/feeds
+page is: common/feeds
+page is: common/feed
+page is: feeds/user_follows
+page is: common/feed
+page is: feeds/user_created
+page is: account/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:18:30] "GET /account/home HTTP/1.1" 200 5429 0.0235
+127.0.0.1 - - [09/Dec/2009 16:18:30] "GET /stylesheets/common.css HTTP/1.1" 200 3833 0.0382
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+page is: 
+page is: account/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:18:31] "GET /account/undefined HTTP/1.1" 200 4784 0.0108
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/menu
+page is: common/list_artists
+page is: common/list_artists
+page is: common/list_artists
+page is: profile/profilehome
+/home/jammmin/webserver/app/views/profile/profilehome.erb:6: warning: don't put space before argument parentheses
+/home/jammmin/webserver/app/views/profile/profilehome.erb:9: warning: don't put space before argument parentheses
+page is: common/feeds
+page is: common/feed
+page is: feeds/user_follows
+page is: common/songs
+/home/jammmin/webserver/app/views/common/songs.erb:2: warning: don't put space before argument parentheses
+page is: common/jams
+/home/jammmin/webserver/app/views/common/jams.erb:2: warning: don't put space before argument parentheses
+page is: profile/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:18:32] "GET /prakashraman HTTP/1.1" 200 6207 0.0361
+127.0.0.1 - - [09/Dec/2009 16:18:32] "GET /stylesheets/common.css HTTP/1.1" 200 3833 0.0067
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/nil
+page is: profile/usernotfound
+page is: profile/nil
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:18:33] "GET /undefined HTTP/1.1" 200 2269 0.0110
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/menu
+page is: common/list_artists
+page is: common/list_artists
+page is: common/list_artists
+page is: profile/profilehome
+/home/jammmin/webserver/app/views/profile/profilehome.erb:6: warning: don't put space before argument parentheses
+/home/jammmin/webserver/app/views/profile/profilehome.erb:9: warning: don't put space before argument parentheses
+page is: common/feeds
+page is: common/feed
+page is: feeds/user_follows
+page is: common/songs
+/home/jammmin/webserver/app/views/common/songs.erb:2: warning: don't put space before argument parentheses
+page is: common/jams
+/home/jammmin/webserver/app/views/common/jams.erb:2: warning: don't put space before argument parentheses
+page is: profile/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:18:50] "GET /prakashraman HTTP/1.1" 200 6207 0.0474
+127.0.0.1 - - [09/Dec/2009 16:18:50] "GET /stylesheets/common.css HTTP/1.1" 200 3833 0.0065
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/nil
+page is: profile/usernotfound
+page is: profile/nil
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:18:50] "GET /undefined HTTP/1.1" 200 2269 0.0651
+127.0.0.1 - - [09/Dec/2009 16:18:51] "GET /account HTTP/1.1" 302 - 0.0024
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+page is: account/home
+page is: account/feeds
+page is: common/feeds
+page is: common/feed
+page is: feeds/user_follows
+page is: common/feed
+page is: feeds/user_created
+page is: account/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:18:51] "GET /account/home HTTP/1.1" 200 5429 0.0245
+127.0.0.1 - - [09/Dec/2009 16:18:51] "GET /stylesheets/common.css HTTP/1.1" 200 3833 0.0067
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+page is: 
+page is: account/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:18:52] "GET /account/undefined HTTP/1.1" 200 4784 0.0112
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/menu
+page is: common/list_artists
+page is: common/list_artists
+page is: common/list_artists
+page is: profile/profilehome
+/home/jammmin/webserver/app/views/profile/profilehome.erb:6: warning: don't put space before argument parentheses
+/home/jammmin/webserver/app/views/profile/profilehome.erb:9: warning: don't put space before argument parentheses
+page is: common/feeds
+page is: common/feed
+page is: feeds/user_follows
+page is: common/feed
+page is: feeds/jam_published
+page is: common/list_artists
+page is: common/songs
+/home/jammmin/webserver/app/views/common/songs.erb:2: warning: don't put space before argument parentheses
+page is: common/jams
+/home/jammmin/webserver/app/views/common/jams.erb:2: warning: don't put space before argument parentheses
+page is: common/jam
+page is: common/list_artists
+page is: profile/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:19:28] "GET /sheepi HTTP/1.1" 200 7330 0.0521
+127.0.0.1 - - [09/Dec/2009 16:19:28] "GET /stylesheets/common.css HTTP/1.1" 200 3833 0.0040
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/nil
+page is: profile/usernotfound
+page is: profile/nil
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:19:29] "GET /undefined HTTP/1.1" 200 2269 0.0099
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: 
+page is: jam/page
+page is: jam/basic_info
+page is: common/list_artists
+page is: common/users
+page is: common/user
+page is: common/user
+page is: jam/right
+page is: common/likes
+page is: common/list_artists
+page is: common/comments
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:19:46] "GET /jam/1 HTTP/1.1" 200 4998 0.0549
+127.0.0.1 - - [09/Dec/2009 16:19:46] "GET /stylesheets/common.css HTTP/1.1" 200 3833 0.0238
+ActiveRecord::RecordNotFound - Couldn't find Jam with ID=undefined:
+ urls/jam.rb:78:in `GET /jam/:jam_id'127.0.0.1 - - [09/Dec/2009 16:19:47] "GET /jam/undefined HTTP/1.1" 500 30 0.0040
+127.0.0.1 - - [09/Dec/2009 16:20:10] "POST /comments/add HTTP/1.1" 200 - 0.0357
+page is: common/comment
+127.0.0.1 - - [09/Dec/2009 16:20:10] "GET /comments/fetch?for_type=jam&for_type_id=1&comments_div_id=jam-comments HTTP/1.1" 200 699 0.0092
+127.0.0.1 - - [09/Dec/2009 16:20:21] "GET /account HTTP/1.1" 302 - 0.0025
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+page is: account/home
+page is: account/feeds
+page is: common/feeds
+page is: common/feed
+page is: feeds/user_follows
+page is: common/feed
+page is: feeds/user_created
+page is: account/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:20:21] "GET /account/home HTTP/1.1" 200 5429 0.0239
+127.0.0.1 - - [09/Dec/2009 16:20:21] "GET /stylesheets/common.css HTTP/1.1" 200 3833 0.0078
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+page is: 
+page is: account/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [09/Dec/2009 16:20:22] "GET /account/undefined HTTP/1.1" 200 4784 0.0063

@@ -6,7 +6,10 @@
   
   <span class='float-right'>
   <% if session_user? %>
-      <a href='/account'>Home</a> <a href='/<%= session_user?.username %>'>Profile</a> <a href='/account/logout'>Logout</a>
+      <span class='display-inline grey'> <%= session_user?.name %>.</span> 
+      <a href='/account'>Home</a> 
+      <a href='/<%= session_user?.username %>'>Profile</a> 
+      <a href='/account/logout'>Logout</a>
   <% else %>
       <a href='/signin'>Sign In</a> <a href='/signup'>Sign Up</a>    
   <% end %>

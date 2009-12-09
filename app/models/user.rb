@@ -83,4 +83,8 @@ class User < ActiveRecord::Base
     ).uniq
   end
   
+  def url
+    "/" + self.username
+  end
+  
 end
