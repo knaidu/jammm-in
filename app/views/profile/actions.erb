@@ -9,6 +9,6 @@
 			<a class='simple-link' href='javascript: followUser("<%= user.username %>")'>Follow</a>
 		<% end %>
 		<br>
-		Message
+		<%= Message if session_user? %>
 	</span>
 </div>
