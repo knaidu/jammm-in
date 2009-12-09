@@ -6,7 +6,7 @@
 	<span class='float-left'>
 		<%= add_icon_with_pad %>
 	</span>
-	<% if not is_update %>
+	<% if jam.artists.include?(session_user?) and not is_update %>
 		Your jam <%= jam_link(jam) %> has been published.
 	<% else %>
 		Jam <%= jam_link(jam) %> by <%= list_artists(users) %> has been published

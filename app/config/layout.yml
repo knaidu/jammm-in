@@ -1,6 +1,5 @@
 account:
     left_panel: menu
-    right_panel: right
     
     home:
         middle_panel: home
@@ -14,7 +13,6 @@ account:
 profile:
     left_panel: menu
     middle_panel: profilehome
-    right_panel: right
 
     songs:
         middle_panel: songs
