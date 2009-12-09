@@ -60,7 +60,7 @@ class User < ActiveRecord::Base
   
   def follows?(user)
     follows.include?(user)
-  end
+  end 
   
   # Determines the Feeds for the User
   def feeds(limit=20)
