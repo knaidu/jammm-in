@@ -29,4 +29,8 @@ class Feed < ActiveRecord::Base
     self.data_str.eval_json rescue nil
   end
   
+  def self.global
+    self.find_all_by_scope("global").reverse
+  end
+  
 end

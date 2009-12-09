@@ -17,6 +17,10 @@ def get_passed_jam
   Jam.find(params[:jam_id])
 end
 
+def get_passed_user
+  User.with_username(params[:username])
+end
+
 def new_file_handle_name
   Time.now.to_f.to_s.gsub('.', '-') + ".mp3"
 end

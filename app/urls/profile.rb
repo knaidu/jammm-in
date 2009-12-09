@@ -43,6 +43,30 @@ get '/:username/following' do
   erb(:"body/structure")
 end
 
+get '/:username/follow' do
+  begin
+    Follower.add(session_user?, get_passed_user)
+    "You are following #{get_passed_user.name}"
+  rescue Exception => e
+    status 500
+    e.message
+  end
+end
+
+get '/:username/actions' do
+  erb(:"profile/actions", :locals => {:user => get_passed_user})
+end
+
+get '/:username/unfollow' do
+  begin
+    Follower.remove(session_user?, get_passed_user)
+    "You are not following #{get_passed_user.name} anymore"
+  rescue Exception => e
+    status 500
+    e.message
+  end
+end
+
 get '/:username/jammed_with' do
   @user = User.with_username(params[:username])
   @layout_info = {"left_panel" => "profile/menu", "middle_panel" => "profile/jammed_with"}

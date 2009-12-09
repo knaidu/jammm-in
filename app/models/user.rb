@@ -58,22 +58,27 @@ class User < ActiveRecord::Base
     likes_jams.include?(jam)    
   end
   
+  def follows?(user)
+    follows.include?(user)
+  end
+  
   # Determines the Feeds for the User
   def feeds(limit=20)
-    range = Range.new(0, limit.to_i)
+    range = Range.new(0, (limit.to_i - 1))
     my_feeds = (Feed.find_by_sql [
         "SELECT f.*",
         "FROM feeds f, user_feeds uf",
-        "WHERE (f.id = uf.feed_id",
-        "AND uf.user_id=#{self.id}) OR f.scope='global' OR f.scope='public'",
+        "WHERE (f.scope='public' or f.scope='global')",
+        "OR (f.id = uf.feed_id AND uf.user_id=#{self.id})",
         "ORDER BY created_at DESC"
       ].join(' ')).uniq
     followings_updates = self.follows.map(&:updates).flatten
-    (my_feeds + followings_updates).uniq.sort_by(&:created_at)[range].reverse # Aggregate of User's feeds and followings updates
+    (my_feeds + followings_updates).uniq.sort_by(&:created_at).reverse[range] # Aggregate of User's feeds and followings updates
   end
   
   # Determines the Updates for the User
-  def updates
+  def updates(limit=20)
+    range = Range.new(0, limit.to_i)
     (Feed.find_by_sql [
         "SELECT f.*",
         "FROM feeds f, user_feeds uf",
@@ -82,7 +87,7 @@ class User < ActiveRecord::Base
         "AND (f.scope = 'public' OR f.scope = 'protected')",
         "ORDER BY created_at DESC"
       ].join(' ')
-    ).uniq
+    ).uniq.sort_by(&:created_at).reverse[range]
   end
   
   def url

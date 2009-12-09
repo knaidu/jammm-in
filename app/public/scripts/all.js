@@ -328,6 +328,20 @@ function loadJamComments(jamId){
 	updateEl('jam-comments', url);
 }
 
+/* USERS */
+
+function followUser(username){
+	call("/" + username + "/follow", {onSuccess: function(){loadUserProfileActions(username)}})
+}
+
+function unfollowUser(username){
+	call("/" + username + "/unfollow", {onSuccess: function(){loadUserProfileActions(username)}})
+}
+
+function loadUserProfileActions(username){
+	updateEl("profile-actions-div", "/" + username + "/actions")
+}
+
 /* UPLOAD */
 function getNewXProgressId(){
 	var uuid = "";

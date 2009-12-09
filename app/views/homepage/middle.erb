@@ -1,2 +1,2 @@
 <%= section_header('Feed') %>
-<%= partial("common/feeds", :locals => {:feeds => global_feeds, :show_as_updates => true}) %>
+<%= partial("common/feeds", :locals => {:feeds => global_feeds(30), :show_as_updates => true}) %>

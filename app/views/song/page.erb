@@ -5,10 +5,11 @@
 <a href='javascript: history.go(-1)' class='simple-link'>Back</a>,
 <a class='simple-link' href='/song/<%= @song.id %>/manage'>Manage</a>, 
 <a href='?' class='simple-link'>Refresh</a>
+
 <br><br>
 
 
-<div id='basic-info'
+<div id='basic-info'>
 	<%= partial("song/basic_info", :locals => {:song => @song}) %>
 </div>
 <br>

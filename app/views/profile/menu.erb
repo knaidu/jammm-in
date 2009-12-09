@@ -14,7 +14,7 @@
 %>
 <%= add_link('(View Complete Information)', 'info', {}) %>
 <br><br>
-Follow, Message
+<%= partial("profile/actions", :locals => {:user => @user}) %>
 <br><br>
 
 <%

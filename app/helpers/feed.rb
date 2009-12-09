@@ -10,13 +10,13 @@ def fhlp_get_song(feed)
   Song.find(feed.data['song_id'])
 end
 
-def global_feeds
+def global_feeds(limit=20)
   (Feed.find_by_sql [
       "SELECT f.*",
       "FROM feeds f",
       "WHERE",
       "f.scope = 'global' OR f.scope = 'public'",
-      "ORDER BY created_at DESC"
+      "ORDER BY created_at DESC limit #{limit}"
     ].join(' ')
   ).uniq
 end
