@@ -20,8 +20,8 @@
 	<%
 	  items = [
 	    {:name => 'Update', :link => ""},
-	    {:name => 'Songs', :link => "/#{@user.username}/songs"},
-	    {:name => 'Jams', :link => "/#{@user.username}/jams"},
+	    {:name => 'Songs', :link => "/#{@user.username}/songs", :icon => :song},
+	    {:name => 'Jams', :link => "/#{@user.username}/jams", :icon => :jam},
 	    {:name => 'Following', :link => "/#{@user.username}/following"},
 	    {:name => 'Jammmed With', :link => "/#{@user.username}/jammmed_with"},
 	    {:name => 'Followers', :link => "/#{@user.username}/followers"}    
@@ -31,7 +31,7 @@
 	  <div>
 	    <%= section_header 'Navigate' %>
 	    <% items.each do |item| %>
-				<%= add_menu_entry(item[:name], item[:link], '') %>
+				<%= add_menu_entry(item[:name], item[:link], item[:icon] ? item[:icon] : "") %>
 	    <% end %>
 	  </div>
 	  <%

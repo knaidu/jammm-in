@@ -2,12 +2,12 @@
 <%= partial("account/feeds", :locals => {:feeds => @session_user.feeds, :show_as_updates => false}) %>
 <br>
 
-<%= section_header('Songs') %>
+<%= section_header('Songs', {:icon => :song}) %>
 <% @session_user.songs.each do |song| %>
 	<%= partial('account/song', {:locals => {:song => song}}) %><br><br>
 <% end %>
 
-<%= section_header('Jams') %>
+<%= section_header('Jams', {:icon => :jam}) %>
 <% @session_user.jams.each do |jam| %>
 	<%= partial('account/jam', {:locals => {:jam => jam}}) %><br><br>
 <% end %>

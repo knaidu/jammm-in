@@ -28,9 +28,10 @@ def show_profile(username)
 end
 
 def section_header(text, options={})
+  img = icon(options[:icon], :small) if options[:icon]
   [
     "<div>",
-      "<span class='float-left bold'>#{text.capitalize}</span>",
+      "<span class='float-left bold'>#{img}#{text.capitalize}</span>",
     "</div>",
     "<hr class='thin'>"
   ].join('')
