@@ -10,7 +10,7 @@ def add_icon(icon=false)
 end
 
 def medium_icon(icon='/images/common/icon.png')
-  "<img src='#{icon}' height=32 width=32>"
+  "<img src='#{icon}' height=48 width=48>"
 end
 
 def small_icon(icon='/images/common/icon.png')

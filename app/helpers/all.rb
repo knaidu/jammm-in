@@ -36,11 +36,13 @@ def section_header(text, options={})
   ].join('')
 end
 
-def add_menu_entry(text, link, image_url)
+def add_menu_entry(text, link, image)
+  img = image.sym? ? icon(image, :small) : add_icon(image)
+  puts image.sym?
 	"<div>
 		<a title='#{text}' href='#{link}' class='bold grey display-inline'>
 		  <div>
-	  	  <span class='float-left pad-right-10'>#{add_icon()}</span>
+	  	  <span class='float-left pad-right-10'>#{img}</span>
   		  <span class='display-inline'>#{text}</span>
 	  	</div>
 		</a>

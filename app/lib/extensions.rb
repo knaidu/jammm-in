@@ -34,3 +34,9 @@ class Hash
     self
   end
 end
+
+class Object
+  def sym?
+    self.class.to_s.downcase == 'symbol'
+  end
+end

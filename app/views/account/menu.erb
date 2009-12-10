@@ -18,8 +18,8 @@
 		<%= section_header 'navigate' %>
 	  <%= add_menu_entry('Home','/account','asdasd') %>
 	  <%= add_menu_entry('Profile','/' + @session_user.username,'') %>
-	  <%= add_menu_entry('Songs','/account/songs','') %>
-	  <%= add_menu_entry('Jams','/account/jams','') %>
+	  <%= add_menu_entry('Songs','/account/songs', :song) %>
+	  <%= add_menu_entry('Jams','/account/jams', :jam) %>
 	  <%= add_menu_entry('Messages','/account/messages','') %>
 	  <%= add_menu_entry('Following','/account/following','') %>
 	  <%= add_menu_entry('Followers','/account/followers','') %>
