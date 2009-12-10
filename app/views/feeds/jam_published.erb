@@ -4,7 +4,7 @@
 %>
 <div>
 	<span class='float-left'>
-		<%= add_icon_with_pad %>
+		<%= icon(:jam, :small) %>
 	</span>
 	<% if jam.artists.include?(session_user?) and not is_update %>
 		Your jam <%= jam_link(jam) %> has been published.
