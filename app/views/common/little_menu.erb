@@ -1,0 +1,8 @@
+<div class='menu'>
+	<br>
+	<%= add_menu_entry('My Home', '/account', '') %>
+	<%= add_menu_entry('My Profile', "/#{session_user?.username}", '') %>
+	<br>
+	<%= add_menu_entry('Back', "javascript: history.go(-1)", '') %>
+	<%= add_menu_entry('<span class="default-link-color">Jammm.in</span>', "/", '') %>
+</div>

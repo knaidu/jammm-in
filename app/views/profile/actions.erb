@@ -1,14 +1,17 @@
 <div id='profile-actions-div'>
-	<span class='bg-grey round pad10 w60'>
+	<span class='bg-grey round pad10' style='display: box; box-sizing: content-box'>
 		<b>Actions:</b><hr class='thin' style='background-color: white'>
-		<% if not session_user? %>
-			You need to log in.
-		<% elsif session_user?.follows?(user) %>
-			<a class='simple-link' href='javascript: unfollowUser("<%= user.username %>")'>Unfollow</a>
-		<% else %>
-			<a class='simple-link' href='javascript: followUser("<%= user.username %>")'>Follow</a>
+		<% if session_user? %> 
+			<% if session_user?.follows?(user) %>
+				<a class='simple-link' href='javascript: unfollowUser("<%= user.username %>")'>Unfollow</a>
+			<% else %>
+				<a class='simple-link' href='javascript: followUser("<%= user.username %>")'>Follow</a>
+			<% end %>
+			<br>
+			Message<br>
+			Full Profile<br>
+		<% else %> 
 		<% end %>
-		<br>
-		<%= "Message" if session_user? %>
+		Report
 	</span>
 </div>

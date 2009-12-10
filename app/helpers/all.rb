@@ -43,8 +43,8 @@ def add_menu_entry(text, link, image_url)
 	"<div>
 		<a title='#{text}' href='#{link}' class='bold grey display-inline'>
 		  <div>
-  		  <span class='float-left'>#{text}</span>
-	  	  <span class='float-right'>#{add_icon()}</span>
+	  	  <span class='float-left pad-right-10'>#{add_icon()}</span>
+  		  <span class='display-inline'>#{text}</span>
 	  	</div>
 		</a>
 	</div>"

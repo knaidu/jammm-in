@@ -14,7 +14,7 @@ post '/song/register' do
 end
 
 get '/song/:song_id' do
-  @layout_info = {"middle_panel" => 'song/page', "right_panel" => 'song/right'}
+  @layout_info = {"left_panel" => "common/little_menu", "middle_panel" => 'song/page', "right_panel" => 'song/right'}
   @song = Song.find(params[:song_id])
   @song.visited
   erb(:"body/structure")
