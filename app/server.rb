@@ -15,6 +15,7 @@ load 'scripts/load_models.rb'
 helpers do
   load('helpers/all.rb')
   load('helpers/feed.rb')
+  load('helpers/icons.rb')
 end
 
 before do

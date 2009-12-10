@@ -80,6 +80,7 @@ hr.w60-align-left {width: 60%; margin-left: 0; text-align: left}
 .text-left {text-align: left}	
 .field{color: grey; font-weight: bold; width: 100px; display: inline-block}
 .round {-moz-border-radius: 5px; -webkit-border-radius: 5px}
+.height-inherit {height: inherit;}
 /* PROGRESS-BAR */
 .progress-bar-container{
 	border: thin groove <%= default_color %>;
@@ -129,13 +130,13 @@ hr.w60-align-left {width: 60%; margin-left: 0; text-align: left}
 /* MENU */
 .menu {
 	background-color: white; 
-	padding: 0px 10px 20px 5px;
+	padding: 0px 10px 0px 5px;
 	border-color: #cccccc;
 	border-width: 5px 1px 0px 0;
 	border-style: solid;
-	-moz-border-radius: 5px; 
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
+	-moz-border-radius: 5px 5px 0 0; 
+	-webkit-border-radius: 5px 0 0;
+	border-radius: 5px 5px 0 0;
 }
 
 /* MUSIC, i.e: songs, jams, lyrics */

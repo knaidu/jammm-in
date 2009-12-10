@@ -1,5 +1,5 @@
 <div class='w100 pad1'>
-  <%= add_icon_with_pad %>
+ 	<span class='pad-right-10 float-left'><%= medium_icon '/images/icons/8thnote.png' %></span>
   <div class='left-float'>
     <span class='bold float-left'><a href='/jam/<%= jam.id %>'><%= jam.name %></a>&nbsp;</span><br>
     <%= add_field_name 'Jammmed with' %> <%= partial(:'common/list_artists', :locals => {:artists => jam.artists}) %><br>

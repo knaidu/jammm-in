@@ -1,7 +1,7 @@
 <% song = fhlp_get_song(feed) %>
 <div>
-	<span class='float-left'>
-		<%= add_icon_with_pad %>
+	<span class='float-left pad-right-10'>
+		<%= small_icon '/images/icons/staff.png' %>
 	</span>
 	<% if song.creator == session_user? and not is_update %>
 		You have created a new song <%= song_link(song) %>

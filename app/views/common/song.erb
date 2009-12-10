@@ -1,5 +1,7 @@
 <div class='w100 pad1'>
-  <span class='left-float pad-right-10'><%= add_icon 'song' %> </span>
+  <span class='left-float pad-right-10'>
+		<%= medium_icon'/images/icons/staff.png' %>
+  </span>
   <div class='left-float'>
     <span class='bold float-left'><a href='/song/<%= song.id %>'><%= song.name %></a>&nbsp;</span><span class='float-left'>[length]</span><br>
     <%= add_field_name 'Jammmed with' %> <%= partial(:'common/list_artists', :locals => {:artists => song.artists}) %><br>

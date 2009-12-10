@@ -36,9 +36,6 @@ def section_header(text, options={})
   ].join('')
 end
 
-def add_feed_item(text)
-end
-
 def add_menu_entry(text, link, image_url)
 	"<div>
 		<a title='#{text}' href='#{link}' class='bold grey display-inline'>
@@ -60,14 +57,6 @@ def link(text, options={})
   options[:class] = "simple-link display-inline " + (options[:class] || "")
   attrs = options.map{|k,v| "#{k.to_s}='#{v}'"}.join(' ')
   "<span #{attrs}>" + text + "</span>"
-end
-
-def add_icon(icon=false)
-  "<img src='/images/common/icon.png'>"
-end
-
-def add_icon_with_pad(icon=false)
-  "<span class='left-float pad-right-10'>#{add_icon(icon)}</span>"
 end
 
 def add_field_name(text)
