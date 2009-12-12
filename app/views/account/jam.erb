@@ -4,6 +4,8 @@
     <%= add_field_name 'Jammmed with' %> <%= partial(:'common/list_artists', :locals => {:artists => jam.artists}) %><br>
     <%= add_field_name 'Date Created' %> <%= jam.created_at.date %><br>
   </div>
-  <div class='float-right'>Manage, <%= add_link('Page', "/jam/#{jam.id}") %></div>
+  <div class='float-right'> 
+		<%= icon(:manage, :small) %>
+	</div>
 </div>
 

@@ -7,9 +7,9 @@
 	<%= add_field_name 'Likes' %> <%= jam.liked_by.size %><br>
 	<br>
 	<% if @session_user and not @session_user.likes_jam?(jam) %>
-  	<span class='simple-link display-inline' onClick='likeJam("<%= jam.id %>")'>Like</span>,
+  	<span class='simple-link display-inline' onClick='likeJam("<%= jam.id %>")' title='Like'><%= icon :like %></span>
 	<% elsif @session_user %>
-		<span class='simple-link display-inline' onClick='unlikeJam("<%= jam.id %>")'>Unlike</span>,
+		<span class='simple-link display-inline' onClick='unlikeJam("<%= jam.id %>")'>Unlike</span>
 	<% end %>
-	<a class='simple-link' href="javascript:play('<%= jam.file_handle %>')">PLAY</a>
+	<a class='simple-link' href="javascript:play('<%= jam.file_handle %>')"> <%= icon :play %></a>
 </div>

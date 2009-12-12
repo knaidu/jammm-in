@@ -2,8 +2,8 @@
   <div class='left-float'>
     <span class='bold float-left'><a href='/jam/<%= jam.id %>'><%= jam.name %></a>&nbsp;</span><span class='float-left'>[length]</span><br>
     <%= add_field_name 'Jammmed by' %> <%= partial(:'common/list_artists', :locals => {:artists => jam.artists}) %><br>
-    <%= add_field_name 'Likes' %> <%= jam.liked_by.size %>
+    <%= icon :like %> <%= icon :comments %>
   </div>
-  <span class='float-right'>Add, Play, Maximize</span>
+  <span class='float-right'><%= icon :add %> <%= icon :play2 %></span>
 </div>
 

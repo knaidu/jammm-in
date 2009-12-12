@@ -1,5 +1,5 @@
 <div class='w100 pad1'>
-  <div class='float-right'>Manage, <%= add_link('Page', "/song/#{song.id}") %></div>
+  <div class='float-right'><%= manage_song_link(song) %></div>
   <div class='left-float'>
     <span class='bold float-left'><a href='/song/<%= song.id %>'><%= song.name %></a>&nbsp;</span><br>
     <%= add_field_name 'Jammmed with' %> <%= partial(:'common/list_artists', :locals => {:artists => song.artists}) %><br>

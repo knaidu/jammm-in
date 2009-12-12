@@ -31,7 +31,7 @@ def section_header(text, options={})
   img = icon(options[:icon], :small) if options[:icon]
   [
     "<div>",
-      "<span class='float-left bold'>#{img}#{text.capitalize}</span>",
+      "<span class='float-left pad-right-5'>#{img}</span><b>#{text.capitalize}</b>",
     "</div>",
     "<hr class='thin'>"
   ].join('')
@@ -111,6 +111,14 @@ end
 def format_lyrics(lyrics)
   return "" if not lyrics
   lyrics.gsub("\n", "<br>")
+end
+
+def manage_song_link(song)
+  "<span class='pad1'><a href='/song/#{song.id}/manage' title='Manage'>#{icon :manage}</a></span>"
+end
+
+def manage_jam_link(jam)
+  "<span class='pad1'><a href='/jam/#{jam.id}/manage' title='Manage'>#{icon :manage}</a></song>"  
 end
 
 load 'helpers/profile.rb'

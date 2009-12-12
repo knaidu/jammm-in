@@ -2,7 +2,17 @@
 
 ICONS = {
   :song => "/images/icons/staff.png",
-  :jam => "/images/icons/8thnote.png"
+  :jam => "/images/icons/8thnote.png",
+  :following => "/images/icons/follow2.png",
+  :followers => "/images/icons/followers1.png",
+  :profile => "/images/icons/profile1.png",
+  :manage => "/images/icons/manage1.png",
+  :jammmin => "/images/icons/miniicon.png",
+  :add => "/images/icons/add.png",
+  :like => "/images/icons/like2.png",
+  :play => "/images/icons/play.png",
+  :play2 => "/images/icons/play1.png",
+  :comments => "/images/icons/comments.png",
 }
 
 def add_icon(icon=false)

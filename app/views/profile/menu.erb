@@ -22,9 +22,9 @@
 	    {:name => 'Update', :link => ""},
 	    {:name => 'Songs', :link => "/#{@user.username}/songs", :icon => :song},
 	    {:name => 'Jams', :link => "/#{@user.username}/jams", :icon => :jam},
-	    {:name => 'Following', :link => "/#{@user.username}/following"},
+	    {:name => 'Following', :link => "/#{@user.username}/following", :icon => :following},
 	    {:name => 'Jammmed With', :link => "/#{@user.username}/jammmed_with"},
-	    {:name => 'Followers', :link => "/#{@user.username}/followers"}    
+	    {:name => 'Followers', :link => "/#{@user.username}/followers", :icon => :followers}    
 	  ]
   
 	  %>
@@ -38,7 +38,7 @@
 	%>
 
 	<br><br>
-	<%= section_header('Following') %>
+	<%= section_header('Following', {:icon => :following}) %>
 	<%= partial(:'common/list_artists', :locals => {:artists => @user.follows}) %>
 	<br><br>
 
@@ -46,6 +46,6 @@
 	<%= partial(:'common/list_artists', :locals => {:artists => @user.collaborators}) %>
 
 	<br><br>
-	<%= section_header('Followers') %>
+	<%= section_header('Followers', {:icon => :followers}) %>
 	<%= partial(:'common/list_artists', :locals => {:artists => @user.followed_by}) %>
 </div>

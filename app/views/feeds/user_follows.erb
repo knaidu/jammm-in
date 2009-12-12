@@ -1,7 +1,7 @@
 <% users = fhlp_get_users(feed) %>
 <div>
-	<span class='float-left'>
-		<%= add_icon_with_pad %>
+	<span class='float-left pad-right-10'>
+		<%= icon(:following, :small) %>
 	</span>
 	<% if users[1] == session_user? and not is_update %>
 		You are being followed by <%= profile_link(users[0]) %>

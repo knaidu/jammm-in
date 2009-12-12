@@ -1,11 +1,6 @@
 
 <div class='menu'>
 	<br>
-	<%= "#{add_field_name 'Username'} #{@session_user.username}" %><br>
-	<%= "#{add_field_name 'Name'} #{@session_user.name}" %><br>
-	<%= "#{add_field_name 'Location'} #{@session_user.location}" %><br>
-	<br>
-	
 	<a class='simple-link' href='<%= session_user?.url %>'><%= session_user?.url %></a>
 	<br><br>
 	<span class='bg-grey round pad10'>
@@ -16,13 +11,13 @@
 	<br><br>
 	<div>
 		<%= section_header 'navigate' %>
-	  <%= add_menu_entry('Home','/account','asdasd') %>
-	  <%= add_menu_entry('Profile','/' + @session_user.username,'') %>
+	  <%= add_menu_entry('Home','/account','') %>
+	  <%= add_menu_entry('Profile','/' + @session_user.username, :profile) %>
 	  <%= add_menu_entry('Songs','/account/songs', :song) %>
 	  <%= add_menu_entry('Jams','/account/jams', :jam) %>
-	  <%= add_menu_entry('Messages','/account/messages','') %>
-	  <%= add_menu_entry('Following','/account/following','') %>
-	  <%= add_menu_entry('Followers','/account/followers','') %>
+	  <%= add_menu_entry('Vocal Thread','/account/messages','') %>
+	  <%= add_menu_entry('Following','/account/following', :following) %>
+	  <%= add_menu_entry('Followers','/account/followers', :followers) %>
 	
 		<br>
 	  <%= add_menu_entry('Help','/help','asdasd') %>  

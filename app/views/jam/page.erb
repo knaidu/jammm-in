@@ -1,9 +1,8 @@
 <font size='4'>JAM / "<%= @jam.name %>"</font><br><br>
 
-<%= add_field_name 'Actions' %> 
-<a href='javascript: history.go(-1)' class='simple-link'>Back</a>,
+<a href='javascript: history.go(-1)' class='simple-link'>Back</a>
 <% if session_user? and @jam.artists.include?(session_user?) %>
-	<a class='simple-link' href='/jam/<%= @jam.id %>/manage'>Manage Jam</a>, 
+	<a class='simple-link' href='/jam/<%= @jam.id %>/manage' title='Manage'><%= icon(:manage, :small) %></a> 
 <% end %>
 <a href='?' class='simple-link'>Refresh</a>
 <br><br>
