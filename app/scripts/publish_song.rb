@@ -26,9 +26,11 @@ process_info.clear
 
 process_info.set_message "Processing songs"
 
-def file_path(file_handle)
-  ENV["FILES_DIR"] + "/" + file_handle
+def new_file_handle_full_name
+  ENV["FILES_DIR"] + "/" + new_file_handle_name
 end
+
+
 
 def mark_jams_as_active(song, jams)
   ids = jams.map(&:id)
@@ -41,10 +43,31 @@ def delete_old_song_file_handle(song, jams)
   song.delete_file_handle if song.file_handle_exists?  
 end
 
+def arrage_jams_for_processing(jams)
+  temp_arr = jams.clone
+  temp_arr = temp_arr.split_at(1)
+  temp_output = new_file_handle_full_name + ".wav"
+  puts temp_arr[0][1]
+  temp_arr[0].push(temp_output)
+  temp_arr[0][0] = temp_arr[0][0].file.path
+#  temp_arr[0] = temp_arr[0].in_groups_of(3)
+  if temp_arr[1]
+    temp_arr[1] = temp_arr[1].in_groups_of(1)
+    temp_arr[1].map! {|arr|
+      output = new_file_handle_full_name + ".wav"
+      arr = [temp_output] + arr + [output]
+      temp_output = output
+      arr
+    }
+    temp_arr[1] = temp_arr[1].flatten
+  end
+  temp_arr
+end
+
 if jams.size == 1
   mark_jams_as_active(song, jams)
   delete_old_song_file_handle(song, jams)
-  song.file_handle = jams[0].make_copy_of_file_handle(new_file_handle_name) if jams[0].file_handle_exists?
+  song.file_handle = jams[0].make_copy_of_file_handle(new_file_handle_full_name) if jams[0].file_handle_exists?
   song.save
   
   process_info.set_done "Song has been successfully published."
@@ -54,18 +77,24 @@ end
 
 mark_jams_as_active(song, jams)
 delete_old_song_file_handle(song, jams)
-
-sox_output = new_file_handle_name + ".wav"
-lame_output = new_file_handle_name + ".mp3"
+sox_output = false
+lame_output = new_file_handle_full_name
 
 # sox merging
-process_info.set_message "Flattening Jams"
-cmd = "sox -m '#{jams[0].file.path}' '#{jams[1].file.path}' '#{file_path(sox_output)}'"
-run(cmd)
+process_info.set_message "Processing jams"
+
+arranged_jams_info = arrage_jams_for_processing(jams)
+
+arranged_jams_info.each { |info|
+  process_info.set_message "Processing #{info[1].name}"
+  cmd = "sox -m '#{info[0]}' '#{info[1].file.path}' '#{info[2]}'"
+  run(cmd)
+  sox_output = info[2]
+}
 
 # lame encoding
 process_info.set_message "Encoding media into MP3"
-cmd = "lame #{file_path(sox_output)} #{file_path(lame_output)}"
+cmd = "lame #{sox_output} #{lame_output}"
 run(cmd)
 
 song.file_handle = lame_output
