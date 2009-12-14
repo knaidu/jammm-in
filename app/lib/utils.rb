@@ -81,6 +81,6 @@ def allow_login?(username, password)
 end
 
 def add_message(user_1, user_2, body)
-  user_message_map = UserMessageMap.find_by_user_1_id_and_user_2_id(user_1.id, user_2.id)
-  user_message_map_id = user_message_map ? user_message_map.id : UserMessageMap.
+  message_stream = MessageStream.find_stream(user_1, user_2) || MessageStream.create
+  message_stream.add_message(user_1, body)
 end

@@ -11,7 +11,7 @@
 	<br><br>
 	<div>
 		<%= section_header 'navigate' %>
-	  <%= add_menu_entry('Home','/account','') %>
+	  <%= add_menu_entry('Home','/account', :home) %>
 	  <%= add_menu_entry('Profile','/' + @session_user.username, :profile) %>
 	  <%= add_menu_entry('Songs','/account/songs', :song) %>
 	  <%= add_menu_entry('Jams','/account/jams', :jam) %>
@@ -20,7 +20,7 @@
 	  <%= add_menu_entry('Followers','/account/followers', :followers) %>
 	
 		<br>
-	  <%= add_menu_entry('Help','/help','asdasd') %>  
+	  <%= add_menu_entry('Help','/help', :help) %>  
 	  <%= add_menu_entry('Logout','/account/logout','asdasd') %>  
 	</div>
 </div>

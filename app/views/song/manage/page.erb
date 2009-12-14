@@ -1,9 +1,9 @@
 
 <font size=4>Song / "<%= @song.name %>" / Manage</font><br><br>
 
-<a href='javascript: history.go(-1)' class='simple-link'>Back</a>,
-<a class='simple-link' href='/song/<%= @song.id %>'>Song Page</a>, 
-<a href='?' class='simple-link'>Refresh</a>
+<a href='javascript: history.go(-1)' class='simple-link'><%= icon :back %></a>
+<a class='simple-link' href='/song/<%= @song.id %>'><%= icon :song_page %></a>
+<a href='?' class='simple-link'><%= icon :refresh %></a>
 <br><br>
 
 <div class='music-desc round'>

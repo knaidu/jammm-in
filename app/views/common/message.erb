@@ -1,0 +1,5 @@
+<div>
+	<%= add_field_name(message.user == session_user? ? "You" : message.user.name) %>
+	<%= message.body %><br>
+	<i class='grey'><%= message.created_at.date %></i>
+</div>

@@ -21,11 +21,11 @@
 
 	<%
 	  items = [
-	    {:name => 'Profile', :link => "/#{@user.username}"},
+	    {:name => 'Profile', :link => "/#{@user.username}", :icon => :profile},
 	    {:name => 'Songs', :link => "/#{@user.username}/songs", :icon => :song},
 	    {:name => 'Jams', :link => "/#{@user.username}/jams", :icon => :jam},
 	    {:name => 'Following', :link => "/#{@user.username}/following", :icon => :following},
-	    {:name => 'Jammmed With', :link => "/#{@user.username}/jammmed_with"},
+	    {:name => 'Jammmed With', :link => "/#{@user.username}/jammmed_with", :icon => :collaborators},
 	    {:name => 'Followers', :link => "/#{@user.username}/followers", :icon => :followers}    
 	  ]
   
@@ -44,7 +44,7 @@
 	<%= partial(:'common/list_artists', :locals => {:artists => @user.follows}) %>
 	<br><br>
 
-	<%= section_header('Collaborators') %>
+	<%= section_header('Collaborators', {:icon => :collaborators })%>
 	<%= partial(:'common/list_artists', :locals => {:artists => @user.collaborators}) %>
 
 	<br><br>

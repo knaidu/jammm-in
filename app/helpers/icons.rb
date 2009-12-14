@@ -13,7 +13,16 @@ ICONS = {
   :play => "/images/icons/play.png",
   :play2 => "/images/icons/play1.png",
   :comments => "/images/icons/comments.png",
-  :user => "/images/icons/user.png"
+  :user => "/images/icons/user.png",
+  :collaborators => "/images/icons/collaborate.png",
+  :update => "/images/icons/update.png",
+  :message => "/images/icons/mail4.png",
+  :home => "/images/icons/home.png",
+  :help => "/images/icons/help1.png",
+  :jam_page => "/images/icons/jampage.png",
+  :song_page => "/images/icons/songpage1.png",
+  :back => "/images/icons/back1.png",
+  :refresh => "/images/icons/refresh.png"
 }
 
 def add_icon(icon=false)

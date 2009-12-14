@@ -1,0 +1,14 @@
+<%= section_header('Message Stream', {:icon => :message}) %>
+<% message_stream = MessageStream.find_stream(User.all[0], User.all[1]) %>
+
+<% if message_stream %>
+	<% message_stream.user_message_streams.each do |message| %>
+		<%= partial ("common/message", :locals => {:message => message}) %>
+		<br>
+	<% end %>
+<% end %>
+<form>
+	<textarea></textarea>
+	<br>
+	<input type='submit' value='Post'>
+</form>
