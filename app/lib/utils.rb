@@ -79,3 +79,8 @@ def allow_login?(username, password)
   password = md5(password)
   true if User.find_by_username_and_password(username, password)
 end
+
+def add_message(user_1, user_2, body)
+  user_message_map = UserMessageMap.find_by_user_1_id_and_user_2_id(user_1.id, user_2.id)
+  user_message_map_id = user_message_map ? user_message_map.id : UserMessageMap.
+end

@@ -19,7 +19,7 @@
 
 	<%
 	  items = [
-	    {:name => 'Update', :link => ""},
+	    {:name => 'Profile', :link => "/#{@user.username}"},
 	    {:name => 'Songs', :link => "/#{@user.username}/songs", :icon => :song},
 	    {:name => 'Jams', :link => "/#{@user.username}/jams", :icon => :jam},
 	    {:name => 'Following', :link => "/#{@user.username}/following", :icon => :following},
