@@ -3,7 +3,12 @@ module Extensions
 end
 
 class Array
-
+  def split_at(index)
+    temp_arr = []
+    temp_arr.push(self.slice(0, index+1))
+    temp_arr.push(self.slice(index+1, self.size)) if self.size > 2
+    temp_arr
+  end
 end
 
 class String

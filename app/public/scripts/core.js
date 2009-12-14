@@ -68,7 +68,8 @@ var Poll = Class.create({
 	start: function(){return Poll.start(this)},
 	loadMessage: function(message) {
 		if(!this.messageDiv || !this.messageDivEl) return;
-		this.messageDivEl.innerHTML = message
+		var img = "<img src='/images/icons/loading.gif' height=16>";
+		this.messageDivEl.innerHTML = img + "&nbsp; &nbsp;" + message;
 	},
 	stop: function(){this._completed = true}
 });
@@ -95,5 +96,6 @@ Poll._processUrl = function(poll){
 
 Poll.start = function(poll){
 	this._completed = false;
+	poll.loadMessage("Please wait...");
 	this._processUrl(poll);
 }.bind(Poll);

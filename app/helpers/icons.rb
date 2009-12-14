@@ -13,6 +13,7 @@ ICONS = {
   :play => "/images/icons/play.png",
   :play2 => "/images/icons/play1.png",
   :comments => "/images/icons/comments.png",
+  :user => "/images/icons/user.png"
 }
 
 def add_icon(icon=false)
