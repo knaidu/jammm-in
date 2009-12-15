@@ -50,12 +50,14 @@ function addMessage(formId){
   if(!form) return;
   var users = form.findElementByName('user_ids').value;
   var divId = form.findElementByName('div_id').value;
-  form.request({onSuccess: function(){loadMessageStream(users, divId)}});
+	var full = form.findElementByName('full')
+	if(full) full = full.value;
+  form.request({onSuccess: function(){loadMessageStream(users, divId, full)}});
 }
 
-function loadMessageStream(users, divId){
-  var url = formatUrl('/message_stream/show', {user_ids: users});
-  updateEl(divId, url)
+function loadMessageStream(users, divId, full){
+  var url = formatUrl('/message_stream/show', {user_ids: users, full: full});
+	updateEl(divId, url)
 }
 
 function loadSuccessMessage(id, message){

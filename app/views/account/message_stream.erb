@@ -1,7 +1,8 @@
 <%= section_header('Message Stream', {:icon => :message}) %>
 <% message_stream = @message_stream %>
 
-Stream with <%= profile_link(message_stream.users.without(session_user?)[0]) %><br>
-<%= message_stream.messages.size %> messages<br><br>
-
-<%= partial("common/message_stream", {:locals => {:message_stream => @message_stream}}) %>
+<span class='music-desc round'>
+	Stream with <%= profile_link(message_stream.users.without(session_user?)[0]) %><br>
+</span>
+<br>
+<%= partial("common/message_stream", {:locals => {:message_stream => message_stream, :full => true}}) %>

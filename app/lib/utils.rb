@@ -60,6 +60,10 @@ def get_params(*parameters)
   parameters.map do |param| params["#{param}"] end
 end
 
+def param?(key)
+  params.has_key?(key.to_s) ? params[key] : nil
+end
+
 def layout_info(section, subsection=false)
   section_str = section.to_s
   section = $layout_info[section]

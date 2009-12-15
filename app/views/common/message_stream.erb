@@ -1,22 +1,41 @@
 <% div_id = rand.to_s %>
-<% user1, user2 = message_stream ? [message_stream.users[0], message_stream.users[1]] : [session_user?, @user] %>
+<% 
+	user1, user2 = message_stream ? [message_stream.users[0], message_stream.users[1]] : [session_user?, @user] 
+	full ||= nil
+%>
 
 <div id='<%= div_id %>'>
   <% if message_stream %>
-	  <% messages = message_stream.user_message_streams %>
-	    <% if messages.size > 4 %>
-	      ...<br><br>
-	    <% end %>
-	    <% messages[-4..-1].each do |message| %>
-		  <%= partial ("common/message", :locals => {:message => message}) %>
-		  <br>
-	  <% end %>
+		<%= message_stream.messages.size %> messages <br><br>
+	  <% 
+				messages = message_stream.user_message_streams
+				plucked_messages = messages.clone
+				if not full
+			 		max_rows = messages.size > 4 ? 4 : messages.size
+	     		if messages.size > max_rows
+	      	%>...<br><br><%
+					range = Range.new(-(max_rows), -1)
+					plucked_messages = messages[range]
+	    		end
+	      end
+		%>
+			<div class='message-stream round'>
+				<a href='#message-stream-end' class='simple-link'>goto [END]</a><br><br>
+		    <% plucked_messages.each do |message| %>
+		  		<%= partial ("common/message", :locals => {:message => message}) %>
+		  		<br>
+		  	<% end %>
+			<div id='message-stream-end'></div>
+			</div>
   <% end %>
-  
+  <br><br>
   <% form_id = "message-stream-form-#{rand.to_s}" %>
   <form action='/message_stream/new_post' method='post' onsubmit='return false' id='<%= form_id %>'>
     <input type='hidden' name='user_ids' value='<%= "#{user1.id},#{user2.id}" %>'>
     <input type='hidden' name='div_id' value='<%= div_id %>'>
+		<% if full %>
+			<input type='hidden' name='full' value=true>
+		<% end %>	
 	  <textarea name='body'></textarea>
 	  <br>
 	  <input type='submit' value='Post' onclick="addMessage('<%= form_id %>')">
