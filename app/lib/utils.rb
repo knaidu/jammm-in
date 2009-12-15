@@ -89,6 +89,8 @@ def allow_login?(username, password)
 end
 
 def add_message(user_1, user_2, body)
+  puts user_1
+  puts user_2
   message_stream = MessageStream.find_stream(user_1, user_2) || MessageStream.start([user_1, user_2])
   message_stream.add_message(user_1, body)
 end

@@ -7,6 +7,7 @@ class MessageStream < ActiveRecord::Base
   alias messages user_message_streams
 
   def self.find_stream(user_1, user_2)
+    puts  [user_1, user_2].inspect
     self.all.find do |message_stream|
       message_stream.users.sort_by(&:id) == [user_1, user_2].sort_by(&:id)
     end

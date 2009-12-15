@@ -1,6 +1,9 @@
 
 post '/message_stream/new_post' do
   user_1, user_2 = params[:user_ids].split(",").map do |id| User.find(id) end
+  if user_2 == session_user?
+    user_1, user_2 = user_2, user_1
+  end
   add_message(user_1, user_2, params[:body])
 end
 
