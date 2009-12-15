@@ -4028,6 +4028,10 @@ Form.Methods = {
       options.method = form.method;
 
     return new Ajax.Request(action, options);
+  },
+  
+  findElementByName: function(form, name){
+    return form.getElements().find(function(el){return el.name == name})
   }
 };
 

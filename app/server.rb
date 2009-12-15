@@ -49,6 +49,9 @@ load 'urls/signup.rb'
 # Loads all the account urls e.g: /account/home
 load 'urls/account.rb'
 
+# Loads all the message_stream urls
+load 'urls/message_stream.rb'
+
 # Loads all the profile urls eg: /user1, /user2
 load 'urls/profile.rb'
 

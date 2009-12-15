@@ -21,6 +21,10 @@ def get_passed_user
   User.with_username(params[:username])
 end
 
+def get_passed_users_by_id
+  params[:user_ids].split(",").map do |id| User.find(id) end
+end
+
 def new_file_handle_name
   Time.now.to_f.to_s.gsub('.', '-') + ".mp3"
 end
@@ -81,6 +85,6 @@ def allow_login?(username, password)
 end
 
 def add_message(user_1, user_2, body)
-  message_stream = MessageStream.find_stream(user_1, user_2) || MessageStream.create
+  message_stream = MessageStream.find_stream(user_1, user_2) || MessageStream.start([user_1, user_2])
   message_stream.add_message(user_1, body)
 end

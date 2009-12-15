@@ -1,14 +1,23 @@
-<%= section_header('Message Stream', {:icon => :message}) %>
-<% message_stream = MessageStream.find_stream(User.all[0], User.all[1]) %>
+<% div_id = rand.to_s %>
+<% user1, user2 = message_stream.users[0], message_stream.users[1] %>
 
-<% if message_stream %>
-	<% message_stream.user_message_streams.each do |message| %>
-		<%= partial ("common/message", :locals => {:message => message}) %>
-		<br>
-	<% end %>
-<% end %>
-<form>
-	<textarea></textarea>
-	<br>
-	<input type='submit' value='Post'>
-</form>
+<div id='<%= div_id %>'>
+  <% if message_stream %>
+	  <% messages = message_stream.user_message_streams %>
+	    <% if messages.size > 4 %>
+	      ...<br><br>
+	    <% end %>
+	    <% messages[-4..-1].each do |message| %>
+		  <%= partial ("common/message", :locals => {:message => message}) %>
+		  <br>
+	  <% end %>
+  <% end %>
+  <% form_id = "message-stream-form-#{rand.to_s}" %>
+  <form action='/message_stream/new_post' method='post' onsubmit='return false' id='<%= form_id %>'>
+    <input type='hidden' name='user_ids' value='<%= "#{user1.id},#{user2.id}" %>'>
+    <input type='hidden' name='div_id' value='<%= div_id %>'>
+	  <textarea name='body'></textarea>
+	  <br>
+	  <input type='submit' value='Post' onclick="addMessage('<%= form_id %>')">
+  </form>
+</div>

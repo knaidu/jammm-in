@@ -44,33 +44,18 @@ function formatController(){
 
 /* Messages */
 
-function sendMessage(formId){
-	var form = $(formId);
-	if(!form) return;
-	form.request({onSuccess: loadAccountMessages})
+function addMessage(formId){
+  var form = $(formId);
+  aaa = form;
+  if(!form) return;
+  var users = form.findElementByName('user_ids').value;
+  var divId = form.findElementByName('div_id').value;
+  form.request({onSuccess: function(){loadMessageStream(users, divId)}});
 }
 
-function deleteMessages() {
-	var els = document.getElementsByName('message-checkbox');
-	var ids = $A(els).map(function(id){
-		var el = $(id);
-		return el.checked ? el.getValue() : null
-	}).compact().join(',');
-	var url = formatUrl('/account/messages/delete', {ids: ids});
-	call(url, {onSuccess: reload});
-};
-
-function loadMessage(id, message, className){
-	var el = $(id);
-	if(!el) return;
-	var div = new Element('div');
-	el.addClassName('text-center');
-	div.insert(message);
-	div.addClassName(className);
-	var items = ["<center>", "<br>", div, "<br>", "</center>"];	
-	el.innerHTML = '';
-	$A(items).each(function(item){el.insert(item)});
-	window.setTimeout(function(){el.innerHTML = ''}, 2000); // empties the window after 2 seconds
+function loadMessageStream(users, divId){
+  var url = formatUrl('/message_stream/show', {user_ids: users});
+  updateEl(divId, url)
 }
 
 function loadSuccessMessage(id, message){
