@@ -15084,3 +15084,777 @@ page is: common/message
 page is: common/message
 page is: common/message
 127.0.0.1 - - [15/Dec/2009 20:02:30] "GET /message_stream/show?user_ids=1%2C2 HTTP/1.1" 200 991 0.0130
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: 
+page is: signup/form
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 20:09:34] "GET /signup HTTP/1.1" 200 3127 0.0090
+127.0.0.1 - - [15/Dec/2009 20:09:34] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0039
+127.0.0.1 - - [15/Dec/2009 20:09:34] "GET /scripts/all.js HTTP/1.1" 304 - 0.0023
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/nil
+page is: profile/usernotfound
+page is: profile/nil
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 20:09:34] "GET /undefined HTTP/1.1" 200 2319 0.0111
+127.0.0.1 - - [15/Dec/2009 20:09:43] "POST /signup/create HTTP/1.1" 302 - 0.0419
+127.0.0.1 - - [15/Dec/2009 20:09:43] "GET /account HTTP/1.1" 302 - 0.0037
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/home
+page is: account/feeds
+page is: common/feeds
+page is: common/feed
+page is: feeds/user_created
+page is: common/feed
+page is: feeds/song_created
+page is: common/feed
+page is: feeds/user_follows
+page is: common/feed
+page is: feeds/user_created
+page is: common/feed
+page is: feeds/user_created
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 20:09:43] "GET /account/home HTTP/1.1" 200 6510 0.0500
+127.0.0.1 - - [15/Dec/2009 20:09:43] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0065
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: 
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 20:09:44] "GET /account/undefined HTTP/1.1" 200 5242 0.0112
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: homepage/left
+page is: homepage/middle
+page is: common/feeds
+page is: common/feed
+page is: feeds/user_created
+page is: common/feed
+page is: feeds/song_created
+page is: common/feed
+page is: feeds/user_follows
+page is: common/feed
+page is: feeds/user_created
+page is: common/feed
+page is: feeds/user_created
+page is: homepage/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 20:09:45] "GET / HTTP/1.1" 200 3984 0.0314
+127.0.0.1 - - [15/Dec/2009 20:09:45] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0064
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/nil
+page is: profile/usernotfound
+page is: profile/nil
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 20:09:45] "GET /undefined HTTP/1.1" 200 2307 0.0127
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/menu
+page is: profile/actions
+true
+true
+true
+true
+true
+true
+page is: common/list_artists
+page is: common/list_artists
+page is: common/list_artists
+page is: profile/profilehome
+/home/jammmin/webserver/app/views/profile/profilehome.erb:6: warning: don't put space before argument parentheses
+/home/jammmin/webserver/app/views/profile/profilehome.erb:9: warning: don't put space before argument parentheses
+page is: common/feeds
+page is: common/feed
+page is: feeds/song_created
+page is: common/feed
+page is: feeds/user_follows
+page is: common/songs
+/home/jammmin/webserver/app/views/common/songs.erb:2: warning: don't put space before argument parentheses
+page is: common/song
+page is: common/list_artists
+page is: common/jams
+/home/jammmin/webserver/app/views/common/jams.erb:2: warning: don't put space before argument parentheses
+page is: profile/right
+page is: common/message_stream
+/home/jammmin/webserver/app/views/common/message_stream.erb:11: warning: don't put space before argument parentheses
+NoMethodError - undefined method `users' for nil:NilClass:
+ /home/jammmin/webserver/app/views/common/message_stream.erb:2:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/profile/right.erb:6:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/body/structure.erb:9:in `render_erb'
+ urls/profile.rb:9:in `GET /:username'127.0.0.1 - - [15/Dec/2009 20:09:47] "GET /prakashraman HTTP/1.1" 500 30 0.1183
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/menu
+page is: profile/actions
+true
+true
+true
+true
+true
+true
+page is: common/list_artists
+page is: common/list_artists
+page is: common/list_artists
+page is: profile/profilehome
+/home/jammmin/webserver/app/views/profile/profilehome.erb:6: warning: don't put space before argument parentheses
+/home/jammmin/webserver/app/views/profile/profilehome.erb:9: warning: don't put space before argument parentheses
+page is: common/feeds
+page is: common/feed
+page is: feeds/song_created
+page is: common/feed
+page is: feeds/user_follows
+page is: common/songs
+/home/jammmin/webserver/app/views/common/songs.erb:2: warning: don't put space before argument parentheses
+page is: common/song
+page is: common/list_artists
+page is: common/jams
+/home/jammmin/webserver/app/views/common/jams.erb:2: warning: don't put space before argument parentheses
+page is: profile/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 20:11:54] "GET /prakashraman HTTP/1.1" 200 7184 0.0564
+127.0.0.1 - - [15/Dec/2009 20:11:54] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0077
+127.0.0.1 - - [15/Dec/2009 20:11:55] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 20:11:55] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 20:11:55] "GET /scripts/all.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 20:11:55] "GET /scripts/core.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 20:11:55] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 20:11:55] "GET /images/icons/user2.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 20:11:55] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 20:11:55] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 20:11:55] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 20:11:55] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 20:11:55] "GET /images/icons/collaborate.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 20:11:55] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 20:11:55] "GET /images/icons/update.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 20:11:55] "GET /images/icons/like2.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 20:11:55] "GET /images/icons/comments.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 20:11:55] "GET /images/icons/add.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 20:11:55] "GET /images/icons/play1.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 20:11:56] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0016
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/nil
+page is: profile/usernotfound
+page is: profile/nil
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 20:11:56] "GET /undefined HTTP/1.1" 200 2307 0.0108
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/menu
+page is: profile/actions
+true
+true
+true
+true
+true
+true
+page is: common/list_artists
+page is: common/list_artists
+page is: common/list_artists
+page is: profile/profilehome
+/home/jammmin/webserver/app/views/profile/profilehome.erb:6: warning: don't put space before argument parentheses
+/home/jammmin/webserver/app/views/profile/profilehome.erb:9: warning: don't put space before argument parentheses
+page is: common/feeds
+page is: common/feed
+page is: feeds/song_created
+page is: common/feed
+page is: feeds/user_follows
+page is: common/songs
+/home/jammmin/webserver/app/views/common/songs.erb:2: warning: don't put space before argument parentheses
+page is: common/song
+page is: common/list_artists
+page is: common/jams
+/home/jammmin/webserver/app/views/common/jams.erb:2: warning: don't put space before argument parentheses
+page is: profile/right
+SyntaxError - compile error
+/home/jammmin/webserver/app/views/profile/right.erb:4: syntax error, unexpected '<', expecting kEND
+  <%= section_header('Message Str...
+   ^
+/home/jammmin/webserver/app/views/profile/right.erb:4: syntax error, unexpected '}', expecting kEND
+...e Stream', {:icon => :message}) ; @_out_buf.concat "\n  "
+                              ^:
+ /home/jammmin/webserver/app/views/profile/right.erb:8:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/body/structure.erb:9:in `render_erb'
+ urls/profile.rb:9:in `GET /:username'127.0.0.1 - - [15/Dec/2009 20:12:20] "GET /prakashraman HTTP/1.1" 500 30 0.0499
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/menu
+page is: profile/actions
+true
+true
+true
+true
+true
+true
+page is: common/list_artists
+page is: common/list_artists
+page is: common/list_artists
+page is: profile/profilehome
+/home/jammmin/webserver/app/views/profile/profilehome.erb:6: warning: don't put space before argument parentheses
+/home/jammmin/webserver/app/views/profile/profilehome.erb:9: warning: don't put space before argument parentheses
+page is: common/feeds
+page is: common/feed
+page is: feeds/song_created
+page is: common/feed
+page is: feeds/user_follows
+page is: common/songs
+/home/jammmin/webserver/app/views/common/songs.erb:2: warning: don't put space before argument parentheses
+page is: common/song
+page is: common/list_artists
+page is: common/jams
+/home/jammmin/webserver/app/views/common/jams.erb:2: warning: don't put space before argument parentheses
+page is: profile/right
+SyntaxError - compile error
+/home/jammmin/webserver/app/views/profile/right.erb:4: syntax error, unexpected '<', expecting kEND
+  <%= section_header('Message Str...
+   ^
+/home/jammmin/webserver/app/views/profile/right.erb:4: syntax error, unexpected '}', expecting kEND
+...e Stream', {:icon => :message}) ; @_out_buf.concat "\n  "
+                              ^:
+ /home/jammmin/webserver/app/views/profile/right.erb:8:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/body/structure.erb:9:in `render_erb'
+ urls/profile.rb:9:in `GET /:username'127.0.0.1 - - [15/Dec/2009 20:13:13] "GET /prakashraman HTTP/1.1" 500 30 0.0323
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/menu
+page is: profile/actions
+true
+true
+true
+true
+true
+true
+page is: common/list_artists
+page is: common/list_artists
+page is: common/list_artists
+page is: profile/profilehome
+/home/jammmin/webserver/app/views/profile/profilehome.erb:6: warning: don't put space before argument parentheses
+/home/jammmin/webserver/app/views/profile/profilehome.erb:9: warning: don't put space before argument parentheses
+page is: common/feeds
+page is: common/feed
+page is: feeds/song_created
+page is: common/feed
+page is: feeds/user_follows
+page is: common/songs
+/home/jammmin/webserver/app/views/common/songs.erb:2: warning: don't put space before argument parentheses
+page is: common/song
+page is: common/list_artists
+page is: common/jams
+/home/jammmin/webserver/app/views/common/jams.erb:2: warning: don't put space before argument parentheses
+page is: profile/right
+SyntaxError - compile error
+/home/jammmin/webserver/app/views/profile/right.erb:4: syntax error, unexpected '<', expecting kEND
+  <%= section_header('Message Str...
+   ^
+/home/jammmin/webserver/app/views/profile/right.erb:4: syntax error, unexpected '}', expecting kEND
+...e Stream', {:icon => :message}) ; @_out_buf.concat "\n  "
+                              ^:
+ /home/jammmin/webserver/app/views/profile/right.erb:8:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/body/structure.erb:9:in `render_erb'
+ urls/profile.rb:9:in `GET /:username'127.0.0.1 - - [15/Dec/2009 20:13:32] "GET /prakashraman HTTP/1.1" 500 30 0.0484
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/menu
+page is: profile/actions
+true
+true
+true
+true
+true
+true
+page is: common/list_artists
+page is: common/list_artists
+page is: common/list_artists
+page is: profile/profilehome
+/home/jammmin/webserver/app/views/profile/profilehome.erb:6: warning: don't put space before argument parentheses
+/home/jammmin/webserver/app/views/profile/profilehome.erb:9: warning: don't put space before argument parentheses
+page is: common/feeds
+page is: common/feed
+page is: feeds/song_created
+page is: common/feed
+page is: feeds/user_follows
+page is: common/songs
+/home/jammmin/webserver/app/views/common/songs.erb:2: warning: don't put space before argument parentheses
+page is: common/song
+page is: common/list_artists
+page is: common/jams
+/home/jammmin/webserver/app/views/common/jams.erb:2: warning: don't put space before argument parentheses
+page is: profile/right
+SyntaxError - compile error
+/home/jammmin/webserver/app/views/profile/right.erb:4: syntax error, unexpected '<', expecting kEND
+  <%= section_header('Message Str...
+   ^
+/home/jammmin/webserver/app/views/profile/right.erb:4: syntax error, unexpected '}', expecting kEND
+...e Stream', {:icon => :message}) ; @_out_buf.concat "\n  "
+                              ^:
+ /home/jammmin/webserver/app/views/profile/right.erb:8:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/body/structure.erb:9:in `render_erb'
+ urls/profile.rb:9:in `GET /:username'127.0.0.1 - - [15/Dec/2009 20:14:06] "GET /prakashraman HTTP/1.1" 500 30 0.0648
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/menu
+page is: profile/actions
+true
+true
+true
+true
+true
+true
+page is: common/list_artists
+page is: common/list_artists
+page is: common/list_artists
+page is: profile/profilehome
+/home/jammmin/webserver/app/views/profile/profilehome.erb:6: warning: don't put space before argument parentheses
+/home/jammmin/webserver/app/views/profile/profilehome.erb:9: warning: don't put space before argument parentheses
+page is: common/feeds
+page is: common/feed
+page is: feeds/song_created
+page is: common/feed
+page is: feeds/user_follows
+page is: common/songs
+/home/jammmin/webserver/app/views/common/songs.erb:2: warning: don't put space before argument parentheses
+page is: common/song
+page is: common/list_artists
+page is: common/jams
+/home/jammmin/webserver/app/views/common/jams.erb:2: warning: don't put space before argument parentheses
+page is: profile/right
+SyntaxError - compile error
+/home/jammmin/webserver/app/views/profile/right.erb:4: syntax error, unexpected '<', expecting kEND
+  <%= section_header('Message Str...
+   ^
+/home/jammmin/webserver/app/views/profile/right.erb:4: syntax error, unexpected '}', expecting kEND
+...e Stream', {:icon => :message}) ; @_out_buf.concat "\n  "
+                              ^:
+ /home/jammmin/webserver/app/views/profile/right.erb:8:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/body/structure.erb:9:in `render_erb'
+ urls/profile.rb:9:in `GET /:username'127.0.0.1 - - [15/Dec/2009 20:14:20] "GET /prakashraman HTTP/1.1" 500 30 0.1181
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/menu
+page is: profile/actions
+true
+true
+true
+true
+true
+true
+page is: common/list_artists
+page is: common/list_artists
+page is: common/list_artists
+page is: profile/profilehome
+/home/jammmin/webserver/app/views/profile/profilehome.erb:6: warning: don't put space before argument parentheses
+/home/jammmin/webserver/app/views/profile/profilehome.erb:9: warning: don't put space before argument parentheses
+page is: common/feeds
+page is: common/feed
+page is: feeds/song_created
+page is: common/feed
+page is: feeds/user_follows
+page is: common/songs
+/home/jammmin/webserver/app/views/common/songs.erb:2: warning: don't put space before argument parentheses
+page is: common/song
+page is: common/list_artists
+page is: common/jams
+/home/jammmin/webserver/app/views/common/jams.erb:2: warning: don't put space before argument parentheses
+page is: profile/right
+SyntaxError - compile error
+/home/jammmin/webserver/app/views/profile/right.erb:4: syntax error, unexpected '<', expecting kEND
+  <%= section_header('Message Str...
+   ^
+/home/jammmin/webserver/app/views/profile/right.erb:4: syntax error, unexpected '}', expecting kEND
+...e Stream', {:icon => :message}) ; @_out_buf.concat "\n  "
+                              ^:
+ /home/jammmin/webserver/app/views/profile/right.erb:8:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/body/structure.erb:9:in `render_erb'
+ urls/profile.rb:9:in `GET /:username'127.0.0.1 - - [15/Dec/2009 20:15:05] "GET /prakashraman HTTP/1.1" 500 30 0.0480
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/menu
+page is: profile/actions
+true
+true
+true
+true
+true
+true
+page is: common/list_artists
+page is: common/list_artists
+page is: common/list_artists
+page is: profile/profilehome
+/home/jammmin/webserver/app/views/profile/profilehome.erb:6: warning: don't put space before argument parentheses
+/home/jammmin/webserver/app/views/profile/profilehome.erb:9: warning: don't put space before argument parentheses
+page is: common/feeds
+page is: common/feed
+page is: feeds/song_created
+page is: common/feed
+page is: feeds/user_follows
+page is: common/songs
+/home/jammmin/webserver/app/views/common/songs.erb:2: warning: don't put space before argument parentheses
+page is: common/song
+page is: common/list_artists
+page is: common/jams
+/home/jammmin/webserver/app/views/common/jams.erb:2: warning: don't put space before argument parentheses
+page is: profile/right
+SyntaxError - compile error
+/home/jammmin/webserver/app/views/profile/right.erb:4: syntax error, unexpected '<', expecting kEND
+  <%= section_header('Message Stream') ; @_out_buf.concat "\n  "
+   ^
+/home/jammmin/webserver/app/views/profile/right.erb:5: syntax error, unexpected ')', expecting kEND
+...age_stream => message_stream}) ).to_s); @_out_buf.concat "\n...
+                              ^:
+ /home/jammmin/webserver/app/views/profile/right.erb:8:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/body/structure.erb:9:in `render_erb'
+ urls/profile.rb:9:in `GET /:username'127.0.0.1 - - [15/Dec/2009 20:15:54] "GET /prakashraman HTTP/1.1" 500 30 0.1302
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/menu
+page is: profile/actions
+true
+true
+true
+true
+true
+true
+page is: common/list_artists
+page is: common/list_artists
+page is: common/list_artists
+page is: profile/profilehome
+/home/jammmin/webserver/app/views/profile/profilehome.erb:6: warning: don't put space before argument parentheses
+/home/jammmin/webserver/app/views/profile/profilehome.erb:9: warning: don't put space before argument parentheses
+page is: common/feeds
+page is: common/feed
+page is: feeds/song_created
+page is: common/feed
+page is: feeds/user_follows
+page is: common/songs
+/home/jammmin/webserver/app/views/common/songs.erb:2: warning: don't put space before argument parentheses
+page is: common/song
+page is: common/list_artists
+page is: common/jams
+/home/jammmin/webserver/app/views/common/jams.erb:2: warning: don't put space before argument parentheses
+page is: profile/right
+page is: common/message_stream
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 20:16:31] "GET /prakashraman HTTP/1.1" 200 7340 0.0549
+127.0.0.1 - - [15/Dec/2009 20:16:31] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0061
+127.0.0.1 - - [15/Dec/2009 20:16:31] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 20:16:31] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 20:16:31] "GET /scripts/all.js HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 20:16:31] "GET /scripts/core.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 20:16:31] "GET /images/icons/like2.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 20:16:31] "GET /images/icons/comments.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 20:16:31] "GET /images/icons/add.png HTTP/1.1" 304 - 0.0017
+127.0.0.1 - - [15/Dec/2009 20:16:31] "GET /images/icons/play1.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 20:16:31] "GET /images/icons/mail4.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 20:16:31] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0016
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/nil
+page is: profile/usernotfound
+page is: profile/nil
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 20:16:31] "GET /undefined HTTP/1.1" 200 2307 0.0107
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/menu
+page is: profile/actions
+true
+true
+true
+true
+true
+true
+page is: common/list_artists
+page is: common/list_artists
+page is: common/list_artists
+page is: profile/profilehome
+/home/jammmin/webserver/app/views/profile/profilehome.erb:6: warning: don't put space before argument parentheses
+/home/jammmin/webserver/app/views/profile/profilehome.erb:9: warning: don't put space before argument parentheses
+page is: common/feeds
+page is: common/feed
+page is: feeds/song_created
+page is: common/feed
+page is: feeds/user_follows
+page is: common/songs
+/home/jammmin/webserver/app/views/common/songs.erb:2: warning: don't put space before argument parentheses
+page is: common/song
+page is: common/list_artists
+page is: common/jams
+/home/jammmin/webserver/app/views/common/jams.erb:2: warning: don't put space before argument parentheses
+page is: profile/right
+page is: common/message_stream
+/home/jammmin/webserver/app/views/common/message_stream.erb:11: warning: don't put space before argument parentheses
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 20:16:36] "GET /prakashraman HTTP/1.1" 200 7785 0.0773
+127.0.0.1 - - [15/Dec/2009 20:16:36] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0100
+127.0.0.1 - - [15/Dec/2009 20:16:37] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 20:16:37] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 20:16:37] "GET /scripts/all.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 20:16:37] "GET /scripts/core.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 20:16:37] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 20:16:37] "GET /images/icons/user2.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 20:16:37] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 20:16:37] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 20:16:37] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 20:16:37] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 20:16:37] "GET /images/icons/collaborate.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 20:16:37] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 20:16:37] "GET /images/icons/update.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 20:16:37] "GET /images/icons/like2.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 20:16:37] "GET /images/icons/comments.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 20:16:37] "GET /images/icons/add.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 20:16:37] "GET /images/icons/play1.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 20:16:37] "GET /images/icons/mail4.png HTTP/1.1" 304 - 0.0025
+127.0.0.1 - - [15/Dec/2009 20:16:38] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0015
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/nil
+page is: profile/usernotfound
+page is: profile/nil
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 20:16:38] "GET /undefined HTTP/1.1" 200 2307 0.0117
+127.0.0.1 - - [15/Dec/2009 20:16:43] "POST /message_stream/new_post HTTP/1.1" 200 - 0.0391
+/home/jammmin/webserver/app/views/common/message_stream.erb:11: warning: don't put space before argument parentheses
+NoMethodError - undefined method `each' for nil:NilClass:
+ /home/jammmin/webserver/app/views/common/message_stream.erb:10:in `render_erb'
+ urls/message_stream.rb:10:in `GET /message_stream/show'127.0.0.1 - - [15/Dec/2009 20:16:43] "GET /message_stream/show?user_ids=3%2C1 HTTP/1.1" 500 30 0.0081
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/menu
+page is: profile/actions
+true
+true
+true
+true
+true
+true
+page is: common/list_artists
+page is: common/list_artists
+page is: common/list_artists
+page is: profile/profilehome
+/home/jammmin/webserver/app/views/profile/profilehome.erb:6: warning: don't put space before argument parentheses
+/home/jammmin/webserver/app/views/profile/profilehome.erb:9: warning: don't put space before argument parentheses
+page is: common/feeds
+page is: common/feed
+page is: feeds/song_created
+page is: common/feed
+page is: feeds/user_follows
+page is: common/songs
+/home/jammmin/webserver/app/views/common/songs.erb:2: warning: don't put space before argument parentheses
+page is: common/song
+page is: common/list_artists
+page is: common/jams
+/home/jammmin/webserver/app/views/common/jams.erb:2: warning: don't put space before argument parentheses
+page is: profile/right
+page is: common/message_stream
+/home/jammmin/webserver/app/views/common/message_stream.erb:11: warning: don't put space before argument parentheses
+NoMethodError - undefined method `each' for nil:NilClass:
+ /home/jammmin/webserver/app/views/common/message_stream.erb:10:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/profile/right.erb:5:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/body/structure.erb:9:in `render_erb'
+ urls/profile.rb:9:in `GET /:username'127.0.0.1 - - [15/Dec/2009 20:16:48] "GET /prakashraman HTTP/1.1" 500 30 0.0577
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/nil
+page is: profile/usernotfound
+page is: profile/nil
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 20:16:51] "GET /undefined HTTP/1.1" 200 2307 0.0104
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: homepage/left
+page is: homepage/middle
+page is: common/feeds
+page is: common/feed
+page is: feeds/user_created
+page is: common/feed
+page is: feeds/song_created
+page is: common/feed
+page is: feeds/user_follows
+page is: common/feed
+page is: feeds/user_created
+page is: common/feed
+page is: feeds/user_created
+page is: homepage/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 20:16:51] "GET / HTTP/1.1" 200 3984 0.0300
+127.0.0.1 - - [15/Dec/2009 20:16:51] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0069
+127.0.0.1 - - [15/Dec/2009 20:16:52] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 20:16:52] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 20:16:52] "GET /scripts/all.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 20:16:52] "GET /scripts/core.js HTTP/1.1" 304 - 0.0024
+127.0.0.1 - - [15/Dec/2009 20:16:52] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 20:16:52] "GET /images/icons/user.png HTTP/1.1" 304 - 0.0026
+127.0.0.1 - - [15/Dec/2009 20:16:52] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 20:16:52] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0130
+127.0.0.1 - - [15/Dec/2009 20:16:52] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0013
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/nil
+page is: profile/usernotfound
+page is: profile/nil
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 20:16:53] "GET /undefined HTTP/1.1" 200 2307 0.0110
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/menu
+page is: profile/actions
+true
+true
+true
+true
+true
+true
+page is: common/list_artists
+page is: common/list_artists
+page is: common/list_artists
+page is: profile/profilehome
+/home/jammmin/webserver/app/views/profile/profilehome.erb:6: warning: don't put space before argument parentheses
+/home/jammmin/webserver/app/views/profile/profilehome.erb:9: warning: don't put space before argument parentheses
+page is: common/feeds
+page is: common/feed
+page is: feeds/song_created
+page is: common/feed
+page is: feeds/user_follows
+page is: common/songs
+/home/jammmin/webserver/app/views/common/songs.erb:2: warning: don't put space before argument parentheses
+page is: common/song
+page is: common/list_artists
+page is: common/jams
+/home/jammmin/webserver/app/views/common/jams.erb:2: warning: don't put space before argument parentheses
+page is: profile/right
+page is: common/message_stream
+/home/jammmin/webserver/app/views/common/message_stream.erb:11: warning: don't put space before argument parentheses
+NoMethodError - undefined method `each' for nil:NilClass:
+ /home/jammmin/webserver/app/views/common/message_stream.erb:10:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/profile/right.erb:5:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/body/structure.erb:9:in `render_erb'
+ urls/profile.rb:9:in `GET /:username'127.0.0.1 - - [15/Dec/2009 20:16:54] "GET /prakashraman HTTP/1.1" 500 30 0.1172

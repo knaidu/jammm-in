@@ -1,5 +1,5 @@
 <% div_id = rand.to_s %>
-<% user1, user2 = message_stream.users[0], message_stream.users[1] %>
+<% user1, user2 = message_stream ? [message_stream.users[0], message_stream.users[1]] : [session_user?, @user] %>
 
 <div id='<%= div_id %>'>
   <% if message_stream %>
@@ -12,6 +12,7 @@
 		  <br>
 	  <% end %>
   <% end %>
+  
   <% form_id = "message-stream-form-#{rand.to_s}" %>
   <form action='/message_stream/new_post' method='post' onsubmit='return false' id='<%= form_id %>'>
     <input type='hidden' name='user_ids' value='<%= "#{user1.id},#{user2.id}" %>'>

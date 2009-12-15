@@ -1,7 +1,7 @@
 <% 
-  if session_user? and @user != session_user?
-  message_stream = MessageStream.find_stream(session_user?, @user)
-%>
-  <%= section_header('Message Stream', {:icon => :message}) %>
+  if session_user? and @user != session_user? 
+  message_stream = MessageStream.find_stream(session_user?, @user) %>
+  <%= section_header('Message Stream', {:icon => :message }) %>
   <%= partial("common/message_stream", :locals => {:message_stream => message_stream}) %>
 <% end %>
+
