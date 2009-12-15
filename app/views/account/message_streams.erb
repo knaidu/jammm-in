@@ -6,7 +6,7 @@
       <span class='float-left display-inline pad-right-10'><%= icon :message %></span>
       <% with_user = message_stream.users.without(session_user?)[0] %>
       <span>
-        <b><%= with_user.name %></b><br>
+        <a href='/account/message_stream/<%= message_stream.id %>'><b><%= with_user.name %></b></a><br>
         <%= message_stream.user_message_streams.size.to_s %> messages
       </span>
     </div>

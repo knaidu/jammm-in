@@ -6,7 +6,7 @@
 
 <div id='<%= div_id %>'>
   <% if message_stream %>
-		<%= message_stream.messages.size %> messages <br><br>
+		<%= message_stream.messages.size %> messages <br>
 	  <% 
 				messages = message_stream.user_message_streams
 				plucked_messages = messages.clone
@@ -19,8 +19,10 @@
 	    		end
 	      end
 		%>
-			<div class='message-stream round'>
-				<a href='#message-stream-end' class='simple-link'>goto [END]</a><br><br>
+			<div class='<%= "message-stream round" if full %>'>
+				<% if full %>
+					<a href='#message-stream-end' class='simple-link'>goto [END]</a><br><br>
+				<% end %>
 		    <% plucked_messages.each do |message| %>
 		  		<%= partial ("common/message", :locals => {:message => message}) %>
 		  		<br>
@@ -28,7 +30,7 @@
 			<div id='message-stream-end'></div>
 			</div>
   <% end %>
-  <br><br>
+  <br>
   <% form_id = "message-stream-form-#{rand.to_s}" %>
   <form action='/message_stream/new_post' method='post' onsubmit='return false' id='<%= form_id %>'>
     <input type='hidden' name='user_ids' value='<%= "#{user1.id},#{user2.id}" %>'>
@@ -37,7 +39,7 @@
 			<input type='hidden' name='full' value=true>
 		<% end %>	
 	  <textarea name='body'></textarea>
-	  <br>
+	  <br><br>
 	  <input type='submit' value='Post' onclick="addMessage('<%= form_id %>')">
   </form>
 </div>
