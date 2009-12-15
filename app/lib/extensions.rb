@@ -9,6 +9,10 @@ class Array
     temp_arr.push(self.slice(index+1, self.size)) if self.size > 2
     temp_arr
   end
+  
+  def without(x)
+    self.reject{|a| a == x}
+  end
 end
 
 class String

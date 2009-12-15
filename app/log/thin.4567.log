@@ -13168,3 +13168,1919 @@ page is:
 page is: body/footer_and_body_end
 page is: body/footer
 127.0.0.1 - - [15/Dec/2009 18:56:34] "GET /account/undefined HTTP/1.1" 200 5243 0.0067
+>> Exiting!
+>> Writing PID to /home/jammmin/webserver/app/processes.4567
+>> Changing process privilege to root:root
+Couldn't change user and group to root:root: Operation not permitted
+DBCONFIG: {"port"=>5432, "username"=>"jammmin", "adapter"=>"postgresql", "database"=>"garage", "password"=>"3WiseMen"}
+DB CONNECTION: #<ActiveRecord::ConnectionAdapters::ConnectionPool:0xb71404e4 @queue=#<MonitorMixin::ConditionVariable:0xb714046c @waiters=[], @monitor=#<Monitor:0xb71404a8 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>>, @size=5, @checked_out=[], @connection_mutex=#<Monitor:0xb71404a8 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>, @spec=#<ActiveRecord::Base::ConnectionSpecification:0xb7169588 @config={:database=>"garage", :port=>5432, :adapter=>"postgresql", :username=>"jammmin", :password=>"3WiseMen"}, @adapter_method="postgresql_connection">, @timeout=5, @reserved_connections={}, @connections=[]>
+libs are: ["active_record.rb", "extensions.rb", "jam_utils.rb", "song_utils.rb", "user.rb", "utils.rb"]
+models are: ["comment.rb", "feed.rb", "follower.rb", "jam_artist.rb", "jam.rb", "like.rb", "message.rb", "message_stream.rb", "process_info.rb", "published_jam.rb", "song_jam.rb", "song_lyric.rb", "song_manager.rb", "song.rb", "test_tables.rb", "user_feed.rb", "user_message_map.rb", "user_message_stream_map.rb", "user_message_stream.rb", "user.rb"]
+>> Thin web server (v1.2.2 codename I Find Your Lack of Sauce Disturbing)
+>> Maximum connections set to 1024
+>> Listening on 127.0.0.1:4567, CTRL+C to stop
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: 
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:00:41] "GET /account/messages HTTP/1.1" 200 5252 0.0279
+127.0.0.1 - - [15/Dec/2009 19:00:41] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0073
+127.0.0.1 - - [15/Dec/2009 19:00:42] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0027
+127.0.0.1 - - [15/Dec/2009 19:00:42] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:00:42] "GET /scripts/all.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:00:42] "GET /scripts/core.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:00:42] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:00:42] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:00:42] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:00:42] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:00:42] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0022
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: 
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:00:42] "GET /account/messages HTTP/1.1" 200 5252 0.0110
+127.0.0.1 - - [15/Dec/2009 19:00:42] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:00:42] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:00:42] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:00:42] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:00:42] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0015
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: 
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:00:43] "GET /account/undefined HTTP/1.1" 200 5252 0.0110
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: 
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:00:47] "GET /account/messages HTTP/1.1" 200 5275 0.0115
+127.0.0.1 - - [15/Dec/2009 19:00:47] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0070
+127.0.0.1 - - [15/Dec/2009 19:00:48] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0026
+127.0.0.1 - - [15/Dec/2009 19:00:48] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:00:49] "GET /scripts/all.js HTTP/1.1" 304 - 0.0779
+127.0.0.1 - - [15/Dec/2009 19:00:49] "GET /scripts/core.js HTTP/1.1" 304 - 0.0027
+127.0.0.1 - - [15/Dec/2009 19:00:49] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:00:49] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0017
+127.0.0.1 - - [15/Dec/2009 19:00:49] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0016
+127.0.0.1 - - [15/Dec/2009 19:00:49] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0016
+127.0.0.1 - - [15/Dec/2009 19:00:49] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0016
+127.0.0.1 - - [15/Dec/2009 19:00:49] "GET /images/icons/mail4.png HTTP/1.1" 304 - 0.0016
+127.0.0.1 - - [15/Dec/2009 19:00:49] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0016
+127.0.0.1 - - [15/Dec/2009 19:00:49] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0016
+127.0.0.1 - - [15/Dec/2009 19:00:49] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0016
+127.0.0.1 - - [15/Dec/2009 19:00:49] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0016
+127.0.0.1 - - [15/Dec/2009 19:00:49] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0016
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: 
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:00:49] "GET /account/undefined HTTP/1.1" 200 5275 0.0065
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_streams
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:00:51] "GET /account/message_streams HTTP/1.1" 200 5269 0.0113
+127.0.0.1 - - [15/Dec/2009 19:00:51] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0065
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: 
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:00:52] "GET /account/undefined HTTP/1.1" 200 5275 0.0109
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_streams
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:01:35] "GET /account/message_streams HTTP/1.1" 200 5423 0.0115
+127.0.0.1 - - [15/Dec/2009 19:01:35] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0065
+127.0.0.1 - - [15/Dec/2009 19:01:35] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0028
+127.0.0.1 - - [15/Dec/2009 19:01:35] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0016
+127.0.0.1 - - [15/Dec/2009 19:01:35] "GET /scripts/all.js HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:01:35] "GET /scripts/core.js HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:01:35] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:01:35] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:01:35] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:01:35] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:01:35] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:01:35] "GET /images/icons/mail4.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:01:35] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:01:35] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:01:35] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:01:35] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:01:35] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0016
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: 
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:01:36] "GET /account/undefined HTTP/1.1" 200 5275 0.0104
+>> Exiting!
+>> Writing PID to /home/jammmin/webserver/app/processes.4567
+>> Changing process privilege to root:root
+Couldn't change user and group to root:root: Operation not permitted
+DBCONFIG: {"port"=>5432, "username"=>"jammmin", "adapter"=>"postgresql", "database"=>"garage", "password"=>"3WiseMen"}
+DB CONNECTION: #<ActiveRecord::ConnectionAdapters::ConnectionPool:0xb71b9498 @queue=#<MonitorMixin::ConditionVariable:0xb71b9420 @waiters=[], @monitor=#<Monitor:0xb71b945c @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>>, @size=5, @checked_out=[], @connection_mutex=#<Monitor:0xb71b945c @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>, @spec=#<ActiveRecord::Base::ConnectionSpecification:0xb71e253c @config={:database=>"garage", :port=>5432, :adapter=>"postgresql", :username=>"jammmin", :password=>"3WiseMen"}, @adapter_method="postgresql_connection">, @timeout=5, @reserved_connections={}, @connections=[]>
+libs are: ["active_record.rb", "extensions.rb", "jam_utils.rb", "song_utils.rb", "user.rb", "utils.rb"]
+models are: ["comment.rb", "feed.rb", "follower.rb", "jam_artist.rb", "jam.rb", "like.rb", "message.rb", "message_stream.rb", "process_info.rb", "published_jam.rb", "song_jam.rb", "song_lyric.rb", "song_manager.rb", "song.rb", "test_tables.rb", "user_feed.rb", "user_message_map.rb", "user_message_stream_map.rb", "user_message_stream.rb", "user.rb"]
+>> Thin web server (v1.2.2 codename I Find Your Lack of Sauce Disturbing)
+>> Maximum connections set to 1024
+>> Listening on 127.0.0.1:4567, CTRL+C to stop
+>> Exiting!
+>> Writing PID to /home/jammmin/webserver/app/processes.4567
+>> Changing process privilege to root:root
+Couldn't change user and group to root:root: Operation not permitted
+DBCONFIG: {"port"=>5432, "username"=>"jammmin", "adapter"=>"postgresql", "database"=>"garage", "password"=>"3WiseMen"}
+DB CONNECTION: #<ActiveRecord::ConnectionAdapters::ConnectionPool:0xb7218498 @queue=#<MonitorMixin::ConditionVariable:0xb7218420 @waiters=[], @monitor=#<Monitor:0xb721845c @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>>, @size=5, @checked_out=[], @connection_mutex=#<Monitor:0xb721845c @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>, @spec=#<ActiveRecord::Base::ConnectionSpecification:0xb724153c @config={:database=>"garage", :port=>5432, :adapter=>"postgresql", :username=>"jammmin", :password=>"3WiseMen"}, @adapter_method="postgresql_connection">, @timeout=5, @reserved_connections={}, @connections=[]>
+libs are: ["active_record.rb", "extensions.rb", "jam_utils.rb", "song_utils.rb", "user.rb", "utils.rb"]
+models are: ["comment.rb", "feed.rb", "follower.rb", "jam_artist.rb", "jam.rb", "like.rb", "message.rb", "message_stream.rb", "process_info.rb", "published_jam.rb", "song_jam.rb", "song_lyric.rb", "song_manager.rb", "song.rb", "test_tables.rb", "user_feed.rb", "user_message_map.rb", "user_message_stream_map.rb", "user_message_stream.rb", "user.rb"]
+>> Thin web server (v1.2.2 codename I Find Your Lack of Sauce Disturbing)
+>> Maximum connections set to 1024
+>> Listening on 127.0.0.1:4567, CTRL+C to stop
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_streams
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:11:20] "GET /account/message_streams HTTP/1.1" 200 5429 0.0555
+127.0.0.1 - - [15/Dec/2009 19:11:20] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0235
+127.0.0.1 - - [15/Dec/2009 19:11:22] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0025
+127.0.0.1 - - [15/Dec/2009 19:11:22] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:11:22] "GET /scripts/all.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:11:22] "GET /scripts/core.js HTTP/1.1" 304 - 0.0024
+127.0.0.1 - - [15/Dec/2009 19:11:22] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0024
+127.0.0.1 - - [15/Dec/2009 19:11:22] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:11:22] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:11:22] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0024
+127.0.0.1 - - [15/Dec/2009 19:11:22] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0024
+127.0.0.1 - - [15/Dec/2009 19:11:22] "GET /images/icons/mail4.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:11:22] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:11:22] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0024
+127.0.0.1 - - [15/Dec/2009 19:11:22] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0016
+127.0.0.1 - - [15/Dec/2009 19:11:22] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0016
+127.0.0.1 - - [15/Dec/2009 19:11:22] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0015
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: 
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:11:22] "GET /account/undefined HTTP/1.1" 200 5275 0.0089
+ActiveRecord::RecordNotFound - Couldn't find MessageStream with ID=1:
+ urls/account.rb:17:in `GET /account/message_stream/:id'127.0.0.1 - - [15/Dec/2009 19:12:02] "GET /account/message_stream/1 HTTP/1.1" 500 30 0.0043
+/home/jammmin/webserver/app/views/common/message_stream.erb:11: warning: don't put space before argument parentheses
+page is: common/message
+page is: common/message
+page is: common/message
+page is: common/message
+127.0.0.1 - - [15/Dec/2009 19:12:19] "GET /account/message_stream/2 HTTP/1.1" 200 992 0.0844
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: 
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:15:32] "GET /account/undefined HTTP/1.1" 200 5275 0.0107
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_streams
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:15:32] "GET /account/message_streams HTTP/1.1" 200 5429 0.0154
+127.0.0.1 - - [15/Dec/2009 19:15:33] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0072
+127.0.0.1 - - [15/Dec/2009 19:15:34] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:15:34] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:15:34] "GET /scripts/all.js HTTP/1.1" 304 - 0.0024
+127.0.0.1 - - [15/Dec/2009 19:15:34] "GET /scripts/core.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:15:34] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0024
+127.0.0.1 - - [15/Dec/2009 19:15:34] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:15:34] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:15:34] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:15:34] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:15:34] "GET /images/icons/mail4.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:15:34] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:15:34] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:15:34] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:15:34] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:15:34] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0015
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: 
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:15:35] "GET /account/undefined HTTP/1.1" 200 5275 0.0083
+127.0.0.1 - - [15/Dec/2009 19:23:58] "GET /account HTTP/1.1" 302 - 0.0023
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/home
+page is: account/feeds
+page is: common/feeds
+page is: common/feed
+page is: feeds/song_created
+page is: common/feed
+page is: feeds/user_follows
+page is: common/feed
+page is: feeds/user_created
+page is: common/feed
+page is: feeds/user_created
+page is: account/song
+page is: common/list_artists
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:23:58] "GET /account/home HTTP/1.1" 200 6758 0.0581
+127.0.0.1 - - [15/Dec/2009 19:23:58] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0065
+127.0.0.1 - - [15/Dec/2009 19:23:58] "GET /scripts/all.js HTTP/1.1" 304 - 0.0014
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: 
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:23:59] "GET /account/undefined HTTP/1.1" 200 5275 0.0106
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_streams
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:24:00] "GET /account/message_streams HTTP/1.1" 200 5498 0.0143
+127.0.0.1 - - [15/Dec/2009 19:24:00] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0060
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: 
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:24:01] "GET /account/undefined HTTP/1.1" 200 5275 0.0104
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_streams
+NoMethodError - undefined method `without' for #<Class:0xb71500b0>:
+ /home/jammmin/webserver/app/views/account/message_streams.erb:5:in `render_erb'
+ /home/jammmin/webserver/app/views/account/message_streams.erb:4:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/account/structure.erb:5:in `render_erb'
+ urls/account.rb:13:in `GET /account/message_streams'127.0.0.1 - - [15/Dec/2009 19:26:51] "GET /account/message_streams HTTP/1.1" 500 30 0.0179
+>> Exiting!
+>> Writing PID to /home/jammmin/webserver/app/processes.4567
+>> Changing process privilege to root:root
+Couldn't change user and group to root:root: Operation not permitted
+DBCONFIG: {"port"=>5432, "username"=>"jammmin", "adapter"=>"postgresql", "database"=>"garage", "password"=>"3WiseMen"}
+DB CONNECTION: #<ActiveRecord::ConnectionAdapters::ConnectionPool:0xb70e948c @queue=#<MonitorMixin::ConditionVariable:0xb70e9414 @waiters=[], @monitor=#<Monitor:0xb70e9450 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>>, @size=5, @checked_out=[], @connection_mutex=#<Monitor:0xb70e9450 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>, @spec=#<ActiveRecord::Base::ConnectionSpecification:0xb7112530 @config={:database=>"garage", :port=>5432, :adapter=>"postgresql", :username=>"jammmin", :password=>"3WiseMen"}, @adapter_method="postgresql_connection">, @timeout=5, @reserved_connections={}, @connections=[]>
+libs are: ["active_record.rb", "extensions.rb", "jam_utils.rb", "song_utils.rb", "user.rb", "utils.rb"]
+models are: ["comment.rb", "feed.rb", "follower.rb", "jam_artist.rb", "jam.rb", "like.rb", "message.rb", "message_stream.rb", "process_info.rb", "published_jam.rb", "song_jam.rb", "song_lyric.rb", "song_manager.rb", "song.rb", "test_tables.rb", "user_feed.rb", "user_message_map.rb", "user_message_stream_map.rb", "user_message_stream.rb", "user.rb"]
+>> Thin web server (v1.2.2 codename I Find Your Lack of Sauce Disturbing)
+>> Maximum connections set to 1024
+>> Listening on 127.0.0.1:4567, CTRL+C to stop
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_streams
+NoMethodError - undefined method `name' for #<Array:0xb6f3936c>:
+ /home/jammmin/webserver/app/views/account/message_streams.erb:6:in `render_erb'
+ /home/jammmin/webserver/app/views/account/message_streams.erb:4:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/account/structure.erb:5:in `render_erb'
+ urls/account.rb:13:in `GET /account/message_streams'127.0.0.1 - - [15/Dec/2009 19:26:58] "GET /account/message_streams HTTP/1.1" 500 30 0.0560
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_streams
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:27:13] "GET /account/message_streams HTTP/1.1" 200 5482 0.0176
+127.0.0.1 - - [15/Dec/2009 19:27:13] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0068
+127.0.0.1 - - [15/Dec/2009 19:27:14] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0024
+127.0.0.1 - - [15/Dec/2009 19:27:14] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0024
+127.0.0.1 - - [15/Dec/2009 19:27:14] "GET /scripts/all.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:27:14] "GET /scripts/core.js HTTP/1.1" 304 - 0.0024
+127.0.0.1 - - [15/Dec/2009 19:27:14] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0017
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: 
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:27:15] "GET /account/undefined HTTP/1.1" 200 5275 0.0110
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_streams
+page is: account/message_stream
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:30:29] "GET /account/message_streams HTTP/1.1" 200 5479 0.0155
+127.0.0.1 - - [15/Dec/2009 19:30:29] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0591
+127.0.0.1 - - [15/Dec/2009 19:30:30] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:30:30] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:30:30] "GET /scripts/all.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:30:30] "GET /scripts/core.js HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:30:30] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:30:30] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:30:30] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:30:30] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:30:30] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:30:30] "GET /images/icons/mail4.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:30:30] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:30:30] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:30:30] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:30:30] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:30:31] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0015
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: 
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:30:31] "GET /account/undefined HTTP/1.1" 200 5275 0.0106
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_streams
+page is: account/message_stream
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:31:27] "GET /account/message_streams HTTP/1.1" 200 5590 0.0152
+127.0.0.1 - - [15/Dec/2009 19:31:27] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0060
+127.0.0.1 - - [15/Dec/2009 19:31:27] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:31:27] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:31:27] "GET /scripts/all.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:31:27] "GET /scripts/core.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:31:27] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:31:27] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:31:27] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:31:27] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:31:27] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:31:27] "GET /images/icons/mail4.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:31:27] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:31:27] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:31:27] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:31:27] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0051
+127.0.0.1 - - [15/Dec/2009 19:31:27] "GET /images/icons/user.png HTTP/1.1" 304 - 0.0013
+127.0.0.1 - - [15/Dec/2009 19:31:28] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0014
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: 
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:31:28] "GET /account/undefined HTTP/1.1" 200 5275 0.0104
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_streams
+page is: account/message_stream
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:31:55] "GET /account/message_streams HTTP/1.1" 200 5597 0.0157
+127.0.0.1 - - [15/Dec/2009 19:31:55] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0062
+127.0.0.1 - - [15/Dec/2009 19:31:55] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:31:55] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:31:55] "GET /scripts/all.js HTTP/1.1" 304 - 0.0013
+127.0.0.1 - - [15/Dec/2009 19:31:55] "GET /scripts/core.js HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:31:55] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0013
+127.0.0.1 - - [15/Dec/2009 19:31:55] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0013
+127.0.0.1 - - [15/Dec/2009 19:31:55] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0013
+127.0.0.1 - - [15/Dec/2009 19:31:55] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0013
+127.0.0.1 - - [15/Dec/2009 19:31:55] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0013
+127.0.0.1 - - [15/Dec/2009 19:31:55] "GET /images/icons/mail4.png HTTP/1.1" 304 - 0.0013
+127.0.0.1 - - [15/Dec/2009 19:31:55] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0013
+127.0.0.1 - - [15/Dec/2009 19:31:55] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:31:55] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0013
+127.0.0.1 - - [15/Dec/2009 19:31:55] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0013
+127.0.0.1 - - [15/Dec/2009 19:31:55] "GET /images/icons/user.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:31:55] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0021
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: 
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:31:56] "GET /account/undefined HTTP/1.1" 200 5275 0.0104
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_streams
+page is: account/message_stream
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:32:18] "GET /account/message_streams HTTP/1.1" 200 5609 0.0150
+127.0.0.1 - - [15/Dec/2009 19:32:18] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0059
+127.0.0.1 - - [15/Dec/2009 19:32:18] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:32:18] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0013
+127.0.0.1 - - [15/Dec/2009 19:32:18] "GET /scripts/all.js HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:32:18] "GET /scripts/core.js HTTP/1.1" 304 - 0.0013
+127.0.0.1 - - [15/Dec/2009 19:32:18] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:32:18] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:32:18] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0013
+127.0.0.1 - - [15/Dec/2009 19:32:18] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:32:18] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0013
+127.0.0.1 - - [15/Dec/2009 19:32:18] "GET /images/icons/mail4.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:32:18] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0013
+127.0.0.1 - - [15/Dec/2009 19:32:18] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:32:18] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:32:18] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:32:18] "GET /images/icons/user.png HTTP/1.1" 304 - 0.0013
+127.0.0.1 - - [15/Dec/2009 19:32:18] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0014
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: 
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:32:19] "GET /account/undefined HTTP/1.1" 200 5275 0.0108
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_streams
+page is: account/message_stream
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:32:37] "GET /account/message_streams HTTP/1.1" 200 5631 0.0225
+127.0.0.1 - - [15/Dec/2009 19:32:37] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0040
+127.0.0.1 - - [15/Dec/2009 19:32:38] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:32:38] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:32:38] "GET /scripts/all.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:32:38] "GET /scripts/core.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:32:38] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:32:38] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:32:38] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:32:38] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:32:38] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:32:38] "GET /images/icons/mail4.png HTTP/1.1" 304 - 0.0027
+127.0.0.1 - - [15/Dec/2009 19:32:38] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0024
+127.0.0.1 - - [15/Dec/2009 19:32:38] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0024
+127.0.0.1 - - [15/Dec/2009 19:32:38] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:32:38] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:32:38] "GET /images/icons/user.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:32:38] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0015
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: 
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:32:38] "GET /account/undefined HTTP/1.1" 200 5275 0.0107
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_streams
+NameError - undefined local variable or method `message_streams' for #<Sinatra::Application:0xb6f293f4>:
+ /home/jammmin/webserver/app/views/account/message_streams.erb:10:in `render_erb'
+ /home/jammmin/webserver/app/views/account/message_streams.erb:4:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/account/structure.erb:5:in `render_erb'
+ urls/account.rb:13:in `GET /account/message_streams'127.0.0.1 - - [15/Dec/2009 19:40:21] "GET /account/message_streams HTTP/1.1" 500 30 0.0161
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_streams
+NameError - undefined local variable or method `message_streams' for #<Sinatra::Application:0xb6f149e0>:
+ /home/jammmin/webserver/app/views/account/message_streams.erb:10:in `render_erb'
+ /home/jammmin/webserver/app/views/account/message_streams.erb:4:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/account/structure.erb:5:in `render_erb'
+ urls/account.rb:13:in `GET /account/message_streams'127.0.0.1 - - [15/Dec/2009 19:40:27] "GET /account/message_streams HTTP/1.1" 500 30 0.0168
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_streams
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:40:33] "GET /account/message_streams HTTP/1.1" 200 5686 0.0214
+127.0.0.1 - - [15/Dec/2009 19:40:33] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0495
+127.0.0.1 - - [15/Dec/2009 19:40:34] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:40:34] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:40:34] "GET /scripts/all.js HTTP/1.1" 304 - 0.0016
+127.0.0.1 - - [15/Dec/2009 19:40:34] "GET /scripts/core.js HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:40:34] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:40:34] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:40:34] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:40:34] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:40:34] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:40:34] "GET /images/icons/mail4.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:40:34] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:40:34] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:40:34] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:40:34] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:40:34] "GET /images/icons/user.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:40:34] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0017
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: 
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:40:35] "GET /account/undefined HTTP/1.1" 200 5275 0.0107
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_streams
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:40:47] "GET /account/message_streams HTTP/1.1" 200 5688 0.0179
+127.0.0.1 - - [15/Dec/2009 19:40:48] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0067
+127.0.0.1 - - [15/Dec/2009 19:40:49] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:40:49] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:40:49] "GET /scripts/all.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:40:49] "GET /scripts/core.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:40:49] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:40:49] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:40:49] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:40:49] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:40:49] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:40:49] "GET /images/icons/mail4.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:40:49] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:40:49] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:40:49] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:40:49] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:40:49] "GET /images/icons/user.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:40:49] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0015
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: 
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:40:49] "GET /account/undefined HTTP/1.1" 200 5275 0.0105
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_streams
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:40:58] "GET /account/message_streams HTTP/1.1" 200 5684 0.0108
+127.0.0.1 - - [15/Dec/2009 19:40:58] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0038
+127.0.0.1 - - [15/Dec/2009 19:40:58] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:40:58] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:40:58] "GET /scripts/all.js HTTP/1.1" 304 - 0.0013
+127.0.0.1 - - [15/Dec/2009 19:40:58] "GET /scripts/core.js HTTP/1.1" 304 - 0.0013
+127.0.0.1 - - [15/Dec/2009 19:40:58] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:40:58] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:40:58] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:40:58] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:40:58] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:40:58] "GET /images/icons/mail4.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:40:58] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:40:58] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:40:58] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:40:58] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:40:58] "GET /images/icons/user.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:40:59] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0014
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: 
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:40:59] "GET /account/undefined HTTP/1.1" 200 5275 0.0104
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_streams
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:41:07] "GET /account/message_streams HTTP/1.1" 200 5699 0.0172
+127.0.0.1 - - [15/Dec/2009 19:41:07] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0071
+127.0.0.1 - - [15/Dec/2009 19:41:08] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:41:08] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:41:08] "GET /scripts/all.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:41:08] "GET /scripts/core.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:41:08] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:41:08] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:41:08] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:41:08] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0054
+127.0.0.1 - - [15/Dec/2009 19:41:08] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:41:08] "GET /images/icons/mail4.png HTTP/1.1" 304 - 0.0017
+127.0.0.1 - - [15/Dec/2009 19:41:08] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:41:08] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:41:08] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0019
+127.0.0.1 - - [15/Dec/2009 19:41:08] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:41:08] "GET /images/icons/user.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:41:08] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0015
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: 
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:41:08] "GET /account/undefined HTTP/1.1" 200 5275 0.0107
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_streams
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:41:19] "GET /account/message_streams HTTP/1.1" 200 5699 0.0176
+127.0.0.1 - - [15/Dec/2009 19:41:19] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0065
+127.0.0.1 - - [15/Dec/2009 19:41:20] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:41:20] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:41:20] "GET /scripts/all.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:41:20] "GET /scripts/core.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:41:20] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:41:20] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:41:20] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:41:20] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:41:20] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:41:20] "GET /images/icons/mail4.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:41:20] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:41:20] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:41:20] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:41:20] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:41:20] "GET /images/icons/user.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:41:20] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0015
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: 
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:41:21] "GET /account/undefined HTTP/1.1" 200 5275 0.0109
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_streams
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:42:03] "GET /account/message_streams HTTP/1.1" 200 5706 0.0168
+127.0.0.1 - - [15/Dec/2009 19:42:03] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0068
+127.0.0.1 - - [15/Dec/2009 19:42:04] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:42:04] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:42:04] "GET /scripts/all.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:42:04] "GET /scripts/core.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:42:04] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:42:04] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:42:04] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:42:04] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:42:04] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0013
+127.0.0.1 - - [15/Dec/2009 19:42:04] "GET /images/icons/mail4.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:42:04] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0013
+127.0.0.1 - - [15/Dec/2009 19:42:04] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0013
+127.0.0.1 - - [15/Dec/2009 19:42:04] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:42:04] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:42:04] "GET /images/icons/user.png HTTP/1.1" 304 - 0.0437
+127.0.0.1 - - [15/Dec/2009 19:42:05] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0014
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: 
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:42:05] "GET /account/undefined HTTP/1.1" 200 5275 0.0111
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_streams
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:42:10] "GET /account/message_streams HTTP/1.1" 200 5687 0.0183
+127.0.0.1 - - [15/Dec/2009 19:42:10] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0062
+127.0.0.1 - - [15/Dec/2009 19:42:11] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:42:11] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:42:11] "GET /scripts/all.js HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:42:11] "GET /scripts/core.js HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:42:11] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:42:11] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0024
+127.0.0.1 - - [15/Dec/2009 19:42:11] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:42:11] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:42:11] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:42:11] "GET /images/icons/mail4.png HTTP/1.1" 304 - 0.0026
+127.0.0.1 - - [15/Dec/2009 19:42:11] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:42:11] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:42:11] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:42:11] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:42:11] "GET /images/icons/user.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:42:11] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0018
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: 
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:42:11] "GET /account/undefined HTTP/1.1" 200 5275 0.0099
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_streams
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:42:38] "GET /account/message_streams HTTP/1.1" 200 5688 0.0177
+127.0.0.1 - - [15/Dec/2009 19:42:38] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0219
+127.0.0.1 - - [15/Dec/2009 19:42:39] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:42:39] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:42:39] "GET /scripts/all.js HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:42:39] "GET /scripts/core.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:42:39] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:42:39] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0025
+127.0.0.1 - - [15/Dec/2009 19:42:39] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0056
+127.0.0.1 - - [15/Dec/2009 19:42:39] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:42:39] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:42:39] "GET /images/icons/mail4.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:42:39] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:42:39] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:42:39] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:42:39] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:42:39] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0015
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: 
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:42:40] "GET /account/undefined HTTP/1.1" 200 5275 0.0106
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_streams
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:48:31] "GET /account/message_streams HTTP/1.1" 200 5688 0.0157
+127.0.0.1 - - [15/Dec/2009 19:48:31] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0038
+127.0.0.1 - - [15/Dec/2009 19:48:31] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:48:31] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0013
+127.0.0.1 - - [15/Dec/2009 19:48:31] "GET /scripts/all.js HTTP/1.1" 304 - 0.0013
+127.0.0.1 - - [15/Dec/2009 19:48:31] "GET /scripts/core.js HTTP/1.1" 304 - 0.0013
+127.0.0.1 - - [15/Dec/2009 19:48:31] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:48:31] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0013
+127.0.0.1 - - [15/Dec/2009 19:48:31] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0013
+127.0.0.1 - - [15/Dec/2009 19:48:31] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0013
+127.0.0.1 - - [15/Dec/2009 19:48:31] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0013
+127.0.0.1 - - [15/Dec/2009 19:48:31] "GET /images/icons/mail4.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:48:31] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0013
+127.0.0.1 - - [15/Dec/2009 19:48:31] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0013
+127.0.0.1 - - [15/Dec/2009 19:48:31] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0017
+127.0.0.1 - - [15/Dec/2009 19:48:31] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0017
+127.0.0.1 - - [15/Dec/2009 19:48:31] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0015
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: 
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:48:32] "GET /account/undefined HTTP/1.1" 200 5275 0.0105
+>> Exiting!
+>> Writing PID to /home/jammmin/webserver/app/processes.4567
+>> Changing process privilege to root:root
+Couldn't change user and group to root:root: Operation not permitted
+DBCONFIG: {"port"=>5432, "username"=>"jammmin", "adapter"=>"postgresql", "database"=>"garage", "password"=>"3WiseMen"}
+DB CONNECTION: #<ActiveRecord::ConnectionAdapters::ConnectionPool:0xb718f42c @queue=#<MonitorMixin::ConditionVariable:0xb718f3b4 @waiters=[], @monitor=#<Monitor:0xb718f3f0 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>>, @size=5, @checked_out=[], @connection_mutex=#<Monitor:0xb718f3f0 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>, @spec=#<ActiveRecord::Base::ConnectionSpecification:0xb71b84d0 @config={:database=>"garage", :port=>5432, :adapter=>"postgresql", :username=>"jammmin", :password=>"3WiseMen"}, @adapter_method="postgresql_connection">, @timeout=5, @reserved_connections={}, @connections=[]>
+libs are: ["active_record.rb", "extensions.rb", "jam_utils.rb", "song_utils.rb", "user.rb", "utils.rb"]
+models are: ["comment.rb", "feed.rb", "follower.rb", "jam_artist.rb", "jam.rb", "like.rb", "message.rb", "message_stream.rb", "process_info.rb", "published_jam.rb", "song_jam.rb", "song_lyric.rb", "song_manager.rb", "song.rb", "test_tables.rb", "user_feed.rb", "user_message_map.rb", "user_message_stream_map.rb", "user_message_stream.rb", "user.rb"]
+>> Thin web server (v1.2.2 codename I Find Your Lack of Sauce Disturbing)
+>> Maximum connections set to 1024
+>> Listening on 127.0.0.1:4567, CTRL+C to stop
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_stream
+page is: common/message_stream
+/home/jammmin/webserver/app/views/common/message_stream.erb:11: warning: don't put space before argument parentheses
+page is: common/message
+page is: common/message
+page is: common/message
+page is: common/message
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:48:47] "GET /account/message_stream/2 HTTP/1.1" 200 6266 0.0815
+127.0.0.1 - - [15/Dec/2009 19:48:47] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0042
+ActiveRecord::RecordNotFound - Couldn't find MessageStream with ID=undefined:
+ urls/account.rb:17:in `GET /account/message_stream/:id'127.0.0.1 - - [15/Dec/2009 19:48:48] "GET /account/message_stream/undefined HTTP/1.1" 500 30 0.0029
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_stream
+SyntaxError - compile error
+/home/jammmin/webserver/app/views/account/message_stream.erb:3: syntax error, unexpected '<', expecting ')'
+<%= partial("common/message_str...
+ ^
+/home/jammmin/webserver/app/views/account/message_stream.erb:3: syntax error, unexpected '}', expecting ')'
+...ge_stream => @message_stream}}) ).to_s); @_out_buf.concat "\...
+                              ^:
+ /home/jammmin/webserver/app/views/account/message_stream.erb:4:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/account/structure.erb:5:in `render_erb'
+ urls/account.rb:19:in `GET /account/message_stream/:id'127.0.0.1 - - [15/Dec/2009 19:49:24] "GET /account/message_stream/2 HTTP/1.1" 500 30 0.0119
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_stream
+page is: common/message_stream
+/home/jammmin/webserver/app/views/common/message_stream.erb:11: warning: don't put space before argument parentheses
+page is: common/message
+page is: common/message
+page is: common/message
+page is: common/message
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:49:28] "GET /account/message_stream/2 HTTP/1.1" 200 6411 0.0307
+127.0.0.1 - - [15/Dec/2009 19:49:28] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0070
+127.0.0.1 - - [15/Dec/2009 19:49:29] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:49:29] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:49:29] "GET /scripts/all.js HTTP/1.1" 304 - 0.0024
+127.0.0.1 - - [15/Dec/2009 19:49:29] "GET /scripts/core.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:49:29] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0024
+127.0.0.1 - - [15/Dec/2009 19:49:29] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:49:29] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:49:29] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0027
+127.0.0.1 - - [15/Dec/2009 19:49:29] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:49:29] "GET /images/icons/mail4.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:49:29] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:49:29] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:49:29] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0027
+127.0.0.1 - - [15/Dec/2009 19:49:29] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:49:29] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0014
+ActiveRecord::RecordNotFound - Couldn't find MessageStream with ID=undefined:
+ urls/account.rb:17:in `GET /account/message_stream/:id'127.0.0.1 - - [15/Dec/2009 19:49:30] "GET /account/message_stream/undefined HTTP/1.1" 500 30 0.0050
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_stream
+NameError - undefined local variable or method `message_stream' for #<Sinatra::Application:0xb71fa308>:
+ /home/jammmin/webserver/app/views/account/message_stream.erb:3:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/account/structure.erb:5:in `render_erb'
+ urls/account.rb:19:in `GET /account/message_stream/:id'127.0.0.1 - - [15/Dec/2009 19:51:17] "GET /account/message_stream/2 HTTP/1.1" 500 30 0.0131
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_stream
+page is: common/message_stream
+/home/jammmin/webserver/app/views/common/message_stream.erb:11: warning: don't put space before argument parentheses
+page is: common/message
+page is: common/message
+page is: common/message
+page is: common/message
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:51:46] "GET /account/message_stream/2 HTTP/1.1" 200 6436 0.0315
+127.0.0.1 - - [15/Dec/2009 19:51:46] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0068
+127.0.0.1 - - [15/Dec/2009 19:51:47] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:51:47] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:51:47] "GET /scripts/all.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:51:47] "GET /scripts/core.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:51:47] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0017
+ActiveRecord::RecordNotFound - Couldn't find MessageStream with ID=undefined:
+ urls/account.rb:17:in `GET /account/message_stream/:id'127.0.0.1 - - [15/Dec/2009 19:51:47] "GET /account/message_stream/undefined HTTP/1.1" 500 30 0.0037
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_stream
+page is: common/message_stream
+/home/jammmin/webserver/app/views/common/message_stream.erb:11: warning: don't put space before argument parentheses
+page is: common/message
+page is: common/message
+page is: common/message
+page is: common/message
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:52:03] "GET /account/message_stream/2 HTTP/1.1" 200 6428 0.0308
+127.0.0.1 - - [15/Dec/2009 19:52:03] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0073
+127.0.0.1 - - [15/Dec/2009 19:52:04] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:52:04] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:52:04] "GET /scripts/all.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:52:04] "GET /scripts/core.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:52:04] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:52:04] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:52:04] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:52:04] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:52:04] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0024
+127.0.0.1 - - [15/Dec/2009 19:52:04] "GET /images/icons/mail4.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:52:04] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:52:04] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:52:04] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0017
+127.0.0.1 - - [15/Dec/2009 19:52:04] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0014
+127.0.0.1 - - [15/Dec/2009 19:52:05] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0015
+ActiveRecord::RecordNotFound - Couldn't find MessageStream with ID=undefined:
+ urls/account.rb:17:in `GET /account/message_stream/:id'127.0.0.1 - - [15/Dec/2009 19:52:05] "GET /account/message_stream/undefined HTTP/1.1" 500 30 0.0023
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_stream
+page is: common/message_stream
+/home/jammmin/webserver/app/views/common/message_stream.erb:11: warning: don't put space before argument parentheses
+page is: common/message
+page is: common/message
+page is: common/message
+page is: common/message
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:53:19] "GET /account/message_stream/2 HTTP/1.1" 200 6506 0.0308
+127.0.0.1 - - [15/Dec/2009 19:53:19] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0069
+127.0.0.1 - - [15/Dec/2009 19:53:20] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:53:21] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:53:21] "GET /scripts/all.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:53:21] "GET /scripts/core.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:53:21] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:53:21] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0016
+127.0.0.1 - - [15/Dec/2009 19:53:21] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:53:21] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0016
+127.0.0.1 - - [15/Dec/2009 19:53:21] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:53:21] "GET /images/icons/mail4.png HTTP/1.1" 304 - 0.0016
+127.0.0.1 - - [15/Dec/2009 19:53:21] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0019
+127.0.0.1 - - [15/Dec/2009 19:53:21] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:53:21] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:53:21] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0015
+127.0.0.1 - - [15/Dec/2009 19:53:21] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0013
+ActiveRecord::RecordNotFound - Couldn't find MessageStream with ID=undefined:
+ urls/account.rb:17:in `GET /account/message_stream/:id'127.0.0.1 - - [15/Dec/2009 19:53:21] "GET /account/message_stream/undefined HTTP/1.1" 500 30 0.0043
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_stream
+NoMethodError - undefined method `size' for #<MessageStream id: 2>:
+ /home/jammmin/webserver/app/views/account/message_stream.erb:5:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/account/structure.erb:5:in `render_erb'
+ urls/account.rb:19:in `GET /account/message_stream/:id'127.0.0.1 - - [15/Dec/2009 19:53:44] "GET /account/message_stream/2 HTTP/1.1" 500 30 0.0143
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_stream
+NoMethodError - undefined method `size' for #<MessageStream id: 2>:
+ /home/jammmin/webserver/app/views/account/message_stream.erb:5:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/account/structure.erb:5:in `render_erb'
+ urls/account.rb:19:in `GET /account/message_stream/:id'127.0.0.1 - - [15/Dec/2009 19:53:49] "GET /account/message_stream/2 HTTP/1.1" 500 30 0.0144
+>> Exiting!
+>> Writing PID to /home/jammmin/webserver/app/processes.4567
+>> Changing process privilege to root:root
+Couldn't change user and group to root:root: Operation not permitted
+DBCONFIG: {"port"=>5432, "username"=>"jammmin", "adapter"=>"postgresql", "database"=>"garage", "password"=>"3WiseMen"}
+DB CONNECTION: #<ActiveRecord::ConnectionAdapters::ConnectionPool:0xb721a48c @queue=#<MonitorMixin::ConditionVariable:0xb721a414 @waiters=[], @monitor=#<Monitor:0xb721a450 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>>, @size=5, @checked_out=[], @connection_mutex=#<Monitor:0xb721a450 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>, @spec=#<ActiveRecord::Base::ConnectionSpecification:0xb7243530 @config={:database=>"garage", :port=>5432, :adapter=>"postgresql", :username=>"jammmin", :password=>"3WiseMen"}, @adapter_method="postgresql_connection">, @timeout=5, @reserved_connections={}, @connections=[]>
+libs are: ["active_record.rb", "extensions.rb", "jam_utils.rb", "song_utils.rb", "user.rb", "utils.rb"]
+models are: ["comment.rb", "feed.rb", "follower.rb", "jam_artist.rb", "jam.rb", "like.rb", "message.rb", "message_stream.rb", "process_info.rb", "published_jam.rb", "song_jam.rb", "song_lyric.rb", "song_manager.rb", "song.rb", "test_tables.rb", "user_feed.rb", "user_message_map.rb", "user_message_stream_map.rb", "user_message_stream.rb", "user.rb"]
+>> Thin web server (v1.2.2 codename I Find Your Lack of Sauce Disturbing)
+>> Maximum connections set to 1024
+>> Listening on 127.0.0.1:4567, CTRL+C to stop
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_stream
+NoMethodError - undefined method `size' for #<MessageStream id: 2>:
+ /home/jammmin/webserver/app/views/account/message_stream.erb:5:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/account/structure.erb:5:in `render_erb'
+ urls/account.rb:19:in `GET /account/message_stream/:id'127.0.0.1 - - [15/Dec/2009 19:58:10] "GET /account/message_stream/2 HTTP/1.1" 500 30 0.0532
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_stream
+page is: common/message_stream
+/home/jammmin/webserver/app/views/common/message_stream.erb:11: warning: don't put space before argument parentheses
+page is: common/message
+page is: common/message
+page is: common/message
+page is: common/message
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:58:20] "GET /account/message_stream/2 HTTP/1.1" 200 6522 0.0386
+127.0.0.1 - - [15/Dec/2009 19:58:20] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0062
+127.0.0.1 - - [15/Dec/2009 19:58:20] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0184
+127.0.0.1 - - [15/Dec/2009 19:58:20] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:58:20] "GET /scripts/all.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:58:20] "GET /scripts/core.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:58:20] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:58:21] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:58:21] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:58:21] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:58:21] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:58:21] "GET /images/icons/mail4.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:58:21] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0027
+127.0.0.1 - - [15/Dec/2009 19:58:21] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:58:21] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:58:21] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0016
+127.0.0.1 - - [15/Dec/2009 19:58:22] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0573
+ActiveRecord::RecordNotFound - Couldn't find MessageStream with ID=undefined:
+ urls/account.rb:17:in `GET /account/message_stream/:id'127.0.0.1 - - [15/Dec/2009 19:58:22] "GET /account/message_stream/undefined HTTP/1.1" 500 30 0.0042
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_stream
+page is: common/message_stream
+/home/jammmin/webserver/app/views/common/message_stream.erb:11: warning: don't put space before argument parentheses
+page is: common/message
+page is: common/message
+page is: common/message
+page is: common/message
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:58:31] "GET /account/message_stream/2 HTTP/1.1" 200 6526 0.0333
+127.0.0.1 - - [15/Dec/2009 19:58:31] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0067
+127.0.0.1 - - [15/Dec/2009 19:58:32] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:58:32] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:58:32] "GET /scripts/all.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:58:32] "GET /scripts/core.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:58:32] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:58:32] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:58:32] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:58:32] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:58:32] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:58:32] "GET /images/icons/mail4.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:58:32] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:58:32] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:58:32] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:58:32] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [15/Dec/2009 19:58:32] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0015
+ActiveRecord::RecordNotFound - Couldn't find MessageStream with ID=undefined:
+ urls/account.rb:17:in `GET /account/message_stream/:id'127.0.0.1 - - [15/Dec/2009 19:58:33] "GET /account/message_stream/undefined HTTP/1.1" 500 30 0.0041
+127.0.0.1 - - [15/Dec/2009 19:58:40] "POST /message_stream/new_post HTTP/1.1" 200 - 0.0193
+/home/jammmin/webserver/app/views/common/message_stream.erb:11: warning: don't put space before argument parentheses
+page is: common/message
+page is: common/message
+page is: common/message
+page is: common/message
+127.0.0.1 - - [15/Dec/2009 19:58:40] "GET /message_stream/show?user_ids=1%2C2 HTTP/1.1" 200 994 0.0218
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_stream
+page is: common/message_stream
+/home/jammmin/webserver/app/views/common/message_stream.erb:11: warning: don't put space before argument parentheses
+page is: common/message
+page is: common/message
+page is: common/message
+page is: common/message
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [15/Dec/2009 19:58:48] "GET /account/message_stream/2 HTTP/1.1" 200 6532 0.0321
+127.0.0.1 - - [15/Dec/2009 19:58:48] "GET /stylesheets/common.css HTTP/1.1" 200 4018 0.0066
+127.0.0.1 - - [15/Dec/2009 19:58:49] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:58:49] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:58:49] "GET /scripts/all.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:58:49] "GET /scripts/core.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:58:49] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [15/Dec/2009 19:58:49] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:58:49] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:58:49] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0026
+127.0.0.1 - - [15/Dec/2009 19:58:49] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:58:49] "GET /images/icons/mail4.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:58:49] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:58:49] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:58:49] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0026
+127.0.0.1 - - [15/Dec/2009 19:58:49] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [15/Dec/2009 19:58:49] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0013
+ActiveRecord::RecordNotFound - Couldn't find MessageStream with ID=undefined:
+ urls/account.rb:17:in `GET /account/message_stream/:id'127.0.0.1 - - [15/Dec/2009 19:58:49] "GET /account/message_stream/undefined HTTP/1.1" 500 30 0.0037
+127.0.0.1 - - [15/Dec/2009 20:02:30] "POST /message_stream/new_post HTTP/1.1" 200 - 0.0111
+/home/jammmin/webserver/app/views/common/message_stream.erb:11: warning: don't put space before argument parentheses
+page is: common/message
+page is: common/message
+page is: common/message
+page is: common/message
+127.0.0.1 - - [15/Dec/2009 20:02:30] "GET /message_stream/show?user_ids=1%2C2 HTTP/1.1" 200 991 0.0130

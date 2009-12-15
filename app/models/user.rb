@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   has_many :registered_jams, :class_name => "Jam", :foreign_key => "registered_user_id"
   has_many :likes
   has_many :messages, :foreign_key => "to_id", :dependent => :destroy
+  has_many :UserMessageStreamMaps, :dependent => :destroy
+  has_many :message_streams, :through => :UserMessageStreamMaps
   validates_uniqueness_of :username, :message => "has already been registered"
 
   def after_create

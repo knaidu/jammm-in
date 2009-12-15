@@ -8,6 +8,17 @@ get '/account/logout' do
   redirect '/'
 end
 
+get '/account/message_streams' do
+  @layout_info = {"left_panel" => "account/menu", "middle_panel" => "account/message_streams"}  
+  erb(:"account/structure")
+end
+
+get '/account/message_stream/:id' do
+  @message_stream = MessageStream.find(params[:id])
+  @layout_info = {"left_panel" => "account/menu", "middle_panel" => "account/message_stream"}  
+  erb(:"account/structure")
+end
+
 get '/account/:section' do
   @layout_info = layout_info("account", params[:section])
   erb(:"account/structure") 

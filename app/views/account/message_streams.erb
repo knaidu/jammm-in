@@ -1,0 +1,14 @@
+<%= section_header('Your Message Streams', {:icon => :message}) %>
+
+<div id='message-streams'>
+  <% session_user?.message_streams.each do |message_stream| %>
+    <div>
+      <span class='float-left display-inline pad-right-10'><%= icon :message %></span>
+      <% with_user = message_stream.users.without(session_user?)[0] %>
+      <span>
+        <b><%= with_user.name %></b><br>
+        <%= message_stream.user_message_streams.size.to_s %> messages
+      </span>
+    </div>
+  <% end %>
+</div>
