@@ -1,5 +1,4 @@
-<% unread = message.user != session_user? and message.unread %>
-
+<% unread = ((message.user != session_user?) and message.unread) %>
 <div>
   <div>
     <% if unread %>

@@ -60,7 +60,8 @@ function loadMessageStream(users, divId, full){
 	updateEl(divId, url)
 }
 
-function markMessagesAsRead(users, divId, full){
+function markMessageStreamAsRead(users, divId, full){
+	if(full == 'false') full = false;
   var url = formatUrl("/message_stream/mark_as_read", {user_ids: users});
   call(url, {onSuccess: function(){loadMessageStream(users, divId, full)}})
 }

@@ -2,11 +2,15 @@
 <% 
 	user1, user2 = message_stream ? [message_stream.users[0], message_stream.users[1]] : [session_user?, @user] 
 	full ||= nil
+	unread_messages = message_stream.unread_messages(session_user?)
 %>
 
 <div id='<%= div_id %>'>
   <% if message_stream %>
-		<%= message_stream.messages.size %> messages <input type='button' value='Mark as read'><br><br>
+		<%= message_stream.messages.size %> messages 
+		<%= "(#{unread_messages.size} new)" if not unread_messages.empty? %>
+		<input type='button' value='Mark as read' onclick="markMessageStreamAsRead('<%= "#{user1.id},#{user2.id}" %>', '<%= div_id %>', <%= full  ? true : false %>)" <%= 'disabled' if unread_messages.empty? %>>
+		<br><br>
 	  <% 
 				messages = message_stream.user_message_streams
 				plucked_messages = messages.clone

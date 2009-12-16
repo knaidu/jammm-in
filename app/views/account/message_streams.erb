@@ -8,6 +8,7 @@
       <span>
         <a href='/account/message_stream/<%= message_stream.id %>'><b><%= with_user.name %></b></a><br>
         <%= message_stream.user_message_streams.size.to_s %> messages
+				<%= "<b>(#{message_stream.unread_messages(session_user?).size} new)</b>" if not message_stream.unread_messages(session_user?).empty? %>
       </span>
     </div>
 		<br>

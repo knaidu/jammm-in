@@ -26,8 +26,17 @@ class MessageStream < ActiveRecord::Base
     UserMessageStream.add(user, self, body)
   end
   
-  def mark_as_read
-    self.messages.each(&:mark_as_read)
+  def mark_as_read(user)
+    self.messages.select{|m| m.user != user }.each(&:mark_as_read)
+  end
+  
+  def unread_messages(user)
+    UserMessageStream.find_by_sql("
+      select * from user_message_streams
+      where message_stream_id='#{self.id}' 
+      and user_id != '#{user.id}' 
+      and unread=true
+    ")
   end
   
 end

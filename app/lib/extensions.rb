@@ -48,4 +48,11 @@ class Object
   def sym?
     self.class.to_s.downcase == 'symbol'
   end
+  
+  def to_bool
+    if t = self.to_s
+      return false if t.downcase == 'false'
+    end
+    not not self
+  end
 end

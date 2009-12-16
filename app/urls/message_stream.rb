@@ -10,7 +10,8 @@ end
 get '/message_stream/show' do
   user_1, user_2 = get_passed_users_by_id
   message_stream = MessageStream.find_stream(user_1, user_2)
-  full = param?(:full)
+  full = param?(:full).to_bool
+  puts full.class
   erb(:"common/message_stream", {:locals => {:message_stream => message_stream, :full => full}})
 end
 
@@ -19,9 +20,10 @@ get '/message_stream/mark_as_read' do
   begin
     user_1, user_2 = get_passed_users_by_id
     message_stream = MessageStream.find_stream(user_1, user_2)
-    message_stream.mark_as_read
+    message_stream.mark_as_read(session_user?)
     "Successfully marked as read"
   rescue Exception => e
+    puts e.message
     status 500
     e.message
   end
