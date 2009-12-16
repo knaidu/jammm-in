@@ -26,4 +26,8 @@ class MessageStream < ActiveRecord::Base
     UserMessageStream.add(user, self, body)
   end
   
+  def mark_as_read
+    self.messages.each(&:mark_as_read)
+  end
+  
 end

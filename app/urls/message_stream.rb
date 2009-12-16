@@ -13,3 +13,16 @@ get '/message_stream/show' do
   full = param?(:full)
   erb(:"common/message_stream", {:locals => {:message_stream => message_stream, :full => full}})
 end
+
+
+get '/message_stream/mark_as_read' do
+  begin
+    user_1, user_2 = get_passed_users_by_id
+    message_stream = MessageStream.find_stream(user_1, user_2)
+    message_stream.mark_as_read
+    "Successfully marked as read"
+  rescue Exception => e
+    status 500
+    e.message
+  end
+end

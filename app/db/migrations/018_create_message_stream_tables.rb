@@ -16,7 +16,7 @@ class CreateMessageStreamTables < ActiveRecord::Migration
       i.column :message_stream_id, :integer
       i.column :user_id, :integer
       i.column :body, :string
-      i.column :read, :boolean
+      i.column :unread, :boolean, :default => true
       i.column :created_at, :timestamp, :default => Time.now
     end
   end

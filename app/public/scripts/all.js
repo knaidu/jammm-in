@@ -60,6 +60,11 @@ function loadMessageStream(users, divId, full){
 	updateEl(divId, url)
 }
 
+function markMessagesAsRead(users, divId, full){
+  var url = formatUrl("/message_stream/mark_as_read", {user_ids: users});
+  call(url, {onSuccess: function(){loadMessageStream(users, divId, full)}})
+}
+
 function loadSuccessMessage(id, message){
 	loadMessage(id, message, "success-message");
 }
@@ -127,7 +132,7 @@ function call(url){
 }
 
 function updateEl(el, url){
-	var options = mergeHash({method: 'get'}, (arguments[2] || {}));
+	var options = mergeHash({method: 'get', evalScripts: true}, (arguments[2] || {}));
 	new Ajax.Updater(el, url, options);
 }
 

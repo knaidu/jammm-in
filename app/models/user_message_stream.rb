@@ -12,4 +12,9 @@ class UserMessageStream < ActiveRecord::Base
     })
   end
   
+  def mark_as_read
+    self.unread = false
+    self.save
+  end
+  
 end

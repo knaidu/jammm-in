@@ -6,28 +6,25 @@
 
 <div id='<%= div_id %>'>
   <% if message_stream %>
-		<%= message_stream.messages.size %> messages <br>
+		<%= message_stream.messages.size %> messages <input type='button' value='Mark as read'><br><br>
 	  <% 
 				messages = message_stream.user_message_streams
 				plucked_messages = messages.clone
 				if not full
 			 		max_rows = messages.size > 4 ? 4 : messages.size
 	     		if messages.size > max_rows
-	      	%>...<br><br><%
+	      	%>... <a class='simple-link' href='/account/message_stream/<%= message_stream.id %>'>Full stream</a><br><br><%
 					range = Range.new(-(max_rows), -1)
 					plucked_messages = messages[range]
 	    		end
 	      end
 		%>
-			<div class='<%= "message-stream round" if full %>'>
-				<% if full %>
-					<a href='#message-stream-end' class='simple-link'>goto [END]</a><br><br>
-				<% end %>
+		  <% messages_div_id = div_id + "-messages" %>
+			<div id='<%= messages_div_id %>' class='<%= "message-stream round" if full %>'>
 		    <% plucked_messages.each do |message| %>
 		  		<%= partial ("common/message", :locals => {:message => message}) %>
 		  		<br>
 		  	<% end %>
-			<div id='message-stream-end'></div>
 			</div>
   <% end %>
   <br>
@@ -43,3 +40,12 @@
 	  <input type='submit' value='Post' onclick="addMessage('<%= form_id %>')">
   </form>
 </div>
+
+<script language='javascript'>
+  (function(){
+    var el = $('<%= messages_div_id %>');
+    if(!el) return;
+    el.scrollTop = el.scrollHeight;
+  })();
+</script>
+

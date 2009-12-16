@@ -1,5 +1,12 @@
+<% unread = message.user != session_user? and message.unread %>
+
 <div>
-	<%= add_field_name(message.user == session_user? ? "You" : message.user.name) %>
+  <div>
+    <% if unread %>
+      <span class='float-left pad-right-5'><%= icon :message %></span>
+   <% end %>
+	  <%= message.user == session_user? ? add_field_name("You") : "<span class='bold'>#{message.user.name}:</span>" %>
+	</div>  
 	<%= message.body %><br>
 	<i class='grey'><%= message.created_at.date %></i>
 </div>
