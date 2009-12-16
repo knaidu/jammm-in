@@ -2,7 +2,7 @@
 <% 
 	user1, user2 = message_stream ? [message_stream.users[0], message_stream.users[1]] : [session_user?, @user] 
 	full ||= nil
-	unread_messages = message_stream.unread_messages(session_user?)
+	unread_messages = message_stream.unread_messages(session_user?) rescue []
 %>
 
 <div id='<%= div_id %>'>
