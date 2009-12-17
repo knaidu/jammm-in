@@ -28513,3 +28513,556 @@ page is: body/footer
 127.0.0.1 - - [17/Dec/2009 15:34:12] "GET /song/1/manage HTTP/1.1" 200 9001 0.0348
 127.0.0.1 - - [17/Dec/2009 15:34:12] "GET /stylesheets/common.css HTTP/1.1" 200 4099 0.0072
 127.0.0.1 - - [17/Dec/2009 15:34:12] "GET /song/1/undefined HTTP/1.1" 404 18 0.0027
+127.0.0.1 - - [17/Dec/2009 15:50:26] "GET /account HTTP/1.1" 302 - 0.0025
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/home
+page is: account/feeds
+page is: common/feeds
+page is: common/feed
+page is: feeds/song_created
+page is: common/feed
+page is: feeds/jam_created
+ActiveRecord::RecordNotFound - Couldn't find Jam with ID=1:
+ helpers/feed.rb:6:in `fhlp_get_jam'
+ /home/jammmin/webserver/app/views/feeds/jam_created.erb:1:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/common/feed.erb:1:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/common/feeds.erb:2:in `render_erb'
+ /home/jammmin/webserver/app/views/common/feeds.erb:1:in `each'
+ /home/jammmin/webserver/app/views/common/feeds.erb:1:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/account/feeds.erb:6:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/account/home.erb:2:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/account/structure.erb:5:in `render_erb'
+ urls/account.rb:36:in `GET /account/:section'127.0.0.1 - - [17/Dec/2009 15:50:26] "GET /account/home HTTP/1.1" 500 30 0.0451
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/home
+page is: account/feeds
+page is: common/feeds
+page is: common/feed
+page is: feeds/song_created
+page is: common/feed
+page is: feeds/jam_created
+ActiveRecord::RecordNotFound - Couldn't find Jam with ID=1:
+ helpers/feed.rb:6:in `fhlp_get_jam'
+ /home/jammmin/webserver/app/views/feeds/jam_created.erb:1:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/common/feed.erb:1:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/common/feeds.erb:2:in `render_erb'
+ /home/jammmin/webserver/app/views/common/feeds.erb:1:in `each'
+ /home/jammmin/webserver/app/views/common/feeds.erb:1:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/account/feeds.erb:6:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/account/home.erb:2:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/account/structure.erb:5:in `render_erb'
+ urls/account.rb:36:in `GET /account/:section'127.0.0.1 - - [17/Dec/2009 15:51:20] "GET /account/home HTTP/1.1" 500 30 0.0367
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/home
+page is: account/feeds
+page is: common/feeds
+page is: common/feed
+page is: feeds/song_created
+page is: common/feed
+page is: feeds/jam_created
+SystemExit - exit:
+ /home/jammmin/webserver/app/views/feeds/jam_created.erb:2:in `exit'
+ /home/jammmin/webserver/app/views/feeds/jam_created.erb:2:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/common/feed.erb:1:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/common/feeds.erb:2:in `render_erb'
+ /home/jammmin/webserver/app/views/common/feeds.erb:1:in `each'
+ /home/jammmin/webserver/app/views/common/feeds.erb:1:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/account/feeds.erb:6:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/account/home.erb:2:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/account/structure.erb:5:in `render_erb'
+ urls/account.rb:36:in `GET /account/:section'127.0.0.1 - - [17/Dec/2009 15:51:28] "GET /account/home HTTP/1.1" 500 30 0.0358
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/home
+page is: account/feeds
+page is: common/feeds
+page is: common/feed
+page is: feeds/song_created
+page is: common/feed
+page is: feeds/jam_created
+SystemExit - exit:
+ /home/jammmin/webserver/app/views/feeds/jam_created.erb:2:in `exit'
+ /home/jammmin/webserver/app/views/feeds/jam_created.erb:2:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/common/feed.erb:1:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/common/feeds.erb:2:in `render_erb'
+ /home/jammmin/webserver/app/views/common/feeds.erb:1:in `each'
+ /home/jammmin/webserver/app/views/common/feeds.erb:1:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/account/feeds.erb:6:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/account/home.erb:2:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/account/structure.erb:5:in `render_erb'
+ urls/account.rb:36:in `GET /account/:section'127.0.0.1 - - [17/Dec/2009 15:51:29] "GET /account/home HTTP/1.1" 500 30 0.0931
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/home
+page is: account/feeds
+page is: common/feeds
+page is: common/feed
+page is: feeds/song_created
+page is: common/feed
+page is: feeds/jam_created
+ActiveRecord::RecordNotFound - Couldn't find Jam with ID=1:
+ helpers/feed.rb:6:in `fhlp_get_jam'
+ /home/jammmin/webserver/app/views/feeds/jam_created.erb:1:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/common/feed.erb:1:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/common/feeds.erb:2:in `render_erb'
+ /home/jammmin/webserver/app/views/common/feeds.erb:1:in `each'
+ /home/jammmin/webserver/app/views/common/feeds.erb:1:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/account/feeds.erb:6:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/account/home.erb:2:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/account/structure.erb:5:in `render_erb'
+ urls/account.rb:36:in `GET /account/:section'127.0.0.1 - - [17/Dec/2009 15:51:50] "GET /account/home HTTP/1.1" 500 30 0.0379
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/home
+page is: account/feeds
+page is: common/feeds
+page is: common/feed
+page is: feeds/song_created
+page is: common/feed
+page is: feeds/jam_created
+SystemExit - exit:
+ /home/jammmin/webserver/app/views/feeds/jam_created.erb:2:in `exit'
+ /home/jammmin/webserver/app/views/feeds/jam_created.erb:2:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/common/feed.erb:1:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/common/feeds.erb:2:in `render_erb'
+ /home/jammmin/webserver/app/views/common/feeds.erb:1:in `each'
+ /home/jammmin/webserver/app/views/common/feeds.erb:1:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/account/feeds.erb:6:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/account/home.erb:2:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/account/structure.erb:5:in `render_erb'
+ urls/account.rb:36:in `GET /account/:section'127.0.0.1 - - [17/Dec/2009 15:52:11] "GET /account/home HTTP/1.1" 500 30 0.0357
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/home
+page is: account/feeds
+page is: common/feeds
+page is: common/feed
+page is: feeds/song_created
+page is: common/feed
+page is: feeds/jam_created
+LocalJumpError - unexpected return:
+ /home/jammmin/webserver/app/views/feeds/jam_created.erb:2:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/common/feed.erb:1:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/common/feeds.erb:2:in `render_erb'
+ /home/jammmin/webserver/app/views/common/feeds.erb:1:in `each'
+ /home/jammmin/webserver/app/views/common/feeds.erb:1:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/account/feeds.erb:6:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/account/home.erb:2:in `render_erb'
+ helpers/all.rb:7:in `partial'
+ /home/jammmin/webserver/app/views/account/structure.erb:5:in `render_erb'
+ urls/account.rb:36:in `GET /account/:section'127.0.0.1 - - [17/Dec/2009 15:52:29] "GET /account/home HTTP/1.1" 500 30 0.0393
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/home
+page is: account/feeds
+page is: common/feeds
+page is: account/song
+page is: common/list_artists
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [17/Dec/2009 15:54:22] "GET /account/home HTTP/1.1" 200 6345 0.0265
+127.0.0.1 - - [17/Dec/2009 15:54:22] "GET /stylesheets/common.css HTTP/1.1" 200 4099 0.0211
+127.0.0.1 - - [17/Dec/2009 15:54:23] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [17/Dec/2009 15:54:23] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [17/Dec/2009 15:54:23] "GET /scripts/all.js HTTP/1.1" 304 - 0.0024
+127.0.0.1 - - [17/Dec/2009 15:54:23] "GET /scripts/core.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [17/Dec/2009 15:54:23] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0024
+127.0.0.1 - - [17/Dec/2009 15:54:23] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [17/Dec/2009 15:54:23] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [17/Dec/2009 15:54:23] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [17/Dec/2009 15:54:23] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [17/Dec/2009 15:54:23] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [17/Dec/2009 15:54:23] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [17/Dec/2009 15:54:23] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [17/Dec/2009 15:54:23] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [17/Dec/2009 15:54:23] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0051
+127.0.0.1 - - [17/Dec/2009 15:54:23] "GET /images/icons/update.png HTTP/1.1" 304 - 0.0016
+127.0.0.1 - - [17/Dec/2009 15:54:24] "GET /images/icons/manage1.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [17/Dec/2009 15:54:25] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0022
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: 
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [17/Dec/2009 15:54:26] "GET /account/undefined HTTP/1.1" 200 5278 0.0106
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/menu
+page is: profile/actions
+true
+true
+true
+true
+true
+true
+page is: common/list_artists
+page is: common/list_artists
+page is: common/list_artists
+page is: profile/profilehome
+/home/jammmin/webserver/app/views/profile/profilehome.erb:6: warning: don't put space before argument parentheses
+/home/jammmin/webserver/app/views/profile/profilehome.erb:9: warning: don't put space before argument parentheses
+page is: common/feeds
+page is: common/songs
+/home/jammmin/webserver/app/views/common/songs.erb:2: warning: don't put space before argument parentheses
+page is: common/song
+page is: common/list_artists
+page is: common/jams
+/home/jammmin/webserver/app/views/common/jams.erb:2: warning: don't put space before argument parentheses
+page is: profile/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [17/Dec/2009 15:54:31] "GET /prakashraman HTTP/1.1" 200 6571 0.0416
+127.0.0.1 - - [17/Dec/2009 15:54:31] "GET /stylesheets/common.css HTTP/1.1" 200 4099 0.0043
+127.0.0.1 - - [17/Dec/2009 15:54:31] "GET /images/icons/comments.png HTTP/1.1" 200 1404 0.0017
+127.0.0.1 - - [17/Dec/2009 15:54:31] "GET /images/icons/add.png HTTP/1.1" 200 2454 0.0017
+127.0.0.1 - - [17/Dec/2009 15:54:32] "GET /images/icons/play1.png HTTP/1.1" 200 2422 0.0026
+RuntimeError - Username 'undefined' does not exists.:
+ /home/jammmin/webserver/app/lib/active_record.rb:13:in `with_username'
+ helpers/profile.rb:44:in `set_profile_page_info'
+ urls/profile.rb:8:in `GET /:username'127.0.0.1 - - [17/Dec/2009 15:54:33] "GET /undefined HTTP/1.1" 500 30 0.0049
+127.0.0.1 - - [17/Dec/2009 16:08:32] "GET /prakashraman/follow HTTP/1.1" 500 41 0.0083
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/menu
+page is: profile/actions
+true
+true
+true
+true
+true
+true
+page is: common/list_artists
+page is: common/list_artists
+page is: common/list_artists
+page is: profile/songs
+page is: common/song
+page is: common/list_artists
+page is: profile/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [17/Dec/2009 16:08:35] "GET /prakashraman/songs HTTP/1.1" 200 6228 0.0375
+127.0.0.1 - - [17/Dec/2009 16:08:35] "GET /stylesheets/common.css HTTP/1.1" 200 4099 0.0064
+127.0.0.1 - - [17/Dec/2009 16:08:35] "GET /scripts/all.js HTTP/1.1" 304 - 0.0016
+127.0.0.1 - - [17/Dec/2009 16:08:36] "GET /prakashraman/undefined HTTP/1.1" 404 18 0.0025
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/menu
+page is: profile/actions
+true
+true
+true
+true
+true
+true
+page is: common/list_artists
+page is: common/list_artists
+page is: common/list_artists
+page is: profile/profilehome
+/home/jammmin/webserver/app/views/profile/profilehome.erb:6: warning: don't put space before argument parentheses
+/home/jammmin/webserver/app/views/profile/profilehome.erb:9: warning: don't put space before argument parentheses
+page is: common/feeds
+page is: common/songs
+/home/jammmin/webserver/app/views/common/songs.erb:2: warning: don't put space before argument parentheses
+page is: common/jams
+/home/jammmin/webserver/app/views/common/jams.erb:2: warning: don't put space before argument parentheses
+page is: profile/right
+[#<User id: 1, username: "prakashraman", password: "f5a0b5e15c8673bd588d2cf078cab240", name: "Prakash Raman KA", location: "Bangalore">, #<User id: 2, username: "tarunrs", password: "bf89d81c71df004c4c51969a4380bc9d", name: "Tarun R S", location: "Bangalore">]
+page is: common/message_stream
+/home/jammmin/webserver/app/views/common/message_stream.erb:29: warning: don't put space before argument parentheses
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [17/Dec/2009 16:25:23] "GET /tarunrs HTTP/1.1" 200 6816 0.0438
+127.0.0.1 - - [17/Dec/2009 16:25:23] "GET /stylesheets/common.css HTTP/1.1" 200 4099 0.0039
+127.0.0.1 - - [17/Dec/2009 16:25:23] "GET /scripts/all.js HTTP/1.1" 304 - 0.0014
+RuntimeError - Username 'undefined' does not exists.:
+ /home/jammmin/webserver/app/lib/active_record.rb:13:in `with_username'
+ helpers/profile.rb:44:in `set_profile_page_info'
+ urls/profile.rb:8:in `GET /:username'127.0.0.1 - - [17/Dec/2009 16:25:24] "GET /undefined HTTP/1.1" 500 30 0.0053
+#<User:0xb70286d8>
+#<User:0xb702779c>
+[#<User id: 1, username: "prakashraman", password: "f5a0b5e15c8673bd588d2cf078cab240", name: "Prakash Raman KA", location: "Bangalore">, #<User id: 2, username: "tarunrs", password: "bf89d81c71df004c4c51969a4380bc9d", name: "Tarun R S", location: "Bangalore">]
+[#<User id: 1, username: "prakashraman", password: "f5a0b5e15c8673bd588d2cf078cab240", name: "Prakash Raman KA", location: "Bangalore">, #<User id: 2, username: "tarunrs", password: "bf89d81c71df004c4c51969a4380bc9d", name: "Tarun R S", location: "Bangalore">]
+127.0.0.1 - - [17/Dec/2009 16:25:28] "POST /message_stream/new_post HTTP/1.1" 200 - 0.0657
+[#<User id: 1, username: "prakashraman", password: "f5a0b5e15c8673bd588d2cf078cab240", name: "Prakash Raman KA", location: "Bangalore">, #<User id: 2, username: "tarunrs", password: "bf89d81c71df004c4c51969a4380bc9d", name: "Tarun R S", location: "Bangalore">]
+FalseClass
+/home/jammmin/webserver/app/views/common/message_stream.erb:29: warning: don't put space before argument parentheses
+page is: common/message
+127.0.0.1 - - [17/Dec/2009 16:25:28] "GET /message_stream/show?user_ids=1%2C2&full HTTP/1.1" 200 1018 0.0211
+127.0.0.1 - - [17/Dec/2009 16:25:32] "GET /account HTTP/1.1" 302 - 0.0025
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/home
+page is: account/feeds
+page is: common/feeds
+page is: account/song
+page is: common/list_artists
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [17/Dec/2009 16:25:32] "GET /account/home HTTP/1.1" 200 6345 0.0250
+127.0.0.1 - - [17/Dec/2009 16:25:32] "GET /stylesheets/common.css HTTP/1.1" 200 4099 0.0839
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: 
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [17/Dec/2009 16:25:32] "GET /account/undefined HTTP/1.1" 200 5278 0.0108
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_streams
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [17/Dec/2009 16:25:35] "GET /account/message_streams HTTP/1.1" 200 5743 0.0195
+127.0.0.1 - - [17/Dec/2009 16:25:35] "GET /stylesheets/common.css HTTP/1.1" 200 4099 0.0066
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: 
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [17/Dec/2009 16:25:36] "GET /account/undefined HTTP/1.1" 200 5278 0.0110
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/message_stream
+page is: common/message_stream
+/home/jammmin/webserver/app/views/common/message_stream.erb:29: warning: don't put space before argument parentheses
+page is: common/message
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [17/Dec/2009 16:25:37] "GET /account/message_stream/1 HTTP/1.1" 200 6655 0.0255
+127.0.0.1 - - [17/Dec/2009 16:25:37] "GET /stylesheets/common.css HTTP/1.1" 200 4099 0.0066
+ActiveRecord::RecordNotFound - Couldn't find MessageStream with ID=undefined:
+ urls/account.rb:17:in `GET /account/message_stream/:id'127.0.0.1 - - [17/Dec/2009 16:25:37] "GET /account/message_stream/undefined HTTP/1.1" 500 30 0.0055
