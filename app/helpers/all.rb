@@ -1,4 +1,9 @@
+# JS
 
+def js_start; "<script language='javascript'>"; end
+def js_end; "</script>"; end
+
+# END JS 
 
 def partial(page, options={})
   page = page.to_s
@@ -128,5 +133,7 @@ def render_error(exception)
   rescue Exception => ex
     ex.message
 end
+
+
 
 load 'helpers/profile.rb'

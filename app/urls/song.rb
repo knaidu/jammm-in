@@ -10,8 +10,21 @@ end
 post '/song/register' do
   name = params['name']
   song = register_song(session[:username], name)
+  
+  # Registers a song and adds music to it.
+  if add_music = param?(:add)
+    music_type, music_id = get_add_music_info
+    song.add_music(music_type, music_id)
+  end
   song ? redirect_manage_song(song) : "false"
 end
+
+get '/song/add_music' do
+  @add = param?(:add)
+  @layout_info = {'middle_panel' => 'song/add_music/page', 'left_panel' => 'account/menu'}
+  erb(:"body/structure")
+end
+
 
 get '/song/:song_id' do
   @layout_info = {"left_panel" => "common/little_menu", "middle_panel" => 'song/page', "right_panel" => 'song/right'}
@@ -26,6 +39,17 @@ end
 
 get '/song/:song_id/likes' do 
   erb(:"song/likes", :locals => {:song => get_passed_song})
+end
+
+get '/song/:song_id/add_music' do
+  begin
+    add = param?(:add)
+    song = get_passed_song
+    music_type, music_id = get_add_music_info
+    "Successfully added music to song" if song.add_music(music_type, music_id)
+  rescue Exception => e
+    render_error(e)
+  end
 end
 
 
@@ -64,6 +88,7 @@ get '/song/:song_id/manage/invite_artist' do
   begin
     song = get_passed_song
     user = User.with_username(params[:username])
+    raise "User #{params[:username]} does not exists" if user.nil?
     "Successfully added user" if song.add_manager(user)
   rescue Exception => e
     render_error(e)

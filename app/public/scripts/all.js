@@ -31,6 +31,11 @@ function loadSong(id){
   loadUrl("/song/" + id);
 }
 
+function loadSongManage(id){
+  if(!id) return;
+  loadUrl("/song/" + id + "/manage");
+}
+
 // Redirects to a particular song page
 function loadJam(id){
   if(!id) return;

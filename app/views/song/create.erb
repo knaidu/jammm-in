@@ -1,5 +1,9 @@
-<%= section_header 'Create Song' %>
+<% 
+	hide_header ||= nil
+	add ||= nil 
+%>
 
+<%= section_header 'Create Song' if not hide_header %>
 <br>
 <form method='post' action='/song/register'>
   <table>
@@ -12,6 +16,9 @@
 		  </td>
 	  </tr>
   </table><br>
+	<% if add %>
+		<input type='hidden' name='add' value='<%= add %>'>
+	<% end %>
   <input type='submit' value='Create Song'>
 </form>
 <br>

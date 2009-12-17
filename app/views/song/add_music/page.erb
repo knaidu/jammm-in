@@ -1,0 +1,22 @@
+<%= section_header("Add Jam/Song", {:icon => :add}) %>
+
+<input type='radio' name='choice' value='new' SELECTED> Create new song
+<input type='radio' name='choice' value='existing'> Add to existing 
+
+<br><br>
+<div id='choice-div' style='padding-bottom: 10px'></div>
+
+<script language="javascript">
+	(function (){
+		var radios = document.getElementsByName('choice');
+		var onclick = function(){
+			var value = this.getValue();
+			var url = (value == 'new' ? "/partial/song/create" : "/partial/song/add_music/existing")
+			url = formatUrl(url, {hide_header: true, add: '<%= @add %>'});
+			updateEl('choice-div', url);
+		}
+		$A(radios).each(function(el){el.onclick = onclick});
+		radios[0].checked = true;
+		onclick.call(radios[0]); // Forces the loading of one of the radio buttons
+	})();
+</script>
