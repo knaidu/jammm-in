@@ -1,5 +1,3 @@
-<%= icon(:home, :medium) %><br><br>
-
 <%= section_header('Feed', {:icon => :update}) %>
 <%= partial("account/feeds", :locals => {:feeds => @session_user.feeds, :show_as_updates => false}) %>
 <br>

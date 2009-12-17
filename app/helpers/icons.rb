@@ -9,7 +9,8 @@ ICONS = {
   :manage => "/images/icons/manage1.png",
   :jammmin => "/images/icons/miniicon.png",
   :add => "/images/icons/add.png",
-  :like => "/images/icons/like2.png",
+  :like => "/images/icons/like.png",
+  :unlike => "/images/icons/unlike.png",
   :play => "/images/icons/play.png",
   :play2 => "/images/icons/play1.png",
   :comments => "/images/icons/comments.png",
@@ -22,7 +23,8 @@ ICONS = {
   :jam_page => "/images/icons/jampage.png",
   :song_page => "/images/icons/songpage1.png",
   :back => "/images/icons/back1.png",
-  :refresh => "/images/icons/refresh.png"
+  :refresh => "/images/icons/refresh.png",
+  :unfollow => "/images/icons/unfollow1.png",
 }
 
 def add_icon(icon=false)

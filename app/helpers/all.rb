@@ -121,4 +121,12 @@ def manage_jam_link(jam)
   "<span class='pad1'><a href='/jam/#{jam.id}/manage' title='Manage'>#{icon :manage}</a></song>"  
 end
 
+def render_error(exception)
+  status 500
+  puts exception.message
+  exception.message
+  rescue Exception => ex
+    ex.message
+end
+
 load 'helpers/profile.rb'

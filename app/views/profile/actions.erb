@@ -2,7 +2,10 @@
 	<span class='bg-grey round pad10'>
 		<% if session_user? %> 
 			<% if session_user?.follows?(user) %>
-				<a class='simple-link' href='javascript: unfollowUser("<%= user.username %>")'>Unfollow</a><br>
+			  <div>
+  			  <span class='pad-right-5 float-left'><%= icon :unfollow %></span>
+	  			<a class='simple-link' href='javascript: unfollowUser("<%= user.username %>")'>Unfollow</a><br>
+	  		</div>
 			<% else %>
 				<div><span class='pad-right-5 float-left'><%= icon :following %></span><a class='simple-link' href='javascript: followUser("<%= user.username %>")'>Follow</a></div>
 			<% end %>

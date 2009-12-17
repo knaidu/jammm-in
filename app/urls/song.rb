@@ -61,9 +61,13 @@ get '/song/:song_id/manage/artists' do
 end
 
 get '/song/:song_id/manage/invite_artist' do
-  song = get_passed_song
-  user = User.with_username(params[:username])
-  song.add_manager(user) ? "Successfully added user" : "Error in adding user"
+  begin
+    song = get_passed_song
+    user = User.with_username(params[:username])
+    "Successfully added user" if song.add_manager(user)
+  rescue Exception => e
+    render_error(e)
+  end
 end
 
 get '/song/:song_id/manage/remove_artist' do

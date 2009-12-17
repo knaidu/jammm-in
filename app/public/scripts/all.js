@@ -46,13 +46,25 @@ function formatController(){
 
 function addMessage(formId){
   var form = $(formId);
-  aaa = form;
   if(!form) return;
   var users = form.findElementByName('user_ids').value;
   var divId = form.findElementByName('div_id').value;
 	var full = form.findElementByName('full')
 	if(full) full = full.value;
   form.request({onSuccess: function(){loadMessageStream(users, divId, full)}});
+}
+
+function loadMessage(id, message, className){
+  var el = $(id);
+  if(!el) return;
+  var div = new Element('div');
+  el.addClassName('text-center');
+  div.insert(message);
+  div.addClassName(className);
+  var items = ["<center>", "<br>", div, "<br>", "</center>"];     
+  el.innerHTML = '';
+  $A(items).each(function(item){el.insert(item)});
+  window.setTimeout(function(){el.innerHTML = ''}, 2000); // empties the window after 2 seconds
 }
 
 function loadMessageStream(users, divId, full){
@@ -66,12 +78,17 @@ function markMessageStreamAsRead(users, divId, full){
   call(url, {onSuccess: function(){loadMessageStream(users, divId, full)}})
 }
 
-function loadSuccessMessage(id, message){
+function loadSuccessMessage(id, message){  
 	loadMessage(id, message, "success-message");
 }
 
 function loadFailureMessage(id, message){
 	loadMessage(id, message, "failure-message");
+}
+
+function loadResponseMessage(response, id){
+  var messageType = response.transport.status == 200 ? "success-message" : "failure-message";
+  loadMessage(id, getResponseText(response.transport), messageType);
 }
 
 /* Comments */
@@ -187,7 +204,11 @@ function loadSongManageArtists(songId) {
 function inviteArtistToSong(songId) {
 	var form = $('song-manage-invite-artist-form');
 	if(!form) return false;
-	form.request({method: 'get', onSuccess: function() {loadSongManageArtists(songId)}});
+	form.request({
+	  method: 'get', 
+	  onSuccess: function() {loadSongManageArtists(songId)},
+	  onFailure: function(response){loadResponseMessage(response, 'invite-artists-response-div')}
+	});
 };
 
 function removeArtistFromSong(songId, artistId){
@@ -264,7 +285,12 @@ function loadJamManageArtists(jamId){
 
 function tagArtistInJam(jamId){
 	var form = $('tag-artist-form');
-	form.request({async: 'true', method: 'get', onSuccess: function() {loadJamManageArtists(jamId)}});
+	form.request({
+	  async: 'true', 
+	  method: 'get', 
+	  onSuccess: function() {loadJamManageArtists(jamId)},
+	  onFailure: function(response){loadResponseMessage(response, 'tag-artists-div')}
+	});
 }
 
 function untagArtistInJam(jamId, artistId){

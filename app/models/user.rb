@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :username, :message => "has already been registered"
 
   def after_create
-    feed = Feed.add({:user_ids => [self.id]}, "user_created", "global")
+    feed = Feed.add({:user_ids => [self.id]}, "user_created", "public")
     feed.add_users([self])
   end
 

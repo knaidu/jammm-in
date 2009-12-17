@@ -9,7 +9,9 @@ class ActiveRecord::Base < Object
   end
 
   def self.with_username(username)
-    self.find_by_username(username)
+    user = self.find_by_username(username)
+    raise "Username '#{username}' does not exists." if not user
+    user
   end
   
   def append(attrs)
