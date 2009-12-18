@@ -4,6 +4,6 @@
     <%= add_field_name 'Jammmed with' %> <%= partial(:'common/list_artists', :locals => {:artists => song.artists}) %><br>
     <%= icon :like %> <%= icon :comments %>
   </div>
-  <span class='float-right'><%= icon :add %> <%= icon :play2 %></span>
+  <span class='float-right'> <%= add_music_link song %> <%= icon :play2 %></span>
 </div>
 

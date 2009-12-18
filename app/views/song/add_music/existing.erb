@@ -1,10 +1,21 @@
-<br><select id='user-songs'>
-	<% session_user?.songs.each {|song| %>
-		<%= "<option value='#{song.id}'>#{song.name}</option>" %>
-	<% } %>
-</select>
-<br><br>
-<input type='button' value='Add to song' id='add-song-button'>
+<br>
+<table>
+  <tr>
+    <td> <b>Name:</b> </td>
+    <td>
+        <select id='user-songs'>
+	        <% session_user?.songs.each {|song| %>
+		        <%= "<option value='#{song.id}'>#{song.name}</option>" %>
+	        <% } %>
+        </select>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <input type='button' value='Add to Song' id='add-song-button'>
+     </td>
+  </tr>
+</table>
 
 <%= js_start %>
 	(function(){

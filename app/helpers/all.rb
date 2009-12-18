@@ -134,6 +134,12 @@ def render_error(exception)
     ex.message
 end
 
+def add_music_link(obj)
+  prm = obj.class.to_s.downcase + "_" + obj.id.to_s
+  puts obj.id
+  "<a href='/song/add_music?add=#{prm}'><span class='display-inline' title='Add to garage'>" + (icon :add) + "</span></a>" 
+end
+
 
 
 load 'helpers/profile.rb'
