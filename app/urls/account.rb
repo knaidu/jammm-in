@@ -19,6 +19,18 @@ get '/account/message_stream/:id' do
   erb(:"account/structure")
 end
 
+
+get '/account/following' do
+  @layout_info = {"left_panel" => "account/menu", "middle_panel" => "account/following"}  
+  erb(:"account/structure")
+end
+
+get '/account/followers' do
+  @layout_info = {"left_panel" => "account/menu", "middle_panel" => "account/followers"}  
+  erb(:"account/structure")
+end
+
+
 get '/account/:section' do
   @layout_info = layout_info("account", params[:section])
   erb(:"account/structure") 

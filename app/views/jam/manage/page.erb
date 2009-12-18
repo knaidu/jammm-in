@@ -1,9 +1,12 @@
 
-<font size=4>Jam / "<%= @jam.name %>" / Manage</font><br><br>
-<%= add_field_name 'Actions' %> 
-<a href='javascript: history.go(-1)' class='simple-link'>Back</a>,
-<a class='simple-link' href='/jam/<%= @jam.id %>'>Jam Page</a>, 
-<a href='?' class='simple-link'>Refresh</a>
+<div>
+  <span class='float-left'>
+    <a href='javascript: history.go(-1)'><%= icon :back %></a>
+    <font size=4>Jam / "<%= @jam.name %>" / Manage</font>
+  </span>
+  <span class='float-right'><a class='simple-link' href='/jam/<%= @jam.id %>'><%= icon :jam_page %></a></span>
+</div>
+
 <br><br>
 
 <div class='music-desc round'>

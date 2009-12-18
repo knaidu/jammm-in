@@ -40,8 +40,14 @@ post '/jam/:jam_id/manage/upload_file' do
 end
 
 get '/jam/:jam_id/manage/tag_artist' do
-  jam = get_passed_jam
-  jam.tag_artist(User.with_username(params[:username]))
+  begin
+    jam = get_passed_jam
+    jam.tag_artist(User.with_username(params[:username]))
+  rescue Exception => e
+    status 500
+    puts e.message
+    e.message
+  end
 end
 
 get '/jam/:jam_id/manage/untag_artist' do

@@ -1,0 +1,19 @@
+<br><select id='user-songs'>
+	<% session_user?.songs.each {|song| %>
+		<%= "<option value='#{song.id}'>#{song.name}</option>" %>
+	<% } %>
+</select>
+<br><br>
+<input type='button' value='Add to song' id='add-song-button'>
+
+<%= js_start %>
+	(function(){
+		var onButtonClick = function(){
+			var value = $('user-songs').getValue();
+			var url = formatUrl(('/song/' + value + "/add_music"), {add: "<%= add %>"});
+			call(url, {onSuccess: function(){loadSongManage(value)}});
+		};
+		
+		$('add-song-button').onclick = onButtonClick;
+	})();
+<%= js_end %>

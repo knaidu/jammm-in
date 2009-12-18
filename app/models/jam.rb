@@ -74,6 +74,9 @@ class Jam < ActiveRecord::Base
     self.find_all.select(&:published)
   end
   
+  def add_to_song(song)
+    song.add_jam(self)
+  end
 
 end
 

@@ -19,7 +19,7 @@ helpers do
 end
 
 before do
-  @session_user ||= User.with_username(session[:username])
+  @session_user ||= (User.with_username(session[:username]) rescue nil)
 end
 
 get '/' do
@@ -41,6 +41,12 @@ end
 get '/aboutus' do
   @layout_info = {"left_panel" => "", "middle_panel" => "help/aboutus"}
   erb(:'body/structure')
+end
+
+get '/partial/*' do
+#  path, locals = parse_url(params["splat"])
+  path = params["splat"]
+  erb(:"#{path}", :locals => params.clone)
 end
 
 load 'urls/signin.rb'

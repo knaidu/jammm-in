@@ -96,4 +96,15 @@ class Song < ActiveRecord::Base
     self.find_all.select(&:published)
   end
   
+  def add_to_song(song)
+    self.jams.each do |jam|
+      song.add_jam(jam)
+    end
+  end
+  
+  def add_music(music_type, music_id)
+    music_obj = music_type.find_by_id(music_id)
+    music_obj.add_to_song(self)
+  end
+  
 end

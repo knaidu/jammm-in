@@ -9,7 +9,7 @@ class ActiveRecord::Base < Object
   end
 
   def self.with_username(username)
-    self.find_by_username(username)
+    user = self.find_by_username(username)
   end
   
   def append(attrs)

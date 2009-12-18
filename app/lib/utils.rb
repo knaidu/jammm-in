@@ -94,3 +94,21 @@ def add_message(user_1, user_2, body)
   message_stream = MessageStream.find_stream(user_1, user_2) || MessageStream.start([user_1, user_2])
   message_stream.add_message(user_1, body)
 end
+
+def parse_url(url)
+  puts url
+  path, parameters = url.split('?')
+  p = {}
+  
+  parameters.split("&").each { |param|
+    res = (/(.+)=(.+)/ =~ param)
+    p[$1.to_sym] = $2 if res and $1 and $2
+  } if parameters
+  
+  {:path => path, :params => p}
+end
+
+def get_add_music_info
+  music_type, music_id = param?(:add).split("_") if param?(:add)
+  [eval(music_type.capitalize), music_id]
+end
