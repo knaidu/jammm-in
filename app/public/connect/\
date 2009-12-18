@@ -1,0 +1,27 @@
+<html>
+	<head>
+<script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php/en_US" type="text/javascript"></script><script type="text/javascript">FB.init("f46392e31a3b590a932a0b52a940aa31");</script>
+<title> Jammm.in music player</title>
+
+<meta name="medium" content="audio" />
+<meta name="title" content="page_title" />
+<meta name="description" content="audio_description" />
+<link rel="image_src" href="http://jammm.in/images/logos/logo.jpg" />
+<link rel="audio_src" href="http://www.jammm.in/file/1261043355-02192.mp3" />
+<meta name="audio_type" content="audio/mpeg3 />
+
+
+<meta name="audio_title" content="Song title" />
+<meta name="audio_artist" content="Fisrt song descriptiong" />
+
+
+	</head>
+	<body>
+
+
+
+		<a name="fb_share"></a>
+		<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript">
+		</script>
+	</body>
+</html>

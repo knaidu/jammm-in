@@ -1,0 +1,20 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head></head>
+<body>
+
+<script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript"></script>
+
+<fb:login-button></fb:login-button>
+
+<script type="text/javascript">
+    FB.init("a64a583dd293c855dc4f81e6f7add7e0", "xd_receiver.htm");
+</script>
+<script type="text/javascript">
+function callPublish(msg, attachment, action_link) {
+  FB.ensureInit(function () {
+    FB.Connect.streamPublish('', attachment, action_link);
+  });
+}</script>
+<input type="button" onclick="callPublish('',null,null);return false;" value="Preview Dialog" />
+</body>
+</html>

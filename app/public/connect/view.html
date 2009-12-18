@@ -1,0 +1,21 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">	
+<head>
+<title> Jammm.in music player</title>
+
+	</head>
+	<body>
+		<script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php/en_US" type="text/javascript"></script>
+		<script type="text/javascript">FB.init("f46392e31a3b590a932a0b52a940aa31");</script>
+
+		<script type="text/javascript">
+			function callPublish(msg, attachment, action_link) {
+			  FB.ensureInit(function () {
+				 Facebook.streamPublish('', attachment, action_link);
+			  });
+		}</script>
+
+<input type="button" onclick="callPublish('',{'name':'jammm.in','href':'http://www.jammm.in','description':'jammm.in is an online music collaboration application','media':[{'type':'image','src':'http://jammm.in/images/icons/miniicon.png','href':'http://www.jammm.in'}]},null);return false;" value="Preview Dialog" />
+<fb:login-button v="2" size="medium" onlogin="window.location.reload(true);">Connect with Facebook</fb:login-button>	
+<input type="button" onclick="Facebook.streamPublish();" value="update" />
+</body>
+</html>
