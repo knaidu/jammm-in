@@ -10,7 +10,7 @@
 		<%= message_stream.messages.size %> messages 
 		<%= "(#{unread_messages.size} new)" if not unread_messages.empty? %>
 		<input type='button' value='Mark as read' onclick="markMessageStreamAsRead('<%= "#{user1.id},#{user2.id}" %>', '<%= div_id %>', <%= full  ? true : false %>)" <%= 'disabled' if unread_messages.empty? %>>
-		<br><br>
+		<br>
 	  <% 
 				messages = message_stream.user_message_streams
 				plucked_messages = messages.clone
@@ -24,7 +24,8 @@
 	      end
 		%>
 		  <% messages_div_id = div_id + "-messages" %>
-			<div id='<%= messages_div_id %>' class='<%= "message-stream round" if full %>'>
+			<% div_class = full ? "message-stream-full round" : "message-stream-partial" %>
+			<div id='<%= messages_div_id %>' class='<%= div_class %>'>
 		    <% plucked_messages.each do |message| %>
 		  		<%= partial ("common/message", :locals => {:message => message}) %>
 		  		<br>

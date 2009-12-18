@@ -3,6 +3,7 @@ account:
     
     home:
         middle_panel: home
+        right_panel: right
         
     songs:
         middle_panel: songs

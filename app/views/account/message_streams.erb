@@ -1,7 +1,10 @@
 <%= section_header('Your Message Streams', {:icon => :message}) %>
+<% only_unread ||= nil %>
 
 <div id='message-streams'>
   <% session_user?.message_streams.each do |message_stream| %>
+		<!-- Goes to NEXT iteration if the this partial is meant to display only unread streams -->
+		<% next if only_unread  and message_stream.unread_messages(session_user?).empty? %>
     <div>
       <span class='float-left display-inline pad-right-10'><%= icon :message %></span>
       <% with_user = message_stream.users.without(session_user?)[0] %>

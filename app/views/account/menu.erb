@@ -15,7 +15,11 @@
 	  <%= add_menu_entry('Profile','/' + @session_user.username, :profile) %>
 	  <%= add_menu_entry('Songs','/account/songs', :song) %>
 	  <%= add_menu_entry('Jams','/account/jams', :jam) %>
-	  <%= add_menu_entry('Message Streams','/account/message_streams', :message) %>
+	
+		<% ms = "Message Streams" %>
+		<% ms += " (#{session_user?.unread_messages.size.to_s})" if not session_user?.unread_messages.empty? %>
+		
+	  <%= add_menu_entry(ms,'/account/message_streams', :message) %>
 	  <%= add_menu_entry('Following','/account/following', :following) %>
 	  <%= add_menu_entry('Followers','/account/followers', :followers) %>
 	

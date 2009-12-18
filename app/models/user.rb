@@ -95,4 +95,8 @@ class User < ActiveRecord::Base
     "http://www.jammm.in/" + self.username
   end
   
+  def unread_messages
+    self.message_streams.map{|ms| ms.unread_messages(self)}.flatten
+  end
+  
 end
