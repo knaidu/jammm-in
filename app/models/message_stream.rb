@@ -2,7 +2,7 @@ class MessageStream < ActiveRecord::Base
   
   has_many :user_message_stream_maps, :dependent => :destroy
   has_many :users, :through => :user_message_stream_maps  
-  has_many :user_message_streams, :dependent => :destroy
+  has_many :user_message_streams, :dependent => :destroy, :order => "created_at DESC"
   
   alias messages user_message_streams
 
