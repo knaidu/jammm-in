@@ -1,9 +1,6 @@
 <% unread = ((message.user != session_user?) and message.unread) %>
-<div>
+<div class="<%= 'round bg-grey pad10' if unread %>">
   <div>
-    <% if unread %>
-      <span class='float-left pad-right-5'><%= icon :message %></span>
-   <% end %>
 	  <%= message.user == session_user? ? add_field_name("You") : "<span class='display-inline bold'>#{message.user.name}:</span>" %>
 		<%= "<font color='green'>(* NEW)</font>" if unread %>
 	</div>  
