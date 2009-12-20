@@ -6,12 +6,21 @@
 	</div>
 	<div class='float-left'%>
 		<a class='bold black simple-link' href='/<%= user.username %>'><%= user.name %></a>, <%= user.location %><br>
-		<a class='simple-link' href='/<%= user.username %>/songs'>Songs</a>: <%= user.songs.size %><br>
-		<a class='simple-link' href='/<%= user.username %>/jams'>Jams</a>: <%= user.jams.size %><br>
+		<table>
+			<tr>
+				<td>		
+					<a class='simple-link' title='songs' href='/<%= user.username %>/songs'><%= icon :song %></a>
+				</td>
+				<td>
+				 	<%= user.songs.size %>
+				</td>
+				<td>
+					<a class='simple-link' title='jams' href='/<%= user.username %>/jams'><%= icon :jam %></a>
+				</td>
+				<td>
+					<%= user.jams.size %>
+				</td>
+			</tr>
+		</table>	
 	</div>
-	<% if show_actions %>
-  	<span class='float-right'>
-      huh
-  	</span>
-  <% end %>
 </div>

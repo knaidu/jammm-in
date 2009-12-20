@@ -1,10 +1,10 @@
-<font size='4'>JAM / "<%= @jam.name %>"</font><br><br>
+<a href='javascript: history.go(-1)'><%= icon :back %></a><font size='4'>JAM / "<%= @jam.name %>"</font>
 
-<a href='javascript: history.go(-1)'><%= icon :back %></a>
-<% if session_user? and @jam.artists.include?(session_user?) %>
-	<a class='simple-link' href='/jam/<%= @jam.id %>/manage' title='Manage'><%= icon(:manage, :small) %></a> 
-<% end %>
-<a href='?' class='simple-link'><%= icon :refresh %></a>
+<span class='float-right pad1'>
+	<% if session_user? and @jam.artists.include?(session_user?) %>
+		<a class='simple-link' href='/jam/<%= @jam.id %>/manage' title='Manage'><%= icon(:manage, :small) %></a> 
+	<% end %>
+</span>
 <br><br>
 
 <div id='basic-info'>

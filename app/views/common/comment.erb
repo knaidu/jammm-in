@@ -1,10 +1,11 @@
 <% delete_js_callback ||= '' %>
 
 <div class='float-left'>
-	<%= add_profile_link(comment.user) %>: <%= comment.comment %>
+	<%= add_profile_link(comment.user) %>: 
 </div>
+<div class='float-right simple-link' onclick="deleteComment('<%= comment.id %>', '<%= comments_div_id %>', '<%= form_id %>')" title='Delete comment'>
+	x
+</div>
+&nbsp;<%= comment.comment %>
 <% if @session_user == comment.user %>
-	<div class='float-right simple-link' onclick="deleteComment('<%= comment.id %>', '<%= comments_div_id %>', '<%= form_id %>')" title='Delete comment'>
-		x
-	</div>
 <% end %>
