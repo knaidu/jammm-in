@@ -140,6 +140,9 @@ def add_music_link(obj)
   "<a href='/song/add_music?add=#{prm}'><span class='display-inline' title='Add to garage'>" + (icon :add) + "</span></a>" 
 end
 
+def play_link(obj)
+  "<span onclick=play('','') class='simple-link display-inline'>#{icon :play2}</span>"
+end
 
 
 load 'helpers/profile.rb'

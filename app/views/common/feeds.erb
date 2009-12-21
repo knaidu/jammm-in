@@ -1,3 +1,7 @@
+
 <% feeds.each {|feed| %>
-	<%= partial("common/feed", :locals => {:feed => feed, :show_as_updates => show_as_updates}) %>
+	<div class='feed'>
+		<%= partial("common/feed", :locals => {:feed => feed, :show_as_updates => show_as_updates}) %>
+	</div>
+	<br>
 <% } %>

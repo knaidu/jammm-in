@@ -5,3 +5,9 @@
   <%= partial("common/message_stream", :locals => {:message_stream => message_stream}) %>
 <% end %>
 
+<%= section_header('Songs', {:icon => :song}) %>
+<%= partial (:'common/songs', :locals => {:songs => @user.songs}) %> 
+
+
+<%= section_header('Jams', {:icon => :jam}) %>
+<%= partial (:'common/jams', :locals => {:jams => @user.jams}) %> 

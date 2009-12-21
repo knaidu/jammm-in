@@ -2,6 +2,7 @@
 	default_color = "#990000"
 	default_line_color = "#cccccc"
 	default_round = "-moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;"
+	light_gray  = "#eee9e9"
 %>
 
 /* DEFAULTS */
@@ -79,9 +80,12 @@ hr.w60-align-left {width: 60%; margin-left: 0; text-align: left}
 .text-center {text-align: center}
 .text-right {text-align: right}
 .text-left {text-align: left}	
+.text-center {text-align: center}
 .field{color: grey; font-weight: bold; width: 100px; display: inline-block}
 .round {-moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;}
 .height-inherit {height: inherit;}
+.simple-action{display: inline-block; background-color: <%= light_gray %>; <%= default_round %>; padding: 5px}
+
 /* PROGRESS-BAR */
 .progress-bar-container{
 	border: thin groove <%= default_color %>;
@@ -146,3 +150,9 @@ hr.w60-align-left {width: 60%; margin-left: 0; text-align: left}
 /* MUSIC, i.e: songs, jams, lyrics */
 .music-desc {padding: 10px; background-color: #faebd7; border: thin solid #eedfcc;}
 .upload-jam-iframe {border: none; height: 80; width: 100%; overflow: hidden;}
+
+/* Feeds */
+.feed {
+	border-bottom: thin solid <%= light_gray %>;
+	padding-bottom: 5px;
+}

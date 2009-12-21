@@ -1,11 +1,18 @@
 <% song = fhlp_get_song(feed) %>
 <div>
-	<span class='float-left pad-right-10'>
-		<%= small_icon '/images/icons/staff.png' %>
+	<span class='float-left'>
+		<%= icon(:song, :medium) %>
 	</span>
-	<% if song.creator == session_user? and not is_update %>
-		You have created a new song <%= song_link(song) %>
-	<% else %>
-		<%= add_profile_link(fhlp_get_users(feed)[0]) %> has created a new song <%= song_link(song) %>
-	<% end %>
+	<div>
+		<% if song.creator == session_user? and not is_update %>
+			You have created a new song <%= song_link(song) %>
+		<% else %>
+			<%= add_profile_link(fhlp_get_users(feed)[0]) %> has created a new song <%= song_link(song) %>
+		<% end %>
+		<br>
+		<div class='grey'>
+			<%= "\"#{song.description}\"<br><br>" if song.description %>
+		</div>
+		<%= play_link(song) %> <%= icon :like %>
+	</div>
 </div>
