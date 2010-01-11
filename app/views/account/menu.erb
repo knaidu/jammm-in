@@ -1,6 +1,5 @@
 
 <div class='menu'>
-	<br>
 	<a class='simple-link' href='<%= session_user?.url %>'><%= session_user?.url %></a>
 	<br><br>
 	<span class='bg-grey round pad10'>
@@ -22,6 +21,7 @@
 	  <%= add_menu_entry(ms,'/account/message_streams', :message) %>
 	  <%= add_menu_entry('Following','/account/following', :following) %>
 	  <%= add_menu_entry('Followers','/account/followers', :followers) %>
+	  <%= add_menu_entry('About Me','/account/aboutme', :jam) %>
 	
 		<br>
 	  <%= add_menu_entry('Help','/help', :help) %>  

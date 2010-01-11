@@ -30,6 +30,19 @@ get '/account/followers' do
   erb(:"account/structure")
 end
 
+get '/account/aboutme' do
+  @layout_info = {"left_panel" => "account/menu", "middle_panel" => "account/aboutme/page"}  
+  erb(:"account/structure")
+end
+
+get '/account/aboutme/save_basic_info' do
+  puts '--------'
+  monitor {
+    name, location = get_params(:name, :location)
+    session_user?.update_basic_info({:name => name, :location => location})
+    "Information has been saved"
+  }
+end
 
 get '/account/:section' do
   @layout_info = layout_info("account", params[:section])

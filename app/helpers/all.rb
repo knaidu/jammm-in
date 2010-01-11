@@ -126,6 +126,12 @@ def manage_jam_link(jam)
   "<span class='pad1'><a href='/jam/#{jam.id}/manage' title='Manage'>#{icon :manage}</a></song>"  
 end
 
+def monitor
+  yield if block_given?
+rescue Exception => e
+  render_error(e)
+end
+
 def render_error(exception)
   status 500
   puts exception.message
@@ -142,6 +148,26 @@ end
 
 def play_link(obj)
   "<span onclick=play('','') class='simple-link display-inline'>#{icon :play2}</span>"
+end
+
+def vspace(height=5)
+  "<div style='height: #{height}'></div>"
+end
+
+def field(text)
+  "<div class='field'>#{text}</div>"
+end
+
+def param?(key)
+  params[key.to_sym]
+end
+
+def get_params?(*keys)
+  keys.map do |key| param?(key.to_sym) end
+end
+
+def rand_id
+  "id-" + rand.to_s
 end
 
 

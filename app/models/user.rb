@@ -17,6 +17,10 @@ class User < ActiveRecord::Base
     feed = Feed.add({:user_ids => [self.id]}, "user_created", "public")
     feed.add_users([self])
   end
+  
+  def update_basic_info(info)
+    self.update_attributes(info)
+  end
 
   def collaborators
     artists = jams.map(&:artists).flatten.uniq.reject do |user| user == self end
