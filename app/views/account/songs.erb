@@ -1,7 +1,9 @@
-<%= section_header('songs') %>
-<% @session_user.songs.each do |song| %>
-  <%= partial('account/song', {:locals => {:song => song}}) %><br><br>
-<% end %>
+<div style='background-color: #dcdcdc'>
+  <%= section_header('songs') %>
+  <% @session_user.songs.each do |song| %>
+    <%= partial('account/song', {:locals => {:song => song}}) %><br><br>
+  <% end %>
+</div>
 
 
 
