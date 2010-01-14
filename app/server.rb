@@ -2,6 +2,7 @@ require 'rubygems'
 require 'sinatra'
 require 'ftools'
 require 'yaml'
+require 'aws/s3'
 require 'digest/md5'
 
 
@@ -9,6 +10,7 @@ set :public, File.dirname(__FILE__) + '/public'
 enable :sessions
 
 load 'db/db_connect.rb'
+load 'scripts/s3_connect.rb'
 load 'scripts/load_libs.rb'
 load 'scripts/load_models.rb'
 

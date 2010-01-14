@@ -39406,3 +39406,725 @@ page is: body/footer
 127.0.0.1 - - [13/Jan/2010 16:04:06] "GET /account/undefined HTTP/1.1" 200 5619 0.0632
 >> Stopping ...
 >> Exiting!
+>> Writing PID to /home/jammmin/webserver/app/processes.4567
+>> Changing process privilege to root:root
+Couldn't change user and group to root:root: Operation not permitted
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
+DBCONFIG: {"port"=>5432, "username"=>"jammmin", "adapter"=>"postgresql", "database"=>"garage", "password"=>"3WiseMen"}
+DB CONNECTION: #<ActiveRecord::ConnectionAdapters::ConnectionPool:0xb7262b60 @connections=[], @timeout=5, @queue=#<MonitorMixin::ConditionVariable:0xb7262ae8 @waiters=[], @monitor=#<Monitor:0xb7262b24 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>>, @spec=#<ActiveRecord::Base::ConnectionSpecification:0xb6efcf34 @config={:username=>"jammmin", :database=>"garage", :password=>"3WiseMen", :adapter=>"postgresql", :port=>5432}, @adapter_method="postgresql_connection">, @checked_out=[], @size=5, @connection_mutex=#<Monitor:0xb7262b24 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>, @reserved_connections={}>
+libs are: ["active_record.rb", "extensions.rb", "jam_utils.rb", "song_utils.rb", "user.rb", "utils.rb"]
+models are: ["comment.rb", "feed.rb", "follower.rb", "jam_artist.rb", "jam.rb", "like.rb", "message_stream.rb", "process_info.rb", "published_jam.rb", "song_jam.rb", "song_lyric.rb", "song_manager.rb", "song.rb", "test_tables.rb", "user_feed.rb", "user_message_map.rb", "user_message_stream_map.rb", "user_message_stream.rb", "user.rb"]
+>> Thin web server (v1.2.2 codename I Find Your Lack of Sauce Disturbing)
+>> Maximum connections set to 1024
+>> Listening on 127.0.0.1:4567, CTRL+C to stop
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: homepage/left
+page is: homepage/middle
+page is: common/feeds
+page is: homepage/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [14/Jan/2010 13:10:25] "GET / HTTP/1.1" 200 2474 0.3873
+127.0.0.1 - - [14/Jan/2010 13:10:25] "GET /stylesheets/common.css HTTP/1.1" 200 4643 0.0070
+127.0.0.1 - - [14/Jan/2010 13:10:25] "GET /scripts/prototype.js HTTP/1.1" 200 139978 0.0062
+127.0.0.1 - - [14/Jan/2010 13:10:25] "GET /scripts/swfobject.js HTTP/1.1" 200 9759 0.0044
+127.0.0.1 - - [14/Jan/2010 13:10:26] "GET /scripts/all.js HTTP/1.1" 200 13359 0.0021
+127.0.0.1 - - [14/Jan/2010 13:10:27] "GET /scripts/core.js HTTP/1.1" 200 2300 0.0021
+127.0.0.1 - - [14/Jan/2010 13:10:27] "GET /images/logos/logo.jpg HTTP/1.1" 200 5116 0.0035
+127.0.0.1 - - [14/Jan/2010 13:10:27] "GET /swf/new-player.swf HTTP/1.1" 200 3750 0.0026
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/nil
+page is: profile/usernotfound
+page is: profile/nil
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [14/Jan/2010 13:10:27] "GET /favicon.ico HTTP/1.1" 200 2205 0.0118
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/nil
+page is: profile/usernotfound
+page is: profile/nil
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [14/Jan/2010 13:10:28] "GET /undefined HTTP/1.1" 200 2205 0.0110
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: 
+page is: signin/page
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [14/Jan/2010 13:10:30] "GET /signin HTTP/1.1" 200 2690 0.0094
+127.0.0.1 - - [14/Jan/2010 13:10:30] "GET /stylesheets/common.css HTTP/1.1" 200 4643 0.0086
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/nil
+page is: profile/usernotfound
+page is: profile/nil
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [14/Jan/2010 13:10:30] "GET /favicon.ico HTTP/1.1" 200 2205 0.0119
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/nil
+page is: profile/usernotfound
+page is: profile/nil
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [14/Jan/2010 13:10:30] "GET /undefined HTTP/1.1" 200 2205 0.0120
+127.0.0.1 - - [14/Jan/2010 13:12:10] "POST /signin/process HTTP/1.1" 302 - 0.0060
+127.0.0.1 - - [14/Jan/2010 13:12:10] "GET /account HTTP/1.1" 302 - 0.0024
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: account/home
+page is: account/feeds
+page is: common/feeds
+page is: account/right
+page is: account/song
+page is: common/list_artists
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [14/Jan/2010 13:12:10] "GET /account/home HTTP/1.1" 200 7043 0.1480
+127.0.0.1 - - [14/Jan/2010 13:12:10] "GET /stylesheets/common.css HTTP/1.1" 200 4643 0.0699
+127.0.0.1 - - [14/Jan/2010 13:12:11] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [14/Jan/2010 13:12:12] "GET /scripts/all.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [14/Jan/2010 13:12:13] "GET /scripts/core.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [14/Jan/2010 13:12:13] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0056
+127.0.0.1 - - [14/Jan/2010 13:12:13] "GET /images/icons/staff.png HTTP/1.1" 200 2494 0.0024
+127.0.0.1 - - [14/Jan/2010 13:12:13] "GET /images/icons/8thnote.png HTTP/1.1" 200 2404 0.0024
+127.0.0.1 - - [14/Jan/2010 13:12:13] "GET /images/icons/home.png HTTP/1.1" 200 2011 0.0023
+127.0.0.1 - - [14/Jan/2010 13:12:13] "GET /images/icons/profile1.png HTTP/1.1" 200 2310 0.0023
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: 
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [14/Jan/2010 13:12:13] "GET /account/undefined HTTP/1.1" 200 5619 0.0152
+127.0.0.1 - - [14/Jan/2010 13:12:13] "GET /images/icons/mail2.png HTTP/1.1" 200 1666 0.0038
+127.0.0.1 - - [14/Jan/2010 13:12:13] "GET /images/icons/follow2.png HTTP/1.1" 200 2032 0.0131
+127.0.0.1 - - [14/Jan/2010 13:12:13] "GET /images/icons/followers1.png HTTP/1.1" 200 4985 0.0024
+127.0.0.1 - - [14/Jan/2010 13:12:14] "GET /images/icons/help1.png HTTP/1.1" 200 1871 0.0024
+127.0.0.1 - - [14/Jan/2010 13:12:15] "GET /images/common/icon.png HTTP/1.1" 200 709 0.0024
+127.0.0.1 - - [14/Jan/2010 13:12:16] "GET /images/icons/update.png HTTP/1.1" 200 6439 0.0024
+127.0.0.1 - - [14/Jan/2010 13:12:17] "GET /images/icons/play1.png HTTP/1.1" 200 2422 0.0023
+127.0.0.1 - - [14/Jan/2010 13:12:18] "GET /images/icons/manage1.png HTTP/1.1" 200 5902 0.0023
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/nil
+page is: profile/usernotfound
+page is: profile/nil
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [14/Jan/2010 13:12:18] "GET /favicon.ico HTTP/1.1" 200 2323 0.0126
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: jam/create
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [14/Jan/2010 13:12:25] "GET /jam/create HTTP/1.1" 200 6108 0.0158
+127.0.0.1 - - [14/Jan/2010 13:12:25] "GET /stylesheets/common.css HTTP/1.1" 200 4643 0.0074
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/nil
+page is: profile/usernotfound
+page is: profile/nil
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [14/Jan/2010 13:12:25] "GET /favicon.ico HTTP/1.1" 200 2323 0.0111
+ActiveRecord::RecordNotFound - Couldn't find Jam with ID=undefined:
+ urls/jam.rb:84:in `GET /jam/:jam_id'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:76:in `pre_process'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:74:in `catch'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:74:in `pre_process'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:57:in `process'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:42:in `receive_data'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/backends/base.rb:57:in `start'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/server.rb:156:in `start'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/controllers/controller.rb:80:in `start'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:174:in `send'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:174:in `run_command'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:140:in `run!'
+ /var/lib/gems/1.8/gems/thin-1.2.2/bin/thin:6127.0.0.1 - - [14/Jan/2010 13:12:25] "GET /jam/undefined HTTP/1.1" 500 30 0.0153
+127.0.0.1 - - [14/Jan/2010 13:12:27] "POST /jam/register HTTP/1.1" 302 - 0.2324
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: jam/manage/page
+page is: jam/manage/file_actions
+page is: jam/manage/information
+page is: jam/manage/artists
+page is: jam/manage/artist
+page is: jam/manage/instructions
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [14/Jan/2010 13:12:27] "GET /jam/2/manage HTTP/1.1" 200 8624 0.0462
+127.0.0.1 - - [14/Jan/2010 13:12:27] "GET /stylesheets/common.css HTTP/1.1" 200 4643 0.0098
+127.0.0.1 - - [14/Jan/2010 13:12:28] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0021
+page is: body/includes
+127.0.0.1 - - [14/Jan/2010 13:12:28] "GET /jam/2/manage/upload HTTP/1.1" 200 629 0.0060
+127.0.0.1 - - [14/Jan/2010 13:12:28] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0026
+127.0.0.1 - - [14/Jan/2010 13:12:28] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [14/Jan/2010 13:12:28] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [14/Jan/2010 13:12:28] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [14/Jan/2010 13:12:28] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [14/Jan/2010 13:12:28] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [14/Jan/2010 13:12:28] "GET /stylesheets/common.css HTTP/1.1" 200 4643 0.0071
+127.0.0.1 - - [14/Jan/2010 13:12:28] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [14/Jan/2010 13:12:28] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0024
+127.0.0.1 - - [14/Jan/2010 13:12:29] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [14/Jan/2010 13:12:30] "GET /images/icons/back1.png HTTP/1.1" 200 2241 0.0023
+127.0.0.1 - - [14/Jan/2010 13:12:31] "GET /images/icons/jampage.png HTTP/1.1" 200 2748 0.0023
+127.0.0.1 - - [14/Jan/2010 13:12:32] "GET /images/icons/user.png HTTP/1.1" 200 2847 0.0023
+127.0.0.1 - - [14/Jan/2010 13:12:32] "GET /jam/2/undefined HTTP/1.1" 404 18 0.0026
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/nil
+page is: profile/usernotfound
+page is: profile/nil
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [14/Jan/2010 13:12:33] "GET /favicon.ico HTTP/1.1" 200 2323 0.0112
+{:type=>"audio/mp3", :tempfile=>#<File:/tmp/RackMultipart20100114-24250-1bbz0dc-0>, :filename=>"11  Lady GaGa - Brown Eyes.mp3", :name=>"mefile", :head=>"Content-Disposition: form-data; name=\"mefile\"; filename=\"11  Lady GaGa - Brown Eyes.mp3\"\r\nContent-Type: audio/mp3\r\n"}
+127.0.0.1 - - [14/Jan/2010 13:12:50] "POST /jam/2/manage/upload_file?e75d2997e2a12dd19ef5df480a1fdeed HTTP/1.1" 200 - 0.1872
+127.0.0.1 - - [14/Jan/2010 13:12:51] "GET /jam/2/manage/file_actions HTTP/1.1" 200 334 0.0067
+page is: body/includes
+127.0.0.1 - - [14/Jan/2010 13:12:55] "GET /jam/2/manage/upload HTTP/1.1" 200 629 0.0061
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/nil
+page is: profile/usernotfound
+page is: profile/nil
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [14/Jan/2010 13:12:55] "GET /favicon.ico HTTP/1.1" 200 2323 0.0140
+127.0.0.1 - - [14/Jan/2010 13:12:55] "GET /stylesheets/common.css HTTP/1.1" 200 4643 0.0156
+127.0.0.1 - - [14/Jan/2010 13:12:56] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0024
+127.0.0.1 - - [14/Jan/2010 13:12:57] "GET /scripts/all.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [14/Jan/2010 13:12:58] "GET /scripts/core.js HTTP/1.1" 304 - 0.0022
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/nil
+page is: profile/usernotfound
+page is: profile/nil
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [14/Jan/2010 13:12:58] "GET /favicon.ico HTTP/1.1" 200 2323 0.0124
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: common/little_menu
+true
+true
+true
+true
+page is: jam/page
+page is: jam/basic_info
+page is: common/list_artists
+page is: common/users
+page is: common/user
+page is: jam/right
+page is: common/likes
+page is: common/list_artists
+page is: common/comments
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [14/Jan/2010 13:54:21] "GET /jam/2 HTTP/1.1" 200 6308 0.1674
+127.0.0.1 - - [14/Jan/2010 13:54:21] "GET /stylesheets/common.css HTTP/1.1" 200 4643 0.0116
+127.0.0.1 - - [14/Jan/2010 13:54:21] "GET /images/icons/miniicon.png HTTP/1.1" 200 2173 0.0024
+127.0.0.1 - - [14/Jan/2010 13:54:21] "GET /images/icons/like.png HTTP/1.1" 200 1908 0.0024
+127.0.0.1 - - [14/Jan/2010 13:54:21] "GET /images/icons/play.png HTTP/1.1" 200 2216 0.0024
+ActiveRecord::RecordNotFound - Couldn't find Jam with ID=undefined:
+ urls/jam.rb:84:in `GET /jam/:jam_id'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:76:in `pre_process'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:74:in `catch'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:74:in `pre_process'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:57:in `process'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:42:in `receive_data'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/backends/base.rb:57:in `start'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/server.rb:156:in `start'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/controllers/controller.rb:80:in `start'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:174:in `send'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:174:in `run_command'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:140:in `run!'
+ /var/lib/gems/1.8/gems/thin-1.2.2/bin/thin:6127.0.0.1 - - [14/Jan/2010 13:54:22] "GET /jam/undefined HTTP/1.1" 500 30 0.0040
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/nil
+page is: profile/usernotfound
+page is: profile/nil
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [14/Jan/2010 13:54:23] "GET /favicon.ico HTTP/1.1" 200 2323 0.0111
+127.0.0.1 - - [14/Jan/2010 13:54:25] "GET /file/1263454970-55013.mp3 HTTP/1.1" 200 9763570 0.0027
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: homepage/left
+page is: homepage/middle
+page is: common/feeds
+page is: common/feed
+page is: feeds/jam_created
+page is: homepage/right
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [14/Jan/2010 13:56:29] "GET / HTTP/1.1" 200 2936 0.0306
+127.0.0.1 - - [14/Jan/2010 13:56:29] "GET /stylesheets/common.css HTTP/1.1" 200 4643 0.0079
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/nil
+page is: profile/usernotfound
+page is: profile/nil
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [14/Jan/2010 13:56:29] "GET /favicon.ico HTTP/1.1" 200 2323 0.0072
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/nil
+page is: profile/usernotfound
+page is: profile/nil
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [14/Jan/2010 13:56:29] "GET /undefined HTTP/1.1" 200 2323 0.0109
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: jam/create
+page is: 
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [14/Jan/2010 13:56:34] "GET /jam/create HTTP/1.1" 200 6108 0.0153
+127.0.0.1 - - [14/Jan/2010 13:56:34] "GET /stylesheets/common.css HTTP/1.1" 200 4643 0.0076
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/nil
+page is: profile/usernotfound
+page is: profile/nil
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [14/Jan/2010 13:56:34] "GET /favicon.ico HTTP/1.1" 200 2323 0.0119
+ActiveRecord::RecordNotFound - Couldn't find Jam with ID=undefined:
+ urls/jam.rb:84:in `GET /jam/:jam_id'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:76:in `pre_process'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:74:in `catch'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:74:in `pre_process'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:57:in `process'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:42:in `receive_data'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/backends/base.rb:57:in `start'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/server.rb:156:in `start'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/controllers/controller.rb:80:in `start'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:174:in `send'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:174:in `run_command'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:140:in `run!'
+ /var/lib/gems/1.8/gems/thin-1.2.2/bin/thin:6127.0.0.1 - - [14/Jan/2010 13:56:34] "GET /jam/undefined HTTP/1.1" 500 30 0.0040
+127.0.0.1 - - [14/Jan/2010 13:56:40] "POST /jam/register HTTP/1.1" 302 - 0.0221
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: account/menu
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+page is: jam/manage/page
+page is: jam/manage/file_actions
+page is: jam/manage/information
+page is: jam/manage/artists
+page is: jam/manage/artist
+page is: jam/manage/instructions
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [14/Jan/2010 13:56:40] "GET /jam/3/manage HTTP/1.1" 200 8642 0.0304
+127.0.0.1 - - [14/Jan/2010 13:56:40] "GET /stylesheets/common.css HTTP/1.1" 200 4643 0.0076
+127.0.0.1 - - [14/Jan/2010 13:56:41] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [14/Jan/2010 13:56:42] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [14/Jan/2010 13:56:43] "GET /scripts/all.js HTTP/1.1" 304 - 0.0022
+127.0.0.1 - - [14/Jan/2010 13:56:44] "GET /scripts/core.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [14/Jan/2010 13:56:44] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0023
+page is: body/includes
+127.0.0.1 - - [14/Jan/2010 13:56:44] "GET /jam/3/manage/upload HTTP/1.1" 200 629 0.0057
+127.0.0.1 - - [14/Jan/2010 13:56:44] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0027
+127.0.0.1 - - [14/Jan/2010 13:56:44] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0029
+127.0.0.1 - - [14/Jan/2010 13:56:44] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0024
+127.0.0.1 - - [14/Jan/2010 13:56:44] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0023
+127.0.0.1 - - [14/Jan/2010 13:56:44] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0024
+127.0.0.1 - - [14/Jan/2010 13:56:44] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0030
+127.0.0.1 - - [14/Jan/2010 13:56:44] "GET /stylesheets/common.css HTTP/1.1" 200 4643 0.0077
+127.0.0.1 - - [14/Jan/2010 13:56:44] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0024
+127.0.0.1 - - [14/Jan/2010 13:56:44] "GET /scripts/all.js HTTP/1.1" 304 - 0.0020
+127.0.0.1 - - [14/Jan/2010 13:56:45] "GET /scripts/core.js HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [14/Jan/2010 13:56:46] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [14/Jan/2010 13:56:47] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [14/Jan/2010 13:56:48] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0021
+127.0.0.1 - - [14/Jan/2010 13:56:48] "GET /jam/3/undefined HTTP/1.1" 404 18 0.0023
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/nil
+page is: profile/usernotfound
+page is: profile/nil
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [14/Jan/2010 13:56:49] "GET /favicon.ico HTTP/1.1" 200 2323 0.0115
+{:type=>"text/plain", :tempfile=>#<File:/tmp/RackMultipart20100114-24250-og3dis-0>, :filename=>"Audio_Video Info.txt", :name=>"mefile", :head=>"Content-Disposition: form-data; name=\"mefile\"; filename=\"Audio_Video Info.txt\"\r\nContent-Type: text/plain\r\n"}
+127.0.0.1 - - [14/Jan/2010 13:57:00] "POST /jam/3/manage/upload_file?637b69b5245c655af2e4509924a94d15 HTTP/1.1" 200 - 0.0088
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/nil
+page is: profile/usernotfound
+page is: profile/nil
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [14/Jan/2010 13:57:00] "GET /favicon.ico HTTP/1.1" 200 2323 0.0113
+127.0.0.1 - - [14/Jan/2010 13:57:01] "GET /jam/3/manage/file_actions HTTP/1.1" 200 333 0.0065
+page is: body/includes
+127.0.0.1 - - [14/Jan/2010 13:57:01] "GET /jam/3/manage/upload HTTP/1.1" 200 629 0.0053
+127.0.0.1 - - [14/Jan/2010 13:57:01] "GET /stylesheets/common.css HTTP/1.1" 200 4643 0.0103
+127.0.0.1 - - [14/Jan/2010 13:57:02] "GET /scripts/core.js HTTP/1.1" 304 - 0.0022
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/nil
+page is: profile/usernotfound
+page is: profile/nil
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [14/Jan/2010 13:57:02] "GET /favicon.ico HTTP/1.1" 200 2323 0.0128
+127.0.0.1 - - [14/Jan/2010 14:01:52] "GET /file/1263457620-63807.mp3 HTTP/1.0" 200 2084 0.0025
+>> Exiting!
+>> Writing PID to /home/jammmin/webserver/app/processes.4567
+>> Changing process privilege to root:root
+Couldn't change user and group to root:root: Operation not permitted
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
+DBCONFIG: {"port"=>5432, "username"=>"jammmin", "adapter"=>"postgresql", "database"=>"garage", "password"=>"3WiseMen"}
+DB CONNECTION: #<ActiveRecord::ConnectionAdapters::ConnectionPool:0xb717d40c @connections=[], @timeout=5, @queue=#<MonitorMixin::ConditionVariable:0xb717d394 @waiters=[], @monitor=#<Monitor:0xb717d3d0 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>>, @spec=#<ActiveRecord::Base::ConnectionSpecification:0xb6e179e8 @config={:username=>"jammmin", :database=>"garage", :password=>"3WiseMen", :adapter=>"postgresql", :port=>5432}, @adapter_method="postgresql_connection">, @checked_out=[], @size=5, @connection_mutex=#<Monitor:0xb717d3d0 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>, @reserved_connections={}>
+libs are: ["active_record.rb", "extensions.rb", "jam_utils.rb", "s3.rb", "song_utils.rb", "user.rb", "utils.rb"]
+models are: ["comment.rb", "feed.rb", "follower.rb", "jam_artist.rb", "jam.rb", "like.rb", "message_stream.rb", "process_info.rb", "published_jam.rb", "song_jam.rb", "song_lyric.rb", "song_manager.rb", "song.rb", "test_tables.rb", "user_feed.rb", "user_message_map.rb", "user_message_stream_map.rb", "user_message_stream.rb", "user.rb"]
+>> Thin web server (v1.2.2 codename I Find Your Lack of Sauce Disturbing)
+>> Maximum connections set to 1024
+>> Listening on 127.0.0.1:4567, CTRL+C to stop
+127.0.0.1 - - [14/Jan/2010 14:03:44] "GET /file/1263457620-63807.mp3 HTTP/1.0" 200 - 0.0568
+>> Exiting!
+>> Writing PID to /home/jammmin/webserver/app/processes.4567
+>> Changing process privilege to root:root
+Couldn't change user and group to root:root: Operation not permitted
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
+DBCONFIG: {"port"=>5432, "username"=>"jammmin", "adapter"=>"postgresql", "database"=>"garage", "password"=>"3WiseMen"}
+DB CONNECTION: #<ActiveRecord::ConnectionAdapters::ConnectionPool:0xb727c40c @connections=[], @timeout=5, @queue=#<MonitorMixin::ConditionVariable:0xb727c394 @waiters=[], @monitor=#<Monitor:0xb727c3d0 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>>, @spec=#<ActiveRecord::Base::ConnectionSpecification:0xb6f169e8 @config={:username=>"jammmin", :database=>"garage", :password=>"3WiseMen", :adapter=>"postgresql", :port=>5432}, @adapter_method="postgresql_connection">, @checked_out=[], @size=5, @connection_mutex=#<Monitor:0xb727c3d0 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>, @reserved_connections={}>
+libs are: ["active_record.rb", "extensions.rb", "jam_utils.rb", "s3.rb", "song_utils.rb", "user.rb", "utils.rb"]
+models are: ["comment.rb", "feed.rb", "follower.rb", "jam_artist.rb", "jam.rb", "like.rb", "message_stream.rb", "process_info.rb", "published_jam.rb", "song_jam.rb", "song_lyric.rb", "song_manager.rb", "song.rb", "test_tables.rb", "user_feed.rb", "user_message_map.rb", "user_message_stream_map.rb", "user_message_stream.rb", "user.rb"]
+>> Thin web server (v1.2.2 codename I Find Your Lack of Sauce Disturbing)
+>> Maximum connections set to 1024
+>> Listening on 127.0.0.1:4567, CTRL+C to stop
+AWS::S3::NoConnectionEstablished - AWS::S3::NoConnectionEstablished:
+ /home/jammmin/webserver/app/lib/s3.rb:12:in `exists?'
+ urls/file.rb:6:in `GET /file/:file_handle'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:76:in `pre_process'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:74:in `catch'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:74:in `pre_process'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:57:in `process'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:42:in `receive_data'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/backends/base.rb:57:in `start'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/server.rb:156:in `start'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/controllers/controller.rb:80:in `start'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:174:in `send'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:174:in `run_command'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:140:in `run!'
+ /var/lib/gems/1.8/gems/thin-1.2.2/bin/thin:6127.0.0.1 - - [14/Jan/2010 14:08:01] "GET /file/1263457620-63807.mp3 HTTP/1.0" 500 30 0.0376
+AWS::S3::NoConnectionEstablished - AWS::S3::NoConnectionEstablished:
+ /home/jammmin/webserver/app/lib/s3.rb:12:in `exists?'
+ urls/file.rb:6:in `GET /file/:file_handle'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:76:in `pre_process'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:74:in `catch'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:74:in `pre_process'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:57:in `process'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:42:in `receive_data'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/backends/base.rb:57:in `start'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/server.rb:156:in `start'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/controllers/controller.rb:80:in `start'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:174:in `send'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:174:in `run_command'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:140:in `run!'
+ /var/lib/gems/1.8/gems/thin-1.2.2/bin/thin:6127.0.0.1 - - [14/Jan/2010 14:08:25] "GET /file/1263457620-63807.mp3 HTTP/1.1" 500 30 0.0042
+page is: body/header_and_top_bar
+page is: body/header
+page is: body/includes
+page is: body/top_bar
+page is: common/player
+page is: profile/nil
+page is: profile/usernotfound
+page is: profile/nil
+page is: body/footer_and_body_end
+page is: body/footer
+127.0.0.1 - - [14/Jan/2010 14:08:26] "GET /favicon.ico HTTP/1.1" 200 2323 0.0162
+>> Exiting!
+>> Writing PID to /home/jammmin/webserver/app/processes.4567
+>> Changing process privilege to root:root
+Couldn't change user and group to root:root: Operation not permitted
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
+DBCONFIG: {"port"=>5432, "username"=>"jammmin", "adapter"=>"postgresql", "database"=>"garage", "password"=>"3WiseMen"}
+DB CONNECTION: #<ActiveRecord::ConnectionAdapters::ConnectionPool:0xb724c400 @connections=[], @timeout=5, @queue=#<MonitorMixin::ConditionVariable:0xb724c388 @waiters=[], @monitor=#<Monitor:0xb724c3c4 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>>, @spec=#<ActiveRecord::Base::ConnectionSpecification:0xb6ee69dc @config={:username=>"jammmin", :database=>"garage", :password=>"3WiseMen", :adapter=>"postgresql", :port=>5432}, @adapter_method="postgresql_connection">, @checked_out=[], @size=5, @connection_mutex=#<Monitor:0xb724c3c4 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>, @reserved_connections={}>
+libs are: ["active_record.rb", "extensions.rb", "jam_utils.rb", "s3.rb", "song_utils.rb", "user.rb", "utils.rb"]
+models are: ["comment.rb", "feed.rb", "follower.rb", "jam_artist.rb", "jam.rb", "like.rb", "message_stream.rb", "process_info.rb", "published_jam.rb", "song_jam.rb", "song_lyric.rb", "song_manager.rb", "song.rb", "test_tables.rb", "user_feed.rb", "user_message_map.rb", "user_message_stream_map.rb", "user_message_stream.rb", "user.rb"]
+>> Thin web server (v1.2.2 codename I Find Your Lack of Sauce Disturbing)
+>> Maximum connections set to 1024
+>> Listening on 127.0.0.1:4567, CTRL+C to stop
+S3
+AWS::S3::NoConnectionEstablished - AWS::S3::NoConnectionEstablished:
+ /home/jammmin/webserver/app/lib/s3.rb:12:in `exists?'
+ urls/file.rb:8:in `GET /file/:file_handle'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:76:in `pre_process'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:74:in `catch'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:74:in `pre_process'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:57:in `process'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:42:in `receive_data'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/backends/base.rb:57:in `start'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/server.rb:156:in `start'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/controllers/controller.rb:80:in `start'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:174:in `send'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:174:in `run_command'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:140:in `run!'
+ /var/lib/gems/1.8/gems/thin-1.2.2/bin/thin:6127.0.0.1 - - [14/Jan/2010 14:09:10] "GET /file/1263457620-63807.mp3 HTTP/1.0" 500 30 0.0497
+>> Exiting!
+>> Writing PID to /home/jammmin/webserver/app/processes.4567
+>> Changing process privilege to root:root
+Couldn't change user and group to root:root: Operation not permitted
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
+DBCONFIG: {"port"=>5432, "username"=>"jammmin", "adapter"=>"postgresql", "database"=>"garage", "password"=>"3WiseMen"}
+DB CONNECTION: #<ActiveRecord::ConnectionAdapters::ConnectionPool:0xb7252530 @connections=[], @timeout=5, @queue=#<MonitorMixin::ConditionVariable:0xb72524b8 @waiters=[], @monitor=#<Monitor:0xb72524f4 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>>, @spec=#<ActiveRecord::Base::ConnectionSpecification:0xb6eecaf8 @config={:username=>"jammmin", :database=>"garage", :password=>"3WiseMen", :adapter=>"postgresql", :port=>5432}, @adapter_method="postgresql_connection">, @checked_out=[], @size=5, @connection_mutex=#<Monitor:0xb72524f4 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>, @reserved_connections={}>
+libs are: ["active_record.rb", "extensions.rb", "jam_utils.rb", "s3.rb", "song_utils.rb", "user.rb", "utils.rb"]
+models are: ["comment.rb", "feed.rb", "follower.rb", "jam_artist.rb", "jam.rb", "like.rb", "message_stream.rb", "process_info.rb", "published_jam.rb", "song_jam.rb", "song_lyric.rb", "song_manager.rb", "song.rb", "test_tables.rb", "user_feed.rb", "user_message_map.rb", "user_message_stream_map.rb", "user_message_stream.rb", "user.rb"]
+>> Thin web server (v1.2.2 codename I Find Your Lack of Sauce Disturbing)
+>> Maximum connections set to 1024
+>> Listening on 127.0.0.1:4567, CTRL+C to stop
+AWS::S3::CurrentBucketNotSpecified - No bucket name can be inferred from your current connection's address (`s3.amazonaws.com'):
+ /home/jammmin/webserver/app/lib/s3.rb:12:in `exists?'
+ urls/file.rb:6:in `GET /file/:file_handle'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:76:in `pre_process'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:74:in `catch'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:74:in `pre_process'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:57:in `process'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:42:in `receive_data'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/backends/base.rb:57:in `start'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/server.rb:156:in `start'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/controllers/controller.rb:80:in `start'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:174:in `send'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:174:in `run_command'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:140:in `run!'
+ /var/lib/gems/1.8/gems/thin-1.2.2/bin/thin:6127.0.0.1 - - [14/Jan/2010 14:10:02] "GET /file/1263457620-63807.mp3 HTTP/1.0" 500 30 0.0459
+>> Exiting!
+>> Writing PID to /home/jammmin/webserver/app/processes.4567
+>> Changing process privilege to root:root
+Couldn't change user and group to root:root: Operation not permitted
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
+DBCONFIG: {"port"=>5432, "username"=>"jammmin", "adapter"=>"postgresql", "database"=>"garage", "password"=>"3WiseMen"}
+DB CONNECTION: #<ActiveRecord::ConnectionAdapters::ConnectionPool:0xb72c6598 @connections=[], @timeout=5, @queue=#<MonitorMixin::ConditionVariable:0xb72c6520 @waiters=[], @monitor=#<Monitor:0xb72c655c @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>>, @spec=#<ActiveRecord::Base::ConnectionSpecification:0xb6f60b60 @config={:username=>"jammmin", :database=>"garage", :password=>"3WiseMen", :adapter=>"postgresql", :port=>5432}, @adapter_method="postgresql_connection">, @checked_out=[], @size=5, @connection_mutex=#<Monitor:0xb72c655c @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>, @reserved_connections={}>
+libs are: ["active_record.rb", "extensions.rb", "jam_utils.rb", "s3.rb", "song_utils.rb", "user.rb", "utils.rb"]
+models are: ["comment.rb", "feed.rb", "follower.rb", "jam_artist.rb", "jam.rb", "like.rb", "message_stream.rb", "process_info.rb", "published_jam.rb", "song_jam.rb", "song_lyric.rb", "song_manager.rb", "song.rb", "test_tables.rb", "user_feed.rb", "user_message_map.rb", "user_message_stream_map.rb", "user_message_stream.rb", "user.rb"]
+>> Thin web server (v1.2.2 codename I Find Your Lack of Sauce Disturbing)
+>> Maximum connections set to 1024
+>> Listening on 127.0.0.1:4567, CTRL+C to stop
+AWS::S3::CurrentBucketNotSpecified - No bucket name can be inferred from your current connection's address (`s3.amazonaws.com'):
+ /home/jammmin/webserver/app/lib/s3.rb:12:in `exists?'
+ urls/file.rb:6:in `GET /file/:file_handle'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:76:in `pre_process'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:74:in `catch'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:74:in `pre_process'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:57:in `process'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:42:in `receive_data'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/backends/base.rb:57:in `start'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/server.rb:156:in `start'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/controllers/controller.rb:80:in `start'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:174:in `send'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:174:in `run_command'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:140:in `run!'
+ /var/lib/gems/1.8/gems/thin-1.2.2/bin/thin:6127.0.0.1 - - [14/Jan/2010 14:10:51] "GET /file/1263457620-63807.mp3 HTTP/1.0" 500 30 0.0518
+>> Exiting!
+>> Writing PID to /home/jammmin/webserver/app/processes.4567
+>> Changing process privilege to root:root
+Couldn't change user and group to root:root: Operation not permitted
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
+DBCONFIG: {"port"=>5432, "username"=>"jammmin", "adapter"=>"postgresql", "database"=>"garage", "password"=>"3WiseMen"}
+DB CONNECTION: #<ActiveRecord::ConnectionAdapters::ConnectionPool:0xb7202530 @connections=[], @timeout=5, @queue=#<MonitorMixin::ConditionVariable:0xb72024b8 @waiters=[], @monitor=#<Monitor:0xb72024f4 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>>, @spec=#<ActiveRecord::Base::ConnectionSpecification:0xb6e9caf8 @config={:username=>"jammmin", :database=>"garage", :password=>"3WiseMen", :adapter=>"postgresql", :port=>5432}, @adapter_method="postgresql_connection">, @checked_out=[], @size=5, @connection_mutex=#<Monitor:0xb72024f4 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>, @reserved_connections={}>
+libs are: ["active_record.rb", "extensions.rb", "jam_utils.rb", "s3.rb", "song_utils.rb", "user.rb", "utils.rb"]
+models are: ["comment.rb", "feed.rb", "follower.rb", "jam_artist.rb", "jam.rb", "like.rb", "message_stream.rb", "process_info.rb", "published_jam.rb", "song_jam.rb", "song_lyric.rb", "song_manager.rb", "song.rb", "test_tables.rb", "user_feed.rb", "user_message_map.rb", "user_message_stream_map.rb", "user_message_stream.rb", "user.rb"]
+>> Thin web server (v1.2.2 codename I Find Your Lack of Sauce Disturbing)
+>> Maximum connections set to 1024
+>> Listening on 127.0.0.1:4567, CTRL+C to stop
+>> Exiting!
+>> Writing PID to /home/jammmin/webserver/app/processes.4567
+>> Changing process privilege to root:root
+Couldn't change user and group to root:root: Operation not permitted
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
+DBCONFIG: {"port"=>5432, "username"=>"jammmin", "adapter"=>"postgresql", "database"=>"garage", "password"=>"3WiseMen"}
+DB CONNECTION: #<ActiveRecord::ConnectionAdapters::ConnectionPool:0xb732b22c @connections=[], @timeout=5, @queue=#<MonitorMixin::ConditionVariable:0xb732b1b4 @waiters=[], @monitor=#<Monitor:0xb732b1f0 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>>, @spec=#<ActiveRecord::Base::ConnectionSpecification:0xb6fc586c @config={:username=>"jammmin", :database=>"garage", :password=>"3WiseMen", :adapter=>"postgresql", :port=>5432}, @adapter_method="postgresql_connection">, @checked_out=[], @size=5, @connection_mutex=#<Monitor:0xb732b1f0 @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>, @reserved_connections={}>
+libs are: ["active_record.rb", "extensions.rb", "jam_utils.rb", "s3.rb", "song_utils.rb", "user.rb", "utils.rb"]
+models are: ["comment.rb", "feed.rb", "follower.rb", "jam_artist.rb", "jam.rb", "like.rb", "message_stream.rb", "process_info.rb", "published_jam.rb", "song_jam.rb", "song_lyric.rb", "song_manager.rb", "song.rb", "test_tables.rb", "user_feed.rb", "user_message_map.rb", "user_message_stream_map.rb", "user_message_stream.rb", "user.rb"]
+>> Thin web server (v1.2.2 codename I Find Your Lack of Sauce Disturbing)
+>> Maximum connections set to 1024
+>> Listening on 127.0.0.1:4567, CTRL+C to stop
+ArgumentError - wrong number of arguments (2 for 1):
+ urls/file.rb:6:in `exists?'
+ urls/file.rb:6:in `GET /file/:file_handle'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:76:in `pre_process'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:74:in `catch'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:74:in `pre_process'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:57:in `process'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:42:in `receive_data'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/backends/base.rb:57:in `start'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/server.rb:156:in `start'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/controllers/controller.rb:80:in `start'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:174:in `send'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:174:in `run_command'
+ /var/lib/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:140:in `run!'
+ /var/lib/gems/1.8/gems/thin-1.2.2/bin/thin:6127.0.0.1 - - [14/Jan/2010 14:12:37] "GET /file/1263457620-63807.mp3 HTTP/1.0" 500 30 0.0399
+>> Exiting!
+>> Writing PID to /home/jammmin/webserver/app/processes.4567
+>> Changing process privilege to root:root
+Couldn't change user and group to root:root: Operation not permitted
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
+DBCONFIG: {"port"=>5432, "username"=>"jammmin", "adapter"=>"postgresql", "database"=>"garage", "password"=>"3WiseMen"}
+DB CONNECTION: #<ActiveRecord::ConnectionAdapters::ConnectionPool:0xb719a598 @connections=[], @timeout=5, @queue=#<MonitorMixin::ConditionVariable:0xb719a520 @waiters=[], @monitor=#<Monitor:0xb719a55c @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>>, @spec=#<ActiveRecord::Base::ConnectionSpecification:0xb6e34b60 @config={:username=>"jammmin", :database=>"garage", :password=>"3WiseMen", :adapter=>"postgresql", :port=>5432}, @adapter_method="postgresql_connection">, @checked_out=[], @size=5, @connection_mutex=#<Monitor:0xb719a55c @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0, @mon_owner=nil>, @reserved_connections={}>
+libs are: ["active_record.rb", "extensions.rb", "jam_utils.rb", "s3.rb", "song_utils.rb", "user.rb", "utils.rb"]
+models are: ["comment.rb", "feed.rb", "follower.rb", "jam_artist.rb", "jam.rb", "like.rb", "message_stream.rb", "process_info.rb", "published_jam.rb", "song_jam.rb", "song_lyric.rb", "song_manager.rb", "song.rb", "test_tables.rb", "user_feed.rb", "user_message_map.rb", "user_message_stream_map.rb", "user_message_stream.rb", "user.rb"]
+>> Thin web server (v1.2.2 codename I Find Your Lack of Sauce Disturbing)
+>> Maximum connections set to 1024
+>> Listening on 127.0.0.1:4567, CTRL+C to stop
+http://s3.amazonaws.com/jammm.in/1263457620-63807.mp3
+127.0.0.1 - - [14/Jan/2010 14:13:06] "GET /file/1263457620-63807.mp3 HTTP/1.0" 302 - 0.8331
+127.0.0.1 - - [14/Jan/2010 14:15:02] "GET /file/1263457620-63807.mp3 HTTP/1.0" 200 2084 1.0924

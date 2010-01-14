@@ -112,3 +112,4 @@ def get_add_music_info
   music_type, music_id = param?(:add).split("_") if param?(:add)
   [eval(music_type.capitalize), music_id]
 end
+
