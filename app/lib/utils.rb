@@ -113,3 +113,33 @@ def get_add_music_info
   [eval(music_type.capitalize), music_id]
 end
 
+def download_to_server(url, output_file_path = false)
+  output_file_option = "-O #{output_file_path}" if output_file_path
+  cmd = "wget #{url} #{(output_file_option if output_file_path)}"
+  run(cmd)
+end
+
+# CACHING START
+
+def cache_file(obj)
+  return File.new(ENV['CACHE_DIR'] + "/" + obj.file_handle) if cache_file_exists?(obj.file_handle)
+end
+
+def cache_file_exists?(filename)
+  file_path = ENV["CACHE_DIR"] + "/" + filename
+  File.new(file_path) if File.exists?(file_path)
+end
+
+def cache(file_handle)
+  return true if cache_file_exists?(file_handle)
+  download_path = ENV["CACHE_DIR"] + "/" + file_handle
+  download_to_server(S3.url_for_key(file_handle), download_path)
+  cache_file_exists?(file_handle)
+end
+
+
+def fetch_local_file_path(obj)
+  (cache_file_exists?(obj.file_handle) or obj.file or cache(obj.file_handle)).path
+end
+
+# CACHING END
