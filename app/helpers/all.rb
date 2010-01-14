@@ -35,9 +35,11 @@ end
 def section_header(text, options={})
   img = icon(options[:icon], :small) if options[:icon]
   [
-    "<div style='background-color: white; border-bottom: thin groove #cccccc'>",
+    "<div style='background-color: white;>",
       "<span class='float-left pad-right-5'>#{img}</span><b>#{text.capitalize}</b>",
-    "</div>"
+      "<hr class='thin'>",
+    "</div>",
+    "<br>"
   ].join('')
 end
 
