@@ -1,7 +1,7 @@
 <div id='user-genres' class='pad-right-5'>
 	<div class='display-inline-block align-top'><%= field 'Genres' %></div>
 	<div class='display-inline-block'>
-		<%= partial ("common/genres", :locals => {
+		<%= partial ("common/manage_genres", :locals => {
 			:for_type => "user",
 			:for_type_id => session_user?.id
 		}) %>

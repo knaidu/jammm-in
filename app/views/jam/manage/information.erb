@@ -1,15 +1,14 @@
 <form id='jam-information' method='post' action='/jam/<%= jam.id %>/manage/update_information' onsubmit='return false'>
-<table>
-  <tr>
-    <td><%= add_field_name 'Name' %></td>
-    <td><input type='text' name='name' value='<%= jam.name %>'></td>
-  </tr>
-  <tr>
-    <td><%= add_field_name 'Description' %></td>
-    <td><textarea name='desc'><%= jam.description %></textarea></td>
-  </tr>
-</table>
+<%= field 'Name:' %><input type='text' name='name' value='<%= jam.name %>'><%= vspace %>
+<%= field 'Description:' %><textarea name='desc' class='align-top'><%= jam.description %></textarea><%= vspace %>
 
+<%= field 'Genre' %>
+	<div class='align-top display-inline-block'>
+		<%= partial ("common/manage_genres", :locals => {
+			:for_type => "jam",
+			:for_type_id => jam.id
+		}) %>
+	</div>
 <div id='save-information-response'></div>
 <input type='button' value='Save' onClick='saveJamInformation("jam-information")'>
 </form>

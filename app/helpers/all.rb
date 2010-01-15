@@ -153,8 +153,9 @@ def vspace(height=5)
   "<div style='height: #{height}'></div>"
 end
 
-def field(text)
-  "<div class='field'>#{text}</div>"
+def field(text, options={})
+  width = options[:width] || false
+  "<div class='field align-top'>#{text}</div>"
 end
 
 def param?(key)
@@ -169,5 +170,8 @@ def rand_id
   "id-" + rand.to_s
 end
 
+def list_genres(genres)
+  genres.map(&:name).join(", ")
+end
 
 load 'helpers/profile.rb'

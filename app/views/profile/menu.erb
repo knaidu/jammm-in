@@ -7,7 +7,8 @@
 		p_info = @menu_data[:personal_info]
 		items = [
 			{:name => 'Full Name', :value => p_info['name']},
-			{:name => 'Location', :value => p_info['location']}
+			{:name => 'Location', :value => p_info['location']},
+			{:name => "Listens to", :value => list_genres(@user.genres)}
 		]
 		items.each do |i|
 		%>

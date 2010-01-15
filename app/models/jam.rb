@@ -77,6 +77,10 @@ class Jam < ActiveRecord::Base
   def add_to_song(song)
     song.add_jam(self)
   end
+  
+  def genres
+    Genre.fetch("jam", self.id)
+  end
 
 end
 

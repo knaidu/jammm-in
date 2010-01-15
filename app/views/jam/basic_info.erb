@@ -5,6 +5,7 @@
   <%= field 'Views:' %> <%= jam.views %><br>
 	<%= field 'Type:' %> <%= display_jam_type(jam) %><br>
 	<%= field 'Likes:' %> <%= jam.liked_by.size %><br>
+	<%= field 'Genres:' %> <%= list_genres(jam.genres) %><br>
 	<br>
 	<% if @session_user and not @session_user.likes_jam?(jam) %>
   	<span class='simple-link display-inline' onClick='likeJam("<%= jam.id %>")' title='Like'><%= icon :like %></span>
