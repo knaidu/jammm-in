@@ -5,6 +5,7 @@ class CreateUserTable < ActiveRecord::Migration
       i.column :password, :string
       i.column :name, :string
       i.column :location, :string
+      i.column :email, :string
     end
   end
   

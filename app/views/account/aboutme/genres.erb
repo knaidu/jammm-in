@@ -1,1 +1,27 @@
-<%= field 'Genres' %>
+<div>
+	<div class='display-inline-block align-top'><%= field 'Genres' %></div>
+	<div class='display-inline-block'>
+		<select>
+			<% (Genre.all - session_user?.genres).each do |genre| %>
+				<option value="<%= genre.id %>"><%= genre.name %>
+			<% end %>
+		</select>	
+		<input type='button' value='Add'>
+		<hr class='thin'>
+		
+		<% session_user?.genres.each do |genre| %>
+			<div>
+				<div class='display-inline-block'><%= genre.name %></div>
+				<div class='float-right simple-link'>x</div>
+			</div>
+		<% end %>
+		
+	</div>
+</div>
+
+
+<%= js_start %>
+	function add_genre(id){
+		alert(id);
+	}
+<%= js_end %>

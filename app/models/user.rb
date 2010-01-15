@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
   has_many :likes
   has_many :UserMessageStreamMaps, :dependent => :destroy
   has_many :message_streams, :through => :UserMessageStreamMaps
+  has_many :user_genres
+  has_many :genres, :through => :user_genres
   validates_uniqueness_of :username, :message => "has already been registered"
 
   def after_create
@@ -101,6 +103,10 @@ class User < ActiveRecord::Base
   
   def unread_messages
     self.message_streams.map{|ms| ms.unread_messages(self)}.flatten
+  end
+  
+  def add_genre(genre)
+    UserGenre.create(:user_id => self.id, :genre_id => genre.id)
   end
   
 end

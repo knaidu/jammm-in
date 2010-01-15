@@ -10,7 +10,8 @@ post '/signup/create' do
      set_session_user(user)
      redirect_home
    end
- rescue 
-   redirect '/signup'
+ rescue Exception => e
+   puts e.message
+#   redirect '/signup'
  end
 end
