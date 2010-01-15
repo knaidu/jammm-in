@@ -112,4 +112,10 @@ class User < ActiveRecord::Base
     contains_genres.map(&:genre)
   end
   
+  def change_password(password)
+    raise 'Password needs to be atleast of length 5' if password.length < 5
+    self.password = md5(password)
+    self.save
+  end
+  
 end

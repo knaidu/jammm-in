@@ -35,6 +35,15 @@ get '/account/aboutme' do
   erb(:"account/structure")
 end
 
+get '/account/aboutme/change_password' do
+  monitor {
+    password, confirm_password = get_params(:password, :confirm_password)
+    raise "Passwords do not match" if password != confirm_password
+    session_user?.change_password(password)
+    "Your password has been successfully changed."
+  }
+end
+
 get '/account/aboutme/save_basic_info' do
   monitor {
     name, location = get_params(:name, :location)
