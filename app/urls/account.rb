@@ -36,11 +36,17 @@ get '/account/aboutme' do
 end
 
 get '/account/aboutme/save_basic_info' do
-  puts '--------'
   monitor {
     name, location = get_params(:name, :location)
     session_user?.update_basic_info({:name => name, :location => location})
     "Information has been saved"
+  }
+end
+
+get '/account/aboutme/add_genre' do
+  monitor {
+    genre_id = param?(:genre_id)
+    session_user?.add_genre(Genre.find(genre_id))
   }
 end
 

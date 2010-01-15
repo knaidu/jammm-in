@@ -1,12 +1,12 @@
 <div>
 	<div class='display-inline-block align-top'><%= field 'Genres' %></div>
 	<div class='display-inline-block'>
-		<select>
+		<select id='user-genre-select'>
 			<% (Genre.all - session_user?.genres).each do |genre| %>
 				<option value="<%= genre.id %>"><%= genre.name %>
 			<% end %>
 		</select>	
-		<input type='button' value='Add'>
+		<input type='button' value='Add' onclick="add_genre()">
 		<hr class='thin'>
 		
 		<% session_user?.genres.each do |genre| %>
@@ -21,7 +21,8 @@
 
 
 <%= js_start %>
-	function add_genre(id){
-		alert(id);
+	function add_genre(){
+		var select = $('user-genre-select');
+		alert(select.getValue());
 	}
 <%= js_end %>
