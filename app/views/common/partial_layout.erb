@@ -1,0 +1,12 @@
+<% section_body_div = rand_id %>
+
+<% if options[:section_header] %>
+	<%= partial("common/section_header", {
+				:locals => {:sh => options[:section_header]},
+				:collapsible => options[:collapsible] ? section_body_div : false
+			}) 
+	%>
+<% end %>
+<div id='<%= section_body_div %>'>
+	<%= yield %>
+</div>

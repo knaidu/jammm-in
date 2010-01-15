@@ -1,28 +1,9 @@
-<div>
+<div id='user-genres' class='pad-right-5'>
 	<div class='display-inline-block align-top'><%= field 'Genres' %></div>
 	<div class='display-inline-block'>
-		<select id='user-genre-select'>
-			<% (Genre.all - session_user?.genres).each do |genre| %>
-				<option value="<%= genre.id %>"><%= genre.name %>
-			<% end %>
-		</select>	
-		<input type='button' value='Add' onclick="add_genre()">
-		<hr class='thin'>
-		
-		<% session_user?.genres.each do |genre| %>
-			<div>
-				<div class='display-inline-block'><%= genre.name %></div>
-				<div class='float-right simple-link'>x</div>
-			</div>
-		<% end %>
-		
+		<%= partial ("common/genres", :locals => {
+			:for_type => "user",
+			:for_type_id => session_user?.id
+		}) %>
 	</div>
 </div>
-
-
-<%= js_start %>
-	function add_genre(){
-		var select = $('user-genre-select');
-		alert(select.getValue());
-	}
-<%= js_end %>

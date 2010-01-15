@@ -7,9 +7,9 @@ def js_end; "</script>"; end
 
 def partial(page, options={})
   page = page.to_s
-  puts "page is: " + page
   return "&nbsp;" if page.empty? or not page or page.nil? or page.split("/").include?('nil')
-  erb(:"#{page}", options.update({:layout => false}))
+  layout = (options[:container_id] or options[:section_header]) ? :"common/partial_layout"  : false
+  erb(:"#{page}", options.update({:layout => layout}))
 end
 
 def redirect_home
@@ -34,13 +34,11 @@ end
 
 def section_header(text, options={})
   img = icon(options[:icon], :small) if options[:icon]
-  [
-    "<div style='background-color: white;>",
-      "<span class='float-left pad-right-5'>#{img}</span><b>#{text.capitalize}</b>",
-      "<hr class='thin'>",
-    "</div>",
-    "<br>"
-  ].join('')
+  partial("common/section_header", :locals => {
+    :img => img,
+    :text => text,
+    :options => options
+  })
 end
 
 def add_menu_entry(text, link, image)

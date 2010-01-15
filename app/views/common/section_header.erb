@@ -1,0 +1,13 @@
+<%
+	img ||= (icon(options[:icon], :small) if options[:icon] rescue "")
+	text ||= sh.text
+%>
+<div style='background-color: white;>
+  <span class='float-left pad-right-5'><%= img %></span><b><%= text.capitalize %></b>
+	<% if options[:collapsible] %>
+		<% switch_id = rand_id %>
+		<span id='<%= switch_id %>' class='float-right grey clickable' onClick="toogleSectionExpand('<%= options[:collapsible] %>', '<%= switch_id %>')">[+]</span>
+	<% end %>
+  <hr class='thin'>
+</div>
+<br>

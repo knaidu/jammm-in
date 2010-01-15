@@ -366,6 +366,14 @@ function loadUserProfileActions(username){
 	updateEl("profile-actions-div", "/" + username + "/actions")
 }
 
+/* SECTIONS */
+function toogleSectionExpand(id){
+	var el = $(id);
+	if(!el) return;
+	aaa = el;
+	el.visible() ? el.hide() : el.show();
+}
+
 /* UPLOAD */
 function getNewXProgressId(){
 	var uuid = "";

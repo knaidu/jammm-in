@@ -1,10 +1,10 @@
 <div class='music-desc round'>
-  <%= add_field_name 'Description' %> <%= jam.description %><br>
-  <%= add_field_name 'Artists' %> <%= partial(:'common/list_artists', {:locals => {:artists => jam.artists}}) %><br>
-  <%= add_field_name 'Creator' %> <%= jam.creator.name %><br>
-  <%= add_field_name 'Views' %> <%= jam.views %><br>
-	<%= add_field_name 'Type' %> <%= display_jam_type(jam) %><br>
-	<%= add_field_name 'Likes' %> <%= jam.liked_by.size %><br>
+  <%= field 'Description:' %> <%= jam.description || "-" %><br>
+  <%= field 'Artists:' %> <%= partial(:'common/list_artists', {:locals => {:artists => jam.artists}}) %><br>
+  <%= field 'Creator:' %> <%= jam.creator.name %><br>
+  <%= field 'Views:' %> <%= jam.views %><br>
+	<%= field 'Type:' %> <%= display_jam_type(jam) %><br>
+	<%= field 'Likes:' %> <%= jam.liked_by.size %><br>
 	<br>
 	<% if @session_user and not @session_user.likes_jam?(jam) %>
   	<span class='simple-link display-inline' onClick='likeJam("<%= jam.id %>")' title='Like'><%= icon :like %></span>

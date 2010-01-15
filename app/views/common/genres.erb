@@ -1,0 +1,49 @@
+<div id='genres-list'>
+	<% 
+		contains_genres = ContainsGenre.find_all_by_for_type_and_for_type_id(for_type, for_type_id)
+		genres = contains_genres.map(&:genre) 
+	%>
+
+	<div class='display-inline-block pad-right-5'>
+		<% user_genres = session_user?.genres %>
+		<select id='user-genre-select'>
+			<% (Genre.all - genres).each do |genre| %>
+				<option value="<%= genre.id %>"><%= genre.name %>
+			<% end %>
+		</select>	
+		<input type='button' value='Add' onclick="add_genre()">
+		<hr class='thin'>
+	
+		<% contains_genres.each do |contains_genre| %>
+			<% genre = contains_genre.genre %>
+			<div class='pad-right-5'> 
+				<div class='display-inline-block'><%= genre.name %></div>
+				<div class='float-right simple-link' onClick="remove_genre('<%= contains_genre.id %>')">x</div>
+			</div>
+		<% end %>
+	
+		<% if genres.empty? %>
+			<i>click <b>Add</b> to add a genre</i>
+		<% end %>
+	
+	</div>
+</div>
+
+<%= js_start %>
+	function reload_genres(){
+		var url = formatUrl("/partial/common/genres", {for_type: "<%= for_type %>", for_type_id: <%= for_type_id %>});
+		updateEl('genres-list', url);
+	}
+
+	function add_genre(){
+		var select = $('user-genre-select');
+		var url = formatController("genre", "add");
+		url = formatUrl(url, {for_type: "<%= for_type %>", for_type_id: <%= for_type_id %>, genre_id: select.getValue()});
+		call(url, {onComplete: reload_genres});
+	}
+
+	function remove_genre(id){
+		var url = formatUrl("/genre/remove", {contains_genre_id: id});
+		call(url, {onComplete: reload_genres});
+	}
+<%= js_end %>

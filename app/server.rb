@@ -18,6 +18,7 @@ helpers do
   load('helpers/all.rb')
   load('helpers/feed.rb')
   load('helpers/icons.rb')
+  load('helpers/classes.rb')
 end
 
 before do
@@ -77,3 +78,6 @@ load 'urls/file.rb'
 
 # Loads all the process_info urls
 load 'urls/process_info.rb'
+
+# Loads all the genres urls
+load 'urls/genre.rb'

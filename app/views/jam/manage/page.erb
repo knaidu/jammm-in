@@ -31,8 +31,12 @@
 	<%= partial('jam/manage/file_actions') %>
 </div>
 
-<%= section_header 'Information' %>
-  <%= partial('jam/manage/information', {:locals => {:jam => @jam}}) %>
+
+<%= partial('jam/manage/information', {
+	:locals => {:jam => @jam}, 
+	:section_header => SectionHeader.new('Information'),
+	:collapsible => true
+}) %>
 
 <%= section_header 'Artists' %>
 <div id='jam-artists'>

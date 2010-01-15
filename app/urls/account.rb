@@ -43,13 +43,6 @@ get '/account/aboutme/save_basic_info' do
   }
 end
 
-get '/account/aboutme/add_genre' do
-  monitor {
-    genre_id = param?(:genre_id)
-    session_user?.add_genre(Genre.find(genre_id))
-  }
-end
-
 get '/account/:section' do
   @layout_info = layout_info("account", params[:section])
   erb(:"account/structure") 
