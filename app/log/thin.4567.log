@@ -41614,3 +41614,430 @@ page is: profile/nil
 page is: body/footer_and_body_end
 page is: body/footer
 127.0.0.1 - - [14/Jan/2010 18:05:49] "GET /favicon.ico HTTP/1.1" 200 2323 0.0108
+>> Writing PID to /home/jammmin/webserver/app/processes.4567
+>> Changing process privilege to root:root
+Couldn't change user and group to root:root: Operation not permitted
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
+DBCONFIG: {"port"=>5432, "username"=>"jammmin", "adapter"=>"postgresql", "database"=>"garage", "password"=>"3WiseMen"}
+DB CONNECTION: #<ActiveRecord::ConnectionAdapters::ConnectionPool:0xb71521e4 @connection_mutex=#<Monitor:0xb7152144 @mon_owner=nil, @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0>, @reserved_connections={}, @timeout=5, @spec=#<ActiveRecord::Base::ConnectionSpecification:0xb6e0967c @adapter_method="postgresql_connection", @config={:username=>"jammmin", :password=>"3WiseMen", :port=>5432, :database=>"garage", :adapter=>"postgresql"}>, @size=5, @queue=#<MonitorMixin::ConditionVariable:0xb7152108 @monitor=#<Monitor:0xb7152144 @mon_owner=nil, @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0>, @waiters=[]>, @connections=[], @checked_out=[]>
+libs are: ["active_record.rb", "extensions.rb", "jam_utils.rb", "s3.rb", "song_utils.rb", "user.rb", "utils.rb"]
+models are: ["comment.rb", "contains_genre.rb", "feed.rb", "follower.rb", "genre.rb", "jam_artist.rb", "jam.rb", "like.rb", "message_stream.rb", "process_info.rb", "published_jam.rb", "song_jam.rb", "song_lyric.rb", "song_manager.rb", "song.rb", "test_tables.rb", "user_feed.rb", "user_message_map.rb", "user_message_stream_map.rb", "user_message_stream.rb", "user.rb"]
+>> Thin web server (v1.2.5 codename This Is Not A Web Server)
+>> Maximum connections set to 1024
+>> Listening on 127.0.0.1:4567, CTRL+C to stop
+192.168.242.1 - - [16/Jan/2010 11:13:59] "GET / HTTP/1.1" 200 2550 0.1506
+192.168.242.1 - - [16/Jan/2010 11:13:59] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0453
+192.168.242.1 - - [16/Jan/2010 11:14:00] "GET /scripts/prototype.js HTTP/1.1" 200 139978 0.0055
+192.168.242.1 - - [16/Jan/2010 11:14:00] "GET /scripts/swfobject.js HTTP/1.1" 200 9759 0.0036
+192.168.242.1 - - [16/Jan/2010 11:14:01] "GET /scripts/all.js HTTP/1.1" 200 13495 0.0027
+192.168.242.1 - - [16/Jan/2010 11:14:01] "GET /scripts/core.js HTTP/1.1" 200 2300 0.0030
+192.168.242.1 - - [16/Jan/2010 11:14:01] "GET /images/logos/logo.jpg HTTP/1.1" 200 5116 0.0049
+192.168.242.1 - - [16/Jan/2010 11:14:01] "GET /swf/new-player.swf HTTP/1.1" 200 3750 0.0031
+192.168.242.1 - - [16/Jan/2010 11:14:02] "GET /favicon.ico HTTP/1.1" 200 2205 0.0369
+192.168.242.1 - - [16/Jan/2010 11:14:03] "GET /undefined HTTP/1.1" 200 2205 0.0139
+ActiveRecord::StatementInvalid - PGError: ERROR:  relation "feeds" does not exist
+: SELECT f.* FROM feeds f WHERE f.scope = 'global' OR f.scope = 'public' ORDER BY created_at DESC limit 30:
+ helpers/feed.rb:14:in `global_feeds'
+ /home/jammmin/webserver/app/views/homepage/middle.erb:2:in `render_erb'
+ helpers/all.rb:12:in `partial'
+ /home/jammmin/webserver/app/views/body/structure.erb:7:in `render_erb'
+ /home/jammmin/webserver/app/server.rb:30:in `GET /'
+ /usr/bin/thin:19:in `load'
+ /usr/bin/thin:19192.168.242.1 - - [16/Jan/2010 11:33:40] "GET / HTTP/1.1" 500 30 0.0372
+192.168.242.1 - - [16/Jan/2010 11:33:40] "GET /favicon.ico HTTP/1.1" 200 2205 0.0197
+>> Exiting!
+>> Writing PID to /home/jammmin/webserver/app/processes.4567
+>> Changing process privilege to root:root
+Couldn't change user and group to root:root: Operation not permitted
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
+DBCONFIG: {"port"=>5432, "username"=>"jammmin", "adapter"=>"postgresql", "database"=>"garage", "password"=>"3WiseMen"}
+DB CONNECTION: #<ActiveRecord::ConnectionAdapters::ConnectionPool:0xb730d9c0 @connection_mutex=#<Monitor:0xb730d984 @mon_owner=nil, @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0>, @reserved_connections={}, @timeout=5, @spec=#<ActiveRecord::Base::ConnectionSpecification:0xb6fc621c @adapter_method="postgresql_connection", @config={:username=>"jammmin", :password=>"3WiseMen", :port=>5432, :database=>"garage", :adapter=>"postgresql"}>, @size=5, @queue=#<MonitorMixin::ConditionVariable:0xb730d948 @monitor=#<Monitor:0xb730d984 @mon_owner=nil, @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0>, @waiters=[]>, @connections=[], @checked_out=[]>
+libs are: ["active_record.rb", "extensions.rb", "jam_utils.rb", "s3.rb", "song_utils.rb", "user.rb", "utils.rb"]
+models are: ["comment.rb", "contains_genre.rb", "feed.rb", "follower.rb", "genre.rb", "jam_artist.rb", "jam.rb", "like.rb", "message_stream.rb", "process_info.rb", "published_jam.rb", "song_jam.rb", "song_lyric.rb", "song_manager.rb", "song.rb", "test_tables.rb", "user_feed.rb", "user_message_map.rb", "user_message_stream_map.rb", "user_message_stream.rb", "user.rb"]
+>> Thin web server (v1.2.5 codename This Is Not A Web Server)
+>> Maximum connections set to 1024
+>> Listening on 127.0.0.1:4567, CTRL+C to stop
+192.168.242.1 - - [16/Jan/2010 11:36:27] "GET / HTTP/1.1" 200 2550 0.0677
+192.168.242.1 - - [16/Jan/2010 11:36:27] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0075
+192.168.242.1 - - [16/Jan/2010 11:36:28] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0040
+192.168.242.1 - - [16/Jan/2010 11:36:29] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0037
+192.168.242.1 - - [16/Jan/2010 11:36:30] "GET /scripts/all.js HTTP/1.1" 304 - 0.0035
+192.168.242.1 - - [16/Jan/2010 11:36:31] "GET /scripts/core.js HTTP/1.1" 304 - 0.0033
+192.168.242.1 - - [16/Jan/2010 11:36:32] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [16/Jan/2010 11:36:32] "GET /favicon.ico HTTP/1.1" 200 2205 0.0154
+192.168.242.1 - - [16/Jan/2010 11:36:32] "GET /undefined HTTP/1.1" 200 2205 0.0142
+192.168.242.1 - - [16/Jan/2010 11:36:38] "GET /signin HTTP/1.1" 200 2726 0.0358
+192.168.242.1 - - [16/Jan/2010 11:36:38] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0067
+192.168.242.1 - - [16/Jan/2010 11:36:38] "GET /favicon.ico HTTP/1.1" 200 2205 0.0161
+192.168.242.1 - - [16/Jan/2010 11:36:38] "GET /undefined HTTP/1.1" 200 2205 0.0152
+192.168.242.1 - - [16/Jan/2010 11:36:41] "GET /signup HTTP/1.1" 200 3263 0.0545
+192.168.242.1 - - [16/Jan/2010 11:36:41] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0078
+192.168.242.1 - - [16/Jan/2010 11:36:41] "GET /favicon.ico HTTP/1.1" 200 2205 0.0994
+192.168.242.1 - - [16/Jan/2010 11:36:41] "GET /undefined HTTP/1.1" 200 2205 0.0124
+192.168.242.1 - - [16/Jan/2010 11:36:50] "POST /signup/create HTTP/1.1" 302 - 0.1101
+192.168.242.1 - - [16/Jan/2010 11:36:50] "GET /account HTTP/1.1" 302 - 0.0032
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [16/Jan/2010 11:36:50] "GET /account/home HTTP/1.1" 200 6884 0.0553
+192.168.242.1 - - [16/Jan/2010 11:36:50] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0062
+192.168.242.1 - - [16/Jan/2010 11:36:51] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0029
+192.168.242.1 - - [16/Jan/2010 11:36:52] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0036
+192.168.242.1 - - [16/Jan/2010 11:36:53] "GET /scripts/all.js HTTP/1.1" 304 - 0.0037
+192.168.242.1 - - [16/Jan/2010 11:36:54] "GET /scripts/core.js HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [16/Jan/2010 11:36:54] "GET /images/icons/profile1.png HTTP/1.1" 200 2310 0.0026
+192.168.242.1 - - [16/Jan/2010 11:36:54] "GET /images/icons/home.png HTTP/1.1" 200 2011 0.0028
+192.168.242.1 - - [16/Jan/2010 11:36:54] "GET /images/icons/8thnote.png HTTP/1.1" 200 2404 0.0028
+192.168.242.1 - - [16/Jan/2010 11:36:54] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0022
+192.168.242.1 - - [16/Jan/2010 11:36:54] "GET /images/icons/staff.png HTTP/1.1" 200 2494 0.0027
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [16/Jan/2010 11:36:54] "GET /account/undefined HTTP/1.1" 200 5695 0.0170
+192.168.242.1 - - [16/Jan/2010 11:36:54] "GET /images/icons/mail2.png HTTP/1.1" 200 1666 0.0028
+192.168.242.1 - - [16/Jan/2010 11:36:55] "GET /images/icons/follow2.png HTTP/1.1" 200 2032 0.0030
+192.168.242.1 - - [16/Jan/2010 11:36:56] "GET /images/icons/followers1.png HTTP/1.1" 200 4985 0.0024
+192.168.242.1 - - [16/Jan/2010 11:36:56] "GET /images/icons/help1.png HTTP/1.1" 200 1871 0.0024
+192.168.242.1 - - [16/Jan/2010 11:36:57] "GET /images/common/icon.png HTTP/1.1" 200 709 0.0029
+192.168.242.1 - - [16/Jan/2010 11:36:58] "GET /images/icons/update.png HTTP/1.1" 200 6439 0.0036
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/account/aboutme/genres.erb:7: warning: don't put space before argument parentheses
+192.168.242.1 - - [16/Jan/2010 11:36:59] "GET /account/aboutme HTTP/1.1" 200 9814 0.0703
+192.168.242.1 - - [16/Jan/2010 11:36:59] "GET /favicon.ico HTTP/1.1" 200 2323 0.0127
+192.168.242.1 - - [16/Jan/2010 11:37:00] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0094
+192.168.242.1 - - [16/Jan/2010 11:37:00] "GET /images/icons/followers1.png HTTP/1.1" 200 4985 0.0025
+192.168.242.1 - - [16/Jan/2010 11:37:00] "GET /partial/account/aboutme/profile_picture_form HTTP/1.1" 200 804 0.0105
+192.168.242.1 - - [16/Jan/2010 11:37:00] "GET /images/icons/help1.png HTTP/1.1" 200 1871 0.0047
+192.168.242.1 - - [16/Jan/2010 11:37:01] "GET /images/common/icon.png HTTP/1.1" 200 709 0.0029
+192.168.242.1 - - [16/Jan/2010 11:37:02] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0084
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [16/Jan/2010 11:37:02] "GET /account/undefined HTTP/1.1" 200 5695 0.0241
+TypeError - can't convert nil into String:
+ /home/jammmin/webserver/app/lib/utils.rb:124:in `get_storage_file_path'
+ /home/jammmin/webserver/app/models/user.rb:146:in `profile_picture'
+ urls/profile.rb:71:in `GET /:username/profile_picture'
+ /usr/bin/thin:19:in `load'
+ /usr/bin/thin:19192.168.242.1 - - [16/Jan/2010 11:37:03] "GET /prakashraman/profile_picture HTTP/1.1" 500 30 0.0046
+192.168.242.1 - - [16/Jan/2010 11:37:03] "GET /favicon.ico HTTP/1.1" 200 2323 0.0127
+>> Exiting!
+>> Writing PID to /home/jammmin/webserver/app/processes.4567
+>> Changing process privilege to root:root
+Couldn't change user and group to root:root: Operation not permitted
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
+DBCONFIG: {"port"=>5432, "username"=>"jammmin", "adapter"=>"postgresql", "database"=>"garage", "password"=>"3WiseMen"}
+DB CONNECTION: #<ActiveRecord::ConnectionAdapters::ConnectionPool:0xb72f7904 @connection_mutex=#<Monitor:0xb72f78c8 @mon_owner=nil, @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0>, @reserved_connections={}, @timeout=5, @spec=#<ActiveRecord::Base::ConnectionSpecification:0xb6fb00d4 @adapter_method="postgresql_connection", @config={:username=>"jammmin", :password=>"3WiseMen", :port=>5432, :database=>"garage", :adapter=>"postgresql"}>, @size=5, @queue=#<MonitorMixin::ConditionVariable:0xb72f788c @monitor=#<Monitor:0xb72f78c8 @mon_owner=nil, @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0>, @waiters=[]>, @connections=[], @checked_out=[]>
+libs are: ["active_record.rb", "extensions.rb", "jam_utils.rb", "s3.rb", "song_utils.rb", "user.rb", "utils.rb"]
+models are: ["comment.rb", "contains_genre.rb", "feed.rb", "follower.rb", "genre.rb", "jam_artist.rb", "jam.rb", "like.rb", "message_stream.rb", "process_info.rb", "published_jam.rb", "song_jam.rb", "song_lyric.rb", "song_manager.rb", "song.rb", "test_tables.rb", "user_feed.rb", "user_message_map.rb", "user_message_stream_map.rb", "user_message_stream.rb", "user.rb"]
+>> Thin web server (v1.2.5 codename This Is Not A Web Server)
+>> Maximum connections set to 1024
+>> Listening on 127.0.0.1:4567, CTRL+C to stop
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/account/aboutme/genres.erb:7: warning: don't put space before argument parentheses
+192.168.242.1 - - [16/Jan/2010 11:37:43] "GET /account/aboutme HTTP/1.1" 200 9814 0.1155
+192.168.242.1 - - [16/Jan/2010 11:37:43] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0073
+192.168.242.1 - - [16/Jan/2010 11:37:44] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0044
+192.168.242.1 - - [16/Jan/2010 11:37:45] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [16/Jan/2010 11:37:46] "GET /scripts/all.js HTTP/1.1" 304 - 0.0028
+192.168.242.1 - - [16/Jan/2010 11:37:47] "GET /scripts/core.js HTTP/1.1" 304 - 0.0040
+192.168.242.1 - - [16/Jan/2010 11:37:47] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0040
+192.168.242.1 - - [16/Jan/2010 11:37:47] "GET /partial/account/aboutme/profile_picture_form HTTP/1.1" 200 804 0.0139
+192.168.242.1 - - [16/Jan/2010 11:37:48] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0077
+192.168.242.1 - - [16/Jan/2010 11:37:48] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0029
+192.168.242.1 - - [16/Jan/2010 11:37:48] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [16/Jan/2010 11:37:48] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [16/Jan/2010 11:37:48] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0031
+192.168.242.1 - - [16/Jan/2010 11:37:48] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0034
+192.168.242.1 - - [16/Jan/2010 11:37:48] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0076
+192.168.242.1 - - [16/Jan/2010 11:37:48] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0034
+192.168.242.1 - - [16/Jan/2010 11:37:48] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0030
+192.168.242.1 - - [16/Jan/2010 11:37:48] "GET /scripts/all.js HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [16/Jan/2010 11:37:49] "GET /scripts/core.js HTTP/1.1" 304 - 0.0027
+TypeError - can't convert nil into String:
+ /home/jammmin/webserver/app/lib/utils.rb:124:in `get_storage_file_path'
+ /home/jammmin/webserver/app/models/user.rb:146:in `profile_picture'
+ urls/profile.rb:71:in `GET /:username/profile_picture'
+ /usr/bin/thin:19:in `load'
+ /usr/bin/thin:19192.168.242.1 - - [16/Jan/2010 11:37:49] "GET /prakashraman/profile_picture HTTP/1.1" 500 30 0.0053
+192.168.242.1 - - [16/Jan/2010 11:37:50] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0034
+192.168.242.1 - - [16/Jan/2010 11:37:51] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0036
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [16/Jan/2010 11:37:52] "GET /account/undefined HTTP/1.1" 200 5695 0.0185
+192.168.242.1 - - [16/Jan/2010 11:37:53] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0036
+192.168.242.1 - - [16/Jan/2010 11:37:53] "GET /favicon.ico HTTP/1.1" 200 2323 0.0713
+>> Exiting!
+>> Writing PID to /home/jammmin/webserver/app/processes.4567
+>> Changing process privilege to root:root
+Couldn't change user and group to root:root: Operation not permitted
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
+DBCONFIG: {"port"=>5432, "username"=>"jammmin", "adapter"=>"postgresql", "database"=>"garage", "password"=>"3WiseMen"}
+DB CONNECTION: #<ActiveRecord::ConnectionAdapters::ConnectionPool:0xb7194904 @connection_mutex=#<Monitor:0xb71948c8 @mon_owner=nil, @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0>, @reserved_connections={}, @timeout=5, @spec=#<ActiveRecord::Base::ConnectionSpecification:0xb6e4d0d4 @adapter_method="postgresql_connection", @config={:username=>"jammmin", :password=>"3WiseMen", :port=>5432, :database=>"garage", :adapter=>"postgresql"}>, @size=5, @queue=#<MonitorMixin::ConditionVariable:0xb719488c @monitor=#<Monitor:0xb71948c8 @mon_owner=nil, @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0>, @waiters=[]>, @connections=[], @checked_out=[]>
+libs are: ["active_record.rb", "extensions.rb", "jam_utils.rb", "s3.rb", "song_utils.rb", "user.rb", "utils.rb"]
+models are: ["comment.rb", "contains_genre.rb", "feed.rb", "follower.rb", "genre.rb", "jam_artist.rb", "jam.rb", "like.rb", "message_stream.rb", "process_info.rb", "published_jam.rb", "song_jam.rb", "song_lyric.rb", "song_manager.rb", "song.rb", "test_tables.rb", "user_feed.rb", "user_message_map.rb", "user_message_stream_map.rb", "user_message_stream.rb", "user.rb"]
+>> Thin web server (v1.2.5 codename This Is Not A Web Server)
+>> Maximum connections set to 1024
+>> Listening on 127.0.0.1:4567, CTRL+C to stop
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/account/aboutme/genres.erb:7: warning: don't put space before argument parentheses
+192.168.242.1 - - [16/Jan/2010 11:38:24] "GET /account/aboutme HTTP/1.1" 200 9812 0.1052
+192.168.242.1 - - [16/Jan/2010 11:38:24] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0079
+192.168.242.1 - - [16/Jan/2010 11:38:25] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0043
+192.168.242.1 - - [16/Jan/2010 11:38:26] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0040
+192.168.242.1 - - [16/Jan/2010 11:38:27] "GET /scripts/all.js HTTP/1.1" 304 - 0.0040
+192.168.242.1 - - [16/Jan/2010 11:38:28] "GET /scripts/core.js HTTP/1.1" 304 - 0.0044
+192.168.242.1 - - [16/Jan/2010 11:38:28] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0033
+192.168.242.1 - - [16/Jan/2010 11:38:28] "GET /partial/account/aboutme/profile_picture_form HTTP/1.1" 200 804 0.0065
+192.168.242.1 - - [16/Jan/2010 11:38:28] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [16/Jan/2010 11:38:28] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0029
+192.168.242.1 - - [16/Jan/2010 11:38:28] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0029
+192.168.242.1 - - [16/Jan/2010 11:38:28] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0028
+192.168.242.1 - - [16/Jan/2010 11:38:28] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0031
+192.168.242.1 - - [16/Jan/2010 11:38:28] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0031
+192.168.242.1 - - [16/Jan/2010 11:38:28] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0115
+192.168.242.1 - - [16/Jan/2010 11:38:28] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0034
+192.168.242.1 - - [16/Jan/2010 11:38:28] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0028
+192.168.242.1 - - [16/Jan/2010 11:38:29] "GET /scripts/all.js HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [16/Jan/2010 11:38:30] "GET /scripts/core.js HTTP/1.1" 304 - 0.0030
+192.168.242.1 - - [16/Jan/2010 11:38:30] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0030
+192.168.242.1 - - [16/Jan/2010 11:38:31] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0031
+192.168.242.1 - - [16/Jan/2010 11:38:32] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0039
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [16/Jan/2010 11:38:33] "GET /account/undefined HTTP/1.1" 200 5695 0.0174
+TypeError - can't convert nil into String:
+ /home/jammmin/webserver/app/lib/utils.rb:124:in `get_storage_file_path'
+ /home/jammmin/webserver/app/models/user.rb:146:in `profile_picture'
+ urls/profile.rb:71:in `GET /:username/profile_picture'
+ /usr/bin/thin:19:in `load'
+ /usr/bin/thin:19192.168.242.1 - - [16/Jan/2010 11:38:34] "GET /prakashraman/profile_picture HTTP/1.1" 500 30 0.0064
+192.168.242.1 - - [16/Jan/2010 11:38:34] "GET /favicon.ico HTTP/1.1" 200 2323 0.0804
+>> Exiting!
+>> Writing PID to /home/jammmin/webserver/app/processes.4567
+>> Changing process privilege to root:root
+Couldn't change user and group to root:root: Operation not permitted
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
+DBCONFIG: {"port"=>5432, "username"=>"jammmin", "adapter"=>"postgresql", "database"=>"garage", "password"=>"3WiseMen"}
+DB CONNECTION: #<ActiveRecord::ConnectionAdapters::ConnectionPool:0xb71ed860 @connection_mutex=#<Monitor:0xb71ed824 @mon_owner=nil, @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0>, @reserved_connections={}, @timeout=5, @spec=#<ActiveRecord::Base::ConnectionSpecification:0xb6ea5ef0 @adapter_method="postgresql_connection", @config={:username=>"jammmin", :password=>"3WiseMen", :port=>5432, :database=>"garage", :adapter=>"postgresql"}>, @size=5, @queue=#<MonitorMixin::ConditionVariable:0xb71ed7e8 @monitor=#<Monitor:0xb71ed824 @mon_owner=nil, @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0>, @waiters=[]>, @connections=[], @checked_out=[]>
+libs are: ["active_record.rb", "extensions.rb", "jam_utils.rb", "s3.rb", "song_utils.rb", "user.rb", "utils.rb"]
+models are: ["comment.rb", "contains_genre.rb", "feed.rb", "follower.rb", "genre.rb", "jam_artist.rb", "jam.rb", "like.rb", "message_stream.rb", "process_info.rb", "published_jam.rb", "song_jam.rb", "song_lyric.rb", "song_manager.rb", "song.rb", "test_tables.rb", "user_feed.rb", "user_message_map.rb", "user_message_stream_map.rb", "user_message_stream.rb", "user.rb"]
+>> Thin web server (v1.2.5 codename This Is Not A Web Server)
+>> Maximum connections set to 1024
+>> Listening on 127.0.0.1:4567, CTRL+C to stop
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/account/aboutme/genres.erb:7: warning: don't put space before argument parentheses
+192.168.242.1 - - [16/Jan/2010 11:45:54] "GET /account/aboutme HTTP/1.1" 200 9810 0.1067
+192.168.242.1 - - [16/Jan/2010 11:45:54] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0175
+192.168.242.1 - - [16/Jan/2010 11:45:55] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0042
+192.168.242.1 - - [16/Jan/2010 11:45:56] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0029
+192.168.242.1 - - [16/Jan/2010 11:45:57] "GET /scripts/core.js HTTP/1.1" 304 - 0.0039
+192.168.242.1 - - [16/Jan/2010 11:45:58] "GET /scripts/all.js HTTP/1.1" 304 - 0.0037
+192.168.242.1 - - [16/Jan/2010 11:45:58] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [16/Jan/2010 11:45:58] "GET /partial/account/aboutme/profile_picture_form HTTP/1.1" 200 804 0.0080
+192.168.242.1 - - [16/Jan/2010 11:45:58] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0197
+192.168.242.1 - - [16/Jan/2010 11:45:58] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [16/Jan/2010 11:45:58] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [16/Jan/2010 11:45:58] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0032
+192.168.242.1 - - [16/Jan/2010 11:45:58] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0028
+192.168.242.1 - - [16/Jan/2010 11:45:58] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0029
+192.168.242.1 - - [16/Jan/2010 11:45:58] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0107
+192.168.242.1 - - [16/Jan/2010 11:45:58] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0032
+192.168.242.1 - - [16/Jan/2010 11:45:58] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0033
+192.168.242.1 - - [16/Jan/2010 11:45:59] "GET /scripts/all.js HTTP/1.1" 304 - 0.0049
+192.168.242.1 - - [16/Jan/2010 11:46:00] "GET /scripts/core.js HTTP/1.1" 304 - 0.0047
+192.168.242.1 - - [16/Jan/2010 11:46:00] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0440
+192.168.242.1 - - [16/Jan/2010 11:46:01] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0044
+192.168.242.1 - - [16/Jan/2010 11:46:02] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0072
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [16/Jan/2010 11:46:03] "GET /account/undefined HTTP/1.1" 200 5695 0.0280
+192.168.242.1 - - [16/Jan/2010 11:46:04] "GET /prakashraman/profile_picture HTTP/1.1" 200 2891 0.0079
+192.168.242.1 - - [16/Jan/2010 11:46:04] "GET /favicon.ico HTTP/1.1" 200 2323 0.0761
+----------------
+#<File:0xb71fde90>
+1
+2
+3
+4
+Errno::ENOENT - No such file or directory - /home/jammmin/storage/1263671174-34576:
+ /usr/lib/ruby/1.8/ftools.rb:64:in `initialize'
+ /usr/lib/ruby/1.8/ftools.rb:64:in `open'
+ /usr/lib/ruby/1.8/ftools.rb:64:in `syscopy'
+ /usr/lib/ruby/1.8/ftools.rb:89:in `copy'
+ /home/jammmin/webserver/app/models/user.rb:129:in `change_profile_picture'
+ urls/account.rb:60:in `POST /account/aboutme/change_profile_picture'
+ /usr/bin/thin:19:in `load'
+ /usr/bin/thin:19192.168.242.1 - - [16/Jan/2010 11:46:14] "POST /account/aboutme/change_profile_picture HTTP/1.1" 500 30 0.0058
+192.168.242.1 - - [16/Jan/2010 11:46:14] "GET /favicon.ico HTTP/1.1" 200 2323 0.0162
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/account/aboutme/genres.erb:7: warning: don't put space before argument parentheses
+192.168.242.1 - - [16/Jan/2010 11:46:43] "GET /account/aboutme HTTP/1.1" 200 9810 0.0378
+192.168.242.1 - - [16/Jan/2010 11:46:43] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0115
+192.168.242.1 - - [16/Jan/2010 11:46:44] "GET /scripts/core.js HTTP/1.1" 304 - 0.0028
+192.168.242.1 - - [16/Jan/2010 11:46:45] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0033
+192.168.242.1 - - [16/Jan/2010 11:46:46] "GET /scripts/all.js HTTP/1.1" 304 - 0.0036
+192.168.242.1 - - [16/Jan/2010 11:46:47] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [16/Jan/2010 11:46:47] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [16/Jan/2010 11:46:47] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0047
+192.168.242.1 - - [16/Jan/2010 11:46:47] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [16/Jan/2010 11:46:47] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0188
+192.168.242.1 - - [16/Jan/2010 11:46:47] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [16/Jan/2010 11:46:47] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [16/Jan/2010 11:46:48] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0030
+192.168.242.1 - - [16/Jan/2010 11:46:49] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [16/Jan/2010 11:46:50] "GET /partial/account/aboutme/profile_picture_form HTTP/1.1" 200 804 0.0046
+192.168.242.1 - - [16/Jan/2010 11:46:50] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0022
+192.168.242.1 - - [16/Jan/2010 11:46:50] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0025
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [16/Jan/2010 11:46:50] "GET /account/undefined HTTP/1.1" 200 5695 0.0214
+192.168.242.1 - - [16/Jan/2010 11:46:51] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0104
+192.168.242.1 - - [16/Jan/2010 11:46:52] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0040
+192.168.242.1 - - [16/Jan/2010 11:46:53] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [16/Jan/2010 11:46:54] "GET /scripts/all.js HTTP/1.1" 304 - 0.0035
+192.168.242.1 - - [16/Jan/2010 11:46:55] "GET /scripts/core.js HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [16/Jan/2010 11:46:55] "GET /prakashraman/profile_picture HTTP/1.1" 304 - 0.0041
+192.168.242.1 - - [16/Jan/2010 11:46:55] "GET /favicon.ico HTTP/1.1" 200 2323 0.0112
+----------------
+#<File:0xb7098bf4>
+1
+2
+3
+4
+5
+6
+192.168.242.1 - - [16/Jan/2010 11:47:00] "POST /account/aboutme/change_profile_picture HTTP/1.1" 302 - 0.0169
+192.168.242.1 - - [16/Jan/2010 11:47:00] "GET /partial/account/aboutme/profile_picture_form HTTP/1.1" 200 804 0.0039
+192.168.242.1 - - [16/Jan/2010 11:47:01] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0242
+192.168.242.1 - - [16/Jan/2010 11:47:02] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [16/Jan/2010 11:47:03] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0029
+192.168.242.1 - - [16/Jan/2010 11:47:04] "GET /scripts/all.js HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [16/Jan/2010 11:47:05] "GET /scripts/core.js HTTP/1.1" 304 - 0.0047
+192.168.242.1 - - [16/Jan/2010 11:47:05] "GET /prakashraman/profile_picture HTTP/1.1" 200 95762 0.0753
+192.168.242.1 - - [16/Jan/2010 11:47:05] "GET /favicon.ico HTTP/1.1" 200 2323 0.0117
+Passwords do not match
+192.168.242.1 - - [16/Jan/2010 11:47:17] "GET /account/aboutme/change_password?password=buffy&confirm_password=sdf HTTP/1.1" 500 22 0.0047
+192.168.242.1 - - [16/Jan/2010 11:47:21] "GET /account/aboutme/change_password?password=buffy&confirm_password=buffy HTTP/1.1" 200 44 0.0097
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [16/Jan/2010 11:48:28] "GET /account/message_streams HTTP/1.1" 200 6009 0.0226
+192.168.242.1 - - [16/Jan/2010 11:48:28] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0076
+192.168.242.1 - - [16/Jan/2010 11:48:28] "GET /favicon.ico HTTP/1.1" 200 2323 0.0156
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [16/Jan/2010 11:48:28] "GET /account/undefined HTTP/1.1" 200 5695 0.0163
