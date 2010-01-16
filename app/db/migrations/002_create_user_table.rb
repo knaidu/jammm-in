@@ -6,6 +6,7 @@ class CreateUserTable < ActiveRecord::Migration
       i.column :name, :string
       i.column :location, :string
       i.column :email, :string
+      i.column :profile_picture_file_handle, :string
     end
   end
   

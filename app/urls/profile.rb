@@ -67,6 +67,13 @@ get '/:username/unfollow' do
   end
 end
 
+get '/:username/profile_picture' do
+  send_file(User.with_username(param?(:username)).profile_picture,{
+    :filename => "profile_picutre",
+    :disposistion => "inline"
+  })
+end
+
 get '/:username/jammed_with' do
   @user = User.with_username(params[:username])
   @layout_info = {"left_panel" => "profile/menu", "middle_panel" => "profile/jammed_with"}

@@ -25,8 +25,9 @@ def get_passed_users_by_id
   params[:user_ids].split(",").map do |id| User.find(id) end
 end
 
-def new_file_handle_name
-  Time.now.to_f.to_s.gsub('.', '-') + ".mp3"
+def new_file_handle_name(ext=".mp3")
+  ext = "" if not ext
+  Time.now.to_f.to_s.gsub('.', '-') + ext
 end
 
 def file_handle_path(obj)
@@ -117,6 +118,16 @@ def download_to_server(url, output_file_path = false)
   output_file_option = "-O #{output_file_path}" if output_file_path
   cmd = "wget #{url} #{(output_file_option if output_file_path)}"
   run(cmd)
+end
+
+def get_storage_file_path(file_handle)
+  ENV["STORAGE_DIR"] + "/" + file_handle
+end
+
+def get_storage_file(file_handle)
+  path = get_storage_file_path(file_handle)
+  return false if not File.exists?(path)
+  File.open(path)
 end
 
 # CACHING START

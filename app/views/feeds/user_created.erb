@@ -2,7 +2,7 @@
 	<% user = fhlp_get_users(feed)[0] %>
 	<div>
 		<span class='float-left'>
-      <%= icon(:user, :medium) %>
+      <%= feed_profile_picture(user) %>
 		</span>
 		<%= add_profile_link(user) %> (<%= user.location %>) has joined Jammm.in
 	</div>

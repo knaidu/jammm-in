@@ -118,4 +118,32 @@ class User < ActiveRecord::Base
     self.save
   end
   
+  def change_profile_picture(file)
+    puts 1
+    storage_dir = ENV['STORAGE_DIR']
+    puts 2
+    filename = new_file_handle_name(false)
+    puts 3
+    delete_profile_picture
+    puts 4
+    File.copy(file.path, storage_dir + "/" + filename)
+    puts 5
+    self.profile_picture_file_handle = filename
+    puts 6
+    self.save
+  end
+  
+  def delete_profile_picture
+    file_handle = profile_picture_file_handle
+    return if not file_handle
+    file = get_storage_file(file_handle)
+    return if not file
+    File.delete(file.path)
+  end
+  
+  def profile_picture
+    "/images/icons/user2.png" if not profile_picture_file_handle
+    get_storage_file_path(profile_picture_file_handle)
+  end
+  
 end
