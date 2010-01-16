@@ -3,6 +3,7 @@ class CreateJamsTable < ActiveRecord::Migration
     create_table :jams do |i|
       i.column :name, :string
       i.column :length, :integer
+      i.column :jam_picture_file_handle, :string
       i.column :created_at, :timestamp, :default => Time.now
     end
   end

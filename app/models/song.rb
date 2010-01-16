@@ -107,4 +107,8 @@ class Song < ActiveRecord::Base
     music_obj.add_to_song(self)
   end
   
+  def genres
+    Genre.fetch("song", self.id)
+  end
+  
 end

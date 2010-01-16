@@ -5,9 +5,9 @@
 <br><br>
 
 <div class='music-desc round'>
-  <%= add_field_name 'Creator' %> <%= @song.creator.name %><br>
-	<%= add_field_name 'Created On' %> <%= @song.created_at.date %><br>
-	<%= add_field_name 'Status' %> <%= @song.published ? display_published : display_unpublished %>
+  <%= field 'Creator' %> <%= @song.creator.name %><br>
+	<%= field 'Created On' %> <%= @song.created_at.date %><br>
+	<%= field 'Status' %> <%= @song.published ? display_published : display_unpublished %>
 </div>
 <br>
 

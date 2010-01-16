@@ -4,6 +4,7 @@ class CreateSongsTable < ActiveRecord::Migration
       i.column :name, :string
       i.column :description, :string
       i.column :length, :int
+      i.column :song_picture_file_handle
       i.column :created_at, :timestamp, :default => Time.now
     end
   end

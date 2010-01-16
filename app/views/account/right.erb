@@ -4,22 +4,18 @@
 <% @session_user.songs.each do |song| %>
 	<%= partial('account/song', {:locals => {:song => song}}) %><br><br>
 <% end %>
-<% if @session_user.songs.empty? %>
-	<span class='simple-action'>
-		<a href='/song/create'>create song</a>
-	</span>
-	<br><br>
-<% end %>
+<span class='simple-action'>
+	<a href='/song/create'>create song</a>
+</span>
+<br><br>
+
 
 
 <%= section_header('Jams', {:icon => :jam}) %>
 <% @session_user.jams.each do |jam| %>
 	<%= partial('account/jam', {:locals => {:jam => jam}}) %><br><br>
 <% end %>
-
-<% if @session_user.jams.empty? %>
-	<span class='simple-action'>
-		<a href='/jam/create'>create jam</a>
-	</span>
-	<br><br>
-<% end %>
+<span class='simple-action'>
+	<a href='/jam/create'>create jam</a>
+</span>
+<br><br>

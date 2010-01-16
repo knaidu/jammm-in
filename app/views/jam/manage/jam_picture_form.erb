@@ -1,0 +1,18 @@
+<html>
+<head>
+	<%= partial('body/includes')%>
+</head>
+<body>
+	<div>
+		<span class='float-left'>
+			<img src="/<%= session_user?.username %>/profile_picture" height=128 width=128>
+		</span>
+		<div class='float-left' style='padding-left: 20px'>
+			<form action='/account/aboutme/change_profile_picture' method='post' enctype='multipart/form-data'>
+				<input type='file' name='picture'><%= vspace %>
+				<input type='submit' value='Save'>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

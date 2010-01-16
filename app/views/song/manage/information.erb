@@ -1,15 +1,15 @@
 
 <form id='song-information' method='post' action='/song/<%= song.id %>/manage/update_information' onsubmit='return false'>
-<table>
-  <tr>
-    <td><%= add_field_name 'Name' %></td>
-    <td><input type='text' name='name' value='<%= song.name %>'></td>
-  </tr>
-  <tr>
-    <td><%= add_field_name 'Description' %></td>
-    <td><textarea name='desc'><%= song.description %></textarea></td>
-  </tr>
-</table>
+
+<%= field 'Name' %><input type='text' name='name' value='<%= song.name %>'><%= vspace %>
+<%= field 'Description' %><textarea name='desc'><%= song.description %></textarea><%= vspace %>
+<%= field 'Genre' %>
+	<div class='align-top display-inline-block'>
+		<%= partial ("common/manage_genres", :locals => {
+			:for_type => "song",
+			:for_type_id => song.id
+		}) %>
+	</div>
 
 <div id='save-information-response'></div>
 <input type='button' value='Save' onClick='saveSongInformation()'>
