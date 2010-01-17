@@ -88,17 +88,11 @@ class Jam < ActiveRecord::Base
   end
   
   def change_jam_picture(file)
-    puts 1
     storage_dir = ENV['STORAGE_DIR']
-    puts 2
     filename = new_file_handle_name(false)
-    puts 3
     delete_storage_file(self.jam_picture_file_handle) if jam_picture_file_handle
-    puts 4
     File.copy(file.path, storage_dir + "/" + filename)
-    puts 5
     self.jam_picture_file_handle = filename
-    puts 6
     self.save
   end
 

@@ -11,15 +11,14 @@
 </div>
 <br>
 
-<div class='text-right's style='padding: 5px'>
+<div class='text-right' style='padding: 5px'>
 	<% if @song.published %>
 		<input type='button' value='Unpublish' onclick='unpublishSong("<%= @song.id %>")'>
 	<% end %>
 	<input type='button' value='Delete Song' onclick='deleteSong("<%= @song.id %>")'>
 </div>
 
-<%= section_header 'File' %>
-<%= partial('song/manage/file_information') %>
+<%= partial('song/manage/file_information', :section_header => SectionHeader.new('File Information'), :collapsible => true, :collapsed => true) %>
 
 <%= section_header 'Jams' %>
 <div id='song-manage-jams'>
@@ -41,3 +40,5 @@
 	<input type='submit' value='Save' onclick="submitForm('song-lyrics-form', 'song-lyrics-form-response')">
 </form>  
 <div id='song-lyrics-form-response'></div>
+
+<%= partial('song/manage/song_picture', :section_header => SectionHeader.new('Song Picture'), :collapsible => true, :locals => {:song => @song}) %>

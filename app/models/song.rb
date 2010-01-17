@@ -111,4 +111,19 @@ class Song < ActiveRecord::Base
     Genre.fetch("song", self.id)
   end
   
+  def song_picture
+    return (ENV["WEBSERVER_ROOT"] + "/public/images/icons/8thnote.png") if not song_picture_file_handle
+    get_storage_file_path(song_picture_file_handle)
+  end
+  
+  def change_song_picture(file)
+    storage_dir = ENV['STORAGE_DIR']
+    filename = new_file_handle_name(false)
+    delete_storage_file(self.song_picture_file_handle) if song_picture_file_handle
+    File.copy(file.path, storage_dir + "/" + filename)
+    self.song_picture_file_handle = filename
+    self.save
+  end
+  
+  
 end

@@ -52,11 +52,30 @@ get '/song/:song_id/add_music' do
   end
 end
 
+get '/song/:song_id/song_picture' do
+  monitor {
+    send_file(get_passed_song.song_picture, {
+      :filename => "song_picutre",
+      :disposistion => "inline"
+    })
+  }
+end
 
 get '/song/:song_id/manage' do
   @layout_info = {'middle_panel' => 'song/manage/page', 'left_panel' => 'account/menu'}
   @song = Song.find(params[:song_id])
   erb(:"body/structure")
+end
+
+post '/song/:song_id/manage/change_song_picture' do
+#  monitor {
+    file = param?(:picture)[:tempfile]
+    puts file
+    get_passed_song.change_song_picture(file)
+    file.unlink
+    redirect_path = "/partial/song/manage/song_picture_form?song_id=#{param?(:song_id)}"
+    redirect redirect_path
+#  }
 end
 
 get '/song/:song_id/manage/jams' do

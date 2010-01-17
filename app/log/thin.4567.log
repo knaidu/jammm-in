@@ -44538,3 +44538,695 @@ true
 false
 192.168.242.1 - - [17/Jan/2010 00:08:27] "GET /account/undefined HTTP/1.1" 200 5696 0.0184
 192.168.242.1 - - [17/Jan/2010 00:08:28] "GET /favicon.ico HTTP/1.1" 200 2323 0.0161
+>> Stopping ...
+>> Exiting!
+>> Writing PID to /home/jammmin/webserver/app/processes.4567
+>> Changing process privilege to root:root
+Couldn't change user and group to root:root: Operation not permitted
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
+DBCONFIG: {"port"=>5432, "username"=>"jammmin", "adapter"=>"postgresql", "database"=>"garage", "password"=>"3WiseMen"}
+DB CONNECTION: #<ActiveRecord::ConnectionAdapters::ConnectionPool:0xb719aaac @connection_mutex=#<Monitor:0xb719aa70 @mon_owner=nil, @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0>, @reserved_connections={}, @timeout=5, @spec=#<ActiveRecord::Base::ConnectionSpecification:0xb6e541f4 @adapter_method="postgresql_connection", @config={:username=>"jammmin", :password=>"3WiseMen", :port=>5432, :database=>"garage", :adapter=>"postgresql"}>, @size=5, @queue=#<MonitorMixin::ConditionVariable:0xb719aa34 @monitor=#<Monitor:0xb719aa70 @mon_owner=nil, @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0>, @waiters=[]>, @connections=[], @checked_out=[]>
+libs are: ["active_record.rb", "extensions.rb", "jam_utils.rb", "s3.rb", "song_utils.rb", "user.rb", "utils.rb"]
+models are: ["comment.rb", "contains_genre.rb", "feed.rb", "follower.rb", "genre.rb", "jam_artist.rb", "jam.rb", "like.rb", "message_stream.rb", "process_info.rb", "published_jam.rb", "song_jam.rb", "song_lyric.rb", "song_manager.rb", "song.rb", "test_tables.rb", "user_feed.rb", "user_message_map.rb", "user_message_stream_map.rb", "user_message_stream.rb", "user.rb"]
+>> Thin web server (v1.2.5 codename This Is Not A Web Server)
+>> Maximum connections set to 1024
+>> Listening on 127.0.0.1:4567, CTRL+C to stop
+192.168.242.1 - - [17/Jan/2010 10:25:20] "GET / HTTP/1.1" 200 3527 0.4450
+192.168.242.1 - - [17/Jan/2010 10:25:20] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0170
+192.168.242.1 - - [17/Jan/2010 10:25:21] "GET /scripts/prototype.js HTTP/1.1" 200 139978 0.0156
+192.168.242.1 - - [17/Jan/2010 10:25:21] "GET /scripts/swfobject.js HTTP/1.1" 200 9759 0.0025
+192.168.242.1 - - [17/Jan/2010 10:25:22] "GET /scripts/all.js HTTP/1.1" 200 13645 0.0039
+192.168.242.1 - - [17/Jan/2010 10:25:22] "GET /scripts/core.js HTTP/1.1" 200 2300 0.0034
+192.168.242.1 - - [17/Jan/2010 10:25:22] "GET /images/logos/logo.jpg HTTP/1.1" 200 5116 0.0162
+192.168.242.1 - - [17/Jan/2010 10:25:22] "GET /prakashraman/profile_picture HTTP/1.1" 200 95762 0.0253
+192.168.242.1 - - [17/Jan/2010 10:25:22] "GET /images/icons/8thnote.png HTTP/1.1" 200 2404 0.0202
+192.168.242.1 - - [17/Jan/2010 10:25:22] "GET /swf/new-player.swf HTTP/1.1" 200 3750 0.0027
+192.168.242.1 - - [17/Jan/2010 10:25:23] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0043
+192.168.242.1 - - [17/Jan/2010 10:25:23] "GET /undefined HTTP/1.1" 200 2205 0.0636
+192.168.242.1 - - [17/Jan/2010 10:25:24] "GET /favicon.ico HTTP/1.1" 200 2205 0.0257
+192.168.242.1 - - [17/Jan/2010 10:29:56] "GET /signin HTTP/1.1" 200 2727 0.1149
+192.168.242.1 - - [17/Jan/2010 10:29:56] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0790
+192.168.242.1 - - [17/Jan/2010 10:29:56] "GET /favicon.ico HTTP/1.1" 200 2205 0.0204
+192.168.242.1 - - [17/Jan/2010 10:29:56] "GET /undefined HTTP/1.1" 200 2205 0.0119
+192.168.242.1 - - [17/Jan/2010 10:30:04] "POST /signin/process HTTP/1.1" 302 - 0.0082
+192.168.242.1 - - [17/Jan/2010 10:30:04] "GET /account HTTP/1.1" 302 - 0.0026
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [17/Jan/2010 10:30:04] "GET /account/home HTTP/1.1" 200 8700 0.1731
+192.168.242.1 - - [17/Jan/2010 10:30:04] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0064
+192.168.242.1 - - [17/Jan/2010 10:30:05] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 10:30:06] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0079
+192.168.242.1 - - [17/Jan/2010 10:30:07] "GET /scripts/all.js HTTP/1.1" 304 - 0.0028
+192.168.242.1 - - [17/Jan/2010 10:30:08] "GET /scripts/core.js HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [17/Jan/2010 10:30:08] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [17/Jan/2010 10:30:08] "GET /images/icons/staff.png HTTP/1.1" 200 2494 0.0207
+192.168.242.1 - - [17/Jan/2010 10:30:08] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0070
+192.168.242.1 - - [17/Jan/2010 10:30:08] "GET /images/icons/home.png HTTP/1.1" 200 2011 0.0043
+192.168.242.1 - - [17/Jan/2010 10:30:08] "GET /images/icons/profile1.png HTTP/1.1" 200 2310 0.0047
+192.168.242.1 - - [17/Jan/2010 10:30:08] "GET /images/icons/mail2.png HTTP/1.1" 200 1666 0.0034
+192.168.242.1 - - [17/Jan/2010 10:30:09] "GET /images/icons/follow2.png HTTP/1.1" 200 2032 0.0026
+192.168.242.1 - - [17/Jan/2010 10:30:09] "GET /images/icons/manage1.png HTTP/1.1" 200 5902 0.0026
+192.168.242.1 - - [17/Jan/2010 10:30:09] "GET /images/icons/help1.png HTTP/1.1" 200 1871 0.0025
+192.168.242.1 - - [17/Jan/2010 10:30:10] "GET /images/common/icon.png HTTP/1.1" 200 709 0.0049
+192.168.242.1 - - [17/Jan/2010 10:30:11] "GET /images/icons/update.png HTTP/1.1" 200 6439 0.0027
+192.168.242.1 - - [17/Jan/2010 10:30:12] "GET /images/icons/play1.png HTTP/1.1" 200 2422 0.0042
+192.168.242.1 - - [17/Jan/2010 10:30:12] "GET /images/icons/followers1.png HTTP/1.1" 200 4985 0.0026
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [17/Jan/2010 10:30:13] "GET /account/undefined HTTP/1.1" 200 5696 0.0243
+192.168.242.1 - - [17/Jan/2010 10:30:14] "GET /images/icons/play1.png HTTP/1.1" 200 2422 0.0050
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [17/Jan/2010 10:30:15] "GET /song/create HTTP/1.1" 200 6269 0.0419
+192.168.242.1 - - [17/Jan/2010 10:30:15] "GET /favicon.ico HTTP/1.1" 200 2323 0.0112
+192.168.242.1 - - [17/Jan/2010 10:30:16] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0106
+192.168.242.1 - - [17/Jan/2010 10:30:16] "GET /images/icons/followers1.png HTTP/1.1" 200 4985 0.0030
+192.168.242.1 - - [17/Jan/2010 10:30:16] "GET /favicon.ico HTTP/1.1" 200 2323 0.0134
+ActiveRecord::RecordNotFound - Couldn't find Song with ID=undefined:
+ urls/song.rb:31:in `GET /song/:song_id'
+ /usr/bin/thin:19:in `load'
+ /usr/bin/thin:19192.168.242.1 - - [17/Jan/2010 10:30:16] "GET /song/undefined HTTP/1.1" 500 30 0.0235
+192.168.242.1 - - [17/Jan/2010 10:30:23] "POST /song/register HTTP/1.1" 302 - 0.1683
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/song/manage/information.erb:11: warning: don't put space before argument parentheses
+192.168.242.1 - - [17/Jan/2010 10:30:23] "GET /song/1/manage HTTP/1.1" 200 10826 0.1548
+192.168.242.1 - - [17/Jan/2010 10:30:23] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0099
+192.168.242.1 - - [17/Jan/2010 10:30:24] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0047
+192.168.242.1 - - [17/Jan/2010 10:30:25] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0041
+192.168.242.1 - - [17/Jan/2010 10:30:26] "GET /scripts/all.js HTTP/1.1" 304 - 0.0040
+192.168.242.1 - - [17/Jan/2010 10:30:27] "GET /scripts/core.js HTTP/1.1" 304 - 0.0029
+192.168.242.1 - - [17/Jan/2010 10:30:27] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0031
+192.168.242.1 - - [17/Jan/2010 10:30:27] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [17/Jan/2010 10:30:27] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0031
+192.168.242.1 - - [17/Jan/2010 10:30:27] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0039
+192.168.242.1 - - [17/Jan/2010 10:30:27] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0030
+192.168.242.1 - - [17/Jan/2010 10:30:27] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0041
+192.168.242.1 - - [17/Jan/2010 10:30:27] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [17/Jan/2010 10:30:28] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [17/Jan/2010 10:30:29] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0039
+192.168.242.1 - - [17/Jan/2010 10:30:30] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0040
+192.168.242.1 - - [17/Jan/2010 10:30:31] "GET /images/icons/back1.png HTTP/1.1" 200 2241 0.0048
+192.168.242.1 - - [17/Jan/2010 10:30:32] "GET /images/icons/songpage1.png HTTP/1.1" 200 4700 0.0046
+192.168.242.1 - - [17/Jan/2010 10:30:32] "GET /song/1/undefined HTTP/1.1" 404 18 0.0034
+192.168.242.1 - - [17/Jan/2010 10:30:33] "GET /favicon.ico HTTP/1.1" 200 2323 0.0181
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/song/manage/information.erb:11: warning: don't put space before argument parentheses
+192.168.242.1 - - [17/Jan/2010 10:34:53] "GET /song/1/manage HTTP/1.1" 200 11371 0.1484
+192.168.242.1 - - [17/Jan/2010 10:34:53] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0063
+192.168.242.1 - - [17/Jan/2010 10:34:54] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 10:34:55] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0038
+192.168.242.1 - - [17/Jan/2010 10:34:56] "GET /scripts/all.js HTTP/1.1" 304 - 0.0045
+192.168.242.1 - - [17/Jan/2010 10:34:57] "GET /scripts/core.js HTTP/1.1" 304 - 0.0034
+192.168.242.1 - - [17/Jan/2010 10:34:57] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0053
+192.168.242.1 - - [17/Jan/2010 10:34:57] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0033
+192.168.242.1 - - [17/Jan/2010 10:34:57] "GET /partial/jam/manage/jam_picture_form?jam_id=1 HTTP/1.1" 200 777 0.0075
+192.168.242.1 - - [17/Jan/2010 10:34:57] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [17/Jan/2010 10:34:57] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [17/Jan/2010 10:34:57] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0028
+192.168.242.1 - - [17/Jan/2010 10:34:57] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 10:34:57] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [17/Jan/2010 10:34:57] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0028
+192.168.242.1 - - [17/Jan/2010 10:34:57] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0059
+192.168.242.1 - - [17/Jan/2010 10:34:57] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0022
+192.168.242.1 - - [17/Jan/2010 10:34:57] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [17/Jan/2010 10:34:57] "GET /scripts/all.js HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 10:34:57] "GET /scripts/core.js HTTP/1.1" 304 - 0.0022
+192.168.242.1 - - [17/Jan/2010 10:34:57] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0022
+192.168.242.1 - - [17/Jan/2010 10:34:58] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0039
+192.168.242.1 - - [17/Jan/2010 10:34:59] "GET /images/icons/back1.png HTTP/1.1" 304 - 0.0038
+192.168.242.1 - - [17/Jan/2010 10:35:00] "GET /images/icons/songpage1.png HTTP/1.1" 304 - 0.0043
+192.168.242.1 - - [17/Jan/2010 10:35:01] "GET /song/1/undefined HTTP/1.1" 404 18 0.0032
+192.168.242.1 - - [17/Jan/2010 10:35:02] "GET /jam/1/jam_picture HTTP/1.1" 200 95762 0.0837
+192.168.242.1 - - [17/Jan/2010 10:35:02] "GET /favicon.ico HTTP/1.1" 200 2323 0.0123
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/song/manage/information.erb:11: warning: don't put space before argument parentheses
+192.168.242.1 - - [17/Jan/2010 10:37:47] "GET /song/1/manage HTTP/1.1" 200 11373 0.0576
+192.168.242.1 - - [17/Jan/2010 10:37:47] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0106
+192.168.242.1 - - [17/Jan/2010 10:37:49] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0028
+192.168.242.1 - - [17/Jan/2010 10:37:50] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0037
+192.168.242.1 - - [17/Jan/2010 10:37:51] "GET /scripts/core.js HTTP/1.1" 304 - 0.0022
+192.168.242.1 - - [17/Jan/2010 10:37:52] "GET /scripts/all.js HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 10:37:52] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 10:37:52] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [17/Jan/2010 10:37:52] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0022
+192.168.242.1 - - [17/Jan/2010 10:37:52] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [17/Jan/2010 10:37:52] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0029
+192.168.242.1 - - [17/Jan/2010 10:37:52] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0030
+192.168.242.1 - - [17/Jan/2010 10:37:52] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0048
+192.168.242.1 - - [17/Jan/2010 10:37:52] "GET /images/icons/songpage1.png HTTP/1.1" 304 - 0.0038
+192.168.242.1 - - [17/Jan/2010 10:37:52] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0034
+192.168.242.1 - - [17/Jan/2010 10:37:53] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0033
+192.168.242.1 - - [17/Jan/2010 10:37:54] "GET /partial/song/manage/song_picture_form?jam_id=1 HTTP/1.1" 200 777 0.0101
+192.168.242.1 - - [17/Jan/2010 10:37:54] "GET /images/icons/back1.png HTTP/1.1" 304 - 0.0022
+192.168.242.1 - - [17/Jan/2010 10:37:54] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0021
+192.168.242.1 - - [17/Jan/2010 10:37:54] "GET /song/1/undefined HTTP/1.1" 404 18 0.0029
+192.168.242.1 - - [17/Jan/2010 10:37:55] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0099
+192.168.242.1 - - [17/Jan/2010 10:37:56] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0033
+192.168.242.1 - - [17/Jan/2010 10:37:57] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [17/Jan/2010 10:37:58] "GET /scripts/all.js HTTP/1.1" 304 - 0.0036
+192.168.242.1 - - [17/Jan/2010 10:37:59] "GET /scripts/core.js HTTP/1.1" 304 - 0.0050
+192.168.242.1 - - [17/Jan/2010 10:37:59] "GET /jam/1/jam_picture HTTP/1.1" 304 - 0.0056
+192.168.242.1 - - [17/Jan/2010 10:37:59] "GET /favicon.ico HTTP/1.1" 200 2323 0.0116
+>> Exiting!
+>> Writing PID to /home/jammmin/webserver/app/processes.4567
+>> Changing process privilege to root:root
+Couldn't change user and group to root:root: Operation not permitted
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
+DBCONFIG: {"port"=>5432, "username"=>"jammmin", "adapter"=>"postgresql", "database"=>"garage", "password"=>"3WiseMen"}
+DB CONNECTION: #<ActiveRecord::ConnectionAdapters::ConnectionPool:0xb72928d8 @connection_mutex=#<Monitor:0xb729289c @mon_owner=nil, @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0>, @reserved_connections={}, @timeout=5, @spec=#<ActiveRecord::Base::ConnectionSpecification:0xb6f4c00c @adapter_method="postgresql_connection", @config={:username=>"jammmin", :password=>"3WiseMen", :port=>5432, :database=>"garage", :adapter=>"postgresql"}>, @size=5, @queue=#<MonitorMixin::ConditionVariable:0xb7292860 @monitor=#<Monitor:0xb729289c @mon_owner=nil, @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0>, @waiters=[]>, @connections=[], @checked_out=[]>
+libs are: ["active_record.rb", "extensions.rb", "jam_utils.rb", "s3.rb", "song_utils.rb", "user.rb", "utils.rb"]
+models are: ["comment.rb", "contains_genre.rb", "feed.rb", "follower.rb", "genre.rb", "jam_artist.rb", "jam.rb", "like.rb", "message_stream.rb", "process_info.rb", "published_jam.rb", "song_jam.rb", "song_lyric.rb", "song_manager.rb", "song.rb", "test_tables.rb", "user_feed.rb", "user_message_map.rb", "user_message_stream_map.rb", "user_message_stream.rb", "user.rb"]
+>> Thin web server (v1.2.5 codename This Is Not A Web Server)
+>> Maximum connections set to 1024
+>> Listening on 127.0.0.1:4567, CTRL+C to stop
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/song/manage/information.erb:11: warning: don't put space before argument parentheses
+NameError - undefined local variable or method `jam' for #<Sinatra::Application:0xb6fdbc0c>:
+ /home/jammmin/webserver/app/views/song/manage/song_picture.erb:1:in `render_erb'
+ helpers/all.rb:12:in `partial'
+ /home/jammmin/webserver/app/views/song/manage/page.erb:45:in `render_erb'
+ helpers/all.rb:12:in `partial'
+ /home/jammmin/webserver/app/views/body/structure.erb:7:in `render_erb'
+ urls/song.rb:67:in `GET /song/:song_id/manage'
+ /usr/bin/thin:19:in `load'
+ /usr/bin/thin:19192.168.242.1 - - [17/Jan/2010 10:43:50] "GET /song/1/manage HTTP/1.1" 500 30 0.1573
+192.168.242.1 - - [17/Jan/2010 10:43:51] "GET /favicon.ico HTTP/1.1" 200 2323 0.0203
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/song/manage/information.erb:11: warning: don't put space before argument parentheses
+192.168.242.1 - - [17/Jan/2010 10:44:45] "GET /song/1/manage HTTP/1.1" 200 11375 0.0732
+192.168.242.1 - - [17/Jan/2010 10:44:45] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0680
+192.168.242.1 - - [17/Jan/2010 10:44:46] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0036
+192.168.242.1 - - [17/Jan/2010 10:44:47] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0037
+192.168.242.1 - - [17/Jan/2010 10:44:48] "GET /scripts/all.js HTTP/1.1" 304 - 0.0041
+192.168.242.1 - - [17/Jan/2010 10:44:49] "GET /scripts/core.js HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [17/Jan/2010 10:44:49] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [17/Jan/2010 10:44:49] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0031
+192.168.242.1 - - [17/Jan/2010 10:44:49] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [17/Jan/2010 10:44:49] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0032
+NameError - undefined local variable or method `jam_id' for #<Sinatra::Application:0xb72744a0>:
+ /home/jammmin/webserver/app/views/song/manage/song_picture_form.erb:1:in `render_erb'
+ /home/jammmin/webserver/app/server.rb:52:in `GET /partial/*'
+ /usr/bin/thin:19:in `load'
+ /usr/bin/thin:19192.168.242.1 - - [17/Jan/2010 10:44:49] "GET /partial/song/manage/song_picture_form?song_id=1 HTTP/1.1" 500 30 0.0071
+192.168.242.1 - - [17/Jan/2010 10:44:49] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [17/Jan/2010 10:44:49] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0030
+192.168.242.1 - - [17/Jan/2010 10:44:49] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [17/Jan/2010 10:44:49] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0033
+192.168.242.1 - - [17/Jan/2010 10:44:50] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0029
+192.168.242.1 - - [17/Jan/2010 10:44:51] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0038
+192.168.242.1 - - [17/Jan/2010 10:44:52] "GET /images/icons/back1.png HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [17/Jan/2010 10:44:53] "GET /images/icons/songpage1.png HTTP/1.1" 304 - 0.0038
+192.168.242.1 - - [17/Jan/2010 10:44:53] "GET /song/1/undefined HTTP/1.1" 404 18 0.0046
+192.168.242.1 - - [17/Jan/2010 10:44:54] "GET /favicon.ico HTTP/1.1" 200 2323 0.0131
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/song/manage/information.erb:11: warning: don't put space before argument parentheses
+192.168.242.1 - - [17/Jan/2010 10:45:38] "GET /song/1/manage HTTP/1.1" 200 11375 0.0637
+192.168.242.1 - - [17/Jan/2010 10:45:38] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0086
+192.168.242.1 - - [17/Jan/2010 10:45:39] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0039
+192.168.242.1 - - [17/Jan/2010 10:45:40] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0036
+192.168.242.1 - - [17/Jan/2010 10:45:41] "GET /scripts/all.js HTTP/1.1" 304 - 0.0022
+192.168.242.1 - - [17/Jan/2010 10:45:42] "GET /scripts/core.js HTTP/1.1" 304 - 0.0037
+192.168.242.1 - - [17/Jan/2010 10:45:42] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [17/Jan/2010 10:45:42] "GET /partial/song/manage/song_picture_form?song_id=1 HTTP/1.1" 200 781 0.0072
+192.168.242.1 - - [17/Jan/2010 10:45:42] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [17/Jan/2010 10:45:42] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [17/Jan/2010 10:45:42] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0031
+192.168.242.1 - - [17/Jan/2010 10:45:42] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [17/Jan/2010 10:45:42] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 10:45:42] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [17/Jan/2010 10:45:43] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0123
+192.168.242.1 - - [17/Jan/2010 10:45:43] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0021
+192.168.242.1 - - [17/Jan/2010 10:45:43] "GET /scripts/all.js HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [17/Jan/2010 10:45:43] "GET /scripts/core.js HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [17/Jan/2010 10:45:43] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0022
+192.168.242.1 - - [17/Jan/2010 10:45:43] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0031
+192.168.242.1 - - [17/Jan/2010 10:45:44] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0035
+192.168.242.1 - - [17/Jan/2010 10:45:44] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0035
+192.168.242.1 - - [17/Jan/2010 10:45:45] "GET /images/icons/back1.png HTTP/1.1" 304 - 0.0035
+192.168.242.1 - - [17/Jan/2010 10:45:46] "GET /images/icons/songpage1.png HTTP/1.1" 304 - 0.0039
+192.168.242.1 - - [17/Jan/2010 10:45:47] "GET /song/1/undefined HTTP/1.1" 404 18 0.0027
+undefined method `song_picture' for #<Song:0xb70a52a0>
+192.168.242.1 - - [17/Jan/2010 10:45:48] "GET /song/1/song_picture HTTP/1.1" 500 54 0.0048
+192.168.242.1 - - [17/Jan/2010 10:45:48] "GET /favicon.ico HTTP/1.1" 200 2323 0.0116
+#<File:0xb7064cdc>
+NoMethodError - undefined method `change_song_picture' for #<Song:0xb705e6d4>:
+ urls/song.rb:74:in `POST /song/:song_id/manage/change_song_picture'
+ /usr/bin/thin:19:in `load'
+ /usr/bin/thin:19192.168.242.1 - - [17/Jan/2010 10:46:14] "POST /song/1/manage/change_song_picture HTTP/1.1" 500 30 0.0184
+192.168.242.1 - - [17/Jan/2010 10:46:14] "GET /favicon.ico HTTP/1.1" 200 2323 0.0110
+>> Exiting!
+>> Writing PID to /home/jammmin/webserver/app/processes.4567
+>> Changing process privilege to root:root
+Couldn't change user and group to root:root: Operation not permitted
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
+DBCONFIG: {"port"=>5432, "username"=>"jammmin", "adapter"=>"postgresql", "database"=>"garage", "password"=>"3WiseMen"}
+DB CONNECTION: #<ActiveRecord::ConnectionAdapters::ConnectionPool:0xb72108d8 @connection_mutex=#<Monitor:0xb721089c @mon_owner=nil, @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0>, @reserved_connections={}, @timeout=5, @spec=#<ActiveRecord::Base::ConnectionSpecification:0xb6eca00c @adapter_method="postgresql_connection", @config={:username=>"jammmin", :password=>"3WiseMen", :port=>5432, :database=>"garage", :adapter=>"postgresql"}>, @size=5, @queue=#<MonitorMixin::ConditionVariable:0xb7210860 @monitor=#<Monitor:0xb721089c @mon_owner=nil, @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0>, @waiters=[]>, @connections=[], @checked_out=[]>
+libs are: ["active_record.rb", "extensions.rb", "jam_utils.rb", "s3.rb", "song_utils.rb", "user.rb", "utils.rb"]
+models are: ["comment.rb", "contains_genre.rb", "feed.rb", "follower.rb", "genre.rb", "jam_artist.rb", "jam.rb", "like.rb", "message_stream.rb", "process_info.rb", "published_jam.rb", "song_jam.rb", "song_lyric.rb", "song_manager.rb", "song.rb", "test_tables.rb", "user_feed.rb", "user_message_map.rb", "user_message_stream_map.rb", "user_message_stream.rb", "user.rb"]
+>> Thin web server (v1.2.5 codename This Is Not A Web Server)
+>> Maximum connections set to 1024
+>> Listening on 127.0.0.1:4567, CTRL+C to stop
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/song/manage/information.erb:11: warning: don't put space before argument parentheses
+192.168.242.1 - - [17/Jan/2010 10:47:57] "GET /song/1/manage HTTP/1.1" 200 11375 0.1454
+192.168.242.1 - - [17/Jan/2010 10:47:57] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0157
+192.168.242.1 - - [17/Jan/2010 10:47:58] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0037
+192.168.242.1 - - [17/Jan/2010 10:47:59] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0029
+192.168.242.1 - - [17/Jan/2010 10:48:00] "GET /scripts/all.js HTTP/1.1" 304 - 0.0037
+192.168.242.1 - - [17/Jan/2010 10:48:01] "GET /scripts/core.js HTTP/1.1" 304 - 0.0038
+192.168.242.1 - - [17/Jan/2010 10:48:01] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0068
+192.168.242.1 - - [17/Jan/2010 10:48:01] "GET /partial/song/manage/song_picture_form?song_id=1 HTTP/1.1" 200 781 0.0117
+192.168.242.1 - - [17/Jan/2010 10:48:01] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [17/Jan/2010 10:48:02] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0028
+192.168.242.1 - - [17/Jan/2010 10:48:02] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [17/Jan/2010 10:48:02] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [17/Jan/2010 10:48:02] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [17/Jan/2010 10:48:02] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0074
+192.168.242.1 - - [17/Jan/2010 10:48:02] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0033
+192.168.242.1 - - [17/Jan/2010 10:48:02] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 10:48:02] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [17/Jan/2010 10:48:02] "GET /scripts/all.js HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 10:48:02] "GET /scripts/core.js HTTP/1.1" 304 - 0.0028
+192.168.242.1 - - [17/Jan/2010 10:48:02] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [17/Jan/2010 10:48:02] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [17/Jan/2010 10:48:03] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0033
+192.168.242.1 - - [17/Jan/2010 10:48:04] "GET /images/icons/back1.png HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [17/Jan/2010 10:48:05] "GET /images/icons/songpage1.png HTTP/1.1" 304 - 0.0030
+192.168.242.1 - - [17/Jan/2010 10:48:06] "GET /song/1/song_picture HTTP/1.1" 200 2404 0.0062
+192.168.242.1 - - [17/Jan/2010 10:48:06] "GET /song/1/undefined HTTP/1.1" 404 18 0.0031
+192.168.242.1 - - [17/Jan/2010 10:48:07] "GET /favicon.ico HTTP/1.1" 200 2323 0.0158
+#<File:0xb7200b2c>
+NoMethodError - undefined method `change_song_picture' for #<Song:0xb71fa8d0>:
+ urls/song.rb:74:in `POST /song/:song_id/manage/change_song_picture'
+ /usr/bin/thin:19:in `load'
+ /usr/bin/thin:19192.168.242.1 - - [17/Jan/2010 10:48:08] "POST /song/1/manage/change_song_picture HTTP/1.1" 500 30 0.0080
+192.168.242.1 - - [17/Jan/2010 10:48:08] "GET /favicon.ico HTTP/1.1" 200 2323 0.0115
+>> Exiting!
+>> Writing PID to /home/jammmin/webserver/app/processes.4567
+>> Changing process privilege to root:root
+Couldn't change user and group to root:root: Operation not permitted
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
+DBCONFIG: {"port"=>5432, "username"=>"jammmin", "adapter"=>"postgresql", "database"=>"garage", "password"=>"3WiseMen"}
+DB CONNECTION: #<ActiveRecord::ConnectionAdapters::ConnectionPool:0xb724eaac @connection_mutex=#<Monitor:0xb724ea70 @mon_owner=nil, @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0>, @reserved_connections={}, @timeout=5, @spec=#<ActiveRecord::Base::ConnectionSpecification:0xb6f081f4 @adapter_method="postgresql_connection", @config={:username=>"jammmin", :password=>"3WiseMen", :port=>5432, :database=>"garage", :adapter=>"postgresql"}>, @size=5, @queue=#<MonitorMixin::ConditionVariable:0xb724ea34 @monitor=#<Monitor:0xb724ea70 @mon_owner=nil, @mon_waiting_queue=[], @mon_entering_queue=[], @mon_count=0>, @waiters=[]>, @connections=[], @checked_out=[]>
+libs are: ["active_record.rb", "extensions.rb", "jam_utils.rb", "s3.rb", "song_utils.rb", "user.rb", "utils.rb"]
+models are: ["comment.rb", "contains_genre.rb", "feed.rb", "follower.rb", "genre.rb", "jam_artist.rb", "jam.rb", "like.rb", "message_stream.rb", "process_info.rb", "published_jam.rb", "song_jam.rb", "song_lyric.rb", "song_manager.rb", "song.rb", "test_tables.rb", "user_feed.rb", "user_message_map.rb", "user_message_stream_map.rb", "user_message_stream.rb", "user.rb"]
+>> Thin web server (v1.2.5 codename This Is Not A Web Server)
+>> Maximum connections set to 1024
+>> Listening on 127.0.0.1:4567, CTRL+C to stop
+192.168.242.1 - - [17/Jan/2010 10:48:37] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0368
+192.168.242.1 - - [17/Jan/2010 10:48:38] "GET /scripts/all.js HTTP/1.1" 304 - 0.0047
+192.168.242.1 - - [17/Jan/2010 10:48:39] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [17/Jan/2010 10:48:40] "GET /scripts/core.js HTTP/1.1" 304 - 0.0041
+192.168.242.1 - - [17/Jan/2010 10:48:40] "GET /song/1/song_picture HTTP/1.1" 304 - 0.0156
+192.168.242.1 - - [17/Jan/2010 10:48:40] "GET /favicon.ico HTTP/1.1" 200 2323 0.0155
+#<File:0xb6f5cc54>
+192.168.242.1 - - [17/Jan/2010 10:48:45] "POST /song/1/manage/change_song_picture HTTP/1.1" 302 - 0.0416
+192.168.242.1 - - [17/Jan/2010 10:48:45] "GET /partial/song/manage/song_picture_form?song_id=1 HTTP/1.1" 200 781 0.0071
+192.168.242.1 - - [17/Jan/2010 10:48:45] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0086
+192.168.242.1 - - [17/Jan/2010 10:48:46] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 10:48:47] "GET /scripts/all.js HTTP/1.1" 304 - 0.0040
+192.168.242.1 - - [17/Jan/2010 10:48:48] "GET /scripts/core.js HTTP/1.1" 304 - 0.0046
+192.168.242.1 - - [17/Jan/2010 10:48:49] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0031
+192.168.242.1 - - [17/Jan/2010 10:48:49] "GET /song/1/song_picture HTTP/1.1" 200 1947 0.0053
+192.168.242.1 - - [17/Jan/2010 10:48:49] "GET /favicon.ico HTTP/1.1" 200 2323 0.0151
+true
+true
+true
+true
+192.168.242.1 - - [17/Jan/2010 10:49:00] "GET /song/1 HTTP/1.1" 200 5822 0.1843
+192.168.242.1 - - [17/Jan/2010 10:49:00] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0755
+192.168.242.1 - - [17/Jan/2010 10:49:00] "GET /images/icons/miniicon.png HTTP/1.1" 200 2173 0.0029
+192.168.242.1 - - [17/Jan/2010 10:49:00] "GET /images/icons/like.png HTTP/1.1" 200 1908 0.0028
+ActiveRecord::RecordNotFound - Couldn't find Song with ID=undefined:
+ urls/song.rb:31:in `GET /song/:song_id'
+ /usr/bin/thin:19:in `load'
+ /usr/bin/thin:19192.168.242.1 - - [17/Jan/2010 10:49:00] "GET /song/undefined HTTP/1.1" 500 30 0.0046
+192.168.242.1 - - [17/Jan/2010 10:49:01] "GET /favicon.ico HTTP/1.1" 200 2323 0.0123
+true
+true
+true
+true
+NameError - undefined local variable or method `jam' for #<Sinatra::Application:0xb7232410>:
+ /home/jammmin/webserver/app/views/song/basic_info.erb:4:in `render_erb'
+ helpers/all.rb:12:in `partial'
+ /home/jammmin/webserver/app/views/song/page.erb:6:in `render_erb'
+ helpers/all.rb:12:in `partial'
+ /home/jammmin/webserver/app/views/body/structure.erb:7:in `render_erb'
+ urls/song.rb:33:in `GET /song/:song_id'
+ /usr/bin/thin:19:in `load'
+ /usr/bin/thin:19192.168.242.1 - - [17/Jan/2010 10:50:34] "GET /song/1 HTTP/1.1" 500 30 0.0240
+192.168.242.1 - - [17/Jan/2010 10:50:34] "GET /favicon.ico HTTP/1.1" 200 2323 0.0118
+true
+true
+true
+true
+192.168.242.1 - - [17/Jan/2010 10:50:49] "GET /song/1 HTTP/1.1" 200 5982 0.0427
+192.168.242.1 - - [17/Jan/2010 10:50:49] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0066
+192.168.242.1 - - [17/Jan/2010 10:50:50] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0035
+192.168.242.1 - - [17/Jan/2010 10:50:52] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0036
+192.168.242.1 - - [17/Jan/2010 10:50:53] "GET /scripts/all.js HTTP/1.1" 304 - 0.0029
+192.168.242.1 - - [17/Jan/2010 10:50:54] "GET /scripts/core.js HTTP/1.1" 304 - 0.0038
+192.168.242.1 - - [17/Jan/2010 10:50:54] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0031
+192.168.242.1 - - [17/Jan/2010 10:50:54] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [17/Jan/2010 10:50:54] "GET /images/icons/miniicon.png HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [17/Jan/2010 10:50:54] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [17/Jan/2010 10:50:54] "GET /images/icons/back1.png HTTP/1.1" 304 - 0.0035
+192.168.242.1 - - [17/Jan/2010 10:50:55] "GET /images/icons/manage1.png HTTP/1.1" 304 - 0.0028
+192.168.242.1 - - [17/Jan/2010 10:50:56] "GET /song/1/song_picture HTTP/1.1" 304 - 0.0038
+192.168.242.1 - - [17/Jan/2010 10:50:57] "GET /images/icons/like.png HTTP/1.1" 304 - 0.0028
+192.168.242.1 - - [17/Jan/2010 10:50:58] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0034
+ActiveRecord::RecordNotFound - Couldn't find Song with ID=undefined:
+ urls/song.rb:31:in `GET /song/:song_id'
+ /usr/bin/thin:19:in `load'
+ /usr/bin/thin:19192.168.242.1 - - [17/Jan/2010 10:50:58] "GET /song/undefined HTTP/1.1" 500 30 0.0065
+192.168.242.1 - - [17/Jan/2010 10:50:59] "GET /favicon.ico HTTP/1.1" 200 2323 0.0106
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/song/manage/information.erb:11: warning: don't put space before argument parentheses
+192.168.242.1 - - [17/Jan/2010 11:04:32] "GET /song/1/manage HTTP/1.1" 200 11375 0.0974
+192.168.242.1 - - [17/Jan/2010 11:04:32] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0148
+192.168.242.1 - - [17/Jan/2010 11:04:32] "GET /partial/song/manage/song_picture_form?song_id=1 HTTP/1.1" 200 781 0.0102
+192.168.242.1 - - [17/Jan/2010 11:04:32] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0073
+192.168.242.1 - - [17/Jan/2010 11:04:32] "GET /song/1/song_picture HTTP/1.1" 304 - 0.0049
+192.168.242.1 - - [17/Jan/2010 11:04:32] "GET /favicon.ico HTTP/1.1" 200 2323 0.0132
+192.168.242.1 - - [17/Jan/2010 11:04:32] "GET /song/1/undefined HTTP/1.1" 404 18 0.0028
+true
+true
+true
+true
+192.168.242.1 - - [17/Jan/2010 11:04:54] "GET /jam/1 HTTP/1.1" 200 6686 0.0956
+192.168.242.1 - - [17/Jan/2010 11:04:54] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0160
+192.168.242.1 - - [17/Jan/2010 11:04:54] "GET /images/icons/play.png HTTP/1.1" 200 2216 0.0031
+192.168.242.1 - - [17/Jan/2010 11:04:55] "GET /favicon.ico HTTP/1.1" 200 2323 0.0132
+ActiveRecord::RecordNotFound - Couldn't find Jam with ID=undefined:
+ urls/jam.rb:103:in `GET /jam/:jam_id'
+ /usr/bin/thin:19:in `load'
+ /usr/bin/thin:19192.168.242.1 - - [17/Jan/2010 11:04:55] "GET /jam/undefined HTTP/1.1" 500 30 0.0074
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [17/Jan/2010 11:05:02] "GET /account/jams HTTP/1.1" 200 7269 0.0474
+192.168.242.1 - - [17/Jan/2010 11:05:02] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0069
+192.168.242.1 - - [17/Jan/2010 11:05:02] "GET /images/icons/play1.png HTTP/1.1" 200 2422 0.0027
+192.168.242.1 - - [17/Jan/2010 11:05:02] "GET /favicon.ico HTTP/1.1" 200 2323 0.0177
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [17/Jan/2010 11:05:02] "GET /account/undefined HTTP/1.1" 200 5696 0.0188
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/jam/manage/information.erb:10: warning: don't put space before argument parentheses
+192.168.242.1 - - [17/Jan/2010 11:05:04] "GET /jam/1/manage HTTP/1.1" 200 10840 0.1977
+192.168.242.1 - - [17/Jan/2010 11:05:04] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0071
+192.168.242.1 - - [17/Jan/2010 11:05:04] "GET /images/icons/jampage.png HTTP/1.1" 200 2748 0.0027
+192.168.242.1 - - [17/Jan/2010 11:05:04] "GET /jam/1/manage/upload HTTP/1.1" 200 629 0.0088
+192.168.242.1 - - [17/Jan/2010 11:05:04] "GET /partial/jam/manage/jam_picture_form?jam_id=1 HTTP/1.1" 200 777 0.0135
+192.168.242.1 - - [17/Jan/2010 11:05:04] "GET /images/icons/user.png HTTP/1.1" 200 2847 0.0042
+192.168.242.1 - - [17/Jan/2010 11:05:05] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0064
+192.168.242.1 - - [17/Jan/2010 11:05:05] "GET /jam/1/undefined HTTP/1.1" 404 18 0.0040
+192.168.242.1 - - [17/Jan/2010 11:05:06] "GET /favicon.ico HTTP/1.1" 200 2323 0.0668
+{:type=>"audio/mp3", :tempfile=>#<File:/tmp/RackMultipart20100117-6444-179ebyg-0>, :head=>"Content-Disposition: form-data; name=\"mefile\"; filename=\"1.mp3\"\r\nContent-Type: audio/mp3\r\n", :filename=>"1.mp3", :name=>"mefile"}
+192.168.242.1 - - [17/Jan/2010 11:05:17] "POST /jam/1/manage/upload_file?1ebd74faa0f71d62e4cfdeb50384a15d HTTP/1.1" 200 - 0.2345
+192.168.242.1 - - [17/Jan/2010 11:05:18] "GET /jam/1/manage/file_actions HTTP/1.1" 200 334 0.0073
+192.168.242.1 - - [17/Jan/2010 11:05:18] "GET /jam/1/manage/upload HTTP/1.1" 200 629 0.0074
+192.168.242.1 - - [17/Jan/2010 11:05:18] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0065
+192.168.242.1 - - [17/Jan/2010 11:05:18] "GET /favicon.ico HTTP/1.1" 200 2323 0.0134
+192.168.242.1 - - [17/Jan/2010 11:05:18] "GET /favicon.ico HTTP/1.1" 200 2323 0.0142
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/jam/manage/information.erb:10: warning: don't put space before argument parentheses
+192.168.242.1 - - [17/Jan/2010 11:05:24] "GET /jam/2/manage HTTP/1.1" 200 10840 0.1395
+192.168.242.1 - - [17/Jan/2010 11:05:24] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0066
+192.168.242.1 - - [17/Jan/2010 11:05:24] "GET /jam/2/manage/upload HTTP/1.1" 200 629 0.0119
+192.168.242.1 - - [17/Jan/2010 11:05:25] "GET /partial/jam/manage/jam_picture_form?jam_id=2 HTTP/1.1" 200 777 0.0157
+192.168.242.1 - - [17/Jan/2010 11:05:25] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0065
+192.168.242.1 - - [17/Jan/2010 11:05:25] "GET /jam/2/undefined HTTP/1.1" 404 18 0.0026
+192.168.242.1 - - [17/Jan/2010 11:05:26] "GET /jam/2/jam_picture HTTP/1.1" 200 2404 0.0043
+192.168.242.1 - - [17/Jan/2010 11:05:27] "GET /favicon.ico HTTP/1.1" 200 2323 0.0142
+{:type=>"audio/mp3", :tempfile=>#<File:/tmp/RackMultipart20100117-6444-nygfs4-0>, :head=>"Content-Disposition: form-data; name=\"mefile\"; filename=\"2525200.mp3\"\r\nContent-Type: audio/mp3\r\n", :filename=>"2525200.mp3", :name=>"mefile"}
+192.168.242.1 - - [17/Jan/2010 11:05:29] "POST /jam/2/manage/upload_file?050a7833fc65ab161d67b616085a5d1e HTTP/1.1" 200 - 0.1529
+192.168.242.1 - - [17/Jan/2010 11:05:30] "GET /jam/2/manage/file_actions HTTP/1.1" 200 334 0.0068
+192.168.242.1 - - [17/Jan/2010 11:05:30] "GET /jam/2/manage/upload HTTP/1.1" 200 629 0.0073
+192.168.242.1 - - [17/Jan/2010 11:05:30] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0119
+192.168.242.1 - - [17/Jan/2010 11:05:31] "GET /favicon.ico HTTP/1.1" 200 2323 0.0118
+192.168.242.1 - - [17/Jan/2010 11:05:31] "GET /favicon.ico HTTP/1.1" 200 2323 0.0111
+true
+true
+true
+true
+192.168.242.1 - - [17/Jan/2010 11:06:08] "GET /song/1 HTTP/1.1" 200 5982 0.0606
+192.168.242.1 - - [17/Jan/2010 11:06:08] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0073
+192.168.242.1 - - [17/Jan/2010 11:06:08] "GET /song/1/song_picture HTTP/1.1" 304 - 0.0041
+192.168.242.1 - - [17/Jan/2010 11:06:08] "GET /favicon.ico HTTP/1.1" 200 2323 0.0177
+ActiveRecord::RecordNotFound - Couldn't find Song with ID=undefined:
+ urls/song.rb:31:in `GET /song/:song_id'
+ /usr/bin/thin:19:in `load'
+ /usr/bin/thin:19192.168.242.1 - - [17/Jan/2010 11:06:09] "GET /song/undefined HTTP/1.1" 500 30 0.0105
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/song/manage/information.erb:11: warning: don't put space before argument parentheses
+192.168.242.1 - - [17/Jan/2010 11:06:10] "GET /song/1/manage HTTP/1.1" 200 11375 0.0629
+192.168.242.1 - - [17/Jan/2010 11:06:10] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0529
+192.168.242.1 - - [17/Jan/2010 11:06:10] "GET /partial/song/manage/song_picture_form?song_id=1 HTTP/1.1" 200 781 0.0080
+192.168.242.1 - - [17/Jan/2010 11:06:10] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0088
+192.168.242.1 - - [17/Jan/2010 11:06:10] "GET /song/1/song_picture HTTP/1.1" 304 - 0.0050
+192.168.242.1 - - [17/Jan/2010 11:06:10] "GET /favicon.ico HTTP/1.1" 200 2323 0.0131
+192.168.242.1 - - [17/Jan/2010 11:06:10] "GET /song/1/undefined HTTP/1.1" 404 18 0.0027
+192.168.242.1 - - [17/Jan/2010 11:06:14] "GET /song/1/manage/add_jam?jam_id=2 HTTP/1.1" 200 22 0.1226
+192.168.242.1 - - [17/Jan/2010 11:06:15] "GET /song/1/manage/jams HTTP/1.1" 200 1120 0.0333
+192.168.242.1 - - [17/Jan/2010 11:06:16] "GET /song/1/manage/artists HTTP/1.1" 200 621 0.0126
+192.168.242.1 - - [17/Jan/2010 11:06:17] "GET /song/1/manage/add_jam?jam_id=1 HTTP/1.1" 200 22 0.0190
+192.168.242.1 - - [17/Jan/2010 11:06:17] "GET /song/1/manage/jams HTTP/1.1" 200 1808 0.0260
+192.168.242.1 - - [17/Jan/2010 11:06:18] "GET /song/1/manage/artists HTTP/1.1" 200 621 0.0146
+RUNNING: ruby /home/jammmin/webserver/app/scripts/publish_song.rb --jams=1,2 --song=1 --process_id=1
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
+192.168.242.1 - - [17/Jan/2010 11:06:25] "GET /song/1/manage/publish?jam_ids=1%2C2 HTTP/1.1" 200 1 2.5852
+192.168.242.1 - - [17/Jan/2010 11:06:25] "GET /images/icons/loading.gif HTTP/1.1" 200 1635 0.0106
+192.168.242.1 - - [17/Jan/2010 11:06:26] "GET /process_info/1 HTTP/1.1" 200 93 0.0142
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/song/manage/information.erb:11: warning: don't put space before argument parentheses
+192.168.242.1 - - [17/Jan/2010 11:06:26] "GET /song/1/manage HTTP/1.1" 200 12877 0.1297
+192.168.242.1 - - [17/Jan/2010 11:06:27] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0091
+192.168.242.1 - - [17/Jan/2010 11:06:27] "GET /partial/song/manage/song_picture_form?song_id=1 HTTP/1.1" 200 781 0.0099
+192.168.242.1 - - [17/Jan/2010 11:06:27] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0084
+192.168.242.1 - - [17/Jan/2010 11:06:27] "GET /song/1/song_picture HTTP/1.1" 304 - 0.0106
+192.168.242.1 - - [17/Jan/2010 11:06:27] "GET /favicon.ico HTTP/1.1" 200 2323 0.0129
+192.168.242.1 - - [17/Jan/2010 11:06:27] "GET /song/1/undefined HTTP/1.1" 404 18 0.0055
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/song/manage/information.erb:11: warning: don't put space before argument parentheses
+192.168.242.1 - - [17/Jan/2010 11:08:31] "GET /song/1/manage HTTP/1.1" 200 12877 0.0931
+192.168.242.1 - - [17/Jan/2010 11:08:31] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0132
+192.168.242.1 - - [17/Jan/2010 11:08:32] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [17/Jan/2010 11:08:33] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [17/Jan/2010 11:08:34] "GET /scripts/all.js HTTP/1.1" 304 - 0.0032
+192.168.242.1 - - [17/Jan/2010 11:08:35] "GET /scripts/core.js HTTP/1.1" 304 - 0.0045
+192.168.242.1 - - [17/Jan/2010 11:08:35] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0036
+192.168.242.1 - - [17/Jan/2010 11:08:35] "GET /partial/song/manage/song_picture_form?song_id=1 HTTP/1.1" 200 781 0.0111
+192.168.242.1 - - [17/Jan/2010 11:08:35] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0041
+192.168.242.1 - - [17/Jan/2010 11:08:35] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0044
+192.168.242.1 - - [17/Jan/2010 11:08:35] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0045
+192.168.242.1 - - [17/Jan/2010 11:08:35] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0033
+192.168.242.1 - - [17/Jan/2010 11:08:35] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0043
+192.168.242.1 - - [17/Jan/2010 11:08:35] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0029
+192.168.242.1 - - [17/Jan/2010 11:08:35] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0087
+192.168.242.1 - - [17/Jan/2010 11:08:35] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [17/Jan/2010 11:08:35] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0030
+192.168.242.1 - - [17/Jan/2010 11:08:35] "GET /scripts/all.js HTTP/1.1" 304 - 0.0028
+192.168.242.1 - - [17/Jan/2010 11:08:35] "GET /images/icons/songpage1.png HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 11:08:36] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0035
+192.168.242.1 - - [17/Jan/2010 11:08:37] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0035
+192.168.242.1 - - [17/Jan/2010 11:08:38] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0031
+192.168.242.1 - - [17/Jan/2010 11:08:39] "GET /images/icons/back1.png HTTP/1.1" 304 - 0.0043
+192.168.242.1 - - [17/Jan/2010 11:08:40] "GET /scripts/core.js HTTP/1.1" 304 - 0.0029
+192.168.242.1 - - [17/Jan/2010 11:08:40] "GET /song/1/undefined HTTP/1.1" 404 18 0.0033
+192.168.242.1 - - [17/Jan/2010 11:08:41] "GET /song/1/song_picture HTTP/1.1" 304 - 0.0079
+192.168.242.1 - - [17/Jan/2010 11:08:41] "GET /favicon.ico HTTP/1.1" 200 2323 0.0142
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/song/manage/information.erb:11: warning: don't put space before argument parentheses
+192.168.242.1 - - [17/Jan/2010 11:11:21] "GET /song/1/manage HTTP/1.1" 200 13280 0.2070
+192.168.242.1 - - [17/Jan/2010 11:11:21] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0102
+192.168.242.1 - - [17/Jan/2010 11:11:22] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0041
+192.168.242.1 - - [17/Jan/2010 11:11:23] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 11:11:24] "GET /scripts/all.js HTTP/1.1" 304 - 0.0028
+192.168.242.1 - - [17/Jan/2010 11:11:25] "GET /scripts/core.js HTTP/1.1" 304 - 0.0037
+192.168.242.1 - - [17/Jan/2010 11:11:25] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0049
+192.168.242.1 - - [17/Jan/2010 11:11:25] "GET /partial/song/manage/song_picture_form?song_id=1 HTTP/1.1" 200 781 0.0091
+192.168.242.1 - - [17/Jan/2010 11:11:25] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 11:11:25] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0049
+192.168.242.1 - - [17/Jan/2010 11:11:25] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [17/Jan/2010 11:11:25] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0040
+192.168.242.1 - - [17/Jan/2010 11:11:25] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [17/Jan/2010 11:11:25] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [17/Jan/2010 11:11:25] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0073
+192.168.242.1 - - [17/Jan/2010 11:11:25] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 11:11:25] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 11:11:25] "GET /scripts/all.js HTTP/1.1" 304 - 0.0022
+192.168.242.1 - - [17/Jan/2010 11:11:25] "GET /scripts/core.js HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [17/Jan/2010 11:11:25] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 11:11:25] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0022
+192.168.242.1 - - [17/Jan/2010 11:11:26] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0030
+192.168.242.1 - - [17/Jan/2010 11:11:27] "GET /images/icons/back1.png HTTP/1.1" 304 - 0.0036
+192.168.242.1 - - [17/Jan/2010 11:11:28] "GET /images/icons/songpage1.png HTTP/1.1" 304 - 0.0034
+192.168.242.1 - - [17/Jan/2010 11:11:29] "GET /song/1/song_picture HTTP/1.1" 304 - 0.0042
+192.168.242.1 - - [17/Jan/2010 11:11:29] "GET /song/1/undefined HTTP/1.1" 404 18 0.0028
+192.168.242.1 - - [17/Jan/2010 11:11:30] "GET /favicon.ico HTTP/1.1" 200 2323 0.0166

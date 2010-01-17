@@ -1,0 +1,19 @@
+<% song = Song.find(song_id) %>
+<html>
+<head>
+	<%= partial('body/includes')%>
+</head>
+<body>
+	<div>
+		<span class='float-left'>
+			<img src="/song/<%= song.id %>/song_picture" height="128px" width="128px">
+		</span>
+		<div class='float-left' style='padding-left: 20px'>
+			<form action='/song/<%= song.id %>/manage/change_song_picture' method='post' enctype='multipart/form-data'>
+				<input type='file' name='picture'><%= vspace %>
+				<input type='submit' value='Save'>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
