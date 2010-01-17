@@ -1,3 +1,4 @@
+<% jam = Jam.find(jam_id) %>
 <html>
 <head>
 	<%= partial('body/includes')%>
@@ -5,10 +6,10 @@
 <body>
 	<div>
 		<span class='float-left'>
-			<img src="/<%= session_user?.username %>/profile_picture" height=128 width=128>
+			<img src="/jam/<%= jam.id %>/jam_picture" height="128px" width="128px">
 		</span>
 		<div class='float-left' style='padding-left: 20px'>
-			<form action='/account/aboutme/change_profile_picture' method='post' enctype='multipart/form-data'>
+			<form action='/jam/<%= jam.id %>/manage/change_jam_picture' method='post' enctype='multipart/form-data'>
 				<input type='file' name='picture'><%= vspace %>
 				<input type='submit' value='Save'>
 			</form>

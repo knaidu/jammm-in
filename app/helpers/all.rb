@@ -174,4 +174,5 @@ def list_genres(genres)
   genres.map(&:name).join(", ")
 end
 
+
 load 'helpers/profile.rb'

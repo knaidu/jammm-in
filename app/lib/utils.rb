@@ -130,6 +130,11 @@ def get_storage_file(file_handle)
   File.open(path)
 end
 
+def delete_storage_file(file_handle)
+  path = ENV["STORAGE_DIR"] + "/" + file_handle
+  File.delete(path) if File.exists?(path)
+end
+
 # CACHING START
 
 def cache_file(obj)

@@ -1,11 +1,18 @@
 <div class='music-desc round'>
-  <%= field 'Description:' %> <%= jam.description || "-" %><br>
-  <%= field 'Artists:' %> <%= partial(:'common/list_artists', {:locals => {:artists => jam.artists}}) %><br>
-  <%= field 'Creator:' %> <%= jam.creator.name %><br>
-  <%= field 'Views:' %> <%= jam.views %><br>
-	<%= field 'Type:' %> <%= display_jam_type(jam) %><br>
-	<%= field 'Likes:' %> <%= jam.liked_by.size %><br>
-	<%= field 'Genres:' %> <%= list_genres(jam.genres) %><br>
+	<div>
+		<div class='float-left'>
+			<img src='/jam/<%= jam.id %>/jam_picture' height="128px" width="128px">
+		</div>
+		<div class='pad-left-10 float-left'>
+	  	<%= field 'Description:' %> <%= jam.description || "-" %><br>
+		  <%= field 'Artists:' %> <%= partial(:'common/list_artists', {:locals => {:artists => jam.artists}}) %><br>
+		  <%= field 'Creator:' %> <%= jam.creator.name %><br>
+		  <%= field 'Views:' %> <%= jam.views %><br>
+			<%= field 'Type:' %> <%= display_jam_type(jam) %><br>
+			<%= field 'Likes:' %> <%= jam.liked_by.size %><br>
+			<%= field 'Genres:' %> <%= list_genres(jam.genres) %><br>
+		</div>
+	</div>
 	<br>
 	<% if @session_user and not @session_user.likes_jam?(jam) %>
   	<span class='simple-link display-inline' onClick='likeJam("<%= jam.id %>")' title='Like'><%= icon :like %></span>

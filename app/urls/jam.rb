@@ -19,13 +19,32 @@ get '/jam/:jam_id/likes' do
   erb(:"common/likes", :locals => {:artists => get_passed_jam.liked_by})
 end
 
+get '/jam/:jam_id/jam_picture' do
+  monitor {
+    send_file(get_passed_jam.jam_picture, {
+      :filename => "jam_picutre",
+      :disposistion => "inline"
+    })
+  }
+end
+
 get '/jam/:jam_id/manage' do
   @layout_info = {'middle_panel' => 'jam/manage/page', 'right_panel' => 'jam/manage/instructions', 'left_panel' => 'account/menu'}
   @jam = Jam.find(params[:jam_id])
   erb(:"body/structure")
 end
 
-
+post '/jam/:jam_id/manage/change_jam_picture' do
+#  monitor {
+    file = param?(:picture)[:tempfile]
+    puts file
+    get_passed_jam.change_jam_picture(file)
+    file.unlink
+    redirect_path = "/partial/jam/manage/jam_picture_form?jam_id=#{param?(:jam_id)}"
+    puts redirect_path
+    redirect redirect_path
+#  }
+end
 
 get '/jam/:jam_id/manage/upload' do
   @jam = Jam.find(params[:jam_id])

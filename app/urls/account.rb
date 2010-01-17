@@ -53,14 +53,13 @@ get '/account/aboutme/save_basic_info' do
 end
 
 post '/account/aboutme/change_profile_picture' do
-#  monitor {
+  monitor {
     file = param?(:picture)[:tempfile]
-    puts "----------------"
     puts file
     session_user?.change_profile_picture(file)
     file.unlink
     redirect "/partial/account/aboutme/profile_picture_form"
- # }
+  }
 end
 
 get '/account/:section' do
