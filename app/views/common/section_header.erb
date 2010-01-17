@@ -11,3 +11,11 @@
   <hr class='thin'>
 </div>
 <br>
+<% if options[:collapsed] %>
+	<%= js_start %>
+		(function(){
+			var tt = function(){hideSection('<%= options[:collapsible] %>', '<%= switch_id %>')};
+			window.setTimeout(tt, 2000);
+		})();
+	<%= js_end %>
+<% end %>

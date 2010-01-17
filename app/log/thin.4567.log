@@ -43541,3 +43541,1000 @@ ActiveRecord::RecordNotFound - Couldn't find Jam with ID=undefined:
 192.168.242.1 - - [16/Jan/2010 22:27:50] "GET /comments/fetch?for_type=jam&for_type_id=2&comments_div_id=jam-comments HTTP/1.1" 200 983 0.0242
 192.168.242.1 - - [16/Jan/2010 22:27:53] "POST /comments/add HTTP/1.1" 200 - 0.0127
 192.168.242.1 - - [16/Jan/2010 22:27:53] "GET /comments/fetch?for_type=jam&for_type_id=2&comments_div_id=jam-comments HTTP/1.1" 200 1284 0.0250
+192.168.242.1 - - [16/Jan/2010 22:31:40] "GET /account HTTP/1.1" 302 - 0.0070
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [16/Jan/2010 22:31:40] "GET /account/home HTTP/1.1" 200 8696 0.0651
+192.168.242.1 - - [16/Jan/2010 22:31:40] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0084
+192.168.242.1 - - [16/Jan/2010 22:31:41] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0037
+192.168.242.1 - - [16/Jan/2010 22:31:42] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0035
+192.168.242.1 - - [16/Jan/2010 22:31:43] "GET /scripts/all.js HTTP/1.1" 304 - 0.0038
+192.168.242.1 - - [16/Jan/2010 22:31:44] "GET /scripts/core.js HTTP/1.1" 304 - 0.0029
+192.168.242.1 - - [16/Jan/2010 22:31:44] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [16/Jan/2010 22:31:44] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0034
+192.168.242.1 - - [16/Jan/2010 22:31:44] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [16/Jan/2010 22:31:44] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [16/Jan/2010 22:31:44] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [16/Jan/2010 22:31:44] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [16/Jan/2010 22:31:44] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0022
+192.168.242.1 - - [16/Jan/2010 22:31:44] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0021
+192.168.242.1 - - [16/Jan/2010 22:31:44] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [16/Jan/2010 22:31:45] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [16/Jan/2010 22:31:46] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0033
+192.168.242.1 - - [16/Jan/2010 22:31:47] "GET /images/icons/update.png HTTP/1.1" 304 - 0.0033
+192.168.242.1 - - [16/Jan/2010 22:31:48] "GET /images/icons/play1.png HTTP/1.1" 200 2422 0.0031
+192.168.242.1 - - [16/Jan/2010 22:31:49] "GET /images/icons/manage1.png HTTP/1.1" 304 - 0.0041
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [16/Jan/2010 22:31:49] "GET /account/undefined HTTP/1.1" 200 5695 0.0159
+192.168.242.1 - - [16/Jan/2010 22:31:50] "GET /favicon.ico HTTP/1.1" 200 2323 0.0169
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/account/aboutme/genres.erb:7: warning: don't put space before argument parentheses
+192.168.242.1 - - [16/Jan/2010 23:47:36] "GET /account/aboutme HTTP/1.1" 200 9810 0.0885
+192.168.242.1 - - [16/Jan/2010 23:47:36] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0072
+192.168.242.1 - - [16/Jan/2010 23:47:36] "GET /scripts/all.js HTTP/1.1" 304 - 0.0036
+192.168.242.1 - - [16/Jan/2010 23:47:37] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0032
+192.168.242.1 - - [16/Jan/2010 23:47:38] "GET /scripts/core.js HTTP/1.1" 304 - 0.0034
+192.168.242.1 - - [16/Jan/2010 23:47:39] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0046
+192.168.242.1 - - [16/Jan/2010 23:47:39] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0042
+192.168.242.1 - - [16/Jan/2010 23:47:39] "GET /partial/account/aboutme/profile_picture_form HTTP/1.1" 200 804 0.0061
+192.168.242.1 - - [16/Jan/2010 23:47:39] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0042
+192.168.242.1 - - [16/Jan/2010 23:47:39] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [16/Jan/2010 23:47:39] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [16/Jan/2010 23:47:39] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [16/Jan/2010 23:47:39] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0031
+192.168.242.1 - - [16/Jan/2010 23:47:39] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0028
+192.168.242.1 - - [16/Jan/2010 23:47:39] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0029
+192.168.242.1 - - [16/Jan/2010 23:47:39] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0071
+192.168.242.1 - - [16/Jan/2010 23:47:39] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [16/Jan/2010 23:47:39] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [16/Jan/2010 23:47:40] "GET /scripts/all.js HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [16/Jan/2010 23:47:41] "GET /scripts/core.js HTTP/1.1" 304 - 0.0035
+192.168.242.1 - - [16/Jan/2010 23:47:42] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0036
+192.168.242.1 - - [16/Jan/2010 23:47:43] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0043
+192.168.242.1 - - [16/Jan/2010 23:47:43] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0027
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [16/Jan/2010 23:47:44] "GET /account/undefined HTTP/1.1" 200 5695 0.0166
+192.168.242.1 - - [16/Jan/2010 23:47:45] "GET /prakashraman/profile_picture HTTP/1.1" 304 - 0.0058
+192.168.242.1 - - [16/Jan/2010 23:47:45] "GET /favicon.ico HTTP/1.1" 200 2323 0.0115
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/account/aboutme/genres.erb:7: warning: don't put space before argument parentheses
+192.168.242.1 - - [16/Jan/2010 23:49:13] "GET /account/aboutme HTTP/1.1" 200 10276 0.0523
+192.168.242.1 - - [16/Jan/2010 23:49:13] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0069
+192.168.242.1 - - [16/Jan/2010 23:49:14] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0043
+192.168.242.1 - - [16/Jan/2010 23:49:15] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0031
+192.168.242.1 - - [16/Jan/2010 23:49:16] "GET /scripts/all.js HTTP/1.1" 304 - 0.0037
+192.168.242.1 - - [16/Jan/2010 23:49:17] "GET /scripts/core.js HTTP/1.1" 304 - 0.0035
+192.168.242.1 - - [16/Jan/2010 23:49:17] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0034
+192.168.242.1 - - [16/Jan/2010 23:49:17] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0033
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [16/Jan/2010 23:49:17] "GET /account/undefined HTTP/1.1" 200 5787 0.0210
+192.168.242.1 - - [16/Jan/2010 23:49:18] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0054
+192.168.242.1 - - [16/Jan/2010 23:49:19] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0050
+192.168.242.1 - - [16/Jan/2010 23:49:19] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0032
+192.168.242.1 - - [16/Jan/2010 23:49:19] "GET /partial/account/aboutme/profile_picture_form HTTP/1.1" 200 804 0.0042
+192.168.242.1 - - [16/Jan/2010 23:49:20] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0035
+192.168.242.1 - - [16/Jan/2010 23:49:21] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0031
+192.168.242.1 - - [16/Jan/2010 23:49:21] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0038
+192.168.242.1 - - [16/Jan/2010 23:49:21] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [16/Jan/2010 23:49:21] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0054
+192.168.242.1 - - [16/Jan/2010 23:49:21] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [16/Jan/2010 23:49:22] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0109
+192.168.242.1 - - [16/Jan/2010 23:49:23] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0038
+192.168.242.1 - - [16/Jan/2010 23:49:24] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0030
+192.168.242.1 - - [16/Jan/2010 23:49:25] "GET /scripts/all.js HTTP/1.1" 304 - 0.0037
+192.168.242.1 - - [16/Jan/2010 23:49:26] "GET /scripts/core.js HTTP/1.1" 304 - 0.0039
+192.168.242.1 - - [16/Jan/2010 23:49:26] "GET /prakashraman/profile_picture HTTP/1.1" 304 - 0.0049
+192.168.242.1 - - [16/Jan/2010 23:49:26] "GET /favicon.ico HTTP/1.1" 200 2323 0.0126
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/account/aboutme/genres.erb:7: warning: don't put space before argument parentheses
+192.168.242.1 - - [16/Jan/2010 23:50:14] "GET /account/aboutme HTTP/1.1" 200 10589 0.0419
+192.168.242.1 - - [16/Jan/2010 23:50:14] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0342
+192.168.242.1 - - [16/Jan/2010 23:50:15] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0033
+192.168.242.1 - - [16/Jan/2010 23:50:16] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [16/Jan/2010 23:50:17] "GET /scripts/all.js HTTP/1.1" 304 - 0.0038
+192.168.242.1 - - [16/Jan/2010 23:50:18] "GET /scripts/core.js HTTP/1.1" 304 - 0.0038
+192.168.242.1 - - [16/Jan/2010 23:50:18] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0032
+192.168.242.1 - - [16/Jan/2010 23:50:18] "GET /partial/account/aboutme/profile_picture_form HTTP/1.1" 200 804 0.0068
+192.168.242.1 - - [16/Jan/2010 23:50:18] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0067
+192.168.242.1 - - [16/Jan/2010 23:50:18] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0031
+192.168.242.1 - - [16/Jan/2010 23:50:18] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0140
+192.168.242.1 - - [16/Jan/2010 23:50:18] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [16/Jan/2010 23:50:18] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0034
+192.168.242.1 - - [16/Jan/2010 23:50:18] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [16/Jan/2010 23:50:18] "GET /scripts/core.js HTTP/1.1" 304 - 0.0034
+192.168.242.1 - - [16/Jan/2010 23:50:18] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0032
+192.168.242.1 - - [16/Jan/2010 23:50:18] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [16/Jan/2010 23:50:18] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0022
+192.168.242.1 - - [16/Jan/2010 23:50:19] "GET /scripts/all.js HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [16/Jan/2010 23:50:20] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0033
+192.168.242.1 - - [16/Jan/2010 23:50:20] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0053
+192.168.242.1 - - [16/Jan/2010 23:50:20] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0030
+192.168.242.1 - - [16/Jan/2010 23:50:20] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0029
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [16/Jan/2010 23:50:21] "GET /account/undefined HTTP/1.1" 200 5819 0.0741
+192.168.242.1 - - [16/Jan/2010 23:50:22] "GET /prakashraman/profile_picture HTTP/1.1" 304 - 0.0042
+192.168.242.1 - - [16/Jan/2010 23:50:22] "GET /favicon.ico HTTP/1.1" 200 2323 0.0121
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/account/aboutme/genres.erb:7: warning: don't put space before argument parentheses
+192.168.242.1 - - [16/Jan/2010 23:51:41] "GET /account/aboutme HTTP/1.1" 200 10594 0.0448
+192.168.242.1 - - [16/Jan/2010 23:51:41] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0093
+192.168.242.1 - - [16/Jan/2010 23:51:42] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0038
+192.168.242.1 - - [16/Jan/2010 23:51:43] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [16/Jan/2010 23:51:44] "GET /scripts/all.js HTTP/1.1" 200 13645 0.0039
+192.168.242.1 - - [16/Jan/2010 23:51:44] "GET /scripts/core.js HTTP/1.1" 304 - 0.0033
+192.168.242.1 - - [16/Jan/2010 23:51:44] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0030
+192.168.242.1 - - [16/Jan/2010 23:51:44] "GET /partial/account/aboutme/profile_picture_form HTTP/1.1" 200 804 0.0091
+192.168.242.1 - - [16/Jan/2010 23:51:44] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0047
+192.168.242.1 - - [16/Jan/2010 23:51:44] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0030
+192.168.242.1 - - [16/Jan/2010 23:51:44] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0068
+192.168.242.1 - - [16/Jan/2010 23:51:44] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0031
+192.168.242.1 - - [16/Jan/2010 23:51:44] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [16/Jan/2010 23:51:44] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [16/Jan/2010 23:51:44] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [16/Jan/2010 23:51:44] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0037
+192.168.242.1 - - [16/Jan/2010 23:51:44] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0022
+192.168.242.1 - - [16/Jan/2010 23:51:44] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0022
+192.168.242.1 - - [16/Jan/2010 23:51:44] "GET /scripts/all.js HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [16/Jan/2010 23:51:45] "GET /scripts/core.js HTTP/1.1" 304 - 0.0038
+192.168.242.1 - - [16/Jan/2010 23:51:45] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0029
+192.168.242.1 - - [16/Jan/2010 23:51:46] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0034
+192.168.242.1 - - [16/Jan/2010 23:51:47] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0037
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [16/Jan/2010 23:51:48] "GET /account/undefined HTTP/1.1" 200 5819 0.0205
+192.168.242.1 - - [16/Jan/2010 23:51:49] "GET /prakashraman/profile_picture HTTP/1.1" 304 - 0.0059
+192.168.242.1 - - [16/Jan/2010 23:51:49] "GET /favicon.ico HTTP/1.1" 200 2323 0.0124
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/account/aboutme/genres.erb:7: warning: don't put space before argument parentheses
+192.168.242.1 - - [16/Jan/2010 23:52:06] "GET /account/aboutme HTTP/1.1" 200 10531 0.0400
+192.168.242.1 - - [16/Jan/2010 23:52:06] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0090
+192.168.242.1 - - [16/Jan/2010 23:52:07] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0039
+192.168.242.1 - - [16/Jan/2010 23:52:08] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0040
+192.168.242.1 - - [16/Jan/2010 23:52:09] "GET /scripts/all.js HTTP/1.1" 304 - 0.0039
+192.168.242.1 - - [16/Jan/2010 23:52:10] "GET /scripts/core.js HTTP/1.1" 304 - 0.0040
+192.168.242.1 - - [16/Jan/2010 23:52:10] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0065
+192.168.242.1 - - [16/Jan/2010 23:52:10] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0029
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [16/Jan/2010 23:52:10] "GET /account/undefined HTTP/1.1" 200 5809 0.0157
+192.168.242.1 - - [16/Jan/2010 23:52:11] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [16/Jan/2010 23:52:12] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0062
+192.168.242.1 - - [16/Jan/2010 23:52:12] "GET /partial/account/aboutme/profile_picture_form HTTP/1.1" 200 804 0.0054
+192.168.242.1 - - [16/Jan/2010 23:52:12] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [16/Jan/2010 23:52:12] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0038
+192.168.242.1 - - [16/Jan/2010 23:52:12] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [16/Jan/2010 23:52:12] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0028
+192.168.242.1 - - [16/Jan/2010 23:52:12] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [16/Jan/2010 23:52:12] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [16/Jan/2010 23:52:12] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0078
+192.168.242.1 - - [16/Jan/2010 23:52:13] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0035
+192.168.242.1 - - [16/Jan/2010 23:52:14] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [16/Jan/2010 23:52:15] "GET /scripts/all.js HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [16/Jan/2010 23:52:16] "GET /scripts/core.js HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [16/Jan/2010 23:52:16] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [16/Jan/2010 23:52:17] "GET /prakashraman/profile_picture HTTP/1.1" 304 - 0.0041
+192.168.242.1 - - [16/Jan/2010 23:52:17] "GET /favicon.ico HTTP/1.1" 200 2323 0.0116
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/account/aboutme/genres.erb:7: warning: don't put space before argument parentheses
+192.168.242.1 - - [16/Jan/2010 23:52:45] "GET /account/aboutme HTTP/1.1" 200 10815 0.0413
+192.168.242.1 - - [16/Jan/2010 23:52:45] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0070
+192.168.242.1 - - [16/Jan/2010 23:52:46] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [16/Jan/2010 23:52:47] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0036
+192.168.242.1 - - [16/Jan/2010 23:52:48] "GET /scripts/all.js HTTP/1.1" 304 - 0.0037
+192.168.242.1 - - [16/Jan/2010 23:52:49] "GET /scripts/core.js HTTP/1.1" 304 - 0.0037
+192.168.242.1 - - [16/Jan/2010 23:52:49] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0034
+192.168.242.1 - - [16/Jan/2010 23:52:49] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0023
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [16/Jan/2010 23:52:49] "GET /account/undefined HTTP/1.1" 200 5862 0.0243
+192.168.242.1 - - [16/Jan/2010 23:52:50] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0031
+192.168.242.1 - - [16/Jan/2010 23:52:51] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0033
+192.168.242.1 - - [16/Jan/2010 23:52:51] "GET /partial/account/aboutme/profile_picture_form HTTP/1.1" 200 804 0.0050
+192.168.242.1 - - [16/Jan/2010 23:52:51] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0035
+192.168.242.1 - - [16/Jan/2010 23:52:51] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [16/Jan/2010 23:52:51] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0031
+192.168.242.1 - - [16/Jan/2010 23:52:51] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [16/Jan/2010 23:52:51] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0028
+192.168.242.1 - - [16/Jan/2010 23:52:51] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0031
+192.168.242.1 - - [16/Jan/2010 23:52:51] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0061
+192.168.242.1 - - [16/Jan/2010 23:52:52] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0414
+192.168.242.1 - - [16/Jan/2010 23:52:53] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0034
+192.168.242.1 - - [16/Jan/2010 23:52:54] "GET /scripts/all.js HTTP/1.1" 304 - 0.0036
+192.168.242.1 - - [16/Jan/2010 23:52:55] "GET /scripts/core.js HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [16/Jan/2010 23:52:56] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0031
+192.168.242.1 - - [16/Jan/2010 23:52:57] "GET /prakashraman/profile_picture HTTP/1.1" 304 - 0.0044
+192.168.242.1 - - [16/Jan/2010 23:52:57] "GET /favicon.ico HTTP/1.1" 200 2323 0.0114
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/account/aboutme/genres.erb:7: warning: don't put space before argument parentheses
+192.168.242.1 - - [16/Jan/2010 23:53:22] "GET /account/aboutme HTTP/1.1" 200 10925 0.0419
+192.168.242.1 - - [16/Jan/2010 23:53:22] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0079
+192.168.242.1 - - [16/Jan/2010 23:53:23] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0032
+192.168.242.1 - - [16/Jan/2010 23:53:24] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0035
+192.168.242.1 - - [16/Jan/2010 23:53:25] "GET /scripts/all.js HTTP/1.1" 304 - 0.0028
+192.168.242.1 - - [16/Jan/2010 23:53:26] "GET /scripts/core.js HTTP/1.1" 304 - 0.0036
+192.168.242.1 - - [16/Jan/2010 23:53:26] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0047
+192.168.242.1 - - [16/Jan/2010 23:53:26] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0021
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [16/Jan/2010 23:53:26] "GET /account/undefined HTTP/1.1" 200 5885 0.0164
+192.168.242.1 - - [16/Jan/2010 23:53:27] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0035
+192.168.242.1 - - [16/Jan/2010 23:53:27] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0028
+192.168.242.1 - - [16/Jan/2010 23:53:27] "GET /partial/account/aboutme/profile_picture_form HTTP/1.1" 200 804 0.0077
+192.168.242.1 - - [16/Jan/2010 23:53:27] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0060
+192.168.242.1 - - [16/Jan/2010 23:53:28] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [16/Jan/2010 23:53:28] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0030
+192.168.242.1 - - [16/Jan/2010 23:53:28] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0033
+192.168.242.1 - - [16/Jan/2010 23:53:28] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [16/Jan/2010 23:53:28] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [16/Jan/2010 23:53:28] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [16/Jan/2010 23:53:29] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0094
+192.168.242.1 - - [16/Jan/2010 23:53:30] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0022
+192.168.242.1 - - [16/Jan/2010 23:53:31] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [16/Jan/2010 23:53:32] "GET /scripts/all.js HTTP/1.1" 304 - 0.0022
+192.168.242.1 - - [16/Jan/2010 23:53:33] "GET /scripts/core.js HTTP/1.1" 304 - 0.0036
+192.168.242.1 - - [16/Jan/2010 23:53:33] "GET /prakashraman/profile_picture HTTP/1.1" 304 - 0.0037
+192.168.242.1 - - [16/Jan/2010 23:53:33] "GET /favicon.ico HTTP/1.1" 200 2323 0.0114
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/account/aboutme/genres.erb:7: warning: don't put space before argument parentheses
+192.168.242.1 - - [16/Jan/2010 23:53:43] "GET /account/aboutme HTTP/1.1" 200 10660 0.0387
+192.168.242.1 - - [16/Jan/2010 23:53:43] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0071
+192.168.242.1 - - [16/Jan/2010 23:53:44] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0033
+192.168.242.1 - - [16/Jan/2010 23:53:44] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0034
+192.168.242.1 - - [16/Jan/2010 23:53:45] "GET /scripts/all.js HTTP/1.1" 304 - 0.0037
+192.168.242.1 - - [16/Jan/2010 23:53:46] "GET /scripts/core.js HTTP/1.1" 304 - 0.0035
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/account/aboutme/genres.erb:7: warning: don't put space before argument parentheses
+192.168.242.1 - - [16/Jan/2010 23:53:47] "GET /account/aboutme HTTP/1.1" 200 10660 0.0355
+192.168.242.1 - - [16/Jan/2010 23:53:47] "GET /favicon.ico HTTP/1.1" 200 2323 0.0148
+192.168.242.1 - - [16/Jan/2010 23:53:48] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0064
+192.168.242.1 - - [16/Jan/2010 23:53:49] "GET /scripts/prototype.js HTTP/1.1" 200 139978 0.0040
+192.168.242.1 - - [16/Jan/2010 23:53:49] "GET /scripts/swfobject.js HTTP/1.1" 200 9759 0.0028
+192.168.242.1 - - [16/Jan/2010 23:53:50] "GET /scripts/all.js HTTP/1.1" 200 13645 0.0026
+192.168.242.1 - - [16/Jan/2010 23:53:50] "GET /scripts/core.js HTTP/1.1" 200 2300 0.0028
+192.168.242.1 - - [16/Jan/2010 23:53:50] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [16/Jan/2010 23:53:50] "GET /partial/account/aboutme/profile_picture_form HTTP/1.1" 200 804 0.0065
+192.168.242.1 - - [16/Jan/2010 23:53:50] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0028
+192.168.242.1 - - [16/Jan/2010 23:53:50] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0033
+192.168.242.1 - - [16/Jan/2010 23:53:50] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0067
+192.168.242.1 - - [16/Jan/2010 23:53:50] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [16/Jan/2010 23:53:50] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [16/Jan/2010 23:53:50] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0022
+192.168.242.1 - - [16/Jan/2010 23:53:50] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [16/Jan/2010 23:53:50] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0092
+192.168.242.1 - - [16/Jan/2010 23:53:51] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0044
+192.168.242.1 - - [16/Jan/2010 23:53:51] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0029
+192.168.242.1 - - [16/Jan/2010 23:53:52] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0041
+192.168.242.1 - - [16/Jan/2010 23:53:53] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0022
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [16/Jan/2010 23:53:54] "GET /account/undefined HTTP/1.1" 200 5833 0.0162
+192.168.242.1 - - [16/Jan/2010 23:53:55] "GET /prakashraman/profile_picture HTTP/1.1" 304 - 0.0042
+192.168.242.1 - - [16/Jan/2010 23:53:55] "GET /favicon.ico HTTP/1.1" 200 2323 0.0144
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/account/aboutme/genres.erb:7: warning: don't put space before argument parentheses
+192.168.242.1 - - [16/Jan/2010 23:54:29] "GET /account/aboutme HTTP/1.1" 200 9822 0.0447
+192.168.242.1 - - [16/Jan/2010 23:54:29] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0068
+192.168.242.1 - - [16/Jan/2010 23:54:30] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0037
+192.168.242.1 - - [16/Jan/2010 23:54:31] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0034
+192.168.242.1 - - [16/Jan/2010 23:54:32] "GET /scripts/all.js HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [16/Jan/2010 23:54:33] "GET /scripts/core.js HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [16/Jan/2010 23:54:33] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0052
+192.168.242.1 - - [16/Jan/2010 23:54:33] "GET /partial/account/aboutme/profile_picture_form HTTP/1.1" 200 804 0.0062
+192.168.242.1 - - [16/Jan/2010 23:54:33] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0032
+192.168.242.1 - - [16/Jan/2010 23:54:33] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0096
+192.168.242.1 - - [16/Jan/2010 23:54:33] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0078
+192.168.242.1 - - [16/Jan/2010 23:54:33] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0038
+192.168.242.1 - - [16/Jan/2010 23:54:33] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [16/Jan/2010 23:54:33] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [16/Jan/2010 23:54:33] "GET /scripts/core.js HTTP/1.1" 304 - 0.0029
+192.168.242.1 - - [16/Jan/2010 23:54:33] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [16/Jan/2010 23:54:33] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0022
+192.168.242.1 - - [16/Jan/2010 23:54:33] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [16/Jan/2010 23:54:34] "GET /scripts/all.js HTTP/1.1" 304 - 0.0039
+192.168.242.1 - - [16/Jan/2010 23:54:34] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0028
+192.168.242.1 - - [16/Jan/2010 23:54:35] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [16/Jan/2010 23:54:36] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [16/Jan/2010 23:54:37] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [16/Jan/2010 23:54:38] "GET /prakashraman/profile_picture HTTP/1.1" 304 - 0.0038
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [16/Jan/2010 23:54:38] "GET /account/undefined HTTP/1.1" 200 5697 0.0153
+192.168.242.1 - - [16/Jan/2010 23:54:39] "GET /favicon.ico HTTP/1.1" 200 2323 0.0116
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/account/aboutme/genres.erb:7: warning: don't put space before argument parentheses
+192.168.242.1 - - [17/Jan/2010 00:01:20] "GET /account/aboutme HTTP/1.1" 200 9824 0.0604
+192.168.242.1 - - [17/Jan/2010 00:01:20] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0077
+192.168.242.1 - - [17/Jan/2010 00:01:21] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0029
+192.168.242.1 - - [17/Jan/2010 00:01:22] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0062
+192.168.242.1 - - [17/Jan/2010 00:01:23] "GET /scripts/all.js HTTP/1.1" 304 - 0.0036
+192.168.242.1 - - [17/Jan/2010 00:01:24] "GET /scripts/core.js HTTP/1.1" 304 - 0.0029
+192.168.242.1 - - [17/Jan/2010 00:01:24] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0029
+192.168.242.1 - - [17/Jan/2010 00:01:24] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0029
+192.168.242.1 - - [17/Jan/2010 00:01:24] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0022
+192.168.242.1 - - [17/Jan/2010 00:01:24] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [17/Jan/2010 00:01:24] "GET /partial/account/aboutme/profile_picture_form HTTP/1.1" 200 804 0.0057
+192.168.242.1 - - [17/Jan/2010 00:01:24] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [17/Jan/2010 00:01:24] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0022
+192.168.242.1 - - [17/Jan/2010 00:01:24] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0020
+192.168.242.1 - - [17/Jan/2010 00:01:24] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [17/Jan/2010 00:01:24] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [17/Jan/2010 00:01:24] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 00:01:24] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0062
+192.168.242.1 - - [17/Jan/2010 00:01:24] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0021
+192.168.242.1 - - [17/Jan/2010 00:01:25] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 00:01:26] "GET /scripts/all.js HTTP/1.1" 304 - 0.0035
+192.168.242.1 - - [17/Jan/2010 00:01:27] "GET /scripts/core.js HTTP/1.1" 304 - 0.0032
+192.168.242.1 - - [17/Jan/2010 00:01:27] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0023
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [17/Jan/2010 00:01:28] "GET /account/undefined HTTP/1.1" 200 5697 0.0227
+192.168.242.1 - - [17/Jan/2010 00:01:29] "GET /prakashraman/profile_picture HTTP/1.1" 304 - 0.0042
+192.168.242.1 - - [17/Jan/2010 00:01:29] "GET /favicon.ico HTTP/1.1" 200 2323 0.0124
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/account/aboutme/genres.erb:7: warning: don't put space before argument parentheses
+192.168.242.1 - - [17/Jan/2010 00:02:06] "GET /account/aboutme HTTP/1.1" 200 9824 0.0417
+192.168.242.1 - - [17/Jan/2010 00:02:06] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0150
+192.168.242.1 - - [17/Jan/2010 00:02:07] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0046
+192.168.242.1 - - [17/Jan/2010 00:02:08] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0042
+192.168.242.1 - - [17/Jan/2010 00:02:09] "GET /scripts/all.js HTTP/1.1" 304 - 0.0031
+192.168.242.1 - - [17/Jan/2010 00:02:10] "GET /scripts/core.js HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 00:02:10] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0031
+192.168.242.1 - - [17/Jan/2010 00:02:10] "GET /partial/account/aboutme/profile_picture_form HTTP/1.1" 200 804 0.0126
+192.168.242.1 - - [17/Jan/2010 00:02:10] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0033
+192.168.242.1 - - [17/Jan/2010 00:02:10] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [17/Jan/2010 00:02:10] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0068
+192.168.242.1 - - [17/Jan/2010 00:02:10] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [17/Jan/2010 00:02:10] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0053
+192.168.242.1 - - [17/Jan/2010 00:02:10] "GET /scripts/all.js HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 00:02:10] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0033
+192.168.242.1 - - [17/Jan/2010 00:02:10] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [17/Jan/2010 00:02:10] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0033
+192.168.242.1 - - [17/Jan/2010 00:02:10] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [17/Jan/2010 00:02:10] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [17/Jan/2010 00:02:12] "GET /scripts/core.js HTTP/1.1" 304 - 0.0028
+192.168.242.1 - - [17/Jan/2010 00:02:12] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 00:02:13] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0025
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [17/Jan/2010 00:02:14] "GET /account/undefined HTTP/1.1" 200 5697 0.0211
+192.168.242.1 - - [17/Jan/2010 00:02:15] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [17/Jan/2010 00:02:16] "GET /prakashraman/profile_picture HTTP/1.1" 304 - 0.0042
+192.168.242.1 - - [17/Jan/2010 00:02:16] "GET /favicon.ico HTTP/1.1" 200 2323 0.0122
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/account/aboutme/genres.erb:7: warning: don't put space before argument parentheses
+192.168.242.1 - - [17/Jan/2010 00:02:38] "GET /account/aboutme HTTP/1.1" 200 10036 0.0394
+192.168.242.1 - - [17/Jan/2010 00:02:39] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0760
+192.168.242.1 - - [17/Jan/2010 00:02:40] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0035
+192.168.242.1 - - [17/Jan/2010 00:02:41] "GET /scripts/all.js HTTP/1.1" 304 - 0.0028
+192.168.242.1 - - [17/Jan/2010 00:02:42] "GET /scripts/core.js HTTP/1.1" 304 - 0.0035
+192.168.242.1 - - [17/Jan/2010 00:02:43] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0039
+192.168.242.1 - - [17/Jan/2010 00:02:43] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0038
+192.168.242.1 - - [17/Jan/2010 00:02:43] "GET /partial/account/aboutme/profile_picture_form HTTP/1.1" 200 804 0.0107
+192.168.242.1 - - [17/Jan/2010 00:02:43] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0038
+192.168.242.1 - - [17/Jan/2010 00:02:43] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0040
+192.168.242.1 - - [17/Jan/2010 00:02:43] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [17/Jan/2010 00:02:43] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 00:02:43] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 00:02:43] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [17/Jan/2010 00:02:43] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 00:02:43] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0063
+192.168.242.1 - - [17/Jan/2010 00:02:43] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0029
+192.168.242.1 - - [17/Jan/2010 00:02:43] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [17/Jan/2010 00:02:43] "GET /scripts/all.js HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [17/Jan/2010 00:02:44] "GET /scripts/core.js HTTP/1.1" 304 - 0.0034
+192.168.242.1 - - [17/Jan/2010 00:02:44] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0034
+192.168.242.1 - - [17/Jan/2010 00:02:45] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0060
+192.168.242.1 - - [17/Jan/2010 00:02:46] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0042
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [17/Jan/2010 00:02:47] "GET /account/undefined HTTP/1.1" 200 5739 0.0166
+192.168.242.1 - - [17/Jan/2010 00:02:48] "GET /prakashraman/profile_picture HTTP/1.1" 304 - 0.0046
+192.168.242.1 - - [17/Jan/2010 00:02:48] "GET /favicon.ico HTTP/1.1" 200 2323 0.0115
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/account/aboutme/genres.erb:7: warning: don't put space before argument parentheses
+192.168.242.1 - - [17/Jan/2010 00:02:49] "GET /account/aboutme HTTP/1.1" 200 10119 0.0370
+192.168.242.1 - - [17/Jan/2010 00:02:50] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0075
+192.168.242.1 - - [17/Jan/2010 00:02:51] "GET /scripts/core.js HTTP/1.1" 304 - 0.0035
+192.168.242.1 - - [17/Jan/2010 00:02:52] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0036
+192.168.242.1 - - [17/Jan/2010 00:02:53] "GET /scripts/all.js HTTP/1.1" 304 - 0.0034
+192.168.242.1 - - [17/Jan/2010 00:02:54] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0035
+192.168.242.1 - - [17/Jan/2010 00:02:54] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0040
+192.168.242.1 - - [17/Jan/2010 00:02:54] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0023
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [17/Jan/2010 00:02:54] "GET /account/undefined HTTP/1.1" 200 5756 0.0150
+192.168.242.1 - - [17/Jan/2010 00:02:54] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0041
+192.168.242.1 - - [17/Jan/2010 00:02:55] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0044
+192.168.242.1 - - [17/Jan/2010 00:02:55] "GET /partial/account/aboutme/profile_picture_form HTTP/1.1" 200 804 0.0060
+192.168.242.1 - - [17/Jan/2010 00:02:56] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0049
+192.168.242.1 - - [17/Jan/2010 00:02:56] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0028
+192.168.242.1 - - [17/Jan/2010 00:02:56] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 00:02:56] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0028
+192.168.242.1 - - [17/Jan/2010 00:02:56] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [17/Jan/2010 00:02:56] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0021
+192.168.242.1 - - [17/Jan/2010 00:02:56] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0062
+192.168.242.1 - - [17/Jan/2010 00:02:57] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0035
+192.168.242.1 - - [17/Jan/2010 00:02:58] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [17/Jan/2010 00:02:59] "GET /scripts/all.js HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [17/Jan/2010 00:03:00] "GET /scripts/core.js HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [17/Jan/2010 00:03:00] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0022
+192.168.242.1 - - [17/Jan/2010 00:03:01] "GET /prakashraman/profile_picture HTTP/1.1" 304 - 0.0061
+192.168.242.1 - - [17/Jan/2010 00:03:01] "GET /favicon.ico HTTP/1.1" 200 2323 0.0133
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/account/aboutme/genres.erb:7: warning: don't put space before argument parentheses
+192.168.242.1 - - [17/Jan/2010 00:03:10] "GET /account/aboutme HTTP/1.1" 200 10121 0.0400
+192.168.242.1 - - [17/Jan/2010 00:03:10] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0080
+192.168.242.1 - - [17/Jan/2010 00:03:11] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0036
+192.168.242.1 - - [17/Jan/2010 00:03:12] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0034
+192.168.242.1 - - [17/Jan/2010 00:03:13] "GET /scripts/all.js HTTP/1.1" 304 - 0.0038
+192.168.242.1 - - [17/Jan/2010 00:03:14] "GET /scripts/core.js HTTP/1.1" 304 - 0.0034
+192.168.242.1 - - [17/Jan/2010 00:03:14] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0029
+192.168.242.1 - - [17/Jan/2010 00:03:14] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0023
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [17/Jan/2010 00:03:15] "GET /account/undefined HTTP/1.1" 200 5756 0.0155
+192.168.242.1 - - [17/Jan/2010 00:03:19] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0035
+192.168.242.1 - - [17/Jan/2010 00:03:20] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0044
+192.168.242.1 - - [17/Jan/2010 00:03:20] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0030
+192.168.242.1 - - [17/Jan/2010 00:03:21] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0036
+192.168.242.1 - - [17/Jan/2010 00:03:21] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0032
+192.168.242.1 - - [17/Jan/2010 00:03:22] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [17/Jan/2010 00:03:23] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 00:03:24] "GET /partial/account/aboutme/profile_picture_form HTTP/1.1" 200 804 0.0062
+192.168.242.1 - - [17/Jan/2010 00:03:24] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0022
+192.168.242.1 - - [17/Jan/2010 00:03:24] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0028
+192.168.242.1 - - [17/Jan/2010 00:03:25] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0096
+192.168.242.1 - - [17/Jan/2010 00:03:26] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0034
+192.168.242.1 - - [17/Jan/2010 00:03:27] "GET /scripts/all.js HTTP/1.1" 304 - 0.0035
+192.168.242.1 - - [17/Jan/2010 00:03:28] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [17/Jan/2010 00:03:28] "GET /scripts/core.js HTTP/1.1" 304 - 0.0030
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/account/aboutme/genres.erb:7: warning: don't put space before argument parentheses
+192.168.242.1 - - [17/Jan/2010 00:03:28] "GET /account/aboutme HTTP/1.1" 200 10092 0.0378
+192.168.242.1 - - [17/Jan/2010 00:03:28] "GET /favicon.ico HTTP/1.1" 200 2323 0.0138
+192.168.242.1 - - [17/Jan/2010 00:03:29] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0067
+192.168.242.1 - - [17/Jan/2010 00:03:31] "GET /scripts/all.js HTTP/1.1" 304 - 0.0130
+192.168.242.1 - - [17/Jan/2010 00:03:32] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0650
+192.168.242.1 - - [17/Jan/2010 00:03:33] "GET /scripts/core.js HTTP/1.1" 200 2300 0.0042
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/account/aboutme/genres.erb:7: warning: don't put space before argument parentheses
+192.168.242.1 - - [17/Jan/2010 00:05:25] "GET /account/aboutme HTTP/1.1" 200 10679 0.0431
+192.168.242.1 - - [17/Jan/2010 00:05:25] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0071
+192.168.242.1 - - [17/Jan/2010 00:05:26] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0029
+192.168.242.1 - - [17/Jan/2010 00:05:27] "GET /scripts/swfobject.js HTTP/1.1" 200 9759 0.0026
+192.168.242.1 - - [17/Jan/2010 00:05:28] "GET /scripts/all.js HTTP/1.1" 304 - 0.0038
+192.168.242.1 - - [17/Jan/2010 00:05:29] "GET /scripts/core.js HTTP/1.1" 304 - 0.0039
+192.168.242.1 - - [17/Jan/2010 00:05:29] "GET /images/logos/logo.jpg HTTP/1.1" 200 5116 0.0029
+192.168.242.1 - - [17/Jan/2010 00:05:30] "GET /swf/new-player.swf HTTP/1.1" 200 3750 0.0034
+192.168.242.1 - - [17/Jan/2010 00:05:30] "GET /images/icons/8thnote.png HTTP/1.1" 200 2404 0.0084
+192.168.242.1 - - [17/Jan/2010 00:05:30] "GET /images/icons/staff.png HTTP/1.1" 200 2494 0.0027
+192.168.242.1 - - [17/Jan/2010 00:05:30] "GET /images/icons/home.png HTTP/1.1" 200 2011 0.0025
+192.168.242.1 - - [17/Jan/2010 00:05:30] "GET /images/icons/profile1.png HTTP/1.1" 200 2310 0.0041
+192.168.242.1 - - [17/Jan/2010 00:05:30] "GET /images/icons/follow2.png HTTP/1.1" 200 2032 0.0037
+192.168.242.1 - - [17/Jan/2010 00:05:30] "GET /images/icons/mail2.png HTTP/1.1" 200 1666 0.0026
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [17/Jan/2010 00:05:31] "GET /account/undefined HTTP/1.1" 200 5751 0.0280
+192.168.242.1 - - [17/Jan/2010 00:05:31] "GET /images/icons/followers1.png HTTP/1.1" 200 4985 0.0028
+192.168.242.1 - - [17/Jan/2010 00:05:32] "GET /images/icons/help1.png HTTP/1.1" 200 1871 0.0031
+192.168.242.1 - - [17/Jan/2010 00:05:33] "GET /partial/account/aboutme/profile_picture_form HTTP/1.1" 200 804 0.0053
+192.168.242.1 - - [17/Jan/2010 00:05:33] "GET /images/common/icon.png HTTP/1.1" 200 709 0.0039
+192.168.242.1 - - [17/Jan/2010 00:05:33] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0036
+192.168.242.1 - - [17/Jan/2010 00:05:34] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [17/Jan/2010 00:05:35] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0066
+192.168.242.1 - - [17/Jan/2010 00:05:36] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [17/Jan/2010 00:05:37] "GET /scripts/all.js HTTP/1.1" 304 - 0.0037
+192.168.242.1 - - [17/Jan/2010 00:05:38] "GET /scripts/core.js HTTP/1.1" 304 - 0.0039
+192.168.242.1 - - [17/Jan/2010 00:05:38] "GET /prakashraman/profile_picture HTTP/1.1" 304 - 0.0053
+192.168.242.1 - - [17/Jan/2010 00:05:38] "GET /favicon.ico HTTP/1.1" 200 2323 0.0115
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/account/aboutme/genres.erb:7: warning: don't put space before argument parentheses
+192.168.242.1 - - [17/Jan/2010 00:05:59] "GET /account/aboutme HTTP/1.1" 200 10550 0.0386
+192.168.242.1 - - [17/Jan/2010 00:05:59] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0062
+192.168.242.1 - - [17/Jan/2010 00:06:00] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [17/Jan/2010 00:06:01] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0038
+192.168.242.1 - - [17/Jan/2010 00:06:02] "GET /scripts/all.js HTTP/1.1" 304 - 0.0035
+192.168.242.1 - - [17/Jan/2010 00:06:03] "GET /scripts/core.js HTTP/1.1" 304 - 0.0036
+192.168.242.1 - - [17/Jan/2010 00:06:03] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0036
+192.168.242.1 - - [17/Jan/2010 00:06:03] "GET /partial/account/aboutme/profile_picture_form HTTP/1.1" 200 804 0.0047
+192.168.242.1 - - [17/Jan/2010 00:06:03] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 00:06:03] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0068
+192.168.242.1 - - [17/Jan/2010 00:06:03] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0087
+192.168.242.1 - - [17/Jan/2010 00:06:03] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [17/Jan/2010 00:06:03] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 00:06:03] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0038
+192.168.242.1 - - [17/Jan/2010 00:06:03] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0022
+192.168.242.1 - - [17/Jan/2010 00:06:03] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 00:06:03] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [17/Jan/2010 00:06:03] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0032
+192.168.242.1 - - [17/Jan/2010 00:06:03] "GET /scripts/all.js HTTP/1.1" 304 - 0.0038
+192.168.242.1 - - [17/Jan/2010 00:06:04] "GET /scripts/core.js HTTP/1.1" 304 - 0.0035
+192.168.242.1 - - [17/Jan/2010 00:06:04] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0031
+192.168.242.1 - - [17/Jan/2010 00:06:05] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0037
+192.168.242.1 - - [17/Jan/2010 00:06:06] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0039
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [17/Jan/2010 00:06:07] "GET /account/undefined HTTP/1.1" 200 5696 0.0158
+192.168.242.1 - - [17/Jan/2010 00:06:08] "GET /prakashraman/profile_picture HTTP/1.1" 304 - 0.0045
+192.168.242.1 - - [17/Jan/2010 00:06:08] "GET /favicon.ico HTTP/1.1" 200 2323 0.0143
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+/home/jammmin/webserver/app/views/account/aboutme/genres.erb:7: warning: don't put space before argument parentheses
+192.168.242.1 - - [17/Jan/2010 00:06:32] "GET /account/aboutme HTTP/1.1" 200 10752 0.0449
+192.168.242.1 - - [17/Jan/2010 00:06:32] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0076
+192.168.242.1 - - [17/Jan/2010 00:06:33] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0037
+192.168.242.1 - - [17/Jan/2010 00:06:34] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0031
+192.168.242.1 - - [17/Jan/2010 00:06:35] "GET /scripts/all.js HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [17/Jan/2010 00:06:36] "GET /scripts/core.js HTTP/1.1" 304 - 0.0041
+192.168.242.1 - - [17/Jan/2010 00:06:36] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0029
+192.168.242.1 - - [17/Jan/2010 00:06:36] "GET /partial/account/aboutme/profile_picture_form HTTP/1.1" 200 804 0.0097
+192.168.242.1 - - [17/Jan/2010 00:06:36] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0109
+192.168.242.1 - - [17/Jan/2010 00:06:36] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [17/Jan/2010 00:06:36] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [17/Jan/2010 00:06:36] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 00:06:36] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0035
+192.168.242.1 - - [17/Jan/2010 00:06:36] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0038
+192.168.242.1 - - [17/Jan/2010 00:06:36] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0028
+192.168.242.1 - - [17/Jan/2010 00:06:36] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [17/Jan/2010 00:06:36] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [17/Jan/2010 00:06:36] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [17/Jan/2010 00:06:36] "GET /scripts/all.js HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [17/Jan/2010 00:06:37] "GET /scripts/core.js HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [17/Jan/2010 00:06:38] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0068
+192.168.242.1 - - [17/Jan/2010 00:06:38] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 00:06:39] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0027
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [17/Jan/2010 00:06:40] "GET /account/undefined HTTP/1.1" 200 5696 0.0673
+192.168.242.1 - - [17/Jan/2010 00:06:41] "GET /prakashraman/profile_picture HTTP/1.1" 304 - 0.0072
+192.168.242.1 - - [17/Jan/2010 00:06:42] "GET /favicon.ico HTTP/1.1" 200 2323 0.0115
+192.168.242.1 - - [17/Jan/2010 00:06:50] "GET /genre/add?for_type=user&for_type_id=1&genre_id=1 HTTP/1.1" 200 - 0.0181
+192.168.242.1 - - [17/Jan/2010 00:06:50] "GET /partial/common/manage_genres?for_type=user&for_type_id=1 HTTP/1.1" 200 1154 0.0125
+192.168.242.1 - - [17/Jan/2010 00:06:50] "GET /genre/add?for_type=user&for_type_id=1&genre_id=2 HTTP/1.1" 200 - 0.0106
+192.168.242.1 - - [17/Jan/2010 00:06:50] "GET /partial/common/manage_genres?for_type=user&for_type_id=1 HTTP/1.1" 200 1296 0.0142
+192.168.242.1 - - [17/Jan/2010 00:06:50] "GET /genre/add?for_type=user&for_type_id=1&genre_id=3 HTTP/1.1" 200 - 0.0100
+192.168.242.1 - - [17/Jan/2010 00:06:50] "GET /partial/common/manage_genres?for_type=user&for_type_id=1 HTTP/1.1" 200 1438 0.0186
+192.168.242.1 - - [17/Jan/2010 00:06:51] "GET /genre/add?for_type=user&for_type_id=1&genre_id=4 HTTP/1.1" 200 - 0.0134
+192.168.242.1 - - [17/Jan/2010 00:06:51] "GET /partial/common/manage_genres?for_type=user&for_type_id=1 HTTP/1.1" 200 1580 0.0203
+192.168.242.1 - - [17/Jan/2010 00:06:51] "GET /genre/add?for_type=user&for_type_id=1&genre_id=5 HTTP/1.1" 200 - 0.0159
+192.168.242.1 - - [17/Jan/2010 00:06:51] "GET /partial/common/manage_genres?for_type=user&for_type_id=1 HTTP/1.1" 200 1722 0.0235
+192.168.242.1 - - [17/Jan/2010 00:06:52] "GET /genre/add?for_type=user&for_type_id=1&genre_id=6 HTTP/1.1" 200 - 0.0098
+192.168.242.1 - - [17/Jan/2010 00:06:52] "GET /partial/common/manage_genres?for_type=user&for_type_id=1 HTTP/1.1" 200 1864 0.0252
+192.168.242.1 - - [17/Jan/2010 00:06:54] "GET /genre/remove?contains_genre_id=2 HTTP/1.1" 200 - 0.0291
+192.168.242.1 - - [17/Jan/2010 00:06:54] "GET /partial/common/manage_genres?for_type=user&for_type_id=1 HTTP/1.1" 200 1722 0.0225
+192.168.242.1 - - [17/Jan/2010 00:06:56] "GET /genre/remove?contains_genre_id=1 HTTP/1.1" 200 - 0.0079
+192.168.242.1 - - [17/Jan/2010 00:06:56] "GET /partial/common/manage_genres?for_type=user&for_type_id=1 HTTP/1.1" 200 1580 0.0201
+192.168.242.1 - - [17/Jan/2010 00:06:57] "GET /genre/remove?contains_genre_id=3 HTTP/1.1" 200 - 0.0067
+192.168.242.1 - - [17/Jan/2010 00:06:57] "GET /partial/common/manage_genres?for_type=user&for_type_id=1 HTTP/1.1" 200 1438 0.0182
+192.168.242.1 - - [17/Jan/2010 00:06:57] "GET /genre/remove?contains_genre_id=4 HTTP/1.1" 200 - 0.0060
+192.168.242.1 - - [17/Jan/2010 00:06:57] "GET /partial/common/manage_genres?for_type=user&for_type_id=1 HTTP/1.1" 200 1296 0.0424
+192.168.242.1 - - [17/Jan/2010 00:06:57] "GET /genre/remove?contains_genre_id=5 HTTP/1.1" 200 - 0.0071
+192.168.242.1 - - [17/Jan/2010 00:06:57] "GET /partial/common/manage_genres?for_type=user&for_type_id=1 HTTP/1.1" 200 1154 0.0118
+192.168.242.1 - - [17/Jan/2010 00:06:58] "GET /genre/remove?contains_genre_id=6 HTTP/1.1" 200 - 0.0093
+192.168.242.1 - - [17/Jan/2010 00:06:58] "GET /partial/common/manage_genres?for_type=user&for_type_id=1 HTTP/1.1" 200 1057 0.0090
+192.168.242.1 - - [17/Jan/2010 00:07:32] "GET /account HTTP/1.1" 302 - 0.0045
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [17/Jan/2010 00:07:32] "GET /account/home HTTP/1.1" 200 8700 0.0608
+192.168.242.1 - - [17/Jan/2010 00:07:32] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0061
+192.168.242.1 - - [17/Jan/2010 00:07:33] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0035
+192.168.242.1 - - [17/Jan/2010 00:07:34] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0036
+192.168.242.1 - - [17/Jan/2010 00:07:35] "GET /scripts/all.js HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 00:07:36] "GET /scripts/core.js HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 00:07:36] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0022
+192.168.242.1 - - [17/Jan/2010 00:07:36] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [17/Jan/2010 00:07:36] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0027
+192.168.242.1 - - [17/Jan/2010 00:07:36] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0033
+192.168.242.1 - - [17/Jan/2010 00:07:36] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [17/Jan/2010 00:07:36] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [17/Jan/2010 00:07:36] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0028
+192.168.242.1 - - [17/Jan/2010 00:07:36] "GET /images/icons/play1.png HTTP/1.1" 304 - 0.0043
+192.168.242.1 - - [17/Jan/2010 00:07:36] "GET /images/icons/manage1.png HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [17/Jan/2010 00:07:37] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0040
+192.168.242.1 - - [17/Jan/2010 00:07:38] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [17/Jan/2010 00:07:39] "GET /images/icons/update.png HTTP/1.1" 304 - 0.0035
+192.168.242.1 - - [17/Jan/2010 00:07:40] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0037
+192.168.242.1 - - [17/Jan/2010 00:07:40] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0029
+192.168.242.1 - - [17/Jan/2010 00:07:41] "GET /favicon.ico HTTP/1.1" 200 2323 0.0189
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [17/Jan/2010 00:07:42] "GET /account/undefined HTTP/1.1" 200 5696 0.0205
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [17/Jan/2010 00:08:10] "GET /song/create HTTP/1.1" 200 6269 0.0228
+192.168.242.1 - - [17/Jan/2010 00:08:10] "GET /stylesheets/common.css HTTP/1.1" 200 4750 0.0128
+192.168.242.1 - - [17/Jan/2010 00:08:11] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0031
+192.168.242.1 - - [17/Jan/2010 00:08:12] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [17/Jan/2010 00:08:13] "GET /scripts/all.js HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [17/Jan/2010 00:08:14] "GET /scripts/core.js HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [17/Jan/2010 00:08:14] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [17/Jan/2010 00:08:14] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [17/Jan/2010 00:08:14] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0022
+192.168.242.1 - - [17/Jan/2010 00:08:14] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0023
+192.168.242.1 - - [17/Jan/2010 00:08:14] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 00:08:14] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0022
+192.168.242.1 - - [17/Jan/2010 00:08:15] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0038
+192.168.242.1 - - [17/Jan/2010 00:08:15] "GET /images/icons/follow2.png HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 00:08:16] "GET /images/icons/followers1.png HTTP/1.1" 304 - 0.0029
+192.168.242.1 - - [17/Jan/2010 00:08:17] "GET /images/icons/help1.png HTTP/1.1" 304 - 0.0036
+192.168.242.1 - - [17/Jan/2010 00:08:19] "GET /images/common/icon.png HTTP/1.1" 304 - 0.0149
+192.168.242.1 - - [17/Jan/2010 00:08:20] "GET /scripts/prototype.js HTTP/1.1" 304 - 0.0035
+192.168.242.1 - - [17/Jan/2010 00:08:21] "GET /scripts/swfobject.js HTTP/1.1" 304 - 0.0032
+192.168.242.1 - - [17/Jan/2010 00:08:22] "GET /scripts/all.js HTTP/1.1" 304 - 0.0040
+192.168.242.1 - - [17/Jan/2010 00:08:23] "GET /scripts/core.js HTTP/1.1" 304 - 0.0032
+192.168.242.1 - - [17/Jan/2010 00:08:23] "GET /images/logos/logo.jpg HTTP/1.1" 304 - 0.0025
+192.168.242.1 - - [17/Jan/2010 00:08:23] "GET /images/icons/home.png HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 00:08:23] "GET /images/icons/profile1.png HTTP/1.1" 304 - 0.0078
+192.168.242.1 - - [17/Jan/2010 00:08:23] "GET /swf/new-player.swf HTTP/1.1" 304 - 0.0026
+192.168.242.1 - - [17/Jan/2010 00:08:23] "GET /images/icons/8thnote.png HTTP/1.1" 304 - 0.0029
+192.168.242.1 - - [17/Jan/2010 00:08:23] "GET /images/common/icon.png HTTP/1.1" 200 709 0.0025
+192.168.242.1 - - [17/Jan/2010 00:08:23] "GET /images/icons/follow2.png HTTP/1.1" 200 2032 0.0026
+192.168.242.1 - - [17/Jan/2010 00:08:23] "GET /images/icons/followers1.png HTTP/1.1" 200 4985 0.0026
+192.168.242.1 - - [17/Jan/2010 00:08:23] "GET /images/icons/staff.png HTTP/1.1" 304 - 0.0024
+192.168.242.1 - - [17/Jan/2010 00:08:23] "GET /images/icons/help1.png HTTP/1.1" 200 1871 0.0025
+192.168.242.1 - - [17/Jan/2010 00:08:24] "GET /images/icons/mail2.png HTTP/1.1" 304 - 0.0038
+192.168.242.1 - - [17/Jan/2010 00:08:25] "GET /images/icons/update.png HTTP/1.1" 304 - 0.0038
+192.168.242.1 - - [17/Jan/2010 00:08:26] "GET /images/icons/play1.png HTTP/1.1" 304 - 0.0036
+192.168.242.1 - - [17/Jan/2010 00:08:27] "GET /images/icons/manage1.png HTTP/1.1" 304 - 0.0053
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+192.168.242.1 - - [17/Jan/2010 00:08:27] "GET /account/undefined HTTP/1.1" 200 5696 0.0184
+192.168.242.1 - - [17/Jan/2010 00:08:28] "GET /favicon.ico HTTP/1.1" 200 2323 0.0161

@@ -370,8 +370,19 @@ function loadUserProfileActions(username){
 function toogleSectionExpand(id){
 	var el = $(id);
 	if(!el) return;
-	aaa = el;
-	el.visible() ? el.hide() : el.show();
+	el.visible() ? hideSection(id) : showSection(id);
+}
+
+function hideSection(id){
+	var el = $(id);
+	if(!el) return;
+	el.hide()
+}
+
+function showSection(id){
+	var el = $(id);
+	if(!el) return;
+	el.show();
 }
 
 /* UPLOAD */
