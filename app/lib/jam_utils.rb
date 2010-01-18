@@ -43,6 +43,7 @@ module JamUtils
   end
   
   def make_copy_of_file_handle(newname=nil)
+    puts "copy 1"
     puts file_handle
     utils_make_copy_of_file_handle(file_handle, newname)
   end

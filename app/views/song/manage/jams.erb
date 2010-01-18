@@ -15,7 +15,7 @@
   <%= partial('song/manage/jam', {:locals => {:jam => jam }}) %><br>
 <% end %>
 <br>
-<input type='button' class='float-left' value='Publish Song' onclick='publishSong("<%= @song.id %>")'> <span class='float-left pad10'></span>
+<input type='button' class='float-left' value='Flatten Song' onclick='flattenSong("<%= @song.id %>")'> <span class='float-left pad10'></span>
 <span id='publish-response'></span>
 <br><br>
 

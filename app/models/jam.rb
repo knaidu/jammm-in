@@ -43,6 +43,10 @@ class Jam < ActiveRecord::Base
     song_jam.active rescue nil
   end
   
+  def song_jam_flattened?
+    song_jam.is_flattened
+  end
+  
   def visited
     self.views ||= 0
     self.views += 1

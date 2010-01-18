@@ -54,17 +54,23 @@ class Song < ActiveRecord::Base
     file_handle and File.exists?(file_handle_path(self))
   end
   
-  def publish(jams=[])
+  def flatten_jams(jams=[])
     process_id = ProcessInfo.available_process_id
     cmd = [
         "ruby",
-        "#{APP_ROOT}/scripts/publish_song.rb",
+        "#{APP_ROOT}/scripts/flatten_song.rb",
         "--jams=#{jams.map(&:id).join(',')}",
         "--song=#{self.id}",
         "--process_id=#{process_id}"
     ].join(' ')
     run(cmd)
     process_id
+  end
+  
+  def publish
+    song_jams.each do |song_jam|
+      song_jam.is_flattened ? song_jam.activate : song_jam.deactivate
+    end
   end
   
   def published

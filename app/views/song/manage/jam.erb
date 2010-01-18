@@ -5,7 +5,12 @@
   <span class='pad1'>
     <span class='left-float pad-right-5'><%= icon :jam %></span>
     <div class='left-float'>
-      <span class='bold float-left'><a href='/jam/<%= jam.id %>'><%= jam.name %></a>&nbsp;</span><span class='float-left'></span>
+      <span class='bold float-left'><a href='/jam/<%= jam.id %>'><%= jam.name %></a>&nbsp;</span>
+      <span class='float-left'>
+        <% if jam.song_jam_flattened? %>
+          (flattened)
+        <% end %>
+      </span>
 			<br>
       <%= add_field_name 'Jammmed by' %> <%= partial(:'common/list_artists', :locals => {:artists => jam.artists}) %><br>
     </div>

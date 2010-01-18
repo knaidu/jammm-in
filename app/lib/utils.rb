@@ -35,6 +35,7 @@ def file_handle_path(obj)
 end
 
 def utils_make_copy_of_file_handle(old_handle_name, new_handle_name=nil)
+  puts "copy 2"
   new_handle_name ||= new_file_handle_name
   puts "old: #{old_handle_name}, new #{new_handle_name}"
   new_handle_name if File.copy(FILES_DIR + "/" + old_handle_name, FILES_DIR + "/" + new_handle_name)
