@@ -40,7 +40,7 @@ def mark_jams_as_flattened(song, jams)
 end
 
 def delete_old_song_file_handle(song, jams)
-  song.delete_file_handle if song.file_handle_exists?  
+  song.delete_flattened_file_handle if song.flattened_file_handle_exists?  
 end
 
 def arrage_jams_for_processing(jams)
@@ -66,7 +66,7 @@ end
 
 if jams.size == 1
   delete_old_song_file_handle(song, jams)
-  song.file_handle = jams[0].make_copy_of_file_handle(new_file_handle_name) if jams[0].file_handle_exists?
+  song.flattened_file_handle = jams[0].make_copy_of_file_handle(new_file_handle_name) if jams[0].file_handle_exists?
   song.save
   mark_jams_as_flattened(song, jams)  
   process_info.set_done "Song has been successfully flattened."
@@ -94,7 +94,7 @@ process_info.set_message "Encoding media into MP3"
 cmd = "lame #{sox_output} #{lame_output}"
 run(cmd)
 
-song.file_handle = lame_output
+song.flattened_file_handle = lame_output.split("/").pop # returns only the file_handle and not the whole path
 song.save
 
 process_info.set_done "Song has been successfully flattened."
