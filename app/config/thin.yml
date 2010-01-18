@@ -5,9 +5,9 @@
   user: root
   group: root
   port: 4567
-  pid: /home/jammmin/webserver/app/processes
+  pid: /home/jammmin/webserver/app/processes/thin
   rackup: /home/jammmin/webserver/app/config/thin.ru
-  log: /home/jammmin/webserver/app/log/thin.log
+  log: /home/jammmin/log/thin.log
   max_conns: 1024
   timeout: 30
   max_persistent_conns: 512
