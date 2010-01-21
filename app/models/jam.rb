@@ -5,6 +5,7 @@ class Jam < ActiveRecord::Base
   has_one :song, :through => :song_jam
   has_one :creator, :primary_key => 'registered_user_id', :foreign_key => 'id', :class_name => "User"
   has_one :published, :class_name => "PublishedJam", :dependent => :destroy
+  has_many :sheets_of_music, :class_name => "SheetMusic"
 
   has_many :liked_by, :class_name => "User", :finder_sql => %q(
       SELECT "users".* FROM "users"  
@@ -99,6 +100,10 @@ class Jam < ActiveRecord::Base
     self.jam_picture_file_handle = filename
     self.save
   end
-
+  
+  def add_sheet_music(sheet_type, description, file)
+    SheetMusic.add(self, sheet_type, description, file)
+  end
+  
 end
 

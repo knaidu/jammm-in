@@ -1,0 +1,22 @@
+<% jam = Jam.find(jam_id) %>
+<html>
+<head>
+	<%= partial('body/includes')%>
+</head>
+<body>
+	<div class='round pad10' style='border: thin groove grey'>
+		<div class='float-left' style='padding-left: 20px'>
+			<form action='/jam/<%= jam.id %>/manage/add_sheet_music' method='post' enctype='multipart/form-data'>
+			  <%= field 'Type' %>
+			  <select name='sheet_type'><option value='sheet'>Sheet</option><option value='tab'>Tab</option></select><%= vspace %>
+      
+        <%= field 'Description' %><textarea name='description'></textarea><%= vspace %>
+    			  
+				<%= field 'File'%><input type='file' name='file'><%= vspace %>
+
+				<input type='submit' value='Upload'>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
