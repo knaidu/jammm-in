@@ -1,5 +1,1 @@
-<div>
-  <div style="box-sizing: 10%; padding-right: 5px; background-color: white" class='bold float-left'>Feed</div>
-  <div style="box-sizing: 90%; padding-left: 5px; margin: -4px 0 0; border-bottom: 1px solid #cccccc">&nbsp;</div>
-</div>
-<%= partial("account/feeds", :locals => {:feeds => @session_user.feeds, :show_as_updates => false}) %>
+<%= partial("account/feeds", :locals => {:feeds => @session_user.feeds, :show_as_updates => false}, :section_header => SectionHeader.new('Feeds')) %>
