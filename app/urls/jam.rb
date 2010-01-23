@@ -60,14 +60,11 @@ post '/jam/:jam_id/manage/upload_file' do
 end
 
 get '/jam/:jam_id/manage/tag_artist' do
-  begin
+  monitor {
     jam = get_passed_jam
-    jam.tag_artist(User.with_username(params[:username]))
-  rescue Exception => e
-    status 500
-    puts e.message
-    e.message
-  end
+    raise "User #{param?(:username)} does not exist." if not (user = User.with_username(params[:username]))
+    jam.tag_artist(user)
+  }
 end
 
 get '/jam/:jam_id/manage/untag_artist' do

@@ -1,9 +1,10 @@
 <form id='tag-artist-form' action='/jam/<%= @jam.id %>/manage/tag_artist' onsubmit='tagArtistInJam("<%= @jam.id %>"); return false'>
 	<input type='text' name='username' style='width: 120'> <input type='submit' value='Tag Artist'>
 </form>
-<% artists ||= @jam.artists rescue [] # Added if this view is called directly %>
-<% artists.each do |artist| %>
-  <%= partial('jam/manage/artist', {:locals => {:artist => artist }}) %>
+<% jam_artists ||= @jam.jam_artists rescue [] # Added if this view is called directly %>
+<% artists = @jam.artists %>
+<% jam_artists.each do |jam_artist| %>
+  <%= partial('jam/manage/artist', {:locals => {:artist => jam_artist.artist, :jam_artist => jam_artist }}) %>
 <% end %>
 <%= "(<i>There are no artists tagged in this JAM</i>)" if artists.empty? %>
 <div id='tag-artists-div'></div>

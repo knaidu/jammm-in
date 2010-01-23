@@ -6,7 +6,18 @@
       <span class='float-right simple-link' title='Untag <%= artist.name %>' onclick="untagArtistInJam('<%= @jam.id %>', '<%= artist.id %>')">x</span>
     </div>
 		<div style='padding-left: 50px'>
-			instruments
+		
+			<!-- Jam Artist's Instruments -->
+			
+			<div class='pad-right-5'>
+				<div class='display-inline-block align-top'><%= field 'Instruments' %></div>
+				<div class='display-inline-block'>
+					<%= partial ("common/manage_instruments", :locals => {
+						:for_type => "jam_artist",
+						:for_type_id => jam_artist.id
+					}) %>
+				</div>
+			</div>
 		</div>
   </span>
 </div>

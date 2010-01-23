@@ -437,6 +437,31 @@ function showUploadProgress(progressId, progressBar, jamId){
 	});
 }
 
+/* Instruments */
+
+function reload_manage_instruments(container_div, for_type, for_type_id){
+	var url = formatUrl("/partial/common/manage_instruments", {for_type: for_type, for_type_id: for_type_id});
+	updateEl(container_div, url);
+}
+
+function add_instrument(select_div_id, container_div, for_type, for_type_id){
+	var select = $(select_div_id);
+	var url = formatController("instrument", "add");
+	url = formatUrl(url, {for_type: for_type, for_type_id: for_type_id, instrument_id: select.getValue()});
+	var onComplete = function() {
+		reload_manage_instruments(container_div, for_type, for_type_id)
+	}
+	call(url, {onComplete: onComplete});
+}
+
+function remove_instrument(id, container_div, for_type, for_type_id){
+	var url = formatUrl("/instrument/remove", {contains_instrument_id: id});
+	var onComplete = function() {
+		reload_manage_instruments(container_div, for_type, for_type_id)
+	};
+	call(url, {onComplete: onComplete});
+}
+
 
 /* Player */
 function playSong(songtitle,songhandle,type)

@@ -14,14 +14,14 @@
 				<option value="<%= instrument.id %>"><%= instrument.name %>
 			<% end %>
 		</select>	
-		<input type='button' value='Add' onclick="add_instrument('<%= instruments_select_div_id %>')">
+		<input type='button' value='Add' onclick="add_instrument('<%= instruments_select_div_id %>', '<%= main_instruments_div_id %>', '<%= for_type %>', '<%= for_type_id %>')">
 		<hr class='thin'>
 	
 		<% contains_instruments.each do |contains_instrument| %>
 			<% instrument = contains_instrument.instrument %>
 			<div class='pad-right-5'> 
 				<div class='display-inline-block'><%= instrument.name %></div>
-				<div class='float-right simple-link' onClick="remove_instrument('<%= contains_instrument.id %>')">x</div>
+				<div class='float-right simple-link' onClick="remove_instrument('<%= contains_instrument.id %>', '<%= main_instruments_div_id %>', '<%= for_type %>', '<%= for_type_id %>')">x</div>
 			</div>
 		<% end %>
 	
@@ -31,23 +31,3 @@
 	
 	</div>
 </div>
-
-<%= js_start %>
-	function reload_instruments(){
-		var url = formatUrl("/partial/common/manage_instruments", {for_type: "<%= for_type %>", for_type_id: <%= for_type_id %>});
-		updateEl('<%= main_instruments_div_id %>', url);
-	}
-
-	function add_instrument(select_div_id){
-		var select = $(select_div_id);
-		alert(select.getValue());
-		var url = formatController("instrument", "add");
-		url = formatUrl(url, {for_type: "<%= for_type %>", for_type_id: <%= for_type_id %>, instrument_id: select.getValue()});
-		call(url, {onComplete: reload_instruments});
-	}
-
-	function remove_instrument(id){
-		var url = formatUrl("/instrument/remove", {contains_instrument_id: id});
-		call(url, {onComplete: reload_instruments});
-	}
-<%= js_end %>

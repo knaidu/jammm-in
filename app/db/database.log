@@ -1,12 +1,6 @@
-<<<<<<< HEAD:app/db/database.log
-SQL (0.3ms)  SET client_min_messages TO 'panic'
-SQL (0.2ms)  SET client_min_messages TO 'notice'
-SQL (0.8ms)  SELECT version FROM schema_migrations
-=======
-SQL (0.1ms)  SET client_min_messages TO 'panic'
+SQL (0.5ms)  SET client_min_messages TO 'panic'
 SQL (0.1ms)  SET client_min_messages TO 'notice'
-SQL (0.5ms)  SELECT version FROM schema_migrations
->>>>>>> 494040333dc8d36987f5c74c3f5209187db36a07:app/db/database.log
+SQL (1.1ms)  SELECT version FROM schema_migrations
 Migrating to CreateTestTable (1)
 Migrating to CreateUserTable (2)
 Migrating to CreateSongsTable (3)
@@ -29,17 +23,14 @@ Migrating to CreateSongLyricsTable (19)
 Migrating to CreateProcessInfoTable (20)
 Migrating to CreateFeedsAndUserFeedsTables (21)
 Migrating to CreateGenresAndUserGenresTables (22)
-<<<<<<< HEAD:app/db/database.log
-Migrating to CreateInstrumentsAndContainsIntrumentsTables (23)
-SQL (0.2ms)  BEGIN
-SQL (88.2ms)  CREATE TABLE "instruments" ("id" serial primary key, "name" character varying(255), "image_url" character varying(255)) 
-SQL (14.6ms)  CREATE TABLE "contains_instruments" ("id" serial primary key, "instrument_id" integer, "for_type" character varying(255), "for_type_id" integer) 
-SQL (0.6ms)  INSERT INTO schema_migrations (version) VALUES ('23')
-SQL (3.4ms)  COMMIT
-=======
 Migrating to CreateSheetMusicTable (23)
-SQL (0.1ms)  BEGIN
-SQL (34.2ms)  CREATE TABLE "sheet_music" ("id" serial primary key, "jam_id" integer, "sheet_type" character varying(255), "file_handle" character varying(255), "description" text) 
-SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('23')
-SQL (1.2ms)  COMMIT
->>>>>>> 494040333dc8d36987f5c74c3f5209187db36a07:app/db/database.log
+SQL (0.3ms)  BEGIN
+SQL (116.6ms)  CREATE TABLE "sheet_music" ("id" serial primary key, "jam_id" integer, "sheet_type" character varying(255), "file_handle" character varying(255), "description" text) 
+SQL (1.4ms)  INSERT INTO schema_migrations (version) VALUES ('23')
+SQL (2.0ms)  COMMIT
+Migrating to CreateInstrumentsAndContainsIntrumentsTables (24)
+SQL (0.5ms)  BEGIN
+SQL (26.2ms)  CREATE TABLE "instruments" ("id" serial primary key, "name" character varying(255), "image_url" character varying(255)) 
+SQL (37.3ms)  CREATE TABLE "contains_instruments" ("id" serial primary key, "instrument_id" integer, "for_type" character varying(255), "for_type_id" integer) 
+SQL (0.5ms)  INSERT INTO schema_migrations (version) VALUES ('24')
+SQL (2.3ms)  COMMIT
