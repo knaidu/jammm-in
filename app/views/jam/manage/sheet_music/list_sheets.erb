@@ -1,0 +1,8 @@
+<% sheets = jam.sheets_of_music %>
+<% sheets.each do |sheet| %>
+  <%= partial '/jam/manage/sheet_music/sheet', :locals => {:sheet => sheet} %>
+<% end %>
+
+<% if sheets.empty? %>
+<i>You have no music sheets attached to this jam</i>
+<% end %>

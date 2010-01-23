@@ -38,6 +38,13 @@
 	:collapsible => true
 }) %>
 
+<%= partial('jam/manage/sheet_music/sheet_music', {
+	:locals => {:jam => @jam}, 
+	:section_header => SectionHeader.new('Sheet Music'),
+	:collapsible => true
+}) %>
+<br><br>
+
 <%= section_header 'Artists' %>
 <div id='jam-artists'>
   <%= partial('jam/manage/artists', {:locals => {:artists => @jam.artists}}) %>

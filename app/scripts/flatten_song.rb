@@ -32,15 +32,15 @@ end
 
 
 
-def mark_jams_as_active(song, jams)
+def mark_jams_as_flattened(song, jams)
   ids = jams.map(&:id)
   song.song_jams.each do |song_jam|
-    ids.include?(song_jam.jam_id) ? song_jam.activate : song_jam.deactivate
+    ids.include?(song_jam.jam_id) ? song_jam.flattened : song_jam.flattened(false)
   end
 end
 
 def delete_old_song_file_handle(song, jams)
-  song.delete_file_handle if song.file_handle_exists?  
+  song.delete_flattened_file_handle if song.flattened_file_handle_exists?  
 end
 
 def arrage_jams_for_processing(jams)
@@ -65,17 +65,14 @@ def arrage_jams_for_processing(jams)
 end
 
 if jams.size == 1
-  mark_jams_as_active(song, jams)
   delete_old_song_file_handle(song, jams)
-  song.file_handle = jams[0].make_copy_of_file_handle(new_file_handle_full_name) if jams[0].file_handle_exists?
+  song.flattened_file_handle = jams[0].make_copy_of_file_handle(new_file_handle_name) if jams[0].file_handle_exists?
   song.save
-  
-  process_info.set_done "Song has been successfully published."
-  exit
-  
+  mark_jams_as_flattened(song, jams)  
+  process_info.set_done "Song has been successfully flattened."
+  exit  
 end
 
-mark_jams_as_active(song, jams)
 delete_old_song_file_handle(song, jams)
 sox_output = false
 lame_output = new_file_handle_full_name
@@ -97,10 +94,13 @@ process_info.set_message "Encoding media into MP3"
 cmd = "lame #{sox_output} #{lame_output}"
 run(cmd)
 
-song.file_handle = lame_output
+song.flattened_file_handle = lame_output.split("/").pop # returns only the file_handle and not the whole path
 song.save
 
-process_info.set_done "Song has been successfully published."
+process_info.set_done "Song has been successfully flattened."
 
 puts [sox_output, lame_output].inspect
+
+mark_jams_as_flattened(song, jams)
+
 exit

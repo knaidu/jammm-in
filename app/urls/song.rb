@@ -131,11 +131,17 @@ post '/song/:song_id/manage/update_information' do
 end
 
 
-get '/song/:song_id/manage/publish' do
+get '/song/:song_id/manage/flatten' do
   song = get_passed_song
   jams_arr = params[:jam_ids].split(',')
   jams = params[:jam_ids].split(',').map do |id| Jam.find(id) end
-  song.publish(jams).to_json
+  song.flatten_jams(jams).to_json
+end
+
+get '/song/:song_id/manage/publish' do
+  song = get_passed_song
+  song.publish
+  "Your song has been successfully published"
 end
 
 get '/song/:song_id/manage/unpublish' do

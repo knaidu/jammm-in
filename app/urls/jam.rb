@@ -28,6 +28,7 @@ get '/jam/:jam_id/jam_picture' do
   }
 end
 
+
 get '/jam/:jam_id/manage' do
   @layout_info = {'middle_panel' => 'jam/manage/page', 'right_panel' => 'jam/manage/instructions', 'left_panel' => 'account/menu'}
   @jam = Jam.find(params[:jam_id])
@@ -126,4 +127,25 @@ get '/jam/:jam_id/manage/unlike' do
   jam.unlike(session_user) ? "Successfully unliked jam" : "Error in unliking jam"
 end
 
+get '/jam/:jam_id/manage/sheet_music' do
+  erb(:'/jam/manage/sheet_music/sheet_music', :locals => {:jam => get_passed_jam})
+end
 
+post '/jam/:jam_id/manage/add_sheet_music' do
+  jam = get_passed_jam
+#  monitor {
+    file = param?(:file)[:tempfile]
+    puts file
+    jam.add_sheet_music(param?(:sheet_type), param?(:description), file)
+    file.unlink
+    redirect_path = "/partial/jam/manage/sheet_music/sheet_music_added"
+    redirect redirect_path
+#  }  
+end
+
+get '/jam/:jam_id/manage/delete_sheet_music' do
+  monitor {
+    SheetMusic.find(param?(:sheet_music_id)).destroy
+    "Successfully deleted sheet music"
+  }
+end

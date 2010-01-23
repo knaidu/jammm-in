@@ -14,11 +14,17 @@ class SongJam < ActiveRecord::Base
   
   def activate
     self.active = true
+    self.is_flattened = false
     self.save
   end
   
   def deactivate
     self.active = false
+    self.save
+  end
+  
+  def flattened(state=true)
+    self.is_flattened = state
     self.save
   end
   

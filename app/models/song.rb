@@ -42,6 +42,10 @@ class Song < ActiveRecord::Base
     File.open(file_handle_path(self)) rescue nil
   end
   
+  def flattened_file
+    File.open(flattened_file_handle_path(self)) rescue nil    
+  end
+  
   def delete_file_handle
     File.delete(self.file.path) if self.file_handle
     self.file_handle = nil
@@ -50,21 +54,44 @@ class Song < ActiveRecord::Base
     nil
   end
   
+  def delete_flattened_file_handle 
+    File.delete(self.flatten_file.path) if self.flatten_file_handle
+    self.flattened_file_handle = nil
+    self.save
+  rescue
+    nil  
+  end
+  
   def file_handle_exists?
     file_handle and File.exists?(file_handle_path(self))
   end
   
-  def publish(jams=[])
+  def flattened_file_handle_exists?
+    true if flattened_file_handle
+  end
+  
+  def flatten_jams(jams=[])
     process_id = ProcessInfo.available_process_id
     cmd = [
         "ruby",
-        "#{APP_ROOT}/scripts/publish_song.rb",
+        "#{APP_ROOT}/scripts/flatten_song.rb",
         "--jams=#{jams.map(&:id).join(',')}",
         "--song=#{self.id}",
         "--process_id=#{process_id}"
     ].join(' ')
     run(cmd)
     process_id
+  end
+  
+  def publish
+    self.delete_file_handle if self.file_handle_exists?  
+    song_jams.each do |song_jam|
+      song_jam.is_flattened ? song_jam.activate : song_jam.deactivate
+    end
+    new_file_handle = new_file_handle_name
+    utils_make_copy_of_file_handle(self.flattened_file_handle, new_file_handle)
+    self.file_handle = new_file_handle
+    self.save
   end
   
   def published

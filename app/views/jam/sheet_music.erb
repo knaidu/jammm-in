@@ -1,0 +1,11 @@
+<% if sheets.empty? %>
+  <i>This jam has no music sheets attached to it</i>
+<% end %>
+
+<% sheets.each do |sheet| %>
+  <div>
+    <div class='float-left grey'><%= sheet.description %></div>
+    <div class='float-right'><a class='simple-link' href='/file/<%= sheet.file_handle %>'>Download</a></div>
+  </div>
+  <hr class='thin'>
+<% end %>

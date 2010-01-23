@@ -3,6 +3,7 @@ class CreateSongJamsTable < ActiveRecord::Migration
     create_table :song_jams do |i|
       i.column :song_id, :integer
       i.column :jam_id, :integer
+      i.column :is_flattened, :bool
     end
   end
   

@@ -14,3 +14,5 @@
 <br>
 <%= section_header 'Artists' %>
 <%= partial('common/users', :locals => {:users => @jam.artists }) %>
+
+<%= partial "jam/sheet_music", :section_header => SectionHeader.new('Sheet Music'), :locals => {:jam => @jam, :sheets => @jam.sheets_of_music} %>

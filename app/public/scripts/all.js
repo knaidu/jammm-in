@@ -226,7 +226,7 @@ function removeArtistFromSong(songId, artistId){
 	call(url, {onSuccess: onSuccess});
 }
 
-function publishSong(songId){
+function flattenSong(songId){
 	var songJams = document.getElementsByName('song-publish-form-song-jam');
 	var checkedJamIds = $A(songJams).map(function(el){
 		return el.checked ? el.value : null 
@@ -242,9 +242,14 @@ function publishSong(songId){
 		poll.start();
 	}
 	
-	var url = formatController('song', songId, 'manage', 'publish');
+	var url = formatController('song', songId, 'manage', 'flatten');
 	url = formatUrl(url, {jam_ids: $A(checkedJamIds).join(",")});
 	call(url, {onSuccess: callback});
+}
+
+function publishSong(songId){
+	var url = formatController('song', songId, 'manage', 'publish');
+	call(url, {onSuccess: reload});
 }
 
 function unpublishSong(songId) {
