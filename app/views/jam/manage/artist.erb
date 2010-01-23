@@ -1,10 +1,13 @@
 <div class='w100'>
   <span class='pad1'>
     <div>
-      <span class='left-float pad-right-5'><%= icon :user %></span>
-      <span class='bold float-left'><a href='/<%= artist.username %>'><%= artist.name %></a></span>
+      <span class='float-left pad-right-5'><%= icon :user %></span>
+      <span class='float-left bold simple-link'><a href='/<%= artist.username %>'><%= artist.name %></a></span>
       <span class='float-right simple-link' title='Untag <%= artist.name %>' onclick="untagArtistInJam('<%= @jam.id %>', '<%= artist.id %>')">x</span>
     </div>
+		<div style='padding-left: 50px'>
+			instruments
+		</div>
   </span>
 </div>
 

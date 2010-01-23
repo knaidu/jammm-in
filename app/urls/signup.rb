@@ -8,7 +8,7 @@ post '/signup/create' do
   begin
    if user = create_new_user(params['form'])
      set_session_user(user)
-     redirect_home
+     redirect "/account/aboutme"
    end
  rescue Exception => e
    puts e.message

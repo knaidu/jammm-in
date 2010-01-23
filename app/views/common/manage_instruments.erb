@@ -1,0 +1,53 @@
+<% 
+	main_instruments_div_id = rand_id 
+	instruments_select_div_id = rand_id
+%>
+<div id='<%= main_instruments_div_id %>'>
+	<% 
+		contains_instruments = ContainsInstrument.find_all_by_for_type_and_for_type_id(for_type, for_type_id)
+		instruments = contains_instruments.map(&:instrument) 
+	%>
+
+	<div class='display-inline-block pad-right-5'>
+		<select id='<%= instruments_select_div_id %>'>
+			<% (Instrument.all - instruments).each do |instrument| %>
+				<option value="<%= instrument.id %>"><%= instrument.name %>
+			<% end %>
+		</select>	
+		<input type='button' value='Add' onclick="add_instrument('<%= instruments_select_div_id %>')">
+		<hr class='thin'>
+	
+		<% contains_instruments.each do |contains_instrument| %>
+			<% instrument = contains_instrument.instrument %>
+			<div class='pad-right-5'> 
+				<div class='display-inline-block'><%= instrument.name %></div>
+				<div class='float-right simple-link' onClick="remove_instrument('<%= contains_instrument.id %>')">x</div>
+			</div>
+		<% end %>
+	
+		<% if instruments.empty? %>
+			<i>click <b>Add</b> to add a instrument</i>
+		<% end %>
+	
+	</div>
+</div>
+
+<%= js_start %>
+	function reload_instruments(){
+		var url = formatUrl("/partial/common/manage_instruments", {for_type: "<%= for_type %>", for_type_id: <%= for_type_id %>});
+		updateEl('<%= main_instruments_div_id %>', url);
+	}
+
+	function add_instrument(select_div_id){
+		var select = $(select_div_id);
+		alert(select.getValue());
+		var url = formatController("instrument", "add");
+		url = formatUrl(url, {for_type: "<%= for_type %>", for_type_id: <%= for_type_id %>, instrument_id: select.getValue()});
+		call(url, {onComplete: reload_instruments});
+	}
+
+	function remove_instrument(id){
+		var url = formatUrl("/instrument/remove", {contains_instrument_id: id});
+		call(url, {onComplete: reload_instruments});
+	}
+<%= js_end %>

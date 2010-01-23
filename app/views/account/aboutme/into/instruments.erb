@@ -1,0 +1,9 @@
+<div id='user-instruments' class='pad-right-5'>
+	<div class='display-inline-block align-top'><%= field 'Instruments' %></div>
+	<div class='display-inline-block'>
+		<%= partial ("common/manage_instruments", :locals => {
+			:for_type => "user",
+			:for_type_id => session_user?.id
+		}) %>
+	</div>
+</div>

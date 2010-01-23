@@ -81,3 +81,6 @@ load 'urls/process_info.rb'
 
 # Loads all the genres urls
 load 'urls/genre.rb'
+
+# Loads all the instruments urls
+load 'urls/instrument.rb'
