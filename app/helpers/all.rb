@@ -41,6 +41,10 @@ def section_header(text, options={})
   })
 end
 
+def panel_header(text, icon=false)
+  partial ("common/panel_header", :locals => {:text => text, :icon => icon})
+end
+
 def add_menu_entry(text, link, image)
   img = image.sym? ? icon(image, :small) : add_icon(image)
   puts image.sym?
@@ -83,6 +87,10 @@ def song_link(song)
   add_link(song.name, ("/song/" + song.id.to_s))
 end
 
+def play_link(obj)
+  "<div class='display-inline-block'>#{icon :play2}</div>"
+end
+
 def list_artists(artists)
   partial(:'common/list_artists', {:locals => {:artists => artists}})
 end
@@ -118,11 +126,11 @@ def format_lyrics(lyrics)
 end
 
 def manage_song_link(song)
-  "<span class='pad1'><a href='/song/#{song.id}/manage' title='Manage'>#{icon :manage}</a></span>"
+  "<span class='pad1 display-inline-block'><a href='/song/#{song.id}/manage' title='Manage'>#{icon :manage}</a></span>"
 end
 
 def manage_jam_link(jam)
-  "<span class='pad1'><a href='/jam/#{jam.id}/manage' title='Manage'>#{icon :manage}</a></song>"  
+  "<span class='display-inline-block pad1'><a href='/jam/#{jam.id}/manage' title='Manage'>#{icon :manage}</a></song>"  
 end
 
 def monitor

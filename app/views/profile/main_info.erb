@@ -1,0 +1,22 @@
+<div class='main-info'>
+	<div>
+	  <div class='field float-left'>Artist Handle</div>
+	  <div class='value float-right'><%= user.username %></div>
+	</div>
+	<%= vspace %>
+	<div>
+	  <div class='field float-left'>Name</div>
+	  <div class='value float-right'><%= user.name %></div>
+	</div>
+	<%= vspace %>
+	<div>
+	  <div class='field float-left'>Location</div>
+	  <div class='value float-right'><%= user.location %></div>
+	</div>
+	<%= vspace %>
+	<div>
+	  <div class='field float-left'>Listens To</div>
+	  <div class='value float-right'><%= list_genres(user.genres) or "-" %></div>
+	</div>
+	<%= vspace %>
+</div>

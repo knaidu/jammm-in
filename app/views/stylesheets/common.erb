@@ -113,7 +113,7 @@ hr.w60-align-left {width: 60%; margin-left: 0; text-align: left}
 
 /* TOP BAR */
 
-.top-bar {background-color: #990000; height: 40px; color: white; text-align: center;}
+.top-bar {background-color: #990000; height: 50px; color: white; text-align: center;}
 .top-bar-search {float: right; padding: 8px 10px;}
 .top-bar-search-container{
 	overflow: auto; 
@@ -149,6 +149,19 @@ hr.w60-align-left {width: 60%; margin-left: 0; text-align: left}
 .profile-content-container .middle-panel {width: 50%; float: left;}
 .profile-content-container .right-panel {width: 30%; float: right;}
 
+.profile-main {}
+
+.profile-main .main-info {
+	<%= default_round %>;
+	background-color: #F2FFE5;
+	color: #707070;
+	border: 1px solid #E5FFF2;
+	padding: 10px;
+}
+.profile-main .main-info .field {display: inline-block; color: inherit;}
+.profile-main .main-info .value {}
+.profile-main .main-info .line {}
+
 /* MENU */
 .menu {
 	background-color: white; 
@@ -169,7 +182,7 @@ hr.w60-align-left {width: 60%; margin-left: 0; text-align: left}
 
 /* Feeds */
 .feed {
-	border-bottom: thin solid <%= light_gray %>;
+/*	border-bottom: thin solid <%= light_gray %>; */
 	padding-bottom: 5px;
 }
 
@@ -178,5 +191,21 @@ hr.w60-align-left {width: 60%; margin-left: 0; text-align: left}
 
 }
 .section-header .text {
-  font-size: 12px;
+  font-size: 11px;
+}
+
+.panel-header {
+}
+
+.panel-header .icon {
+  padding-right: 5px;
+  display: inline-block;
+	vertical-align: middle;
+}
+
+.panel-header .text {
+	font-size: 14px;
+	font-weight: bold;
+	display: inline-block;
+	vertical-align: middle;
 }

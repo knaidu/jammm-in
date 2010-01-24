@@ -1,4 +1,6 @@
-<%= section_header('Updates', :icon => :update) %>
-<%= partial("common/feeds", :locals => {:feeds => @user.updates, :show_as_updates => true}) %>
-<br>
-
+<div class='profile-main'>
+  <%= partial("profile/main_info", :locals => {:user => @user}) %>
+	<%= vspace %>	<%= vspace %>
+  <%= partial("common/feeds", :locals => {:feeds => @user.updates, :show_as_updates => true}, :section_header => SectionHeader.new('Updates', :update)) %>
+  <br>
+</div>

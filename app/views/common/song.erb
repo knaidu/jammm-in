@@ -1,3 +1,17 @@
+<div class='pad1'>
+  <div class='float-left' style='box-sizing: 10%; padding-right: 10px'>
+    <img src="<%= song.song_picture_url%>" width='100px' height='70px'>
+  </div>
+  <div class='' style='box-sizing: 80%'>
+	    <span class='bold'><a class='simple-link' href='/song/<%= song.id %>'><%= song.name %></a></span><%= vspace %>
+    <%= add_field_name 'With' %> <%= partial(:'common/list_artists', :locals => {:artists => song.artists}) %><br>
+		<span class='display-inline-block'><%= icon :play2 %></span>
+		<%= manage_song_link(song) %>
+	  <span class='display-inline-block'> <%= add_music_link song %></span>
+  </div>
+</div>
+
+<!-- 
 <div class='w100 pad1'>
   <div class='left-float'>
 		<div>
@@ -7,6 +21,6 @@
     <%= add_field_name 'Jammmed with' %> <%= partial(:'common/list_artists', :locals => {:artists => song.artists}) %><br>
     <%= icon :like %> <%= icon :comments %>
   </div>
-  <span class='float-right'> <%= add_music_link song %></span>
 </div>
 
+-->

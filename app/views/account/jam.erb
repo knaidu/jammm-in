@@ -1,3 +1,16 @@
+<div>
+	<div style='box-sizing: 10%' class='float-left pad-right-5'>
+		<%= icon :jam %>
+	</div>
+	<div style='box-sizing: 90%'>
+		<span class='display-inline-block bold'><%= jam_link(jam) %></span><%= vspace %>
+    <%= add_field_name 'With' %><%= list_artists jam.artists %><br>
+		<%= play_link jam %>
+		<%= manage_jam_link jam %>
+	</div>
+</div>
+
+<!-- 
 <div class='pad1'>
   <div class='left-float'>
 		<div>
@@ -11,4 +24,4 @@
 		<%= manage_jam_link jam %>
 	</div>
 </div>
-
+-->

@@ -1,13 +1,13 @@
 <%= partial('account/message_streams', :locals => {:only_unread => true}) if not session_user?.unread_messages.empty? %>
 
-<%= section_header('Songs') %>
+<%= section_header('My Songs') %>
 <% @session_user.songs.each do |song| %>
-	<%= partial('account/song', {:locals => {:song => song}}) %><br><br>
+	<%= partial('account/song', {:locals => {:song => song}}) %><%= vspace %><br>
 <% end %>
 <br>
 
-<%= section_header('Jams') %>
+<%= section_header('My Jams') %>
 <% @session_user.jams.each do |jam| %>
-	<%= partial('account/jam', {:locals => {:jam => jam}}) %><br><br>
+	<%= partial('account/jam', {:locals => {:jam => jam}}) %><%= vspace %><%= vspace %>
 <% end %>
 

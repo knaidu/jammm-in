@@ -32,9 +32,11 @@
   
 	  %>
 	  <div>
-	    <%= section_header 'Navigate' %>
-	    <% items.each do |item| %>
+	    <hr class='thin'>
+	    <% items.size.times do |i| %>
+	      <% item = items[i] %>
 				<%= add_menu_entry(item[:name], item[:link], item[:icon] ? item[:icon] : "") %>
+				<%= "<hr class='light'" if i < (items.size - 1) %>
 	    <% end %>
 	  </div>
 	  <%

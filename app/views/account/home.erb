@@ -1,1 +1,2 @@
-<%= partial("account/feeds", :locals => {:feeds => @session_user.feeds, :show_as_updates => false}, :section_header => SectionHeader.new('Feeds')) %>
+<%= panel_header("Feeds", :update) %>
+<%= partial("account/feeds", :locals => {:feeds => @session_user.feeds, :show_as_updates => false}) %>

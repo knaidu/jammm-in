@@ -2,23 +2,10 @@
   <div class='float-left' style='box-sizing: 10%; padding-right: 10px'>
     <img src="<%= song.song_picture_url%>" width='100px' height='70px'>
   </div>
-  <div class='' style='box-sizing: 90%'>
+  <div class='' style='box-sizing: 80%'>
 	    <span class='bold'><a class='simple-link' href='/song/<%= song.id %>'><%= song.name %></a></span><%= vspace %>
     <%= add_field_name 'With' %> <%= partial(:'common/list_artists', :locals => {:artists => song.artists}) %><br>
+		<span class='display-inline-block'><%= icon :play2 %></span>
+		<%= manage_song_link(song) %>
   </div>
 </div>
-
-<!-- 
-<div class='pad1'>
-  <div class='left-float'>
-		<div>
-			<span class='float-left pad-right-5'><%= icon :play2 %></span>
-	    <span class='bold float-left'><a href='/song/<%= song.id %>'><%= song.name %></a>&nbsp;</span><br>
-		</div>
-    <%= add_field_name 'Jammmed with' %> <%= partial(:'common/list_artists', :locals => {:artists => song.artists}) %><br>
-    <%= add_field_name 'Date Created' %> <%= song.created_at.date %><br>
-  </div>
-  <div class='float-right'><%= manage_song_link(song) %></div>
-</div>
-
--->
