@@ -1,6 +1,7 @@
 <%
 	default_color = "#990000"
 	default_line_color = "#cccccc"
+	default_light_line_color = "#dddddd"
 	default_round = "-moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;"
 	light_gray  = "#eee9e9"
 %>
@@ -50,6 +51,7 @@ input[type='text'], input[type='password'] {height: 22px}
 
 hr {border: 0}
 hr.thin {background-color: <%= default_line_color %>; height: 1px;}
+hr.light{background-color: <%= default_light_line_color %>; height: 1px;}
 hr.w60-align-left {width: 60%; margin-left: 0; text-align: left}
 
 
@@ -84,8 +86,9 @@ hr.w60-align-left {width: 60%; margin-left: 0; text-align: left}
 .text-right {text-align: right}
 .text-left {text-align: left}	
 .text-center {text-align: center}
-.field{color: grey; font-weight: bold; width: 100px; display: inline-block}
+.field{color: #838b83; width: 100px; display: inline-block}
 .round {-moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;}
+.round-top {-moz-border-radius: 5px 5px 0px 0px; -webkit-border-radius: 5px; border-radius: 5px;}
 .height-inherit {height: inherit;}
 .simple-action{display: inline-block; background-color: <%= light_gray %>; <%= default_round %>; padding: 5px}
 .simple-cell {display: inline-block; width: 200px}
@@ -135,6 +138,9 @@ hr.w60-align-left {width: 60%; margin-left: 0; text-align: left}
 .account-content-container .left-panel {width: 20%; float: left; overflow: auto;}
 .account-content-container .middle-panel {width: 50%; float: left;}
 .account-content-container .right-panel {width: 30%; float: right;}
+
+.account-menu-item {}
+.account-menu-item .item-text {color: black;}
 
 /* PROFILE */
 

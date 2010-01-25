@@ -1,30 +1,23 @@
-
 <div class='menu'>
-	<a class='simple-link' href='<%= session_user?.url %>'><%= session_user?.url %></a>
-	<br><br>
-	<span class='bg-grey round pad10'>
-		<b>Create:</b><hr class='thin' style='background-color: white'>
-			<%= icon(:song, :small) %><a href='/song/create'>Song</a><br>
-			<%= icon(:jam, :small) %><a href='/jam/create'>Jam</a>
-	</span>
-	<br><br>
-	<div>
-		<%= section_header 'navigate' %>
-	  <%= add_menu_entry('Home','/account', :home) %>
-	  <%= add_menu_entry('Profile','/' + @session_user.username, :profile) %>
-	  <%= add_menu_entry('Songs','/account/songs', :song) %>
-	  <%= add_menu_entry('Jams','/account/jams', :jam) %>
-	
-		<% ms = "Message Streams" %>
-		<% ms += " (#{session_user?.unread_messages.size.to_s})" if not session_user?.unread_messages.empty? %>
-		
-	  <%= add_menu_entry(ms,'/account/message_streams', :message) %>
-	  <%= add_menu_entry('Following','/account/following', :following) %>
-	  <%= add_menu_entry('Followers','/account/followers', :followers) %>
-	  <%= add_menu_entry('About Me','/account/aboutme', :jam) %>
-	
-		<br>
-	  <%= add_menu_entry('Help','/help', :help) %>  
-	  <%= add_menu_entry('Logout','/account/logout','asdasd') %>  
-	</div>
+  <%= add_menu_entry('Create Jam','/jam/create', :jam) %>
+  <hr class='light'>
+  <%= add_menu_entry('Create Song','/song/create', :song) %>
+  <br>
+  <hr class='thin'>
+  <%= add_menu_entry('Home','/account', :home) %>
+  <hr class='light'>
+  <%= add_menu_entry('Profile','/' + @session_user.username, :profile) %>
+  <hr class='light'>
+  <%= add_menu_entry('Songs','/account/songs', :song) %>
+  <hr class='light'>
+  <%= add_menu_entry('Jams','/account/jams', :jam) %>
+	<% ms = "Message Streams" %>
+	<% ms += " (#{session_user?.unread_messages.size.to_s})" if not session_user?.unread_messages.empty? %>
+  <hr class='light'>	
+  <%= add_menu_entry(ms,'/account/message_streams', :message) %>
+  <hr class='light'>
+  <%= add_menu_entry('Following','/account/following', :following) %>
+  <hr class='light'>
+  <%= add_menu_entry('Followers','/account/followers', :followers) %>
+
 </div>

@@ -44,11 +44,11 @@ end
 def add_menu_entry(text, link, image)
   img = image.sym? ? icon(image, :small) : add_icon(image)
   puts image.sym?
-	"<div>
-		<a title='#{text}' href='#{link}' class='bold grey display-inline'>
+	"<div class='account-menu-item'>
+		<a title='#{text}' href='#{link}'>
 		  <div>
 	  	  <span class='float-left pad-right-10'>#{img}</span>
-  		  <span class='display-inline'>#{text}</span>
+  		  <span class='item-text'>#{text}</span>
 	  	</div>
 		</a>
 	</div>"

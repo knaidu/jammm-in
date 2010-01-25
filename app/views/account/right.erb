@@ -1,21 +1,20 @@
 <%= partial('account/message_streams', :locals => {:only_unread => true}) if not session_user?.unread_messages.empty? %>
 
-<%= section_header('Songs', {:icon => :song}) %>
+<div>
+  <div style="box-sizing: 10%; padding-right: 5px; background-color: white" class='bold float-left'>Songs</div>
+  <div style="box-sizing: 90%; padding-left: 5px; margin: -4px 0 0; border-bottom: 1px solid #cccccc">&nbsp;</div>
+</div>
+
 <% @session_user.songs.each do |song| %>
 	<%= partial('account/song', {:locals => {:song => song}}) %><br><br>
 <% end %>
-<span class='simple-action'>
-	<a href='/song/create'>create song</a>
-</span>
 <br><br>
 
-
-
-<%= section_header('Jams', {:icon => :jam}) %>
+<div>
+  <div style="box-sizing: 10%; padding-right: 5px; background-color: white" class='bold float-left'>Jams</div>
+  <div style="box-sizing: 90%; padding-left: 5px; margin: -4px 0 0; border-bottom: 1px solid #cccccc">&nbsp;</div>
+</div>
 <% @session_user.jams.each do |jam| %>
 	<%= partial('account/jam', {:locals => {:jam => jam}}) %><br><br>
 <% end %>
-<span class='simple-action'>
-	<a href='/jam/create'>create jam</a>
-</span>
-<br><br>
+

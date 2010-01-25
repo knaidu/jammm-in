@@ -2,15 +2,20 @@
 	img ||= (icon(options[:icon], :small) if options[:icon] rescue "")
 	text ||= sh.text
 %>
-<div style='background-color: white;>
-  <span class='display-inline-block float-left pad-right-5'><%= img %></span><div class='bold display-inline-block align-vertical'>&nbsp;<%= text %></div>
+<div style='background-color: #dedede; padding: 5px 6px;'>
+  <% if img %>
+    <span class='display-inline-block float-left pad-right-5'><%= img %>&nbsp;</span>
+  <% end %>
+  <div class='display-inline-block align-vertical float-left bold'><%= text %></div>
 	<% if options[:collapsible] %>
 		<% switch_id = rand_id %>
 		<span id='<%= switch_id %>' class='float-right grey clickable' onClick="toogleSectionExpand('<%= options[:collapsible] %>', '<%= switch_id %>')">[+]</span>
 	<% end %>
-  <hr class='thin'>
 </div>
 <br>
+
+
+
 <% if options[:collapsed] %>
 	<%= js_start %>
 		(function(){
