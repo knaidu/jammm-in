@@ -3,20 +3,19 @@
 	  <div class='field float-left'>Artist Handle</div>
 	  <div class='value float-right'><%= user.username %></div>
 	</div>
-	<%= vspace %>
+	<%= hor_line("1px", "dotted", "#999999", "5px 0px 5px 0px") %>
 	<div>
 	  <div class='field float-left'>Name</div>
 	  <div class='value float-right'><%= user.name %></div>
 	</div>
-	<%= vspace %>
+	<%= hor_line("1px", "dotted", "#999999", "5px 0px 5px 0px") %>
 	<div>
 	  <div class='field float-left'>Location</div>
 	  <div class='value float-right'><%= user.location %></div>
 	</div>
-	<%= vspace %>
+	<%= hor_line("1px", "dotted", "#999999", "5px 0px 5px 0px") %>
 	<div>
 	  <div class='field float-left'>Listens To</div>
 	  <div class='value float-right'><%= list_genres(user.genres) or "-" %></div>
 	</div>
-	<%= vspace %>
 </div>

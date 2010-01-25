@@ -161,6 +161,10 @@ def vspace(height=5)
   "<div style='height: #{height}'></div>"
 end
 
+def hor_line(px='1px', style='solid', color='black', margin='0px')
+  "<div style='border-top: #{px} #{style} #{color}; margin: #{margin}'> </div>"
+end
+
 def field(text, options={})
   width = options[:width] || false
   "<div class='field align-top'>#{text}</div>"

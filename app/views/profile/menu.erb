@@ -2,42 +2,25 @@
 	<span class='profile-photo'>
 	  <%= profile_picture(@user) %>
 	</span>
-	<br><br>
-	<%
-		p_info = @menu_data[:personal_info]
-		items = [
-			{:name => 'Full Name', :value => p_info['name']},
-			{:name => 'Location', :value => p_info['location']},
-			{:name => "Listens to", :value => list_genres(@user.genres)}
-		]
-		items.each do |i|
-		%>
-	  	<%= add_profile_menu_user_info_item(i[:name], i[:value]) %>
-		<%
-		end
-	%>
+	
 	<br><br>
 	<%= partial("profile/actions", :locals => {:user => @user}) %>
 	<br><br>
 
 	<%
 	  items = [
-	    {:name => 'Profile', :link => "/#{@user.username}", :icon => :profile},
-	    {:name => 'Songs', :link => "/#{@user.username}/songs", :icon => :song},
-	    {:name => 'Jams', :link => "/#{@user.username}/jams", :icon => :jam},
-	    {:name => 'Following', :link => "/#{@user.username}/following", :icon => :following},
-	    {:name => 'Jammmed With', :link => "/#{@user.username}/jammmed_with", :icon => :collaborators},
-	    {:name => 'Followers', :link => "/#{@user.username}/followers", :icon => :followers}    
+	    {:text => 'Profile', :link => "/#{@user.username}", :icon => :profile},
+	    {:text => 'Songs', :link => "/#{@user.username}/songs", :icon => :song},
+	    {:text => 'Jams', :link => "/#{@user.username}/jams", :icon => :jam},
+	    {:text => 'Following', :link => "/#{@user.username}/following", :icon => :following},
+	    {:text => 'Jammmed With', :link => "/#{@user.username}/jammmed_with", :icon => :collaborators},
+	    {:text => 'Followers', :link => "/#{@user.username}/followers", :icon => :followers}    
 	  ]
   
 	  %>
 	  <div>
 	    <hr class='thin'>
-	    <% items.size.times do |i| %>
-	      <% item = items[i] %>
-				<%= add_menu_entry(item[:name], item[:link], item[:icon] ? item[:icon] : "") %>
-				<%= "<hr class='light'" if i < (items.size - 1) %>
-	    <% end %>
+			<%= partial("common/menu", :locals => {:items => items}) %>
 	  </div>
 	  <%
 	%>

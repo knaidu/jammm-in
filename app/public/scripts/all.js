@@ -1,6 +1,45 @@
 
 var GLOBAL = {playerType: "large"};
 
+
+/* INIT */
+
+// This is executed after the page has been loaded
+
+window.onload = function(){
+	window.setTimeout(styleMenuItems, 1000);
+}
+
+/* MENU */
+
+function styleMenuItems(){
+	var menuItemsSections = document.getElementsByClassName('menu-items');
+	if($A(menuItemsSections).size() == 0) 
+		return;
+	$A(menuItemsSections).each(function(menuItemsSections){
+		var menuItemsSection = menuItemsSections.getElementsByClassName('menu-item');
+		$A(menuItemsSection).each(styleMenuItem);
+	})
+}
+
+function styleMenuItem(item){
+	console.log('initiazing...');
+	var item = $(item);
+	var textItem = item.getElementsByClassName("text")[0];
+	
+	$(item).observe('mouseover', function(){
+		if (!$A(item.classNames()).include('hover')){
+			console.log('over');
+			item.addClassName("hover") 
+		}
+	});
+	
+	$(item).observe('mouseout', function(){
+		if ($A(item.classNames()).include('hover'))
+			item.removeClassName("hover") 
+	});
+}
+
 /* Debug */
 
 function log(message){

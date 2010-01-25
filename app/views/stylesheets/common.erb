@@ -4,6 +4,10 @@
 	default_light_line_color = "#dddddd"
 	default_round = "-moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;"
 	light_gray  = "#eee9e9"
+	
+	default_desc_bg_color = "#F2FFE5"
+	default_desc_border_color = "#E6FFCC"
+	default_desc_text_color = "#707070"
 %>
 
 /* DEFAULTS */
@@ -153,14 +157,23 @@ hr.w60-align-left {width: 60%; margin-left: 0; text-align: left}
 
 .profile-main .main-info {
 	<%= default_round %>;
-	background-color: #F2FFE5;
-	color: #707070;
-	border: 1px solid #E5FFF2;
+	background-color: <%= default_desc_bg_color %>;
+	color: <%= default_desc_text_color %>;
+	border: 1px solid <%= default_desc_border_color %>;;
 	padding: 10px;
 }
-.profile-main .main-info .field {display: inline-block; color: inherit;}
-.profile-main .main-info .value {}
+.profile-main .main-info .field {display: inline-block; color: inherit; font-weight: inherit;}
+.profile-main .main-info .value {font-weight: bold;}
 .profile-main .main-info .line {}
+
+/* ACTIONS */
+.actions {
+	<%= default_round %>;
+	background-color: <%= default_desc_bg_color %>;
+	color: <%= default_desc_text_color %>;
+	border: 1px solid <%= default_desc_border_color %>;;
+	padding: 10px;
+}
 
 /* MENU */
 .menu {
@@ -175,6 +188,12 @@ hr.w60-align-left {width: 60%; margin-left: 0; text-align: left}
 	-webkit-border-radius: 5px 0 0;
 	border-radius: 5px 5px 0 0;
 }
+
+.menu-items {background-color: #dcdcdc;}
+.menu-items .menu-item {background-color: none;}
+.item-hover {background-color: <%= default_color %>}
+.menu-items .menu-item .text {display: inline-block; vertical-align: middle;}
+.menu-items .menu-item .icon {display: inline-block; vertical-align: middle; padding-right: 5px;}
 
 /* MUSIC, i.e: songs, jams, lyrics */
 .music-desc {padding: 10px; background-color: #faebd7; border: thin solid #eedfcc;}
@@ -209,3 +228,4 @@ hr.w60-align-left {width: 60%; margin-left: 0; text-align: left}
 	display: inline-block;
 	vertical-align: middle;
 }
+

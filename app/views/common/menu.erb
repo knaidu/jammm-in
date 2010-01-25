@@ -1,0 +1,14 @@
+<div class='menu-items'>
+	<% 
+		items.size.times do |i|
+			item = items[i]
+	%>
+		<div class='menu-item item-hover'>
+			<%= vspace %>
+			<div class='icon'><%= icon item[:icon] %></div>
+			<div class='text'><%= item[:text] %></div>
+			<%= vspace %>
+		</div>
+		<%= hor_line("1px", "solid", "#eee9e9") if i < (items.size - 1) %>
+	<% end %>
+</div>
