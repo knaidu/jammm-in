@@ -152,5 +152,9 @@ class Song < ActiveRecord::Base
     self.save
   end
   
+  def song_picture_url
+    "/song/#{self.id}/song_picture?#{self.song_picture_file_handle.to_s}"
+  end
+  
   
 end

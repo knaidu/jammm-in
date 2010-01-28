@@ -2,11 +2,11 @@
 	img ||= (icon(options[:icon], :small) if options[:icon] rescue "")
 	text ||= sh.text
 %>
-<div>
+<div class="section-header">
 	<% if img %>
 	  <span class='display-inline-block float-left pad-right-5'><%= img %>&nbsp;</span>
 	<% end %>
-  <div style="box-sizing: 10%; padding-right: 5px; background-color: white" class='bold float-left'><%= text %></div>
+  <div style="box-sizing: 10%; padding-right: 5px; background-color: white" class='text bold float-left'><%= text %></div>
   <div style="box-sizing: 90%; padding-left: 5px; margin: -4px 0 0; border-bottom: 1px solid #cccccc">&nbsp;</div>
 	<% if options[:collapsible] and false %>
 		<% switch_id = rand_id %>
@@ -14,6 +14,7 @@
 	<% end %>
 </div>	
 <%= vspace %>
+
 <% if options[:collapsed] and false %>
 	<%= js_start %>
 		(function(){
