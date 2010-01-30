@@ -91,6 +91,10 @@ def song_link(song)
   add_link(song.name, ("/song/" + song.id.to_s))
 end
 
+def song_picture(song)
+  partial("common/song_picture", :locals => {:song => song})
+end
+
 def play_link(obj)
   "<div class='display-inline-block'>#{icon :play2}</div>"
 end

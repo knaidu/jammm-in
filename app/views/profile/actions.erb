@@ -1,5 +1,5 @@
 <div id='profile-actions-div'>
-	<span class='actions'>
+	<div class='actions'>
 		<% if session_user? %> 
 			<% if session_user?.follows?(user) %>
 			  <div>
@@ -12,5 +12,5 @@
 			<span class='float-left pad-right-5'><%= icon :profile %></span>Full Profile<br>
 		<% else %> 
 		<% end %>
-	</span>
+	</div>
 </div>

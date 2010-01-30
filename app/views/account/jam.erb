@@ -3,25 +3,9 @@
 		<%= icon :jam %>
 	</div>
 	<div style='box-sizing: 90%'>
-		<span class='display-inline-block bold'><%= jam_link(jam) %></span><%= vspace %>
-    <%= add_field_name 'With' %><%= list_artists jam.artists %><br>
+		<span class='bold'><%= jam_link(jam) %></span> -
+    <%= list_artists jam.artists %><br>
 		<%= play_link jam %>
 		<%= manage_jam_link jam %>
 	</div>
 </div>
-
-<!-- 
-<div class='pad1'>
-  <div class='left-float'>
-		<div>
-			<span class='float-left pad-right-10'><%= icon :play2 %></span>
-	    <span class='bold float-left'><a href='/jam/<%= jam.id %>'><%= jam.name %></a>&nbsp;</span>
-		</div>
-    <%= add_field_name 'Jammmed with' %> <%= partial(:'common/list_artists', :locals => {:artists => jam.artists}) %><br>
-    <%= add_field_name 'Date Created' %> <%= jam.created_at.date %><br>
-  </div>
-  <div class='float-right'> 
-		<%= manage_jam_link jam %>
-	</div>
-</div>
--->

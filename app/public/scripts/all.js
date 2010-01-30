@@ -13,6 +13,7 @@ window.onload = function(){
 /* MENU */
 
 function styleMenuItems(){
+	/*
 	var menuItemsSections = document.getElementsByClassName('menu-items');
 	if($A(menuItemsSections).size() == 0) 
 		return;
@@ -20,12 +21,14 @@ function styleMenuItems(){
 		var menuItemsSection = menuItemsSections.getElementsByClassName('menu-item');
 		$A(menuItemsSection).each(styleMenuItem);
 	});
-	
+	*/
 	if(GLOBAL.selectedMenuItem)
 		styleSelectedMenuItem(GLOBAL.selectedMenuItem);
 }
 
+// The below functions are kept, if IE fixes are needed
 function styleMenuItem(item){
+	return;
 	var item = $(item);
 	var textItem = item.getElementsByClassName("text")[0];
 	

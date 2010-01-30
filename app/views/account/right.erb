@@ -1,4 +1,4 @@
-<%= partial('account/message_streams', :locals => {:only_unread => true}) if not session_user?.unread_messages.empty? %>
+<%= partial('account/message_streams', :locals => {:only_unread => true}) %>
 
 <%= section_header('My Songs') %>
 <% @session_user.songs.each do |song| %>

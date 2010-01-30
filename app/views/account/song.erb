@@ -1,10 +1,10 @@
 <div class='pad1'>
   <div class='float-left' style='box-sizing: 10%; padding-right: 10px'>
-    <img src="<%= song.song_picture_url%>" width='80px' height='55px'>
+    <%= song_picture song %>
   </div>
   <div class='' style='box-sizing: 80%'>
-	    <span class='bold'><a class='simple-link' href='/song/<%= song.id %>'><%= song.name %></a></span><%= vspace %>
-    <%= add_field_name 'With' %> <%= partial(:'common/list_artists', :locals => {:artists => song.artists}) %><br>
+    <span class='bold'><a class='simple-link' href='/song/<%= song.id %>'><%= song.name %></a></span><br>
+    <%= list_artists(song.artists) %><br>
 		<span class='display-inline-block'><%= icon :play2 %></span>
 		<%= manage_song_link(song) %>
   </div>

@@ -45,11 +45,12 @@ TD {vertical-align: top}
 
 table, td, body, input, textarea {font-family: 'lucida grande',tahoma,verdana,arial,sans-serif; font-size: 11px;}
 
-span {display: block; overflow: auto; word-wrap: break-word}
+span {overflow: auto; word-wrap: break-word}
 div {display: block; overflow: auto; word-wrap: break-word}
 IMG {border: 0}
 a:hover {text-decoration: underline}
 input[type='text'], input[type='password'], TEXTAREA {border: thin groove <%= default_line_color %>; width: 200}
+input[type='button'], input[type='submit'] {background-color: <%= default_light_line_color %>; <%= default_round %>} 
 input[type='text'], input[type='password'] {height: 22px}
 /* HR */
 
@@ -189,11 +190,12 @@ hr.w60-align-left {width: 60%; margin-left: 0; text-align: left}
 	border-radius: 5px 5px 0 0;
 }
 
-.menu-items {cursor: pointer; padding-right: 1px; padding-bottom: 1px;}
-.menu-items A:HOVER {text-decoration: none; cursor: pointer;}
-.menu-items .menu-item {background-color: none; cursor: inherit; padding-right: 5px;}
-.menu-items .menu-item .text {display: inline-block; vertical-align: middle; cursor: inherit;}
-.menu-items .menu-item .icon {display: inline-block; vertical-align: middle; padding-right: 5px; cursor: inherit;}
+div.menu-items {cursor: pointer; padding-right: 1px; padding-bottom: 1px;}
+div.menu-items A:HOVER {text-decoration: none; cursor: pointer;}
+div.menu-items div.menu-item {background-color: none; cursor: inherit; padding-right: 5px;}
+div.menu-items div.menu-item:hover {background-color: <%= default_desc_bg_color %>}
+div.menu-items div.menu-item div.text {display: inline-block; vertical-align: middle; cursor: inherit;}
+div.menu-items div.menu-item div.icon {display: inline-block; vertical-align: middle; padding-right: 5px; cursor: inherit;}
 
 .menu-item-hover {background-color: <%= default_desc_bg_color %>}
 .menu-item-selected {background-color: <%= default_desc_bg_color %>; font-weight: bold;}
@@ -233,3 +235,6 @@ hr.w60-align-left {width: 60%; margin-left: 0; text-align: left}
 	vertical-align: middle;
 }
 
+div.something {color: blue}
+div.something div.little:hover{color: red}
+div.something:active {color: green}

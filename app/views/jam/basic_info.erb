@@ -1,23 +1,49 @@
-<div class='music-desc round'>
-	<div>
-		<div class='float-left'>
-			<img src='/jam/<%= jam.id %>/jam_picture' height="128px" width="128px">
-		</div>
-		<div class='pad-left-10 float-left'>
-	  	<%= field 'Description:' %> <%= jam.description || "-" %><br>
-		  <%= field 'Artists:' %> <%= partial(:'common/list_artists', {:locals => {:artists => jam.artists}}) %><br>
-		  <%= field 'Creator:' %> <%= jam.creator.name %><br>
-		  <%= field 'Views:' %> <%= jam.views %><br>
-			<%= field 'Type:' %> <%= display_jam_type(jam) %><br>
-			<%= field 'Likes:' %> <%= jam.liked_by.size %><br>
-			<%= field 'Genres:' %> <%= list_genres(jam.genres) %><br>
-		</div>
+<div class='main-info'>
+  <div class='field display-inline-block' style='font-size: 13px; letter-spacing: 1px'>JAM / <b><%= jam.name %></b></div>
+  <span> - <%= profile_link(jam.creator) %> </span>
+  <%= vspace %><%= vspace %>
+	<div class='pad-left-10'>
+  	<div>
+  	  <div class='field float-left'>Description</div>
+  	  <div class='value float-right'><%= jam.description || "-" %></div>
+  	</div>
+  	<%= hor_line("1px", "dotted", "#999999", "5px 0px 5px 0px") %>
+
+		<div>
+  	  <div class='field float-left'>Artists</div>
+  	  <div class='value float-right'><%= partial(:'common/list_artists', {:locals => {:artists => jam.artists}}) %></div>
+  	</div>
+  	<%= hor_line("1px", "dotted", "#999999", "5px 0px 5px 0px") %>
+
+		<div>
+  	  <div class='field float-left'>Creator</div>
+  	  <div class='value float-right'><%= jam.creator.name %></div>
+  	</div>
+  	<%= hor_line("1px", "dotted", "#999999", "5px 0px 5px 0px") %>
+
+		<div>
+  	  <div class='field float-left'>Views</div>
+  	  <div class='value float-right'><%= jam.views %></div>
+  	</div>
+  	<%= hor_line("1px", "dotted", "#999999", "5px 0px 5px 0px") %>
+
+		<div>
+  	  <div class='field float-left'>Genres</div>
+  	  <div class='value float-right'><%= list_genres(jam.genres) %></div>
+  	</div>
+  	<%= hor_line("1px", "dotted", "#999999", "5px 0px 5px 0px") %>
+  	
+  	<div>
+  	  <div class='field float-left'>Type</div>
+  	  <div class='value float-right'><%= display_jam_type(jam) %></div>
+  	</div>
+
 	</div>
-	<br>
-	<% if @session_user and not @session_user.likes_jam?(jam) %>
-  	<span class='simple-link display-inline' onClick='likeJam("<%= jam.id %>")' title='Like'><%= icon :like %></span>
-	<% elsif @session_user %>
-		<span class='simple-link display-inline' onClick='unlikeJam("<%= jam.id %>")' title='Unlike'><%= icon :unlike %></span>
-	<% end %>
-	<a class='simple-link' href="javascript:play('<%= jam.file_handle %>')"> <%= icon :play %></a>
 </div>
+<br>
+<a class='simple-link' href="javascript:play('<%= jam.file_handle %>')"> <%= icon :play2 %></a>
+<% if @session_user and not @session_user.likes_jam?(jam) %>
+	<span class='simple-link display-inline' onClick='likeJam("<%= jam.id %>")' title='Like'><%= icon :like %></span>
+<% elsif @session_user %>
+	<span class='simple-link display-inline' onClick='unlikeJam("<%= jam.id %>")' title='Unlike'><%= icon :unlike %></span>
+<% end %>

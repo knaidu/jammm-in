@@ -49,6 +49,3 @@
 <div id='jam-artists'>
   <%= partial('jam/manage/artists', {:locals => {:artists => @jam.artists}}) %>
 </div>
-<br><br>
-
-<%= partial('jam/manage/jam_picture', :section_header => SectionHeader.new('Jam Picture'), :collapsible => true, :locals => {:jam => @jam}) %>
