@@ -1,11 +1,10 @@
 <div>
 	<div style='box-sizing: 10%' class='float-left pad-right-5'>
-		<%= icon :jam %>
+		<%= icon :play2 %>
 	</div>
 	<div style='box-sizing: 90%'>
 		<span class='bold'><%= jam_link(jam) %></span> -
-    <%= list_artists jam.artists %><br>
-		<%= play_link jam %>
-		<%= manage_jam_link jam %>
+    <%= list_artists jam.artists %>
+    <span class='float-right'><%= manage_jam_link jam %></span>
 	</div>
 </div>
