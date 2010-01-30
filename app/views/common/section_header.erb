@@ -1,5 +1,5 @@
 <%
-	img ||= (icon(options[:icon], :small) if options[:icon] rescue "")
+	img ||= (icon(sh.img, :small) if sh.img rescue "")
 	text ||= sh.text
 %>
 <div class="section-header">
@@ -19,7 +19,7 @@
 	<%= js_start %>
 		(function(){
 			var tt = function(){hideSection('<%= options[:collapsible] %>', '<%= switch_id %>')};
-			window.setTimeout(tt, 2000);
+			window.setTimeout(tt, 1000);
 		})();
 	<%= js_end %>
 <% end %>

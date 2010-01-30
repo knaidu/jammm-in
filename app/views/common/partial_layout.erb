@@ -1,4 +1,7 @@
-<% section_body_div = rand_id %>
+<% 
+  section_body_div = rand_id 
+  sh = options[:section_header]
+%>
 
 <% if options[:section_header] %>
 	<%= partial("common/section_header", {

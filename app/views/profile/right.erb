@@ -1,8 +1,12 @@
 <% 
   if session_user? and @user != session_user? 
   message_stream = MessageStream.find_stream(session_user?, @user) %>
-  <%= section_header('Message Stream', {:icon => :message }) %>
-  <%= partial("common/message_stream", :locals => {:message_stream => message_stream}) %>
+  <%= partial("common/message_stream", 
+    :locals => {:message_stream => message_stream}, 
+    :section_header => SectionHeader.new('Message Stream', {:img => :message}), 
+    :collapsible => true,
+    :collapsed => true
+  ) %>
 <% end %>
 
 <%= section_header('Songs', {:icon => :song}) %>

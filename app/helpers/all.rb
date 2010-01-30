@@ -194,5 +194,9 @@ def list_genres(genres)
   genres.map(&:name).join(", ")
 end
 
+def list_instruments(instruments)
+  instruments.map(&:name).join(", ")
+end
+
 
 load 'helpers/profile.rb'

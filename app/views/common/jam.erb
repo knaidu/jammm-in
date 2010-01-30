@@ -1,12 +1,9 @@
 <div class='w100 pad1'>
-  <div class='left-float'>
-		<div>
-			<span class='float-left pad-right-5'> <%= icon :play2 %></span>
-    	<span class='bold float-left'><a href='/jam/<%= jam.id %>'><%= jam.name %></a>&nbsp;</span><span class='float-left'>[length]</span>
-		</div>
-    <%= add_field_name 'Jammmed by' %> <%= partial(:'common/list_artists', :locals => {:artists => jam.artists}) %><br>
-    <%= icon :like %> <%= icon :comments %>
-  </div>
-  <span class='float-right'> <%= add_music_link jam %></span>
+	<div>
+		<span class='float-left pad-right-5'> <%= icon :play2 %></span>
+  	<span class='bold float-left'><a href='/jam/<%= jam.id %>'><%= jam.name %></a></span>
+  	- <%= list_artists jam.artists %>
+    <span class='float-right'> <%= add_music_link jam %></span>
+	</div>
 </div>
 
