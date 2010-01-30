@@ -1,6 +1,9 @@
 <div class='main-info'>
-  <div class='field display-inline-block' style='font-size: 13px; letter-spacing: 1px'>JAM / <b><%= jam.name %></b></div>
-  <span> - <%= profile_link(jam.creator) %> </span>
+  <div>
+    <div class='align-middle display-inline-block'><%= icon :jam %></div>
+    <div class='align-middle field display-inline-block' style='vertical-align: top; font-size: 13px; letter-spacing: 1px'><b><%= jam.name %></b></div>
+    <span class='align-middle'> - <%= profile_link(jam.creator) %> </span>
+  </div>
   <%= vspace %><%= vspace %>
 	<div class='pad-left-10'>
   	<div>
