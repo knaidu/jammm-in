@@ -9,9 +9,8 @@
 		<% else %>
 			<%= add_profile_link(fhlp_get_users(feed)[0]) %> has created a new song <%= song_link(song) %>
 		<% end %>
-		<br>
 		<div class='grey'>
-			<%= "\"#{song.description}\"<br><br>" if song.description %>
+			<%= "\"#{song.description}\"<br>" if song.description %>
 		</div>
 		<%= play_link(song) %> <%= icon :like %>
 	</div>

@@ -1,19 +1,38 @@
-<div class='music-desc round'>
-	<div>
-		<div class='float-left'>
-			<img src='/song/<%= song.id %>/song_picture' height="128px" width="128px">
-		</div>
-		<div class='float-left'>
-		  <%= field 'Description' %> <%= song.description %><br>
-		  <%= field 'Artists' %> <%= partial(:'common/list_artists', {:locals => {:artists => song.artists}}) %><br>
-		  <%= field 'Creator' %> <%= add_profile_link song.creator %><br>
-			<%= field 'Genre' %> <%= list_genres(song.genres) %><br>
-		  <%= field 'Views' %> <%= song.views %><br><br>
-		</div>
-	</div>
-	<% if @session_user and not @session_user.likes_song?(song) %>
-  	<span class='simple-link' onClick='likeSong("<%= song.id %>")' title='Like'><%= icon :like %></span>
-	<% elsif @session_user %>
-		<span class='simple-link' onClick='unlikeSong("<%= song.id %>")'><%= icon :unlike %></span>
-	<% end %>
+<div class='main-info'>
+  <div>
+    <div class='align-middle display-inline-block'><%= icon :song %></div>
+    <div class='music-title'><b><%= song.name %></b></div>
+    <span class='align-middle'> - <%= profile_link(song.creator) %> </span>
+  </div>
+  
+  <%= vspace %><%= vspace %>
+  <div>
+    <span style='float: left; box-sizing: border-box'>
+      <%= song_picture song %>
+    </span>
+	  <div class='pad-left-10' style='box-sizing: border-box'>
+    	<%= main_info_row("Description", song.description || "-") %>
+    	<%= main_info_hor_line %>
+    	<%= main_info_row("Artists", list_artists(song.artists)) %>
+    	<%= main_info_hor_line %>
+    	<%= main_info_row("Creator", profile_link(song.creator)) %>
+    	<%= main_info_hor_line %>
+    	<%= main_info_row("Genres", list_genres(song.genres)) %>
+    	<%= main_info_hor_line %>
+    	<%= main_info_row("Views", song.views) %>
+    </div>
+  </div>
+</div>
+<br>
+
+<div>
+  <span class='float-left'><%= icon :play2 %></span>
+  </span class='float-left'>
+    <% if @session_user and not @session_user.likes_song?(song) %>
+    	<span class='simple-link' onClick='likeSong("<%= song.id %>")' title='Like'><%= icon :like %></span>
+    <% elsif @session_user %>
+    	<span class='simple-link' onClick='unlikeSong("<%= song.id %>")'><%= icon :unlike %></span>
+    <% end %>
+  </span>
+  <span class='float-right'><%= manage_song_link song %></span>
 </div>

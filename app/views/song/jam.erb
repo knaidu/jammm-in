@@ -1,6 +1,10 @@
 <div>
-  <span class='left-float pad-right-10'><%= add_icon 'jam' %></span>
-  <div class='float-left'>
-    <span class='display-inline black'><%= add_link("#{jam.name}", "/jam/#{jam.id}", {:class_names => "black bold"}) %></span> - <%= list_artists jam.artists %>
+  <div class='border-box-sizing pad-right-5 float-left display-inline-block'><%= icon :play2 %></div>
+  <div class='border-box-sizing float-left bold'><%= jam_link jam %></div>
+  <div class='border-box-sizing float-left'> &nbsp;- 
+    <% jam.jam_artists.each do |jam_artist| %>
+      <%= profile_link jam_artist.artist %> <%= "(#{list_instruments(jam_artist.instruments)}). " if not jam_artist.instruments.empty? %> 
+    <% end %>
   </div>
+  <div class='border-box-sizing float-right display-inline-block'><%= add_music_link jam %></div>  
 </div>

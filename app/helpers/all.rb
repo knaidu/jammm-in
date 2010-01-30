@@ -198,5 +198,13 @@ def list_instruments(instruments)
   instruments.map(&:name).join(", ")
 end
 
+# MAIN-INFO
+def main_info_row(field, value)
+  partial("common/main_info/row", :locals => {:field => field, :value => value})
+end
+
+def main_info_hor_line
+  hor_line("1px", "dotted", "#999999", "5px 0px 5px 0px")
+end
 
 load 'helpers/profile.rb'

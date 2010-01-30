@@ -1,50 +1,24 @@
 <%= section_header "Sign up" %>
-<br>
+<%= vspace %>
 <span class='italic'>All fields are required.</span>
-<br>
+<%= vspace %><%= vspace %>
+
 <form method='post' action='/signup/create'>
-  <table>
-	  <tr>
-		  <td class='bold' width='100px'>
-			  Username
-		  </td>
-		  <td>
-			  <input type='text' name='form[username]'>
-		  </td>
-	  </tr>
-	  <tr>
-		  <td class='bold' width='100px'>
-			  Password
-		  </td>
-		  <td>
-			  <input type='password' name='form[password]'>
-		  </td>
-	  </tr>
-	  <tr>
-		  <td class='bold'>
-			  Full Name
-		  </td>
-		  <td>
-			  <input type='text' name='form[name]'>
-		  </td>
-	  </tr>
-	  <tr>
-		  <td class='bold'>
-			  Email
-		  </td>
-		  <td>
-			  <input type='text' name='form[email]'>
-		  </td>
-	  </tr>
-	  <tr>
-		  <td class='bold'>
-			  Location
-		  </td>
-		  <td>
-			  <input type='text' name='form[location]'>
-		  </td>
-	  </tr>
-  </table><br>
+  <%= field 'Username' %>
+  <input type='text' name='form[username]'>
+  <%= vspace %>
+  <%= field 'Password' %>
+  <input type='password' name='form[password]'>
+  <%= vspace %>
+	<%= field	'Full Name' %>
+  <input type='text' name='form[name]'>
+  <%= vspace %>
+	<%= field 'Email' %>
+  <input type='text' name='form[email]'>
+  <%= vspace %>
+	<%= field 'Location' %>
+	<input type='text' name='form[location]'>
+  <%= vspace %>
   <input type='submit' value='Sign Up'>
 </form>
 <br>

@@ -4,7 +4,7 @@
 	</span>
 	
 	<br><br>
-	<%= partial("profile/actions", :locals => {:user => @user}) %>
+	<%= partial("profile/actions", :locals => {:user => @user}) if session_user? %>
 	<br><br>
 
 	<%

@@ -1,13 +1,9 @@
-<a href='javascript: history.go(-1)'><%= icon :back %></a><font size='4'>Song / "<%= @song.name %>"</font> 
-<span class='float-right pad1'><a class='simple-link' href='/song/<%= @song.id %>/manage' title='Manage'><%= icon(:manage, :small) %></a></span>
-<br><br>
-
 <div id='basic-info'>
 	<%= partial("song/basic_info", :locals => {:song => @song}) %>
 </div>
 <br>
 <%= section_header 'Jams' %>
-<%= partial(:'common/jams', {:locals => {:jams => @song.jams}}) %>
+<%= partial(:'song/jams', {:locals => {:jams => @song.jams}}) %>
 <br>
 <%= section_header 'Lyrics' %>
 <%= format_lyrics(@song.lyrics) %>
