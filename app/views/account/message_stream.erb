@@ -6,3 +6,7 @@
 </span>
 <br>
 <%= partial("common/message_stream", {:locals => {:message_stream => message_stream, :full => true}}) %>
+
+<%= js_start %>
+	setSelectedMenuItem('menu-item-message-streams')
+<%= js_end %>

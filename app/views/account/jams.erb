@@ -2,3 +2,7 @@
 <% @session_user.jams.each do |jam| %>
     <%= partial('account/jam', {:locals => {:jam => jam}}) %><br><br>
 <% end %>
+
+<%= js_start %>
+	setSelectedMenuItem('menu-item-jams')
+<%= js_end %>

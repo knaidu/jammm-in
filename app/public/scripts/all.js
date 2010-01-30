@@ -1,5 +1,5 @@
 
-var GLOBAL = {playerType: "large"};
+var GLOBAL = {playerType: "large", selectedMenuItem: false};
 
 
 /* INIT */
@@ -7,7 +7,7 @@ var GLOBAL = {playerType: "large"};
 // This is executed after the page has been loaded
 
 window.onload = function(){
-	window.setTimeout(styleMenuItems, 1000);
+	window.setTimeout(styleMenuItems, 10);
 }
 
 /* MENU */
@@ -19,25 +19,40 @@ function styleMenuItems(){
 	$A(menuItemsSections).each(function(menuItemsSections){
 		var menuItemsSection = menuItemsSections.getElementsByClassName('menu-item');
 		$A(menuItemsSection).each(styleMenuItem);
-	})
+	});
+	
+	if(GLOBAL.selectedMenuItem)
+		styleSelectedMenuItem(GLOBAL.selectedMenuItem);
 }
 
 function styleMenuItem(item){
-	console.log('initiazing...');
 	var item = $(item);
 	var textItem = item.getElementsByClassName("text")[0];
 	
 	$(item).observe('mouseover', function(){
-		if (!$A(item.classNames()).include('hover')){
-			console.log('over');
-			item.addClassName("hover") 
+		if (!$A(item.classNames()).include('menu-item-hover')){
+			item.addClassName("menu-item-hover") 
 		}
 	});
 	
 	$(item).observe('mouseout', function(){
-		if ($A(item.classNames()).include('hover'))
-			item.removeClassName("hover") 
+		if ($A(item.classNames()).include('menu-item-hover'))
+			item.removeClassName("menu-item-hover") 
 	});
+}
+
+function styleSelectedMenuItem(itemId){
+	var item = $(itemId);
+	if(!item) return;
+	var prevSelectedItems = $A(document.getElementsByClassName('menu-item-selected'));
+	$A(prevSelectedItems).each(function(pItem){
+		pItem.removeClassName('menu-item-selected');
+	})
+	item.addClassName('menu-item-selected');
+}
+
+function setSelectedMenuItem(id){
+	GLOBAL.selectedMenuItem = id;
 }
 
 /* Debug */

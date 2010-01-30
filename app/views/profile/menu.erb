@@ -9,17 +9,17 @@
 
 	<%
 	  items = [
-	    {:text => 'Profile', :link => "/#{@user.username}", :icon => :profile},
-	    {:text => 'Songs', :link => "/#{@user.username}/songs", :icon => :song},
-	    {:text => 'Jams', :link => "/#{@user.username}/jams", :icon => :jam},
-	    {:text => 'Following', :link => "/#{@user.username}/following", :icon => :following},
-	    {:text => 'Jammmed With', :link => "/#{@user.username}/jammmed_with", :icon => :collaborators},
-	    {:text => 'Followers', :link => "/#{@user.username}/followers", :icon => :followers}    
+	    {:text => 'Profile', :link => "/#{@user.username}", :icon => :profile, :id => 'menu-item-profile' },
+	    {:text => 'Songs', :link => "/#{@user.username}/songs", :icon => :song, :id => 'menu-item-songs'},
+	    {:text => 'Jams', :link => "/#{@user.username}/jams", :icon => :jam, :id => 'menu-item-jams'},
+	    {:text => 'Following', :link => "/#{@user.username}/following", :icon => :following, :id => 'menu-item-following'},
+	    {:text => 'Jammmed With', :link => "/#{@user.username}/jammmed_with", :icon => :collaborators, :id => 'menu-item-collaborators'},
+	    {:text => 'Followers', :link => "/#{@user.username}/followers", :icon => :followers, :id => 'menu-item-followers'}    
 	  ]
   
 	  %>
 	  <div>
-	    <hr class='thin'>
+			<%= hor_line ("1px", "solid", "#cccccc") %>
 			<%= partial("common/menu", :locals => {:items => items}) %>
 	  </div>
 	  <%

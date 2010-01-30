@@ -1,23 +1,28 @@
-<div class='menu'>
-  <%= add_menu_entry('Create Jam','/jam/create', :jam) %>
-  <hr class='light'>
-  <%= add_menu_entry('Create Song','/song/create', :song) %>
-  <br>
-  <hr class='thin'>
-  <%= add_menu_entry('Home','/account', :home) %>
-  <hr class='light'>
-  <%= add_menu_entry('Profile','/' + @session_user.username, :profile) %>
-  <hr class='light'>
-  <%= add_menu_entry('Songs','/account/songs', :song) %>
-  <hr class='light'>
-  <%= add_menu_entry('Jams','/account/jams', :jam) %>
-	<% ms = "Message Streams" %>
-	<% ms += " (#{session_user?.unread_messages.size.to_s})" if not session_user?.unread_messages.empty? %>
-  <hr class='light'>	
-  <%= add_menu_entry(ms,'/account/message_streams', :message) %>
-  <hr class='light'>
-  <%= add_menu_entry('Following','/account/following', :following) %>
-  <hr class='light'>
-  <%= add_menu_entry('Followers','/account/followers', :followers) %>
 
+<% 
+	items = [
+		{:text => 'Create Jam', :link => '/jam/create', :icon => :jam, :id => 'menu-item-jam-create'},
+		{:text => 'Create Song', :link => '/song/create', :icon => :song, :id => 'menu-item-song-create'}
+	]
+	
+  ms = "Message Streams"
+	ms += (" (" + session_user?.unread_messages.size.to_s + ")") if not session_user?.unread_messages.empty?
+		
+	items2 = [
+  	{:text => 'Home', :link => '/account', :icon => :home, :id => 'menu-item-home'},
+  	{:text => 'Profile', :link => '/' + session_user?.username, :icon => :profile, :id => 'menu-item-profile'},
+  	{:text => 'Songs', :link => '/account/songs', :icon => :song, :id => 'menu-item-songs'},
+    {:text => 'Jams', :link => '/account/jams', :icon => :jam, :id => 'menu-item-jams'},  	
+    {:text => ms, :link => '/account/message_streams', :icon => :message, :id => 'menu-item-message-streams'},
+    {:text => 'Following', :link => '/account/following', :icon => :following, :id => 'menu-item-following'},
+    {:text => 'Followers', :link => '/account/followers', :icon => :followers, :id => 'menu-item-followers'},
+	]
+%>
+
+<div>
+  <%= load_menu_items(items) %>
+  <br>
+	<%= hor_line ("1px", "solid", "#cccccc") %>
+  <%= load_menu_items(items2) %>	
 </div>
+

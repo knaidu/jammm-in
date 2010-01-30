@@ -1,2 +1,9 @@
-<%= panel_header("Feeds", :update) %>
-<%= partial("account/feeds", :locals => {:feeds => @session_user.feeds, :show_as_updates => false}) %>
+<div class='account'>
+  <%= partial("account/main_info", :locals => {:user => session_user?}) %>
+  <br>
+  <%= partial("account/feeds", :locals => {:feeds => @session_user.feeds, :show_as_updates => false}, :section_header => SectionHeader.new('Feeds')) %>
+</div>
+
+<%= js_start %>
+	setSelectedMenuItem('menu-item-home')
+<%= js_end %>

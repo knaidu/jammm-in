@@ -1,0 +1,24 @@
+<div class='main-info'>
+  <div class='field underline'><b>Account Summary</b></div><%= vspace %><%= vspace %>
+  <div style='padding-left: 10px'>
+  	<div>
+  	  <div class='field float-left'>Songs</div>
+  	  <div class='value float-right'><%= user.songs.size.to_s %></div>
+  	</div>
+  	<%= hor_line("1px", "dotted", "#999999", "5px 0px 5px 0px") %>
+  	<div>
+  	  <div class='field float-left'>Jams</div>
+  	  <div class='value float-right'><%= user.jams.size.to_s %></div>
+  	</div>
+  	<%= hor_line("1px", "dotted", "#999999", "5px 0px 5px 0px") %>
+  	<div>
+  	  <div class='field float-left'>Active Message Streams</div>
+  	  <div class='value float-right'><%= user.message_streams.size.to_s %></div>
+  	</div>
+  	<%= hor_line("1px", "dotted", "#999999", "5px 0px 5px 0px") %>
+  	<div>
+  	  <div class='field float-left'>Requests</div>
+  	  <div class='value float-right'>0</div>
+  	</div>
+	</div>
+</div>

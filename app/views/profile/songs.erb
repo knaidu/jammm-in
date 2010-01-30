@@ -3,3 +3,7 @@
 <% @songs.each do |song| %>
    <%= partial(:'common/song', {:locals => {:song => song}}) %><br><br>
 <% end %>
+
+<%= js_start %>
+	setSelectedMenuItem('menu-item-songs')
+<%= js_end %>

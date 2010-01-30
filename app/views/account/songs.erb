@@ -1,10 +1,10 @@
-<div style='background-color: #dcdcdc'>
-  <%= section_header('songs') %>
+<div>
+  <%= section_header('Songs') %>
   <% @session_user.songs.each do |song| %>
     <%= partial('account/song', {:locals => {:song => song}}) %><br><br>
   <% end %>
 </div>
 
-
-
-   
+<%= js_start %>
+	setSelectedMenuItem('menu-item-songs')
+<%= js_end %>

@@ -6,19 +6,16 @@
 	<% if img %>
 	  <span class='display-inline-block float-left pad-right-5'><%= img %>&nbsp;</span>
 	<% end %>
-  <div style="box-sizing: 10%; padding-right: 5px; background-color: white" class='text bold'><%= text %></div>
-  <hr class='thin'>
-  <!-- 
-  <div style="box-sizing: 90%; padding-left: 5px; margin: -4px 0 0; border-bottom: 1px solid #cccccc">&nbsp;</div>
-  -->
-	<% if options[:collapsible] and false %>
+  <div style="box-sizing: 10%; padding-right: 5px; background-color: white" class='text bold float-left'><%= text %></div>
+	<% if options[:collapsible] %>
 		<% switch_id = rand_id %>
 		<span id='<%= switch_id %>' class='float-right grey clickable' onClick="toogleSectionExpand('<%= options[:collapsible] %>', '<%= switch_id %>')">[+]</span>
 	<% end %>
 </div>	
+<hr class='thin'>
 <%= vspace %>
 
-<% if options[:collapsed] and false %>
+<% if options[:collapsed] %>
 	<%= js_start %>
 		(function(){
 			var tt = function(){hideSection('<%= options[:collapsible] %>', '<%= switch_id %>')};

@@ -1,2 +1,6 @@
 <%= section_header 'Following' %>
 <%= partial("common/users", :locals => {:users => @user.follows}) %>
+
+<%= js_start %>
+	setSelectedMenuItem('menu-item-following')
+<%= js_end %>

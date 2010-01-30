@@ -1,3 +1,21 @@
+<% 
+	items = [
+  	{:text => 'Jammm.in', :link => '/', :icon => :jammmin, :id => 'menu-item-jammmin'},
+  	{:text => 'Songs', :link => '/account/songs', :icon => :song, :id => 'menu-item-songs'},
+    {:text => 'Jams', :link => '/account/jams', :icon => :jam, :id => 'menu-item-jams'},  	
+    {:text => 'Artists', :link => '/account/following', :icon => :following, :id => 'menu-item-following'},
+    {:text => 'Genres', :link => '/account/followers', :icon => :followers, :id => 'menu-item-followers'}
+	]
+%>
+
+<div>
+  <br>
+	<%= hor_line ("1px", "solid", "#cccccc") %>
+  <%= load_menu_items(items) %>	
+</div>
+
+<br><br>
+<hr class='thin'>
 <div class='menu height-inherit' id='simple-menu'>
 	<br>
 	<b>Welcome to jamMm.in</b><br><br>

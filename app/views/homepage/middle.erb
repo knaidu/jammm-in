@@ -1,2 +1,6 @@
 <%= section_header('Feed') %>
 <%= partial("common/feeds", :locals => {:feeds => global_feeds(30), :show_as_updates => true}) %>
+
+<%= js_start %>
+	setSelectedMenuItem('menu-item-jammmin')
+<%= js_end %>

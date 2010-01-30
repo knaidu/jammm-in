@@ -58,6 +58,10 @@ def add_menu_entry(text, link, image)
 	</div>"
 end
 
+def load_menu_items(items=[])
+  partial("common/menu", :locals => {:items => items})
+end
+
 
 def add_link(text, href='', options={})
   class_names = "simple-link " + (options[:class_names] or "")
@@ -75,7 +79,7 @@ def add_field_name(text)
 end
 
 def add_profile_link(user)
-  add_link(user.name, ("/" + user.username)) rescue ""
+  add_link(user.username, ("/" + user.username)) rescue ""
 end
 alias profile_link add_profile_link
 
