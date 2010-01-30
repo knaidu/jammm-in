@@ -1,6 +1,6 @@
 <%= section_header 'Jams' %>
 <% @session_user.jams.each do |jam| %>
-    <%= partial('account/jam', {:locals => {:jam => jam}}) %><br><br>
+    <%= partial('account/jam', {:locals => {:jam => jam}}) %><br>
 <% end %>
 
 <%= js_start %>
