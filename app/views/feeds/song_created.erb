@@ -1,7 +1,7 @@
 <% song = fhlp_get_song(feed) %>
 <div>
-	<span class='float-left'>
-		<%= icon(:song, :medium) %>
+	<span class='float-left pad-right-5'>
+		<%= icon(:song, :small) %>
 	</span>
 	<div>
 		<% if song.creator == session_user? and not is_update %>

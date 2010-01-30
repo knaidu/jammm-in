@@ -1,7 +1,7 @@
 <% users = fhlp_get_users(feed) %>
 <div>
-	<span class='float-left'>
-		<%= icon(:user, :medium) %>
+	<span class='float-left pad-right-5'>
+		<%= icon(:user, :small) %>
 	</span>
 	<% if users[1] == session_user? and not is_update %>
 		You are being followed by <%= profile_link(users[0]) %>
@@ -11,6 +11,4 @@
 		<!-- If it is an update or a feed for a user not part of users array -->
 		<%= add_profile_link(users[0]) %> is now following <%= profile_link(users[1]) %>
  	<% end %>
-	<br>
-	<%= icon :following %>
 </div>

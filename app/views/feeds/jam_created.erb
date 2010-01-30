@@ -1,7 +1,7 @@
 <% jam = fhlp_get_jam(feed) %>
 <div>
-	<span class='float-left'>
-		<%= icon(:jam, :medium) %>
+	<span class='float-left pad-right-5'>
+		<%= icon(:jam, :small) %>
 	</span>
 	<% if jam.creator == session_user? and not is_update %>
 		You have created a new jam <a href="/jam/<%= jam.id %>" class='simple-link'><%= jam.name %></a>
