@@ -1,9 +1,11 @@
-<div id='user-genres' class='pad-right-5'>
-	<div class='display-inline-block align-top'><%= field 'Genres' %></div>
-	<div class='display-inline-block'>
-		<%= partial ("common/manage_genres", :locals => {
-			:for_type => "user",
-			:for_type_id => session_user?.id
-		}) %>
-	</div>
-</div>
+<table border=1>
+	<tr>
+	  <td><%= field 'Genres' %></td>
+	  <td>
+  		<%= partial ("common/manage_genres", :locals => {
+  			:for_type => "user",
+  			:for_type_id => session_user?.id
+  		}) %>
+  	</td>
+	</tr>
+</table>

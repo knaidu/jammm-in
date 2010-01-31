@@ -4,7 +4,7 @@
 		genres = contains_genres.map(&:genre) 
 	%>
 
-	<div class='display-inline-block pad-right-5'>
+	<div class='display-inline-block pad-right-5' style='overflow: hidden'>
 		<% user_genres = session_user?.genres %>
 		<select id='user-genre-select'>
 			<% (Genre.all - genres).each do |genre| %>
@@ -16,10 +16,12 @@
 	
 		<% contains_genres.each do |contains_genre| %>
 			<% genre = contains_genre.genre %>
-			<div class='pad-right-5'> 
-				<div class='display-inline-block'><%= genre.name %></div>
-				<div class='float-right simple-link' onClick="remove_genre('<%= contains_genre.id %>')">x</div>
-			</div>
+  			<div class='box display-inline-block'>
+  			  <div class='text'><%= genre.name %></div>
+  			  <div class='action' onClick="remove_genre('<%= contains_genre.id %>')">x
+  			  </div>
+  			</div>
+			
 		<% end %>
 	
 		<% if genres.empty? %>

@@ -16,10 +16,21 @@
 	
 		<% contains_genres.each do |contains_genre| %>
 			<% genre = contains_genre.genre %>
+			<!-- 
 			<div class='pad-right-5'> 
 				<div class='display-inline-block'><%= genre.name %></div>
 				<div class='float-right simple-link' onClick="remove_genre('<%= contains_genre.id %>')">x</div>
 			</div>
+			-->
+			
+			<div>
+			  <div>
+			    <%= genre.name %>
+			  </div>
+			  <div onClick="remove_genre('<%= contains_genre.id %>')">x
+			  </div>
+			</div>
+			
 		<% end %>
 	
 		<% if genres.empty? %>

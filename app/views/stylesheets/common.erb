@@ -50,8 +50,27 @@ div {display: block; overflow: auto; word-wrap: break-word}
 IMG {border: 0}
 a:hover {text-decoration: underline}
 input[type='text'], input[type='password'], TEXTAREA {border: thin groove <%= default_line_color %>; width: 200}
-input[type='button'], input[type='submit'] {background-color: <%= default_light_line_color %>; <%= default_round %>} 
 input[type='text'], input[type='password'] {height: 22px}
+
+/* BUTTON ACTIVE */
+input[type='button'], input[type='submit'] {
+    background-color: #fefefe;
+    border: 1px solid #d4d4d4;
+    color: #616161;
+    padding: 4px 7px 4px 7px;
+    font-weight: bold;
+    background-size: 100%;
+    margin-bottom: 1px solid #dcdcdc;
+} 
+input[type='button']:active, input[type='submit']:active {
+  background-color: #dcdcdc;
+  border: 1px solid #d4d4d4;
+  color: #616161;
+  font-weight: bold;
+  padding: 4px 7px 4px 7px;
+  background-size: 100%;
+}
+
 /* HR */
 
 hr {border: 0}
@@ -99,7 +118,7 @@ hr.w60-align-left {width: 60%; margin-left: 0; text-align: left}
 .simple-cell {display: inline-block; width: 200px}
 .align-top{vertical-align: top}
 .align-middle{vertical-align: middle}
-.border-box-sizing{box-sizing: border-box; -moz-border-sizing: border-box; webkit-box-sizing: border-box;}
+.border-box-sizing{box-sizing: border-box; -moz-border-sizing: border-box; -webkit-box-sizing: border-box;}
 
 /* PROGRESS-BAR */
 .progress-bar-container{
@@ -241,3 +260,9 @@ div.menu-items div.menu-item div.icon {display: inline-block; vertical-align: mi
 div.something {color: blue}
 div.something div.little:hover{color: red}
 div.something:active {color: green}
+
+/* BOX ITEMS */
+div.box {border: thin solid #d4d4d4}
+div.box div.text {float: left; font-weight: bold; color: #4a4a4a; padding: 5px; border-right: inherit}
+div.box div.action {padding: 5px; float: left; font-weight: bold}
+div.box div.action:hover {padding: 5px; float: left; font-weight: bold; color: white; background-color: #d4d4d4; cursor: pointer}

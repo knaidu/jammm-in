@@ -1,32 +1,37 @@
+<% jam = @jam %>
 
-<div>
-  <span class='float-left'>
-    <a href='javascript: history.go(-1)'><%= icon :back %></a>
-    <font size=4>Jam / "<%= @jam.name %>" / Manage</font>
-  </span>
-  <span class='float-right'><a class='simple-link' href='/jam/<%= @jam.id %>'><%= icon :jam_page %></a></span>
+<div class='main-info'>
+  <div>
+    <div class='align-middle display-inline-block'><%= icon :jam %></div>
+    <div class='music-title'><b><%= jam.name %></b></div>
+    <span class='align-middle'> - <%= profile_link(jam.creator) %> </span>
+  </div>
+  <%= vspace %>
+  <div class='pad-left-10'>
+    <%= main_info_row('Creator', profile_link(jam.creator)) %>
+    <%= main_info_hor_line %>
+    <%= main_info_row('Created On', jam.created_at.date) %>
+    <%= main_info_hor_line %>
+    <%= main_info_row('Type', display_jam_type(jam)) %>
+  </div>
 </div>
 
-<br><br>
+<table class='w100'>
+  <tr>
+    <td class='align-middle'><a title='Song Page' alt='Song Page' href='/jam/<%= jam.id %>'><%= icon :jam_page %></a></td>
+    <td class='display-inline-block text-right pad-5 align-right align-middle'>
+      <% if not @jam.published %>
+      	<input type='button' value='Publish' onclick='publishJam("<%= @jam.id %>")'>
+      <% else %>
+      	<input type='button' value='Unpublish' onclick='unpublishJam("<%= @jam.id %>")'>
+      <% end %>
+      <input type='button' value='Delete' onclick='deleteJam("<%= @jam.id %>")'>
+      <input type='button' value='Make Copy'>
+    </td>
+  </tr>
+</table>
 
-<div class='music-desc round'>
-  <%= field 'Creator:' %><%= @jam.creator.name %><br>
-	<%= field 'Created On:' %><%= @jam.created_at.date %><br>
-	<%= field 'Type:' %><%= display_jam_type(@jam) %>
-</div>
-<br>
-
-<div class='text-right pad-5'>
-<% if not @jam.published %>
-	<input type='button' value='Publish' onclick='publishJam("<%= @jam.id %>")'>
-<% else %>
-	<input type='button' value='Unpublish' onclick='unpublishJam("<%= @jam.id %>")'>
-<% end %>
-<input type='button' value='Delete' onclick='deleteJam("<%= @jam.id %>")'>
-<input type='button' value='Make Copy'>
-</div>
-
-<%= section_header 'File' %>
+<%= section_header 'Upload MP3' %>
 <div id='jam-file-actions'>
 	<%= partial('jam/manage/file_actions') %>
 </div>
@@ -49,3 +54,9 @@
 <div id='jam-artists'>
   <%= partial('jam/manage/artists', {:locals => {:artists => @jam.artists}}) %>
 </div>
+
+
+<%= js_start %>
+	setSelectedMenuItem('menu-item-jams')
+<%= js_end %>
+

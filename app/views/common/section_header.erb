@@ -1,12 +1,12 @@
 <%
-	img ||= (icon(sh.img, :small) if sh.img rescue "")
+	img ||= (icon(sh.img, :small) if sh.img rescue false)
 	text ||= sh.text
 %>
 <div class="section-header">
 	<% if img %>
 	  <span class='display-inline-block float-left pad-right-5'><%= img %>&nbsp;</span>
 	<% end %>
-  <div style="box-sizing: 10%; padding-right: 5px; background-color: white" class='text bold float-left'><%= text %></div>
+  <div style="padding-right: 5px; background-color: white" class='text bold float-left'><%= text %></div>
 	<% if options[:collapsible] %>
 		<% switch_id = rand_id %>
 		<span id='<%= switch_id %>' class='float-right grey clickable' onClick="toogleSectionExpand('<%= options[:collapsible] %>', '<%= switch_id %>')">[+]</span>

@@ -2,13 +2,19 @@
 <%= field 'Name:' %><input type='text' name='name' value='<%= jam.name %>'><%= vspace %>
 <%= field 'Description:' %><textarea name='desc' class='align-top'><%= jam.description %></textarea><%= vspace %>
 
-<%= field 'Genre' %>
-	<div class='align-top display-inline-block'>
-		<%= partial ("common/manage_genres", :locals => {
-			:for_type => "jam",
-			:for_type_id => jam.id
-		}) %>
-	</div>
+<table cellspacing=0 cellpadding=0>
+  <tr>
+    <td><%= field 'Genre' %></td>
+    <td>
+      <%= partial ("common/manage_genres", :locals => {
+      :for_type => "jam",
+      :for_type_id => jam.id
+      }) %>
+    </td>
+  </tr>
+</table>
+
+
 <div id='save-information-response'></div>
 <input type='button' value='Save' onClick='saveJamInformation("jam-information")'>
 </form>
