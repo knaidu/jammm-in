@@ -1,0 +1,9 @@
+<%= section_header 'Site Counter' %>
+<% stats = SiteCounter.find_all(:order => "counter DESC") %>
+<% stats.each do |stat| %>
+  <div>
+    <div class='float-left'><%= stat.url %></div>
+    <div class='float-right'><%= stat.counter %></div>
+  </div>
+  <%= vspace %>
+<% end %>
