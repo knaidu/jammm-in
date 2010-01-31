@@ -106,5 +106,9 @@ class Jam < ActiveRecord::Base
     SheetMusic.add(self, sheet_type, description, file)
   end
   
+  def tags
+    Tag.fetch('jam', self.id)
+  end
+  
 end
 

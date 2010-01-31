@@ -156,5 +156,9 @@ class Song < ActiveRecord::Base
     "/song/#{self.id}/song_picture?#{self.song_picture_file_handle.to_s}"
   end
   
+  def tags
+    Tag.fetch('song', self.id)
+  end
+  
   
 end
