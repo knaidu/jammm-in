@@ -78,8 +78,7 @@ class User < ActiveRecord::Base
     my_feeds = (Feed.find_by_sql [
         "SELECT f.*",
         "FROM feeds f, user_feeds uf",
-        "WHERE (f.scope='public' or f.scope='global')",
-        "OR (f.id = uf.feed_id AND uf.user_id=#{self.id})",
+        "WHERE (f.scope='global')",
         "ORDER BY created_at DESC"
       ].join(' ')).uniq
     followings_updates = self.follows.map(&:updates).flatten
@@ -123,17 +122,11 @@ class User < ActiveRecord::Base
   end
   
   def change_profile_picture(file)
-    puts 1
     storage_dir = ENV['STORAGE_DIR']
-    puts 2
     filename = new_file_handle_name(false)
-    puts 3
     delete_profile_picture
-    puts 4
     File.copy(file.path, storage_dir + "/" + filename)
-    puts 5
     self.profile_picture_file_handle = filename
-    puts 6
     self.save
   end
   

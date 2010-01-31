@@ -1,5 +1,6 @@
 <% sheets = jam.sheets_of_music %>
-<% sheets.each do |sheet| %>
+<% sheets.size.times do |i| %>
+  <% sheet = sheets[i] %>
   <%= partial '/jam/manage/sheet_music/sheet', :locals => {:sheet => sheet} %>
 <% end %>
 

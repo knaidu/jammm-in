@@ -4,8 +4,8 @@
 	<%= partial('body/includes')%>
 </head>
 <body>
-	<div class='round pad10' style='border: thin groove grey'>
-		<div class='float-left' style='padding-left: 20px'>
+	<div>
+		<div>
 			<form action='/jam/<%= jam.id %>/manage/add_sheet_music' method='post' enctype='multipart/form-data'>
 			  <%= field 'Type' %>
 			  <select name='sheet_type'><option value='sheet'>Sheet</option><option value='tab'>Tab</option></select><%= vspace %>

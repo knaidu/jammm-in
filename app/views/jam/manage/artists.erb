@@ -1,10 +1,16 @@
-<form id='tag-artist-form' action='/jam/<%= @jam.id %>/manage/tag_artist' onsubmit='tagArtistInJam("<%= @jam.id %>"); return false'>
-	<input type='text' name='username' style='width: 120'> <input type='submit' value='Tag Artist'>
-</form>
+<div class='main-info'>
+  <form id='tag-artist-form' action='/jam/<%= @jam.id %>/manage/tag_artist' onsubmit='tagArtistInJam("<%= @jam.id %>"); return false'>
+  	<input type='text' name='username' value='username' style='width: 120'><%= vspace %>
+  	<input type='submit' value='Tag Artist'> Enter the <b>username</b> of the artist you would want to tag to this jam.
+  </form>
+</div>
+
 <% jam_artists ||= @jam.jam_artists rescue [] # Added if this view is called directly %>
 <% artists = @jam.artists %>
-<% jam_artists.each do |jam_artist| %>
+<% jam_artists.size.times do |i| %>
+  <% jam_artist = jam_artists[i] %>
   <%= partial('jam/manage/artist', {:locals => {:artist => jam_artist.artist, :jam_artist => jam_artist }}) %>
+  <%= "<hr class='light'>" if (i < jam_artists.size - 1) %>
 <% end %>
 <%= "(<i>There are no artists tagged in this JAM</i>)" if artists.empty? %>
 <div id='tag-artists-div'></div>

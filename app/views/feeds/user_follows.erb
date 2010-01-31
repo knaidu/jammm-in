@@ -3,12 +3,5 @@
 	<span class='float-left pad-right-5'>
 		<%= icon(:user, :small) %>
 	</span>
-	<% if users[1] == session_user? and not is_update %>
-		You are being followed by <%= profile_link(users[0]) %>
-	<% elsif users[0] == session_user? and not is_update  %>
-		You are now following <%= profile_link(users[1]) %>
-	<% else %>
-		<!-- If it is an update or a feed for a user not part of users array -->
-		<%= add_profile_link(users[0]) %> is now following <%= profile_link(users[1]) %>
- 	<% end %>
+	<%= add_profile_link(users[0]) %> is now following <%= profile_link(users[1]) %>
 </div>

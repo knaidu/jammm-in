@@ -15,11 +15,11 @@
     <%= main_info_row('Type', display_jam_type(jam)) %>
   </div>
 </div>
-
+<%= vspace %>
 <table class='w100'>
   <tr>
     <td class='align-middle'><a title='Song Page' alt='Song Page' href='/jam/<%= jam.id %>'><%= icon :jam_page %></a></td>
-    <td class='display-inline-block text-right pad-5 align-right align-middle'>
+    <td class='display-inline-block text-right align-right align-middle w100'>
       <% if not @jam.published %>
       	<input type='button' value='Publish' onclick='publishJam("<%= @jam.id %>")'>
       <% else %>
@@ -46,7 +46,8 @@
 <%= partial('jam/manage/sheet_music/sheet_music', {
 	:locals => {:jam => @jam}, 
 	:section_header => SectionHeader.new('Sheet Music'),
-	:collapsible => true
+	:collapsible => true,
+	:collapsed => true
 }) %>
 <br><br>
 

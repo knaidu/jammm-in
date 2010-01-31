@@ -1,18 +1,18 @@
 <div id='sheet-music-container'>
-  <a href="javascript: addSheetMusicForm()" class='simple-link'>Add Sheet Music</a>
-  <div id='add-sheet-music-div' style='visibility: hidden'><br>
-    <iframe id='add-sheet-music-iframe' src='/partial/jam/manage/sheet_music/add_sheet_music_form?jam_id=<%= jam.id %>' style='border:none; width: 500px; height: 0px'></iframe>
-  </div>
-  <br>
+  <a href="javascript: addSheetMusicForm()" class='simple-link'>Add Sheet Music</a><%= vspace %>
+  <div id='add-sheet-music-div' class='main-info'>
+    <iframe id='add-sheet-music-iframe' src='/partial/jam/manage/sheet_music/add_sheet_music_form?jam_id=<%= jam.id %>' style='border: none; width: 400px; height: 155px'>
+    </iframe>
+  </div><%= vspace %>
   <%= partial '/jam/manage/sheet_music/list_sheets', :locals => {:jam => jam} %>
   
 </div>
 <%= js_start %>
   function addSheetMusicForm(){ 
     var el = $('add-sheet-music-div');
-    el.style.visibility = 'visible';
+    el.show();
     var el2 = $('add-sheet-music-iframe');
-    el2.style.height = '180px';
+//    el2.style.height = '0px';
   }
   
   function deleteSheetMusic(id){
@@ -25,4 +25,9 @@
    	var url = formatController('jam', <%= jam.id %>, 'manage', 'sheet_music');
     updateEl('sheet-music-container', url);
   }
+  
+  (function(){
+    var el = $('add-sheet-music-div');
+    el.hide();
+  })();
 <%= js_end %>
