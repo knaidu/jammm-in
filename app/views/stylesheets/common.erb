@@ -203,8 +203,8 @@ hr.w60-align-left {width: 60%; margin-left: 0; text-align: left}
 	padding: 10px;
 }
 
-span.simple-delete {color: <%= default_color %>; cursor: pointer; padding: 0px 3px;}
-span.simple-delete:hover {color: white; background-color: <%= default_color %>; cursor: pointer; padding: 0px 3px;}
+span.simple-delete {color: <%= default_color %>; cursor: pointer; padding: 0px 3px; font-weight: bold;}
+span.simple-delete:hover {color: white; background-color: <%= default_color %>; cursor: pointer; padding: 0px 3px; font-weight: bold;}
 
 /* MENU */
 .menu {
@@ -237,9 +237,13 @@ div.menu-items div.menu-item div.icon {display: inline-block; vertical-align: mi
 
 /* Feeds */
 .feed {
-/*	border-bottom: thin solid <%= light_gray %>; */
 	padding-bottom: 5px;
 }
+
+/* Notifications */
+.notification {}
+.notification .icon {padding-right: 10px; float: left}
+.notification .content {float: left; display: inline-block;}
 
 /* Section Header */
 .section-header {

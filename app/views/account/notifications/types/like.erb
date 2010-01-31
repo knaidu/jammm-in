@@ -1,1 +1,4 @@
-there there !
+<% about = notification.data.jam ? "jam" : "song" %> 
+<%= profile_link notification.data.user %> likes your 
+<%= about %>
+<%= eval("#{about}_link(notification.data.#{about})") %>

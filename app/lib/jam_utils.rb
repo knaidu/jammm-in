@@ -17,6 +17,10 @@ module JamUtils
   def tag_artist(artist)
     return nil if not self.class.to_s == "Jam"
     JamArtist.create({:jam_id => self.id, :artist_id => artist.id})
+    
+    # Notification
+    notification = Notification.add({:user_id => artist.id, :jam_id => self.id}, "jam_tag")
+    notification.add_users([artist])    
   end
 
   def untag_artist(user)

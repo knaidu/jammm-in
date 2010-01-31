@@ -4,6 +4,13 @@ class Notification < ActiveRecord::Base
   has_many :user_notifications, :dependent => :destroy
   has_many :users, :through => :user_notifications
   
+  # Mapping of Notifications-Types to ICONs
+  ICON = {
+    :follows => :following,
+    :comment => :comments,
+    :jam_tag => :jam
+  }
+  
   def self.add(data={}, notification_type="update")
     self.create({:data_str => data.to_json, :notification_type => notification_type})
   end
@@ -14,12 +21,37 @@ class Notification < ActiveRecord::Base
     }
   end
   
-  def set_global
-    UserNotification.create({:user_id => 0, :notification_id => self.id})
+  def icon
+    self.class::ICON[self.notification_type.to_sym] || self.notification_type.to_sym
   end
   
   def data
-    self.data_str.eval_json rescue nil
+    NotificationData.new(self.data_str.eval_json) rescue nil
+  end
+  
+  class NotificationData
+    attr_accessor :text, :options
+    
+    def initialize(data)
+      @data = data
+    end
+    
+    def user
+      User.find(@data["user_id"]) rescue nil
+    end
+    
+    def users
+      @data["users_ids"].map{|user_id| User.find(user_id)} rescue nil
+    end
+    
+    def song
+      Song.find(@data["song_id"]) rescue nil
+    end
+    
+    def jam
+      Jam.find(@data["jam_id"]) rescue nil
+    end
+    
   end
 
 end

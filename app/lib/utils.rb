@@ -159,4 +159,8 @@ def fetch_local_file_path(obj)
   (cache_file_exists?(obj.file_handle) or obj.file or cache(obj.file_handle)).path
 end
 
+def obj_from_data(for_type, for_type_id)
+  eval(for_type.capitalize).find(for_type_id)
+end
+
 # CACHING END

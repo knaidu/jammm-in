@@ -1,1 +1,8 @@
-hello there :)
+<div class='notification'>
+  <div class='icon'>
+    <%= icon notification.icon %>
+  </div>
+  <div class='content'>
+    <%= partial("/account/notifications/types/#{notification.notification_type}", :locals => {:notification => notification}) %>
+  </div>  
+</div>
