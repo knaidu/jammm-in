@@ -10,6 +10,7 @@ class Bug < ActiveRecord::Base
   def self.add(subject, message=nil)
     bug = self.create(:subject => subject)
     bug.add_message(message) if message
+    bug.mail_bug_report
     bug
   end
   
@@ -28,6 +29,11 @@ class Bug < ActiveRecord::Base
   def mark_status(bug_status)
     self.status = bug_status
     self.save
+  end
+  
+  def mail_bug_report
+    cmd = "ruby #{ENV["WEBSERVER_ROOT"]}/scripts/mail/bug_report.rb #{self.id}"
+    run(cmd)
   end
   
 end

@@ -22,6 +22,8 @@
         <td class='icon' title='Notifications'><a href='/account/notifications'><%= icon(:notifications, :header) %></a></td>
         <td class='icon' title='Settings / About Me'><a href='/account/aboutme'><%= icon(:manage, :header) %></td></td>
         <td class='icon' title='Logout'><a href='/account/logout'><%= icon(:logout, :header) %></a></td>
+      <% else %>
+        <td class='icon' title='Sign In'><a href='/signin'><%= icon(:login, :header) %></a></td>      
       <% end %>
     	
     	<td class='separator'>&nbsp;</td>
