@@ -7,3 +7,14 @@
   </div>
   <%= vspace %>
 <% end %>
+
+<br><br>
+<%= section_header 'User Log In Counter' %>
+<% users = User.find_all(:order => "log_in_counter DESC") %>
+<% users.each do |user| %>
+  <div>
+    <div class='float-left'><%= user.username %></div>
+    <div class='float-right'><%= user.log_in_counter %></div>
+  </div>
+  <%= vspace %>
+<% end %>

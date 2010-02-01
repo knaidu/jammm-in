@@ -7,9 +7,7 @@ module UserUtils
   
   def profile_home_info(username)
     user = User.find_by_username(username)
-    data = {
-      :personal_info => user.personal_info
-    }
+    data = {:personal_info => user.personal_info}
   end
   
   def user_data(username, section)

@@ -145,4 +145,10 @@ class User < ActiveRecord::Base
     get_storage_file_path(profile_picture_file_handle)
   end
   
+  def increment_counter
+    self.log_in_counter ||= 0
+    self.log_in_counter += 1
+    self.save
+  end
+  
 end

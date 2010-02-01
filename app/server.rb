@@ -59,36 +59,15 @@ end
 
 load 'urls/signin.rb'
 load 'urls/signup.rb'
-
-# Loads all the account urls e.g: /account/home
+load 'urls/search.rb'
 load 'urls/account.rb'
-
-# Loads all the message_stream urls
 load 'urls/message_stream.rb'
-
-# Loads all the profile urls eg: /user1, /user2
 load 'urls/profile.rb'
-
-# Loads all the songs urls eg: /song/song_id
 load 'urls/song.rb'
-
-# Loads all the Jams urls eg: /jam/jam_id
 load 'urls/jam.rb'
-
-# Loads all the Jams urls eg: /jam/jam_id
 load 'urls/comment.rb'
-
-# Loads all the files urls eg: /files/:file_handle
 load 'urls/file.rb'
-
-# Loads all the process_info urls
 load 'urls/process_info.rb'
-
-# Loads all the genres urls
 load 'urls/genre.rb'
-
-# Loads all the instruments urls
 load 'urls/instrument.rb'
-
-# Loads all the tag urls
 load 'urls/tag.rb'

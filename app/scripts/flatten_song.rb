@@ -49,7 +49,7 @@ def arrage_jams_for_processing(jams)
   temp_output = new_file_handle_full_name + ".wav"
   puts temp_arr[0][1]
   temp_arr[0].push(temp_output)
-  temp_arr[0][0] = temp_arr[0][0].file.path
+  temp_arr[0][0] = fetch_local_file_path(temp_arr[0][0]) #temp_arr[0][0].file.path
 #  temp_arr[0] = temp_arr[0].in_groups_of(3)
   if temp_arr[1]
     temp_arr[1] = temp_arr[1].in_groups_of(1)
@@ -84,7 +84,7 @@ arranged_jams_info = arrage_jams_for_processing(jams)
 
 arranged_jams_info.each { |info|
   process_info.set_message "Processing #{info[1].name}"
-  cmd = "sox -m '#{info[0]}' '#{info[1].file.path}' '#{info[2]}'"
+  cmd = "sox -m '#{info[0]}' '#{fetch_local_file_path(info[1])}' '#{info[2]}'"
   run(cmd)
   sox_output = info[2]
 }

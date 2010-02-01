@@ -7,7 +7,7 @@ class CreateUserTable < ActiveRecord::Migration
       i.column :location, :string
       i.column :email, :string
       i.column :profile_picture_file_handle, :string
-      i.column :log_in_counter, :integer
+      i.column :log_in_counter, :integer, :default => 1
     end
   end
   

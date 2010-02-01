@@ -7,7 +7,9 @@ end
 post '/signin/process' do
   username = params[:username]
   if (allow_login?(username, params[:password]))
-    session[:username] = User.with_username(username) ? username : nil
+    user = User.with_username(username)
+    session[:username] = user ? username : nil
+    user.increment_counter
     redirect_home if session[:username]
   else
     redirect '/signin'
