@@ -6,16 +6,9 @@
 <%= section_header 'Create Song' if not hide_header %>
 <br>
 <form method='post' action='/song/register'>
-  <table>
-	  <tr>
-		  <td class='bold' width='100px'>
-			  Name
-		  </td>
-		  <td>
-			  <input type='text' name='name'>
-		  </td>
-	  </tr>
-  </table><br>
+  <%= field 'Name' %>
+  <input type='text' name='name'>
+  <%= vspace %>
 	<% if add %>
 		<input type='hidden' name='add' value='<%= add %>'>
 	<% end %>

@@ -1,7 +1,5 @@
 <% notifications = session_user?.notifications %>
 <div class='main-info'>
-  <%= main_info_row('Unread Notifications', 12) %>
-  <%= main_info_hor_line %>
   <%= main_info_row('Total Notifications', notifications.size) %>
 </div>
 

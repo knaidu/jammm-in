@@ -2,20 +2,12 @@
 
 <br>
 <form method='post' action='/jam/register'>
-  <table>
-	  <tr>
-		  <td class='bold' width='100px'>
-			  Name
-		  </td>
-		  <td>
-			  <input type='text' name='name'>
-		  </td>
-	  </tr>
-	</table><br>
+  <%= field 'Name' %>
+  <input type='text' name='name'>
+  <%= vspace %>
   <input type='submit' value='Create JAM'>
 </form>
-<br>
-<br>
+
 
 <%= js_start %>
 	setSelectedMenuItem('menu-item-jam-create')
