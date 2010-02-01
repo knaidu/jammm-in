@@ -48,10 +48,10 @@ end
 
 def test_mail
   mail({
-    :from => "invite@jammm.in",
-    :subject => "test",
-    :body => "this is a body",
+    :from => "support@jammm.in",
+    :subject => "Jammm.in",
+    :body => "Welcome to Jammm.in. Thanks for your support.",
     :password => "3WiseMen",
-    :to => "prakash.raman.ka@gmail.com"
+    :to => "sb.sbrahul@gmail.com"
   })
 end
