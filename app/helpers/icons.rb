@@ -25,6 +25,8 @@ ICONS = {
   :back => "/images/icons/back1.png",
   :refresh => "/images/icons/refresh.png",
   :unfollow => "/images/icons/unfollow1.png",
+  :login => "/images/icons/login1.png",
+  :logout => "/images/icons/logout1.png"
 }
 
 def add_icon(icon=false)
