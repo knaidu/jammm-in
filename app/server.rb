@@ -60,6 +60,7 @@ end
 load 'urls/signin.rb'
 load 'urls/signup.rb'
 load 'urls/search.rb'
+load 'urls/bug.rb'
 load 'urls/account.rb'
 load 'urls/message_stream.rb'
 load 'urls/profile.rb'

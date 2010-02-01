@@ -1,0 +1,21 @@
+<%= section_header 'New Bug' %>
+<form id='form-bug-create' action='/bug/create' method='post' onsubmit="createBug(); return false">
+  <%= field 'Subject' %> <input type='text' name='subject' id='bug-subject'>
+  <%= vspace %>
+  
+  <%= field 'Description' %>
+  <textarea name='description' rows=8></textarea>
+  <%= vspace %>
+  <br>
+  <input type='submit' value='Create'>
+</form>
+
+<%= js_start %>
+  function createBug(){
+    var onSuccess = function(){loadUrl('/bug/all');}
+    var form = $('form-bug-create');
+    form.request({onSuccess: onSuccess})
+  }
+  
+	setSelectedMenuItem('menu-item-new-bug');
+<%= js_end %>

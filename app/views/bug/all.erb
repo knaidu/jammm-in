@@ -1,0 +1,13 @@
+<%= section_header 'All Bugs' %>
+
+<% Bug.list.each do |bug| %>
+  <div class='pad5'>
+    <div class='simple-link float-left'><a href='<%= bug.id %>'><%= bug.subject %></a></div>
+    <div class='float-left grey'> &nbsp;- <%= bug.created_at.date %> (<%= bug.status %>) </div>
+    <div class='clear-both'>
+      <%= vspace %>
+      <%= bug.description.message rescue nil %>
+    </div>
+  </div>
+  <hr class='light'>
+<% end %>

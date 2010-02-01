@@ -180,3 +180,13 @@ def search_with_key(key)
   songs = Song.find_by_sql("select * from songs where name ~* '#{key}'")  
   (users + jams + songs).sort_by(&:created_at)
 end
+
+# BUGS
+
+def mark_bug_status(bug, bug_status)
+  bug.mark_status bug_status
+end
+
+def mark_bug_fixed(bug)
+  mark_bug_status(bug, "fixed")
+end

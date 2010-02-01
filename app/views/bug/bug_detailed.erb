@@ -1,0 +1,45 @@
+<% bug = @bug %>
+<%= section_header "Bug ##{bug.id.to_s}" %>
+<div class='main-info'>
+  <%= main_info_row("Subject", bug.subject) %>
+  <%= main_info_hor_line %>
+  <%= main_info_row("Created On", bug.created_at.date) %>
+  <%= main_info_hor_line %>
+  <%= main_info_row("Status", bug.status) %>
+</div>
+<br>
+<div class='text-right'>
+  <span class='align-middle'><%= field 'Mark Status' %></span>
+  <select class='align-middle' onchange="markBugStatus(this.value)">
+    <option value='open'>Open</option>
+    <option value='fixed'>Fixed</option>
+    <option value='invalid'>Invalid</option>
+  </select>
+</div>
+<br>
+<% bug.messages.each do |message| %>
+  <div>
+    <div class='float-right grey'><%= message.created_at.date %></div> 
+    <div class='float-left'><%= message.message %></div>
+  </div>
+  <hr class='thin clear'>
+<% end %>
+<br><br>
+<div class='bold underline'>Reply</div><%= vspace %>
+<form id='form-new-message' action="/bug/<%= bug.id %>/add_message" onsubmit='addBugMessage(); return false'>
+<textarea name='message'></textarea><%= vspace %>
+<input type='submit' value='Reply'>
+</form>
+
+<%= js_start %>
+  function addBugMessage(){
+    var form = $("form-new-message");
+    form.request({onSuccess: reload})
+  }
+  
+  function markBugStatus(status){
+    var url = formatController("bug", <%= bug.id %>, "mark_status");
+    url = formatUrl(url, {bug_status: status});
+    call(url, {onSuccess: reload});
+  }
+<%= js_end %>
