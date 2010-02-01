@@ -283,3 +283,14 @@ div.box div.action:hover {padding: 5px; float: left; font-weight: bold; color: b
 .search-item {width: 100%}
 .search-item .icon {padding-right: 5px; width: 2%}
 .search-item .content {width: 100%}
+
+/* LINEAGE */
+.lineage {}
+.lineage .child {}
+.lineage .children {
+    border-left: 1px solid <%= default_light_line_color %>; 
+    margin-left: 5px; float-left; 
+}
+.lineage .child .pad {border-bottom: 1px solid <%= default_light_line_color %>; margin-top: 7px}
+.lineage .child .song-jam {color: #A6A6A6; font-weight: bold}
+.lineage .child .highlight {<%= default_round %>; background-color: #E3E3E3; padding: 3px;}

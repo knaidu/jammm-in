@@ -7,12 +7,13 @@ class SongJam < ActiveRecord::Base
   
   def after_create
     song = self.song
-    jam.artists.each do |manager| 
+    puts "Jam id: #{jam.id}"
+    self.jam.artists.each do |manager| 
       song.add_manager manager
     end
     
     # Adds the Tags of the Jam to the Song
-    jam.tags.each do |tag|
+    self.jam.tags.each do |tag|
       Tag.add(tag.name, 'song', song.id)
     end
   end

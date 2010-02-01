@@ -1,0 +1,24 @@
+<% 
+  depth ||= 0 
+  highlight_child_id ||= 0
+%>
+<div class='child'>
+  <%= vspace '20px' if depth > 0 %>
+  <div>
+    <div class='pad float-left' style='width: <%= depth*20 %>px'></div>
+    <div class='float-left'>
+      <div class='<%= "highlight" if child.id == highlight_child_id %>'>
+        <div class='pad-right-5 float-left'><%= icon :play2 %></div>
+        <div class='float-left display-inline-block simple-link'><%= jam_link child %></div>
+        <div class='clear-both'></div>
+        <% if child.song_jam %>
+          <div class='song-jam'>
+            Song Jam - 
+            <span class='simple-link' style='font-weight: normal'><%= song_link child.song_jam.song %></song>
+          </div>
+        <% end %>
+      </div>
+      <%= partial ("jam/lineage/children", :locals => {:children => child.children, :depth => depth, :highlight_child_id => highlight_child_id}) if not child.children.empty? %>
+    </div>
+  </div>
+</div>

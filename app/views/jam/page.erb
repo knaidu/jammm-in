@@ -7,3 +7,5 @@
 <%= partial('jam/jam_artists', :locals => {:jam_artists => @jam.jam_artists }) %>
 <br><br>
 <%= partial "jam/sheet_music", :section_header => SectionHeader.new('Sheet Music'), :locals => {:jam => @jam, :sheets => @jam.sheets_of_music} %>
+<br><br>
+<%= partial 'jam/lineage/page', :section_header => SectionHeader.new('Lineage'), :locals => {:jam => @jam}, :collapsible => true %>

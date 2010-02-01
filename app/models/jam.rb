@@ -23,6 +23,8 @@ class Jam < ActiveRecord::Base
   include JamUtils
   
   def after_create
+    return true if not self.artists.empty?
+    puts "is it here?"
     self.tag_artist(self.creator)
     feed = Feed.add({:jam_id => self.id, :user_ids => [self.creator.id]}, "jam_created")
     feed.add_users([self.creator])
@@ -106,8 +108,65 @@ class Jam < ActiveRecord::Base
     SheetMusic.add(self, sheet_type, description, file)
   end
   
+  def add_tag(name)
+    Tag.add(name, "jam", self.id)
+  end
+  
   def tags
     Tag.fetch('jam', self.id)
+  end
+  
+  # Copy Jams Code
+  
+  def make_copy_of_file_handle(newname=nil)
+    puts "copy 1"
+    puts file_handle
+    utils_make_copy_of_file_handle(file_handle, newname)
+  end
+  
+  def make_copy(newname=nil)
+    attrs = self.attributes
+    file_handle_name = new_file_handle_name
+    newattrs = attrs.keys_to_sym.delete_keys(:id, :created_at, :views, :file_handle)
+    newattrs[:created_at] = Time.now # WORK AROUND. As CREATED_AT was taking the old CREATED_AT value
+    newattrs[:origin_jam_id] = self.id
+    
+    puts newattrs
+    
+    newjam = Jam.new(newattrs)
+    File.copy(file_handle_path(self), (FILES_DIR + "/" + file_handle_name)) if file_handle_exists? # Makes a copy of the physical file
+    newjam.name = newname || ("#{self.name} (copy)")
+    newjam.file_handle = file_handle_name if file_handle_exists?
+    newjam.save    
+    
+    # Tags all the Artists of the orginal song in the copy
+    self.artists.each do |artist| 
+      puts "before it is: #{artist.name} #{artist.id}"
+      newjam.tag_artist(artist) 
+    end
+    self.tags.each do |tag| newjam.add_tag(tag.name) end # Copies over the tags from jam to the new am 
+    newjam
+  end
+  
+  def make_copy_and_publish(newname=nil)
+    jam = make_copy(newname)
+    jam.publish
+    jam
+  end
+  
+  def father
+    Jam.find(self.origin_jam_id) if origin_jam_id
+  end
+  
+  # Points to the ROOT of a Jam's Lineage
+  def adam
+    jam = self.father
+    while jam.origin_jam_id; jam = jam.father; end
+    jam
+  end
+  
+  def children
+    Jam.find_all_by_origin_jam_id(self.id)
   end
   
 end

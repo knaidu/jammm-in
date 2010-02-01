@@ -1,0 +1,5 @@
+<div class='children'>
+  <% children.each do |child| %>
+    <%= partial("jam/lineage/child", :locals => {:child => child, :depth => (depth + 1), :highlight_child_id => highlight_child_id}) %>
+  <% end %>
+</div>

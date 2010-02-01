@@ -123,6 +123,16 @@ class Song < ActiveRecord::Base
     self.find_all.select(&:published)
   end
   
+  def add_jam(jam)
+    raise "You cannot add this jam as it does not have a mp3 uploaded" if not jam.file_handle
+    jam2 = jam.make_copy(jam.name + " (copy for song: #{self.name})") if jam.published or jam.song_jam # Adds a copy of a jam to the song, if jam already published
+    SongJam.create({:song_id => self.id, :jam_id => jam2.id})
+  end
+  
+  def remove_jam(jam)
+    SongJam.find_by_song_id_and_jam_id(self.id, jam.id).destroy
+  end
+  
   def add_to_song(song)
     self.jams.each do |jam|
       song.add_jam(jam)
