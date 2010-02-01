@@ -8,12 +8,17 @@
   <%= main_info_row("Status", bug.status) %>
 </div>
 <br>
+
+<% 
+  statuses = ['open', 'fixed', 'invalid'].without(bug.status).insert(0, bug.status) # Pushes the bug.status to the begining of the array
+%>
+
 <div class='text-right'>
   <span class='align-middle'><%= field 'Mark Status' %></span>
   <select class='align-middle' onchange="markBugStatus(this.value)">
-    <option value='open'>Open</option>
-    <option value='fixed'>Fixed</option>
-    <option value='invalid'>Invalid</option>
+    <% statuses.each do |status| %>
+      <option value='<%= status.downcase %>'><%= status %></option>
+    <% end %>
   </select>
 </div>
 <br>
