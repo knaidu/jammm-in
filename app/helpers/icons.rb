@@ -3,9 +3,11 @@
 ICONS = {
   :song => "/images/icons/staff.png",
   :jam => "/images/icons/8thnote.png",
+  :notifications => "/images/icons/notification.png",
   :following => "/images/icons/follow2.png",
   :followers => "/images/icons/followers1.png",
-  :profile => "/images/icons/profile1.png",
+  :profile => "/images/icons/profile.png",
+  :profile1 => "/images/icons/profile1.png",
   :manage => "/images/icons/manage1.png",
   :jammmin => "/images/icons/miniicon.png",
   :add => "/images/icons/add.png",
@@ -41,12 +43,13 @@ def small_icon(icon='/images/common/icon.png')
   "<img src='#{icon}' height=16 width=16>"
 end
 
+def header_icon(icon)
+  "<img src='#{icon}' height='30px'>"  
+end
+
 def icon(id, type=:small)
-  if type == :small
-    small_icon(ICONS[id])
-  elsif type == :medium
-    medium_icon(ICONS[id])    
-  end
+  str = "#{type}_icon('#{ICONS[id]}')"
+  eval(str)
 end
 
 

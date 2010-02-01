@@ -1,13 +1,36 @@
 <% increment_site_counter(request.path_info) %>
 
 <div class='top-bar'>
-	<a href='/'><img src='/images/logos/logo.jpg' style='float: left; height: 100%'></a>
-	<div class='float-left' id='global-player-div'>
-	    <%= load_player("large") %>
-	</div>
-	<span class='top-bar-search float-right'>
-	  <form action='/search'>
-  	  <input type='text' style='border: none' name='q'>
-  	</form>
-	</span>
+  <table class='w100' height='100%' cellpadding=0 cellspacing=0>
+    <tr>
+    
+      <td class='jammmin-logo'>
+	      <a href='/'><img src='/images/logos/logo.jpg'></a>
+	    </td>
+	    
+	    <td class='player'>
+	      <div id='global-player-div'>
+    	    <%= load_player("large") %>
+      	</div>
+    	</td>
+    	
+    	<td class='fill'></td>
+    
+      <% if session_user? %>
+        <td class='icon' title='Home'><a href='/account'><%= icon(:home, :header) %></a></td>
+        <td class='icon' title='Profile'><a href='/<%= session_user?.username %>'><%= icon(:profile, :header) %></a></td>        
+        <td class='icon' title='Notifications'><a href='/account/notifications'><%= icon(:notifications, :header) %></a></td>
+        <td class='icon' title='Settings / About Me'><a href='/account/aboutme'><%= icon(:manage, :header) %></td></td>
+        <td class='icon' title='Logout'><a href='/account/logout'><%= icon(:logout, :header) %></a></td>
+      <% end %>
+    	
+    	<td class='separator'>&nbsp;</td>
+    	<td class='search'>
+    	  <form action='/search'>
+      	  <input type='text' style='border: none; width: 150px' name='q'>
+      	</form>
+    	</td>
+    	
+    </tr>
+  </table>
 </div>
