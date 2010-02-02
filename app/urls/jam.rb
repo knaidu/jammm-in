@@ -30,9 +30,11 @@ end
 
 
 get '/jam/:jam_id/manage' do
-  @layout_info = {'middle_panel' => 'jam/manage/page', 'right_panel' => 'jam/manage/instructions', 'left_panel' => 'account/menu'}
-  @jam = Jam.find(params[:jam_id])
-  erb(:"body/structure")
+  @jam = get_passed_jam
+  allowed?(@jam.artists) {
+    @layout_info = {'middle_panel' => 'jam/manage/page', 'right_panel' => 'jam/manage/instructions', 'left_panel' => 'account/menu'}
+    erb(:"body/structure")
+  }
 end
 
 post '/jam/:jam_id/manage/change_jam_picture' do

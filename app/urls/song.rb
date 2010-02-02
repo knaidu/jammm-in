@@ -62,9 +62,11 @@ get '/song/:song_id/song_picture' do
 end
 
 get '/song/:song_id/manage' do
-  @layout_info = {'middle_panel' => 'song/manage/page', 'left_panel' => 'account/menu', 'right_panel' => 'song/manage/right'}
-  @song = Song.find(params[:song_id])
-  erb(:"body/structure")
+  @song = get_passed_song
+  allowed?(@song.managers) {
+    @layout_info = {'middle_panel' => 'song/manage/page', 'left_panel' => 'account/menu', 'right_panel' => 'song/manage/right'}
+    erb(:"body/structure")
+  }
 end
 
 post '/song/:song_id/manage/change_song_picture' do

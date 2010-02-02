@@ -4,7 +4,11 @@ get '/:username' do
   user = params[:username]
   is_user = User.find_by_username(user)
   @layout_info = is_user ? layout_info("profile") : layout_info("profile", "usernotfound")
-  @menu_data = profile_home_info(user) if is_user
+  if is_user
+    @menu_data = profile_home_info(user) 
+  else
+    @layout_info["left_panel"] = "/homepage/left"
+  end
   set_profile_page_info user
   erb(:"body/structure")
 end

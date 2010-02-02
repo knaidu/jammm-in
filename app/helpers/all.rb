@@ -155,6 +155,18 @@ def render_error(exception)
     ex.message
 end
 
+def allowed?(users)
+  raise "not_allowed" if (not users.include?(session_user?))
+  yield if block_given?
+rescue Exception => e
+  render_not_allowed
+end 
+
+def render_not_allowed
+  @layout_info = {'middle_panel' => 'common/not_allowed', 'left_panel' => 'homepage/left'}
+  erb(:"body/structure")
+end
+
 def add_music_link(obj)
   prm = obj.class.to_s.downcase + "_" + obj.id.to_s
   puts obj.id
