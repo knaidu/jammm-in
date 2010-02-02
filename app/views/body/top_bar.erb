@@ -19,7 +19,10 @@
       <% if session_user? %>
         <td class='icon' title='Home'><a href='/account'><%= icon(:home, :header) %></a></td>
         <td class='icon' title='Profile'><a href='/<%= session_user?.username %>'><%= icon(:profile, :header) %></a></td>        
-        <td class='icon' title='Notifications'><a href='/account/notifications'><%= icon(:notifications, :header) %></a></td>
+        <td class='icon' title='Notifications' style='position: relative'>
+          <div style='text-align: right; left: 2px; border: 1px solid green; position: absolute'>3</div>
+          <a href='/account/notifications'><%= icon(:notifications, :header) %></a>
+        </td>
         <td class='icon' title='Settings / About Me'><a href='/account/aboutme'><%= icon(:manage, :header) %></td></td>
         <td class='icon' title='Logout'><a href='/account/logout'><%= icon(:logout, :header) %></a></td>
       <% else %>

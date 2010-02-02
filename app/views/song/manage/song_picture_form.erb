@@ -4,11 +4,11 @@
 	<%= partial('body/includes')%>
 </head>
 <body>
-	<div>
+	<div class='w100'>
 		<span class='float-left'>
       <%= song_picture song %>
 		</span>
-		<div class='float-left' style='padding-left: 20px'>
+		<div class='float-left' style='padding: 0px 10px 0px 10px'>
 			<form action='/song/<%= song.id %>/manage/change_song_picture' method='post' enctype='multipart/form-data'>
 				<input type='file' name='picture'><%= vspace %>
 				<input type='submit' value='Save'>
