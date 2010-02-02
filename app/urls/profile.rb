@@ -18,7 +18,7 @@ get '/:username/songs' do
   @user = User.with_username(params[:username])
   @layout_info = layout_info("profile", 'songs')
   @menu_data = profile_home_info(params[:username])
-  @songs = @user.songs rescue []
+  @songs = @user.published_songs rescue []
   erb(:"body/structure")
 end
 

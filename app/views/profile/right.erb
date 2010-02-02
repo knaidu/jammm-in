@@ -10,8 +10,8 @@
 <% end %>
 
 <%= section_header('Songs', {:icon => :song}) %>
-<%= partial (:'common/songs', :locals => {:songs => @user.songs}) %> 
+<%= partial (:'common/songs', :locals => {:songs => @user.published_songs}) %> 
 
 
 <%= section_header('Jams', {:icon => :jam}) %>
-<%= partial (:'common/jams', :locals => {:jams => @user.jams}) %> 
+<%= partial (:'common/jams', :locals => {:jams => @user.published_jams}) %> 

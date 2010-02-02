@@ -20,10 +20,7 @@
         <td class='icon' title='Home'><a href='/account'><%= icon(:home, :header) %></a></td>
         <td class='icon' title='Profile'><a href='/<%= session_user?.username %>'><%= icon(:profile, :header) %></a></td>        
         <td class='icon' title='Notifications' style='position: relative'>
-          <div>
-            <div class='float-left'><a href='/account/notifications'><%= icon(:notifications, :header) %></a></div>
-            <div class='float-right' style='padding-left: 25px; font-weight: bold; color: gray; position: absolute'>3</div>
-          </div>
+          <div class='float-left'><a href='/account/notifications'><%= icon(:notifications, :header) %></a></div>
         </td>
         <td class='icon' title='Settings / About Me'><a href='/account/aboutme'><%= icon(:manage, :header) %></td></td>
         <td class='icon' title='Logout'><a href='/account/logout'><%= icon(:logout, :header) %></a></td>

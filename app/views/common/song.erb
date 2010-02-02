@@ -1,9 +1,11 @@
-<div class='pad1'>
-  <div class='float-left pad-right-10'><%= song_picture song %></div>
-  <div class='float-left pad-right-10'><%= icon :play2 %></div>
-  <div class='float-left'>
-	  <span class='bold'><a class='simple-link' href='/song/<%= song.id %>'><%= song.name %></a></span><br>
-    <%= list_artists song.artists %><br>
-  </div>
-  <div class='float-right'> <%= add_music_link song %></div>
-</div>
+<table>
+  <tr>
+    <td><%= song_picture song %></td>
+    <td><%= icon :play2 %></td>
+    <td class='w100'>
+	    <span class='bold'><a class='simple-link' href='/song/<%= song.id %>'><%= song.name %></a></span><br>
+      <%= list_artists song.artists %><br>
+    </td>
+    <td><div class='float-right'> <%= add_music_link song %></td>
+  </tr>
+</table>

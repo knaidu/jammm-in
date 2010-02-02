@@ -49,6 +49,10 @@ class User < ActiveRecord::Base
     jams.select(&:published)
   end
   
+  def published_songs
+    songs.select(&:published?)
+  end
+  
   def collaborators
     (songs + jams).map(&:artists).flatten.uniq.reject do |user| user == self end
   end

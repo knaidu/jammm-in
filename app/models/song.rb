@@ -97,6 +97,7 @@ class Song < ActiveRecord::Base
   def published
     song_jams.any?(&:active?)
   end
+  alias published? published
   
   def unpublish
     song_jams.each(&:deactivate)

@@ -18,9 +18,11 @@ profile:
 
     songs:
         middle_panel: songs
+        right_panel: nil
     
     jams: 
         middle_panel: jams
+        right_panel: nil
         
     info:
         middle_panel: info
