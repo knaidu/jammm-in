@@ -69,6 +69,7 @@ get '/song/:song_id/manage' do
   }
 end
 
+
 post '/song/:song_id/manage/change_song_picture' do
 #  monitor {
     file = param?(:picture)[:tempfile]
@@ -172,4 +173,13 @@ end
 post '/song/:song_id/manage/add_lyrics' do
   song = get_passed_song
   song.add_lyrics(session_user, params[:lyrics]) ? "saved lyrics" : "could not save lyrics"
+end
+
+
+post '/song/:song_id/manage/post_message' do
+  monitor {
+    song = get_passed_song
+    song.add_manage_message(session_user?, param?(:message))
+    "Successfully added song message"
+  }
 end

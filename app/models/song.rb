@@ -5,6 +5,7 @@ class Song < ActiveRecord::Base
   has_many :managers, :through => :song_managers
   belongs_to :creator, :class_name => "User", :foreign_key => "registered_user_id"
   has_one :song_lyric, :dependent => :destroy
+  has_many :messages, :dependent => :destroy, :class_name => "SongManageMessage", :order => "created_at"
   has_many :comments, :class_name => "Comment", :dependent => :destroy, :finder_sql => %q(
     select * from comments 
     where for_type='song' and 
@@ -173,5 +174,9 @@ class Song < ActiveRecord::Base
     Tag.fetch('song', self.id)
   end
   
+  def add_manage_message(user, message)
+    raise "The body of the message cannot be empty" if message.nil? or message.empty?
+    SongManageMessage.add(self, user, message)
+  end
   
 end

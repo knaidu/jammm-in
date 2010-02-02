@@ -1,0 +1,34 @@
+
+<% song ||= Song.find(song_id) %>
+
+<% song.messages.each do |message| %>
+  <%= partial("song/manage/message", :locals => {:message => message}) %>
+  <%= vspace %><%= vspace %>
+<% end %>
+
+<form id='form-post-song-message' action='/song/<%= song.id %>/manage/post_message' method='post' onsubmit='addSongMessage(); return false'>
+  <textarea name='message'></textarea><%= vspace %>
+  <input type='submit' value='Post'>
+</form>
+
+
+<%= js_start %>
+  function addSongMessage(){
+    var form = $('form-post-song-message');
+    form.request({onSuccess: reloadSongMessages})
+  }
+  function reloadSongMessages(){
+    updateEl('div-song-messages', '/partial/song/manage/messages?song_id=<%= song.id %>')
+  }
+  
+  var scrollMessagesBottom = function(){
+    var el = $('div-song-messages');
+    if(!el) return;
+    el.scrollBottom();
+  }
+  window.setTimeout(scrollMessagesBottom, 10);
+<%= js_end %>
+
+<style>
+  #div-song-messages {max-height: 300px};
+</style>

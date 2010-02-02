@@ -14,6 +14,13 @@ Object.extend(Object, function(){
 	}
 }());
 
+
+Element.addMethods({
+	scrollBottom: function(element){
+    element.scrollTop = element.scrollHeight;
+  }
+});
+
 /* Progress Bar HTML el */
 
 var ProgressBar = Class.create({
@@ -99,3 +106,14 @@ Poll.start = function(poll){
 	poll.loadMessage("Please wait...");
 	this._processUrl(poll);
 }.bind(Poll);
+
+
+/*
+
+(function(){
+  var el = $('<%= messages_div_id %>');
+  if(!el) return;
+  el.scrollTop = el.scrollHeight;
+})();
+
+*/
