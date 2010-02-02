@@ -1,24 +1,24 @@
-<div class='w100'>
-  <span class='pad1'>
+<div class='pad1'>
+  <div style='padding: 5px'>
     <div>
       <span class='float-left pad-right-5'><%= icon :user %></span>
-      <span class='float-left bold simple-link'><a href='/<%= artist.username %>'><%= artist.name %></a></span>
+      <span class='float-left bold simple-link'><%= profile_link artist %></span>
       <span class='float-right simple-link' title='Untag <%= artist.name %>' onclick="untagArtistInJam('<%= @jam.id %>', '<%= artist.id %>')">x</span>
     </div>
 		<div style='padding-left: 50px'>
-		
 			<!-- Jam Artist's Instruments -->
-			
-			<div class='pad-right-5'>
-				<div class='display-inline-block align-top'><%= field 'Instruments' %></div>
-				<div class='display-inline-block'>
-					<%= partial ("common/manage_instruments", :locals => {
-						:for_type => "jam_artist",
-						:for_type_id => jam_artist.id
-					}) %>
-				</div>
-			</div>
+			<table>
+				<tr>
+				  <td><%= field 'Instruments' %></td>
+				  <td>
+					  <%= partial ("common/manage_instruments", :locals => {
+						  :for_type => "jam_artist",
+						  :for_type_id => jam_artist.id
+					  }) %>
+				  </td>
+			</tr>
+		</table>
 		</div>
-  </span>
+  </div>
 </div>
 

@@ -19,9 +19,9 @@
 	
 		<% contains_instruments.each do |contains_instrument| %>
 			<% instrument = contains_instrument.instrument %>
-			<div class='pad-right-5'> 
-				<div class='display-inline-block'><%= instrument.name %></div>
-				<div class='float-right simple-link' onClick="remove_instrument('<%= contains_instrument.id %>', '<%= main_instruments_div_id %>', '<%= for_type %>', '<%= for_type_id %>')">x</div>
+			<div class='box display-inline-block'>
+				<div class='text'><%= instrument.name %></div>
+				<div class='action' onClick="remove_instrument('<%= contains_instrument.id %>', '<%= main_instruments_div_id %>', '<%= for_type %>', '<%= for_type_id %>')">x</div>
 			</div>
 		<% end %>
 	

@@ -53,18 +53,20 @@ input[type='text'], input[type='password'], TEXTAREA {border: thin groove <%= de
 input[type='text'], input[type='password'] {height: 22px}
 
 /* BUTTON ACTIVE */
-input[type='button'], input[type='submit'] {
+SELECT, input[type='button'], input[type='submit'] {
     background-color: #fefefe;
     border: 1px solid #d4d4d4;
     color: #616161;
+    font-size: 11px;
     padding: 4px 7px 4px 7px;
     font-weight: bold;
     background-size: 100%;
     margin-bottom: 1px solid #dcdcdc;
 } 
-input[type='button']:active, input[type='submit']:active {
+SELECT:active, input[type='button']:active, input[type='submit']:active {
   background-color: #dcdcdc;
   border: 1px solid #d4d4d4;
+  font-size: 11px;
   color: #616161;
   font-weight: bold;
   padding: 4px 7px 4px 7px;
@@ -265,4 +267,4 @@ div.something:active {color: green}
 div.box {border: thin solid #d4d4d4}
 div.box div.text {float: left; font-weight: bold; color: #4a4a4a; padding: 5px; border-right: inherit}
 div.box div.action {padding: 5px; float: left; font-weight: bold}
-div.box div.action:hover {padding: 5px; float: left; font-weight: bold; color: white; background-color: #d4d4d4; cursor: pointer}
+div.box div.action:hover {padding: 5px; float: left; font-weight: bold; color: black; background-color: #d4d4d4; cursor: pointer}
