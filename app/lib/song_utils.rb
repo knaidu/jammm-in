@@ -14,6 +14,7 @@ module SongUtils
   end
   
   def add_jam(jam)
+    raise "You cannot add this jam as it does not have a mp3 uploaded" if not jam.file_handle
     jam = jam.make_copy(jam.name + " (copy for song: #{self.name})") if jam.published # Adds a copy of a jam to the song, if jam already published
     SongJam.create({:song_id => self.id, :jam_id => jam.id})
   end

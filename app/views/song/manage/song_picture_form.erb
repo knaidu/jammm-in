@@ -6,7 +6,7 @@
 <body>
 	<div>
 		<span class='float-left'>
-			<img src="/song/<%= song.id %>/song_picture" height="128px" width="128px">
+      <%= song_picture song %>
 		</span>
 		<div class='float-left' style='padding-left: 20px'>
 			<form action='/song/<%= song.id %>/manage/change_song_picture' method='post' enctype='multipart/form-data'>

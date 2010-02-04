@@ -1,0 +1,31 @@
+<div>
+
+  <div>
+    <span><a href='/song/<%= @song.id %>'><%= icon :song_page %></a></span> Song Page
+  </div>
+
+  <br><br>
+  <b>Jams</b><br>
+  From the dropdown you may add any number of your published and unpublished jams.
+  <li>If you add a published jam: A copy of the jam will be created and added to the song</li>
+  <li>If you add a unpublished jam: A same jam will be directly added to the song</li>
+  <%= vspace %>
+  <i>Suggested workflow</i>: Add your unpublished jam(s) to the song, as it then creates a clear distinction between independent (published) jams and Song Jams.
+  <br><br>
+  
+  <b>Publishing</b><br>
+  <li>Select (tick) the jams you want to choose for the song</li>
+  <li>Click Flatten Song</li>
+  <li>Click Publish Song</li>
+  <%= vspace %>
+  This will publish this song to your profile
+ 
+  <br><br>
+  <b>Artists</b><br>
+  You may invite all the artists you would like to be a part of this song. Those artists will have access to the manage console (this page) of this song. They will be able to add jams to the song.
+  <%= vspace %>
+  Note: 
+    <li>The only artists that have jams selected for the song will show up as artists of the song. 
+    <li>Deleting an artist from the list will cause thier jams to be deleted as well.</li>
+
+</div>

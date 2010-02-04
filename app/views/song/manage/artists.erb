@@ -1,10 +1,14 @@
 <% artists ||= @artists %>
-<form id='song-manage-invite-artist-form' action='/song/<%= @song.id %>/manage/invite_artist' onsubmit="inviteArtistToSong('<%= @song.id %>'); return false">
-	<input type='text' style='width: 120' name='username'> 
-	<input type='submit' value='Invite Artist'>
-</form>
+<div class='main-info'>
+  <form id='song-manage-invite-artist-form' action='/song/<%= @song.id %>/manage/invite_artist' onsubmit="inviteArtistToSong('<%= @song.id %>'); return false">
+	  <input type='text' style='width: 120' name='username'> <%= vspace %>
+	  <input type='submit' value='Invite Artist'>
+	  Enter the usernames of the artists you would like to invite to this song. Invited artists will have the capability to add thier jams to this song.
+  </form>
+  <div id='invite-artists-response-div'></div>
+</div>
+<%= vspace %>
 <% artists.each do |artist| %>
   <%= partial('song/manage/artist', {:locals => {:artist => artist }}) %>
 <% end %>
-<div id='invite-artists-response-div'></div>
-<br>
+

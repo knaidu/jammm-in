@@ -62,7 +62,7 @@ get '/song/:song_id/song_picture' do
 end
 
 get '/song/:song_id/manage' do
-  @layout_info = {'middle_panel' => 'song/manage/page', 'left_panel' => 'account/menu'}
+  @layout_info = {'middle_panel' => 'song/manage/page', 'left_panel' => 'account/menu', 'right_panel' => 'song/manage/right'}
   @song = Song.find(params[:song_id])
   erb(:"body/structure")
 end
@@ -86,8 +86,11 @@ end
 
 
 get '/song/:song_id/manage/add_jam' do
-  song = get_passed_song
-  song.add_jam(get_passed_jam) ? "Successfully added JAM" : "Error in adding JAM"
+  monitor {
+    song = get_passed_song
+    song.add_jam(get_passed_jam)
+    "Successfully added JAM"
+  }
 end
 
 get '/song/:song_id/manage/remove_jam' do

@@ -3,18 +3,17 @@
     <input type='checkbox' name='song-publish-form-song-jam' value='<%= jam.id %>' <%= jam.song_jam_active? ? "CHECKED" : "" %>>
   </span>
   <span class='pad1'>
-    <span class='left-float pad-right-5'><%= icon :jam %></span>
+    <span class='left-float pad-right-5'><%= icon :play2 %></span>
     <div class='left-float'>
-      <span class='bold float-left'><a href='/jam/<%= jam.id %>'><%= jam.name %></a>&nbsp;</span>
+      <span class='bold simple-link float-left'><a href='/jam/<%= jam.id %>'><%= jam.name %></a>&nbsp;</span>
       <span class='float-left'>
         <% if jam.song_jam_flattened? %>
           (flattened)
         <% end %>
       </span>
-			<br>
-      <%= add_field_name 'Jammmed by' %> <%= partial(:'common/list_artists', :locals => {:artists => jam.artists}) %><br>
+      - <%= partial(:'common/list_artists', :locals => {:artists => jam.artists}) %><br>
     </div>
-		<span class='float-right simple-link' title='Remove JAM' onclick="removeJamFromSong('<%= @song.id %>', '<%= jam.id %>')">x</span>
+		<span class='float-right simple-delete simple-link' title='Remove JAM' onclick="removeJamFromSong('<%= @song.id %>', '<%= jam.id %>')">x</span>
   </span>
 </div>
 

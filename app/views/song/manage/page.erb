@@ -1,26 +1,38 @@
+<% song = @song %>
 
-<a href='javascript: history.go(-1)' class='simple-link'><%= icon :back %></a>
-<font size=4>Song / "<%= @song.name %>" / Manage</font>
-<span class='float-right pad1'><a class='simple-link' href='/song/<%= @song.id %>' title='Song page'><%= icon :song_page %></a></span>
-<br><br>
+<div class='main-info'>
+  <div>
+    <div class='align-middle display-inline-block'><%= icon :song %></div>
+    <div class='music-title'><b><%= song.name %></b></div>
+    <span class='align-middle'> - <%= profile_link(song.creator) %> </span>
+  </div>
+  <%= vspace %>
 
-<div class='music-desc round'>
-  <%= field 'Creator' %> <%= @song.creator.name %><br>
-	<%= field 'Created On' %> <%= @song.created_at.date %><br>
-	<%= field 'Status' %> <%= @song.published ? display_published : display_unpublished %>
+  <div class='pad-left-10'>
+    <%= main_info_row('Creator', profile_link(song.creator)) %>
+    <%= main_info_hor_line %>
+    <%= main_info_row('Created On', song.created_at.date) %>
+    <%= main_info_hor_line %>
+    <%= main_info_row('Type', song.published ? display_published : display_unpublished) %>
+  </div>
 </div>
+
+<table>
+  <tr>
+    <td><a href='/song/<%= song.id %>'><%= icon :song_page %></a></td>
+    <td class='text-right w100 align-middle'>
+      <% if @song.published %>
+	      <input type='button' value='Unpublish' onclick='unpublishSong("<%= @song.id %>")'>
+      <% else %>
+	      <input type='button' value='Publish' onclick='publishSong("<%= @song.id %>")'>
+      <% end %>
+      <input type='button' value='Delete Song' onclick='deleteSong("<%= @song.id %>")'>
+    </td>
+  </tr>
+</table>
+
+<%= partial('song/manage/song_picture', :section_header => SectionHeader.new('Song Picture'), :collapsible => true, :locals => {:song => @song}) %>
 <br>
-
-<div class='text-right' style='padding: 5px'>
-	<% if @song.published %>
-		<input type='button' value='Unpublish' onclick='unpublishSong("<%= @song.id %>")'>
-	<% else %>
-		<input type='button' value='Publish' onclick='publishSong("<%= @song.id %>")'>
-	<% end %>
-	<input type='button' value='Delete Song' onclick='deleteSong("<%= @song.id %>")'>
-</div>
-
-<%= partial('song/manage/file_information', :section_header => SectionHeader.new('File Information'), :collapsible => true, :collapsed => true) %>
 
 <%= section_header 'Jams' %>
 <div id='song-manage-jams'>
@@ -34,6 +46,7 @@
 <div id='song-manage-artists-div'>
   <%= partial('song/manage/artists', {:locals => {:artists => @song.managers}}) %>
 </div>
+<br>
 
 <%= section_header 'Lyrics' %>
 <form action='/song/<%= @song.id %>/manage/add_lyrics' method='post' onsubmit='return false' id='song-lyrics-form'>
@@ -43,4 +56,4 @@
 </form>  
 <div id='song-lyrics-form-response'></div>
 
-<%= partial('song/manage/song_picture', :section_header => SectionHeader.new('Song Picture'), :collapsible => true, :locals => {:song => @song}) %>
+<%= partial('song/manage/file_information', :section_header => SectionHeader.new('File Information'), :collapsible => true, :collapsed => true) %>

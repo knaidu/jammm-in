@@ -126,7 +126,7 @@ function loadMessage(id, message, className){
   var items = ["<center>", "<br>", div, "<br>", "</center>"];     
   el.innerHTML = '';
   $A(items).each(function(item){el.insert(item)});
-  window.setTimeout(function(){el.innerHTML = ''}, 2000); // empties the window after 2 seconds
+  window.setTimeout(function(){el.innerHTML = ''}, 4000); // empties the window after 2 seconds
 }
 
 function loadMessageStream(users, divId, full){
@@ -248,7 +248,10 @@ function addJamToSong(songId) {
 		loadSongManageJams(songId);
 		loadSongManageArtists(songId)
 	};
-	call(url, {onSuccess: onSuccess});
+	call(url, {
+	  onSuccess: onSuccess,
+	  onFailure: function(response){loadResponseMessage(response, 'flatten-response')}
+	});
 };
 
 function removeJamFromSong(songId, jamId) {
@@ -292,7 +295,7 @@ function flattenSong(songId){
 	var callback = function(response){
 		var config = {
 			url: "/process_info/" + response.responseText,
-			messageDiv: "publish-response",
+			messageDiv: "flatten-response",
 			onSuccess: reload
 		};
 		var poll = new Poll(config);
@@ -367,7 +370,7 @@ function untagArtistInJam(jamId, artistId){
 
 function publishJam(jamId){
 	var url = formatController('jam', jamId, 'manage', 'publish');
-	call(url, {onSuccess: reload});
+	call(url, {onSuccess: reload, onFailure: function(response){loadResponseMessage(response, 'jam-actions-response')}});
 }
 
 

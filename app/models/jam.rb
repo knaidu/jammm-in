@@ -55,6 +55,7 @@ class Jam < ActiveRecord::Base
   end
 
   def publish
+    raise "You may not publish the jam as there is no mp3 uploaded." if not self.file_handle
     jam = self.song ? self.make_copy_and_publish("#{self.name} (published)") : self # If jam part of a song, then a copy of the jam will be published 
     PublishedJam.add(jam)
     users = jam.artists

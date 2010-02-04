@@ -1,8 +1,8 @@
 
 <form id='song-information' method='post' action='/song/<%= song.id %>/manage/update_information' onsubmit='return false'>
 
-<%= field 'Name' %><input type='text' name='name' value='<%= song.name %>'><%= vspace %>
-<%= field 'Description' %><textarea name='desc'><%= song.description %></textarea><%= vspace %>
+<%= field 'Name' %> <input type='text' name='name' value='<%= song.name %>'><%= vspace %>
+<%= field 'Description' %> <textarea name='desc'><%= song.description %></textarea><%= vspace %>
 <%= field 'Genre' %>
 	<div class='align-top display-inline-block'>
 		<%= partial ("common/manage_genres", :locals => {

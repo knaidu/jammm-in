@@ -83,7 +83,10 @@ get '/jam/:jam_id/manage/file_actions' do
 end
 
 get '/jam/:jam_id/manage/publish' do
-  get_passed_jam.publish ? "Jam successfully published" : "Jam could not be published"
+  monitor {
+    get_passed_jam.publish
+    "Jam successfully published"
+  }
 end
 
 get '/jam/:jam_id/manage/unpublish' do
