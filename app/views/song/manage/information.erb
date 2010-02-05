@@ -3,14 +3,33 @@
 
 <%= field 'Name' %> <input type='text' name='name' value='<%= song.name %>'><%= vspace %>
 <%= field 'Description' %> <textarea name='desc'><%= song.description %></textarea><%= vspace %>
-<%= field 'Genre' %>
-	<div class='align-top display-inline-block'>
-		<%= partial ("common/manage_genres", :locals => {
-			:for_type => "song",
-			:for_type_id => song.id
-		}) %>
-	</div>
 
 <div id='save-information-response'></div>
 <input type='button' value='Save' onClick='saveSongInformation()'>
 </form>
+
+<hr class='light'>
+
+<table cellspacing=0 cellpadding=0>
+  <tr>
+    <td><%= field 'Genre' %></td>
+    <td>
+		  <%= partial ("common/manage_genres", :locals => {
+			  :for_type => "song",
+			  :for_type_id => song.id
+		  }) %>
+    </td>
+  </tr>
+</table>
+<%= vspace %>
+<table cellspacing=0 cellpadding=0>
+  <tr>
+    <td><%= field 'Tags' %></td>
+    <td>
+      <%= partial ("common/manage_tags", :locals => {
+      :for_type => "song",
+      :for_type_id => song.id
+      }) %>
+    </td>
+  </tr>
+</table>

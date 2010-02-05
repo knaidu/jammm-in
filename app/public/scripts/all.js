@@ -246,7 +246,8 @@ function addJamToSong(songId) {
 	url = formatUrl(url, {jam_id: jamId});
 	var onSuccess = function(){
 		loadSongManageJams(songId);
-		loadSongManageArtists(songId)
+		loadSongManageArtists(songId);
+		reloadTags(); // File function is found in /views/common/manage_tags.erb
 	};
 	call(url, {
 	  onSuccess: onSuccess,
@@ -449,6 +450,8 @@ function showSection(id){
 	if(!el) return;
 	el.show();
 }
+
+
 
 /* UPLOAD */
 function getNewXProgressId(){

@@ -6,7 +6,7 @@
 
 	<div class='display-inline-block pad-right-5' style='overflow: hidden'>
     <form action='/url' onsubmit='addTag(); return false'>
-      <input type='text' id='input-tag-name'><%= vspace %> <input type='submit' value='Add'>
+      <input type='text' id='input-tag-name'> <input type='submit' value='Add'>
     </form>
 		<% contains_tags.each do |contains_tag| %>
 			<% tag = contains_tag.tag %>
@@ -23,7 +23,7 @@
 </div>
 
 <%= js_start %>
-	function reload_tags(){
+	function reloadTags(){
 		var url = formatUrl("/partial/common/manage_tags", {for_type: "<%= for_type %>", for_type_id: <%= for_type_id %>});
 		updateEl('tags-list', url);
 	}
@@ -32,12 +32,12 @@
 		var tag = $('input-tag-name').getValue();
 		var url = formatController("tag", "add");
 		url = formatUrl(url, {for_type: "<%= for_type %>", for_type_id: <%= for_type_id %>, name: tag});
-		call(url, {onComplete: reload_tags});
+		call(url, {onComplete: reloadTags});
 		return false;
 	}
 
 	function removeTag(id){
 		var url = formatUrl("/tag/remove", {contains_tag_id: id});
-		call(url, {onComplete: reload_tags});
+		call(url, {onComplete: reloadTags});
 	}
 <%= js_end %>

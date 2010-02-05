@@ -198,6 +198,10 @@ def list_instruments(instruments)
   instruments.map(&:name).join(", ")
 end
 
+def list_tags(tags)
+  tags.map(&:name).join(", ")
+end
+
 # MAIN-INFO
 def main_info_row(field, value)
   partial("common/main_info/row", :locals => {:field => field, :value => value})
