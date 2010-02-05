@@ -16,6 +16,8 @@ class User < ActiveRecord::Base
     where for_type='user' and 
     for_type_id=#{id}
   )
+  has_many :user_notifications
+  has_many :notifications, :through => :user_notifications
   validates_uniqueness_of :username, :message => "has already been registered"
 
   def after_create

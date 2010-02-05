@@ -1,0 +1,11 @@
+<div class='main-info'>
+  <%= main_info_row('Unread Notifications', 12) %>
+  <%= main_info_hor_line %>
+  <%= main_info_row('Total Notifications', 923) %>
+</div>
+
+<%= vspace %>
+
+<% session_user?.notifications.each do |notification| %>
+  <%= partial("/account/notifications/types/#{notification.notification_type}", :locals => {:notification => notification}) %>
+<% end %>

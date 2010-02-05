@@ -62,6 +62,11 @@ post '/account/aboutme/change_profile_picture' do
   }
 end
 
+get '/account/notifications' do
+  @layout_info = {"left_panel" => "account/menu", "middle_panel" => "account/notifications/page"}  
+  erb(:"account/structure")
+end
+
 get '/account/:section' do
   @layout_info = layout_info("account", params[:section])
   erb(:"account/structure") 
