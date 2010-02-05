@@ -84,3 +84,6 @@ load 'urls/genre.rb'
 
 # Loads all the instruments urls
 load 'urls/instrument.rb'
+
+# Loads all the tag urls
+load 'urls/tag.rb'

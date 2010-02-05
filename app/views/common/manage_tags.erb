@@ -1,0 +1,43 @@
+<div id='tags-list'>
+	<% 
+		contains_tags = ContainsTag.find_all_by_for_type_and_for_type_id(for_type, for_type_id)
+		tags = contains_tags.map(&:tag) 
+	%>  
+
+	<div class='display-inline-block pad-right-5' style='overflow: hidden'>
+    <form action='/url' onsubmit='addTag(); return false'>
+      <input type='text' id='input-tag-name'><%= vspace %> <input type='submit' value='Add'>
+    </form>
+		<% contains_tags.each do |contains_tag| %>
+			<% tag = contains_tag.tag %>
+  			<div class='box display-inline-block'>
+  			  <div class='text'><%= tag.name %></div>
+  			  <div class='action' onClick="removeTag('<%= contains_tag.id %>')">x
+  			  </div>
+  			</div>
+			
+		<% end %>
+	
+	
+	</div>
+</div>
+
+<%= js_start %>
+	function reload_tags(){
+		var url = formatUrl("/partial/common/manage_tags", {for_type: "<%= for_type %>", for_type_id: <%= for_type_id %>});
+		updateEl('tags-list', url);
+	}
+
+	function addTag(){
+		var tag = $('input-tag-name').getValue();
+		var url = formatController("tag", "add");
+		url = formatUrl(url, {for_type: "<%= for_type %>", for_type_id: <%= for_type_id %>, name: tag});
+		call(url, {onComplete: reload_tags});
+		return false;
+	}
+
+	function removeTag(id){
+		var url = formatUrl("/tag/remove", {contains_tag_id: id});
+		call(url, {onComplete: reload_tags});
+	}
+<%= js_end %>

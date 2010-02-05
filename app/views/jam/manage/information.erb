@@ -2,6 +2,10 @@
 <%= field 'Name:' %><input type='text' name='name' value='<%= jam.name %>'><%= vspace %>
 <%= field 'Description:' %><textarea name='desc' class='align-top'><%= jam.description %></textarea><%= vspace %>
 
+<div id='save-information-response'></div>
+<input type='button' value='Save' onClick='saveJamInformation("jam-information")'>
+</form>
+<hr class='light'>
 <table cellspacing=0 cellpadding=0>
   <tr>
     <td><%= field 'Genre' %></td>
@@ -13,8 +17,16 @@
     </td>
   </tr>
 </table>
+<%= vspace %>
 
-
-<div id='save-information-response'></div>
-<input type='button' value='Save' onClick='saveJamInformation("jam-information")'>
-</form>
+<table cellspacing=0 cellpadding=0>
+  <tr>
+    <td><%= field 'Tags' %></td>
+    <td>
+      <%= partial ("common/manage_tags", :locals => {
+      :for_type => "jam",
+      :for_type_id => jam.id
+      }) %>
+    </td>
+  </tr>
+</table>

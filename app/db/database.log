@@ -1,33 +1,133 @@
-SQL (0.3ms)  SET client_min_messages TO 'panic'
-SQL (0.2ms)  SET client_min_messages TO 'notice'
-SQL (1.2ms)  SELECT version FROM schema_migrations
+SQL (0.1ms)  SET client_min_messages TO 'panic'
+SQL (0.1ms)  SET client_min_messages TO 'notice'
+SQL (0.8ms)  SELECT version FROM schema_migrations
 Migrating to CreateTestTable (1)
 Migrating to CreateUserTable (2)
+SQL (0.1ms)  BEGIN
+SQL (95.0ms)  CREATE TABLE "users" ("id" serial primary key, "username" character varying(255), "password" character varying(255), "name" character varying(255), "location" character varying(255), "email" character varying(255), "profile_picture_file_handle" character varying(255)) 
+SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('2')
+SQL (0.6ms)  COMMIT
 Migrating to CreateSongsTable (3)
+SQL (0.4ms)  BEGIN
+SQL (12.8ms)  CREATE TABLE "songs" ("id" serial primary key, "name" character varying(255), "description" character varying(255), "length" int, "song_picture_file_handle" character varying(255), "created_at" timestamp DEFAULT '2010-02-05 11:55:49.110611') 
+SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('3')
+SQL (0.7ms)  COMMIT
 Migrating to CreateJamsTable (4)
+SQL (0.6ms)  BEGIN
+SQL (20.7ms)  CREATE TABLE "jams" ("id" serial primary key, "name" character varying(255), "length" integer, "jam_picture_file_handle" character varying(255), "created_at" timestamp DEFAULT '2010-02-05 11:55:49.185953') 
+SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('4')
+SQL (0.8ms)  COMMIT
 Migrating to CreateJamArtistsTable (5)
+SQL (0.6ms)  BEGIN
+SQL (6.7ms)  CREATE TABLE "jam_artists" ("id" serial primary key, "jam_id" integer, "artist_id" integer) 
+SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('5')
+SQL (0.6ms)  COMMIT
 Migrating to CreateSongJamsTable (6)
+SQL (0.4ms)  BEGIN
+SQL (5.9ms)  CREATE TABLE "song_jams" ("id" serial primary key, "song_id" integer, "jam_id" integer, "is_flattened" bool) 
+SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('6')
+SQL (0.7ms)  COMMIT
 Migrating to CreateFollowersTable (7)
+SQL (0.5ms)  BEGIN
+SQL (6.9ms)  CREATE TABLE "followers" ("id" serial primary key, "user_id" integer, "follows_user_id" integer) 
+SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('7')
+SQL (0.8ms)  COMMIT
 Migrating to AddRegisteredUserIdToSongTable (8)
+SQL (0.9ms)  BEGIN
+SQL (0.8ms)  ALTER TABLE "songs" ADD COLUMN "registered_user_id" integer
+SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('8')
+SQL (19.4ms)  COMMIT
 Migrating to AddRegisteredUserIdToJamTable (9)
-Migrating to AddDescriptionViewsToJamSongTable (10)
-Migrating to AddFileHandleToJamTable (11)
-Migrating to CreateSongManagersTable (12)
-Migrating to CreatePublishedJamsTable (13)
-Migrating to AddActiveForSongJamsTable (14)
-Migrating to AddFileHandleForSongsTable (15)
-Migrating to CreateJamAndSongLikesTable (16)
-Migrating to CreateCommentsTable (17)
-Migrating to CreateMessageStreamTables (18)
-Migrating to CreateSongLyricsTable (19)
-Migrating to CreateProcessInfoTable (20)
-Migrating to CreateFeedsAndUserFeedsTables (21)
-Migrating to CreateGenresAndUserGenresTables (22)
-Migrating to CreateSheetMusicTable (23)
-Migrating to CreateInstrumentsAndContainsIntrumentsTables (24)
-Migrating to CreateTagsTable (25)
 SQL (0.3ms)  BEGIN
-SQL (44.6ms)  CREATE TABLE "tags" ("id" serial primary key, "name" character varying(255)) 
-SQL (49.3ms)  CREATE TABLE "contains_tags" ("id" serial primary key, "tag_id" integer, "for_type" character varying(255), "for_type_id" integer) 
-SQL (0.7ms)  INSERT INTO schema_migrations (version) VALUES ('25')
-SQL (2.8ms)  COMMIT
+SQL (0.6ms)  ALTER TABLE "jams" ADD COLUMN "registered_user_id" integer
+SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('9')
+SQL (0.5ms)  COMMIT
+Migrating to AddDescriptionViewsToJamSongTable (10)
+SQL (0.4ms)  BEGIN
+SQL (0.7ms)  ALTER TABLE "jams" ADD COLUMN "description" character varying(255)
+SQL (0.5ms)  ALTER TABLE "jams" ADD COLUMN "views" integer
+SQL (0.5ms)  ALTER TABLE "songs" ADD COLUMN "views" integer
+SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('10')
+SQL (17.6ms)  COMMIT
+Migrating to AddFileHandleToJamTable (11)
+SQL (0.4ms)  BEGIN
+SQL (0.7ms)  ALTER TABLE "jams" ADD COLUMN "file_handle" character varying(255)
+SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('11')
+SQL (0.8ms)  COMMIT
+Migrating to CreateSongManagersTable (12)
+SQL (0.3ms)  BEGIN
+SQL (6.5ms)  CREATE TABLE "song_managers" ("id" serial primary key, "song_id" integer, "manager_id" integer) 
+SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('12')
+SQL (0.6ms)  COMMIT
+Migrating to CreatePublishedJamsTable (13)
+SQL (0.4ms)  BEGIN
+SQL (8.5ms)  CREATE TABLE "published_jams" ("id" serial primary key, "jam_id" integer) 
+SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('13')
+SQL (12.7ms)  COMMIT
+Migrating to AddActiveForSongJamsTable (14)
+SQL (0.5ms)  BEGIN
+SQL (0.9ms)  ALTER TABLE "song_jams" ADD COLUMN "active" boolean
+SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('14')
+SQL (0.7ms)  COMMIT
+Migrating to AddFileHandleForSongsTable (15)
+SQL (0.2ms)  BEGIN
+SQL (0.8ms)  ALTER TABLE "songs" ADD COLUMN "file_handle" character varying(255)
+SQL (0.7ms)  ALTER TABLE "songs" ADD COLUMN "flattened_file_handle" character varying(255)
+SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('15')
+SQL (19.8ms)  COMMIT
+Migrating to CreateJamAndSongLikesTable (16)
+SQL (0.3ms)  BEGIN
+SQL (8.3ms)  CREATE TABLE "likes" ("id" serial primary key, "user_id" integer, "for_type" character varying(255), "for_type_id" integer) 
+SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('16')
+SQL (0.8ms)  COMMIT
+Migrating to CreateCommentsTable (17)
+SQL (0.5ms)  BEGIN
+SQL (9.9ms)  CREATE TABLE "comments" ("id" serial primary key, "user_id" integer, "comment" character varying(255), "for_type" character varying(255), "for_type_id" integer) 
+SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('17')
+SQL (0.5ms)  COMMIT
+Migrating to CreateMessageStreamTables (18)
+SQL (0.6ms)  BEGIN
+SQL (6.5ms)  CREATE TABLE "user_message_stream_maps" ("id" serial primary key, "user_id" integer, "message_stream_id" integer) 
+SQL (5.9ms)  CREATE TABLE "message_streams" ("id" serial primary key) 
+SQL (7.5ms)  CREATE TABLE "user_message_streams" ("id" serial primary key, "message_stream_id" integer, "user_id" integer, "body" character varying(255), "unread" boolean DEFAULT 't', "created_at" timestamp DEFAULT '2010-02-05 11:55:49.628819') 
+SQL (0.3ms)  INSERT INTO schema_migrations (version) VALUES ('18')
+SQL (1.1ms)  COMMIT
+Migrating to CreateSongLyricsTable (19)
+SQL (1.2ms)  BEGIN
+SQL (10.4ms)  CREATE TABLE "song_lyrics" ("id" serial primary key, "song_id" integer, "user_id" integer, "lyrics" text) 
+SQL (0.3ms)  INSERT INTO schema_migrations (version) VALUES ('19')
+SQL (2.3ms)  COMMIT
+Migrating to CreateProcessInfoTable (20)
+SQL (0.7ms)  BEGIN
+SQL (6.8ms)  CREATE TABLE "process_info" ("id" serial primary key, "done" boolean, "process_id" integer, "failed" boolean, "message" character varying(255)) 
+SQL (0.3ms)  INSERT INTO schema_migrations (version) VALUES ('20')
+SQL (0.7ms)  COMMIT
+Migrating to CreateFeedsAndUserFeedsTables (21)
+SQL (0.5ms)  BEGIN
+SQL (9.8ms)  CREATE TABLE "feeds" ("id" serial primary key, "data_str" character varying(255), "feed_type" character varying(255), "scope" character varying(255), "created_at" timestamp DEFAULT '2010-02-05 11:55:49.719416') 
+SQL (10.1ms)  CREATE TABLE "user_feeds" ("id" serial primary key, "feed_id" integer, "user_id" integer) 
+SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('21')
+SQL (0.9ms)  COMMIT
+Migrating to CreateGenresAndUserGenresTables (22)
+SQL (0.6ms)  BEGIN
+SQL (12.3ms)  CREATE TABLE "genres" ("id" serial primary key, "name" character varying(255)) 
+SQL (20.9ms)  CREATE TABLE "contains_genres" ("id" serial primary key, "genre_id" integer, "for_type" character varying(255), "for_type_id" integer) 
+SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('22')
+SQL (3.0ms)  COMMIT
+Migrating to CreateSheetMusicTable (23)
+SQL (0.4ms)  BEGIN
+SQL (36.5ms)  CREATE TABLE "sheet_music" ("id" serial primary key, "jam_id" integer, "sheet_type" character varying(255), "file_handle" character varying(255), "description" text) 
+SQL (4.7ms)  INSERT INTO schema_migrations (version) VALUES ('23')
+SQL (0.6ms)  COMMIT
+Migrating to CreateInstrumentsAndContainsIntrumentsTables (24)
+SQL (0.4ms)  BEGIN
+SQL (8.7ms)  CREATE TABLE "instruments" ("id" serial primary key, "name" character varying(255), "image_url" character varying(255)) 
+SQL (4.9ms)  CREATE TABLE "contains_instruments" ("id" serial primary key, "instrument_id" integer, "for_type" character varying(255), "for_type_id" integer) 
+SQL (0.1ms)  INSERT INTO schema_migrations (version) VALUES ('24')
+SQL (1.0ms)  COMMIT
+Migrating to CreateTagsTable (25)
+SQL (0.5ms)  BEGIN
+SQL (5.5ms)  CREATE TABLE "tags" ("id" serial primary key, "name" character varying(255)) 
+SQL (8.5ms)  CREATE TABLE "contains_tags" ("id" serial primary key, "tag_id" integer, "for_type" character varying(255), "for_type_id" integer) 
+SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('25')
+SQL (0.8ms)  COMMIT
