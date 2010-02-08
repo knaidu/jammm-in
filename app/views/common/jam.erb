@@ -1,7 +1,7 @@
 <div class='w100 pad1'>
 	<div>
 		<span class='float-left pad-right-5'> <%= icon :play2 %></span>
-  	<span class='bold float-left'><a href='/jam/<%= jam.id %>'><%= jam.name %></a></span>
+  	<span class='bold float-left simple-link'><a href='/jam/<%= jam.id %>'><%= jam.name %></a></span>
   	- <%= list_artists jam.artists %>
     <span class='float-right'> <%= add_music_link jam %></span>
 	</div>

@@ -1,4 +1,11 @@
 <% size = results.size %>
+
+<div class='main-info'>
+  <%= main_info_row("Items Found", size) %>
+</div>
+<br><br>
+<%= section_header 'Search Results' %>
+
 <% size.times do |i| %>
   <% result = results[i] %>
   <%= partial ("search/result", :locals => {:result => result}) %>

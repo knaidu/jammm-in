@@ -5,5 +5,9 @@
 	<div class='float-left' id='global-player-div'>
 	    <%= load_player("large") %>
 	</div>
-	<span class='top-bar-search float-right'><input type='text' style='border: thin groove grey'></span>
+	<span class='top-bar-search float-right'>
+	  <form action='/search'>
+  	  <input type='text' style='border: none' name='q'>
+  	</form>
+	</span>
 </div>
