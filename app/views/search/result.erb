@@ -1,0 +1,10 @@
+<% is_a = result.class.to_s.downcase %>
+
+<table class='search-item'>
+  <tr>
+    <td class='icon'><%= icon is_a.to_sym %></td>
+    <td class='content'>
+      <%= partial("search/types/#{is_a}", :locals => {:result => result}) %>
+    </td>
+  </tr>
+</table>

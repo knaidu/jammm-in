@@ -19,6 +19,9 @@ class User < ActiveRecord::Base
   has_many :user_notifications
   has_many :notifications, :through => :user_notifications, :order => "id DESC"
   validates_uniqueness_of :username, :message => "has already been registered"
+  
+  # Sets the created_at attr
+  before_save {|record| record.created_at = Time.now}
 
   def after_create
     feed = Feed.add({:user_ids => [self.id]}, "user_created", "public")

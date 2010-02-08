@@ -170,3 +170,13 @@ end
 def increment_site_counter(url)
   SiteCounter.visited(url)
 end
+
+
+# Search
+
+def search_with_key(key)
+  users = User.find_by_sql("select * from users where name ~* '#{key}' or username ~* '#{key}'")
+  jams = Jam.find_by_sql("select * from jams where name ~* '#{key}'")
+  songs = Song.find_by_sql("select * from songs where name ~* '#{key}'")  
+  (users + jams + songs).sort_by(&:created_at)
+end

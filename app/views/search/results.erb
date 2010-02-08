@@ -1,0 +1,6 @@
+<% size = results.size %>
+<% size.times do |i| %>
+  <% result = results[i] %>
+  <%= partial ("search/result", :locals => {:result => result}) %>
+  <%= "<hr class=light>" if i < (size -1) %>
+<% end %>
