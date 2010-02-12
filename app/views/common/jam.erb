@@ -1,9 +1,11 @@
-<div class='w100 pad1 display-table'>
-	<div class='display-table-cell w1 pad-right-5'><%= icon :play2 %></div>
-	<div class='display-table-cell' style='vertical-align: top'>
-	  <a class='bold simple-link' href='/jam/<%= jam.id %>'><%= jam.name %></a><br>
-	  - <%= list_artists jam.artists %>
-	</div>
-  <div class='display-table-cell'> <%= add_music_link jam %></div>
-</div>
+<table class='w100'>
+  <tr>
+  	<td class='w1 pad-right-5' style='width: 16px'><%= icon :play2 %></td>
+  	<td class='w100'>
+  	  <a class='bold simple-link' href='/jam/<%= jam.id %>'><%= jam.name %></a><br>
+  	  - <%= list_artists jam.artists %>
+  	</td>
+    <td class='w100' style='width: 20px;'> <%= add_music_link jam %></td>
+  </tr>
+</table>
 

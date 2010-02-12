@@ -1,8 +1,8 @@
 <% 
 	items = [
   	{:text => 'Jammm.in', :link => '/', :icon => :jammmin, :id => 'menu-item-jammmin'},
-  	{:text => 'Songs', :link => '/account/songs', :icon => :song, :id => 'menu-item-songs'},
-    {:text => 'Jams', :link => '/account/jams', :icon => :jam, :id => 'menu-item-jams'},  	
+  	{:text => 'Songs', :link => '/songs', :icon => :song, :id => 'menu-item-songs'},
+    {:text => 'Jams', :link => '/jams', :icon => :jam, :id => 'menu-item-jams'},  	
     {:text => 'Artists', :link => '/account/following', :icon => :following, :id => 'menu-item-following'},
     {:text => 'Genres', :link => '/account/followers', :icon => :followers, :id => 'menu-item-followers'},
     ((not session_user?) ? {:text => 'Sign In', :link => '/signin', :icon => :login, :id => 'menu-item-signin'} : nil),

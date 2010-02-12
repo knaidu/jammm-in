@@ -1,3 +1,9 @@
+<%= section_header 'Songs' %>
+<%= partial("common/songs_in_cols", :locals => {:songs => Song.all, :cols => 2}) %>
+
+<%= section_header 'Jams' %>
+<%= partial("common/jams", :locals => {:jams => Jam.all}) %>
+
 <%= section_header('Feed') %>
 <%= partial("common/feeds", :locals => {:feeds => global_feeds(30), :show_as_updates => true}) %>
 

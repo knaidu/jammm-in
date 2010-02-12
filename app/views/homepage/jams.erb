@@ -1,0 +1,6 @@
+<%= section_header 'Jams' %>
+<%= partial ("common/jams", :locals => {:jams => Jam.all}) %>
+
+<%= js_start %>
+	setSelectedMenuItem('menu-item-jams')
+<%= js_end %>
