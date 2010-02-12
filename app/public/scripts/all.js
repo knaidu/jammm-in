@@ -103,6 +103,15 @@ function formatController(){
 	return ("/" + $A(arguments).map(function(arg){return arg}).join("/"));
 }
 
+/* General */
+
+function showLoadingMessage(id){
+	var el = $(id);
+	if(!el) return;
+	var message = arguments[1] || "Please wait...";
+	var loadingImgPath = "/images/icons/loading.gif";
+	el.innerHTML = "<img src='"+ loadingImgPath +"' height=16> " + message;
+}
 
 /* Messages */
 
@@ -576,3 +585,4 @@ function play(filehandle){
 	playerinit(GLOBAL.playerType);
 	playSong("file", filepath, "large");
 }
+
