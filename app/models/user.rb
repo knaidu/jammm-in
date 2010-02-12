@@ -137,6 +137,9 @@ class User < ActiveRecord::Base
     File.copy(file.path, storage_dir + "/" + filename)
     self.profile_picture_file_handle = filename
     self.save
+    temp_img = Image.new(self.profile_picture)
+    temp_img.resize_and_crop(150, 130)
+    true
   end
   
   def delete_profile_picture

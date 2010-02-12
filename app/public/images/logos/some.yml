@@ -1,0 +1,73 @@
+  Image: logo.jpg
+  Format: JPEG (Joint Photographic Experts Group JFIF format)
+  Class: DirectClass
+  Geometry: 250x100+0+0
+  Resolution: 72x72
+  Print size: 3.47222x1.38889
+  Units: PixelsPerInch
+  Type: TrueColor
+  Endianess: Undefined
+  Colorspace: RGB
+  Depth: 8-bit
+  Channel depth:
+    red: 8-bit
+    green: 8-bit
+    blue: 8-bit
+  Channel statistics:
+    Red:
+      min: 81 (0.317647)
+      max: 65278 (1)
+      mean: 165.845 (0.650373)
+      standard deviation: 36.0474 (0.141362)
+      kurtosis: 1.84746
+      skewness: 1.82853
+    Green:
+      min: 0 (0)
+      max: 65278 (1)
+      mean: 37.6293 (0.147566)
+      standard deviation: 82.948 (0.325286)
+      kurtosis: 2.18708
+      skewness: 2.00593
+    Blue:
+      min: 0 (0)
+      max: 65278 (1)
+      mean: 37.027 (0.145204)
+      standard deviation: 82.5123 (0.323578)
+      kurtosis: 2.1657
+      skewness: 1.99861
+  Image statistics:
+    Overall:
+      min: 0 (0)
+      max: 65278 (1)
+      mean: 60.1253 (0.235786)
+      standard deviation: 87.7772 (0.344224)
+      kurtosis: -0.511127
+      skewness: 1.02384
+  Rendering intent: Undefined
+  Interlace: None
+  Background color: white
+  Border color: rgb(223,223,223)
+  Matte color: grey74
+  Transparent color: black
+  Compose: Over
+  Page geometry: 250x100+0+0
+  Dispose: Undefined
+  Iterations: 0
+  Compression: JPEG
+  Quality: 80
+  Orientation: Undefined
+  Properties:
+    date:create: 2010-02-12T06:57:19-08:00
+    date:modify: 2010-01-15T02:22:36-08:00
+    jpeg:colorspace: 2
+    jpeg:sampling-factor: 2x2,1x1,1x1
+    signature: b9f2d32d628bf75026aaa740088c1ce01e2af49d0a76271c7451539bbbd91ef2
+  Artifacts:
+    verbose: true
+  Tainted: False
+  Filesize: 5.12KB
+  Number pixels: 25KB
+  Pixels per second: 250TB
+  User time: 0.010u
+  Elapsed time: 0:01.000
+  Version: ImageMagick 6.5.9-3 2010-02-12 Q16 http://www.imagemagick.org
