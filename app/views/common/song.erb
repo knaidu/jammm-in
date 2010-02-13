@@ -4,7 +4,9 @@
     <td><%= icon :play2 %></td>
     <td class='w100'>
 	    <span class='bold'><a class='simple-link' href='/song/<%= song.id %>'><%= song.name %></a></span><br>
-      <%= list_artists song.artists %><br>
+      <% if not song.artists.empty? %>
+        <div><%= list_artists song.artists %></div>
+      <% end %>
     </td>
     <td><div class='float-right'> <%= add_music_link song %></td>
   </tr>

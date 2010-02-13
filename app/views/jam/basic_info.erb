@@ -49,4 +49,5 @@
 <% elsif @session_user %>
 	<span class='simple-link display-inline' onClick='unlikeJam("<%= jam.id %>")' title='Unlike'><%= icon :unlike %></span>
 <% end %>
+<span class='float-left'><%= add_music_link song %></span>
 <span class='float-right'><%= manage_jam_link(jam) %></span>

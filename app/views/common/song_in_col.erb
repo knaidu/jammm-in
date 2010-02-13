@@ -11,6 +11,9 @@
         <span class='bold simple-link'><%= song_link song %></span>
         <%= vspace %>
         <%= list_artists song.artists %>
+        <% if not song.genres.empty? %>
+          <div class='grey'><%= list_genres song.genres %></div>
+        <% end %>
       </div>
     </td>
   </tr>
