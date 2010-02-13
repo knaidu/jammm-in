@@ -183,7 +183,7 @@ def play_link(obj)
 end
 
 def vspace(height=5)
-  "<div style='height: #{height}'></div>"
+  "<div style='height: #{height}px; overflow: hidden'>&nbsp;</div>"
 end
 
 def hor_line(px='1px', style='solid', color='black', margin='0px')
