@@ -16,19 +16,7 @@
 .default-bg-color {background-color: blue;}
 
 /* HTML, BODY */
-
-html, body {
-  margin:0; 
-  padding:0; 
-  width:100%; 
-  height:100%; 
-  overflow: auto; 
-}
-
-A {
-	color: inherit;
-	text-decoration: inherit;
-}
+html, body {margin:0; padding:0; width:100%; height:100%; overflow:hidden;}
 
 .container {
   text-align: left;
@@ -48,6 +36,10 @@ table, td, body, input, textarea {font-family: 'lucida grande',tahoma,verdana,ar
 span {overflow: auto; word-wrap: break-word}
 div {display: block; overflow: auto; word-wrap: break-word;}
 IMG {border: 0}
+A, a {
+	color: inherit;
+	text-decoration: none;
+}
 a:hover {text-decoration: underline}
 input[type='text'], input[type='password'], TEXTAREA {border: thin groove #d4d4d4; width: 200; padding: 1px;}
 input[type='text'], input[type='password'] {height: 22px}
@@ -150,15 +142,15 @@ hr.w60-align-left {width: 60%; margin-left: 0; text-align: left}
 
 /* TOP BAR */
 
-.top-bar {background-color: #990000; height: 52px; color: white; text-align: center; vertical-align: middle}
-.top-bar .jammmin-logo {width: 1%}
+div.top-bar {background-color: #990000; height: 52px; color: white; text-align: center; vertical-align: middle;}
+.top-bar .jammmin-logo {width: 1%; vertical-align: middle}
 .top-bar .fill {width: 100%}
 .top-bar .separator {width: 1%; border-right: 1px solid #800000; margin-top: 20px}
 .top-bar TD.icon {width: 1%; vertical-align: inherit; padding: 0px 10px 0px 10px}
 .top-bar TD.icon:hover {background-color: #800000; width: 1%; vertical-align: inherit; padding: 0px 10px 0px 10px}
 .top-bar .jammmin-logo IMG {height: 45px;}
 .top-bar .player {width: 1%; text-align: left; height: 45px;}
-.top-bar .search {width: 1%; text-align: right; padding: 10px 10px 0px 10px; vertical-align: inherit}
+.top-bar .search {width: 1%; text-align: right; vertical-align: middle; padding: 0px 10px 0px 10px}
 
 /* FOOTER */
 
