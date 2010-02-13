@@ -4,14 +4,9 @@
 		<%= icon(:song, :small) %>
 	</span>
 	<div>
-		<% if song.creator == session_user? and not is_update %>
-			You have created a new song <%= song_link(song) %>
-		<% else %>
-			<%= add_profile_link(fhlp_get_users(feed)[0]) %> has created a new song <%= song_link(song) %>
-		<% end %>
+		<%= add_profile_link(fhlp_get_users(feed)[0]) %> has created a new song <%= song_link(song) %>
 		<div class='grey'>
-			<%= "\"#{song.description}\"<br>" if song.description %>
+			<%= "\"#{song.description}\"<br>" if song.description and (not song.description.blank?) %>
 		</div>
-		<%= play_link(song) %> <%= icon :like %>
 	</div>
 </div>

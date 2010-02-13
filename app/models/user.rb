@@ -1,3 +1,4 @@
+
 class User < ActiveRecord::Base
 
   has_many :jam_artists, :foreign_key => "artist_id"
@@ -153,6 +154,10 @@ class User < ActiveRecord::Base
   def profile_picture
     return (ENV["WEBSERVER_ROOT"] + "/public/images/icons/user2.png") if not profile_picture_file_handle
     get_storage_file_path(profile_picture_file_handle)
+  end
+
+  def profile_picture_url
+    "/#{self.username}/profile_picture?#{self.profile_picture_file_handle.to_s}"
   end
   
   def increment_counter

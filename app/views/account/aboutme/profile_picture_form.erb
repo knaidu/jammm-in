@@ -5,7 +5,7 @@
 <body>
 	<div class='w100'>
 		<div style='float: left; width: 180px'>
-			<img src="/<%= session_user?.username %>/profile_picture" height=128>
+			<img src="<%= session_user?.profile_picture_url %>" height=128>
 		</div>
 		<div class='float-left'>
 			<form action='/account/aboutme/change_profile_picture' method='post' enctype='multipart/form-data'>

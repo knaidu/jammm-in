@@ -51,3 +51,8 @@ end
 def feed_profile_picture(user)
   "<img src='/#{user.username}/profile_picture' height=32>"
 end
+
+def profile_picture_thumbnail(user)
+  partial ("common/profile_picture_thumbnail", :locals => {:user => user})
+end
+
