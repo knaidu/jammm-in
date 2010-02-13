@@ -1,3 +1,11 @@
-<% users.each do |user| %>
-	<%= partial('common/user', :locals => {:user => user}) %><br>
-<% end %>
+<% 
+  cols ||= 3
+  width_div = (100 / cols)
+%>
+<div class='w100'>
+  <% users.each do |user| %>
+    <div style="width: <%= width_div %>%; float: left">
+    	<%= partial('common/user', :locals => {:user => user}) %>
+    </div>
+  <% end %>
+</div>

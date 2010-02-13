@@ -7,3 +7,9 @@ get '/jams' do
   @layout_info = {"middle_panel" => 'homepage/jams', 'left_panel' => 'homepage/left'}
   erb(:"body/structure")
 end
+
+
+get '/artists' do
+  @layout_info = {"middle_panel" => 'homepage/artists', 'left_panel' => 'homepage/left'}
+  erb(:"body/structure")
+end
