@@ -20,9 +20,11 @@ post '/song/register' do
 end
 
 get '/song/add_music' do
-  @add = param?(:add)
-  @layout_info = {'middle_panel' => 'song/add_music/page', 'left_panel' => 'account/menu'}
-  erb(:"body/structure")
+  logged_in? {
+    @add = param?(:add)
+    @layout_info = {'middle_panel' => 'song/add_music/page', 'left_panel' => 'account/menu'}
+    erb(:"body/structure")
+  }
 end
 
 

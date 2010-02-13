@@ -163,6 +163,15 @@ def allowed?(users)
   end
 end 
 
+def logged_in?
+  if (not session_user?)
+    @layout_info = {'middle_panel' => 'common/not_allowed', 'left_panel' => 'homepage/left'}
+    erb(:"body/structure")
+  else
+    yield if block_given?
+  end
+end
+
 
 def add_music_link(obj)
   prm = obj.class.to_s.downcase + "_" + obj.id.to_s
