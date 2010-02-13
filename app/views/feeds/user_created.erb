@@ -1,9 +1,6 @@
 <% if is_update %>
 	<% user = fhlp_get_users(feed)[0] %>
 	<div>
-		<span class='float-left pad-right-5'>
-      <%= icon :user %>
-		</span>
 		<%= add_profile_link(user) %> (<%= user.location %>) has joined Jammm.in
 	</div>
 <% end %>

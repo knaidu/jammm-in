@@ -1,12 +1,7 @@
 <% song = fhlp_get_song(feed) %>
 <div>
-	<span class='float-left pad-right-5'>
-		<%= icon(:song, :small) %>
-	</span>
-	<div>
-		<%= add_profile_link(fhlp_get_users(feed)[0]) %> has created a new song <%= song_link(song) %>
-		<div class='grey'>
-			<%= "\"#{song.description}\"<br>" if song.description and (not song.description.blank?) %>
-		</div>
+	<%= add_profile_link(fhlp_get_users(feed)[0]) %> has created a new song <%= song_link(song) %>
+	<div class='grey'>
+		<%= "\"#{song.description}\"<br>" if song.description and (not song.description.blank?) %>
 	</div>
 </div>

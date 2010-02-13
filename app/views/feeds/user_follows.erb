@@ -1,7 +1,4 @@
 <% users = fhlp_get_users(feed) %>
 <div>
-	<span class='float-left pad-right-5'>
-		<%= icon(:user, :small) %>
-	</span>
 	<%= add_profile_link(users[0]) %> is now following <%= profile_link(users[1]) %>
 </div>

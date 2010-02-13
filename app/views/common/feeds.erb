@@ -1,5 +1,14 @@
 <% feeds.each {|feed| %>
 	<div class='feed'>
-		<%= partial("common/feed", :locals => {:feed => feed, :show_as_updates => show_as_updates}) %>
-	</div>
+	  <table class='w100'>
+	    <tr>
+	      <td class='w1'>
+      		<%= profile_picture_thumbnail(fhlp_get_users(feed)[0]) %>
+        </td>        
+    	  <td class='w100'>
+      		<%= partial("common/feed", :locals => {:feed => feed, :show_as_updates => show_as_updates}) %>
+      	</td>
+    	</tr>
+    </table>
+  </div>
 <% } %>

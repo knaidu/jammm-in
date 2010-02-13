@@ -7,7 +7,7 @@
 <%= section_header('Feed') %>
 <%= partial("common/feeds", :locals => {:feeds => global_feeds(30), :show_as_updates => true}) %>
 
-<%= vspace 40 %>
+<%= vspace 20 %>
 <%= section_header 'New Users' %>
 <%= partial("common/users", :locals => {:users => User.latest(9)}) %>
 
