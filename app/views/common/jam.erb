@@ -4,7 +4,7 @@
   	<td class='w100'>
   	  <a class='bold simple-link' href='/jam/<%= jam.id %>'><%= jam.name %></a>
   	  <% if not jam.genres.empty? %>
-  	    <span class='grey'>. <%= list_genres jam.genres %></span>
+  	    <span class='grey'> - <%= list_genres jam.genres %></span>
   	  <% end %>
   	  <br>
   	  <%= list_artists jam.artists %>

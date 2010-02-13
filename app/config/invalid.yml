@@ -1,0 +1,7 @@
+username:
+  names: [
+    song, songs, jam, jams, home, info, user, genre, genres, profile, 
+    followers, following, jammmin, index, rb, account, logout, login, signin,
+    administrator, admin
+  ]
+  regex: /^[a-z0-9\-_]+$/i

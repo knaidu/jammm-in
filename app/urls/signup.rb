@@ -5,13 +5,9 @@ get '/signup' do
 end
 
 post '/signup/create' do
-  begin
-   if user = create_new_user(params['form'])
-     set_session_user(user)
-     redirect "/account/aboutme"
-   end
- rescue Exception => e
-   puts e.message
-#   redirect '/signup'
- end
+  monitor {
+    user = create_new_user(params['form'])
+    set_session_user(user)
+    "Successfully created user"
+  }
 end

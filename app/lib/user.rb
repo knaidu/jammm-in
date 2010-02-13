@@ -1,8 +1,15 @@
 module UserUtils
 
   def create_new_user(user_info)
+    validate_username(user_info[:username])
     user_info[:password] = md5(user_info[:password])
     User.create!(user_info)
+  end
+  
+  def validate_username(username)
+    regex = INVALID_INFO["username"]["regex"]
+    raise "The username can accept only alphabets,numbers, '-' and '_'" if not eval(regex).match(username)
+    raise "Username '#{username}' is a reserved keyword. Please choose another one." if INVALID_INFO['username']['names'].include?(username)
   end
   
   def profile_home_info(username)

@@ -3,7 +3,7 @@
 <span class='italic'>All fields are required.</span>
 <%= vspace %><%= vspace %>
 
-<form method='post' action='/signup/create'>
+<form method='post' id='form-new-user' action='/signup/create' onsubmit="makeNewUser(); return false;">
   <%= field 'Username' %>
   <input type='text' name='form[username]'>
   <%= vspace %>
@@ -21,5 +21,18 @@
   <%= vspace %>
   <input type='submit' value='Sign Up'>
 </form>
+<div id='new-user-response'></div>
 <br>
 <br>
+
+
+<%= js_start %>
+  function makeNewUser(){
+    var form = $('form-new-user');
+    showLoadingMessage("new-user-response", "Please wait while your jamMmin account is being created...")
+    form.request({
+      onSuccess: function(){loadUrl("/account/aboutme")},
+      onFailure: loadResponseFn('new-user-response')
+    });
+  }
+<%= js_end %>

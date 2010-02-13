@@ -157,6 +157,10 @@ function loadFailureMessage(id, message){
 	loadMessage(id, message, "failure-message");
 }
 
+function loadResponseFn(id){
+	return function(response){loadResponseMessage(response, id)};
+}
+
 function loadResponseMessage(response, id){
   var messageType = response.transport.status == 200 ? "success-message" : "failure-message";
   loadMessage(id, getResponseText(response.transport), messageType);
@@ -601,4 +605,3 @@ function play(filehandle){
 	playerinit(GLOBAL.playerType);
 	playSong("file", filepath, "large");
 }
-

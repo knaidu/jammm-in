@@ -1,6 +1,8 @@
 
 # ONE TIME OP: Loads all layout info into global variable $layout_info
 $layout_info = YAML.load_file("#{ENV["WEBSERVER_ROOT"]}/config/layout.yml")
+INVALID_INFO = YAML.load_file("#{ENV["WEBSERVER_ROOT"]}/config/invalid.yml")
+
 FILES_DIR = ENV["FILES_DIR"]
 APP_ROOT = ENV["WEBSERVER_ROOT"]
 
