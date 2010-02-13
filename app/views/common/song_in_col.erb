@@ -4,8 +4,6 @@
     <td class='w100'>
       <div style='width: 20px; float: left'>
         <%= icon :play2 %>
-        <br>
-        <span class='hidden'><%= add_music_link song %></span>
       </div>
       <div style='float: left; width: 80%'>
         <span class='bold simple-link'><%= song_link song %></span>
@@ -16,6 +14,7 @@
         <% end %>
       </div>
     </td>
+    <td class='w1 hidden'><%= add_music_link song %></td>
   </tr>
 </table>
 <br class='clear'>

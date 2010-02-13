@@ -1,4 +1,4 @@
-<table class='w100'>
+<table class='w100' <%= blanket_events %>>
   <tr>
   	<td class='w1 pad-right-5' style='width: 16px'><%= icon :play2 %></td>
   	<td class='w100'>
@@ -9,7 +9,7 @@
   	  <br>
   	  <%= list_artists jam.artists %>
   	</td>
-    <td class='w100' style='width: 20px;'> <%= add_music_link jam %></td>
+    <td class='w100 hidden' style='width: 20px;'> <%= add_music_link jam %></td>
   </tr>
 </table>
 
