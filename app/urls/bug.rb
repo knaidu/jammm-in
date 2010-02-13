@@ -10,7 +10,7 @@ end
 
 post '/bug/create' do
   monitor {
-    Bug.add(param?(:subject), param?(:description))
+    Bug.add(param?(:subject), param?(:description), session_user?)
     "Successfully added bug"
   }
 end

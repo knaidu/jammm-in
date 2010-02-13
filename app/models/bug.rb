@@ -7,15 +7,15 @@ class Bug < ActiveRecord::Base
   
   alias messages bugs_bodies
   
-  def self.add(subject, message=nil)
+  def self.add(subject, message=nil, user=nil)
     bug = self.create(:subject => subject)
-    bug.add_message(message) if message
+    bug.add_message(message, user) if message
     bug.mail_bug_report
     bug
   end
   
-  def add_message(message)
-    BugBody.add(self, message)
+  def add_message(message, user=nil)
+    BugBody.add(self, message, user)
   end
   
   def self.list 

@@ -23,9 +23,13 @@
   </div>
 </div>
 <br>
+
 <% bug.messages.each do |message| %>
   <div>
-    <div class='float-right grey'><%= message.created_at.date %></div> 
+    <div class='float-right grey text-right'>
+      <%= message.created_at.date %><br>
+      <%= message.user.username rescue 'Anonymous' %>
+    </div> 
     <div class='float-left'><%= message.message %></div>
   </div>
   <hr class='thin clear'>
