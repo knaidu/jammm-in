@@ -47,7 +47,6 @@ end
 
 def add_menu_entry(text, link, image)
   img = image.sym? ? icon(image, :small) : add_icon(image)
-  puts image.sym?
 	"<div class='account-menu-item'>
 		<a title='#{text}' href='#{link}'>
 		  <div>
@@ -167,7 +166,6 @@ end
 
 def add_music_link(obj)
   prm = obj.class.to_s.downcase + "_" + obj.id.to_s
-  puts obj.id
   "<a href='/song/add_music?add=#{prm}'><span class='display-inline' title='Add to garage'>" + (icon :add) + "</span></a>" 
 end
 

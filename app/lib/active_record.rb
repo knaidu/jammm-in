@@ -12,6 +12,10 @@ class ActiveRecord::Base < Object
     user = self.find_by_username(username)
   end
   
+  def self.latest(count=5)
+    self.find(:all, :order => "id DESC", :limit => count)
+  end
+  
   def append(attrs)
     self.update_attributes(attrs)
     self.save

@@ -7,6 +7,11 @@
 <%= section_header('Feed') %>
 <%= partial("common/feeds", :locals => {:feeds => global_feeds(30), :show_as_updates => true}) %>
 
+<%= vspace 20 %>
+<%= section_header 'New Users' %>
+<%= partial("common/users", :locals => {:users => User.latest(9)}) %>
+
 <%= js_start %>
 	setSelectedMenuItem('menu-item-jammmin')
 <%= js_end %>
+
