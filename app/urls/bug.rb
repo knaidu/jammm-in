@@ -24,7 +24,7 @@ end
 post '/bug/:bug_id/add_message' do
   monitor {
     bug = Bug.find(param?(:bug_id))
-    bug.add_message(param?(:message))
+    bug.add_message(param?(:message), session_user?)
     "Message added successfully"
   }
 end
