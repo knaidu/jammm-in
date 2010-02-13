@@ -13,5 +13,5 @@ BUG_MAIL_DETAILS = {
   :body => bug.description.message
 }
 
-mail BUG_MAIL_DETAILS.clone.update({:to => "prakash.raman.ka@gmail.com"})
+mail BUG_MAIL_DETAILS.clone.update({:to => "prakashraman@jammm.in"})
 mail BUG_MAIL_DETAILS.clone.update({:to => "tarun@jammm.in"})
