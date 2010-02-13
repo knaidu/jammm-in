@@ -165,7 +165,7 @@ class Song < ActiveRecord::Base
     self.song_picture_file_handle = filename
     self.save
     img = Image.new(song_picture)
-    img.resize_and_crop(80, 55)
+    img.resize_and_crop(80, 80)
   end
   
   def song_picture_url
