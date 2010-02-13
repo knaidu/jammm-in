@@ -535,6 +535,22 @@ function remove_instrument(id, container_div, for_type, for_type_id){
 }
 
 
+/* Blanket HOVER */
+function onMouseOverBlanket(el){
+	var hiddenEls = el.findDescendantsByClassName('hidden');
+	$A(hiddenEls).each(function(hEl){
+		hEl.addClassName('visible');
+	});
+}
+
+function onMouseOutBlanket(el){
+	var visibleEls = el.findDescendantsByClassName('visible');
+	$A(visibleEls).each(function(vEl){
+		vEl.removeClassName('visible');
+	});
+}
+
+
 /* Player */
 function playSong(songtitle,songhandle,type)
 {

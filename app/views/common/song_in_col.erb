@@ -1,11 +1,11 @@
-<table class='w100'>
+<table class='w100 blanket' <%= blanket_events %>>
   <tr>
     <td class='w1'><%= song_picture song %></td>
     <td class='w100'>
       <div style='width: 20px; float: left'>
         <%= icon :play2 %>
         <br>
-        <%= add_music_link song %>
+        <span class='hidden'><%= add_music_link song %></span>
       </div>
       <div style='float: left; width: 80%'>
         <span class='bold simple-link'><%= song_link song %></span>

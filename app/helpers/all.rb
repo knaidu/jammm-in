@@ -219,4 +219,9 @@ def main_info_hor_line
   hor_line("1px", "dotted", "#999999", "5px 0px 5px 0px")
 end
 
+# Blankets
+def blanket_events
+  "onmouseover='onMouseOverBlanket(this)' onmouseout='onMouseOutBlanket(this)'"
+end
+
 load 'helpers/profile.rb'

@@ -18,7 +18,11 @@ Object.extend(Object, function(){
 Element.addMethods({
 	scrollBottom: function(element){
     element.scrollTop = element.scrollHeight;
-  }
+  },
+	findDescendantsByClassName: function(element, className){
+		var decs = element.descendants();
+		return decs.findAll(function(i){return i.hasClassName(className)}) 
+	}
 });
 
 /* Progress Bar HTML el */
