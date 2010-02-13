@@ -1,2 +1,6 @@
 <%= section_header 'Artists' %>
 <%= partial("common/users", :locals => {:users => User.all}) %>
+
+<%= js_start %>
+	setSelectedMenuItem('menu-item-artists')
+<%= js_end %>
