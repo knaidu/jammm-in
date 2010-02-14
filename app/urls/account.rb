@@ -74,6 +74,16 @@ get '/account/notifications' do
   erb(:"account/structure")
 end
 
+get '/account/update_share_policy' do
+  monitor {
+    site = param?(:site)
+    policy = param?(:policy)
+    puts policy
+    session_user?.update_share_policy(site, policy)
+    "Your new policy has been set successfully"
+  }
+end
+
 get '/account/:section' do
   @layout_info = layout_info("account", params[:section])
   erb(:"account/structure") 

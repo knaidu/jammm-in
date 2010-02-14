@@ -449,18 +449,23 @@ function loadUserProfileActions(username){
 function toogleSectionExpand(id){
 	var el = $(id);
 	if(!el) return;
-	el.visible() ? hideSection(id) : showSection(id);
+	var toogleLink = arguments[1];
+	el.visible() ? hideSection(id, toogleLink) : showSection(id, toogleLink);
 }
 
-function hideSection(id){
+function hideSection(id, toogleLinkId){
 	var el = $(id);
 	if(!el) return;
+	var toogleLink = $(toogleLinkId);
+	if(toogleLink) toogleLink.innerHTML = 'show';
 	el.hide()
 }
 
-function showSection(id){
+function showSection(id, toogleLinkId){
 	var el = $(id);
 	if(!el) return;
+	var toogleLink = $(toogleLinkId);
+	if(toogleLink) toogleLink.innerHTML = 'hide';
 	el.show();
 }
 

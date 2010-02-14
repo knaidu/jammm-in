@@ -18,6 +18,8 @@ class User < ActiveRecord::Base
   )
   has_many :user_notifications
   has_many :notifications, :through => :user_notifications, :order => "id DESC"
+  has_one :facebook_policy, :class_name => "FacebookShare"
+  has_one :twitter_policy, :class_name => "TwitterShare"
   validates_uniqueness_of :username, :message => "has already been registered"
   
   # Sets the created_at attr
@@ -174,6 +176,13 @@ class User < ActiveRecord::Base
   def decrement_invites_remaining
     self.invites_remaining -= 1
     self.save
+  end
+  
+  def update_share_policy(site, policy)
+    share = eval("#{site.capitalize}Share").find_by_user_id(self.id)
+    # updates a default set of policy keys
+    policy = {:jam_like => false, :jam_publish => false, :song_like => false, :song_publish => false}.update(policy.keys_to_sym)
+    share.update_attributes(policy)
   end
   
 end

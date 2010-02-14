@@ -1,4 +1,30 @@
-<%= partial('account/aboutme/basic_info', :section_header => SectionHeader.new('About Me'), :collapsible => true, :collapsed => true) %>
-<%= partial('account/aboutme/profile_picture', :section_header => SectionHeader.new('Profile Picture'), :collapsible => true, :collapsed => true) %>
-<%= partial('account/aboutme/into/page', :section_header => SectionHeader.new('Into'), :collapsible => true, :collapsed => true) %><%= vspace %>
-<%= partial('account/aboutme/change_password', :section_header => SectionHeader.new('Change Password'), :collapsible => true, :collapsed => true) %>
+<!-- Personal Information -->
+<div class='main-info bold underline'>
+  Personal Information
+</div>
+
+<div style='padding: 10px'>
+  <%= partial('account/aboutme/basic_info', :section_header => SectionHeader.new('About Me'), :collapsible => true, :collapsed => true) %>
+  <%= partial('account/aboutme/profile_picture', :section_header => SectionHeader.new('Profile Picture'), :collapsible => true, :collapsed => true) %>
+  <%= partial('account/aboutme/into/page', :section_header => SectionHeader.new('Into'), :collapsible => true, :collapsed => true) %><%= vspace %>
+</div>
+<%= vspace %>
+
+<!-- Settings -->
+<div class='main-info bold underline'>
+  Settings
+</div>
+<div style='padding: 10px'>
+  <%= partial('account/aboutme/change_password', :section_header => SectionHeader.new('Change Password'), :collapsible => true, :collapsed => true) %>
+</div>
+<%= vspace %>
+
+
+<!-- Facebook / Twitter Polocies -->
+<div class='main-info bold underline'>
+  Polocies
+</div>
+<div style='padding: 10px'>
+  <%= partial('account/aboutme/facebook_policy', :section_header => SectionHeader.new('Facebook'), :collapsible => true, :collapsed => true) %>
+  <%= partial('account/aboutme/twitter_policy', :section_header => SectionHeader.new('Twitter'), :collapsible => true, :collapsed => true) %>
+</div>

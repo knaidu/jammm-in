@@ -1,0 +1,24 @@
+<% policy = session_user?.facebook_policy %>
+
+Automatically publish to my profile the following: <br><br>
+<form id='form-facebook-share' action='/account/update_share_policy' method='get' onsubmit='updateFacebookPolicy(); return false'>
+  <input type='checkbox' name='policy[jam_like]' value='true' <%= "CHECKED" if policy.jam_like %>> Jam Likes <%= vspace %>
+  <input type='checkbox' name='policy[song_like]' value='true' <%= "CHECKED" if policy.song_like %>> Song Likes <%= vspace %>
+  <input type='checkbox' name='policy[jam_publish]' value='true' <%= "CHECKED" if policy.jam_publish %>> Jam Publishes <%= vspace %>  
+  <input type='checkbox' name='policy[song_publish]' value='true' <%= "CHECKED" if policy.song_publish %>> Song Publishes  <%= vspace %>
+  <input type='hidden' name='site' value='facebook'>
+  <input type='submit' value='Update'>
+  <div id='facebook-share-response'></div>
+  <%= vspace 15 %>  
+</form>
+
+<%= js_start %>
+  function updateFacebookPolicy(){
+    var form = $('form-facebook-share');
+    showLoadingMessage("Updating facebook policy...");
+    form.request({
+      onSuccess: loadResponseFn('facebook-share-response'),
+      onFailure: loadResponseFn('facebook-share-response')
+    })
+  }
+<%= js_end %>

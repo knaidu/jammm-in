@@ -9,7 +9,7 @@
   <div style="padding-right: 5px; background-color: white" class='text bold float-left'><%= text %></div>
 	<% if options[:collapsible] %>
 		<% switch_id = rand_id %>
-		<span id='<%= switch_id %>' class='float-right grey clickable' onClick="toogleSectionExpand('<%= options[:collapsible] %>', '<%= switch_id %>')">[+]</span>
+		<span id='<%= switch_id %>' class='float-right grey clickable' onClick="toogleSectionExpand('<%= options[:collapsible] %>', '<%= switch_id %>')">hide</span>
 	<% end %>
 </div>	
 <hr class='thin'>
