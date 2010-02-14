@@ -42,6 +42,7 @@ def mail(details={})
   mail_details[:body] = details[:body]
   mail_details[:smtp][:user] = details[:from]
   mail_details[:smtp][:password] = details[:password]
+  mail_details[:content_type] = "text/html"
   
   Pony.mail(mail_details)
 end
@@ -50,8 +51,8 @@ def test_mail
   mail({
     :from => "support@jammm.in",
     :subject => "Jammm.in",
-    :body => "Welcome to Jammm.in. Thanks for your support.",
+    :body => "tets",
     :password => "3WiseMen",
-    :to => "sb.sbrahul@gmail.com"
+    :to => "prakash.raman.ka@gmail.com"
   })
 end

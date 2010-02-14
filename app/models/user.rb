@@ -1,4 +1,3 @@
-
 class User < ActiveRecord::Base
 
   has_many :jam_artists, :foreign_key => "artist_id"

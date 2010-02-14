@@ -11,6 +11,21 @@ def run(cmd)
   `#{cmd}`
 end
 
+def argv_options
+  options = {}
+  ARGV.each do |arg|
+    res = (/--(.+)=(.+)/ =~ arg)
+    options[$1.to_sym] = $2 if res and $1 and $2
+  end
+  options
+end
+
+
+def get_localhost_response(path)
+  Net::HTTP.get("localhost", path)
+end
+
+
 def get_passed_song
   Song.find(params[:song_id])
 end

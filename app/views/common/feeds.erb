@@ -12,14 +12,10 @@
 
 <% feeds.each {|feed| %>
   <% img = icon((icons[feed.feed_type.to_sym] or :update)) %>
-	<div class='feed'>
-	  <table class='w100'>
-	    <tr>
-	      <td class='w1'><%= img %></td>        
-    	  <td class='w100'>
-      		<%= partial("common/feed", :locals => {:feed => feed, :show_as_updates => show_as_updates}) %>
-      	</td>
-    	</tr>
-    </table>
+	<div class='feed position-relative'>
+	  <div class='position-absolute' style='width: 20px'><%= img %></div>
+	  <div style='margin-left: 22px'>
+  		<%= partial("common/feed", :locals => {:feed => feed, :show_as_updates => show_as_updates}) %>
+    </div>
   </div>
 <% } %>

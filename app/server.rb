@@ -5,6 +5,7 @@ require 'yaml'
 require 'aws/s3'
 require 'digest/md5'
 require 'pony'
+require 'net/http'
 
 
 set :public, File.dirname(__FILE__) + '/public'

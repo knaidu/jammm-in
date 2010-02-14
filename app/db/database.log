@@ -1,6 +1,6 @@
-SQL (0.4ms)  SET client_min_messages TO 'panic'
-SQL (0.2ms)  SET client_min_messages TO 'notice'
-SQL (1.3ms)  SELECT version FROM schema_migrations
+SQL (0.2ms)  SET client_min_messages TO 'panic'
+SQL (0.1ms)  SET client_min_messages TO 'notice'
+SQL (0.6ms)  SELECT version FROM schema_migrations
 Migrating to CreateTestTable (1)
 Migrating to CreateUserTable (2)
 Migrating to CreateSongsTable (3)
@@ -30,7 +30,8 @@ Migrating to CreateNotificationsAndUserNotificationsTables (26)
 Migrating to CreateSiteCounterTable (27)
 Migrating to CreateBugsTable (28)
 Migrating to CreateSongManageMessagesTable (29)
-SQL (0.2ms)  BEGIN
-SQL (86.9ms)  CREATE TABLE "song_manage_messages" ("id" serial primary key, "song_id" integer, "user_id" integer, "message" character varying(255), "created_at" timestamp) 
-SQL (1.0ms)  INSERT INTO schema_migrations (version) VALUES ('29')
-SQL (2.0ms)  COMMIT
+Migrating to CreateInvitesTable (30)
+SQL (0.1ms)  BEGIN
+SQL (1352.9ms)  CREATE TABLE "invites" ("id" serial primary key, "referred_user_id" integer, "invitee_email_id" character varying(255), "status" character varying(255)) 
+SQL (53.0ms)  INSERT INTO schema_migrations (version) VALUES ('30')
+SQL (1.5ms)  COMMIT

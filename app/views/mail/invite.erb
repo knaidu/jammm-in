@@ -1,0 +1,28 @@
+<% 
+  invite = Invite.find(invite_id) rescue nil
+  signup_url = "http://" + request.host + "/signup?code=" + invite.code
+%>
+
+<b>Welcome to jamMmin</b><br>
+<i>A Music Collaboration Application.</i>
+<br><br>
+
+<% if invite.referrer %>
+  You have been invited by <b><%= invite.referrer.username %></b> (<%= invite.referrer.name %>) to join jamMm.in.
+<% else %>
+  You have been invited to join jamMm.in
+<% end %>
+
+<br><br>
+Please <a href='<%= signup_url %>'>click here</a> to accept the invitation and create your account. 
+
+<br><br>
+Or paste the below link in the address bar of your browser.<br><br>
+<%= signup_url %>
+<br><br>
+<i>
+Regards,<br>
+jamMmin<br>
+http://jammm.in<br>
+</i>
+
