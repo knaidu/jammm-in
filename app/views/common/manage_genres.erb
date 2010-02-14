@@ -12,9 +12,7 @@
 			<% end %>
 		</select>	
 		<input type='button' value='Add' onclick="add_genre()">
-		<% if not contains_genres.empty? %>
-  		<hr class='thin'>
-  	<% end %>
+    <%= vspace %>
 	
 		<% contains_genres.each do |contains_genre| %>
 			<% genre = contains_genre.genre %>
@@ -25,11 +23,7 @@
   			</div>
 			
 		<% end %>
-	
-		<% if genres.empty? %>
-			<i>click <b>Add</b> to add a genre</i>
-		<% end %>
-	
+
 	</div>
 </div>
 

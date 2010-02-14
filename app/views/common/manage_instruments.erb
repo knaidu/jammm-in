@@ -15,9 +15,7 @@
 			<% end %>
 		</select>	
 		<input type='button' value='Add' onclick="add_instrument('<%= instruments_select_div_id %>', '<%= main_instruments_div_id %>', '<%= for_type %>', '<%= for_type_id %>')">
-		<% if not contains_instruments.empty? %>
-  		<hr class='thin'>
-  	<% end %>
+		<%= vspace %>
 	
 		<% contains_instruments.each do |contains_instrument| %>
 			<% instrument = contains_instrument.instrument %>
