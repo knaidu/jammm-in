@@ -12,7 +12,7 @@ class Invite < ActiveRecord::Base
   end
   
   def code
-    md5("invite:#{self.invitee_email_id}") + ";#{self.id.to_s}"
+    md5("invite:#{self.invitee_email_id}") + "-#{self.id.to_s}"
   end
   
   def mail_invite
@@ -20,4 +20,14 @@ class Invite < ActiveRecord::Base
     run(cmd)
   end
 
+  def self.extract_invite(code)
+    msg = "Sorry the invite code does not seem to match in our system"
+    arr = code.split("-")
+    invite = Invite.find(arr[1])
+    raise msg if not invite.code == code
+    invite
+  rescue
+    raise msg
+  end
+  
 end

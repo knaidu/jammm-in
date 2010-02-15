@@ -2,8 +2,16 @@ module UserUtils
 
   def create_new_user(user_info)
     validate_username(user_info[:username])
+    puts user_info[:code]
+    invite = Invite.extract_invite(user_info[:code])
     user_info[:password] = md5(user_info[:password])
-    User.create!(user_info)
+    email = invite.invitee_email_id
+    User.create!({
+      :username => user_info[:username],
+      :password => user_info[:password],
+      :email => email,
+      :location => user_info[:location]
+    })
   end
   
   def validate_username(username)

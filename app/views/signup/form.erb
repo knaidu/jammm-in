@@ -1,3 +1,5 @@
+<% code = param?(:code) %>
+
 <%= section_header "Sign up" %>
 <%= vspace %>
 <span class='italic'>All fields are required.</span>
@@ -10,17 +12,16 @@
   <%= field 'Password' %>
   <input type='password' name='form[password]'>
   <%= vspace %>
-	<%= field	'Full Name' %>
-  <input type='text' name='form[name]'>
-  <%= vspace %>
-	<%= field 'Email' %>
-  <input type='text' name='form[email]'>
-  <%= vspace %>
-	<%= field 'Location' %>
-	<input type='text' name='form[location]'>
-  <%= vspace %>
+  <%= field 'Confirm Password' %>
+  <input type='password' name='form[confirm_password]'>
+  <%= vspace %> 
+  <%= field 'Location' %> 
+  <input type='text' name='form[location]'>
+  <%= vspace 25 %>  
+  <input type='hidden' value='<%= code %>' name='form[code]'>
   <input type='submit' value='Sign Up'>
 </form>
+<%= vspace %>
 <div id='new-user-response'></div>
 <br>
 <br>
