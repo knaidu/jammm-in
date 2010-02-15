@@ -185,4 +185,8 @@ class User < ActiveRecord::Base
     share.update_attributes(policy)
   end
   
+  def unread_notifications
+    notifications.select{|notification| not notification.read}
+  end
+  
 end

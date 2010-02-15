@@ -1,7 +1,6 @@
 class CreateNotificationsAndUserNotificationsTables < ActiveRecord::Migration
   
   def self.up
-    # Song Song Lyrics
     create_table :notifications do |i|
       i.column :data_str, :string
       i.column :notification_type, :string
@@ -11,6 +10,7 @@ class CreateNotificationsAndUserNotificationsTables < ActiveRecord::Migration
     create_table :user_notifications do |i|
       i.column :notification_id, :integer
       i.column :user_id, :integer
+      i.column :read, :boolean
     end
     
   end

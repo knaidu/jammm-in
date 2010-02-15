@@ -4,7 +4,7 @@
   <table class='w100' height='100%' cellpadding=0 cellspacing=0>
     <tr>
     
-      <td class='jammmin-logo'>
+      <td class='jammmin-logo' style='vertical-align: middle'>
 	      <a href='/'><img src='/images/logos/logo.jpg'></a>
 	    </td>
 	    
@@ -17,8 +17,11 @@
       <% if session_user? %>
         <td class='icon' title='Home'><a href='/account'><%= icon(:home, :header) %></a></td>
         <td class='icon' title='Profile'><a href='/<%= session_user?.username %>'><%= icon(:profile, :header) %></a></td>        
-        <td class='icon' title='Notifications' style='position: relative'>
-          <div class='float-left'><a href='/account/notifications'><%= icon(:notifications, :header) %></a></div>
+        <td class='icon' title='Notifications'>
+          <div class='position-relative'>
+            <div class='position-absolute' style='right: 0px'>3</div>
+            <a href='/account/notifications'><%= icon(:notifications, :header) %></a>
+          </div>
         </td>
         <td class='icon' title='Settings / About Me'><a href='/account/aboutme'><%= icon(:manage, :header) %></td></td>
         <td class='icon' title='Logout'><a href='/account/logout'><%= icon(:logout, :header) %></a></td>

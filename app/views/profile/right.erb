@@ -3,11 +3,12 @@
   message_stream = MessageStream.find_stream(session_user?, @user) %>
   <%= partial("common/message_stream", 
     :locals => {:message_stream => message_stream}, 
-    :section_header => SectionHeader.new('Message Stream', {:img => :message}), 
+    :section_header => SectionHeader.new("Your message stream<br>#{@user.username}", {:img => :message}), 
     :collapsible => true,
     :collapsed => true
   ) %>
 <% end %>
+<%= vspace %>
 
 <%= section_header('Songs', {:icon => :song}) %>
 <%= partial (:'common/songs', :locals => {:songs => @user.published_songs}) %> 

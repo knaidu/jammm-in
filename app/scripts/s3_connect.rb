@@ -1,3 +1,4 @@
+require 'rubygems'
 require 'aws/s3'
 
 AWS::S3::Base.establish_connection!(

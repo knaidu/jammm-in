@@ -32,16 +32,6 @@ get '/' do
   erb(:'body/structure')
 end
 
-get '/new' do
-  @layout_info = {"left_panel" => nil, "middle_panel" => nil, "right_panel" => nil}
-  erb(:'body/structure')  
-end
-
-get '/loose' do
-  erb(:"body/loose")
-end
-
-
 # Url Catcher for .css files. If not found, it will look for a static file.
 get '/stylesheets/*.css' do
   filename = params[:splat][0]

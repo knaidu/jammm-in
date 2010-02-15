@@ -561,52 +561,20 @@ function onMouseOutBlanket(el){
 
 
 /* Player */
-function playSong(songtitle,songhandle,type)
-{
-		var flashvars = {};
-		flashvars.playfile = "1";
-		flashvars.playurl = songhandle;
-			
-		// Flash parameters
-		var params = {};
-		params.allowfullscreen = "true";
-		params.allowScriptAccess = "always";
-		params.allowNetworking = "all";
-		params.quality = "high";
-		params.bgcolor = "000000";
-		params.wmode = "transparent";
-		params.menu = "true";
 
-		// Attributes
-		var attributes = {};
-		swfobject.embedSWF("/swf/new-player.swf", "playerdiv", "380", "70", "7.0.0", false, flashvars, params, attributes);
-}
+function playMusic(url,name){	
+	if(window.jammminplayer){
+		window.document["jammminplayer"].SetVariable("url", url);
+		window.document["jammminplayer"].SetVariable("name", name);
+		window.document["jammminplayer"].Rewind();
+		window.document["jammminplayer"].Play();
+	}
+	if(document.jammminplayer){
+		document.jammminplayer.SetVariable("url", url);	
+		document.jammminplayer.SetVariable("name", name);
+		document.jammminplayer.Rewind();
+		document.jammminplayer.Play()
+	}
 
-function playerinit(type)
-{
-  // Flash variables
-  var flashvars = {};
-  flashvars.playfile = "0";
-  flashvars.playurl = "";
-		
-  // Flash parameters
-  var params = {};
-  params.allowfullscreen = "true";
-  params.allowScriptAccess = "always";
-  params.allowNetworking = "all";
-  params.quality = "high";
-  params.bgcolor = "000000";
-  params.wmode = "transparent";
-  params.menu = "true";
-
-  // Attributes
-  var attributes = {};
-  swfobject.embedSWF("/swf/new-player.swf", "playerdiv", "380", "70", "7.0.0", false, flashvars, params, attributes);
-}
-
-function play(filehandle){
-	var filepath = $A([window.location.protocol, "//", window.location.host, "/file/", filehandle]).join('');
-	log(filepath);
-	playerinit(GLOBAL.playerType);
-	playSong("file", filepath, "large");
+	
 }

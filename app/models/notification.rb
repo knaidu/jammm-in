@@ -8,7 +8,8 @@ class Notification < ActiveRecord::Base
   ICON = {
     :follows => :following,
     :comment => :comments,
-    :jam_tag => :jam
+    :jam_tag => :jam,
+    :new_message => :comments
   }
   
   def self.add(data={}, notification_type="update")
@@ -50,6 +51,10 @@ class Notification < ActiveRecord::Base
     
     def jam
       Jam.find(@data["jam_id"]) rescue nil
+    end
+    
+    def message
+      UserMessageStream.find(@data["message_id"]) rescue nil      
     end
     
   end

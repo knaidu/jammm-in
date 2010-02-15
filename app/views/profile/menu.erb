@@ -1,7 +1,9 @@
 <div class='menu'>
-	<div class='profile-photo' style='overflow: auto'>
+  <div class='text-center'>
+    <center>
     <%= profile_picture @user %>
-	</div>
+    </center>
+  </div>
 	
 	<br><br>
 	<%= partial("profile/actions", :locals => {:user => @user}) if session_user? %>
