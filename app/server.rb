@@ -64,13 +64,9 @@ get '/partial/*' do
   erb(:"#{path}", :locals => params.clone)
 end
 
-get '/admin/site_counter' do
-  @layout_info = {"left_panel" => "homepage/left", "middle_panel" => "admin/site_counter"}
-  erb(:'body/structure')
-end
-
 load 'urls/signin.rb'
 load 'urls/signup.rb'
+load 'urls/admin.rb'
 load 'urls/search.rb'
 load 'urls/homepage.rb'
 load 'urls/bug.rb'

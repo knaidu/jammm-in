@@ -4,6 +4,8 @@
 <%= section_header 'Jams' %>
 <%= partial("common/jams", :locals => {:jams => Jam.all}) %>
 
+<%= vspace 20 %>
+
 <%= section_header('Feed') %>
 <%= partial("common/feeds", :locals => {:feeds => global_feeds(30), :show_as_updates => true}) %>
 

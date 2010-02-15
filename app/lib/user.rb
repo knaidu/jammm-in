@@ -7,6 +7,7 @@ module UserUtils
     user_info[:password] = md5(user_info[:password])
     email = invite.invitee_email_id
     User.create!({
+      :name => user_info[:name],
       :username => user_info[:username],
       :password => user_info[:password],
       :email => email,

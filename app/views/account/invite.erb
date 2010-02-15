@@ -1,0 +1,23 @@
+<div class='main-info'>
+  <b><u>Invite a friend</u></b><%= vspace %>
+  You have <%= session_user?.invites_remaining %> invites left.<br><br>
+  <form id='form-invite' method='get' action='/account/invite' onsubmit='inviteUser(); return false'>
+    <input type='text' name='email'><br>
+    <input type='submit' value='Invite'>
+  </form>
+</div>
+
+<div id='invite-response'></div>
+
+<%= js_start %>
+  
+  function inviteUser(){
+    var form = $('form-invite');
+    showLoadingMessage('invite-response', "Please wait while the invitation is being sent out");
+    form.request({
+      onSuccess: loadResponseFn('invite-response'),
+      onFailure: loadResponseFn('invite-response')
+    });
+  }
+
+<%= js_end %>

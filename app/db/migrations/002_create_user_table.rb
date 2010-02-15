@@ -9,6 +9,7 @@ class CreateUserTable < ActiveRecord::Migration
       i.column :profile_picture_file_handle, :string
       i.column :log_in_counter, :integer, :default => 1
       i.column :created_at, :timestamp, :default => Time.now
+      i.column :invites_remaining, :integer, :default => 3
     end
   end
   

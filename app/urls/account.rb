@@ -35,6 +35,13 @@ get '/account/aboutme' do
   erb(:"account/structure")
 end
 
+get '/account/invite' do
+  monitor {
+    session_user?.invite(param?(:email))
+    "Success. The invitation will be delivered in 30 minutes."
+  }
+end
+
 get '/account/aboutme/change_password' do
   monitor {
     password, confirm_password = get_params(:password, :confirm_password)

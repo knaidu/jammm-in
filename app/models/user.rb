@@ -165,4 +165,15 @@ class User < ActiveRecord::Base
     self.save
   end
   
+  def invite(email)
+    raise "Please enter a valid email address" if email.blank? or email.nil?
+    invite = Invite.add(email, self)
+    decrement_invites_remaining
+  end
+  
+  def decrement_invites_remaining
+    self.invites_remaining -= 1
+    self.save
+  end
+  
 end
