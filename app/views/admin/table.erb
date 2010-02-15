@@ -1,0 +1,5 @@
+<%= section_header "Table #{param?(:table_name).capitalize}" %>
+
+<% @data.each do |row| %>
+  <%= row.attributes.inspect %> <%= vspace 20 %>
+<% end %>
