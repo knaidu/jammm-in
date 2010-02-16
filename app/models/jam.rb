@@ -26,8 +26,6 @@ class Jam < ActiveRecord::Base
     return true if not self.artists.empty?
     puts "is it here?"
     self.tag_artist(self.creator)
-    feed = Feed.add({:jam_id => self.id, :user_ids => [self.creator.id]}, "jam_created")
-    feed.add_users([self.creator])
   end
 
   def file
@@ -61,7 +59,7 @@ class Jam < ActiveRecord::Base
     jam = self.song ? self.make_copy_and_publish("#{self.name} (published)") : self # If jam part of a song, then a copy of the jam will be published 
     PublishedJam.add(jam)
     users = jam.artists
-    feed = Feed.add({:user_ids => users.map(&:id), :jam_id => self.id}, "jam_published")
+    feed = Feed.add({:user_ids => users.map(&:id), :jam_id => self.id}, "jam_published", "global")
     feed.add_users(users)
   end
 

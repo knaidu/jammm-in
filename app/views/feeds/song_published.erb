@@ -1,0 +1,7 @@
+<% 
+	song = fhlp_get_song(feed) 
+	users = fhlp_get_users(feed)
+%>
+
+<%= list_artists (users) %> have published the song <%= song_link song %>.
+

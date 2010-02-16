@@ -10,7 +10,10 @@ class Notification < ActiveRecord::Base
     :comment => :comments,
     :jam_tag => :jam,
     :new_message => :comments,
-    :song_invite => :song
+    :song_invite => :song,
+    :song_publish => :song,
+    :jam_comment => :jam,
+    :song_message => :comments
   }
   
   def self.add(data={}, notification_type="update")
@@ -57,6 +60,10 @@ class Notification < ActiveRecord::Base
     def message
       UserMessageStream.find(@data["message_id"]) rescue nil      
     end
+    
+    def song_message
+      SongManageMessage.find(@data["song_message_id"]) rescue nil      
+    end    
     
   end
 

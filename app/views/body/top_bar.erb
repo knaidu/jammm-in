@@ -4,15 +4,16 @@
   <table class='w100' height='100%' cellpadding=0 cellspacing=0>
     <tr>
     
-	    <td class='player' style='vertical-align: middle;'>
-        <%= load_player("large") %>
-    	</td>
-    	
-    	<td class='separator'></td>
-    	
     	<td class='jammmin-logo' style='vertical-align: middle'>
 	      <a href='/'><img src='/images/logos/logo.jpg'></a>
 	    </td>
+	    
+	    <td class='separator'>&nbsp;</td>
+    	<td class='search'>
+    	  <form action='/search'>
+      	  <input type='text' style='border: none; width: 150px' name='q'>
+      	</form>
+    	</td>
     	
     	<td class='fill'></td>
     
@@ -27,14 +28,14 @@
       <% else %>
         <td class='icon' title='Sign In'><a href='/signin'><%= icon(:login, :header) %></a></td>      
       <% end %>
-    	
-    	<td class='separator'>&nbsp;</td>
-    	<td class='search'>
-    	  <form action='/search'>
-      	  <input type='text' style='border: none; width: 150px' name='q'>
-      	</form>
+ 
+     	<td class='separator'></td>  
+    
+      <td class='player' style='vertical-align: middle;'>
+        <%= load_player("large") %>
     	</td>
-    	
+ 
+   	
     </tr>
   </table>
 </div>

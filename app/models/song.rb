@@ -23,8 +23,6 @@ class Song < ActiveRecord::Base
   
   def after_create
     add_to_manager_list
-    feed = Feed.add({:song_id => self.id, :user_ids => [self.creator.id]}, "song_created")
-    feed.add_users([self.creator])
   end
   
   def artists
@@ -93,6 +91,8 @@ class Song < ActiveRecord::Base
     utils_make_copy_of_file_handle(self.flattened_file_handle, new_file_handle)
     self.file_handle = new_file_handle
     self.save
+    self.send_publish_feed_and_notification
+    self
   end
   
   def published
@@ -182,6 +182,14 @@ class Song < ActiveRecord::Base
   def send_invite_notification(user)
     notification = Notification.add({:song_id => self.id}, "song_invite")
     notification.add_users([user])
+  end
+  
+  def send_publish_feed_and_notification
+    feed = Feed.add({:user_ids => artists.map(&:id), :song_id => self.id}, "song_published", "global")
+    feed.add_users(artists)
+    
+    notification = Notification.add({:song_id => self.id}, "song_publish")
+    notification.add_users(artists)
   end
   
 end
