@@ -4,13 +4,15 @@
   <table class='w100' height='100%' cellpadding=0 cellspacing=0>
     <tr>
     
-      <td class='jammmin-logo' style='vertical-align: middle'>
+	    <td class='player' style='vertical-align: middle;'>
+        <%= load_player("large") %>
+    	</td>
+    	
+    	<td class='separator'></td>
+    	
+    	<td class='jammmin-logo' style='vertical-align: middle'>
 	      <a href='/'><img src='/images/logos/logo.jpg'></a>
 	    </td>
-	    
-	    <td class='player'>
-  	    <%= load_player("large") %>
-    	</td>
     	
     	<td class='fill'></td>
     
@@ -18,10 +20,7 @@
         <td class='icon' title='Home'><a href='/account'><%= icon(:home, :header) %></a></td>
         <td class='icon' title='Profile'><a href='/<%= session_user?.username %>'><%= icon(:profile, :header) %></a></td>        
         <td class='icon' title='Notifications'>
-          <div class='position-relative'>
-            <div class='position-absolute' style='right: 0px'>3</div>
-            <a href='/account/notifications'><%= icon(:notifications, :header) %></a>
-          </div>
+          <%= partial "/body/top_bar_notifications" %>
         </td>
         <td class='icon' title='Settings / About Me'><a href='/account/aboutme'><%= icon(:manage, :header) %></td></td>
         <td class='icon' title='Logout'><a href='/account/logout'><%= icon(:logout, :header) %></a></td>

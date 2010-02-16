@@ -9,7 +9,8 @@ class Notification < ActiveRecord::Base
     :follows => :following,
     :comment => :comments,
     :jam_tag => :jam,
-    :new_message => :comments
+    :new_message => :comments,
+    :song_invite => :song
   }
   
   def self.add(data={}, notification_type="update")

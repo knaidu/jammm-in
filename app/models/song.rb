@@ -127,9 +127,7 @@ class Song < ActiveRecord::Base
   
   def add_jam(jam)
     raise "You cannot add this jam as it does not have a mp3 uploaded" if not jam.file_handle
-    puts "what !! #{jam.name}"
     jam = jam.make_copy(jam.name + " (copy for song: #{self.name})") if jam.published or jam.song_jam # Adds a copy of a jam to the song, if jam already published
-    puts "jam is #{jam.name}"
     SongJam.create({:song_id => self.id, :jam_id => jam.id})
   end
   
@@ -179,6 +177,11 @@ class Song < ActiveRecord::Base
   def add_manage_message(user, message)
     raise "The body of the message cannot be empty" if message.nil? or message.empty?
     SongManageMessage.add(self, user, message)
+  end
+  
+  def send_invite_notification(user)
+    notification = Notification.add({:song_id => self.id}, "song_invite")
+    notification.add_users([user])
   end
   
 end

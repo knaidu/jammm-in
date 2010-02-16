@@ -112,14 +112,14 @@ get '/song/:song_id/manage/artists' do
 end
 
 get '/song/:song_id/manage/invite_artist' do
-  begin
+  monitor {
     song = get_passed_song
     user = User.with_username(params[:username])
     raise "User #{params[:username]} does not exists" if user.nil?
-    "Successfully added user" if song.add_manager(user)
-  rescue Exception => e
-    render_error(e)
-  end
+    song.add_manager(user)
+    song.send_invite_notification(user)
+    "Successfully added user"
+  }
 end
 
 get '/song/:song_id/manage/remove_artist' do

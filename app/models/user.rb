@@ -186,7 +186,7 @@ class User < ActiveRecord::Base
   end
   
   def unread_notifications
-    notifications.select{|notification| not notification.read}
+    user_notifications.select{|un| not un.read}.map(&:notification)
   end
   
 end
