@@ -48,8 +48,16 @@ def header_icon(icon)
 end
 
 def icon(id, type=:small)
-  str = "#{type}_icon('#{ICONS[id]}')"
+  img_path = get_img_path(id)
+  str = "#{type}_icon('#{img_path}')"
   eval(str)
+end
+
+def get_img_path(id)
+  return ICONS[id] if ICONS[id]
+  webserver_root = ENV["WEBSERVER_ROOT"]
+  png_path = "#{webserver_root}/public/images/icons/#{id.to_s}.png"  
+  return "/images/icons/#{id.to_s}.png" if File.exists?(png_path)
 end
 
 

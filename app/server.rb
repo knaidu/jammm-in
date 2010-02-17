@@ -54,6 +54,14 @@ get '/partial/*' do
   erb(:"#{path}", :locals => params.clone)
 end
 
+get '/send_invite' do
+  monitor {
+    email = param?(:email)
+    Invite.add(email)
+    "Invite has been sent to the email address you mentioned."
+  }
+end
+
 load 'urls/signin.rb'
 load 'urls/signup.rb'
 load 'urls/admin.rb'

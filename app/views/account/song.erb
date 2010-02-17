@@ -2,7 +2,7 @@
   <table>
     <tr>
       <td><%= song_picture song %></td>
-      <td><%= icon :play2 %></td>
+      <td><%= play song %></td>
       <td width='100%'>
         <span class='bold'><a class='simple-link' href='/song/<%= song.id %>'><%= song.name %></a></span><br>
         <%= list_artists(song.artists) %>

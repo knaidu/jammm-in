@@ -8,33 +8,31 @@
 	      <a href='/'><img src='/images/logos/logo.jpg'></a>
 	    </td>
 	    
+     	<td class='separator'></td>  
+      <td class='player' style='vertical-align: middle;'>
+        <%= load_player("large") %>
+    	</td>
+	    
+    	<td class='fill'></td>
+    
+      <% if session_user? %>
+        <td class='icon' title='Home'><a href='/account'><%= icon(:"home-header", :header) %></a></td>
+        <td class='icon' title='Profile'><a href='/<%= session_user?.username %>'><%= icon(:"profile-header", :header) %></a></td>        
+        <td class='icon' title='Notifications'>
+          <%= partial "/body/top_bar_notifications" %>
+        </td>
+        <td class='icon' title='Settings / About Me'><a href='/account/aboutme'><%= icon(:"settings-header", :header) %></td></td>
+        <td class='icon' title='Logout'><a href='/account/logout'><%= icon(:"logout-header", :header) %></a></td>
+      <% else %>
+        <td class='icon' title='Sign In'><a href='/signin'><%= icon(:"login-header", :header) %></a></td>      
+      <% end %>
+
 	    <td class='separator'>&nbsp;</td>
     	<td class='search'>
     	  <form action='/search'>
       	  <input type='text' style='border: none; width: 150px' name='q'>
       	</form>
     	</td>
-    	
-    	<td class='fill'></td>
-    
-      <% if session_user? %>
-        <td class='icon' title='Home'><a href='/account'><%= icon(:home, :header) %></a></td>
-        <td class='icon' title='Profile'><a href='/<%= session_user?.username %>'><%= icon(:profile, :header) %></a></td>        
-        <td class='icon' title='Notifications'>
-          <%= partial "/body/top_bar_notifications" %>
-        </td>
-        <td class='icon' title='Settings / About Me'><a href='/account/aboutme'><%= icon(:manage, :header) %></td></td>
-        <td class='icon' title='Logout'><a href='/account/logout'><%= icon(:logout, :header) %></a></td>
-      <% else %>
-        <td class='icon' title='Sign In'><a href='/signin'><%= icon(:login, :header) %></a></td>      
-      <% end %>
- 
-     	<td class='separator'></td>  
-    
-      <td class='player' style='vertical-align: middle;'>
-        <%= load_player("large") %>
-    	</td>
- 
    	
     </tr>
   </table>

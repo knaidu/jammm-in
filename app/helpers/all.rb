@@ -95,8 +95,10 @@ def song_picture(song)
 end
 
 def play_link(obj)
-  "<div class='display-inline-block'>#{icon :play2}</div>"
+  partial ("common/play", :locals => {:obj => obj})
 end
+
+alias play play_link
 
 def list_artists(artists)
   partial(:'common/list_artists', {:locals => {:artists => artists}})

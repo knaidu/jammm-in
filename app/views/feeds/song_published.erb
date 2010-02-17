@@ -3,5 +3,5 @@
 	users = fhlp_get_users(feed)
 %>
 
-<%= list_artists (users) %> have published the song <%= song_link song %>.
+<%= list_artists (users) %> <%= (users.size > 1) ? "have" :"has" %> published the song <%= song_link song %>.
 
