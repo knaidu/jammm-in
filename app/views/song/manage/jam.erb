@@ -3,7 +3,7 @@
     <input type='checkbox' name='song-publish-form-song-jam' value='<%= jam.id %>' <%= jam.song_jam_active? ? "CHECKED" : "" %>>
   </span>
   <span class='pad1'>
-    <span class='left-float pad-right-5'><%= icon :play2 %></span>
+    <span class='left-float pad-right-5'><%= play jam %></span>
     <div class='left-float'>
       <span class='bold simple-link float-left'><a href='/jam/<%= jam.id %>'><%= jam.name %></a>&nbsp;</span>
       <span class='float-left'>
