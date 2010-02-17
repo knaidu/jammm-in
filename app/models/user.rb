@@ -129,6 +129,10 @@ class User < ActiveRecord::Base
     }.flatten
   end
   
+  def total_unread_messages
+    unread_messages.size + unread_song_messages.size
+  end
+  
   def genres
     contains_genres.map(&:genre)
   end

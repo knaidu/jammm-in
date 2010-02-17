@@ -6,6 +6,10 @@
   <%= vspace 10 %>
 <% end %>
 
+<% if songs.empty? %>
+  You have no new song messages
+<% end %>
+
 <% songs.each do |song| %>
   <div class='position-relative w100'>
     <div class='position-absolute'><%= icon :song %></div><div class='margin-left-20'>

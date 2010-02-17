@@ -1,5 +1,5 @@
 <%= section_header 'Songs' %>
-<%= partial("common/songs_in_cols", :locals => {:songs => Song.all, :cols => 2}) %>
+<%= partial("common/songs_in_cols", :locals => {:songs => Song.published(9), :cols => 2}) %>
 
 <%= section_header 'Jams' %>
 <%= partial("common/jams", :locals => {:jams => Jam.published}) %>

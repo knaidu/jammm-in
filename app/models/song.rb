@@ -200,4 +200,10 @@ class Song < ActiveRecord::Base
     end
   end
   
+  def self.published(count=nil)
+    options = {:order => "id DESC"}
+    options.update({:limit => count}) if count
+    self.find(:all, options).select(&:published)
+  end
+  
 end
