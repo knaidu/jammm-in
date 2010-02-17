@@ -45,7 +45,7 @@ def set_profile_page_info(username)
 end
 
 def profile_picture(user)
-  "<div class='profile-photo'><img src='#{user.profile_picture_url}' width='100%' height='100%'></div>"
+  "<div class='profile-photo'><img src='#{user.profile_picture_url}' style='height: inherit'></div>"
 end
 
 def feed_profile_picture(user)
