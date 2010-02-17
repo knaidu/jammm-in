@@ -34,6 +34,7 @@ class Song < ActiveRecord::Base
   end
   
   def remove_tenticles
+    song.song_managers.each(&:destroy)
     delete_file_handle
   end
   
