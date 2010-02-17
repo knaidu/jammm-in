@@ -1,9 +1,15 @@
-<%= section_header 'Sign in' %>
-<form action='/signin/process' method='post'>
-<%= field 'Username' %><input type='text' name='username'><%= vspace %>
-<%= field 'Password' %><input type='password' name='password'></td><%= vspace %>
-<input type='submit' value='Sign In'></td>
-</form>
+<div class='main-info'>
+  <div class='bold'>Sign In</div>
+  <%= main_info_hor_line %>
+  <%= vspace %>
+  <div>
+    <form action='/signin/process' method='post'>
+    <div class='float-left' style='width: 100px'>Username</div><input type='text' name='username'><%= vspace %>
+    <div class='float-left' style='width: 100px'>Password</div><input type='password' name='password'></td><%= vspace %>
+    <input type='submit' value='Sign In'></td>
+    </form>
+  </div>
+</div>
 
 <%= js_start %>
 	setSelectedMenuItem('menu-item-signin')
