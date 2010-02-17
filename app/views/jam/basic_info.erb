@@ -43,7 +43,7 @@
 	</div>
 </div>
 <br>
-<a class='simple-link float-left' href="javascript:play('<%= jam.file_handle %>')"> <%= icon :play2 %></a>
+<a class='simple-link float-left' href="javascript:play('<%= jam.file_handle %>')"> <%= play jam %></a>
 <% if @session_user and not @session_user.likes_jam?(jam) %>
 	<span class='simple-link display-inline float-left' onClick='likeJam("<%= jam.id %>")' title='Like'><%= icon :like %></span>
 <% elsif @session_user %>

@@ -28,7 +28,7 @@
 <br>
 
 <div>
-  <span class='float-left'><%= icon :play2 %></span>
+  <span class='float-left'><%= play song %></span>
   </span class='float-left'>
     <% if @session_user and not @session_user.likes_song?(song) %>
     	<span class='simple-link' onClick='likeSong("<%= song.id %>")' title='Like'><%= icon :like %></span>

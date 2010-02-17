@@ -9,7 +9,7 @@
 	ms += (" (" + session_user?.unread_messages.size.to_s + ")") if not session_user?.unread_messages.empty?
 		
 	items2 = [
-  	{:text => 'Home', :link => '/account', :icon => :home, :id => 'menu-item-home'},
+  	{:text => 'Home', :link => '/account', :icon => :"home-header", :id => 'menu-item-home'},
   	{:text => 'Profile', :link => '/' + session_user?.username, :icon => :profile, :id => 'menu-item-profile'},
   	{:text => 'Songs', :link => '/account/songs', :icon => :song, :id => 'menu-item-songs'},
     {:text => 'Jams', :link => '/account/jams', :icon => :jam, :id => 'menu-item-jams'},  	
