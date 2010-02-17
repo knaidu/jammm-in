@@ -18,6 +18,9 @@
       <% if session_user? %>
         <td class='icon' title='Home'><a href='/account'><%= icon(:"home-header", :header) %></a></td>
         <td class='icon' title='Profile'><a href='/<%= session_user?.username %>'><%= icon(:"profile-header", :header) %></a></td>        
+        <td class='icon' title='Messages'>
+          <%= partial "/body/top_bar_messages" %>
+        </td>
         <td class='icon' title='Notifications'>
           <%= partial "/body/top_bar_notifications" %>
         </td>
