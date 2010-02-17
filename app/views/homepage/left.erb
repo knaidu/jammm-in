@@ -4,9 +4,9 @@
   	{:text => 'Songs', :link => '/songs', :icon => :song, :id => 'menu-item-songs'},
     {:text => 'Jams', :link => '/jams', :icon => :jam, :id => 'menu-item-jams'},  	
     {:text => 'Artists', :link => '/artists', :icon => :following, :id => 'menu-item-artists'},
-    ((not session_user?) ? {:text => 'Sign In', :link => '/signin', :icon => :login, :id => 'menu-item-signin'} : nil),
-    ((not session_user?) ? {:text => 'Request Invite', :link => '/signup', :icon => :followers, :id => 'menu-item-signup'} : nil),
-  	{:text => 'Report Bug', :link => '/bug/new', :icon => :jammmin, :id => 'menu-item-new-bug'}
+    ((not session_user?) ? {:text => 'Sign In', :link => '/signin', :icon => :"login-header", :id => 'menu-item-signin'} : nil),
+    ((not session_user?) ? {:text => 'Request Invite', :link => '/signup', :icon => :invite, :id => 'menu-item-signup'} : nil),
+  	{:text => 'Report Bug', :link => '/bug/new', :icon => :bug, :id => 'menu-item-new-bug'}
 	].compact
 	
 	items2 = [
