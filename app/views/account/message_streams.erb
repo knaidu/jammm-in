@@ -1,4 +1,4 @@
-<%= section_header('My Message Streams', {:icon => :message}) %>
+<%= section_header('My Message Streams') %>
 <% 
   only_unread ||= nil 
   unread_exists = false
@@ -10,8 +10,8 @@
 		<% next if only_unread  and message_stream.unread_messages(session_user?).empty? %>
 		<% unread_exists = true %>
     <div>
-      <span class='float-left display-inline pad-right-10'><%= icon :message %></span>
       <% with_user = message_stream.users.without(session_user?)[0] %>
+      <span class='float-left display-inline pad-right-10'><%= profile_picture_thumbnail with_user %></span>
       <span>
         <a href='/account/message_stream/<%= message_stream.id %>' class='simple-link bold'><%= with_user.username %></a><br>
         <%= message_stream.user_message_streams.size.to_s %> messages

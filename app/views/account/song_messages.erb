@@ -1,0 +1,28 @@
+<% song_messages = session_user?.unread_song_messages %>
+<% songs = song_messages.map(&:song).uniq %>
+
+<% if not songs.empty? %>
+  <input type='button' value='Mark all as read' onclick="markSongMessagesAsRead()">
+  <%= vspace 10 %>
+<% end %>
+
+<% songs.each do |song| %>
+  <div class='position-relative w100'>
+    <div class='position-absolute'><%= icon :song %></div><div class='margin-left-20'>
+      <%= song_link song %>
+      <div class='pad-left-10'>
+        <% song.unread_messages(session_user?).each do |message| %>
+          <div><%= profile_link message.user %>: "<%= message.message %>"</div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <%= vspace 20 %>
+<% end %>
+
+<%= js_start %>
+  function markSongMessagesAsRead(){
+    var url = '/account/mark_song_messages_as_read';
+    call(url, {onSuccess: reload});
+  }
+<%= js_end %>

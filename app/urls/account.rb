@@ -8,9 +8,17 @@ get '/account/logout' do
   redirect '/'
 end
 
-get '/account/message_streams' do
-  @layout_info = {"left_panel" => "account/menu", "middle_panel" => "account/message_streams"}  
+
+get '/account/messages' do
+  @layout_info = {"left_panel" => "account/menu", "middle_panel" => "account/messages"}  
   erb(:"body/structure")
+end
+
+get '/account/mark_song_messages_as_read' do
+  monitor {
+    session_user?.set_last_read_song_messages_to_now
+    "Marked all messages as read"
+  }
 end
 
 get '/account/message_stream/:id' do

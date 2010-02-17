@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
 
   has_many :jam_artists, :foreign_key => "artist_id"
   has_many :played_in_jams, :through => :jam_artists, :source => "jam"
+  has_many :song_managers, :foreign_key => "manager_id"
   has_many :followers, :foreign_key => "follows_user_id"
   has_many :followed_by, :through => :followers
   has_many :following, :class_name => "Follower", :foreign_key => "user_id"
@@ -46,6 +47,10 @@ class User < ActiveRecord::Base
   def jams
     (played_in_jams + registered_jams).uniq
   end 
+  
+  def manages_songs
+    SongManager.find_all_by_manager_id(self.id).map(&:song)
+  end
   
   def published_jams
     jams.select(&:published)
@@ -118,6 +123,12 @@ class User < ActiveRecord::Base
     self.message_streams.map{|ms| ms.unread_messages(self)}.flatten
   end
   
+  def unread_song_messages
+    self.manages_songs.map{|song|
+      song.unread_messages(self)
+    }.flatten
+  end
+  
   def genres
     contains_genres.map(&:genre)
   end
@@ -187,6 +198,10 @@ class User < ActiveRecord::Base
   
   def unread_notifications
     user_notifications.select{|un| not un.read}.map(&:notification)
+  end
+  
+  def set_last_read_song_messages_to_now
+    song_managers.each(&:set_last_read_messages_to_now)
   end
   
 end

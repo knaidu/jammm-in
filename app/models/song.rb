@@ -192,4 +192,12 @@ class Song < ActiveRecord::Base
     notification.add_users(artists)
   end
   
+  def unread_messages(user)
+    song_manager = SongManager.find_by_manager_id_and_song_id(user.id, self.id)
+    self.messages.select do |message| 
+      last_read_at = song_manager.last_read_messages_at
+      (last_read_at == nil) or (message.created_at > last_read_at)
+    end
+  end
+  
 end

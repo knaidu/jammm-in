@@ -20,4 +20,9 @@ class SongManager < ActiveRecord::Base
     true
   end
   
+  def set_last_read_messages_to_now
+    self.last_read_messages_at = Time.now
+    self.save
+  end
+  
 end

@@ -167,5 +167,9 @@ class Jam < ActiveRecord::Base
     Jam.find_all_by_origin_jam_id(self.id)
   end
   
+  def self.published(count=9)
+    self.find(:all, :order => "id DESC", :limit => count).select(&:published)
+  end
+  
 end
 

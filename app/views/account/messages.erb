@@ -1,14 +1,11 @@
-<%= section_header 'messages' %>
-
-<div class='text-right pad-5'>
-	<input type='button' value='New' onclick='window.location="/account/messages/new"'>
-	<input type='button' value='Delete' onclick="deleteMessages()">
+<div class='main-info'>
+  <%= main_info_row('New Songs Messages', session_user?.unread_song_messages.size) %>
+  <%= main_info_hor_line %>
+  <%= main_info_row('New Messages in Streams', session_user?.unread_messages.size) %>
 </div>
 
-<% messages = @session_user.messages %>
+<%= vspace 20 %>
+<%= partial ("/account/song_messages", :locals => {:message_streams => session_user?.message_streams}, :section_header => SectionHeader.new('Song Messages'), :collapsible => true) %>
 
-<% messages.each do |message| %>
-	<%= partial('account/message', :locals => {:message => message}) %><br><br>
-<% end %>
-
-<%= "<i>You have no messages.</i>" if messages.empty? %>
+<%= vspace 20 %>
+<%= partial ("/account/message_streams", :locals => {:message_streams => session_user?.message_streams}) %>
