@@ -1,7 +1,7 @@
 <% total = session_user?.total_unread_messages %>
 <div class='position-relative'>
   <% if total > 0 %>
-    <div class='position-absolute grey bold' style='right: 0px'><%= total %></div>
+    <div class='number'><%= total %></div>
   <% end %>
   <a href='/account/messages'><%= icon(:"msg1", :header) %></a>
 </div>

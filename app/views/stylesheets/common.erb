@@ -18,10 +18,11 @@
 /* HTML, BODY */
 html, body {margin:0; padding:0; width:100%; height:100%; overflow: auto;}
 
-.container {
+.main-container {
   text-align: left;
-  width: 80%;
+  width: 980px;
   overflow: auto;
+  position: relative;
 }
 
 table {
@@ -150,6 +151,7 @@ div.top-bar {background-color: #990000; height: 52px; color: white; text-align: 
 .top-bar .fill {width: 100%}
 .top-bar .separator {width: 1%; border-right: 0px solid #800000; margin-top: 20px}
 .top-bar TD.icon {width: 1%; vertical-align: inherit; padding: 0px 10px 0px 10px}
+.top-bar TD.icon .number {position: absolute; padding: 3px; font-size: 8px; bottom: 0px; right: 0px; background-color: #e6e6e6; font-weight: bold; <%= default_round %>; color: <%= default_color %>}
 .top-bar TD.icon:hover {background-color: #800000; width: 1%; vertical-align: inherit; padding: 0px 10px 0px 10px}
 .top-bar .jammmin-logo IMG {height: 45px;}
 .top-bar .player {width: 1%; text-align: left; height: 45px;}
@@ -160,10 +162,11 @@ div.top-bar {background-color: #990000; height: 52px; color: white; text-align: 
 .footer {color: #990000}
 
 /* COMMON STRUCTURE */
-.common-content-container {overflow: auto;}
-.common-content-container .left-panel {width: 20%; float: left; overflow: auto;}
-.common-content-container .middle-panel {width: 50%; float: left;}
-.common-content-container .right-panel {width: 30%; float: right; overflow: auto}
+
+.common-content-container {overflow: auto; position: relative; width: 100%}
+.common-content-container .left-panel {position: relative; left: 0px; width: 20%; float: left; overflow: auto;}
+.common-content-container .middle-panel {position: relative; float: left; width: 50%}
+.common-content-container .right-panel {position: relative; right: 0px; width: 30%; overflow: auto; float: right;}
 
 .profile-photo {height: 128px; border: 1px solid #dddddd; padding: 1px; display: inline-block}
 
@@ -175,10 +178,6 @@ div.top-bar {background-color: #990000; height: 52px; color: white; text-align: 
 
 /* MAIN COLUMNS */
 
-.account-content-container {overflow: auto;}
-.account-content-container .left-panel {width: 20%; float: left; overflow: auto;}
-.account-content-container .middle-panel {width: 50%; float: left;}
-.account-content-container .right-panel {width: 30%; float: right;}
 
 .account-menu-item {}
 .account-menu-item .item-text {color: black;}
