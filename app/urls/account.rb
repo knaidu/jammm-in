@@ -52,7 +52,8 @@ end
 
 get '/account/aboutme/change_password' do
   monitor {
-    password, confirm_password = get_params(:password, :confirm_password)
+    current_password, password, confirm_password = get_params(:current_password, :password, :confirm_password)
+    raise "The your current password does not match the one in our system" if not session_user?.is_password?(current_password)
     raise "Passwords do not match" if password != confirm_password
     session_user?.change_password(password)
     "Your password has been successfully changed."

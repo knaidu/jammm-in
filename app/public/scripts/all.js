@@ -6,8 +6,20 @@ var GLOBAL = {playerType: "large", selectedMenuItem: false};
 
 // This is executed after the page has been loaded
 
+
+
 window.onload = function(){
+
+//  window.setTimeout(expandNagivationPanel, 200);
 	window.setTimeout(styleMenuItems, 10);
+}
+
+/* Layout */
+
+function expandNagivationPanel(){
+  var el = $('navigation-panel');
+  var height = el.ancestors()[0].getHeight();
+  el.style.height = (height + "px");
 }
 
 /* MENU */
@@ -57,6 +69,8 @@ function styleSelectedMenuItem(itemId){
 function setSelectedMenuItem(id){
 	GLOBAL.selectedMenuItem = id;
 }
+
+
 
 /* Debug */
 

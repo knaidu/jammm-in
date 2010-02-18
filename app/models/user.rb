@@ -141,6 +141,10 @@ class User < ActiveRecord::Base
     Instrument.fetch("user", self.id)
   end
   
+  def is_password?(str)
+    md5(str) == self.password
+  end
+  
   def change_password(password)
     raise 'Password needs to be atleast of length 5' if password.length < 5
     self.password = md5(password)
