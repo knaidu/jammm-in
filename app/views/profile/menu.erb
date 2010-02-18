@@ -6,7 +6,7 @@
   </div>
 	
 	<br><br>
-	<%= partial("profile/actions", :locals => {:user => @user}) if session_user? %>
+	<%= partial("profile/actions", :locals => {:user => @user}) if session_user? and session_user? != @user %>
 	<br><br>
 
 	<%
