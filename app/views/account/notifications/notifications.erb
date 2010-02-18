@@ -1,0 +1,4 @@
+<% notifications.each do |notification| %>
+  <%= partial("/account/notifications/notification", :locals => {:notification => notification}) %>
+  <%= vspace 5 %>
+<% end %>

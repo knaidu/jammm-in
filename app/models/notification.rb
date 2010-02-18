@@ -9,7 +9,7 @@ class Notification < ActiveRecord::Base
     :follows => :following,
     :comment => :comments,
     :jam_tag => :jam,
-    :new_message => :comments,
+    :new_message => :msg,
     :song_invite => :song,
     :song_publish => :song,
     :jam_comment => :jam,
@@ -32,6 +32,10 @@ class Notification < ActiveRecord::Base
   
   def data
     NotificationData.new(self.data_str.eval_json) rescue nil
+  end
+  
+  def read(user)
+    user_notifications.find{|un| un.user_id = user.id}.read
   end
   
   class NotificationData

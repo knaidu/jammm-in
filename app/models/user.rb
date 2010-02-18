@@ -204,8 +204,16 @@ class User < ActiveRecord::Base
     user_notifications.select{|un| not un.read}.map(&:notification)
   end
   
+  def read_notifications(count=:all)
+    user_notifications.select(&:read).first(count).map(&:notification)
+  end
+  
   def set_last_read_song_messages_to_now
     song_managers.each(&:set_last_read_messages_to_now)
+  end
+  
+  def mark_notifications_as_read
+    sql("update user_notifications set read=true where user_id=#{self.id}")
   end
   
 end
