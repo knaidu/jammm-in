@@ -1,0 +1,7 @@
+<div class='main-info'>
+  View bugs by status
+  <%= main_info_hor_line %>
+  <% bug_statuses.each do |bug_status| %>
+    <li><a href='/bug/view/<%= bug_status %>'><%= bug_status %></a></li>
+  <% end %>
+</div>

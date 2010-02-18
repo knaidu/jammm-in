@@ -1,14 +1,3 @@
 <%= section_header 'All Bugs' %>
 
-<% Bug.list.each do |bug| %>
-  <div class='pad5 position-relative'>
-    <div class='position-absolute'><%= icon :bug %></div>
-    <div class='simple-link float-left margin-left-20'><a href='<%= bug.id %>'><%= bug.subject %></a></div>
-    <div class='float-left grey'> &nbsp;- <%= bug.created_at.date %> (<%= bug.status %>) </div>
-    <div class='clear-both margin-left-20'>
-      <%= vspace %>
-      <%= bug.description.message rescue nil %>
-    </div>
-  </div>
-  <hr class='light'>
-<% end %>
+<%= partial("/bug/bugs", :locals => {:bugs => Bug.list}) %>

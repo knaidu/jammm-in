@@ -1,10 +1,10 @@
 get '/bug/all' do
-  @layout_info = {"middle_panel" => 'bug/all', 'left_panel' => 'homepage/left'}
+  @layout_info = {"middle_panel" => 'bug/all', 'left_panel' => 'homepage/left', 'right_panel' => "bug/right"}
   erb(:"body/structure")
 end
 
 get '/bug/new' do
-  @layout_info = {"middle_panel" => 'bug/new', 'left_panel' => 'homepage/left'}
+  @layout_info = {"middle_panel" => 'bug/new', 'left_panel' => 'homepage/left', 'right_panel' => "bug/right"}
   erb(:"body/structure")
 end
 
@@ -15,9 +15,15 @@ post '/bug/create' do
   }
 end
 
+get '/bug/view/:bug_status' do
+  @layout_info = {"middle_panel" => 'bug/view_by_status', 'left_panel' => 'homepage/left', 'right_panel' => "bug/right"}
+  @bugs = Bug.find_all_by_status(param?(:bug_status))
+  erb(:"body/structure")
+end
+
 get '/bug/:bug_id' do
   @bug = Bug.find(param?(:bug_id))
-  @layout_info = {"middle_panel" => 'bug/bug_detailed', 'left_panel' => 'homepage/left'}
+  @layout_info = {"middle_panel" => 'bug/bug_detailed', 'left_panel' => 'homepage/left', 'right_panel' => "bug/right"}
   erb(:"body/structure")
 end
 
@@ -35,10 +41,4 @@ get '/bug/:bug_id/mark_status' do
     bug.mark_status(param?(:bug_status))
     "Status marked successfully"
   }
-end
-
-get '/bug/view/:bug_status' do
-  @Bugs = Bug.find_all_by_status(param(:bug_status))
-  @layout_info = {"middle_panel" => 'bug/view', 'left_panel' => 'homepage/left'}
-  erb(:"body/structure")
 end

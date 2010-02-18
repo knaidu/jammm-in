@@ -235,4 +235,8 @@ def blanket_events
   "onmouseover='onMouseOverBlanket(this)' onmouseout='onMouseOutBlanket(this)'"
 end
 
+def bug_statuses
+  DATA["bug_statuses"]
+end
+
 load 'helpers/profile.rb'

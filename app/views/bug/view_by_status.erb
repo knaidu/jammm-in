@@ -1,0 +1,3 @@
+<%= section_header "#{param?(:bug_status).capitalize} Bugs" %>
+
+<%= partial("/bug/bugs", :locals => {:bugs => @bugs}) %>
