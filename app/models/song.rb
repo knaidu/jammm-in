@@ -136,6 +136,10 @@ class Song < ActiveRecord::Base
     SongJam.find_by_song_id_and_jam_id(self.id, jam.id).destroy
   end
   
+  def active_jams
+    song_jams.select(&:active).map(&:jam)
+  end
+  
   def add_to_song(song)
     self.jams.each do |jam|
       song.add_jam(jam)

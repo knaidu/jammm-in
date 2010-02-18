@@ -3,7 +3,7 @@
 </div>
 <br>
 <%= section_header 'Jams' %>
-<%= partial(:'song/jams', {:locals => {:jams => @song.jams}}) %>
+<%= partial(:'song/jams', {:locals => {:jams => @song.active_jams}}) %>
 <br>
 <%= section_header 'Lyrics' %>
 <%= format_lyrics(@song.lyrics) %>
