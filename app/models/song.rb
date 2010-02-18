@@ -152,7 +152,7 @@ class Song < ActiveRecord::Base
   end
   
   def song_picture
-    return (ENV["WEBSERVER_ROOT"] + "/public/images/icons/8thnote.png") if not song_picture_file_handle
+    return (ENV["WEBSERVER_ROOT"] + "/public/images/icons/default-song.png") if not song_picture_file_handle
     get_storage_file_path(song_picture_file_handle)
   end
   
