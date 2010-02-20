@@ -1,7 +1,16 @@
-<%= section_header 'Jams' %>
+<%= section_header 'Independant Jams' %>
 <% @session_user.jams.each do |jam| %>
     <%= partial('account/jam', {:locals => {:jam => jam}}) %><br>
 <% end %>
+
+<%= section_header 'Jams used in songs' %>
+<%= vspace %>
+
+<%= section_header 'In Progress Jams' %>
+<%= vspace %>
+
+<%= section_header 'Jams added by others' %>
+
 
 <%= js_start %>
 	setSelectedMenuItem('menu-item-jams')

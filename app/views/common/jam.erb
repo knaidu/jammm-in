@@ -6,6 +6,10 @@
   	  <% if not jam.genres.empty? %>
   	    <span class='grey text'> - <%= list_genres jam.genres %></span>
   	  <% end %>
+  	  <% if (count = jam.lineage_song_count) > 0 %>
+  	    <% title = "Used in #{count} song(s)" %>
+    	  <span class='lineage-song-count' title='<%= title %>'><a href='/jam/<%= jam.id %>#lineage'><%=  count %></a></span>
+  	  <% end %>
   	  <div class='text'>
     	  <%= list_artists jam.artists %>
     	</div>

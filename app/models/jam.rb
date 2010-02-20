@@ -117,7 +117,6 @@ class Jam < ActiveRecord::Base
   # Copy Jams Code
   
   def make_copy_of_file_handle(newname=nil)
-    puts "copy 1"
     puts file_handle
     utils_make_copy_of_file_handle(file_handle, newname)
   end
@@ -125,16 +124,16 @@ class Jam < ActiveRecord::Base
   def make_copy(newname=nil)
     attrs = self.attributes
     file_handle_name = new_file_handle_name
-    newattrs = attrs.keys_to_sym.delete_keys(:id, :created_at, :views, :file_handle)
+    newattrs = attrs.keys_to_sym.delete_keys(:id, :created_at, :views)
     newattrs[:created_at] = Time.now # WORK AROUND. As CREATED_AT was taking the old CREATED_AT value
     newattrs[:origin_jam_id] = self.id
     
     puts newattrs
     
     newjam = Jam.new(newattrs)
-    File.copy(file_handle_path(self), (FILES_DIR + "/" + file_handle_name)) if file_handle_exists? # Makes a copy of the physical file
+#    File.copy(file_handle_path(self), (FILES_DIR + "/" + file_handle_name)) if file_handle_exists? # Makes a copy of the physical file
     newjam.name = newname || ("#{self.name} (copy)")
-    newjam.file_handle = file_handle_name if file_handle_exists?
+#    newjam.file_handle = file_handle_name if file_handle_exists?
     newjam.save    
     
     # Tags all the Artists of the orginal song in the copy
@@ -165,6 +164,16 @@ class Jam < ActiveRecord::Base
   
   def children
     Jam.find_all_by_origin_jam_id(self.id)
+  end
+  
+  def descendants
+    jams = []
+    jams = self.children
+    jams + jams.map{ |child| child.descendants}.flatten
+  end
+  
+  def lineage_song_count
+    ([self] + self.descendants).select(&:song_jam).size
   end
   
   def self.published(count=9)

@@ -5,8 +5,8 @@
     <%= profile_picture_thumbnail user %>
 	</div>
 	<div class='float-left' style='padding-top: 0px'>
-		<a class='bold simple-link' href='/<%= user.username %>'><%= user.username %></a><br>
-		<table>
+		<a class='bold simple-link' style='padding-left: 3px' href='/<%= user.username %>'><%= user.username %></a><br>
+		<table class='text'>
 			<tr>
 				<td>		
 					<a class='simple-link' title='songs' href='/<%= user.username %>/songs'><%= icon :song %></a>

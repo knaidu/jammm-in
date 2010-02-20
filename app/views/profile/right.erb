@@ -15,4 +15,4 @@
 
 
 <%= section_header('Jams', {:icon => :jam}) %>
-<%= partial (:'common/jams', :locals => {:jams => @user.published_jams}) %> 
+<%= partial (:'common/jams', :locals => {:jams => Jam.latest(9)}) %> 

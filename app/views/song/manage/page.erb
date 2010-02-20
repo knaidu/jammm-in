@@ -43,6 +43,7 @@
 <%= section_header 'Information' %>
   <%= partial('song/manage/information', {:locals => {:song => @song}}) %>
 
+<%= vspace 20 %>
 <%= section_header 'Artists / Managers' %>
 <div id='song-manage-artists-div'>
   <%= partial('song/manage/artists', {:locals => {:artists => @song.managers}}) %>
@@ -57,4 +58,5 @@
 </form>  
 <div id='song-lyrics-form-response'></div>
 
+<%= vspace 20 %>
 <%= partial('song/manage/file_information', :section_header => SectionHeader.new('File Information'), :collapsible => true, :collapsed => true) %>

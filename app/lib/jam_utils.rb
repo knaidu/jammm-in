@@ -35,7 +35,6 @@ module JamUtils
   def update_file(file)
     files_dir = ENV['FILES_DIR']
     filename = new_file_handle_name
-    delete_file_handle
     File.copy(file.path, files_dir + "/" + filename)
     self.file_handle = filename
     self.save

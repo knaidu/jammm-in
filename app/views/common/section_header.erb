@@ -6,10 +6,10 @@
 	<% if img %>
 	  <span class='display-inline-block float-left pad-right-5'><%= img %>&nbsp;</span>
 	<% end %>
-  <div style="padding-right: 5px; background-color: white" class='text bold float-left'><%= text %></div>
+  <div style="padding-right: 5px;" class='text bold float-left'><%= text %></div>
 	<% if options[:collapsible] %>
 		<% switch_id = rand_id %>
-		<span id='<%= switch_id %>' class='float-right grey clickable' onClick="toogleSectionExpand('<%= options[:collapsible] %>', '<%= switch_id %>')">hide</span>
+		<span id='<%= switch_id %>' class='float-right grey clickable' style='font-size: 11px' onClick="toogleSectionExpand('<%= options[:collapsible] %>', '<%= switch_id %>')">hide</span>
 	<% end %>
 </div>	
 <hr class='thin'>

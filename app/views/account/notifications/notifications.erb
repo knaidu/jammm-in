@@ -1,4 +1,4 @@
 <% notifications.each do |notification| %>
-  <%= partial("/account/notifications/notification", :locals => {:notification => notification}) %>
+  <%= partial("/account/notifications/notification", :locals => {:notification => notification}) rescue "nice" %>
   <%= vspace 5 %>
 <% end %>

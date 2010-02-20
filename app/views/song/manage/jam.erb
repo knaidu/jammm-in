@@ -10,7 +10,7 @@
         <% if jam.song_jam_flattened? %>
           (flattened)
         <% end %>
-      </span>
+      </span><br>
       - <%= partial(:'common/list_artists', :locals => {:artists => jam.artists}) %><br>
     </div>
 		<span class='float-right simple-delete simple-link' title='Remove JAM' onclick="removeJamFromSong('<%= @song.id %>', '<%= jam.id %>')">x</span>

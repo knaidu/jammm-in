@@ -8,6 +8,7 @@
     <form action='/url' onsubmit='addTag(); return false'>
       <input type='text' id='input-tag-name'> <input type='submit' value='Add'>
     </form>
+    <%= vspace %>
 		<% contains_tags.each do |contains_tag| %>
 			<% tag = contains_tag.tag %>
   			<div class='box display-inline-block'>
