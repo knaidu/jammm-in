@@ -1,0 +1,10 @@
+<% 
+  value ||= 0
+  div_width_value = value * 150 / 100;
+%>
+
+<div style='background: url(/images/common/bar.png); width: 150px; height: 20px'>
+  <div style='padding-left: <%= div_width_value %>px; height: 20px'>
+    <img src='/images/common/head.png' width='5px' height='20px'>
+  </div>
+</div>
