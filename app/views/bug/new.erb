@@ -1,7 +1,9 @@
 <%= section_header 'New Bug' %>
 <form id='form-bug-create' action='/bug/create' method='post' onsubmit="createBug(); return false">
-  We regret that you needed to come to this page, but we are also happy that you are ready to :)<br>
-  Feel free to mention anything. 
+  <div class='text'>
+    We regret that you needed to come to this page, but we are also happy that you are ready to :)<br>
+    Feel free to mention anything. 
+  </div>
   <%= vspace 20 %>
   <%= field 'Subject' %> <input type='text' name='subject' id='bug-subject'>
   <%= vspace %>
@@ -13,7 +15,7 @@
   <input type='submit' value='Create'>
 </form>
 <%= vspace 20 %>
-<i>
+<i class='text'>
   Note (if you are not logged in): This bug will be filled as an anonymous bug. You may leave your name and/or email in the description if you like.
 </i>
 <%= vspace %>
