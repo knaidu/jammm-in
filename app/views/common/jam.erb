@@ -2,12 +2,13 @@
   <tr>
   	<td class='w1 pad-right-5' style='width: 16px'><%= play jam %></td>
   	<td class='w100'>
-  	  <a class='bold simple-link' href='/jam/<%= jam.id %>'><%= jam.name %></a>
+  	  <a class='bold simple-link' href='/jam/<%= jam.id %>'><%= jam.name %></a> 
   	  <% if not jam.genres.empty? %>
-  	    <span class='grey'> - <%= list_genres jam.genres %></span>
+  	    <span class='grey text'> - <%= list_genres jam.genres %></span>
   	  <% end %>
-  	  <br>
-  	  <%= list_artists jam.artists %>
+  	  <div class='text'>
+    	  <%= list_artists jam.artists %>
+    	</div>
   	</td>
     <td class='w100 hidden' style='width: 20px;'> <%= add_music_link jam %></td>
   </tr>

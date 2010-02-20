@@ -8,11 +8,13 @@
       <div style='float: left; width: 80%'>
         <span class='bold simple-link'><%= song_link song %></span>
         <%= vspace %>
-        <%= list_artists song.artists %>
-        <% if not song.genres.empty? %>
-          <div class='grey'><%= list_genres song.genres %></div>
-        <% end %>
-        <div class='hidden'><%= add_music_link song %><%= icon :like %></div>        
+        <div class='text'>
+          <%= list_artists song.artists %>
+          <% if not song.genres.empty? %>
+            <div class='grey'><%= list_genres song.genres %></div>
+          <% end %>
+          <div class='hidden'><%= add_music_link song %><%= icon :like %></div>        
+        </div>
       </div>
     </td>
   </tr>

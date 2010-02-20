@@ -11,11 +11,15 @@
 %>
 
 <% feeds.each {|feed| %>
-  <% img = icon((icons[feed.feed_type.to_sym] or :update)) %>
+  <% 
+    img = icon((icons[feed.feed_type.to_sym] or :update)) 
+    img = profile_picture_thumbnail(fhlp_get_users(feed)[0])
+  %>
 	<div class='feed position-relative'>
-	  <div class='position-absolute' style='width: 20px'><%= img %></div>
-	  <div style='margin-left: 22px'>
+	  <div class='position-absolute' style='width: 30px'><%= img %></div>
+	  <div style='margin-left: 35px; min-height: 25px'>
   		<%= partial("common/feed", :locals => {:feed => feed, :show_as_updates => show_as_updates}) %>
     </div>
   </div>
+  <%= vspace %>
 <% } %>
