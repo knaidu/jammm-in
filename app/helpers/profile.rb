@@ -56,3 +56,7 @@ def profile_picture_thumbnail(user)
   partial ("common/profile_picture_thumbnail", :locals => {:user => user})
 end
 
+def list_thumbnails(users)
+  partial ("common/list_thumbnails", :locals => {:users => users})
+end
+

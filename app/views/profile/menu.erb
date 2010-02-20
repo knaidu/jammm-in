@@ -29,13 +29,13 @@
 
 	<br><br>
 	<%= section_header('Following', {:icon => :following}) %>
-	<%= partial(:'common/list_artists', :locals => {:artists => @user.follows}) %>
+	<%= list_thumbnails @user.follows %>
 	<br><br>
 
 	<%= section_header('Collaborators', {:icon => :collaborators })%>
-	<%= partial(:'common/list_artists', :locals => {:artists => @user.collaborators}) %>
+	<%= list_thumbnails @user.collaborators %>
 
 	<br><br>
 	<%= section_header('Followers', {:icon => :followers}) %>
-	<%= partial(:'common/list_artists', :locals => {:artists => @user.followed_by}) %>
+  <%= list_thumbnails @user.followed_by %>
 </div>

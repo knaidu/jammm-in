@@ -1,3 +1,6 @@
-<div class='thumbnail'>
-  <img src='<%= user.profile_picture_url %>'>
+<% title = "#{user.username} (#{user.name})" %>
+<div class='thumbnail display-inline-block' title='<%= title %>'>
+  <a href='/<%= user.username %>'>
+    <img src='<%= user.profile_picture_url %>'>
+  </a>
 </div>
