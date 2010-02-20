@@ -10,13 +10,17 @@
 	].compact
 	
 	items2 = [
-    {:text => 'Sign In', :link => '/signin', :icon => :following, :id => 'menu-item-signin'},
-    {:text => 'Request Invite', :link => '/signup', :icon => :followers, :id => 'menu-item-signup'},
-  	{:text => 'About Us', :link => '/aboutus', :icon => :jammmin, :id => 'menu-item-aboutus'}
+    {:text => 'Home', :link => '/account', :icon => :home, :id => 'menu-item-home'}
 	]
 %>
 
 <div>
 	<%= hor_line ("1px", "solid", "#cccccc") %>
   <%= load_menu_items(items) %>	
+  <%= vspace 20 %>
+
+	<% if session_user? %>
+  	<%= hor_line ("1px", "solid", "#cccccc") %>
+    <%= load_menu_items(items2) %>
+  <% end %>
 </div>

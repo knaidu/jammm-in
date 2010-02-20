@@ -8,4 +8,5 @@
 <br><br>
 <%= partial "jam/sheet_music", :section_header => SectionHeader.new('Sheet Music'), :locals => {:jam => @jam, :sheets => @jam.sheets_of_music} %>
 <br><br>
+<div id='lineage'></div>
 <%= partial 'jam/lineage/page', :section_header => SectionHeader.new('Lineage'), :locals => {:jam => @jam}, :collapsible => true %>
