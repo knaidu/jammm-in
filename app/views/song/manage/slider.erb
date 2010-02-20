@@ -1,10 +1,42 @@
 <% 
   value ||= 0
   div_width_value = value * 150 / 100;
+  id ||= rand_id
 %>
 
-<div style='background: url(/images/common/bar.png); width: 150px; height: 20px'>
-  <div style='padding-left: <%= div_width_value %>px; height: 20px'>
+<div style='background: url(/images/common/bar.png); width: 150px; height: 20px' id='<%= id %>-container'>
+  <div style='padding-left: <%= div_width_value %>px; height: 20px' id='<%= id %>-head'>
     <img src='/images/common/head.png' width='5px' height='20px'>
   </div>
 </div>
+
+<%= js_start %>
+
+  (function(){
+    Event.observe('<%= id %>-container', 'mousedown', sliderOnMouseDown);
+    Event.observe('<%= id %>-container', 'mousemove', sliderOnMouseMove);
+    Event.observe('<%= id %>-container', 'mouseup', sliderOnMouseUp);
+    GLOBAL.Slider['<%= id %>'] = {}; 
+  })();
+
+  
+  function sliderOnMouseDown(e){
+    GLOBAL.Slider['<%= id %>'].mousedown = true;
+    move(e, e.element());
+  }
+  
+  function sliderOnMouseUp(e){
+    GLOBAL.Slider['<%= id %>'].mousedown = false;
+    GLOBAL.Slider['<%= id %>'].mouseup = true;
+  }
+  
+  function sliderOnMouseMove(e){
+    if(!GLOBAL.Slider['<%= id %>'].mousedown) return;
+    move(e, this);
+  }
+  
+  function move(e, element){
+    var newValue = (e.clientX - element.cumulativeOffset()[0]);
+    $('<%= id %>-head').style.paddingLeft = newValue + 'px';
+  }
+<%= js_end %>

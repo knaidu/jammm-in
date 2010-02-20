@@ -1,5 +1,5 @@
 
-var GLOBAL = {playerType: "large", selectedMenuItem: false};
+var GLOBAL = {playerType: "large", selectedMenuItem: false, Slider: {}};
 
 
 /* INIT */
