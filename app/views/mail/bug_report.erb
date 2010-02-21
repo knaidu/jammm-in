@@ -1,0 +1,11 @@
+<% 
+  bug = Bug.find(bug_id) 
+  url = "http://jammm.in/bug/#{bug.id}"
+%>
+
+Bug #<%= bug.id %><br><br>
+Subject: <%= bug.subject %><br><br>
+Description:<br>
+<%= bug.description.message %>
+<%= vspace 20 %>
+Link: <a href='<%= url %>'><%= url %></a>

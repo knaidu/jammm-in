@@ -10,7 +10,7 @@ BUG_MAIL_DETAILS = {
   :from => "support@jammm.in",
   :password => "3WiseMen",
   :subject => "BUG REPORT - #{bug.subject}",
-  :body => bug.description.message
+  :body => get_localhost_response("/partial/mail/bug_report?bug_id=#{bug.id}")
 }
 
 mail BUG_MAIL_DETAILS.clone.update({:to => "prakashraman@jammm.in"})
