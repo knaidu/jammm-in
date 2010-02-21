@@ -8,7 +8,7 @@
     <div class='pad float-left' style='width: <%= depth*20 %>px'></div>
     <div class='float-left'>
       <div class='<%= "highlight" if child.id == highlight_child_id %>'>
-        <div class='pad-right-5 float-left'><%= icon :play2 %></div>
+        <div class='pad-right-5 float-left'><%= play child %></div>
         <div class='float-left display-inline-block simple-link'><%= jam_link child %></div>
         <div class='clear-both'></div>
         <% if child.song_jam %>

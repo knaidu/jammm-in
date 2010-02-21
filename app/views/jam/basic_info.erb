@@ -2,7 +2,7 @@
   <div>
     <div class='align-middle display-inline-block'><%= icon :jam %></div>
     <div class='music-title'><b><%= jam.name %></b></div>
-    <span class='align-middle'> - <%= profile_link(jam.creator) %> </span>
+    <span class='align-middle text'> - <%= profile_link(jam.creator) %> </span>
   </div>
   <%= vspace %><%= vspace %>
 	<div class='pad-left-10'>
@@ -15,10 +15,7 @@
   	</div>
   	<%= hor_line("1px", "dotted", "#999999", "5px 0px 5px 0px") %>
 
-		<div>
-  	  <div class='field float-left'>Creator</div>
-  	  <div class='value float-right'><%= jam.creator.name %></div>
-  	</div>
+    <%= main_info_row("Creator", jam.creator.username) %>
   	<%= hor_line("1px", "dotted", "#999999", "5px 0px 5px 0px") %>
 
 		<div>
@@ -35,7 +32,10 @@
   	
   	<div>
   	  <div class='field float-left'>Type</div>
-  	  <div class='value float-right'><%= display_jam_type(jam) %></div>
+  	  <div class='value float-right'>
+    	  <%= display_jam_type(jam) %>
+    	  <%= "(#{song_link(jam.song)})" if jam.song %>
+  	  </div>
   	</div>
   	<%= main_info_hor_line %>
    	<%= main_info_row("Tags", list_tags(jam.tags)) %>
