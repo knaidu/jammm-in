@@ -16,9 +16,9 @@
 <% end %>
 <br>
 <div>
-  <input type='button' class='float-left' value='Flatten Song' onclick='flattenSong("<%= @song.id %>")'>
-  <div class='position-relative float-left' style='padding-top: 3px; padding-left: 20px' title='Play Flattened File'>
-    <%= play(nil, "/file/#{@song.flattened_file_handle}", "Flattened File") %>
+  <input type='button' class='float-left' value='Preview Song' onclick='flattenSong("<%= @song.id %>")'>
+  <div class='position-relative float-left' style='padding-top: 3px; padding-left: 10px' title='Play Preview'>
+    <%= play(nil, "/file/#{@song.flattened_file_handle}", "Preview") %>
   </div>
 </div>
 

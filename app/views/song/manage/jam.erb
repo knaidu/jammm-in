@@ -1,6 +1,6 @@
-<div class='position-relative'>
+<div class='position-relative round' <%= "style='background-color: #E5FFE5; padding-top: 3px'" if jam.song_jam_active? %>>
   <div class='position-absolute' style='padding: 0px 5px 5px 5px;'>
-    <input type='checkbox' name='song-publish-form-song-jam' value='<%= jam.id %>' <%= jam.song_jam_active? ? "CHECKED" : "" %>>
+    <input type='checkbox' name='song-publish-form-song-jam' value='<%= jam.id %>' <%= jam.song_jam_flattened? ? "CHECKED" : "" %>>
   </div>
   <div class='position-absolute' style='left: 28px'>
     <%= play jam %>
@@ -19,11 +19,6 @@
   
   <div class='position-relative' style='margin: 0px 130px 0px 53px'>
     <span class='bold simple-link'><a href='/jam/<%= jam.id %>'><%= jam.name %></a>&nbsp;</span>
-    <span>
-      <% if jam.song_jam_flattened? %>
-        (flattened)
-      <% end %>
-    </span>
     <div class='text'>
       <%= partial(:'common/list_artists', :locals => {:artists => jam.artists}) %>
     </div>
