@@ -14,7 +14,7 @@ class Song < ActiveRecord::Base
   has_many :liked_by, :class_name => "User", :finder_sql => %q(
       SELECT "users".* FROM "users"  
       INNER JOIN "likes" ON "users".id = "likes".user_id    
-      WHERE (("likes".for_type_id = #{id}))
+      WHERE (("likes".for_type_id = #{id} AND ("likes".for_type = 'song')))
   )
   
   after_destroy :remove_tenticles
