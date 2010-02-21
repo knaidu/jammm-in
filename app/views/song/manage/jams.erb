@@ -15,8 +15,16 @@
   <%= partial('song/manage/jam', {:locals => {:jam => jam }}) %><br>
 <% end %>
 <br>
-<input type='button' class='float-left' value='Flatten Song' onclick='flattenSong("<%= @song.id %>")'> <span class='float-left pad10'></span>
-<span id='flatten-response'></span>
+<div>
+  <input type='button' class='float-left' value='Flatten Song' onclick='flattenSong("<%= @song.id %>")'>
+  <div class='position-relative float-left' style='padding-top: 3px; padding-left: 20px' title='Play Flattened File'>
+    <%= play(nil, "/file/#{@song.flattened_file_handle}", "Flattened File") %>
+  </div>
+</div>
+
+<%= vspace 20 %>
+<div id='flatten-response'></div>
 <div id='add-jam-resposne'></div>
-<br><br>
+
+<br>
 

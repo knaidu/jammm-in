@@ -68,7 +68,7 @@ end
 
 delete_old_song_file_handle(song, jams)
 sox_output = false
-lame_output = new_file_handle_full_name
+lame_output = new_file_handle_full_name(".mp3")
 wav_output_file_handle = new_file_handle_full_name(".wav")
 
 cmd = construct_cmd(jams, wav_output_file_handle)

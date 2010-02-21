@@ -94,8 +94,8 @@ def song_picture(song)
   partial("common/song_picture", :locals => {:song => song})
 end
 
-def play_link(obj)
-  partial ("common/play", :locals => {:obj => obj})
+def play_link(obj=nil, file_path=nil, title=nil)
+  partial ("common/play", :locals => {:obj => obj, :file_path => file_path, :title => title})
 end
 
 alias play play_link

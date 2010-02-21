@@ -1,4 +1,7 @@
-<% title = obj.artists.map(&:username).join(',') %>
+<% 
+  title ||= obj.name 
+  file_path ||= "/file/#{obj.file_handle}"
+%>
 <div class='display-inline-block pad1'>
-  <a href='javascript: playMusic("/file/<%= obj.file_handle %>", "<%= title %>")'><%= icon :play2 %>
+  <a href='javascript: playMusic("<%= file_path %>", "<%= title %>")'><%= icon :play2 %>
 </div>
