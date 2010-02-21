@@ -1,3 +1,4 @@
+
 class CreateUserTable < ActiveRecord::Migration
   def self.up
     create_table :users, {:id => true} do |i|
@@ -10,6 +11,8 @@ class CreateUserTable < ActiveRecord::Migration
       i.column :log_in_counter, :integer, :default => 1
       i.column :created_at, :timestamp, :default => Time.now
       i.column :invites_remaining, :integer, :default => 3
+      i.column :last_sent_update_at, :timestamp, :default => Time.now
+      i.column :update_frequency, :float, :default => 1
     end
   end
   

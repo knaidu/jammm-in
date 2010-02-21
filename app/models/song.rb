@@ -70,6 +70,16 @@ class Song < ActiveRecord::Base
     true if flattened_file_handle
   end
   
+  def save_song_jams_data(jams_arr)
+    jams_arr.each {|jam_data|
+      arr = jam_data.split(',')
+      jam = Jam.find(arr[0])
+      song_jam = jam.song_jam
+      song_jam.volume = arr[1]
+      song_jam.save
+    }
+  end
+  
   def flatten_jams(jams=[])
     process_id = ProcessInfo.available_process_id
     cmd = [

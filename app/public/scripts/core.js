@@ -22,6 +22,10 @@ Element.addMethods({
 	findDescendantsByClassName: function(element, className){
 		var decs = element.descendants();
 		return decs.findAll(function(i){return i.hasClassName(className)}) 
+	},
+	findDescendantsByName: function(element, name){
+		var decs = element.descendants();
+		return decs.findAll(function(i){return i.getAttribute('name') == name}) 
 	}
 });
 
@@ -111,13 +115,3 @@ Poll.start = function(poll){
 	this._processUrl(poll);
 }.bind(Poll);
 
-
-/*
-
-(function(){
-  var el = $('<%= messages_div_id %>');
-  if(!el) return;
-  el.scrollTop = el.scrollHeight;
-})();
-
-*/

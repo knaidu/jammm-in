@@ -122,7 +122,7 @@ function formatController(){
 function showLoadingMessage(id){
 	var el = $(id);
 	if(!el) return;
-	var message = arguments[1] || "Please wait...";
+	var message = "<span class='text'>" + (arguments[1] || "Please wait...") + "</span>";
 	var loadingImgPath = "/images/icons/loading.gif";
 	el.innerHTML = "<img src='"+ loadingImgPath +"' height=16> " + message;
 }
@@ -317,7 +317,8 @@ function removeArtistFromSong(songId, artistId){
 function flattenSong(songId){
 	var songJams = document.getElementsByName('song-publish-form-song-jam');
 	var checkedJamIds = $A(songJams).map(function(el){
-		return el.checked ? el.value : null 
+		var volume = GLOBAL.Slider["jam-" + el.value + "-volume-slider"].getValue();
+		return el.checked ? (el.value + "," + (volume/25)) : null;
 	}).compact();
 	
 	var callback = function(response){
@@ -331,7 +332,7 @@ function flattenSong(songId){
 	}
 	
 	var url = formatController('song', songId, 'manage', 'flatten');
-	url = formatUrl(url, {jam_ids: $A(checkedJamIds).join(",")});
+	url = formatUrl(url, {jam_ids: $A(checkedJamIds).join(";")});
 	call(url, {onSuccess: callback});
 }
 
@@ -573,6 +574,44 @@ function onMouseOutBlanket(el){
 	});
 }
 
+/* Slider */
+
+function sliderRegister(id){
+  GLOBAL.Slider[id] = {
+		id: id,
+		getValue: function(){
+			var value = $(id + "-container").findDescendantsByName('slider-value')[0].innerHTML;
+			return parseInt(value);
+		}
+	};
+	var slider = GLOBAL.Slider[id];
+	Event.observe(id + '-container', 'mousedown', function(e){sliderOnMouseDown(slider, e)});
+  Event.observe(id + '-container', 'mousemove', function(e){sliderOnMouseMove(slider, e)});
+  Event.observe(id + '-container', 'mouseup', function(e){sliderOnMouseUp(slider, e)});
+}
+
+function sliderOnMouseDown(slider, e){
+  slider.mousedown = true;
+  sliderMove(slider, e, e.element());
+}
+
+function sliderOnMouseUp(slider, e){
+  slider.mousedown = false;
+  slider.mouseup = true;
+}
+
+function sliderOnMouseMove(slider, e){
+  if(!slider.mousedown) return;
+  sliderMove(slider, e, e.element());
+}
+
+function sliderMove(slider, e, element){
+  var newValue = (e.clientX - element.cumulativeOffset()[0]);
+  $(slider.id + '-head').style.paddingLeft = newValue + 'px';
+	var sliderValueEl = $(slider.id + "-container").findDescendantsByName('slider-value')[0];
+	sliderValueEl.innerHTML = newValue;
+}
+
 
 /* Player */
 
@@ -588,7 +627,5 @@ function playMusic(url,name){
 		document.jammminplayer.SetVariable("name", name);
 		document.jammminplayer.Rewind();
 		document.jammminplayer.Play()
-	}
-
-	
+	}	
 }

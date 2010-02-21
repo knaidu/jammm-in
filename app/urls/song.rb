@@ -141,8 +141,9 @@ end
 
 get '/song/:song_id/manage/flatten' do
   song = get_passed_song
-  jams_arr = params[:jam_ids].split(',')
-  jams = params[:jam_ids].split(',').map do |id| Jam.find(id) end
+  jams_arr = params[:jam_ids].split(';')
+  song.save_song_jams_data(jams_arr)
+  jams = params[:jam_ids].split(';').map{|arr| Jam.find(arr.split(",")[0])}
   song.flatten_jams(jams).to_json
 end
 

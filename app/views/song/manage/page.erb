@@ -31,9 +31,7 @@
     </td>
   </tr>
 </table>
-<%= vspace 50 %>
-  <%= partial('/song/manage/slider', :locals => {:value => 50}) %>
-<%= vspace 50 %>
+
 <%= partial('song/manage/song_picture', :section_header => SectionHeader.new('Song Picture'), :collapsible => true, :locals => {:song => @song}) %>
 <br>
 
