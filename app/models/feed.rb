@@ -33,4 +33,21 @@ class Feed < ActiveRecord::Base
     self.find_all_by_scope("global").reverse
   end
   
+  def dataObj
+    FeedData.new(self.data_str.eval_json) rescue nil
+  end
+  
+  def self.delete_by_data(key, value)
+    self.all.select{|n| n.dataObj.data[key] == value}.each(&:destroy)
+  end
+  
+  class FeedData
+    attr_accessor :data
+    
+    def initialize(data)
+      @data = data
+    end
+    
+  end
+  
 end

@@ -18,9 +18,14 @@ class Jam < ActiveRecord::Base
     for_type_id=#{id}
   )
   
-  after_destroy :delete_file_handle
+  after_destroy after_destroy
 
   include JamUtils
+  
+  def after_destroy
+    Notification.delete_by_data("jam_id", self.id)
+    Feed.delete_by_data("jam_id", self.id)
+  end
   
   def after_create
     return true if not self.artists.empty?

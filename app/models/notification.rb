@@ -38,8 +38,12 @@ class Notification < ActiveRecord::Base
     user_notifications.find{|un| un.user_id = user.id}.read
   end
   
+  def self.delete_by_data(key, value)
+    self.all.select{|n| n.data.data[key] == value}.each(&:destroy)
+  end
+  
   class NotificationData
-    attr_accessor :text, :options
+    attr_accessor :data
     
     def initialize(data)
       @data = data
@@ -58,7 +62,7 @@ class Notification < ActiveRecord::Base
     end
     
     def jam
-      Jam.find(@data["jam_id"]) rescue nil
+      Jam.find(@data["jam_id"])
     end
     
     def message

@@ -78,7 +78,7 @@ def add_field_name(text)
 end
 
 def add_profile_link(user)
-  add_link(user.username, ("/" + user.username)) rescue ""
+  add_link(user.username, ("/" + user.username))
 end
 alias profile_link add_profile_link
 
