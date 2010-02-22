@@ -138,9 +138,9 @@ class Song < ActiveRecord::Base
     self.find_all.select(&:published)
   end
   
-  def add_jam(jam)
+  def add_jam(jam, added_by_user=nil)
     raise "You cannot add this jam as it does not have a mp3 uploaded" if not jam.file_handle
-    jam = jam.make_copy("#{self.name} - " + jam.name) if jam.published or jam.song_jam # Adds a copy of a jam to the song, if jam already published
+    jam = jam.make_copy("#{self.name} - " + jam.name, added_by_user) if jam.published or jam.song_jam # Adds a copy of a jam to the song, if jam already published
     SongJam.create({:song_id => self.id, :jam_id => jam.id})
   end
   
@@ -152,15 +152,15 @@ class Song < ActiveRecord::Base
     song_jams.select(&:active).map(&:jam)
   end
   
-  def add_to_song(song)
+  def add_to_song(song, added_by_user=nil)
     self.jams.each do |jam|
-      song.add_jam(jam)
+      song.add_jam(jam, added_by_user)
     end
   end
   
-  def add_music(music_type, music_id)
+  def add_music(music_type, music_id, added_by_user=nil)
     music_obj = music_type.find_by_id(music_id)
-    music_obj.add_to_song(self)
+    music_obj.add_to_song(self, added_by_user)
   end
   
   def genres

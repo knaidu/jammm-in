@@ -5,6 +5,7 @@ class Jam < ActiveRecord::Base
   has_one :song, :through => :song_jam
   has_one :creator, :primary_key => 'registered_user_id', :foreign_key => 'id', :class_name => "User"
   has_one :published, :class_name => "PublishedJam", :dependent => :destroy
+  has_one :added_by_user, :class_name => "User", :foreign_key => 'id', :primary_key => "added_by_user_id"
   has_many :sheets_of_music, :class_name => "SheetMusic"
 
   has_many :liked_by, :class_name => "User", :finder_sql => %q(
@@ -31,6 +32,12 @@ class Jam < ActiveRecord::Base
     return true if not self.artists.empty?
     puts "is it here?"
     self.tag_artist(self.creator)
+  end
+  
+  def self.latest_displayable(count=:all)
+    self.all.select {|jam|
+      jam.published or jam.song.published? rescue nil
+    }.first(count)
   end
 
   def file
@@ -85,8 +92,8 @@ class Jam < ActiveRecord::Base
     self.find_all.select(&:published)
   end
   
-  def add_to_song(song)
-    song.add_jam(self)
+  def add_to_song(song, added_by_user=nil)
+    song.add_jam(self, added_by_user)
   end
   
   def genres
@@ -126,11 +133,12 @@ class Jam < ActiveRecord::Base
     utils_make_copy_of_file_handle(file_handle, newname)
   end
   
-  def make_copy(newname=nil)
+  def make_copy(newname=nil, added_by_user=nil)
     attrs = self.attributes
     file_handle_name = new_file_handle_name
     newattrs = attrs.keys_to_sym.delete_keys(:id, :created_at, :views)
     newattrs[:created_at] = Time.now # WORK AROUND. As CREATED_AT was taking the old CREATED_AT value
+    newattrs[:added_by_user_id] = added_by_user.nil? ? self.creator.id : added_by_user.id
     newattrs[:origin_jam_id] = self.id
     
     puts newattrs

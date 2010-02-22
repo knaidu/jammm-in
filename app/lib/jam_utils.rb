@@ -1,10 +1,12 @@
 module JamUtils
 
   def register_jam(username, name) 
+    user = User.with_username(username)
     Jam.create({
       :name => name,
-      :registered_user_id => User.with_username(username).id,
-      :created_at => Time.now
+      :registered_user_id => user.id,
+      :created_at => Time.now,
+      :added_by_user_id => user.id
     })
   end
 

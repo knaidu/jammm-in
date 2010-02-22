@@ -52,12 +52,28 @@ class User < ActiveRecord::Base
     SongManager.find_all_by_manager_id(self.id).map(&:song)
   end
   
+  def my_song_jams
+    jams.select{|jam| jam.song_jam and (jam.added_by_user == jam.creator or jam.added_by_user_id.nil?)}
+  end
+  
   def published_jams
     jams.select(&:published)
   end
   
+  def inprogress_jams
+    jams.reject{|jam| jam.published or jam.song_jam}
+  end
+  
+  def added_by_others_jams
+    jams.reject{|jam| jam.added_by_user_id.nil? or jam.added_by_user_id == self.id}
+  end
+  
   def published_songs
     songs.select(&:published?)
+  end
+  
+  def in_progress_songs
+    songs.reject(&:published?)    
   end
   
   def collaborators

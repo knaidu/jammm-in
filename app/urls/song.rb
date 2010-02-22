@@ -14,7 +14,7 @@ post '/song/register' do
   # Registers a song and adds music to it.
   if add_music = param?(:add)
     music_type, music_id = get_add_music_info
-    song.add_music(music_type, music_id)
+    song.add_music(music_type, music_id, session_user?)
   end
   song ? redirect_manage_song(song) : "false"
 end

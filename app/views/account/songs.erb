@@ -1,9 +1,12 @@
-<div>
-  <%= section_header('Songs') %>
-  <% @session_user.songs.each do |song| %>
-    <%= partial('account/song', {:locals => {:song => song}}) %><br><br>
-  <% end %>
-</div>
+<%= section_header('In Progress Songs') %>
+<% @session_user.in_progress_songs.each do |song| %>
+  <%= partial('account/song', {:locals => {:song => song}}) %><br><br>
+<% end %>
+
+<%= section_header('Published Songs') %>
+<% @session_user.published_songs.each do |song| %>
+  <%= partial('account/song', {:locals => {:song => song}}) %><br><br>
+<% end %>
 
 <%= js_start %>
 	setSelectedMenuItem('menu-item-songs')

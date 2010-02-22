@@ -1,15 +1,24 @@
+<%= section_header 'In Progress Jams' %>
+<% @session_user.inprogress_jams.each do |jam| %>
+    <%= partial('account/jam', {:locals => {:jam => jam}}) %><br>
+<% end %>
+<%= vspace %>
+
 <%= section_header 'Independant Jams' %>
-<% @session_user.jams.each do |jam| %>
+<% @session_user.published_jams.each do |jam| %>
     <%= partial('account/jam', {:locals => {:jam => jam}}) %><br>
 <% end %>
 
 <%= section_header 'Jams used in songs' %>
-<%= vspace %>
-
-<%= section_header 'In Progress Jams' %>
+<% @session_user.my_song_jams.each do |jam| %>
+    <%= partial('account/jam', {:locals => {:jam => jam}}) %><br>
+<% end %>
 <%= vspace %>
 
 <%= section_header 'Jams added by others' %>
+<% @session_user.added_by_others_jams.each do |jam| %>
+    <%= partial('account/jam', {:locals => {:jam => jam}}) %><br>
+<% end %>
 
 
 <%= js_start %>
