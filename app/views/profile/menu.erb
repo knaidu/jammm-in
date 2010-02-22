@@ -6,8 +6,10 @@
   </div>
 	
 	<br><br>
-	<%= partial("profile/actions", :locals => {:user => @user}) if session_user? and session_user? != @user %>
-	<br><br>
+	<% if session_user? and session_user? != @user %>
+  	<%= partial("profile/actions", :locals => {:user => @user}) %>
+  	<br><br>
+  <% end %>
 
 	<%
 	  items = [
@@ -15,7 +17,7 @@
 	    {:text => 'Songs', :link => "/#{@user.username}/songs", :icon => :song, :id => 'menu-item-songs'},
 	    {:text => 'Jams', :link => "/#{@user.username}/jams", :icon => :jam, :id => 'menu-item-jams'},
 	    {:text => 'Following', :link => "/#{@user.username}/following", :icon => :following, :id => 'menu-item-following'},
-	    {:text => 'Jammmed With', :link => "/#{@user.username}/jammmed_with", :icon => :collaborators, :id => 'menu-item-collaborators'},
+	    {:text => 'Collaborators', :link => "/#{@user.username}/collaborators", :icon => :collaborators, :id => 'menu-item-collaborators'},
 	    {:text => 'Followers', :link => "/#{@user.username}/followers", :icon => :followers, :id => 'menu-item-followers'}    
 	  ]
   

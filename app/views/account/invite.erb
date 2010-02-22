@@ -1,14 +1,15 @@
-<div class='main-info text'>
-  <b><u>Invite a friend</u></b><%= vspace %>
-  You have <%= session_user?.invites_remaining %> invites left.<br><br>
-  <form id='form-invite' method='get' action='/account/invite' onsubmit='inviteUser(); return false'>
-    <input type='text' name='email' style='width: 100%'><%= vspace %>
-    <div class='text-right' style='padding: 0px'><input type='submit' value='Invite'></div>
-  </form>
+<div class='pad-right-5'>
+  <div class='main-info text'>
+    <b><u>Invite a friend</u></b><%= vspace %>
+    You have <%= session_user?.invites_remaining %> invites left.<br><br>
+    <form id='form-invite' method='get' action='/account/invite' onsubmit='inviteUser(); return false'>
+      <input type='text' name='email' style='width: 100%'><%= vspace %>
+      <div class='text-right' style='padding: 0px'><input type='submit' value='Invite'></div>
+    </form>
+  </div>
+
+  <div id='invite-response'></div>
 </div>
-
-<div id='invite-response'></div>
-
 <%= js_start %>
   
   function inviteUser(){

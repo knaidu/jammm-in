@@ -57,6 +57,14 @@ get '/:username/follow' do
   end
 end
 
+get '/:username/collaborators' do
+  @layout_info = {"left_panel" => "profile/menu", "middle_panel" => "profile/collaborators", "right_panel" => "profile/right"}
+  user = params[:username]  
+  @menu_data = profile_home_info(user)
+  set_profile_page_info user
+  erb(:"body/structure")
+end
+
 get '/:username/actions' do
   erb(:"profile/actions", :locals => {:user => get_passed_user})
 end

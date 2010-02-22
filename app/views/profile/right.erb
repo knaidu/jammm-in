@@ -3,7 +3,7 @@
   message_stream = MessageStream.find_stream(session_user?, @user) %>
   <%= partial("common/message_stream", 
     :locals => {:message_stream => message_stream}, 
-    :section_header => SectionHeader.new("Your message stream<br>#{@user.username}", {:img => :message}), 
+    :section_header => SectionHeader.new("Your message stream with<br>#{@user.username}", {:img => :message}), 
     :collapsible => true,
     :collapsed => true
   ) %>
@@ -11,7 +11,7 @@
 <%= vspace %>
 
 <% if not (songs = @user.published_songs).empty? %>
-  <%= section_header('Songs', {:icon => :song}) %>
+  <%= section_header('Songs') %>
   <%= partial (:'common/songs', :locals => {:songs => songs}) if not songs.empty? %> 
 <% end %>
 

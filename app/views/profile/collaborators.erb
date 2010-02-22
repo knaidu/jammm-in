@@ -1,0 +1,6 @@
+<%= section_header 'Collaborators' %>
+<%= partial("common/users", :locals => {:users => @user.collaborators}) %>
+
+<%= js_start %>
+	setSelectedMenuItem('menu-item-home')
+<%= js_end %>
