@@ -3,7 +3,11 @@ module S3
   FILES_BUCKET = "jammm.in"
 
   def S3.store(obj)
-    AWS::S3::S3Object.store(obj.file_handle, obj.file, 'jammm.in', :access => :public_read)
+    AWS::S3::S3Object.store_file(obj.file_handle, obj.file)
+  end
+  
+  def S3.store_file(file_handle, file)
+    AWS::S3::S3Object.store(file_handle, file, 'jammm.in', :access => :public_read)
   end
   
   def S3.list

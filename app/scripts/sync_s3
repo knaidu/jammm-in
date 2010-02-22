@@ -1,0 +1,3 @@
+. /home/jammmin/.profile
+/usr/bin/ruby /home/jammmin/webserver/app/scripts/push_files_to_s3.rb
+

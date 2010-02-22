@@ -207,3 +207,17 @@ end
 def mark_bug_fixed(bug)
   mark_bug_status(bug, "fixed")
 end
+
+# CRON JOBS
+def cron_log(msg)
+  file = File.new("#{ENV["STORAGE_DIR"]}/cron.log", "a")
+  template = "[#{Time.now.to_s}] #{msg}"
+  file.puts(template)
+  file.close
+end
+
+def cron_log_new_section(section)
+  cron_log("===========================")
+  cron_log(section)
+  cron_log("===========================")
+end
