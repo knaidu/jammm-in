@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
     where for_type='user' and 
     for_type_id=#{id}
   )
-  has_many :user_notifications
+  has_many :user_notifications, :order => "id DESC"
   has_many :notifications, :through => :user_notifications, :order => "id DESC"
   has_one :facebook_policy, :class_name => "FacebookShare"
   has_one :twitter_policy, :class_name => "TwitterShare"
