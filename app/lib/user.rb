@@ -6,13 +6,15 @@ module UserUtils
     invite = Invite.extract_invite(user_info[:code])
     user_info[:password] = md5(user_info[:password])
     email = invite.invitee_email_id
-    User.create!({
+    user = User.create!({
       :name => user_info[:name],
       :username => user_info[:username],
       :password => user_info[:password],
       :email => email,
       :location => user_info[:location]
     })
+    invite.mark_as_used if user
+    user
   end
   
   def validate_username(username)

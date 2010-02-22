@@ -1,16 +1,20 @@
-<div class='footer'>
+<div class='footer text-center position-relative'>
   <hr class="thin">
-  <span class='float-left'>
-    <a href='/aboutus'>About us</a> <a href='/'>Jammm.in</a>
-  </span>
-  
-  <span class='float-right'>
-  <% if session_user? %>
-      <span class='display-inline grey'> <%= session_user?.name %>.</span> 
-  <% else %>
-      <a href='/signin'>Sign In</a> <a href='/signup'>Sign Up</a>    
-  <% end %>
-      <a href='/bug/new'>Report a bug</a>
-  </span>
+    <% if session_user? %>  
+      <div class='position-absolute grey' style='right: 0px'>
+        <%= session_user?.name %>
+      </div>
+    <% end %>
+    <div>
+      <a href='/'>jamMm.in</a>
+      <span class='grey'>-</span>
+      <a href='/aboutus'>About Us</a> 
+      <span class='grey'>-</span>
+      Contact Us
+      <span class='grey'>-</span>
+      <a href='http://blog.jammm.in'>Blog</a>
+      <span class='grey'>-</span>
+      <a href='/bug/new'>Report a Bug</a>
+    </div>
 </div>
 <br><br>

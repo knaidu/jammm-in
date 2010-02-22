@@ -187,6 +187,7 @@ class User < ActiveRecord::Base
   end
   
   def invite(email)
+    raise "You have ran out of invites. Please wait a couple of days and will receive more." if invites_remaining < 1
     raise "Please enter a valid email address" if email.blank? or email.nil?
     invite = Invite.add(email, self)
     decrement_invites_remaining

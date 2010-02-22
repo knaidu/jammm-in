@@ -6,6 +6,7 @@ class CreateJamsTable < ActiveRecord::Migration
       i.column :jam_picture_file_handle, :string
       i.column :origin_jam_id, :integer
       i.column :created_at, :timestamp, :default => Time.now
+      i.column :added_by_user_id, :integer
     end
   end
   

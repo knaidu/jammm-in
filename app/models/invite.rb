@@ -25,9 +25,16 @@ class Invite < ActiveRecord::Base
     arr = code.split("-")
     invite = Invite.find(arr[1])
     raise msg if not invite.code == code
+    msg = "Sorry could not complete the registration as it seems that this invite has already been used."
+    raise msg if invite.status == 'used'
     invite
   rescue
     raise msg
+  end
+  
+  def mark_as_used
+    self.status = 'used'
+    self.save
   end
   
 end

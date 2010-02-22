@@ -143,7 +143,7 @@ function loadMessage(id, message, className){
   var el = $(id);
   if(!el) return;
   var div = new Element('div');
-  el.addClassName('text-center');
+  el.addClassName('text-center text');
   div.insert(message);
   div.addClassName(className);
   var items = ["<center>", "<br>", div, "<br>", "</center>"];     
