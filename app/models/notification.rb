@@ -67,7 +67,11 @@ class Notification < ActiveRecord::Base
     
     def song_message
       SongManageMessage.find(@data["song_message_id"]) rescue nil      
-    end    
+    end   
+    
+    def comment
+      Comment.find(@data["comment_id"]) rescue nil
+    end 
     
   end
 

@@ -221,3 +221,12 @@ def cron_log_new_section(section)
   cron_log(section)
   cron_log("===========================")
 end
+
+# MUSIC META DATA
+def music_meta_data(obj)
+  {
+    :title => obj.name,
+    :image_src => (obj.song_picture_url rescue ""),
+    :file => obj.file_handle
+  }
+end

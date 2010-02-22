@@ -32,6 +32,7 @@ get '/song/:song_id' do
   @layout_info = {"left_panel" => "common/little_menu", "middle_panel" => 'song/page', "right_panel" => 'song/right'}
   @song = Song.find(params[:song_id])
   @song.visited
+  @music_meta_data = music_meta_data(@song)
   erb(:"body/structure")
 end
 
@@ -65,6 +66,7 @@ end
 
 get '/song/:song_id/manage' do
   @song = get_passed_song
+  @music_meta_data = music_meta_data(@song)
   allowed?(@song.managers) {
     @layout_info = {'middle_panel' => 'song/manage/page', 'left_panel' => 'account/menu', 'right_panel' => 'song/manage/right'}
     erb(:"body/structure")

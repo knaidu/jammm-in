@@ -1,0 +1,6 @@
+<% about = notification.data.jam ? "jam" : "song" %> 
+<%= profile_link notification.data.user %> commented on your 
+<%= about %>
+<%= eval("#{about}_link(notification.data.#{about})") %>
+<%= vspace %>
+<div class='text grey'>"<%= notification.data.comment.comment %>"</div>
