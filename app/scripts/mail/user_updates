@@ -1,0 +1,3 @@
+. /home/jammmin/.profile
+/usr/bin/ruby /home/jammmin/webserver/app/scripts/mail/user_updates.rb
+
