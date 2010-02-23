@@ -1,0 +1,25 @@
+<html>
+<body>
+<%= partial("body/includes") %>
+<% user = User.find(user_id) %>
+
+<div style='padding: 10px'>
+  <h4>jamMm.in update</h4>
+
+  You have <%= user.notifications.size %> new notifications
+  <br><br>
+
+  <b>Invites</b>
+  <hr class='thin'>
+
+  <b>Messages</b>
+  <hr class='thin'>
+
+  <b>Song Messages</b>
+  <hr class='thin'>
+  
+  <b>General</b>
+  <hr class='thin'>
+</div>
+</body>
+</html>

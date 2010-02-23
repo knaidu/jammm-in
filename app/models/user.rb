@@ -241,4 +241,16 @@ class User < ActiveRecord::Base
     sql("update user_notifications set read=true where user_id=#{self.id}")
   end
   
+  def get_sorted_update
+    update = {}
+    look_for = {:messages => "new_message", :song_messages => "song_message", :invites => "song_invite"}
+    notifications = self.notifications
+    look_for.each {|k,v|
+      update[k] = notifications.select{|n| n.notification_type == v}
+      notifications -= update[k]
+    }
+    update[:general] = notifications
+    update
+  end
+  
 end

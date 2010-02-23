@@ -62,7 +62,7 @@ class Notification < ActiveRecord::Base
     end
     
     def jam
-      Jam.find(@data["jam_id"])
+      Jam.find(@data["jam_id"]) rescue nil
     end
     
     def message
