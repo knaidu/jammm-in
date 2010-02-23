@@ -1,15 +1,6 @@
-<div class="main-info">
-  <%= main_info_row("Published Songs", @songs.size) %>
-  <%= main_info_hor_line %>
-  <%= main_info_row("In Progress Songs", (@user.songs.size - @songs.size)) %>
-</div>
-
-<br><br>
 <%= section_header('Published Songs') %>
 
-<% @songs.each do |song| %>
-   <%= partial(:'common/song', {:locals => {:song => song}}) %><br><br>
-<% end %>
+<%= partial("common/songs_in_cols", :locals => {:songs => @songs}) %>
 
 <%= js_start %>
 	setSelectedMenuItem('menu-item-songs')

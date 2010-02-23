@@ -1,4 +1,7 @@
-<% div_width = ((100  / cols) - 2) %>
+<% 
+  cols ||= 2
+  div_width = ((100  / cols) - 2) 
+%>
 
 <div class='w100'>
   <% songs.each do |song| %>

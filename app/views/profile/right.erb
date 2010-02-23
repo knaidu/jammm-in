@@ -12,7 +12,7 @@
 
 <% if not (songs = @user.published_songs).empty? %>
   <%= section_header('Songs') %>
-  <%= partial (:'common/songs', :locals => {:songs => songs}) if not songs.empty? %> 
+  <%= partial (:'common/songs_in_cols', :locals => {:cols => 1, :songs => songs}) if not songs.empty? %> 
 <% end %>
 
 <% if not (jams = @user.displayable_jams).empty? %>

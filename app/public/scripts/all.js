@@ -640,3 +640,16 @@ function playMusic(url,name){
 		document.jammminplayer.Play()
 	}	
 }
+
+function loadSong(url, name){
+	if(window.jammminplayer){
+		window.document["jammminplayer"].SetVariable("url", url);
+		window.document["jammminplayer"].SetVariable("name", name);
+		window.document["jammminplayer"].Rewind();
+	}
+	if(document.jammminplayer){
+		document.jammminplayer.SetVariable("url", url);	
+		document.jammminplayer.SetVariable("name", name);
+		document.jammminplayer.Rewind();
+	}	
+}

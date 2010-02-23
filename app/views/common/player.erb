@@ -3,3 +3,11 @@
 	<EMBED play="false" swliveconnect="true" name="jammminplayer" src="/swf/player.swf" quality="high" bgcolor="#990000" WIDTH="260px" HEIGHT="35px" TYPE="application/x-shockwave-flash"></EMBED> 
 </OBJECT>
 
+<% if @music_meta_data %>
+  <%= js_start %>
+    (function(){
+      var showSong = function(){loadSong("/file/<%= @music_meta_data[:file] %>", "<%= @music_meta_data[:title] %>");}
+//      window.setTimeout(showSong, 1000);
+    })();
+  <%= js_end %>  
+<% end %>
