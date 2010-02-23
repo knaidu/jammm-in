@@ -45,9 +45,9 @@ if jams.size == 1
   process_info.set_message "Copying the Jam into the song..."
   delete_old_song_file_handle(song, jams)
   jam_file_handle = fetch_local_file_path(jams[0])
-  song_flattened_file_handle = new_file_handle_full_name
+  song_flattened_file_handle = new_file_handle_full_name(".mp3")
   File.copy(jam_file_handle, song_flattened_file_handle)
-  song.flattened_file_handle = song_flattened_file_handle
+  song.flattened_file_handle = song_flattened_file_handle.split("/").pop
   song.save
   mark_jams_as_flattened(song, jams)  
   process_info.set_done "Song has been successfully created."

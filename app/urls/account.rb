@@ -10,8 +10,10 @@ end
 
 
 get '/account/messages' do
-  @layout_info = {"left_panel" => "account/menu", "middle_panel" => "account/messages"}  
-  erb(:"body/structure")
+  logged_in? {
+    @layout_info = {"left_panel" => "account/menu", "middle_panel" => "account/messages"}  
+    erb(:"body/structure")
+  }
 end
 
 get '/account/mark_song_messages_as_read' do
@@ -22,25 +24,33 @@ get '/account/mark_song_messages_as_read' do
 end
 
 get '/account/message_stream/:id' do
-  @message_stream = MessageStream.find(params[:id])
-  @layout_info = {"left_panel" => "account/menu", "middle_panel" => "account/message_stream"}  
-  erb(:"body/structure")
+  logged_in? {
+    @message_stream = MessageStream.find(params[:id])
+    @layout_info = {"left_panel" => "account/menu", "middle_panel" => "account/message_stream"}  
+    erb(:"body/structure")
+  }
 end
 
 
 get '/account/following' do
-  @layout_info = {"left_panel" => "account/menu", "middle_panel" => "account/following"}  
-  erb(:"body/structure")
+  logged_in? {
+    @layout_info = {"left_panel" => "account/menu", "middle_panel" => "account/following"}  
+    erb(:"body/structure")
+  }
 end
 
 get '/account/followers' do
-  @layout_info = {"left_panel" => "account/menu", "middle_panel" => "account/followers"}  
-  erb(:"body/structure")
+  logged_in? {
+    @layout_info = {"left_panel" => "account/menu", "middle_panel" => "account/followers"}  
+    erb(:"body/structure")
+  }
 end
 
 get '/account/aboutme' do
-  @layout_info = {"left_panel" => "account/menu", "middle_panel" => "account/aboutme/page"}  
-  erb(:"body/structure")
+  logged_in? {
+    @layout_info = {"left_panel" => "account/menu", "middle_panel" => "account/aboutme/page"}  
+    erb(:"body/structure")
+  }
 end
 
 get '/account/invite' do
@@ -79,8 +89,10 @@ post '/account/aboutme/change_profile_picture' do
 end
 
 get '/account/notifications' do
-  @layout_info = {"left_panel" => "account/menu", "middle_panel" => "account/notifications/page"}  
-  erb(:"body/structure")
+  logged_in? {
+    @layout_info = {"left_panel" => "account/menu", "middle_panel" => "account/notifications/page"}  
+    erb(:"body/structure")
+  }
 end
 
 get '/account/update_share_policy' do
@@ -94,6 +106,8 @@ get '/account/update_share_policy' do
 end
 
 get '/account/:section' do
-  @layout_info = layout_info("account", params[:section])
-  erb(:"body/structure") 
+  logged_in? {
+    @layout_info = layout_info("account", params[:section])
+    erb(:"body/structure") 
+  }
 end

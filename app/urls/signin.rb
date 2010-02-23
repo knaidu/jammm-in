@@ -1,6 +1,6 @@
 
 get '/signin' do
-  @layout_info = {'middle_panel' => 'signin/page', "left_panel" => "homepage/left"}
+  @layout_info = {'middle_panel' => 'signin/page', "left_panel" => "homepage/left", "right_panel" => "homepage/right"}
   erb :"body/structure"
 end
 

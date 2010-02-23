@@ -17,9 +17,9 @@
 <br>
 <div>
   <input type='button' class='float-left' value='Preview Song' onclick='flattenSong("<%= @song.id %>")'>
-  <div class='position-relative float-left' style='padding-top: 3px; padding-left: 10px' title='Play Preview'>
-    <%= play(nil, "/file/#{@song.flattened_file_handle}", "Preview") %>
-  </div>
+  <% if @song.flattened_file_handle %>
+    <input type='button' class='float-left' value='Play Preview' onclick='playMusic("/file/<%= @song.flattened_file_handle %>", "Preview")'>
+  <% end %>
 </div>
 
 <%= vspace 20 %>
