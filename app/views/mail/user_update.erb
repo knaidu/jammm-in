@@ -1,7 +1,10 @@
-<html>
+  <html>
 <body>
 <%= partial("body/includes") %>
-<% user = User.find(user_id) %>
+<% 
+  user = User.find(user_id) 
+  update = user.get_sorted_update
+%>
 
 <div style='padding: 10px'>
   <h4>jamMm.in update</h4>
@@ -9,17 +12,34 @@
   You have <%= user.notifications.size %> new notifications
   <br><br>
 
-  <b>Invites</b>
-  <hr class='thin'>
+  <% if not update[:invites].empty? %>
+    <b>Invites</b>
+    <hr class='thin'>
+    <%= partial("/account/notifications/notifications", :locals => {:notifications => update[:invites]}) %>
+    <%= vspace 20 %>
+  <% end %>
 
-  <b>Messages</b>
-  <hr class='thin'>
-
-  <b>Song Messages</b>
-  <hr class='thin'>
+  <% if not update[:messages].empty? %>
+    <b>Messages</b>
+    <hr class='thin'>
+    <%= partial("/account/notifications/notifications", :locals => {:notifications => update[:messages]}) %>  
+    <%= vspace 20 %>
+  <% end %>
   
-  <b>General</b>
-  <hr class='thin'>
+  <% if not update[:song_messages].empty? %>
+    <b>Song Messages</b>
+    <hr class='thin'>
+    <%= partial("/account/notifications/notifications", :locals => {:notifications => update[:song_messages]}) %>
+    <%= vspace 20 %>
+  <% end %>  
+  
+  <% if not update[:general].empty? %>
+    <b>General</b>
+    <hr class='thin'>
+    <%= partial("/account/notifications/notifications", :locals => {:notifications => update[:general]}) %>
+    <%= vspace 20 %>
+  <% end %>
+
 </div>
 </body>
 </html>
