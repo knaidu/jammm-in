@@ -1,12 +1,12 @@
 <div class='footer text-center position-relative'>
   <hr class="thin">
     <% if session_user? %>  
-      <div class='position-absolute grey' style='right: 0px'>
+      <div class='position-absolute grey left-0'>
         <%= session_user?.name %>
       </div>
     <% end %>
-    <div class='float-left'>
-      <a href='/'>jamMm.in</a>
+    <div class='float-right grey'>
+      <a href='/account'>Home</a>
       <span class='grey'>-</span>
       <a href='/aboutus'>About Us</a> 
       <span class='grey'>-</span>

@@ -48,6 +48,10 @@ class User < ActiveRecord::Base
     (played_in_jams + registered_jams).uniq
   end 
   
+  def displayable_jams
+    jams.select(&:displayable?)
+  end
+  
   def manages_songs
     SongManager.find_all_by_manager_id(self.id).map(&:song)
   end

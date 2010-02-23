@@ -100,6 +100,10 @@ end
 
 alias play play_link
 
+def download(obj)
+  partial ("common/download", :locals => {:obj => obj})
+end
+
 def list_artists(artists)
   partial(:'common/list_artists', {:locals => {:artists => artists}})
 end
@@ -183,6 +187,7 @@ end
 def play_link(obj)
   "<span onclick=play('','') class='simple-link display-inline'>#{icon :play2}</span>"
 end
+
 
 def vspace(height=5)
   "<div style='height: #{height}px; overflow: hidden'>&nbsp;</div>"

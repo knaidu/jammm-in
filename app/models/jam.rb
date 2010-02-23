@@ -28,6 +28,10 @@ class Jam < ActiveRecord::Base
     Feed.delete_by_data("jam_id", self.id)
   end
   
+  def displayable?
+    self.published or self.song.published? rescue nil
+  end
+  
   def after_create
     return true if not self.artists.empty?
     puts "is it here?"
@@ -35,9 +39,7 @@ class Jam < ActiveRecord::Base
   end
   
   def self.latest_displayable(count=:all)
-    self.all.select {|jam|
-      jam.published or jam.song.published? rescue nil
-    }.first(count)
+    self.all.select(&:displayable?).first(count)
   end
 
   def file

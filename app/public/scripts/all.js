@@ -10,16 +10,16 @@ var GLOBAL = {playerType: "large", selectedMenuItem: false, Slider: {}};
 
 window.onload = function(){
 
-//  window.setTimeout(expandNagivationPanel, 200);
+  window.setTimeout(expandContentPanel, 200);
 	window.setTimeout(styleMenuItems, 10);
 }
 
 /* Layout */
 
-function expandNagivationPanel(){
-  var el = $('navigation-panel');
+function expandContentPanel(){
+  var el = $('content-panel');
   var height = el.ancestors()[0].getHeight();
-  el.style.height = (height + "px");
+  el.style.minHeight = (height + "px");
 }
 
 /* MENU */

@@ -41,7 +41,7 @@ table {
 }
 TD {vertical-align: top}
 
-table, td, body, input, textarea {font-family: inherit; font-size: inherit}
+pre, table, td, body, input, textarea {font-family: inherit; font-size: inherit}
 textarea {width: 200px}
 
 span {overflow: auto; word-wrap: break-word}
@@ -137,6 +137,8 @@ hr.w60-align-left {width: 60%; margin-left: 0; text-align: left}
 .visible {visibility: visible}
 .margin-left-20 {margin-left: 20px;}
 .size-12 {font-size: 12px}
+.left-0 {left: 0px}
+.right-0 {right: 0px}
 
 
 /* JAMS */
@@ -179,8 +181,8 @@ div.top-bar {background-color: #990000; height: 52px; color: white; text-align: 
 /* COMMON STRUCTURE */
 
 .common-content-container {overflow: auto; position: relative; width: 100%; }
-.common-content-container .left-panel {position: relative; width: 20%; float: left; overflow: auto; padding-right: 0px;}
-.common-content-container .middle-panel {position: relative; float: left; width: 48%; left: 10px; padding: 10px; padding-top: 0px}
+.common-content-container .left-panel {position: relative; width: 17%; float: left; overflow: auto; padding-right: 0px;}
+.common-content-container .middle-panel {position: relative; float: left; width: 51%; left: 0px; padding: 10px; padding-top: 0px; border-left: 1px solid <%= default_light_line_color %>; border-right: 1px solid <%= default_light_line_color %>;}
 .common-content-container .text {font-size: 11px}
 .common-content-container .right-panel {position: relative; right: 0px; width: 29%; overflow: auto; float: right;}
 
@@ -234,7 +236,7 @@ span.simple-delete:hover {color: white; background-color: <%= default_color %>; 
 /* MENU */
 .menu {
 	background-color: white; 
-	padding: 0px 10px 0px 5px;
+	padding: 0px 0px 0px 5px;
 	/*
 		border-color: #cccccc;
 		border-width: 5px 1px 0px 0; 
@@ -275,8 +277,11 @@ div.menu-items div.menu-item div.icon {display: inline-block; vertical-align: mi
 
 }
 .section-header .text {
-  font-size: 13px;
+  font-size: 11px;
+  color: grey;
 }
+
+.middle-panel .section-header .text {font-size: 13px}
 
 .panel-header {
 }

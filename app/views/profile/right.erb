@@ -10,9 +10,12 @@
 <% end %>
 <%= vspace %>
 
-<%= section_header('Songs', {:icon => :song}) %>
-<%= partial (:'common/songs', :locals => {:songs => @user.published_songs}) %> 
+<% if not (songs = @user.published_songs).empty? %>
+  <%= section_header('Songs', {:icon => :song}) %>
+  <%= partial (:'common/songs', :locals => {:songs => songs}) if not songs.empty? %> 
+<% end %>
 
-
-<%= section_header('Jams', {:icon => :jam}) %>
-<%= partial (:'common/jams', :locals => {:jams => Jam.latest(9)}) %> 
+<% if not (jams = @user.displayable_jams).empty? %>
+  <%= section_header('Jams') %>
+  <%= partial (:'common/jams', :locals => {:jams => jams}) %> 
+<% end %>
