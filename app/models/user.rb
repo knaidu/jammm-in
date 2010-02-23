@@ -129,7 +129,7 @@ class User < ActiveRecord::Base
         "FROM feeds f, user_feeds uf",
         "WHERE f.id = uf.feed_id",
         "AND uf.user_id=#{self.id}",
-        "AND (f.scope = 'public' OR f.scope = 'protected')",
+        "AND (f.scope = 'public' OR f.scope = 'protected' OR f.scope = 'global')",
         "ORDER BY created_at DESC"
       ].join(' ')
     ).uniq.sort_by(&:created_at).reverse[range]

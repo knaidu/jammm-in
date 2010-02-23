@@ -43,11 +43,20 @@
 	</div>
 </div>
 <br>
-<a class='simple-link float-left' href="javascript:play('<%= jam.file_handle %>')"> <%= play jam %></a>
-<% if @session_user and not @session_user.likes_jam?(jam) %>
-	<span class='simple-link display-inline float-left' onClick='likeJam("<%= jam.id %>")' title='Like'><%= icon :like %></span>
-<% elsif @session_user %>
-	<span class='simple-link display-inline' onClick='unlikeJam("<%= jam.id %>")' title='Unlike'><%= icon :unlike %></span>
-<% end %>
-<span class='float-left'><%= add_music_link jam %></span>
-<span class='float-right'><%= manage_jam_link(jam) %></span>
+<div class='float-left'>
+  <%= play jam %>
+  <% if @session_user and not @session_user.likes_jam?(jam) %>
+	  <span class='simple-link display-inline float-left' onClick='likeJam("<%= jam.id %>")' title='Like'><%= icon :like %></span>
+  <% elsif @session_user %>
+	  <span class='simple-link display-inline' onClick='unlikeJam("<%= jam.id %>")' title='Unlike'><%= icon :unlike %></span>
+  <% end %>
+  <%= add_music_link jam %>
+</div>
+
+<div class='float-right'> <%= manage_jam_link(jam) %></div>
+<br class='clear-both'>
+<%= vspace %>
+<div class='float-right'>
+  <%= twitter_share jam %>
+  <%= facebook_share jam %>
+</div>

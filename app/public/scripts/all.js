@@ -613,6 +613,16 @@ function sliderMove(slider, e, element){
 }
 
 
+/* SHARE */
+function twitterShare(url){
+  window.open("http://www.twitter.com/home?status=" + url);
+}
+
+function facebookShare(url, title){
+  var shareUrl = "http://www.facebook.com/share.php?u=" + url + "&t=" + title;
+  window.open(shareUrl)
+}
+
 /* Player */
 
 function playMusic(url,name){	

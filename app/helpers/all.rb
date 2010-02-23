@@ -235,6 +235,16 @@ def main_info_hor_line
   hor_line("1px", "dotted", "#999999", "5px 0px 5px 0px")
 end
 
+# SHARE
+
+def twitter_share(obj)
+  partial("common/twitter_share", :locals => {:obj => obj})
+end
+
+def facebook_share(obj)
+  partial("common/facebook_share", :locals => {:obj => obj})
+end
+
 # Blankets
 def blanket_events
   "onmouseover='onMouseOverBlanket(this)' onmouseout='onMouseOutBlanket(this)'"

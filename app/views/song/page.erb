@@ -2,8 +2,6 @@
 	<%= partial("song/basic_info", :locals => {:song => @song}) %>
 </div>
 
-<a name="fb_share" type="button_count" href="http://www.jammm.in/song/<%= @song.id %>">Share</a>
-
 <br>
 <%= section_header 'Jams' %>
 <%= partial(:'song/jams', {:locals => {:jams => @song.active_jams}}) %>

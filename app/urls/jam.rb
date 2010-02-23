@@ -31,6 +31,7 @@ end
 
 get '/jam/:jam_id/manage' do
   @jam = get_passed_jam
+  @music_meta_data = music_meta_data(@song)
   allowed?(@jam.artists) {
     @layout_info = {'middle_panel' => 'jam/manage/page', 'right_panel' => 'jam/manage/instructions', 'left_panel' => 'account/menu'}
     erb(:"body/structure")
@@ -103,7 +104,8 @@ end
 # Loads a songs
 get '/jam/:jam_id' do
   @layout_info = {"left_panel" => "common/little_menu", "middle_panel" => 'jam/page', "right_panel" => 'jam/right'}
-  @jam = Jam.find(params[:jam_id])
+  @jam = get_passed_jam
+  @music_meta_data = music_meta_data(@jam)
   @jam.visited
   erb(:"body/structure")
 end
