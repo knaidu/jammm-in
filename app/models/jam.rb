@@ -195,5 +195,9 @@ class Jam < ActiveRecord::Base
     self.find(:all, :order => "id DESC", :limit => count).select(&:published)
   end
   
+  def added_by_other
+    (not added_by_user_id.nil?) and (added_by_user != creator)
+  end
+  
 end
 

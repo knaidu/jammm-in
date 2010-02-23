@@ -1,64 +1,64 @@
 <% jam = @jam %>
 
-<div class='main-info'>
-  <div>
-    <div class='align-middle display-inline-block'><%= icon :jam %></div>
-    <div class='music-title'><b><%= jam.name %></b></div>
-    <span class='align-middle'> - <%= profile_link(jam.creator) %> </span>
+<div class='text'>
+  <div class='main-info'>
+    <div>
+      <div class='align-middle display-inline-block'><%= icon :jam %></div>
+      <div class='music-title'><b><%= jam.name %></b></div>
+      <span class='align-middle'> - <%= profile_link(jam.creator) %> </span>
+    </div>
+    <%= vspace %>
+    <div class='pad-left-10'>
+      <%= main_info_row('Creator', profile_link(jam.creator)) %>
+      <%= main_info_hor_line %>
+      <%= main_info_row('Created On', jam.created_at.date) %>
+      <%= main_info_hor_line %>
+      <%= main_info_row('Type', display_jam_type(jam)) %>
+    </div>
   </div>
   <%= vspace %>
-  <div class='pad-left-10'>
-    <%= main_info_row('Creator', profile_link(jam.creator)) %>
-    <%= main_info_hor_line %>
-    <%= main_info_row('Created On', jam.created_at.date) %>
-    <%= main_info_hor_line %>
-    <%= main_info_row('Type', display_jam_type(jam)) %>
+  <table class='w100'>
+    <tr>
+      <td class='align-middle'><a title='Song Page' alt='Song Page' href='/jam/<%= jam.id %>'><%= icon :jam_page %></a></td>
+      <td class='display-inline-block text-right align-right align-middle w100'>
+        <% if not @jam.published %>
+        	<input type='button' value='Publish' onclick='publishJam("<%= @jam.id %>")'>
+        <% else %>
+        	<input type='button' value='Unpublish' onclick='unpublishJam("<%= @jam.id %>")'>
+        <% end %>
+        <input type='button' value='Delete' onclick='deleteJam("<%= @jam.id %>")'>
+      </td>
+    </tr>
+  </table>
+
+  <div id='jam-actions-response'></div>
+
+  <%= section_header 'Upload MP3' %>
+  <div id='jam-file-actions'>
+  	<%= partial('jam/manage/file_actions') %>
+  </div>
+
+  <%= partial('jam/manage/information', {
+  	:locals => {:jam => @jam}, 
+  	:section_header => SectionHeader.new('Information'),
+  	:collapsible => true
+  }) %>
+
+  <%= vspace 20 %>
+  <%= partial('jam/manage/sheet_music/sheet_music', {
+  	:locals => {:jam => @jam}, 
+  	:section_header => SectionHeader.new('Sheet Music'),
+  	:collapsible => true,
+  	:collapsed => true
+  }) %>
+
+  <%= vspace 20 %>
+  <%= section_header 'Artists' %>
+  <div id='jam-artists'>
+    <%= partial('jam/manage/artists', {:locals => {:artists => @jam.artists}}) %>
   </div>
 </div>
-<%= vspace %>
-<table class='w100'>
-  <tr>
-    <td class='align-middle'><a title='Song Page' alt='Song Page' href='/jam/<%= jam.id %>'><%= icon :jam_page %></a></td>
-    <td class='display-inline-block text-right align-right align-middle w100'>
-      <% if not @jam.published %>
-      	<input type='button' value='Publish' onclick='publishJam("<%= @jam.id %>")'>
-      <% else %>
-      	<input type='button' value='Unpublish' onclick='unpublishJam("<%= @jam.id %>")'>
-      <% end %>
-      <input type='button' value='Delete' onclick='deleteJam("<%= @jam.id %>")'>
-    </td>
-  </tr>
-</table>
-
-<div id='jam-actions-response'></div>
-
-<%= section_header 'Upload MP3' %>
-<div id='jam-file-actions'>
-	<%= partial('jam/manage/file_actions') %>
-</div>
-
-
-<%= partial('jam/manage/information', {
-	:locals => {:jam => @jam}, 
-	:section_header => SectionHeader.new('Information'),
-	:collapsible => true
-}) %>
-
-<%= partial('jam/manage/sheet_music/sheet_music', {
-	:locals => {:jam => @jam}, 
-	:section_header => SectionHeader.new('Sheet Music'),
-	:collapsible => true,
-	:collapsed => true
-}) %>
-<br><br>
-
-<%= section_header 'Artists' %>
-<div id='jam-artists'>
-  <%= partial('jam/manage/artists', {:locals => {:artists => @jam.artists}}) %>
-</div>
-
 
 <%= js_start %>
 	setSelectedMenuItem('menu-item-jams')
 <%= js_end %>
-

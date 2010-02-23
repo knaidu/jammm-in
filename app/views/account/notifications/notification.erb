@@ -2,7 +2,7 @@
   <div class='icon position-absolute' style='left: 0px; width: 20px'>
     <%= icon notification.icon %>
   </div>
-  <div class='margin-left-20'>
+  <div class='margin-left-20 text'>
     <%= partial("/account/notifications/types/#{notification.notification_type}", :locals => {:notification => notification}) %>
   </div>  
 </div>

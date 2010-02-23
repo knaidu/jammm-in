@@ -6,5 +6,11 @@
 	<div style='margin-left: 30px; margin-right: 30px'>
 		<div class='bold'><%= jam_link(jam) %></div>
 		<div class='text'><%= list_artists jam.artists %></div>
+		<% if jam.song_jam %>
+		  <div class='grey text'>song: <%= song_link jam.song %></div>
+		  <% if jam.added_by_other %>
+  		  <div class='grey text'>added by: <%= profile_link jam.added_by_user %></div>		    
+	    <% end %>
+    <% end %>
 	</div>
 </div>

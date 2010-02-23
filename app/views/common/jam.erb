@@ -1,14 +1,14 @@
 <div <%= blanket_events %> class='position-relative'>
 	<div class='position-absolute left-0' style='width: 20px'><%= play jam %></div>
   <div class='hidden position-absolute right-0' style='width: 50px;'><%= download jam %> <%= add_music_link jam %>  </div>
-	<div class='position-relative' style='margin: 0px 50px 0px 25px'>
+	<div class='position-relative' style='margin: 0px 50px 0px 25px;'>
 	  <a class='bold simple-link' href='/jam/<%= jam.id %>'><%= jam.name %></a> 
 	  <% if not jam.genres.empty? %>
 	    <span class='grey text'> - <%= list_genres jam.genres %></span>
 	  <% end %>
 	  <% if (count = jam.lineage_song_count) > 0 %>
 	    <% title = "Used in #{count} song(s)" %>
-  	  <a href='/jam/<%= jam.id %>#lineage' title='<%= title %>'>
+  	  <a href='/jam/<%= jam.id %>#lineage' title='<%= title %>' style='position: relative; top: 1px'>
   	    <span class='lineage-song-count'><%=  count %></span>
   	  </a>
 	  <% end %>

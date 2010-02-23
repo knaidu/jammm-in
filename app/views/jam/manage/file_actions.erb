@@ -3,4 +3,4 @@
 <% file_size = (@jam.file.size.to_f / 1024 / 1024).round(2) rescue nil %>
 <%= add_field_name('Current File Size') %> <%= file_size ? "#{file_size} MB" : '-' %><br><br>
 <div id='upload-progress'></div><br>
-<iframe class='upload-jam-iframe' name='upload-jam-iframe' id='upload-jam-iframe-id' src='<%= url %>'></iframe>
+<iframe class='upload-jam-iframe' name='upload-jam-iframe' height='100px' id='upload-jam-iframe-id' src='<%= url %>'></iframe>
