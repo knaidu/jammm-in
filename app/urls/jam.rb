@@ -31,7 +31,7 @@ end
 
 get '/jam/:jam_id/manage' do
   @jam = get_passed_jam
-  @music_meta_data = music_meta_data(@song)
+  @music_meta_data = music_meta_data(@jam)
   allowed?(@jam.artists) {
     @layout_info = {'middle_panel' => 'jam/manage/page', 'right_panel' => 'jam/manage/instructions', 'left_panel' => 'account/menu'}
     erb(:"body/structure")
