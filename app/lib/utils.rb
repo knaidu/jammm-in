@@ -230,3 +230,16 @@ def music_meta_data(obj)
     :file => obj.file_handle
   }
 end
+
+# REQUEST INVITE 
+def process_invite_request(name, email, is_a, description)
+  raise "Kindly fill Name and Email field as they are mandatory" if name.nil? or name.blank? or email.nil? or email.blank?
+  mail_info = {
+    :from => "support@jammm.in",
+    :password => "3WiseMen",
+    :subject => "Invite Request - #{name}",
+    :body => "name: #{name}; email: #{email}; is_a: #{is_a}, desc: #{description}",
+    :to => "prakashraman@jammm.in, tarun@jammm.in"
+  }
+  mail(mail_info)
+end

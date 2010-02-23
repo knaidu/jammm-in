@@ -1,0 +1,37 @@
+<%= section_header('Request an Invite', {:icon => :invite }) %>
+
+<form id='form-request' action='/request_invite/process' method='post' onsubmit="sendRequest(); return false">
+  <%= field 'Name *' %> <input type='text' name='name'>
+  <%= vspace %>
+  <%= field 'Email *' %> <input type='text' name='email'>
+  <%= vspace %>
+  <%= field 'You are a' %> 
+    <select name='is_a'>
+      <option>Singer-Songwriter</option>
+      <option>Enthusiast</option>
+    </select>
+  <%= vspace %>
+  <%= field 'Description' %> <textarea name='description'></textarea>
+  <%= vspace %>  
+  <input type='submit' value='Send Request'>
+</form>
+<br>
+<span class='text'>
+Name and email are mandatory.<br>
+Kindly do fill in a description as it will help our system analysis.
+</span>
+
+<%= vspace %>
+<div id='form-response'></div>
+
+<%= js_start %>
+
+  function sendRequest(){
+    showLoadingMessage('form-response', 'Please wait while the request is registered...');
+    var form = $('form-request');
+    form.request({onSuccess: loadResponseFn('form-response'), onFailure: loadResponseFn('form-response')});
+  }
+
+	setSelectedMenuItem('menu-item-request-invite')
+<%= js_end %>
+

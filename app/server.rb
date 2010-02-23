@@ -62,6 +62,18 @@ get '/send_invite' do
   }
 end
 
+get '/request_invite' do
+  @layout_info = {"left_panel" => "homepage/left", "middle_panel" => "homepage/request_invite", "right_panel" => "homepage/right"}
+  erb(:'body/structure')
+end
+
+post '/request_invite/process' do
+  monitor {
+    process_invite_request(param?(:name), param?(:email), param?(:is_a), param?(:description))
+    "Your request has been registered. You will be hearing from us within the next couple of days. Thank you."
+  }
+end
+
 load 'urls/signin.rb'
 load 'urls/signup.rb'
 load 'urls/admin.rb'
