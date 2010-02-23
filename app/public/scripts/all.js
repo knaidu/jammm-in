@@ -18,6 +18,7 @@ window.onload = function(){
 
 function expandContentPanel(){
   var el = $('content-panel');
+	if(!el) return;
   var height = el.ancestors()[0].getHeight();
   el.style.minHeight = (height + "px");
 }
@@ -262,7 +263,7 @@ function saveSongInformation(){
 
 function loadSongManageJams(songId) {
 	var url = formatController('song', songId, 'manage', 'jams');
-	new Ajax.Updater('song-manage-jams', url, {method: 'get'});
+	updateEl('song-manage-jams', url);
 };
 
 function addJamToSong(songId) {
