@@ -2,6 +2,9 @@ require "#{ENV["WEBSERVER_ROOT"]}/scripts/load_needed.rb"
 require 'daemons'
 
 cron_log_new_section("SENDING USER UPDATES")
+cron_log("EXITING....")
+exit
+
 #Daemons.daemonize # Runs the script in the background
 
 
