@@ -348,6 +348,8 @@ function unpublishSong(songId) {
 };
 
 function deleteSong(songId) {
+	if(!confirm("Are you sure you want to delete this Song ?"))
+		return;
 	var url = formatController('song', songId, 'manage', 'delete_song');
 	call(url, {onSuccess: function() {loadUrl("/account/songs")}});
 };
@@ -411,6 +413,8 @@ function unpublishJam(jamId){
 
 
 function deleteJam(jamId){
+	if(!confirm("Are you sure you want to delete this Jam ?"))
+		return;
 	var url = formatController('jam', jamId, 'manage', 'delete_jam');
 	call(url, {onSuccess: function(){loadUrl("/account/jams")}});
 }
