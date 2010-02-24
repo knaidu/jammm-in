@@ -3,7 +3,7 @@
   	{:text => 'Jammm.in', :link => '/', :icon => :jammmin, :id => 'menu-item-jammmin'},
   	{:text => 'Songs', :link => '/songs', :icon => :song, :id => 'menu-item-songs'},
     {:text => 'Jams', :link => '/jams', :icon => :jam, :id => 'menu-item-jams'},  	
-    {:text => 'Artists', :link => '/artists', :icon => :following, :id => 'menu-item-artists'},
+    {:text => 'Artists', :link => '/artists', :icon => :"user1[16x16]", :id => 'menu-item-artists'},
     ((not session_user?) ? {:text => 'Sign In', :link => '/signin', :icon => :"login-header", :id => 'menu-item-signin'} : nil),
     ((not session_user?) ? {:text => 'Request an Invite', :link => '/request_invite', :icon => :invite, :id => 'menu-item-request-invite'} : nil),
   	{:text => 'Report a Bug', :link => '/bug/new', :icon => :bug, :id => 'menu-item-new-bug'}
