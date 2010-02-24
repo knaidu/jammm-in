@@ -14,10 +14,13 @@
       <span class='float-left display-inline pad-right-10'><%= profile_picture_thumbnail with_user %></span>
       <span>
         <a href='/account/message_stream/<%= message_stream.id %>' class='simple-link bold'><%= with_user.username %></a><br>
-        <%= message_stream.user_message_streams.size.to_s %> messages
-				<%= "<b>(#{message_stream.unread_messages(session_user?).size} new)</b>" if not message_stream.unread_messages(session_user?).empty? %>
+        <div class='text'>
+          <%= message_stream.user_message_streams.size.to_s %> messages
+  				<%= "<b>(#{message_stream.unread_messages(session_user?).size} new)</b>" if not message_stream.unread_messages(session_user?).empty? %>
+  			</div>
       </span>
     </div>
+    <%= vspace 10 %>
   <% end %>
 </div>
 
