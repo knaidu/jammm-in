@@ -1,14 +1,26 @@
 <%= section_header 'Create Jam' %>
 
 <br>
-<form method='post' action='/jam/register'>
+<form id='create-jam-form' method='post' action='/jam/register' onsubmit='createJam(); return false'>
   <%= field 'Name' %>
   <input type='text' name='name'>
   <%= vspace %>
   <input type='submit' value='Create JAM'>
 </form>
-
+<%= vspace 10 %>
+<div id='create-response'></div>
 
 <%= js_start %>
 	setSelectedMenuItem('menu-item-jam-create')
+	
+	function createJam(){
+	  var form = $('create-jam-form');
+	  showLoadingMessage("create-response", "Please wait your jam is being created...");
+	  form.request({
+	    onSuccess: function(response){
+	      loadJamManage(getResponseText(response.transport));
+	    },
+	    onFailure: loadResponseFn('create-response')
+	  })
+	}
 <%= js_end %>

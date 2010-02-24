@@ -2,6 +2,8 @@ module JamUtils
 
   def register_jam(username, name) 
     user = User.with_username(username)
+    regex = DATA["name_regex"]
+    raise "The name can accept only alphabets,numbers, '-' and '_'" if not eval(regex).match(name)
     Jam.create({
       :name => name,
       :registered_user_id => user.id,

@@ -6,9 +6,12 @@ get '/jam/create' do
 end
 
 post '/jam/register' do
-  name = params['name']
-  jam = JamUtils.register_jam(session[:username], name)
-  jam ? redirect_manage_jam(jam) : "false"
+  monitor {
+    name = params['name']
+    jam = JamUtils.register_jam(session[:username], name)
+    puts jam.id
+    jam.id.to_s
+  }
 end
 
 get '/jam/:jam_id/basic_info' do

@@ -8,15 +8,17 @@ get '/song/create' do
 end
 
 post '/song/register' do
-  name = params['name']
-  song = register_song(session[:username], name)
+  monitor {
+    name = params['name']
+    song = register_song(session[:username], name)
   
-  # Registers a song and adds music to it.
-  if add_music = param?(:add)
-    music_type, music_id = get_add_music_info
-    song.add_music(music_type, music_id, session_user?)
-  end
-  song ? redirect_manage_song(song) : "false"
+    # Registers a song and adds music to it.
+    if add_music = param?(:add)
+      music_type, music_id = get_add_music_info
+      song.add_music(music_type, music_id, session_user?)
+    end
+    song.id.to_s
+  }
 end
 
 get '/song/add_music' do

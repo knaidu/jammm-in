@@ -5,7 +5,7 @@
 
 <%= section_header 'Create Song' if not hide_header %>
 <br>
-<form method='post' action='/song/register'>
+<form id='create-song-form' method='post' action='/song/register' onsubmit='createSong(); return false;'>
   <%= field 'Name' %>
   <input type='text' name='name'>
   <%= vspace %>
@@ -14,9 +14,10 @@
 	<% end %>
   <input type='submit' value='Create Song'>
 </form>
-<br>
-<br>
+<%= vspace 10 %>
+<div id='create-response'></div>
+
 
 <%= js_start %>
-	setSelectedMenuItem('menu-item-song-create')
+	setSelectedMenuItem('menu-item-song-create');
 <%= js_end %>

@@ -1,6 +1,8 @@
 module SongUtils
 
   def register_song(username, name) 
+    regex = DATA["name_regex"]
+    raise "The name can accept only alphabets,numbers, '-' and '_'" if not eval(regex).match(name)
     Song.create({
       :name => name,
       :registered_user_id => User.with_username(username).id

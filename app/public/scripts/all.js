@@ -114,6 +114,11 @@ function loadJam(id){
   loadUrl("/jam/" + id);
 }
 
+function loadJamManage(id){
+  if(!id) return;
+  loadUrl("/jam/" + id + "/manage");
+}
+
 function formatController(){
 	return ("/" + $A(arguments).map(function(arg){return arg}).join("/"));
 }
@@ -255,6 +260,18 @@ function getResponseText(transport){
 }
 
 /* SONGS */
+
+function createSong(){
+  var form = $('create-song-form');
+  showLoadingMessage("create-response", "Please wait your song is being created...");
+  form.request({
+    onSuccess: function(response){
+      loadSongManage(getResponseText(response.transport));
+    },
+    onFailure: loadResponseFn('create-response')
+  })
+}
+
 function saveSongInformation(){
 	var formId = 'song-information';
 	var responseId = 'save-information-response';
