@@ -35,7 +35,6 @@ class Song < ActiveRecord::Base
   
   def remove_tenticles
     song.song_managers.each(&:destroy)
-    delete_file_handle
     Notification.delete_by_data("song_id", self.id)
     Feed.delete_by_data("song_id", self.id)
   end
