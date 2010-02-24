@@ -2,6 +2,7 @@ class Follower < ActiveRecord::Base
 
   belongs_to :follows, :class_name => "User", :primary_key => 'id', :foreign_key => 'follows_user_id'
   belongs_to :followed_by, :class_name => "User", :primary_key => 'id', :foreign_key => 'user_id'
+  validates_uniqueness_of :user_id, :scope => [:follows_user_id]
   
   def before_create
     raise "You will get dizzy if you follow yourself" if user_id == follows_user_id

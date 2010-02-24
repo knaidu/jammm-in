@@ -7,7 +7,9 @@
 	
 	<br><br>
 	<% if session_user? and session_user? != @user %>
-  	<%= partial("profile/actions", :locals => {:user => @user}) %>
+	  <div id='profile-actions-div'>
+    	<%= partial("profile/actions", :locals => {:user => @user}) %>
+    </div>
   	<br><br>
   <% end %>
 
