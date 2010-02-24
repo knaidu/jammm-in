@@ -78,7 +78,7 @@ def add_field_name(text)
 end
 
 def add_profile_link(user)
-  add_link(user.username, ("/" + user.username))
+  add_link(user.username, ("/" + user.username), {:class_names => "profile-link"})
 end
 alias profile_link add_profile_link
 
