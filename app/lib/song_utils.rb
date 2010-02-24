@@ -5,7 +5,8 @@ module SongUtils
     raise "The name can accept only alphabets,numbers, '-' and '_'" if not eval(regex).match(name)
     Song.create({
       :name => name,
-      :registered_user_id => User.with_username(username).id
+      :registered_user_id => User.with_username(username).id,
+      :created_at => Time.now
     })
   end
   
