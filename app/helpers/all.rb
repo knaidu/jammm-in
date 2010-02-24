@@ -181,7 +181,7 @@ end
 
 def add_music_link(obj)
   prm = obj.class.to_s.downcase + "_" + obj.id.to_s
-  "<a href='/song/add_music?add=#{prm}'><span class='display-inline' title='Add to garage'>" + (icon :add) + "</span></a>" 
+  "<a href='/song/add_music?add=#{prm}' style='text-decoration: none !important'><span class='display-inline' title='Add to garage'>" + (icon :add) + "</span></a>" 
 end
 
 def play_link(obj)
