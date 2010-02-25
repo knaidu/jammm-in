@@ -1,0 +1,96 @@
+<div class='tutorial'>
+  <%= section_header 'Tutorial' %>
+
+  <div class='section'>
+    <div class='heading'>What is jamMm.in?</div>
+    <div class='answer'>jamMm.in is a music collaboration application. Our aim with jamMm.in is to facilitate the process of playing music within a group containing a diverse mix of musicians. We are trying to bring forward a way in which anyone can play with anyone or anyone's peice of music.</div>
+  </div>
+  
+  <div class='section'>
+    <div class='heading'>Building blocks of jamMm.in</div>
+    <div class='answer'>
+      <li>Jam</li>
+      <li>Song</li><%= vspace %>
+      <i>Relationship: A Song is made up of Jams</i>
+      <%= vspace 10 %>
+      <b>Jam</b>:<br>
+      e.g - Rhythm, Vocal, Lead.<br>
+      It must ideally contain just one instrument or vocal. It may contain more, if needed (or if it makes it easier).
+      <%= vspace 10 %>
+      <b>Song</b>:<br>
+      Must contain atleast one jam.
+    </div>
+  </div>
+
+  <div class='section'>
+    <div class='heading'>Creating music on jamMm.in</div>
+    <div class='answer'>
+      There are two sections to this
+      <li>Creating a Jam</li>
+      <li>Creating a Song</li>
+      <%= vspace 10 %>
+      <b>Creating a Jam</b>:<br>
+      <li> In your menu (account menu) click "Create Jam" and give it a name</li>
+      <li> Upload your MP3 which contains the music (Ideally should be just one instrument or vocals)</li>
+      <li> Repeat this process for the number you jams you want to add to your song</li>
+      <%= vspace 10 %>
+      <b>Creating a Song</b>:<br>
+      <li> In your menu (account menu) click "Create Song" and give it a name</li>
+      <li> Goto to the Jams section, you will find a dropdown of all your jams</li>
+      <li> Add all the Jams you would like to be a part of the song</li>
+      <li> Click "Preview Song". "Preview Song" might take upto 15 seconds depending on the number of jams added. What this does is, it basically flattens all the jams into a single MP3.</li>
+      <li>Click "Play Preview" if you like, to listen to the flattened song</li>
+      <li>Click "Publish", to publish the song</li>
+    </div>
+  </div>
+  
+  <div class='section'>
+    <div class='heading'>Collaboration - is what we really would like you to do!</div>
+    <div class='answer'>
+      While creating Jams, Songs and then Publishing your Songs, is all good, what we really are trying to accomplish is a way in which anyone can collaborate with anyone. We do not have the "Friends" concept (which means only friends get to collaborate with each other). <br>Any piece of music that is uploaded and published through the site can be added by anyone to make new music.
+    </div>
+  </div>
+
+  <div class='section'>
+    <div class='heading'>Collaboration - Inviting artists.</div>
+    <div class='answer'>
+      Once you determine who you would like to collaborate and create a new song with. 
+      <li> You create a song (without needing to create a Jam, yet)</li>
+      <li> You will find a "Artists/Managers" section in your song manage page<br>Add the artists (by username) you would like to manage the song with you</li>
+      <li> Your done</li>
+      <%= vspace 10 %>
+      Now all the artists along with you can separetely go to the song manage page and add their jams to the song. <bR>
+      <%= vspace %>
+      <i>Yes, this means that all the artists would need to "Create Jams" and then add it to the song</i>
+      
+    </div>
+  </div>
+  
+  <div class='section'>
+    <div class='heading'>Collaboration - with a published piece of music (jam/song)!</div>
+    <div class='answer'>
+      This is the second mode of collaboration we support. We allow anyone to compose music on top of any published item (jam/song). Beside any jam or song you will find a plus icon <%= icon :add %>. <br>
+      By clicking it you can add the jam or song to an existing song or create a new song with those items.
+      <%= vspace %>
+      <i>Note: By adding a song to an existing song or a new song, all the jams of the added song will be added to your song. Isin't this cool ! :D</i>
+    </div>
+  </div>
+
+  <div class='section'>
+    <div class='heading'>Independent Jam</div>
+    <div class='answer'>
+      By now you have figured out that this application is all about Jams. When we usually play our instrument at home, or just jam with ourselves, we sometimes write some beautiful jams (music). But we can't really call it a song yet as we think it might not be complete (might need others instruments or vocals). <br>
+      Pretty sure you have guessed what this is. <%= vspace %>
+      <li>Create a Jam</li>
+      <li>Upload your MP3</li>
+      <li>Click <b>"Publish"</b>!</li>
+      <%= vspace %>
+      We call such Jams "Independent Jams". This Jam get published to your feed and to jamMm.in's feed. Now anyone can add <%= icon :add %> this piece of music to thier song. Colloboration again :)
+      <%= vspace %>
+      FYI: Independent Jams was how the whole idea for the application came about. 
+      <%= vspace %>
+      e.g. If you are a guitarist (or anyone) and keep coming up with cool pieces of music that you like, just make an "Independent Jam" and give someone the chance to make music on it.
+    </div>
+  </div>
+
+</div>
