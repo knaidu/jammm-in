@@ -1,2 +1,3 @@
 0 14 * * * /home/jammmin/webserver/app/scripts/sync_s3
 0 18 * * * /home/jammmin/webserver/app/scripts/mail/user_updates
+* * * * * /home/jammmin/webserver/app/scripts/check_lighttpd

@@ -1,0 +1,1 @@
+sudo lighttpd -f /home/jammmin/webserver/app/config/lighttpd.conf start
