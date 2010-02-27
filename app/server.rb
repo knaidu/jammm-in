@@ -25,6 +25,7 @@ end
 
 before do
   @session_user ||= (User.with_username(session[:username]) rescue nil)
+  @use_full_paths = param?(:use_full_paths) or false
 end
 
 get '/' do

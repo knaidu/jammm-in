@@ -4,41 +4,36 @@
 <% 
   user = User.find(user_id) 
   update = user.get_sorted_update
+  update_numbers = {}
+  update.each do |k,v|
+    update_numbers[k] = v.size
+  end
 %>
 
 <div style='padding: 10px'>
-  <h4>jamMm.in update</h4>
+  <h4>
+    <img src="http://jammm.in/images/icons/favicon.png" height='16px' style='float: left; padding-right: 10px'>
+    jamMm.in update
+  </h4>
 
-  You have <%= user.unread_notifications.size %> new notifications
+  You have <%= user.unread_notifications.size %> new updates
   <br><br>
-
-  <% if not update[:invites].empty? %>
-    <b>Invites</b>
-    <hr class='thin'>
-    <%= partial("/account/notifications/notifications", :locals => {:notifications => update[:invites]}) %>
-    <%= vspace 20 %>
-  <% end %>
-
-  <% if not update[:messages].empty? %>
-    <b>Messages</b>
-    <hr class='thin'>
-    <%= partial("/account/notifications/notifications", :locals => {:notifications => update[:messages]}) %>  
-    <%= vspace 20 %>
+  <% update_numbers.each do |k,v| %>
+    <div>
+      <% 
+        next if v < 1 
+        key = k.to_s.split("_").map{|t| t.capitalize}.join(" ")
+      %>
+      
+      <div style="float: left; width: 100px; "><%= key %>:</div> <%= v %>
+    </div>
   <% end %>
   
-  <% if not update[:song_messages].empty? %>
-    <b>Song Messages</b>
-    <hr class='thin'>
-    <%= partial("/account/notifications/notifications", :locals => {:notifications => update[:song_messages]}) %>
-    <%= vspace 20 %>
-  <% end %>  
-  
-  <% if not update[:general].empty? %>
-    <b>General</b>
-    <hr class='thin'>
-    <%= partial("/account/notifications/notifications", :locals => {:notifications => update[:general]}) %>
-    <%= vspace 20 %>
-  <% end %>
+<%= vspace 20 %> 
+Click here to view the notifications <br><br>
+
+<% url = "http://jammm.in/account/notifications" %>
+<a href="<%= url %>"><%= url %></a>
 
 </div>
 </body>

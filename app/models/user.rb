@@ -244,7 +244,7 @@ class User < ActiveRecord::Base
   def get_sorted_update
     update = {}
     look_for = {:messages => "new_message", :song_messages => "song_message", :invites => "song_invite"}
-    notifications = self.unread_notifications
+    notifications = self.notifications
     look_for.each {|k,v|
       update[k] = notifications.select{|n| n.notification_type == v}
       notifications -= update[k]
