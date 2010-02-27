@@ -10,7 +10,6 @@ class SongManager < ActiveRecord::Base
   end
   
   def remove_manager_jams_from_song
-    return false if manager == song.creator rescue true # Destroy is not allowed if the creator of the song is the being deleted
     song = self.song
     song.jams_of_user(self.manager).each do |jam|
       SongJam.find_by_song_id_and_jam_id(song.id, jam.id).destroy

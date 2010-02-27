@@ -17,9 +17,16 @@ class Song < ActiveRecord::Base
       WHERE (("likes".for_type_id = #{id} AND ("likes".for_type = 'song')))
   )
   
-  after_destroy :remove_tenticles
+  after_destroy after_destroy
 
   include SongUtils
+
+  def after_destroy
+    self.song_managers.each(&:destroy)
+    self.messages.each(&:destroy)
+    Notification.delete_by_data("song_id", self.id)
+    Feed.delete_by_data("song_id", self.id)
+  end
   
   def after_create
     add_to_manager_list
@@ -31,12 +38,6 @@ class Song < ActiveRecord::Base
   
   def add_to_manager_list
     add_manager(creator)
-  end
-  
-  def remove_tenticles
-    song.song_managers.each(&:destroy)
-    Notification.delete_by_data("song_id", self.id)
-    Feed.delete_by_data("song_id", self.id)
   end
   
   def file

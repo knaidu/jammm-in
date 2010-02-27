@@ -24,6 +24,7 @@ class Jam < ActiveRecord::Base
   include JamUtils
   
   def after_destroy
+    self.children.each{|jam| jam.set_father(self.father)} # Set all its children's father to its father
     Notification.delete_by_data("jam_id", self.id)
     Feed.delete_by_data("jam_id", self.id)
   end
@@ -179,6 +180,11 @@ class Jam < ActiveRecord::Base
   
   def children
     Jam.find_all_by_origin_jam_id(self.id)
+  end
+  
+  def set_father(jam)
+    self.origin_jam_id = jam.nil? ? nil : jam.id
+    self.save
   end
   
   def descendants
