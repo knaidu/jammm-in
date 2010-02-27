@@ -13,7 +13,8 @@ class Notification < ActiveRecord::Base
     :song_invite => :song,
     :song_publish => :song,
     :jam_comment => :jam,
-    :song_message => :comments
+    :song_message => :comments,
+    :jam_added_to_song => :add
   }
   
   def self.add(data={}, notification_type="update")
