@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
 
   def songs
     participated_songs = jams.map(&:song).compact
-    (participated_songs + registered_songs).uniq
+    (participated_songs + registered_songs + manages_songs).uniq.sort_by{|song| -(song.id)}
   end
   
   def jams
