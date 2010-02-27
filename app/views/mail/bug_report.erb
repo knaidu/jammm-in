@@ -3,9 +3,25 @@
   url = "http://jammm.in/bug/#{bug.id}"
 %>
 
-Bug #<%= bug.id %><br><br>
-Subject: <%= bug.subject %><br><br>
-Description:<br>
+<b>Bug #<%= bug.id %></b>
+<br><br>
+
+<b>Subject</b>: <%= bug.subject %><br><br>
+<b>Description</b>:<br>
 <%= bug.description.message %>
 <%= vspace 20 %>
-Link: <a href='<%= url %>'><%= url %></a>
+
+<% if bug.messages.size > 1
+  messages = bug.messages
+  messages.shift %>
+  <b>Comments</b>:<br>
+  <div style='padding-left: 20px'>
+    <% messages.each do |message| %>
+    <div><%= message.message %></div>
+    <%= vspace %>
+    <% end %>
+  </div>
+<% end %>
+
+<%= vspace 20 %>
+<b>Link</b>: <a href='<%= url %>'><%= url %></a>

@@ -9,13 +9,15 @@ class Bug < ActiveRecord::Base
   
   def self.add(subject, message=nil, user=nil)
     bug = self.create(:subject => subject)
-    bug.add_message(message, user) if message
+    bug.add_message(message, user, false) if message
     bug.mail_bug_report
     bug
   end
   
-  def add_message(message, user=nil)
-    BugBody.add(self, message, user)
+  def add_message(message, user=nil, mail_report=true)
+    body = BugBody.add(self, message, user)
+    self.mail_bug_report if mail_report
+    body
   end
   
   def self.list 
@@ -34,6 +36,10 @@ class Bug < ActiveRecord::Base
   def mail_bug_report
     cmd = "ruby #{ENV["WEBSERVER_ROOT"]}/scripts/mail/bug_report.rb #{self.id}"
     run(cmd)
+  end
+  
+  def contributors
+    bugs_bodies.map(&:user).compact.uniq
   end
   
 end
