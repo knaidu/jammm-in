@@ -9,13 +9,13 @@
     <%= partial('account/jam', {:locals => {:jam => jam}}) %><br>
 <% end %>
 
-<%= section_header 'Jams used in songs' %>
+<%= section_header 'Jams Used in Songs (Song Jams)' %>
 <% @session_user.my_song_jams.each do |jam| %>
     <%= partial('account/jam', {:locals => {:jam => jam}}) %><br>
 <% end %>
 <%= vspace %>
 
-<%= section_header 'Jams added by others' %>
+<%= section_header 'My Jams Added by Others' %>
 <% @session_user.added_by_others_jams.each do |jam| %>
     <%= partial('account/jam', {:locals => {:jam => jam}}) %><br>
 <% end %>
