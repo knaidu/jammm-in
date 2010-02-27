@@ -45,7 +45,7 @@ get '/test' do
 end
 
 get '/aboutus' do
-  @layout_info = {"left_panel" => "", "middle_panel" => "help/aboutus"}
+  @layout_info = {"left_panel" => "homepage/left", "middle_panel" => "help/aboutus", "right_panel" => "homepage/right"}
   erb(:'body/structure')
 end
 
