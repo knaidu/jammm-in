@@ -14,6 +14,17 @@ Object.extend(Object, function(){
 	}
 }());
 
+Object.extend(Array.prototype, function(){
+	function shuffle(){
+		var o = this.clone();
+		for(var j, x, i = o.length; i; j = parseInt(Math.round(Math.random() * 100) % i), x = o[--i], o[i] = o[j], o[j] = x);
+		return o;
+	}
+	return {
+		shuffle: shuffle
+	}
+}());
+
 
 Element.addMethods({
 	scrollBottom: function(element){
