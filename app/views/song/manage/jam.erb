@@ -5,6 +5,10 @@
   <div class='position-absolute' style='left: 28px'>
     <%= play jam %>
   </div>
+  <div class='position-absolute' style='left: 48px'>
+    <%= download jam %>
+  </div>
+
   <div class='position-absolute' style='right: 0px'>
 		<span class='float-right simple-delete simple-link' title='Remove JAM' onclick="removeJamFromSong('<%= @song.id %>', '<%= jam.id %>')">x</span>
   </div>
@@ -17,7 +21,7 @@
     }) %>
   </div>
   
-  <div class='position-relative' style='margin: 0px 130px 0px 53px'>
+  <div class='position-relative' style='margin: 0px 130px 0px 70px'>
     <span class='bold simple-link'><a href='/jam/<%= jam.id %>'><%= jam.name %></a>&nbsp;</span>
     <div class='text'>
       <%= partial(:'common/list_artists', :locals => {:artists => jam.artists}) %>
