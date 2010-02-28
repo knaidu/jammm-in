@@ -4,7 +4,9 @@
   	<input type='submit' value='Tag Artist'> Enter the <b>username</b> of the artist you would want to tag to this jam.
   </form>
 </div>
-
+<%= vspace %>
+Choose the instrument(s) each artist has used in this jam.
+<%= vspace %>
 <% jam_artists ||= @jam.jam_artists rescue [] # Added if this view is called directly %>
 <% artists = @jam.artists %>
 <% jam_artists.size.times do |i| %>

@@ -33,31 +33,32 @@
 
   <div id='jam-actions-response'></div>
 
-  <%= section_header 'Upload MP3' %>
+  <%= section_header 'STEP 1: Upload MP3' %>
   <div id='jam-file-actions'>
   	<%= partial('jam/manage/file_actions') %>
   </div>
 
   <%= partial('jam/manage/information', {
   	:locals => {:jam => @jam}, 
-  	:section_header => SectionHeader.new('Information'),
+  	:section_header => SectionHeader.new('STEP 2: Information'),
   	:collapsible => true
   }) %>
+  
+  <%= vspace 20 %>
+  <%= section_header 'STEP 3: Artists' %>
+    <div id='jam-artists'>
+      <%= partial('jam/manage/artists', {:locals => {:artists => @jam.artists}}) %>
+    </div>
+  </div>
 
   <%= vspace 20 %>
   <%= partial('jam/manage/sheet_music/sheet_music', {
   	:locals => {:jam => @jam}, 
-  	:section_header => SectionHeader.new('Sheet Music'),
+  	:section_header => SectionHeader.new('STEP 4: Sheet Music'),
   	:collapsible => true,
   	:collapsed => true
   }) %>
 
-  <%= vspace 20 %>
-  <%= section_header 'Artists' %>
-  <div id='jam-artists'>
-    <%= partial('jam/manage/artists', {:locals => {:artists => @jam.artists}}) %>
-  </div>
-</div>
 
 <%= js_start %>
 	setSelectedMenuItem('menu-item-jams')
