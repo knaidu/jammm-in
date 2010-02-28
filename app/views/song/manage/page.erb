@@ -35,25 +35,25 @@
     </tr>
   </table>
 
-  <%= partial('song/manage/song_picture', :section_header => SectionHeader.new('Song Picture'), :collapsible => true, :locals => {:song => @song}) %>
+  <%= partial('song/manage/song_picture', :section_header => SectionHeader.new('STEP 1: Song Picture'), :collapsible => true, :locals => {:song => @song}) %>
   <br>
 
-  <%= section_header 'Jams' %>
+  <%= section_header 'STEP 2: Jams' %>
   <div id='song-manage-jams'>
     <%= partial('song/manage/jams', {:locals => {:jams => @song.jams}}) %>
   </div><br>
 
-  <%= section_header 'Information' %>
+  <%= section_header 'STEP 3: Information' %>
     <%= partial('song/manage/information', {:locals => {:song => @song}}) %>
 
   <%= vspace 20 %>
-  <%= section_header 'Artists / Managers' %>
+  <%= section_header 'STEP 4: Artists / Managers' %>
   <div id='song-manage-artists-div'>
     <%= partial('song/manage/artists', {:locals => {:artists => @song.managers}}) %>
   </div>
   <br>
 
-  <%= section_header 'Lyrics' %>
+  <%= section_header 'STEP 5: Lyrics' %>
   <form action='/song/<%= @song.id %>/manage/add_lyrics' method='post' onsubmit='return false' id='song-lyrics-form'>
   	<textarea name='lyrics'><%= @song.lyrics %></textarea>
   	<br><br>
@@ -62,6 +62,6 @@
   <div id='song-lyrics-form-response'></div>
 
   <%= vspace 20 %>
-  <%= partial('song/manage/file_information', :section_header => SectionHeader.new('File Information'), :collapsible => true, :collapsed => true) %>
+  <%= partial('song/manage/file_information', :section_header => SectionHeader.new('File Information (information only)'), :collapsible => true, :collapsed => true) %>
 
 </div>
