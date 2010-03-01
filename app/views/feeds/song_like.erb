@@ -1,0 +1,7 @@
+<% 
+	song = fhlp_get_song(feed) 
+	users = fhlp_get_users(feed)
+%>
+
+<%= profile_link users[0] %> liked the song <%= song_link song %><br>
+<%= play song %>

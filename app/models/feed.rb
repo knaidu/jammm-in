@@ -48,6 +48,14 @@ class Feed < ActiveRecord::Base
       @data = data
     end
     
+    def users
+      @data[:user_ids].map{|id| User.find(id)} rescue nil
+    end
+    
+    def user
+      User.find(@data[:user_id]) or @data[:user_ids].map{|id| User.find(id)} rescue nil
+    end
+    
   end
   
 end
