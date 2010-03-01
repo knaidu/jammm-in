@@ -10,6 +10,7 @@ account:
         
     jams:
         middle_panel: jams
+        right_panel: jams_right_panel
         
 profile:
     left_panel: menu
