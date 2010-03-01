@@ -1,8 +1,12 @@
 <% meta = @music_meta_data %>
 
+<link rel="video_src" href="http://www.jammm.in/swf/new-player.swf?imageurl=http://jammm.in<%= meta[:image_src]%>&songtitle=<%= meta[:title] %>&url=http://www.jammm.in/file/<%= meta[:file] %>&artists=<%= meta[:artists]%>"/>
+
 <meta name="title" content="<%= meta[:title] %>" />
-<meta name="description" content="video_description" />
-<link rel="video_src" href="http://www.jammm.in/swf/new-player.swf?imageurl=http://jammm.in<%= meta[:image_src]%>&title=<%= meta[:title] %>&url=http://www.jammm.in/file/<%= meta[:file] %>&artists=<%= meta[:artists]%>"/>
-<meta name="video_height" content="35" />
+<% if meta[:description] %>
+  <meta name="description" content="<%= meta[:description] %>" />
+<% end %>
+<link rel="image_src" href="http://jammm.in/images/icons/miniicon.png">
+<meta name="video_height" content="100" />
 <meta name="video_width" content="380" />
 <meta name="video_type" content="application/x-shockwave-flash" />

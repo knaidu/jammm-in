@@ -227,7 +227,9 @@ def music_meta_data(obj)
   {
     :title => obj.name,
     :image_src => (obj.song_picture_url rescue ""),
-    :file => obj.file_handle
+    :file => obj.file_handle,
+    :artists => obj.artists.map(&:username).join(','),
+    :description => obj.description
   }
 end
 
