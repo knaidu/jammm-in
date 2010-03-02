@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
   )
   has_many :user_notifications, :order => "id DESC"
   has_many :notifications, :through => :user_notifications, :order => "id DESC"
+  has_many :user_badges, :dependent => :destroy
   has_one :facebook_policy, :class_name => "FacebookShare"
   has_one :twitter_policy, :class_name => "TwitterShare"
   validates_uniqueness_of :username, :message => "has already been registered"
@@ -251,6 +252,10 @@ class User < ActiveRecord::Base
     }
     update[:general] = notifications
     update
+  end
+  
+  def badges
+    user_badges.map(&:badge)
   end
   
 end

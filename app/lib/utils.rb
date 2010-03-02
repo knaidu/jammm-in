@@ -3,6 +3,7 @@
 $layout_info = YAML.load_file("#{ENV["WEBSERVER_ROOT"]}/config/layout.yml")
 INVALID_INFO = YAML.load_file("#{ENV["WEBSERVER_ROOT"]}/config/invalid.yml")
 DATA = YAML.load_file("#{ENV["WEBSERVER_ROOT"]}/config/data.yml")
+BADGES_DATA = YAML.load_file("#{ENV["WEBSERVER_ROOT"]}/config/badges.yml")
 FILES_DIR = ENV["FILES_DIR"]
 APP_ROOT = ENV["WEBSERVER_ROOT"]
 

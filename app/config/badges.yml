@@ -1,0 +1,9 @@
+base_images_url: /images/badges
+types:
+  1: 
+    name: Founder
+    image: founder
+    
+  2: 
+    name: Alpha Musician
+    image: alphamusician
