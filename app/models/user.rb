@@ -258,4 +258,9 @@ class User < ActiveRecord::Base
     user_badges.map(&:badge)
   end
   
+  def add_badge(badge)
+    raise "not a badge" if not badge
+    UserBadge.create({:user_id => self.id, :badge_id => badge.id})
+  end
+  
 end

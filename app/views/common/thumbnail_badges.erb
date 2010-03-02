@@ -1,0 +1,5 @@
+<div class='position-relative'>
+  <% badges.each do |badge| %>
+    <%= partial("common/thumbnail_badge", :locals => {:badge => badge }) %>
+  <% end %>
+</div>

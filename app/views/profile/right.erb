@@ -1,3 +1,7 @@
+<%= section_header 'Badges' %>
+<%= partial ("common/thumbnail_badges", :locals => {:badges => @user.badges}) %>
+
+<%= vspace 20 %>
 <% 
   if session_user? and @user != session_user? 
   message_stream = MessageStream.find_stream(session_user?, @user) %>

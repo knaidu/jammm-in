@@ -34,6 +34,6 @@ Migrating to CreateInvitesTable (30)
 Migrating to CreateConnectedSitesTables (31)
 Migrating to CreateUserBadgesTable (32)
 SQL (0.1ms)  BEGIN
-SQL (219.3ms)  CREATE TABLE "user_badges" ("id" serial primary key, "user_id" integer, "badge_id" integer) 
-SQL (7.0ms)  INSERT INTO schema_migrations (version) VALUES ('32')
-SQL (1.2ms)  COMMIT
+SQL (11.1ms)  CREATE TABLE "user_badges" ("id" serial primary key, "user_id" integer, "badge_id" integer, "created_at" timestamp) 
+SQL (0.3ms)  INSERT INTO schema_migrations (version) VALUES ('32')
+SQL (0.7ms)  COMMIT

@@ -12,7 +12,7 @@ class Badge
   
   def initialize(id)
     data = BADGES_DATA
-    @badge = data["types"][id]
+    @badge = data["types"][id].update("id" => id)
     raise "Badge not found" if not @badge
   end
   
@@ -20,8 +20,12 @@ class Badge
     @badge["name"]
   end
   
+  def id
+    @badge["id"]
+  end
+  
   def image_url
-    BADGES_DATA["base_images_url"] + "/" + @badge["name"]  
+    BADGES_DATA["base_images_url"] + "/" + @badge["image"]  
   end 
   
 end

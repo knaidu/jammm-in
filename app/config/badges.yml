@@ -2,8 +2,8 @@ base_images_url: /images/badges
 types:
   1: 
     name: Founder
-    image: founder
+    image: founder.png
     
   2: 
     name: Alpha Musician
-    image: alphamusician
+    image: alphamusician.png

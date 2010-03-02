@@ -4,6 +4,7 @@ class CreateUserBadgesTable < ActiveRecord::Migration
     create_table :user_badges do |i|
       i.column :user_id, :integer
       i.column :badge_id, :integer
+      i.column :created_at, :timestamp
     end    
   end
   
