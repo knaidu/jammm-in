@@ -194,7 +194,7 @@ class Jam < ActiveRecord::Base
   end
   
   def lineage_song_count
-    ([self] + self.descendants).map(&:song).uniq.size
+    ([self] + self.descendants).map(&:song).uniq.compact.size
   end
   
   def self.published(count=9)
