@@ -16,4 +16,8 @@ class SiteCounter < ActiveRecord::Base
     url
   end
   
+  def self.total_visited
+    sql("select sum(counter) from site_counter")[0]["sum"].to_i
+  end
+  
 end
