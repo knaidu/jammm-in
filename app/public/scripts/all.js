@@ -140,9 +140,13 @@ function addMessage(formId){
   if(!form) return;
   var users = form.findElementByName('user_ids').value;
   var divId = form.findElementByName('div_id').value;
+  var responseDivId = form.findElementByName('response_div_id').value;
 	var full = form.findElementByName('full')
 	if(full) full = full.value;
-  form.request({onSuccess: function(){loadMessageStream(users, divId, full)}});
+  form.request({
+    onSuccess: function(){loadMessageStream(users, divId, full)},
+    onFailure: loadResponseFn(responseDivId)
+  });
 }
 
 function loadMessage(id, message, className){

@@ -1,4 +1,5 @@
 <% div_id = rand.to_s %>
+<% response_div_id = rand.to_s %>
 <% 
 	user1, user2 = message_stream ? [message_stream.users[0], message_stream.users[1]] : [session_user?, @user] 
 	full ||= nil
@@ -37,6 +38,7 @@
   <form action='/message_stream/new_post' method='post' onsubmit='return false' id='<%= form_id %>'>
     <input type='hidden' name='user_ids' value='<%= "#{user1.id},#{user2.id}" %>'>
     <input type='hidden' name='div_id' value='<%= div_id %>'>
+    <input type='hidden' name='response_div_id' value='<%= response_div_id %>'>
 		<% if full %>
 			<input type='hidden' name='full' value=true>
 		<% end %>	
@@ -45,6 +47,8 @@
 	  <input type='submit' value='Post' onclick="addMessage('<%= form_id %>')">
   </form>
 </div>
+
+<div id='<%= response_div_id %>'></div>
 
 <%= vspace %>
 
