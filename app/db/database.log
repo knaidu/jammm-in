@@ -1,6 +1,6 @@
-SQL (0.1ms)  SET client_min_messages TO 'panic'
-SQL (0.1ms)  SET client_min_messages TO 'notice'
-SQL (0.5ms)  SELECT version FROM schema_migrations
+SQL (0.5ms)  SET client_min_messages TO 'panic'
+SQL (0.2ms)  SET client_min_messages TO 'notice'
+SQL (27.1ms)  SELECT version FROM schema_migrations
 Migrating to CreateTestTable (1)
 Migrating to CreateUserTable (2)
 Migrating to CreateSongsTable (3)
@@ -33,7 +33,7 @@ Migrating to CreateSongManageMessagesTable (29)
 Migrating to CreateInvitesTable (30)
 Migrating to CreateConnectedSitesTables (31)
 Migrating to CreateUserBadgesTable (32)
-SQL (0.1ms)  BEGIN
-SQL (11.1ms)  CREATE TABLE "user_badges" ("id" serial primary key, "user_id" integer, "badge_id" integer, "created_at" timestamp) 
-SQL (0.3ms)  INSERT INTO schema_migrations (version) VALUES ('32')
-SQL (0.7ms)  COMMIT
+SQL (0.2ms)  BEGIN
+SQL (1035.3ms)  CREATE TABLE "user_badges" ("id" serial primary key, "user_id" integer, "badge_id" integer, "created_at" timestamp) 
+SQL (31.7ms)  INSERT INTO schema_migrations (version) VALUES ('32')
+SQL (1.3ms)  COMMIT

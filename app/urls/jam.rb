@@ -63,6 +63,7 @@ post '/jam/:jam_id/manage/upload_file' do
   puts params[:mefile].inspect
   jam = Jam.find(params[:jam_id]).update_file(file)
   file.unlink
+  erb(:"jam/manage/file_uploaded")
 end
 
 get '/jam/:jam_id/manage/tag_artist' do

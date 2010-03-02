@@ -526,14 +526,17 @@ function loadJamManageFileActions(jamId){
 }
 
 function uploadJam(jamId){
-	var progressId = getNewXProgressId();
+
 	var iframeId = 'upload-jam-iframe';
 	var iframe = $('upload-jam-iframe-id');
-	iframe.hide();
-	window.frames[iframeId].$('upload-jam-form').action += ('?' + progressId);
-	var progressBar = new ProgressBar({width: '400px'});
-	progressBar.render('upload-progress');
-	window.setTimeout(function(){showUploadProgress(progressId, progressBar, jamId)}, 1000);
+	showLoadingMessage("upload-progress", "Please wait while the MP3 is being uploaded...");
+	
+//	var progressId = getNewXProgressId();	
+//	iframe.hide();
+//	window.frames[iframeId].$('upload-jam-form').action += ('?' + progressId);
+//	var progressBar = new ProgressBar({width: '400px'});
+//	progressBar.render('upload-progress');
+//	window.setTimeout(function(){showUploadProgress(progressId, progressBar, jamId)}, 1000);
 	return true;
 }
 
