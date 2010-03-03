@@ -188,6 +188,12 @@ def increment_site_counter(url)
   SiteCounter.visited(url)
 end
 
+def increment_music_counter(file_handle)
+  objs = Song.find_all_by_file_handle(file_handle) + Jam.find_all_by_file_handle(file_handle)
+  objs.each(&:visited)
+end
+  
+
 
 # Search
 

@@ -29,6 +29,7 @@
       <a href='http://www.twitter.com/jammm_in'>http://www.twitter.com/jammm_in</a>
     </div>
   </div>
+
   <%= vspace %>
   
   <div>
@@ -41,8 +42,8 @@
   </div>
 </div>
 
-<%= vspace 20 %>
 <% if not session_user? %>
+  <%= vspace 20 %>
   <a href='/request_invite'>
     <div class='text main-info display-inline-block simple-link'>
       <div class='position-absolute'><%= icon :invite %></div> 
