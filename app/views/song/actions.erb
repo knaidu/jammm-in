@@ -8,7 +8,7 @@
     </div>     
   </div>
 
-  <% if @session_user %>
+  <% if session_user? %>
     <div class='item'>
       <div class='item-text'>
         <% if @session_user and not @session_user.likes_song?(song) %>

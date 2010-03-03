@@ -8,10 +8,10 @@
     </div>     
   </div>
   
-  <% if @session_user? %>
+  <% if session_user? %>
     <div class='item'>
       <div class='item-text'>
-        <% if @session_user and not @session_user.likes_jam?(jam) %>
+        <% if session_user and not @session_user.likes_jam?(jam) %>
           Like
         <% elsif @session_user %>
           Unlike
