@@ -7,7 +7,7 @@
     <span class='grey text'>
       &nbsp;-
       <% jam.jam_artists.each do |jam_artist| %>
-        <%= profile_link jam_artist.artist %> <%= "(#{list_instruments(jam_artist.instruments)}), " if not jam_artist.instruments.empty? %> 
+        <%= profile_link jam_artist.artist %> <%= "(#{list_instruments(jam_artist.instruments)}). " if not jam_artist.instruments.empty? %> 
       <% end %>
     </span>
   </div>
