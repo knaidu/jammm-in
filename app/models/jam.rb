@@ -35,7 +35,6 @@ class Jam < ActiveRecord::Base
   
   def after_create
     return true if not self.artists.empty?
-    puts "is it here?"
     self.tag_artist(self.creator)
   end
   

@@ -14,7 +14,8 @@ class Notification < ActiveRecord::Base
     :song_publish => :song,
     :jam_comment => :jam,
     :song_message => :comments,
-    :jam_added_to_song => :add
+    :jam_added_to_song => :add,
+    :badge_added => :update
   }
   
   def self.add(data={}, notification_type="update")
@@ -77,6 +78,10 @@ class Notification < ActiveRecord::Base
     def comment
       Comment.find(@data["comment_id"]) rescue nil
     end 
+    
+    def badge
+      Badge.new(@data["badge_id"]) rescue nil
+    end    
     
   end
 

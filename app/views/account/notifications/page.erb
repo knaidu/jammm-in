@@ -2,6 +2,10 @@
 
 <%= section_header 'Unread notifications' %>
 <%= partial("/account/notifications/notifications", :locals => {:notifications => session_user?.unread_notifications}) %>
+<% if session_user?.unread_notifications.empty? %>
+  <div class='text'>You have no unread notifications</div>
+<% end %>
+
 
 <%= vspace 20 %>
 <%= partial(

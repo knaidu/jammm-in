@@ -49,11 +49,15 @@ class Feed < ActiveRecord::Base
     end
     
     def users
-      @data[:user_ids].map{|id| User.find(id)} rescue nil
+      @data["user_ids"].map{|id| User.find(id)} rescue nil
     end
     
     def user
-      User.find(@data[:user_id]) or @data[:user_ids].map{|id| User.find(id)} rescue nil
+      users[0]
+    end
+    
+    def badge
+      Badge.new(@data["badge_id"]) rescue nil
     end
     
   end
