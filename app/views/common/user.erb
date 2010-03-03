@@ -12,13 +12,13 @@
 					<a class='simple-link' title='songs' href='/<%= user.username %>/songs'><%= icon :song %></a>
 				</td>
 				<td>
-				 	<%= user.songs.size %>
+				 	<%= user.published_songs.size %>
 				</td>
 				<td>
 					<a class='simple-link' title='jams' href='/<%= user.username %>/jams'><%= icon :jam %></a>
 				</td>
 				<td>
-					<%= user.jams.size %>
+					<%= user.displayable_jams.size %>
 				</td>
 			</tr>
 		</table>	
