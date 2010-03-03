@@ -171,8 +171,8 @@ class Jam < ActiveRecord::Base
   end
   
   # Points to the ROOT of a Jam's Lineage
-  def adam
-    jam = self.father
+  def adam  
+    return nil unless (jam = self.father)
     while jam.origin_jam_id; jam = jam.father; end
     jam
   end
@@ -202,6 +202,13 @@ class Jam < ActiveRecord::Base
   
   def added_by_other
     (not added_by_user_id.nil?) and (added_by_user != creator)
+  end
+  
+  def depth
+    i = 1
+    jam = self
+    while jam.father; jam = jam.father; i += 1; end
+    i
   end
   
 end

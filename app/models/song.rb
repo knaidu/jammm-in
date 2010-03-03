@@ -140,7 +140,9 @@ class Song < ActiveRecord::Base
   
   def add_jam(jam, added_by_user=nil)
     raise "You cannot add this jam as it does not have a mp3 uploaded" if not jam.file_handle
-    jam = jam.make_copy("#{self.name} - " + jam.name, added_by_user) if jam.published or jam.song_jam # Adds a copy of a jam to the song, if jam already published
+    jam_adam = (jam.adam or jam)
+    jam_name = jam.name + " (#{(jam_adam.descendants.size + 1).to_s})"
+    jam = jam.make_copy(jam_name, added_by_user) if jam.published or jam.song_jam # Adds a copy of a jam to the song, if jam already published
     SongJam.create({:song_id => self.id, :jam_id => jam.id})
     
     # Sends notification to all the other song managers
