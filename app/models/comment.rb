@@ -2,6 +2,13 @@ class Comment < ActiveRecord::Base
   
   belongs_to :user
   
+  after_destroy after_destroy
+  
+  def after_destroy
+    Notification.delete_by_data("comment_id", self.id)
+    Feed.delete_by_data("comment_id", self.id)
+  end
+  
   def self.add(user, comment, for_type, for_type_id)
     comment = self.create({
       :user_id => user.id,
