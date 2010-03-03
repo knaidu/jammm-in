@@ -138,6 +138,7 @@ hr.w60-align-left {width: 60%; margin-left: 0; text-align: left}
 .visible {visibility: visible}
 .margin-left-20 {margin-left: 20px;}
 .size-12 {font-size: 12px}
+.size-11 {font-size: 11px;}
 .left-0 {left: 0px}
 .right-0 {right: 0px}
 
@@ -222,13 +223,16 @@ div.top-bar {background-color: #990000; height: 52px; color: white; text-align: 
 .main-info .music-title {vertical-align: top; font-size: 13px; letter-spacing: 1px; display: inline-block;}
 
 /* ACTIONS */
-.actions {
+.actions-panel {
 	<%= default_round %>;
 	background-color: <%= default_desc_bg_color %>;
 	color: <%= default_desc_text_color %>;
-	border: 1px solid <%= default_desc_border_color %>;;
-	padding: 10px;
+	border: 1px solid <%= default_desc_border_color %>;
+	height: 30px;
 }
+.actions-panel .item {padding: 6px 0px; float: left; }
+.actions-panel .item .item-text {display: inline-block; font-weight: normal; font-size: 11px; float: left; padding-right: 10px; padding-left: 10px; margin-top: 2px;}
+.actions-panel .item .item-icon {display: inline-block; float: left;}
 
 span.simple-delete {color: gray; cursor: pointer; padding: 0px 3px 3px 3px; font-weight: bold;}
 span.simple-delete:hover {color: white; background-color: <%= default_color %>; cursor: pointer; padding: 0px 3px 3px 3px; font-weight: bold;}

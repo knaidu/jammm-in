@@ -1,0 +1,61 @@
+<div class='actions-panel'>
+  <div class='item'>
+    <div class='item-text'>
+      Play
+    </div>
+    <div class='item-icon'>
+     <%= play song %> 
+    </div>     
+  </div>
+  <div class='item'>
+    <div class='item-text'>
+      <% if @session_user and not @session_user.likes_song?(song) %>
+        Like
+      <% elsif @session_user %>
+        Unlike
+      <% end %>
+    </div>
+    <div class='item-icon'>
+      <% if @session_user and not @session_user.likes_song?(song) %>
+    	  <span class='simple-link display-inline float-left' onClick='likeSong("<%= song.id %>")' title='Like'><%= icon :like %></span>
+      <% elsif @session_user %>
+    	  <span class='simple-link display-inline' onClick='unlikeSong("<%= song.id %>")' title='Unlike'><%= icon :unlike %></span>
+      <% end %>
+    </div>
+  </div>
+  <div class='item'>
+    <div class='item-text'>
+      Download
+    </div>
+    <div class='item-icon'>
+      <%= download song %>
+    </div>
+  </div>
+  <div class='item'>
+    <div class='item-text'>
+      Add
+    </div>
+    <div class='item-icon'>
+      <%= add_music_link song %>
+    </div>
+  </div>
+  <div class='item' style='float: right;'>
+    <div class='item-text'>
+      Manage
+    </div>
+    <div class='item-icon'>
+      <%= manage_song_link(song) %>
+    </div>
+  </div>  
+</div>
+
+<%= vspace %>
+<div class='float-right'>
+  <div class='float-left grey size-11' style='margin-top: 5px; margin-right: 5px;'>
+    Share: 
+  </div>
+  <div class='float-right'>
+    <%= twitter_share song %>
+    <%= facebook_share song %>
+  </div>
+</div>

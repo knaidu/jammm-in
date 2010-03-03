@@ -27,22 +27,4 @@
 </div>
 <br>
 
-<div>
-
-  <span class='float-left'><%= play song %></span>
-  </span class='float-left'>
-    <% if @session_user and not @session_user.likes_song?(song) %>
-    	<span class='simple-link' onClick='likeSong("<%= song.id %>")' title='Like'><%= icon :like %></span>
-    <% elsif @session_user %>
-    	<span class='simple-link' onClick='unlikeSong("<%= song.id %>")'><%= icon :unlike %></span>
-    <% end %>
-  </span>
-  <span class='float-left'><%= download song %></span>
-  <span class='float-left'><%= add_music_link song %></span>
-  <span class='float-right'><%= manage_song_link song %></span>
-</div>
-<%= vspace %>
-<div class='float-right'>
-  <%= twitter_share song %>
-  <%= facebook_share song %>
-</div>
+<%= partial("song/actions", :locals => {:song => song}) %>

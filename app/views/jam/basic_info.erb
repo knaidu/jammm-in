@@ -43,21 +43,5 @@
 	</div>
 </div>
 <br>
-<div class='float-left'>
-  <%= play jam %>
-  <% if @session_user and not @session_user.likes_jam?(jam) %>
-	  <span class='simple-link display-inline float-left' onClick='likeJam("<%= jam.id %>")' title='Like'><%= icon :like %></span>
-  <% elsif @session_user %>
-	  <span class='simple-link display-inline' onClick='unlikeJam("<%= jam.id %>")' title='Unlike'><%= icon :unlike %></span>
-  <% end %>
-  <%= download jam %>
-  <%= add_music_link jam %>
-</div>
 
-<div class='float-right'> <%= manage_jam_link(jam) %></div>
-<br class='clear-both'>
-<%= vspace %>
-<div class='float-right'>
-  <%= twitter_share jam %>
-  <%= facebook_share jam %>
-</div>
+<%= partial("jam/actions", :locals => {:jam => jam}) %>
