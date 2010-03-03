@@ -7,22 +7,26 @@
      <%= play jam %> 
     </div>     
   </div>
-  <div class='item'>
-    <div class='item-text'>
-      <% if @session_user and not @session_user.likes_jam?(jam) %>
-        Like
-      <% elsif @session_user %>
-        Unlike
-      <% end %>
+  
+  <% if @session_user? %>
+    <div class='item'>
+      <div class='item-text'>
+        <% if @session_user and not @session_user.likes_jam?(jam) %>
+          Like
+        <% elsif @session_user %>
+          Unlike
+        <% end %>
+      </div>
+      <div class='item-icon'>
+        <% if @session_user and not @session_user.likes_jam?(jam) %>
+      	  <span class='simple-link display-inline float-left' onClick='likeJam("<%= jam.id %>")' title='Like'><%= icon :like %></span>
+        <% elsif @session_user %>
+      	  <span class='simple-link display-inline' onClick='unlikeJam("<%= jam.id %>")' title='Unlike'><%= icon :unlike %></span>
+        <% end %>
+      </div>
     </div>
-    <div class='item-icon'>
-      <% if @session_user and not @session_user.likes_jam?(jam) %>
-    	  <span class='simple-link display-inline float-left' onClick='likeJam("<%= jam.id %>")' title='Like'><%= icon :like %></span>
-      <% elsif @session_user %>
-    	  <span class='simple-link display-inline' onClick='unlikeJam("<%= jam.id %>")' title='Unlike'><%= icon :unlike %></span>
-      <% end %>
-    </div>
-  </div>
+  <% end %>
+  
   <div class='item'>
     <div class='item-text'>
       Download
@@ -31,6 +35,7 @@
       <%= download jam %>
     </div>
   </div>
+  
   <div class='item'>
     <div class='item-text'>
       Add
@@ -39,6 +44,7 @@
       <%= add_music_link jam %>
     </div>
   </div>
+  
   <div class='item' style='float: right;'>
     <div class='item-text'>
       Manage
@@ -47,6 +53,7 @@
       <%= manage_jam_link(jam) %>
     </div>
   </div>  
+
 </div>
 
 <%= vspace %>
