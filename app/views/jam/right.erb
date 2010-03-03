@@ -1,10 +1,10 @@
-<%= section_header('Likes', {:icon => :like}) %>
+<%= section_header('Likes') %>
 <div id='jam-likes'>
 	<%= partial(:'common/likes', :locals => {:artists => @jam.liked_by}) %>
 </div>
 
 <br><br>
-<%= section_header('Comments', {:icon => :message}) %>
+<%= section_header('Comments') %>
 <div id='jam-comments' class='pad-5'>
 	<%= partial(:'common/comments', {
 		:locals => {

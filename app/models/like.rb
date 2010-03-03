@@ -21,7 +21,7 @@ class Like < ActiveRecord::Base
   
   def add_feed
     feed = Feed.add({:user_ids => [self.user.id], :"#{for_type}_id" => self.for_type_id}, "#{for_type}_like", "public")
-    feed.add_users(obj_from_data(for_type, for_type_id).artists)
+    feed.add_users([self.user])
   end
   
 end

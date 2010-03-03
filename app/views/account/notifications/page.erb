@@ -1,12 +1,6 @@
 <% total_unread = session_user?.unread_notifications.size %>
 
-<div class='main-info'>
-  <%= main_info_row('Unread Notifications', total_unread) %>
-  <%= main_info_hor_line %>
-  <%= main_info_row('Total (read) Notifications', session_user?.notifications.size) %>
-</div>
-
-<%= vspace 20 %>
+<%= section_header 'Unread notifications' %>
 <%= partial("/account/notifications/notifications", :locals => {:notifications => session_user?.unread_notifications}) %>
 
 <%= vspace 20 %>
@@ -14,6 +8,7 @@
   "/account/notifications/old_notifications", 
   :section_header => SectionHeader.new('Old (read) notifications'), 
   :collapsible => true, 
+  :collapsed => true,
   :locals => {:notifications => session_user?.read_notifications(20)}
 ) %>
 
