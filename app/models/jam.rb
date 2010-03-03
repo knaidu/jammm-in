@@ -40,7 +40,7 @@ class Jam < ActiveRecord::Base
   end
   
   def self.latest_displayable(count=:all)
-    self.all.select(&:displayable?).first(count)
+    self.find(:all, :order => "id DESC").select(&:displayable?).first(count)
   end
 
   def file
