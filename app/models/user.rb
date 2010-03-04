@@ -181,6 +181,7 @@ class User < ActiveRecord::Base
     self.profile_picture_file_handle = filename
     self.save
     sleep(3)
+    puts ENV.inspect
     puts "File: exists? : #{File.exists?(full_file_name)}"
     temp_img = Image.new(self.profile_picture)
     temp_img.resize_and_crop(150, 130)
