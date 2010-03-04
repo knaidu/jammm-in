@@ -30,7 +30,6 @@ class User < ActiveRecord::Base
   def after_create
     feed = Feed.add({:user_ids => [self.id]}, "user_created", "public")
     feed.add_users([self])
-    self.send_acknowledgement rescue true
   end
   
   def send_acknowledgement

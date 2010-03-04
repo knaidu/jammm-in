@@ -10,10 +10,11 @@ module UserUtils
       :name => user_info[:name],
       :username => user_info[:username],
       :password => user_info[:password],
-      :email => email,
+      :email => "prakash.raman.ka@gmail.com",
       :location => user_info[:location]
     })
     invite.mark_as_used if user
+    user.send_acknowledgement
     user
   end
   

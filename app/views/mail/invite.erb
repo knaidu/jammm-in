@@ -3,26 +3,39 @@
   signup_url = "http://jammm.in/signup?code=" + invite.code
 %>
 
-<% if invite.referrer %>
-  You have been invited by <b><%= invite.referrer.username %></b> (<%= invite.referrer.name %>) to join jamMm.in.
-<% else %>
-  You have been invited to join jamMm.in
-<% end %>
-<br><br>
 
-<b>jamMmin</b><br>
-jamMm.in is a music collaboration application.
-<br><br>
+<% 
+  heading_style = "color: #666" 
+  section_content_style = "margin-left: 20px" 
+%>
 
-Please <a href='<%= signup_url %>'>click here</a> to accept the invitation and create your account. 
+<div style="width:550px; font:12px arial, sans-serif; margin:0">
+  <div style="color: #990000 !important; font-size: 14px">JAMMMIN</div><%= vspace 20 %>
+  
+  <div style='<%= heading_style %>'>INVITE</div>
+  <div style='<%= section_content_style %>'>
+  
+    <% if invite.referrer %>
+      You have been invited by <b><%= invite.referrer.username %></b> (<%= invite.referrer.name %>) to join jamMm.in.
+    <% else %>
+      You have been invited to join jamMm.in.
+    <% end %>
+    <%= vspace %>
+    Please <a href='<%= signup_url %>'>click here</a> to accept the invitation and create your account. Or paste the below link in the address bar of your browser.
+    <%= vspace %>
+    <%= signup_url %>
+  </div>
+  
+  <%= vspace 20 %>
+  
+  <div style='<%= heading_style %>'>ABOUT US</div>
+  <div style='<%= section_content_style %>'>
+    jamMm.in is a music collaboration application. Our aim with jamMm.in is to facilitate the process of playing music within a group containing a diverse mix of musicians. We are trying to bring forward a way in which anyone can play with anyone or anyone's piece of music from anywhere.
+  </div>
+  <%= vspace 20 %>
 
-<br><br>
-Or paste the below link in the address bar of your browser.<br><br>
-<%= signup_url %>
-<br><br>
-<i>
-Regards,<br>
-jamMm.in<br>
-http://jammm.in<br>
-</i>
-
+  Regards,<br>
+  jamMm.in team<br>
+  invite@jammm.in, support@jammm.in<br>
+  http://jammm.in<br>
+</div>
