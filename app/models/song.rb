@@ -189,7 +189,7 @@ class Song < ActiveRecord::Base
     img = Image.new(song_picture)
     img.resize_and_crop(120, 120)
   rescue
-    sleep(5)
+    sleep(5) 
     img = Image.new(song_picture)
     img.resize_and_crop(120, 120)
   end
