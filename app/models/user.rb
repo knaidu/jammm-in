@@ -188,6 +188,8 @@ class User < ActiveRecord::Base
     puts "File: exists? : #{File.exists?(full_file_name)}"
     temp_img = Image.new(self.profile_picture)
     temp_img.resize_and_crop(150, 130)
+    true
+  rescue
     sleep(3)
     temp_img = Image.new(self.profile_picture)
     temp_img.resize_and_crop(150, 130)
