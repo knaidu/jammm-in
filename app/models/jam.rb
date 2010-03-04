@@ -211,4 +211,11 @@ class Jam < ActiveRecord::Base
     i
   end
   
+  def identical_ancester
+    jam = self
+    return jam unless self.father
+    while (jam.father and (self.file_handle == jam.father.file_handle)); jam = jam.father; end
+    jam
+  end
+  
 end

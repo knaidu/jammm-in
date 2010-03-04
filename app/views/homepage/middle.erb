@@ -2,7 +2,8 @@
 <%= partial("common/songs_in_cols", :locals => {:songs => Song.published(9), :cols => 2}) %>
 
 <%= section_header 'Jams' %>
-<%= partial("common/jams", :locals => {:jams => Jam.latest_displayable(9)}) %>
+<% jams = Jam.latest_displayable(9).map(&:identical_ancester).uniq %>
+<%= partial("common/jams", :locals => {:jams => jams}) %>
 
 <%= vspace 20 %>
 
