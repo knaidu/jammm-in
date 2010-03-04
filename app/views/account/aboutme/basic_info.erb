@@ -12,7 +12,7 @@
 	<%= vspace %>
 	
 	<%= field 'Email' %>
-	<input type='text' name='email' value='<%= (session_user?.email rescue '') %>'>
+	<input type='text' name='email' value='<%= (session_user?.email rescue '') %>' READONLY DISABLED style='background-color: #dcdcdc'>
 	<%= vspace %>
 	
 	<input type='button' value='Save' onClick='submitForm("<%= form_id %>", "<%= response_id %>")'>
