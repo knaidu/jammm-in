@@ -182,6 +182,9 @@ class User < ActiveRecord::Base
     self.save
     sleep(3)
     puts ENV.inspect
+    puts "------------------------------------------"
+    puts `ls -la /home/jammmin/storage`
+    puts "------------------------------------------"
     puts "File: exists? : #{File.exists?(full_file_name)}"
     temp_img = Image.new(self.profile_picture)
     temp_img.resize_and_crop(150, 130)
