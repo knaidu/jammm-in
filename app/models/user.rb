@@ -176,10 +176,12 @@ class User < ActiveRecord::Base
     storage_dir = ENV['STORAGE_DIR']
     filename = new_file_handle_name(false)
     delete_profile_picture
-    File.copy(file.path, storage_dir + "/" + filename)
+    full_file_name = storage_dir + "/" + filename
+    File.copy(file.path, full_file_name)
     self.profile_picture_file_handle = filename
     self.save
     sleep(3)
+    puts "File: exists? : #{File.exists?(full_file_name)}"
     temp_img = Image.new(self.profile_picture)
     temp_img.resize_and_crop(150, 130)
     true
