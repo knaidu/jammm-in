@@ -7,7 +7,6 @@ require 'digest/md5'
 require 'pony'
 require 'net/http'
 
-
 set :public, File.dirname(__FILE__) + '/public'
 enable :sessions
 
@@ -31,6 +30,10 @@ end
 get '/' do
   @layout_info = {"left_panel" => "homepage/left", "middle_panel" => "homepage/middle", "right_panel" => "homepage/right"}
   erb(:'body/structure')
+end
+
+get '/env' do
+  ENV.inspect
 end
 
 # Url Catcher for .css files. If not found, it will look for a static file.

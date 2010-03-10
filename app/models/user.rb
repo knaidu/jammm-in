@@ -30,6 +30,12 @@ class User < ActiveRecord::Base
   def after_create
     feed = Feed.add({:user_ids => [self.id]}, "user_created", "public")
     feed.add_users([self])
+    self.send_acknowledgement rescue true
+  end
+  
+  def send_acknowledgement
+    cmd = "ruby #{ENV["WEBSERVER_ROOT"]}/scripts/mail/account_acknowledgement.rb #{self.id}"
+    run(cmd)
   end
   
   def update_basic_info(info)

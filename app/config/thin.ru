@@ -7,7 +7,7 @@ env_vars = {
   'STORAGE_DIR' => "/home/jammmin/storage"
 }
 
-ENV.update(env_vars)
+#ENV.update(env_vars)
 
 log = File.new("/home/jammmin/log/sinatra.log", "a")
 STDOUT.reopen(log)

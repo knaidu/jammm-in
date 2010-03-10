@@ -1,5 +1,4 @@
 dev:
-
   adapter: postgresql
   database: garage
   username: jammmin
