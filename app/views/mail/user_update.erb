@@ -9,66 +9,71 @@
   styles = email_styles
 %>
 
-<%= update.inspect %>
-
 <div style="<%= styles[:layout] %>">
   <div style="<%= styles[:main_heading] %>;">JAMMMIN UPDATE</div>
   <%= vspace 20 %>
-  
-  <div style="<%= styles[:section_heading] %>;">MESSAGES</div>
-  <div style="<%= styles[:section_content] %>;">
-    <% update[:messages].each { |notification| 
-      message = notification.data.message
-    %>
-     <div style='overflow: auto; display: block'>
-       <span><%= message.user.username %>: </span>
-       <span><%= message.body %></span>
-     </div>
-    <%  } %>
-  </div>
-  <%= vspace 20 %>
 
-  <div style="<%= styles[:section_heading] %>">SONG MESSAGES</div>
-  <%= vspace 20 %>  
-
-  <div style="<%= styles[:section_heading] %>">INVITES</div>
-  <%= vspace 20 %>
-  
-  <div style="<%= styles[:section_heading] %>">BADGES</div>
-  <%= vspace 20 %>
-  
-  <div style="<%= styles[:section_heading] %>">FOLLOWERS</div>
-  <%= vspace 20 %>
-  
-</div>
-
-<!-- NEW FORMAT ENDS HERE -->
-
-<div style='padding: 10px'>
-  <h4>
-    <img src="http://jammm.in/images/icons/favicon.png" height='16px' style='float: left; padding-right: 10px'>
-    jamMm.in update
-  </h4>
-
-  You have <%= user.unread_notifications.size %> new updates
-  <br><br>
-  <% update_numbers.each do |k,v| %>
-    <div>
-      <% 
-        next if v < 1 
-        key = k.to_s.split("_").map{|t| t.capitalize}.join(" ")
+  <% unless update[:messages].empty? %>  
+    <div style="<%= styles[:section_heading] %>;">MESSAGES</div>
+    <div style="<%= styles[:section_content] %>;">
+      <% update[:messages].each { |notification| 
+        message = notification.data.message
       %>
-      
-      <div style="float: left; width: 100px; "><%= key %>:</div> <%= v %>
+       <div style='overflow: auto; display: block'>
+         <span><%= message.user.username %>: </span>
+         <span><%= message.body %></span>
+       </div>
+      <%  } %>
     </div>
+    <%= vspace 20 %>
+  <% end %>
+
+  <% unless update[:song_messages].empty? %>
+    <div style="<%= styles[:section_heading] %>">SONG MESSAGES</div>
+    <div style="<%= styles[:section_content] %>;">
+      <% update[:song_messages].each { |notification| 
+        song_message = notification.data.song_message
+      %>
+       <div style='overflow: auto; display: block'>
+         <div>Song: <%= song_message.song.name %>. </div>
+         <div style='margin-left: 20px;'>
+           <span><%= song_message.user.username %>: </span>
+           <span><%= song_message.message %></span>
+         </div>
+       </div>
+       <%= vspace %>
+      <%  } %>
+    </div>
+    <%= vspace 20 %>  
+  <% end %>
+
+  <% unless update[:badges].empty? %>
+    <div style="<%= styles[:section_heading] %>">BADGES</div>
+    <div style="<%= styles[:section_content] %>;">  
+      <% update[:badges].each do |notification| %>
+        You have earned the "<%= notification.data.badge.name %>" badge
+      <% end %>
+    </div>
+    <%= vspace 20 %>
   <% end %>
   
-<%= vspace 20 %> 
-Click here to view the notifications <br><br>
+  <% unless update[:followers].empty? %>
+    <div style="<%= styles[:section_heading] %>">FOLLOWERS</div>
+    <div style="<%= styles[:section_content] %>;">  
+      You are being followed by <%= update[:followers].map{|n| n.data.follower.followed_by.username}.join(", ") %>
+    </div>
+    <%= vspace 20 %>
+  <% end %>
+  
+  To view all your notification <a href="http://jammm.in/account/notifications">click here</a>
+  <%= vspace 20 %>
 
-<% url = "http://jammm.in/account/notifications" %>
-<a href="<%= url %>"><%= url %></a>
 
+  Regards,<br>
+  jamMm.in team<br>
+  support@jammm.in<br>
+  http://jammm.in
+    
 </div>
-</body>
-</html>
+
+
