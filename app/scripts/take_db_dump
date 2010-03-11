@@ -1,0 +1,4 @@
+#!/bin/sh
+
+. /home/jammmin/.profile
+/usr/bin/ruby /home/jammmin/webserver/app/scripts/take_db_dump.rb
