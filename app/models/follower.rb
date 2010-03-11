@@ -12,8 +12,14 @@ class Follower < ActiveRecord::Base
   def self.add(user, follows_user)
     row = self.create({:user_id => user.id, :follows_user_id => follows_user.id})
     feed = Feed.add({:user_ids => [user.id, follows_user.id]}, "user_follows")
-    feed.add_users([user, follows_user])
+    feed.add_users([user])
+    row.send_notification
     row
+  end
+  
+  def send_notification
+    notification = Notification.add({:follower_id => self.id}, "user_follows")
+    notification.add_users([self.follows])
   end
   
   def self.remove(user, follows_user)

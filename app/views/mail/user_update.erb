@@ -1,6 +1,3 @@
-  <html>
-<body>
-<%= partial("body/includes") %>
 <% 
   user = User.find(user_id) 
   update = user.get_sorted_update
@@ -8,7 +5,44 @@
   update.each do |k,v|
     update_numbers[k] = v.size
   end
+  
+  styles = email_styles
 %>
+
+<%= update.inspect %>
+
+<div style="<%= styles[:layout] %>">
+  <div style="<%= styles[:main_heading] %>;">JAMMMIN UPDATE</div>
+  <%= vspace 20 %>
+  
+  <div style="<%= styles[:section_heading] %>;">MESSAGES</div>
+  <div style="<%= styles[:section_content] %>;">
+    <% update[:messages].each { |notification| 
+      message = notification.data.message
+    %>
+     <div style='overflow: auto; display: block'>
+       <span><%= message.user.username %>: </span>
+       <span><%= message.body %></span>
+     </div>
+    <%  } %>
+  </div>
+  <%= vspace 20 %>
+
+  <div style="<%= styles[:section_heading] %>">SONG MESSAGES</div>
+  <%= vspace 20 %>  
+
+  <div style="<%= styles[:section_heading] %>">INVITES</div>
+  <%= vspace 20 %>
+  
+  <div style="<%= styles[:section_heading] %>">BADGES</div>
+  <%= vspace 20 %>
+  
+  <div style="<%= styles[:section_heading] %>">FOLLOWERS</div>
+  <%= vspace 20 %>
+  
+</div>
+
+<!-- NEW FORMAT ENDS HERE -->
 
 <div style='padding: 10px'>
   <h4>

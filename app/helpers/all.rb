@@ -254,4 +254,15 @@ def bug_statuses
   DATA["bug_statuses"]
 end
 
+# EMAIL_STYLES
+
+def email_styles
+  {
+    :layout => "width:550px; font:12px arial, sans-serif;margin:0;",
+    :main_heading => "color: #990000 !important; font-size: 14px;",
+    :section_heading => "color: #666; margin-bottom: 10px;",
+    :section_content => "margin-left: 20px;"
+  }
+end
+
 load 'helpers/profile.rb'

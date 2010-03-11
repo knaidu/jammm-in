@@ -6,7 +6,7 @@ class Notification < ActiveRecord::Base
   
   # Mapping of Notifications-Types to ICONs
   ICON = {
-    :follows => :following,
+    :user_follows => :following,
     :comment => :comments,
     :jam_tag => :jam,
     :new_message => :msg,
@@ -82,6 +82,10 @@ class Notification < ActiveRecord::Base
     def badge
       Badge.new(@data["badge_id"]) rescue nil
     end    
+    
+    def follower
+      Follower.find(@data["follower_id"]) rescue nil
+    end
     
   end
 
