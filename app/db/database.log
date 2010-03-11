@@ -1,6 +1,6 @@
-SQL (0.2ms)  SET client_min_messages TO 'panic'
-SQL (0.1ms)  SET client_min_messages TO 'notice'
-SQL (0.9ms)  SELECT version FROM schema_migrations
+SQL (0.3ms)  SET client_min_messages TO 'panic'
+SQL (0.2ms)  SET client_min_messages TO 'notice'
+SQL (12.2ms)  SELECT version FROM schema_migrations
 Migrating to CreateTestTable (1)
 Migrating to CreateUserTable (2)
 Migrating to CreateSongsTable (3)
@@ -34,7 +34,11 @@ Migrating to CreateInvitesTable (30)
 Migrating to CreateConnectedSitesTables (31)
 Migrating to CreateUserBadgesTable (32)
 Migrating to CreateDumpsTable (33)
-SQL (0.1ms)  BEGIN
-SQL (148.9ms)  CREATE TABLE "dumps" ("id" serial primary key, "created_at" timestamp, "file_handle" character varying(255)) 
-SQL (0.4ms)  INSERT INTO schema_migrations (version) VALUES ('33')
-SQL (0.8ms)  COMMIT
+Migrating to ChangeStringColumnsToText (34)
+SQL (29.0ms)  BEGIN
+SQL (461.5ms)  ALTER TABLE "bugs_body" ALTER COLUMN "message" TYPE text
+SQL (250.0ms)  ALTER TABLE "user_message_streams" ALTER COLUMN "body" TYPE text
+SQL (59.4ms)  ALTER TABLE "song_manage_messages" ALTER COLUMN "message" TYPE text
+SQL (63.6ms)  ALTER TABLE "comments" ALTER COLUMN "comment" TYPE text
+SQL (24.5ms)  INSERT INTO schema_migrations (version) VALUES ('34')
+SQL (83.0ms)  COMMIT
