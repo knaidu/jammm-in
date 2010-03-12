@@ -3,7 +3,7 @@ class Badge
   attr_accessor :name, :image_url
 
   def self.all
-    BADGES_DATA["types"].keys.map{|id| Badge.find(id)}
+    BADGES_DATA["types"].keys.sort.map{|id| Badge.find(id)}
   end
   
   def self.find(id)
