@@ -269,4 +269,8 @@ class User < ActiveRecord::Base
     UserBadge.create({:user_id => self.id, :badge_id => badge.id})
   end
   
+  def send_user_update?
+    get_sorted_update.delete_keys(:general).reduce(false) do |initial, arr| initial or (not arr[1].empty?);  end
+  end
+  
 end

@@ -14,7 +14,7 @@ User.all.each do |user|
     next
   end
   
-  if user.unread_notifications.size < 1
+  if user.send_user_update?
     cron_log("There are no notifications to be send to #{user.username}")
     next
   end 
