@@ -3,7 +3,9 @@ types:
   1: 
     name: Founder
     image: founder.png
+    description: Founder of jamMm.in
     
   2: 
     name: Alpha Musician
     image: alphamusician.png
+    description: A chosen set of musicians that were involved in the early development/production of jamMm.in. These musicians helped define jamMm.in.

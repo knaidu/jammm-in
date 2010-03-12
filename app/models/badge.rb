@@ -24,6 +24,10 @@ class Badge
     @badge["id"]
   end
   
+  def description
+    @badge["description"]
+  end
+  
   def image_url
     BADGES_DATA["base_images_url"] + "/" + @badge["image"]  
   end 
