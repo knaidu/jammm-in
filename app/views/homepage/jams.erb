@@ -1,5 +1,7 @@
 <%= section_header 'Jams' %>
-<%= partial ("common/jams", :locals => {:jams => Jam.published}) %>
+
+<% jams = Jam.latest_displayable(:all).map(&:identical_ancester).uniq %>
+<%= partial ("common/jams", :locals => {:jams => jams}) %>
 
 <%= js_start %>
 	setSelectedMenuItem('menu-item-jams')
