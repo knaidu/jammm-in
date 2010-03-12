@@ -60,6 +60,7 @@ end
 
 load 'urls/signin.rb'
 load 'urls/signup.rb'
+load 'urls/badge.rb'
 load 'urls/help.rb'
 load 'urls/admin.rb'
 load 'urls/search.rb'

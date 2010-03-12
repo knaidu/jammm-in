@@ -2,12 +2,12 @@ class Badge
 
   attr_accessor :name, :image_url
 
-  def self.list
-    
+  def self.all
+    BADGES_DATA["types"].keys.map{|id| Badge.find(id)}
   end
   
   def self.find(id)
-    
+    Badge.new(id)
   end  
   
   def initialize(id)
@@ -27,6 +27,10 @@ class Badge
   def image_url
     BADGES_DATA["base_images_url"] + "/" + @badge["image"]  
   end 
+  
+  def users
+    UserBadge.find_all_by_badge_id(self.id).map(&:user)
+  end
   
 end
 

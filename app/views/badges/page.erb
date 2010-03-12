@@ -1,0 +1,20 @@
+<%= section_header 'Badges' %>
+Badges are offered by the system to users depending on their contribution. There are multiple badges and artists can have multiple badges. Each badge carries a meaning with it. Below are all the badges the system currently offers.
+<%= vspace 20 %>
+
+<% Badge.all.each do |badge| %>
+  <div class='position-relative' style='margin-bottom: 20px; min-height: 38px'>
+    <div class='position-absolute'>
+      <img height="32px" src="<%= badge.image_url %>">
+    </div>
+    <div class='position-relative' style="margin-top: 1px; margin-left: 38px"> 
+      <b><%= badge.name %></b>
+      <div class='text'>How nice things are</div>
+      
+      <%= vspace %>
+      <%= list_thumbnails badge.users.shuffle.first(5) %>
+    </div>
+  </div>
+<% end %>
+
+
