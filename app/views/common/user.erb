@@ -5,7 +5,7 @@
     <%= profile_picture_thumbnail user %>
 	</div>
 	<div class='position-relative' style='margin-left: 35px'>
-		<div style='overflow: hidden; text-overflow: ellipsis'><a class='bold simple-link' href='/<%= user.username %>'><%= user.username %></a></div>
+		<div style='text-overflow:ellipsis; overflow:hidden; white-space:nowrap;'><a class='bold simple-link' href='/<%= user.username %>'><%= user.username %></a></div>
 		<div style='margin-top: 2px'>
 		  <div class='float-left' style='padding-right: 5px'>
 		    <a class='simple-link' title='songs' href='/<%= user.username %>/songs'><%= icon :song %></a>
