@@ -66,4 +66,10 @@
 <% end %>
 
 <%= vspace 20 %>
+<div class='text'>
+  <%= section_header 'New Users' %>
+  <%= partial("common/users", :locals => {:users => User.latest(9), :cols => 2}) %>
+</div>
+
+<%= vspace 20 %>
 <%= partial("/homepage/latest_developments", :section_header => SectionHeader.new("Latest Developments"), :collapsible => true) %>
