@@ -47,10 +47,6 @@ get '/test' do
   {:done => true, :failed => false}.to_json
 end
 
-get '/identify' do
-  puts `identify`.to_s
-end
-
 get '/aboutus' do
   @layout_info = {"left_panel" => "homepage/left", "middle_panel" => "help/aboutus", "right_panel" => "homepage/right"}
   erb(:'body/structure')

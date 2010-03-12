@@ -185,17 +185,6 @@ class User < ActiveRecord::Base
     File.copy(file.path, full_file_name)
     self.profile_picture_file_handle = filename
     self.save
-    sleep(3)
-    puts ENV.inspect
-    puts "------------------------------------------"
-    puts `ls -la /home/jammmin/storage`
-    puts "------------------------------------------"
-    puts "File: exists? : #{File.exists?(full_file_name)}"
-    temp_img = Image.new(self.profile_picture)
-    temp_img.resize_and_crop(150, 130)
-    true
-  rescue
-    sleep(3)
     temp_img = Image.new(self.profile_picture)
     temp_img.resize_and_crop(150, 130)
     true
