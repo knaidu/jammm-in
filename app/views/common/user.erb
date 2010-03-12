@@ -1,26 +1,27 @@
 <% show_actions ||= nil %>
 
-<div class='w100'>
-	<div class='float-left' style='width: 32px; padding-top: 5px; padding-bottom: 15px'>
+<div class='position-relative' style='min-height: 32px; margin-bottom: 10px'>
+	<div class='position-absolute' style='width: 32px'>
     <%= profile_picture_thumbnail user %>
 	</div>
-	<div class='float-left' style='padding-top: 0px'>
-		<a class='bold simple-link' style='padding-left: 3px' href='/<%= user.username %>'><%= user.username %></a><br>
-		<table class='text'>
-			<tr>
-				<td>		
-					<a class='simple-link' title='songs' href='/<%= user.username %>/songs'><%= icon :song %></a>
-				</td>
-				<td>
-				 	<%= user.published_songs.size %>
-				</td>
-				<td>
-					<a class='simple-link' title='jams' href='/<%= user.username %>/jams'><%= icon :jam %></a>
-				</td>
-				<td>
-					<%= user.displayable_jams.size %>
-				</td>
-			</tr>
-		</table>	
-	</div>
+	<div class='position-relative' style='margin-left: 35px'>
+		<div style='overflow: hidden'><a class='bold simple-link' href='/<%= user.username %>'><%= user.username %></a></div>
+		<div style='margin-top: 2px'>
+		  <div class='float-left' style='padding-right: 5px'>
+		    <a class='simple-link' title='songs' href='/<%= user.username %>/songs'><%= icon :song %></a>
+		  </div>
+		
+		  <div class='float-left' style='padding-top: 2px; padding-right: 5px'>
+        <%= user.published_songs.size %>
+      </div>
+
+		  <div class='float-left' style='padding-right: 5px'>
+        <a class='simple-link' title='jams' href='/<%= user.username %>/jams'><%= icon :jam %></a>
+      </div>
+      
+		  <div class='float-left' style='padding-top: 2px'>
+        <%= user.displayable_jams.size %>
+	    </div>
+    </div>
+  </div>
 </div>
