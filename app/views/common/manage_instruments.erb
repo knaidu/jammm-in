@@ -10,7 +10,7 @@
 
 	<div class='display-inline-block pad-right-5'>
 		<select id='<%= instruments_select_div_id %>'>
-			<% (Instrument.all - instruments).each do |instrument| %>
+			<% (Instrument.all - instruments).sort_by(&:name).each do |instrument| %>
 				<option value="<%= instrument.id %>"><%= instrument.name %>
 			<% end %>
 		</select>	
