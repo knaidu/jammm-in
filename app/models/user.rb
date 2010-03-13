@@ -248,10 +248,10 @@ class User < ActiveRecord::Base
     sql("update user_notifications set read=true where user_id=#{self.id}")
   end
   
-  def get_sorted_update
+  def get_sorted_update(after_time=Time.at(0))
     update = {}
     look_for = {:messages => "new_message", :song_messages => "song_message", :invites => "song_invite", :followers => "user_follows", :badges => "badge_added"}
-    notifications = self.unread_notifications
+    notifications = self.unread_notifications.select {|n| n.created_at > after_time}
     look_for.each {|k,v|
       update[k] = notifications.select{|n| n.notification_type == v}
       notifications -= update[k]
@@ -269,8 +269,8 @@ class User < ActiveRecord::Base
     UserBadge.create({:user_id => self.id, :badge_id => badge.id})
   end
   
-  def send_user_update?
-    get_sorted_update.delete_keys(:general).reduce(false) do |initial, arr| initial or (not arr[1].empty?);  end
+  def send_user_update?(after_time=Time.at(0))
+    get_sorted_update(after_time).delete_keys(:general).reduce(false) do |initial, arr| initial or (not arr[1].empty?);  end
   end
   
 end
