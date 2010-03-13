@@ -8,18 +8,20 @@
   <%= field 'You are a' %> 
     <select name='is_a'>
       <option>Singer-Songwriter</option>
+      <option>Instrumentalist</option>
       <option>Enthusiast</option>
     </select>
   <%= vspace %>
   <%= field 'Description' %> <textarea name='description'></textarea>
-  <%= vspace %>  
+  <%= vspace %>
+  <div class='text'>
+    Name and Email are mandatory<br>
+    Please include links to your work in the description.
+  </div>
+  <%= vspace 20 %>
   <input type='submit' value='Send Request'>
 </form>
 <br>
-<span class='text'>
-Name and email are mandatory.<br>
-Kindly do fill in a description as it will help our system analysis.
-</span>
 
 <%= vspace %>
 <div id='form-response'></div>
