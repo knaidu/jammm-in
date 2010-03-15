@@ -1,9 +1,9 @@
 <% 
   items = [
-    {:text => 'My Home', :link => "/account", :icon => :home},
+    (session_user? ? {:text => 'My Home', :link => "/account", :icon => :home} : nil),
     session_user? ? ({:text => 'My Profile', :link => "/#{session_user?.username}", :icon => :profile}) : nil,
     {:text => 'Back', :link => "javascript: history.go(-1)", :icon => :back},
-    {:text => 'Jammm.in', :link => "/", :icon => :jammmin},
+    {:text => 'Jammm.in', :link => "/", :icon => :favicon},
   ].compact
 %>
 
