@@ -11,7 +11,7 @@
 		    <a class='simple-link' title='songs' href='/<%= user.username %>/songs'><%= icon :song %></a>
 		  </div>
 		
-		  <div class='float-left' style='padding-top: 2px; padding-right: 5px'>
+		  <div class='float-left text' style='padding-top: 2px; padding-right: 5px'>
         <%= user.published_songs.size %>
       </div>
 
@@ -19,7 +19,7 @@
         <a class='simple-link' title='jams' href='/<%= user.username %>/jams'><%= icon :jam %></a>
       </div>
       
-		  <div class='float-left' style='padding-top: 2px'>
+		  <div class='float-left text' style='padding-top: 2px'>
         <%= user.displayable_jams.size %>
 	    </div>
     </div>
