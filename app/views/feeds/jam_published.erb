@@ -3,6 +3,6 @@
 	users = fhlp_get_users(feed)
 %>
 <div>
-	Jam <%= jam_link(jam) %> by <%= list_artists(users) %> has been published<br>
+	<%= list_artists(users) %>  published the Jam <%= jam_link(jam) %><br>
 	<%= play jam %>
 </div>
