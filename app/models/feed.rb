@@ -60,6 +60,19 @@ class Feed < ActiveRecord::Base
       Badge.new(@data["badge_id"]) rescue nil
     end
     
+    def jam
+      Jam.find(@data["jam_id"]) rescue nil
+    end
+    
+    def song
+      Song.find(@data["song_id"]) rescue nil
+    end
+    
+    def comment
+      Comment.find(@data["comment_id"]) rescue nil
+    end
+    
+    
   end
   
 end

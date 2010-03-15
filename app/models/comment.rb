@@ -17,6 +17,7 @@ class Comment < ActiveRecord::Base
       :for_type_id => for_type_id
     })
     comment.add_notification
+    comment.add_feed
     comment
   end
   
@@ -34,7 +35,16 @@ class Comment < ActiveRecord::Base
       :"#{for_type}_id" => for_type_id,
       :comment_id => self.id
     }, "comment")
-    notification.add_users(obj_from_data(for_type, for_type_id).artists)
+    notification.add_users(obj_from_data(for_type, for_type_id).artists - [user])
+  end
+  
+  def add_feed
+    feed = Feed.add({
+      :user_ids => [user.id],
+      :"#{for_type}_id" => for_type_id,
+      :comment_id => self.id
+    }, "#{for_type}_comment")
+    feed.add_users(obj_from_data(for_type, for_type_id).artists - [user])
   end
   
 end
