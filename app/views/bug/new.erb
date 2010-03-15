@@ -26,7 +26,10 @@
     var onSuccess = function(){loadUrl('/bug/all');}
     showLoadingMessage('form-response', 'Please wait while the bug is being forwarded...');
     var form = $('form-bug-create');
-    form.request({onSuccess: onSuccess});
+    form.request({
+      onSuccess: onSuccess,
+      onFailure: loadResponseFn('form-response')
+    });
   }
   
 	setSelectedMenuItem('menu-item-new-bug');

@@ -5,6 +5,7 @@ class BugBody < ActiveRecord::Base
   before_create {|record| record.created_at = Time.now}
   
   def self.add(bug, message, user=nil)
-    self.create(:bug_id => bug.id, :message => message, :user_id => (user.id rescue nil))
+    user_id = user.nil? ? nil : user.id
+    self.create(:bug_id => bug.id, :message => message, :user_id => user_id)
   end
 end
