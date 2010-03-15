@@ -23,7 +23,7 @@
 
 <%= js_start %>
   function createBug(){
-    var onSuccess = function(){loadUrl('/bug/all');}
+    var onSuccess = function(){loadUrl('/bug/view/open');}
     showLoadingMessage('form-response', 'Please wait while the bug is being forwarded...');
     var form = $('form-bug-create');
     form.request({
