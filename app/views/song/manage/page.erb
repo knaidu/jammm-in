@@ -55,7 +55,7 @@
 
   <%= section_header 'STEP 5: Lyrics' %>
   <form action='/song/<%= @song.id %>/manage/add_lyrics' method='post' onsubmit='return false' id='song-lyrics-form'>
-  	<textarea name='lyrics'><%= @song.lyrics %></textarea>
+  	<textarea name='lyrics' style='height: 150px; width: 250px'><%= @song.lyrics %></textarea>
   	<br><br>
   	<input type='submit' value='Save' onclick="submitForm('song-lyrics-form', 'song-lyrics-form-response')">
   </form>  
