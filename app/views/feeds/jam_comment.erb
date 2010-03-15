@@ -1,2 +1,5 @@
 <%= profile_link feed.dataObj.user %> commented on the jam <%= jam_link feed.dataObj.jam %><br>
-<div class='text grey comment'><%= feed.dataObj.comment.comment %></div>
+<div class='comment'>
+  <div class='icon'><%= icon :comments %></div>
+  <div class='content'><%= feed.dataObj.comment.comment %></div>
+</div>
