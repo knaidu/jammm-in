@@ -14,7 +14,7 @@ User.all.each do |user|
     next
   end
   
-  if not user.send_user_update?
+  if not user.send_user_update?(Time.now - (1.day.to_i))
     cron_log("There are no notifications to be send to #{user.username}")
     next
   end 
