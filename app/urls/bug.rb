@@ -17,7 +17,7 @@ end
 
 get '/bug/view/:bug_status' do
   @layout_info = {"middle_panel" => 'bug/view_by_status', 'left_panel' => 'homepage/left', 'right_panel' => "bug/right"}
-  @bugs = Bug.find_all_by_status(param?(:bug_status))
+  @bugs = Bug.find_all_by_status(param?(:bug_status), {:order => "id DESC"})
   erb(:"body/structure")
 end
 
