@@ -22,46 +22,14 @@
 <hr class='light'>
 <%= vspace %>
 
-
-<div class='main-info text'>
-  <div>
-    <div class='float-left pad-right-5'>
-      <img src='/images/common/facebook.png' height='24px'>
-    </div>
-    <div class='float-left' style='margin-top: 5px'>
-      <a href='http://www.facebook.com/jammymusic'>http://www.facebook.com/jammymusic</a>
-    </div>
-  </div>
-  <%= vspace %>
-  
-  <div>
-    <div class='float-left pad-right-5'>
-      <img src='/images/common/twitter.png' height='24px'>
-    </div>
-    <div class='float-left' style='margin-top: 5px'>
-      <a href='http://www.twitter.com/jammm_in'>http://www.twitter.com/jammm_in</a>
-    </div>
-  </div>
-
-  <%= vspace %>
-  
-  <div>
-    <div class='float-left pad-right-5'>
-      <img src='/images/common/blogger.jpg' height='24px'>
-    </div>
-    <div class='float-left' style='margin-top: 5px'>
-      <a href='http://blog.jammm.in'>http://blog.jammm.in</a>
-    </div>
-  </div>
-</div>
+<a href='http://www.facebook.com/jammymusic'><img src='/images/common/facebook-page.png' height='30px'></a>
+<a href='http://www.twitter.com/jammm_in'><img src='/images/common/twitter-page.png' height='30px'></a>
+<a href='http://blog.jammm.in'><img src='/images/common/blog-page.png' height='30px'></a>
 
 <% if not session_user? %>
   <%= vspace 20 %>
   <a href='/request_invite'>
-    <div class='text main-info display-inline-block simple-link'>
-      <div class='position-absolute'><%= icon :invite %></div> 
-      <div class='position-relative margin-left-20' style='top: 2px'>Request an Invite</div>
-    </div>
+    <img src='/images/common/request-invite.png' height='30px'>
   </a>
 <% end %>
 
