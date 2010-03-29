@@ -22,15 +22,11 @@
 <hr class='light'>
 <%= vspace %>
 
-<a href='http://www.facebook.com/jammymusic'><img src='/images/common/facebook-page-2.png' height='30px'></a>
-<a href='http://www.twitter.com/jammm_in'><img src='/images/common/twitter-page-2.png' height='30px'></a>
-<a href='http://blog.jammm.in'><img src='/images/common/blog-page-2.png' height='30px'></a>
-
+<a href='http://www.facebook.com/jammymusic'> <img src='/images/common/facebook-page-2.png' height='30px'></a><br>
+<a href='http://www.twitter.com/jammm_in'><img src='/images/common/twitter-page-2.png' height='30px'></a><br>
+  <a href='http://blog.jammm.in'><img src='/images/common/blog-page-2.png' height='30px'></a><br>
 <% if not session_user? %>
-  <%= vspace 20 %>
-  <a href='/request_invite'>
-    <img src='/images/common/request-invite-2.png' height='30px'>
-  </a>
+  <a href='/request_invite'><img src='/images/common/request-invite-2.png' height='30px'></a>
 <% end %>
 
 <%= vspace 20 %>
