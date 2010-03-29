@@ -1,6 +1,21 @@
+<% 
+  flash_vars = "url=/file/#{@music_meta_data[:file]}&name=#{@music_meta_data[:title]}" if @music_meta_data
+%>
+
 <OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="" ID="jammminplayer" WIDTH="260px" HEIGHT="50px"> 
 	<PARAM NAME="movie" VALUE="/swf/player.swf"> 
-	<EMBED play="false" swliveconnect="true" name="jammminplayer" src="/swf/player.swf" quality="high" bgcolor="#990000" WIDTH="260px" HEIGHT="35px" TYPE="application/x-shockwave-flash"></EMBED> 
+	<EMBED 
+	  play="false" 
+	  swliveconnect="true" 
+	  name="jammminplayer" 
+	  src="/swf/player.swf" 
+	  quality="high" 
+	  bgcolor="#990000" 
+	  WIDTH="260px" 
+	  HEIGHT="35px" 
+	  <%= "FlashVars=#{flash_vars}" if @music_meta_data %>
+	  TYPE="application/x-shockwave-flash">
+	</EMBED> 
 </OBJECT>
 
 <% if @music_meta_data %>
