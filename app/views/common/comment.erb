@@ -3,7 +3,7 @@
 <div class='float-left'>
 	<%= add_profile_link(comment.user) %>: 
 </div>
-<% if (managers + [session_user?]).include?(comment.user) %>
+<% if (managers + [comment.user]).include?(session_user?) %>
 	<span class='float-right simple-delete simple-link' onclick="deleteComment('<%= comment.id %>', '<%= comments_div_id %>', '<%= form_id %>')" title='Delete comment'>x</span>
 <% end %>
 &nbsp;<%= comment.comment %>
