@@ -1,10 +1,11 @@
 <% 
 	form_id = "comment-#{rand.to_s}" 
 	comments_div_id ||= nil
+	managers ||= []
 %>
 
 <% comments.each do |comment| %>
-	<%= partial('common/comment', {:locals => {:comment => comment, :form_id => form_id, :comments_div_id => comments_div_id}}) %><br><br>
+	<%= partial('common/comment', {:locals => {:comment => comment, :form_id => form_id, :comments_div_id => comments_div_id, :managers => managers}}) %><br><br>
 <% end %>
 
 <form id='<%= form_id %>' method='post' action='/comments/add'>
