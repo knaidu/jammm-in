@@ -4,6 +4,6 @@
 	  <%= message.user == session_user? ? add_field_name("You") : "<span class='display-inline bold'>#{message.user.name}:</span>" %>
 		<%= "<font color='green'>(* NEW)</font>" if unread %>
 	</div>  
-	<%= message.body %><br>
+	<%= message.body.format_html %><br>
 	<i class='grey'><%= message.created_at.date %></i>
 </div>

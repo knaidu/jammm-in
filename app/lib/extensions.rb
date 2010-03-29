@@ -17,6 +17,10 @@ end
 
 class String
   def eval_json; JSON.parse self; end
+  
+  def format_html
+    self.gsub("\n", "<br>")
+  end
 end
 
 class File
