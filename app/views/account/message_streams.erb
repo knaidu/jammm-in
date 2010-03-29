@@ -2,7 +2,7 @@
 <% 
   only_unread ||= nil 
   unread_exists = false
-  sorted_streams = session_user?.message_streams.sort_by{|ms| (ms.users - [session_user?])[0].username}
+  sorted_streams = session_user?.message_streams.sort_by{|ms| (ms.users - [session_user?])[0].username.downcase}
 %>
 
 <div id='message-streams'>
