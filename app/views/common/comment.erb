@@ -6,6 +6,6 @@
 <% if (managers + [comment.user]).include?(session_user?) %>
 	<span class='float-right simple-delete simple-link' onclick="deleteComment('<%= comment.id %>', '<%= comments_div_id %>', '<%= form_id %>')" title='Delete comment'>x</span>
 <% end %>
-&nbsp;<%= comment.comment %>
+&nbsp;<%= comment.comment.format_html %>
 <% if @session_user == comment.user %>
 <% end %>
