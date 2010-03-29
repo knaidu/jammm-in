@@ -2,10 +2,11 @@
 <% 
   only_unread ||= nil 
   unread_exists = false
+  sorted_streams = session_user?.message_streams.sort_by{|ms| (ms.users - [session_user?])[0].username}
 %>
 
 <div id='message-streams'>
-  <% session_user?.message_streams.each do |message_stream| %>
+  <% sorted_streams.each do |message_stream| %>
 		<!-- Goes to NEXT iteration if the this partial is meant to display only unread streams -->
 		<% next if only_unread  and message_stream.unread_messages(session_user?).empty? %>
 		<% unread_exists = true %>
