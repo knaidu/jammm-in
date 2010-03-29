@@ -231,7 +231,7 @@ end
 # MUSIC META DATA
 def music_meta_data(obj)
   {
-    :title => obj.name,
+    :title => uri_encode(obj.name),
     :image_src => (obj.song_picture_url rescue obj.artists.shuffle.pop.profile_picture_url),
     :file => obj.file_handle,
     :artists => obj.artists.map(&:username).join(','),
@@ -250,4 +250,8 @@ def process_invite_request(name, email, is_a, description)
     :to => "prakashraman@jammm.in, tarun@jammm.in"
   }
   mail(mail_info)
+end
+
+def uri_encode(str)
+  CGI::escape(str)
 end

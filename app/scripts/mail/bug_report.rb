@@ -13,6 +13,6 @@ BUG_MAIL_DETAILS = {
   :body => get_localhost_response("/partial/mail/bug_report?bug_id=#{bug.id}")
 }
 
-mail_to = (["prakashraman@jammm.in", "tarun@jammm.in"] + bug.contributors.map(&:email)).compact.uniq
+mail_to = (["prakashraman@jammm.in", "tarunrs@jammm.in"] + bug.contributors.map(&:email)).compact.uniq
 
 mail BUG_MAIL_DETAILS.clone.update({:to => mail_to.join(",")})
