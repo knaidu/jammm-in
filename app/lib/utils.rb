@@ -235,7 +235,8 @@ def music_meta_data(obj)
     :image_src => (obj.song_picture_url rescue obj.artists.shuffle.pop.profile_picture_url),
     :file => obj.file_handle,
     :artists => obj.artists.map(&:username).join(','),
-    :description => obj.description
+    :description => obj.description,
+    :page_url => "http://jammm.in/#{obj.class.to_s.downcase}/#{obj.id.to_s}"
   }
 end
 

@@ -3,7 +3,7 @@
   full_image_src = "http://jammm.in#{meta[:image_src]}"
 %>
 
-<link rel="video_src" href="http://www.jammm.in/swf/new-player.swf?imageurl=<%= full_image_src %>&songtitle=<%= meta[:title] %>&url=http://www.jammm.in/file/<%= meta[:file] %>&artists=<%= meta[:artists]%>"/>
+<link rel="video_src" href="http://www.jammm.in/swf/new-player.swf?imageurl=<%= full_image_src %>&songtitle=<%= meta[:title] %>&url=http://www.jammm.in/file/<%= meta[:file] %>&artists=<%= meta[:artists]%>&pageurl=<%= meta[:page_url] %>"/>
 
 <meta name="title" content="<%= meta[:title] %>" />
 <% if meta[:description] %>
