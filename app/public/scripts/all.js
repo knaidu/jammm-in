@@ -649,7 +649,7 @@ function twitterShare(url){
 
 function facebookShare(url, title){
   var shareUrl = "http://www.facebook.com/share.php?u=" + url + "&t=" + title;
-  window.open(shareUrl)
+  window.open(shareUrl, "Share", "height=400px,width=800px")
 }
 
 /* Player */
