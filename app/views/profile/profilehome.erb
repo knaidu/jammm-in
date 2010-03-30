@@ -1,8 +1,10 @@
 <div class='profile-main'>
   <%= partial("profile/main_info", :locals => {:user => @user}) %>
-	<%= vspace 20 %>
-	<%= partial("/profile/say", :locals => {:user => @user}) %>
-	<%= vspace 10 if @user.said %>
+  <% if @user.said %>
+  	<%= vspace 20 %>
+  	<%= partial("/profile/say", :locals => {:user => @user}) %>
+	<% end %>
+	<%= vspace 10 %>
   <%= partial("common/feeds", :locals => {:feeds => @user.updates, :show_as_updates => true}, :section_header => SectionHeader.new('Updates', :update)) %>
   <br>
 </div>
