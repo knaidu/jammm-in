@@ -236,7 +236,7 @@ def music_meta_data(obj)
     :file => obj.file_handle,
     :artists => obj.artists.map(&:username).join(','),
     :description => obj.description,
-    :page_url => "http://jammm.in/#{obj.class.to_s.downcase}/#{obj.id.to_s}"
+    :page_url => "http://www.jammm.in/#{obj.class.to_s.downcase}/#{obj.id.to_s}"
   }
 end
 
