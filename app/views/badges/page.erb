@@ -11,7 +11,7 @@ Badges are awarded based on the user's contribution.<%= vspace 20 %>
       <div class='text'><%= badge.description %></div>
       
       <%= vspace %>
-      <%= list_thumbnails badge.users.shuffle.first(5) %>
+      <%= list_thumbnails badge.users.shuffle %>
     </div>
   </div>
 <% end %>
