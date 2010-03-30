@@ -13,7 +13,7 @@
   	  </a>
 	  <% end %>
 	  <div class='text grey'>
-  	  <%= list_artists jam.artists %> - 
+  	  <%= list_artists jam.artists %> <%= " - " + jam.instruments.map(&:name).join(", ") unless jam.instruments.empty? %>
   	</div>
 	</div>
 </div>
