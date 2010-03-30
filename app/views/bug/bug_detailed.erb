@@ -30,7 +30,7 @@
       <%= message.created_at.date %><br>
       <%= message.user.username rescue 'Anonymous' %>
     </div> 
-    <div class='float-left'><%= message.message %></div>
+    <div class='float-left'><%= message.message.format_html %></div>
   </div>
   <hr class='thin clear'>
 <% end %>
