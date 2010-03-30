@@ -1,13 +1,13 @@
 <div id='genres-list'>
 	<% 
 		contains_genres = ContainsGenre.find_all_by_for_type_and_for_type_id(for_type, for_type_id)
-		genres = contains_genres.map(&:genre) 
+		genres = contains_genres.map(&:genre)
 	%>
 
 	<div class='display-inline-block pad-right-5' style='overflow: hidden'>
 		<% user_genres = session_user?.genres %>
 		<select id='user-genre-select'>
-			<% (Genre.all - genres).each do |genre| %>
+			<% (Genre.all - genres).sort_by(&:name).each do |genre| %>
 				<option value="<%= genre.id %>"><%= genre.name %>
 			<% end %>
 		</select>	
