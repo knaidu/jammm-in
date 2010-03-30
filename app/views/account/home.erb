@@ -1,10 +1,8 @@
 <div class='account'>
   <%= partial("account/main_info", :locals => {:user => session_user?}) %>
-  <br>
-  <div style='max-height: 300px' class='main-info'>
-    <%= partial("/help/tutorial") %>
-  </div>
-  <br>
+  <%= vspace 20 %>
+  <%= partial("/account/say", :section_header => SectionHeader.new("Say")) %>
+  <%= vspace 20 %>  
   <%= partial("account/feeds", :locals => {:feeds => @session_user.feeds, :show_as_updates => false}, :section_header => SectionHeader.new('Feeds')) %>
 </div>
 

@@ -105,6 +105,13 @@ get '/account/update_share_policy' do
   }
 end
 
+post '/account/say' do
+  monitor {
+    message = param?(:message)
+    session_user?.say(message)
+  }
+end
+
 get '/account/:section' do
   logged_in? {
     @layout_info = layout_info("account", params[:section])

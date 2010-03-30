@@ -273,4 +273,12 @@ class User < ActiveRecord::Base
     get_sorted_update(after_time).delete_keys(:general).reduce(false) do |initial, arr| initial or (not arr[1].empty?);  end
   end
   
+  def say(message)
+    Say.add(self, message)
+  end
+  
+  def said
+    Say.find(:all, :conditions => ["user_id = #{self.id}"], :order => "id DESC", :limit => 1)[0]
+  end
+  
 end

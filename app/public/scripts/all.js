@@ -641,6 +641,15 @@ function sliderMove(slider, e, element){
 	sliderValueEl.innerHTML = newValue;
 }
 
+function submitSay(formId, containerId){
+	var form = $(formId);
+	var message = form.findDescendantsByName("message")[0];
+	if(message.getValue().blank()) return;
+	var onSuccess = function(){updateEl(containerId, "/partial/account/say")}
+	form.request({method: 'post', onSuccess: onSuccess});
+	return false;
+}
+
 
 /* SHARE */
 function twitterShare(url){

@@ -1,0 +1,23 @@
+<% 
+  form_id = rand_id 
+  container_id = rand_id
+%>
+
+<div id='<%= container_id %>'>
+  <div class='position-relative' style='min-height: 20px'>
+    <form id='<%= form_id %>' action='/account/say' onsubmit='submitSay("<%= form_id %>", "<%= container_id %>"); return false'>
+      <div class='position-absolute'><%= icon :say %></div>
+      <div class='position-relative' style='margin-left: 30px'>
+        <input type='text' style='border-color: #eeeeee; width: 80%' name='message'>
+        <%= vspace %>
+        <div class='text grey'>
+          <% if (say = session_user?.said) %>
+            <%= say.message %>
+          <% else %>
+            e.g. Working on a song, anyone interested in singing ?
+          <% end %>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
