@@ -7,7 +7,8 @@ class Say < ActiveRecord::Base
   def self.add(user, message)
     say = self.create({
       :user_id => user.id,
-      :message => message
+      :message => message,
+      :created_at => Time.now
     })
     say.add_feed
     say
