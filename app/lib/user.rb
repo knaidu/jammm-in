@@ -6,6 +6,7 @@ module UserUtils
     invite = Invite.extract_invite(user_info[:code])
     user_info[:password] = md5(user_info[:password])
     email = invite.invitee_email_id
+    raise "An account with this email address has already been created." if User.find_by_email(email)
     user = User.create!({
       :name => user_info[:name],
       :username => user_info[:username],

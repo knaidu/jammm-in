@@ -10,7 +10,7 @@ class Invite < ActiveRecord::Base
       :referred_user_id => (referred_user ? referred_user.id : nil),
       :invitee_email_id => invitee_email_id
     })
-#    invite.mail_invite
+    invite.mail_invite
     invite
   end
   
