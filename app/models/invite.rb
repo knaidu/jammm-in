@@ -1,13 +1,16 @@
 class Invite < ActiveRecord::Base
 
+  validates_uniqueness_of :invitee_email_id, :message => "email address used"
+  
   belongs_to :referrer, :class_name => "User", :foreign_key => "referred_user_id", :primary_key => "id"
 
   def self.add(invitee_email_id, referred_user=nil)
+    raise "This email address has already been sent an invite" if self.find_by_invitee_email_id(invitee_email_id)
     invite = self.create({
       :referred_user_id => (referred_user ? referred_user.id : nil),
       :invitee_email_id => invitee_email_id
     })
-    invite.mail_invite
+#    invite.mail_invite
     invite
   end
   
