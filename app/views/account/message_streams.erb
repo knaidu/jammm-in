@@ -12,7 +12,7 @@
 		<% unread_exists = true %>
     <div>
       <% with_user = message_stream.users.without(session_user?)[0] %>
-      <span class='float-left display-inline pad-right-10'><%= profile_picture_thumbnail with_user %></span>
+      <span class='float-left display-inline pad-right-10' style='height: 24px; width: 24px; overflow: hidden;'><%= profile_picture_thumbnail with_user %></span>
       <span>
         <a href='/account/message_stream/<%= message_stream.id %>' class='simple-link bold'><%= with_user.username %></a><br>
         <div class='text grey'>
