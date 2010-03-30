@@ -1,8 +1,8 @@
 <div class='notification position-relative' style='min-height: 20px'>
-  <div class='icon position-absolute' style='left: 0px; width: 20px'>
+  <div class='icon position-absolute' style='left: 0px; width: 20px; height: 20px; overflow: hidden'>
     <%= icon notification.icon %>
   </div>
-  <div class='margin-left-20'>
+  <div style='margin-left: 25px'>
     <%= partial("/account/notifications/types/#{notification.notification_type}", :locals => {:notification => notification}) %>
   </div>  
 </div>
