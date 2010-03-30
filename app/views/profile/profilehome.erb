@@ -1,9 +1,12 @@
 <div class='profile-main'>
   <%= partial("profile/main_info", :locals => {:user => @user}) %>
-	<%= vspace %>	<%= vspace %>	<%= vspace %>
+	<%= vspace 20 %>
+	<%= partial("/profile/say", :locals => {:user => @user}) %>
+	<%= vspace 10 if @user.said %>
   <%= partial("common/feeds", :locals => {:feeds => @user.updates, :show_as_updates => true}, :section_header => SectionHeader.new('Updates', :update)) %>
   <br>
 </div>
+
 
 <%= js_start %>
 	GLOBAL.selectedMenuItem = 'menu-item-profile';
