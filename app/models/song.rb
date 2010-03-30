@@ -230,7 +230,7 @@ class Song < ActiveRecord::Base
   
   def self.published(count=:all)
     options = {:order => "id DESC"}
-    self.find(:all).select(&:published).slice(0, count)
+    self.find(:all, options).select(&:published).slice(0, count)
   end
   
 end
