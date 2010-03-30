@@ -1,4 +1,4 @@
-<%= section_header('Likes') %>
+<%= section_header('Users who like this jam') %>
 <div id='jam-likes'>
 	<%= partial(:'common/likes', :locals => {:artists => @jam.liked_by}) %>
 </div>
