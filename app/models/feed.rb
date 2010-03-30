@@ -71,7 +71,10 @@ class Feed < ActiveRecord::Base
     def comment
       Comment.find(@data["comment_id"]) rescue nil
     end
-    
+
+    def say
+      Say.find(@data["say_id"]) rescue nil
+    end
     
   end
   
