@@ -24,8 +24,8 @@ get '/account/mark_song_messages_as_read' do
 end
 
 get '/account/message_stream/:id' do
-  logged_in? {
-    @message_stream = MessageStream.find(params[:id])
+  @message_stream = MessageStream.find(params[:id])
+  allowed?(@message_stream.users) {
     @layout_info = {"left_panel" => "account/menu", "middle_panel" => "account/message_stream"}  
     erb(:"body/structure")
   }

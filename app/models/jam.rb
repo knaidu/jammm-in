@@ -218,4 +218,8 @@ class Jam < ActiveRecord::Base
     jam
   end
   
+  def instruments
+    jam_artists.map(&:instruments).flatten
+  end
+  
 end
