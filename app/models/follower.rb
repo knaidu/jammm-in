@@ -10,6 +10,7 @@ class Follower < ActiveRecord::Base
   end
   
   def self.add(user, follows_user)
+    return if self.find_by_user_id_and_follows_user_id(user.id, follows_user.id) # Does not allow duplicate entries to go through
     row = self.create({:user_id => user.id, :follows_user_id => follows_user.id})
     feed = Feed.add({:user_ids => [user.id, follows_user.id]}, "user_follows")
     feed.add_users([user])
@@ -23,7 +24,10 @@ class Follower < ActiveRecord::Base
   end
   
   def self.remove(user, follows_user)
-    self.find_by_user_id_and_follows_user_id(user.id, follows_user.id).destroy
+    follower = self.find_by_user_id_and_follows_user_id(user.id, follows_user.id).destroy
+    Notification.delete_by_data("follower_id", follower.id)
+  rescue
+    true
   end
   
 end
