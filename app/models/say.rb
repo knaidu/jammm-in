@@ -11,12 +11,20 @@ class Say < ActiveRecord::Base
       :created_at => Time.now
     })
     say.add_feed
+    say.scan_and_notify_for_mentions
     say
   end
   
   def add_feed
     feed = Feed.add({:user_ids => [self.user.id], :"say_id" => self.id}, "say", "public")
     feed.add_users([self.user])
+  end
+  
+  def scan_and_notify_for_mentions
+    users = self.message.scan(/(@[^ ]+)/).flatten.map{|word| User.with_username(word.sub("@", ''))}.compact
+    return if users.empty?
+    notification = Notification.add({:"say_id" => self.id}, "say_mention")
+    notification.add_users(users)
   end
   
 end
