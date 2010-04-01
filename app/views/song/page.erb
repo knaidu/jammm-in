@@ -2,7 +2,10 @@
 	<%= partial("song/basic_info", :locals => {:song => @song}) %>
 </div>
 
-<br>
+<%= section_header 'Description' %>
+<%= @song.description.format_html %>
+<%= vspace 20 %>
+
 <%= section_header 'Jams' %>
 <%= partial(:'song/jams', {:locals => {:jams => @song.active_jams}}) %>
 <br>
