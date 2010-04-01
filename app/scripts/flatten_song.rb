@@ -1,6 +1,10 @@
 require "#{ENV["WEBSERVER_ROOT"]}/scripts/load_needed.rb"
 require 'daemons'
 
+log = File.new(log_path, "a+")
+STDOUT.reopen(log)
+STDERR.reopen(log)
+
 puts "Running script in the background"
 Daemons.daemonize # Runs the script in the background
 
