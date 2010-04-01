@@ -267,7 +267,7 @@ end
 
 # SAY FORMATTER
 def format_say(message)
-  message.gsub(/(@[^ ]+)/) {|username|
+  message.gsub(eval(DATA["say_mention_username_regex"])) {|username|
     user = User.with_username(username.gsub("@", ""))
     user ? "<a class='default-color' href='/#{user.username}'>#{username}</a>" : username
   }

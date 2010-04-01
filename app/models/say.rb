@@ -21,7 +21,7 @@ class Say < ActiveRecord::Base
   end
   
   def scan_and_notify_for_mentions
-    users = self.message.scan(/(@[^ ]+)/).flatten.map{|word| User.with_username(word.sub("@", ''))}.compact
+    users = self.message.scan(eval(DATA["say_mention_username_regex"])).flatten.map{|word| User.with_username(word.sub("@", ''))}.compact
     return if users.empty?
     notification = Notification.add({:"say_id" => self.id}, "say_mention")
     notification.add_users(users)
