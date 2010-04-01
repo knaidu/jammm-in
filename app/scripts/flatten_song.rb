@@ -1,6 +1,7 @@
 require "#{ENV["WEBSERVER_ROOT"]}/scripts/load_needed.rb"
 require 'daemons'
 
+log_path = "/home/jammmin/log/sinatra.log"
 log = File.new(log_path, "a+")
 STDOUT.reopen(log)
 STDERR.reopen(log)
