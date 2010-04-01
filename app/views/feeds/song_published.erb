@@ -3,5 +3,6 @@
 	users = fhlp_get_users(feed)
 %>
 
-<%= list_artists (users) %> <%= (users.size > 1) ? "have" :"has" %> published the song <%= song_link song %>.<br>
+<%= list_artists (users) %> <%= (users.size > 1) ? "have" :"has" %> published the song <%= song_link song %>.
+<%= vspace 2 %>
 <%= play song %>
