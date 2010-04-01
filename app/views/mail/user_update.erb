@@ -64,7 +64,20 @@
     </div>
     <%= vspace 20 %>
   <% end %>
-  
+
+  <% unless update[:say_mentions].empty? %>
+    <div style="<%= styles[:section_heading] %>">MENTIONS</div>
+    <div style="<%= styles[:section_content] %>;">  
+      <% update[:say_mentions].each do |mention| %>
+        <div style='position: relative; margin-bottom: 5px'>
+          <div><%= mention.data.say.user.username %>: </div>
+          <div style='position: relative; margin-left: 20px'><%= mention.data.say.message %></div>
+        </div>
+      <% end %>
+    </div>
+    <%= vspace 20 %>
+  <% end %>
+
   To view all your notification <a href="http://jammm.in/account/notifications">click here</a>
   <%= vspace 20 %>
 

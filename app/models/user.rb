@@ -254,7 +254,14 @@ class User < ActiveRecord::Base
   
   def get_sorted_update(after_time=Time.at(0))
     update = {}
-    look_for = {:messages => "new_message", :song_messages => "song_message", :invites => "song_invite", :followers => "user_follows", :badges => "badge_added"}
+    look_for = {
+      :messages => "new_message", 
+      :song_messages => "song_message", 
+      :invites => "song_invite", 
+      :followers => "user_follows", 
+      :badges => "badge_added",
+      :say_mentions => "say_mention"
+    }
     notifications = self.unread_notifications.select {|n| n.created_at > after_time}
     look_for.each {|k,v|
       update[k] = notifications.select{|n| n.notification_type == v}
