@@ -1,6 +1,6 @@
 <div class='message'>
   <div class='icon'><%= profile_picture_thumbnail message.user %></div>
-  <div class='content <%= "grey text italic" if message.automated %>'>
+  <div class='content <%= "grey text italic" if message.automated %> <%= "grey" if session_user? == message.user %>'>
     <%= message.message %>
   </div>
 </div>
