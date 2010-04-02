@@ -1,7 +1,7 @@
 get '/chat' do
   logged_in? {
     session_user?.sign_in_chat
-    @layout_info = {"left_panel" => "chat/left", "middle_panel" => "chat/page"}  
+    @layout_info = {"left_panel" => "chat/left", "middle_panel" => "chat/page", "right_panel" => "chat/right"}  
     erb(:"body/structure")
   }
 end

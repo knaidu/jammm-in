@@ -696,14 +696,37 @@ function startChatPings(){
 	chatPing();
 }
 
+function chatSyncWindow(){
+	var height = (
+			$(document.body).getHeight() - 
+			document.getElementsByClassName("top-bar")[0].getHeight() - 
+			document.getElementsByClassName("footer")[0].getHeight() - 
+			150) + "px";
+	$('chat-window').style.maxHeight = height;
+	$('chat-window').style.height = height;
+}
+
 function chatOpenNewWindow(){
 	window.open("/chat");
 }
 
 function chatPing(){
-	new Ajax.PeriodicalUpdater('chat-messages', '/chat/messages', {frequency: 3, method: 'get'})
+	var onSuccess = function(r){
+		var prevLastId = chatGetLastMessageId();
+		var el = $('chat-messages');
+		el.update(r.responseText);
+		var newLastId = chatGetLastMessageId();
+		if(prevLastId != newLastId)
+			chatToggleWindowTitle();
+		chatScrollWindowBottom();
+	}
+	new PeriodicalExecuter(function() {
+		call("/chat/messages", {onSuccess: onSuccess});
+	}, 5);
+	
 	return;
-	call("/chat/ping", {onComplete: chatPingOnComplete, onException: chatPingOnComplete})
+	
+//	call("/chat/ping", {onComplete: chatPingOnComplete, onException: chatPingOnComplete})
 }
 
 function chatPingOnComplete(r){
@@ -718,10 +741,10 @@ function chatPingOnComplete(r){
 function chatSay(){
 	var form = $('chat-form');
 	var onSuccess = function() {
-		$('chat-input-text').value = "";
 		chatLoadNewMessages();
 	};
 	form.request({onSuccess: onSuccess});
+	$('chat-input-text').value = "";
 }
 
 function chatLoadNewMessages(){
@@ -755,4 +778,25 @@ function chatSignOutToHome(){
 		loadUrl("/");
 	}
 	call("/chat/sign_out", {onSuccess: onSuccess});	
+}
+
+function chatToggleWindowTitle(){
+	var titles = ["jamMm.in", "jamMm.in - new message"];
+	GLOBAL.chatTitleTimer = new PeriodicalExecuter(function(){
+		titles = $A(titles).reverse();
+		document.title = $A(titles).shift();
+	}, 2);
+}
+
+function chatGetLastMessageId(){
+	return $('chat-messages').childElements().pop().id;
+}
+
+function chatResetChatWindowTitle(){
+	var chatTimer = GLOBAL.chatTitleTimer;
+	if(chatTimer && chatTimer.timer)
+	{
+		chatTimer.stop();
+		document.title = "jamMm.in";
+	}	
 }

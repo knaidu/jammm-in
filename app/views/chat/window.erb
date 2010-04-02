@@ -14,15 +14,16 @@
         <input type='submit' value='Post' style='margin: 0px'>
       </div>
       <div class='input-text'>
-        <input type='text' id='chat-input-text' name='message' style='width: 99%'>
+        <input type='text' id='chat-input-text' name='message' style='width: 99%' onKeyDown="chatResetChatWindowTitle()">
       </div>
     </form>
   </div>
 </div>
 
 <%= js_start %>
+  window.setTimeout(chatSyncWindow, 100);
   window.setTimeout(chatScrollWindowBottom, 200);
-  window.setTimeout(startChatPings, 300);  
+  window.setTimeout(startChatPings, 300);
   
   window.onbeforeunload = function(){
     chatSignOut();

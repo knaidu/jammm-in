@@ -1,6 +1,13 @@
-<div class='message'>
+<%
+  class_names = "content"
+  class_names += " grey text italic" if message.automated
+  class_names += " grey" if session_user? == message.user
+  class_names += " bold" if message.message.include?("@#{session_user?.username}")
+%>
+
+<div class='message' id='chat-message-<%= message.id.to_s %>'>
   <div class='icon'><%= profile_picture_thumbnail message.user %></div>
-  <div class='content <%= "grey text italic" if message.automated %> <%= "grey" if session_user? == message.user %>'>
+  <div class='content <%= class_names %>'>
     <%= message.message %>
   </div>
 </div>
