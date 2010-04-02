@@ -1,0 +1,11 @@
+<div style='max-height: 300px'>
+  <%= section_header('Currently Online') %>
+  <div class='text'>
+    Login to <a class='default-color' href='/chat'>chat</a>.<%= vspace %>
+    Use the chat to talk to other artists and with the support team.
+  </div>
+  <%= vspace %>
+  <div id='chat-users'>
+    <%= partial("/chat/users") %>
+  </div>
+</div>
