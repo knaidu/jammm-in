@@ -1,0 +1,17 @@
+<div class='chat'>
+  <div class='window'>
+    <%= partial(:"/chat/messages") %>
+  </div>
+  <hr class='light'>
+  <div class='post-message'>
+    <form action='/chat/say' method='post'>
+      <div class='icon'><%= icon :say %></div>
+      <div class='button'>
+        <input type='submit' value='Post' style='margin: 0px'>
+      </div>
+      <div class='input-text'>
+        <input type='text' name='message' style='width: 99%'>
+      </div>
+    </form>
+  </div>
+</div>
