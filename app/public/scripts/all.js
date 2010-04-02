@@ -701,6 +701,8 @@ function chatOpenNewWindow(){
 }
 
 function chatPing(){
+	new Ajax.PeriodicalUpdater('chat-messages', '/chat/messages', {frequency: 3, method: 'get'})
+	return;
 	call("/chat/ping", {onComplete: chatPingOnComplete, onException: chatPingOnComplete})
 }
 
@@ -727,10 +729,6 @@ function chatLoadNewMessages(){
 		var el = $('chat-messages');
 		el.insert({bottom: r.responseText})		
 		chatScrollWindowBottom();
-		var messages = $A(el.childElements());
-		var toRemove = messages.length - 80;
-		if(toRemove > 1)
-			$A(messages).slice(0,toRemove).each(function(i){i.remove()})
 	}
 	call("/chat/new_messages", {onSuccess: onSuccess});
 }
