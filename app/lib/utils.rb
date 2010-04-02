@@ -256,3 +256,22 @@ end
 def uri_encode(str)
   CGI::escape(str)
 end
+
+def chat_ping(user)
+  ping_status = {}
+  i = 0
+  while i < 30 do
+    chat_user = user.chat_user(true)
+    new_users = chat_user.new_users?
+    new_messages = chat_user.new_messages?
+    if (new_users or new_messages)
+      ping_status[:new_users] = true if new_users
+      ping_status[:new_messages] = true if new_messages
+      break;
+    end
+    i += 1
+    sleep(1)
+  end
+  user.pinged_chat
+  ping_status
+end

@@ -1,1 +1,10 @@
-<%= partial("common/users", :locals => {:users => ChatUser.users, :cols => 1}) %>
+<% users = ChatUser.users %>
+<div class='text grey'>
+  <%= users.size %> users online.
+</div>
+<%= vspace 10 %>
+<%= partial("common/users", :locals => {:users => users, :cols => 1}) %>
+
+<%= js_start %>
+  window.setTimeout(chatStartUsersRefresh, 300)
+<%= js_end %>

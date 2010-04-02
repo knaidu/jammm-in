@@ -1,0 +1,6 @@
+<div class='message'>
+  <div class='icon'><%= profile_picture_thumbnail message.user %></div>
+  <div class='content <%= "grey text italic" if message.automated %>'>
+    <%= message.message %>
+  </div>
+</div>

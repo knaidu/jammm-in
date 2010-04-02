@@ -305,4 +305,8 @@ class User < ActiveRecord::Base
     chat_user(true).say(message)
   end
   
+  def pinged_chat
+    chat_user.pinged
+  end
+  
 end

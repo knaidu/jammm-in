@@ -1,4 +1,4 @@
-<% messages = ChatMessage.fetch %>
+<% messages ||= ChatMessage.fetch %>
 <% messages.each do |message| %>
   <%= partial(:"/chat/message", :locals => {:message => message}) %>
 <% end %>

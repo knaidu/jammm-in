@@ -690,3 +690,71 @@ function loadSong(url, name){
 		document.jammminplayer.Rewind();
 	}	
 }
+
+
+function startChatPings(){
+	chatPing();
+}
+
+function chatOpenNewWindow(){
+	window.open("/chat");
+}
+
+function chatPing(){
+	call("/chat/ping", {onComplete: chatPingOnComplete, onException: chatPingOnComplete})
+}
+
+function chatPingOnComplete(r){
+	var data = r.evalJSON();
+	if(data.new_messages)
+		chatLoadNewMessages();	
+	if(data.new_users)
+		chatLoadUsers();
+	chatPing();
+}
+
+function chatSay(){
+	var form = $('chat-form');
+	var onSuccess = function() {
+		$('chat-input-text').value = "";
+		chatLoadNewMessages();
+	};
+	form.request({onSuccess: onSuccess});
+}
+
+function chatLoadNewMessages(){
+	var onSuccess = function(r){
+		var el = $('chat-messages');
+		el.insert({bottom: r.responseText})		
+		chatScrollWindowBottom();
+		var messages = $A(el.childElements());
+		var toRemove = messages.length - 80;
+		if(toRemove > 1)
+			$A(messages).slice(0,toRemove).each(function(i){i.remove()})
+	}
+	call("/chat/new_messages", {onSuccess: onSuccess});
+}
+
+function chatLoadUsers(){
+	updateEl('chat-users', '/partial/chat/users');
+}
+
+function chatScrollWindowBottom(){
+	var el = $('chat-window');
+	el.scrollBottom();
+}
+
+function chatStartUsersRefresh(){
+	new Ajax.PeriodicalUpdater('chat-users', '/partial/chat/users', {frequency: 10, method: 'get'})
+}
+
+function chatSignOut(){
+	call("/chat/sign_out", {asynchronous: false});
+}
+
+function chatSignOutToHome(){
+	var onSuccess = function(){
+		loadUrl("/");
+	}
+	call("/chat/sign_out", {onSuccess: onSuccess});	
+}

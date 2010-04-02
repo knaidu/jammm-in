@@ -10,6 +10,7 @@ class CreateChatTables < ActiveRecord::Migration
     create_table :chat_messages do |i|
       i.column :user_id, :integer
       i.column :message, :text
+      i.column :automated, :boolean, :default => false
       i.column :created_at, :timestamp
     end
   end

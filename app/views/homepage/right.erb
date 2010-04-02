@@ -1,3 +1,15 @@
+<div style='max-height: 300px'>
+  <%= section_header('Currently Online') %>
+  <div class='text'>
+    Login to <a class='default-color' href='/chat'>chat</a>.<br>
+    Use the chat to talk to other artists and get support from the support team.
+  </div>
+  <%= vspace %>
+  <%= partial("/chat/users") %>
+</div>
+<%= vspace 20 %>
+
+<%= section_header('About Us') %>
 <div class='menu height-inherit text' id='simple-menu'>
   <div style='margin-bottom: 10px'>
   	<div class='float-left'><%= icon :favicon %></div>

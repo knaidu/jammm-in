@@ -8,6 +8,7 @@ end
 
 get '/chat/sign_out' do
   session_user?.sign_out_chat
+  "Successfully signed out of chat."
 end
 
 post '/chat/say' do
@@ -15,4 +16,14 @@ post '/chat/say' do
     message = param?(:message)
     session_user?.say_in_chat(message)
   }
+end
+
+get '/chat/ping' do
+  chat_ping(session_user?).to_json
+end
+
+get '/chat/new_messages' do
+  new_messages = session_user?.chat_user.new_messages?
+  session_user?.pinged_chat
+  erb(:"/chat/messages", :locals => {:messages => new_messages})
 end
