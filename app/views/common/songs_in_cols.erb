@@ -1,12 +1,17 @@
 <% 
   cols ||= 2
   div_width = ((100  / cols) - 2) 
+  songs = songs.each_slice(cols).map
 %>
 
 <div class='w100'>
-  <% songs.each do |song| %>
-    <div style='width: <%= div_width %>%; float: left'>
-      <%= partial("common/song_in_col", :locals => {:song => song }) %>
+  <% songs.each do |song_slice| %>
+    <div>
+      <% song_slice.each do |song| %>
+        <div style='width: <%= div_width %>%; float: left'>
+          <%= partial("common/song_in_col", :locals => {:song => song }) %>
+        </div>
+      <% end %>
     </div>
   <% end %>
 </div>
