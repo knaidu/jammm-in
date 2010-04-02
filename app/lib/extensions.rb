@@ -19,8 +19,15 @@ class String
   def eval_json; JSON.parse self; end
   
   def format_html
-    self.gsub("\n", "<br>")
+    self.gsub("\n", "<br>").gsub_href
   end
+  
+  def gsub_href
+    self.gsub(eval(DATA["href_regex"])) {|href|
+      "<a href='#{href}' class='default-color'>#{href}</a>"
+    }
+  end
+  
 end
 
 class File
