@@ -40,7 +40,7 @@ def medium_icon(icon='/images/common/icon.png')
 end
 
 def small_icon(icon='/images/common/icon.png')
-  "<img src='#{icon}' height=16 width=16>"
+  "<div class='small-icon'><img src='#{icon}' height='100%' width='100%'></div>"
 end
 
 def header_icon(icon)

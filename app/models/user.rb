@@ -51,7 +51,7 @@ class User < ActiveRecord::Base
   end
   
   def jams
-    (played_in_jams + registered_jams).uniq
+    (played_in_jams + registered_jams).uniq.sort_by{|jam| -(jam.id)}
   end 
   
   def displayable_jams
