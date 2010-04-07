@@ -1,6 +1,6 @@
-<div class='position-relative grey' style='min-height: 20px'>
-  <div class='position-absolute'><%= icon :say %></div>
-  <div class='position-relative' style='margin-left: 30px'>
-    <%= user.said.message %>
+<div class='position-relative grey' style='min-height: 40px;'>
+  <div class='position-absolute'><%= icon(:say, :medium) %></div>
+  <div class='position-relative' style='margin-left: 40px'>
+    <%= format_say user.said.message %>
   </div>
 </div>
