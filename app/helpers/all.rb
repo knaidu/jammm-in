@@ -265,4 +265,12 @@ def email_styles
   }
 end
 
+# SAY FORMATTER
+def format_say(message)
+  message.gsub(/(@[^ ]+)/) {|username|
+    user = User.with_username(username.gsub("@", ""))
+    user ? "<a class='default-color' href='/#{user.username}'>#{username}</a>" : username
+  }
+end
+
 load 'helpers/profile.rb'

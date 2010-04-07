@@ -1,5 +1,5 @@
 <%= profile_link feed.dataObj.user %> says<br>
 <div class='comment'>
   <div class='icon'><%= icon :say %></div>
-  <div class='content'><%= feed.dataObj.say.message %></div>
+  <div class='content'><%= format_say feed.dataObj.say.message %></div>
 </div>
