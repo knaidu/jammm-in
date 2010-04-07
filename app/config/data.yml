@@ -2,3 +2,4 @@
 bug_statuses: [open, fixed, invalid, later]
 name_regex: /^[a-z0-9\-_\ ]+$/i
 host: "http://jammm.in"
+say_mention_username_regex: /(@[^ :\'\"]+)/
