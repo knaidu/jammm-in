@@ -16,7 +16,7 @@
         <%= vspace %>
         <div class='text grey text-left'>
           <% if (say = session_user?.said) %>
-            <%= say.message %>
+            <%= format_say say.message %>
           <% else %>
             e.g. Working on a song, anyone interested in singing ?
           <% end %>
