@@ -18,4 +18,6 @@
 	  <div class='field float-left'>Listens To</div>
 	  <div class='value float-right'><%= list_genres(user.genres) or "-" %></div>
 	</div>
+	<%= main_info_hor_line %>
+	<%= main_info_row("Instrument(s)", list_instruments(user.instruments)) %>
 </div>
