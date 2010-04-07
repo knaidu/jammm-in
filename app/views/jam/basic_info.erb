@@ -6,9 +6,6 @@
   </div>
   <%= vspace %><%= vspace %>
 	<div class='pad-left-10'>
-  	<%= main_info_row("Description", jam.description || "-") %>
-  	<%= main_info_hor_line %>
-
 		<div>
   	  <div class='field float-left'>Artists</div>
   	  <div class='value float-right'><%= partial(:'common/list_artists', {:locals => {:artists => jam.artists}}) %></div>

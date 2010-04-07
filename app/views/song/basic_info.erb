@@ -11,8 +11,6 @@
       <%= song_picture song %>
     </span>
 	  <div class='pad-left-10' style='box-sizing: border-box'>
-    	<%= main_info_row("Description", song.description || "-") %>
-    	<%= main_info_hor_line %>
     	<%= main_info_row("Artists", list_artists(song.artists)) %>
     	<%= main_info_hor_line %>
     	<%= main_info_row("Creator", profile_link(song.creator)) %>
