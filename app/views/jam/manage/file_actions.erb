@@ -3,4 +3,8 @@
 <% file_size = (@jam.file.size.to_f / 1024 / 1024).round(2) rescue nil %>
 <%= add_field_name('Current File Size') %> <%= file_size ? "#{file_size} MB" : '-' %><br><br>
 <iframe class='upload-jam-iframe' name='upload-jam-iframe' height='80px' id='upload-jam-iframe-id' src='<%= url %>'></iframe>
-<div id='upload-progress'></div><br><br>
+<div id='upload-progress'></div>
+<div class='default-color'>NOTE: The MP3 being uploaded has to be a <b>"2" Channel (Stereo)</b>, of <b>128000 bit-rate</b> and <b>41000 sampling rate</b>.
+  <br>If not collaboration with this Jam might not work.
+</div>
+<br><br>
