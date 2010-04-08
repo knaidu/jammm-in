@@ -4,7 +4,7 @@
 
 
 <%= section_header 'Description' %>
-<%= @jam.description.format_html %>
+<%= @jam.description.format_html rescue "" %>
 <%= vspace 20 %>
 <%= section_header 'Artists' %>
 <%= partial('jam/jam_artists', :locals => {:jam_artists => @jam.jam_artists }) %>

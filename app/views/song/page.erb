@@ -3,7 +3,7 @@
 </div>
 
 <%= section_header 'Description' %>
-<%= @song.description.format_html %>
+<%= @song.description.format_html rescue "" %>
 <%= vspace 20 %>
 
 <%= section_header 'Jams' %>
