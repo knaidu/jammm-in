@@ -8,11 +8,4 @@
 
 <%= js_start %>
 	setSelectedMenuItem('menu-item-home');
-	
-	(function(){
-	  var items = $('tutorial').getElementsByClassName("section");
-	  items = $A(items).shuffle();
-	  items.pop();
-	  items.each(function(item){$(item).remove()});
-	})();
 <%= js_end %>
