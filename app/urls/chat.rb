@@ -27,3 +27,8 @@ get '/chat/new_messages' do
   session_user?.pinged_chat
   erb(:"/chat/messages", :locals => {:messages => new_messages})
 end
+
+get '/chat/clear' do
+  ChatMessage.destroy_all
+  "Cleared chat messages"
+end
