@@ -1,0 +1,30 @@
+<div class='chat'>
+  <div class='window' id='chat-window'>
+    <div class='messages' id='chat-messages'>
+      <%= partial(:"/chat/messages") %>
+    </div>
+  </div>
+  
+  <hr class='light'>
+  
+  <div class='post-message'>
+    <form action='/chat/say' id='chat-form' method='post' onsubmit="chatSay(); return false;">
+      <div class='icon'><%= icon :say %></div>
+      <div class='button'>
+        <input type='submit' value='Post' style='margin: 0px'>
+      </div>
+      <div class='input-text'>
+        <input type='text' id='chat-input-text' name='message' style='width: 99%'>
+      </div>
+    </form>
+  </div>
+</div>
+
+<%= js_start %>
+  window.setTimeout(chatScrollWindowBottom, 200);
+  window.setTimeout(startChatPings, 300);  
+  
+  window.onbeforeunload = function(){
+    chatSignOut();
+  }
+<%= js_end %>

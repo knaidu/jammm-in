@@ -1,0 +1,15 @@
+<%= section_header("Currently Online") %>
+<div id='chat-users'>
+  <%= partial(:"/chat/users") %>
+</div>
+
+<%= vspace 20 %>
+
+<%
+  items = [
+    {:text => 'Sign Out', :link => "javascript: chatSignOutToHome()", :icon => :'logout', :id => 'menu-item-sign-out'}
+  ]
+%>
+
+<%= hor_line ("1px", "solid", "#cccccc") %>
+<%= load_menu_items(items) %>

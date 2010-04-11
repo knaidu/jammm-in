@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
   has_many :user_badges, :dependent => :destroy
   has_one :facebook_policy, :class_name => "FacebookShare"
   has_one :twitter_policy, :class_name => "TwitterShare"
+  has_one :chat_user, :foreign_key => :user_id
   validates_uniqueness_of :username, :message => "has already been registered"
   
   # Sets the created_at attr
@@ -290,6 +291,22 @@ class User < ActiveRecord::Base
   
   def said
     Say.find(:all, :conditions => ["user_id = #{self.id}"], :order => "id DESC", :limit => 1)[0]
+  end
+  
+  def sign_in_chat
+    ChatUser.sign_in(self)
+  end
+  
+  def sign_out_chat
+    chat_user.sign_out
+  end
+  
+  def say_in_chat(message)
+    chat_user(true).say(message)
+  end
+  
+  def pinged_chat
+    chat_user.pinged
   end
   
 end

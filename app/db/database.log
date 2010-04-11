@@ -1,6 +1,6 @@
-SQL (0.2ms)  SET client_min_messages TO 'panic'
+SQL (0.3ms)  SET client_min_messages TO 'panic'
 SQL (0.1ms)  SET client_min_messages TO 'notice'
-SQL (86.7ms)  SELECT version FROM schema_migrations
+SQL (0.8ms)  SELECT version FROM schema_migrations
 Migrating to CreateTestTable (1)
 Migrating to CreateUserTable (2)
 Migrating to CreateSongsTable (3)
@@ -36,7 +36,9 @@ Migrating to CreateUserBadgesTable (32)
 Migrating to CreateDumpsTable (33)
 Migrating to ChangeStringColumnsToText (34)
 Migrating to CreateSaysTable (35)
-SQL (0.3ms)  BEGIN
-SQL (1153.2ms)  CREATE TABLE "says" ("id" serial primary key, "user_id" integer, "message" text, "created_at" timestamp) 
-SQL (73.3ms)  INSERT INTO schema_migrations (version) VALUES ('35')
-SQL (13.2ms)  COMMIT
+Migrating to CreateChatTables (36)
+SQL (0.2ms)  BEGIN
+SQL (88.5ms)  CREATE TABLE "chat_users" ("id" serial primary key, "user_id" integer, "message" text, "signed_in_at" timestamp, "last_ping_at" timestamp) 
+SQL (57.9ms)  CREATE TABLE "chat_messages" ("id" serial primary key, "user_id" integer, "message" text, "automated" boolean DEFAULT 'f', "created_at" timestamp) 
+SQL (0.4ms)  INSERT INTO schema_migrations (version) VALUES ('36')
+SQL (2.3ms)  COMMIT
