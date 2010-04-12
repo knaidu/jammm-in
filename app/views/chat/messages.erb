@@ -2,3 +2,7 @@
 <% messages.each do |message| %>
   <%= partial(:"/chat/message", :locals => {:message => message}) %>
 <% end %>
+
+<%= js_start %>
+  window.setTimeout(chatScrollWindowBottom, 300);'
+<%= js_end %>
