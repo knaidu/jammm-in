@@ -1,4 +1,4 @@
-<% users = ChatUser.users %>
+<% users = ChatUser.users.sort_by(&:username) %>
 <div class='text grey'>
   <%= users.size %> users online.
 </div>
