@@ -1,6 +1,6 @@
-<% title = "#{user.username} (#{user.name})" %>
+<% title = "#{user.username} (#{user.name})" rescue "error" %>
 <div class='thumbnail display-inline-block' title='<%= title %>'>
-  <a href='/<%= user.username %>'>
-    <img src='<%= user.profile_picture_url %>'>
+  <a href='/<%= user.username rescue "error" %>'>
+    <img src='<%= user.profile_picture_url rescue "dsff" %>'>
   </a>
 </div>

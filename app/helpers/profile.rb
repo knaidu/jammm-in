@@ -45,6 +45,7 @@ def set_profile_page_info(username)
 end
 
 def profile_picture(user)
+  return  "" unless user && user.username
   "<div class='profile-photo'><img src='#{user.profile_picture_url}' style='height: inherit'></div>"
 end
 

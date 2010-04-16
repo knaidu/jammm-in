@@ -782,7 +782,7 @@ function chatSignOutToHome(){
 
 function chatToggleWindowTitle(){
 	var titles = ["jamMm.in", "new message - jamMm.in"];
-	if(GLBAL.chatTitleTimer && GLOBAL.chatTitleTimer.timer)
+	if(GLOBAL.chatTitleTimer && GLOBAL.chatTitleTimer.timer)
 		return;
 	GLOBAL.chatTitleTimer = new PeriodicalExecuter(function(){
 		titles = $A(titles).reverse();
