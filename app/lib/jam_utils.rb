@@ -39,13 +39,15 @@ module JamUtils
 
   def update_file(details)
     file = details[:tempfile]
-    ext = "." + details[:type].split("/").pop
+    ext = "." + details[:filename].split(".").pop
+    ext = ".aac" if ext == ".m4a" # As soundconverter does not understand m4a
     files_dir = ENV['FILES_DIR']
     puts file.path
     filename = new_file_handle_name(ext)
     File.copy(file.path, files_dir + "/" + filename)
     self.file_handle = filename
     self.save
+    run("ruby scripts/normalize_jam.rb #{self.id}")
   end
 
   def delete_file_handle
