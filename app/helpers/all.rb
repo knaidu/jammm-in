@@ -139,11 +139,11 @@ def format_lyrics(lyrics)
 end
 
 def manage_song_link(song)
-  "<span class='pad1 display-inline-block'><a href='/song/#{song.id}/manage' title='Manage'>#{icon :manage}</a></span>"
+  "<span class='pad1 display-inline-block'><a href='/song/#{song.id}/manage' title='Edit Song'>#{icon :manage}</a></span>"
 end
 
 def manage_jam_link(jam)
-  "<span class='display-inline-block pad1'><a href='/jam/#{jam.id}/manage' title='Manage'>#{icon :manage}</a></song>"  
+  "<span class='display-inline-block pad1'><a href='/jam/#{jam.id}/manage' title='Edit Jam'>#{icon :manage}</a></song>"  
 end
 
 def monitor
