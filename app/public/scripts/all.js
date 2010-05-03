@@ -529,7 +529,7 @@ function uploadJam(jamId){
 
 	var iframeId = 'upload-jam-iframe';
 	var iframe = $('upload-jam-iframe-id');
-	showLoadingMessage("upload-progress", "Please wait while the MP3 is being uploaded...");
+	showLoadingMessage("upload-progress", "Please wait while the audio file is being uploaded and noramlized...");
 	
 //	var progressId = getNewXProgressId();	
 //	iframe.hide();
