@@ -61,7 +61,7 @@ end
 post '/jam/:jam_id/manage/upload_file' do
   file = params[:mefile][:tempfile]
   puts params[:mefile].inspect
-  jam = Jam.find(params[:jam_id]).update_file(file)
+  jam = Jam.find(params[:jam_id]).update_file(params[:mefile])
   file.unlink
   erb(:"jam/manage/file_uploaded")
 end
