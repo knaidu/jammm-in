@@ -309,4 +309,12 @@ class User < ActiveRecord::Base
     chat_user.pinged
   end
   
+  def self.broadcast_message(message)
+    from = User.with_username('prakashraman')
+    (User.all - [from]).each do |user|
+      add_message(from, user, message)
+    end
+    "Broadcasted message succesfully"
+  end
+  
 end
