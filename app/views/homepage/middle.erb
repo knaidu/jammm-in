@@ -1,3 +1,13 @@
+<div class='special-message'>
+  <u>NEW FEAUTURE : SESSIONS</u><%= vspace 10 %>
+  A Session is a period of time in jammm.in where the prime focus is on creating a type/stype/genre of music during that period.
+  <%= vspace 10 %>
+  Current session : <b>Alpha Rhythm</b>
+  <%= vspace %>
+  <div class='text-right text underline'><a href='/sessions/alpha_rhythm'>read more</a></div>
+</div>
+<%= vspace 20 %>
+
 <%= section_header 'Songs' %>
 <%= partial("common/songs_in_cols", :locals => {:songs => Song.published(9), :cols => 2}) %>
 

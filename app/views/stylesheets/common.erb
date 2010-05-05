@@ -1,5 +1,6 @@
 <%
 	default_color = "#990000"
+	default_dark_color = "#800000"
 	default_line_color = "#cccccc"
 	default_light_line_color = "#dddddd"
 	default_round = "-moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;"
@@ -363,3 +364,12 @@ div.thumbnail IMG{height: 24px}
 .chat .window .messages .message {min-height: 33px; position: relative; margin-bottom: 10px;}
 .chat .window .messages .message .icon {width: 30px; position: absolute}
 .chat .window .messages .message .content {margin-left: 40px; margin-top: 1px; position: relative}
+
+/* SPECIAL MESSAGE */
+.special-message {
+  background-color: <%= default_color %>; 
+  color: white; 
+  border: 1px solid <%= default_dark_color %>;
+  padding: 10px;
+  <%= default_round %>
+}
