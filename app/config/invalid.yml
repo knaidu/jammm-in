@@ -3,7 +3,7 @@ username:
     song, songs, jam, jams, home, info, user, genre, genres, profile, 
     followers, following, jammmin, index, rb, account, logout, login, signin,
     administrator, admin, env, test, homepage, send_invite, invite, user, follow,
-    chat
+    chat, videos
   ]
   regex: /^[a-z0-9\-_]+$/i
   valid_regex: /^[a-z0-9\-_]+$/i
