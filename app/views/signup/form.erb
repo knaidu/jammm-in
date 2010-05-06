@@ -20,7 +20,7 @@
   <input type='text' name='form[location]'><%= vspace 20 %>
   <div class='text grey pad1'>
     <input type='checkbox' id='checkbox-tc' name='form[tc]' CHECKED> 
-    I agree to the terms and conditions. <span onclick="viewTC()" class='simple-link'>View</a>
+    I agree to the <span onclick='viewTC()' class='simple-link'>terms and conditions.</span>
   </div>
   <%= vspace 25 %>  
   <input type='hidden' value='<%= code %>' name='form[code]'>
@@ -48,6 +48,6 @@
   }
   
   function viewTC(){
-    window.open("/partial/signup/tc", "Terms and Conditions", "height=500px, width=500px");
+    window.open("/terms_and_conditions", "Terms and Conditions", "height=500px, width=500px");
   }
 <%= js_end %>

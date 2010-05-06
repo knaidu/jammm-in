@@ -33,3 +33,7 @@ post '/request_invite/process' do
     "Your request has been registered. You will be hearing from us within the next couple of days. Thank you."
   }
 end
+
+get '/terms_and_conditions' do
+  erb(:"/help/tandc")
+end
