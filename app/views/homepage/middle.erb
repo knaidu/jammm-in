@@ -8,12 +8,12 @@
 </div>
 <%= vspace 20 %>
 
-<%= section_header 'Songs' %>
-<%= partial("common/songs_in_cols", :locals => {:songs => Song.published(9), :cols => 2}) %>
-
 <%= section_header 'Jams' %>
 <% jams = Jam.latest_displayable.map(&:identical_ancester).uniq.first(20) %>
 <%= partial("common/jams", :locals => {:jams => jams}) %>
+
+<%= section_header 'Songs' %>
+<%= partial("common/songs_in_cols", :locals => {:songs => Song.published(9), :cols => 2}) %>
 
 <%= vspace 20 %>
 
