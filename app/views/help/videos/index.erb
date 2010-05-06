@@ -1,0 +1,18 @@
+<%= section_header 'Videos' %>
+<% @vids.each do |vid| %>
+  <li><%= vid.gsub("_", " ") %> (
+    <a href='#<%= vid %>-div' class='default-link-color'>Scroll to Video<a>, 
+    <a href='/videos/<%= vid %>' class='default-link-color'>Goto page</a>
+  )
+  </li>
+<% end %>
+
+<%= vspace 20 %>
+
+<hr class='thin'>
+<% @vids.each do |vid| %>
+  <div id='<%= vid %>-div'>
+    <%= erb(:"/help/videos/#{vid}") %>
+  </div>
+  <%= vspace 20 %>
+<% end %>
