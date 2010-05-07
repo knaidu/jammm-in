@@ -1,0 +1,24 @@
+
+<form action='/admin/broadcast_email/process' method='post' onsubmit='return confirmEmailSubmit()'>
+  <b>Subject</b>
+  <%= vspace 10 %>
+  <input type='text' name='subject' id='email-subject'>
+  <%= vspace 20 %>    
+  <b>body</b>
+  <%= vspace 10 %>
+  <textarea name='body' style='height: 200px; width: 400px' id='email-body'></textarea>
+  <%= vspace %>
+  <input type='submit' value='Broadcast Email'>
+</form>
+
+<%= js_start %>
+  function confirmEmailSubmit(){
+    var sub = $('email-subject').getValue();
+    var body = $('email-body').getValue();
+    if(sub.blank() || body.blank()){
+      alert("Subject and Body are mandatory");
+      return false;
+    }
+    return confirm("Are you sure you want to send this message to all the users?")
+  }
+<%= js_end %>

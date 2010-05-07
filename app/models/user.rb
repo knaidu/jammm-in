@@ -317,4 +317,12 @@ class User < ActiveRecord::Base
     "Broadcasted message succesfully"
   end
   
+  def self.broadcast_email(subject, body)
+    path = "/tmp/#{new_file_handle_name('.txt')}"
+    File.open(path, "w"){|f| f.puts(body)}
+    cmd = "ruby #{ENV["WEBSERVER_ROOT"]}/scripts/mail/broadcast_email.rb --file=#{path} --subject=#{subject}"
+    run(cmd)
+    "Began sending emails to all the user. Check the sent items to confirm"
+  end
+  
 end

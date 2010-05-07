@@ -28,3 +28,14 @@ post '/admin/broadcast_message/process' do
 #  erb(:"body/structure")
   User.broadcast_message(param?(:message))
 end
+
+get '/admin/broadcast_email' do
+  @layout_info = {"left_panel" => "homepage/left", "middle_panel" => "admin/broadcast_email"}
+  erb(:"body/structure")
+end
+
+post '/admin/broadcast_email/process' do
+#  @layout_info = {"left_panel" => "homepage/left", "middle_panel" => "admin/broadcast_message"}
+#  erb(:"body/structure")
+  User.broadcast_email(param?(:subject), param?(:body))
+end
