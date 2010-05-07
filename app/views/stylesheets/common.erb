@@ -367,11 +367,15 @@ div.thumbnail IMG{height: 24px}
 
 /* SPECIAL MESSAGE */
 .special-message {
-  background-color: #FFBF80; 
-  color: <%= default_dark_color %>; 
-  border: 1px solid #FFA64D;
+  position: relative;
+  background-color: #e0eee0; 
+  color: #2f4f4f;
+/*  border: 1px solid #FFA64D; */
   padding: 10px;
   <%= default_round %>
 }
+.special-message .icon {position: absolute; width: 20px}
+.special-message .content {position: relative; margin-left: 20px}
+
 
 .tandc {padding: 20px; text-align: justify}
