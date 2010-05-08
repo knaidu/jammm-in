@@ -9,3 +9,8 @@ types:
     name: Alpha Musician
     image: alphamusician.png
     description: A chosen set of musicians that were involved in the early development of jamMm.in. These musicians helped define jamMm.in and were present from the Pre-Alpha release.
+
+  3: 
+    name: Alpha Rhythm Session
+    image: alpharhythmsession.png
+    description: The set of musicians that took part in the "Alpha Rhythm Session".
