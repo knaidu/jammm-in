@@ -11,7 +11,7 @@ module S3
   end
   
   def S3.list
-    AWS::S3::Service.buckets[0].objects
+    AWS::S3::Service.buckets.find{|b| b.name == 'jammm.in'}.objects
   end
   
   def S3.exists?(key, bucket=S3::FILES_BUCKET)
