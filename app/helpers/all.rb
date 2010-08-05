@@ -178,15 +178,6 @@ def logged_in?
   end
 end
 
-def school_exists?
-  school = School.with_handle(param?(:handle))
-  unless school
-    @layout_info = {'middle_panel' => 'schools/not_found', 'left_panel' => 'schools/left'}
-    erb(:"body/structure")
-  else
-    yield if block_given?
-  end
-end
 
 def add_music_link(obj)
   prm = obj.class.to_s.downcase + "_" + obj.id.to_s
@@ -282,5 +273,17 @@ def format_say(message)
   }
   str.gsub_href
 end
+
+# School Helpers
+def school_exists?
+  school = School.with_handle(param?(:handle))
+  unless school
+    @layout_info = {'middle_panel' => 'schools/not_found'}
+    erb(:"body/structure")
+  else
+    yield if block_given?
+  end
+end
+
 
 load 'helpers/profile.rb'

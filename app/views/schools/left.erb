@@ -1,9 +1,9 @@
 <% 
 	items = [
   	{:text => 'jamMm.in', :link => '/', :icon => :favicon, :id => 'menu-item-jammmin'},
-  	{:text => 'Members', :link => '/songs', :icon => :song, :id => 'menu-item-members'},
-  	{:text => 'Songs', :link => '/songs', :icon => :song, :id => 'menu-item-songs'},
-    {:text => 'Jams', :link => '/jams', :icon => :jam, :id => 'menu-item-jams'}  	
+  	{:text => 'Members', :link => "/schools/#{@school.handle}/members", :icon => :song, :id => 'menu-item-members'},
+  	{:text => 'Songs', :link => "/schools/#{@school.handle}/songs", :icon => :song, :id => 'menu-item-songs'},
+    {:text => 'Jams', :link => "/schools/#{@school.handle}/jams", :icon => :jam, :id => 'menu-item-jams'}  	
 	]
 %>
 

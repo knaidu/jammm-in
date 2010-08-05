@@ -39,6 +39,10 @@ def get_passed_user
   User.with_username(params[:username])
 end
 
+def get_passed_school
+  School.with_handle(param?(:handle))
+end
+
 def get_passed_users_by_id
   params[:user_ids].split(",").map do |id| User.find(id) end
 end
