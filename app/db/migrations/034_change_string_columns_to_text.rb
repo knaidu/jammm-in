@@ -7,9 +7,9 @@ class ChangeStringColumnsToText < ActiveRecord::Migration
   end
   
   def self.down
-		change_column :bugs_body, :message, :string
-		change_column :user_message_streams, :body, :string
-		change_column :song_manage_messages, :message, :string
-		change_column :comments, :comment, :string
+#		change_column :bugs_body, :message, :string
+#		change_column :user_message_streams, :body, :string
+#		change_column :song_manage_messages, :message, :string
+#		change_column :comments, :comment, :string
 	end
 end

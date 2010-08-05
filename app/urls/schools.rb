@@ -25,7 +25,7 @@ end
 get '/schools/:handle/admin' do
   school_exists?{
     @school = get_passed_school
-    @layout_info = {"middle_panel" => 'schools/admin', "left_panel" => "schools/left", "right_panel" => "schools/right"}
+    @layout_info = {"middle_panel" => 'schools/admin/middle', "left_panel" => "schools/left", "right_panel" => "schools/right"}
     erb(:"body/structure")
   }
 end
