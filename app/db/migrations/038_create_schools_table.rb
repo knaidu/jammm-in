@@ -4,6 +4,7 @@ class CreateSchoolsTable < ActiveRecord::Migration
     
     create_table :schools do |i|
       i.column :name, :string
+      i.column :handle, :string
       i.column :address, :text
       i.column :phone_number, :string
     end    
