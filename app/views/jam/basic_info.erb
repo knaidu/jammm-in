@@ -36,7 +36,8 @@
   	</div>
   	<%= main_info_hor_line %>
    	<%= main_info_row("Tags", list_tags(jam.tags)) %>
-
+    <%= main_info_hor_line %>
+    <%= main_info_row('Policy', Jam.policy_info(jam.policy)[:desc]) %>
 	</div>
 </div>
 <br>

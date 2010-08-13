@@ -231,23 +231,38 @@ class Jam < ActiveRecord::Base
     write_attribute(:policy, str)
   end
   
-  def set_policy(policy)
-    self.policy = policy
+  def set_policy(str)
+    self.policy = str
     self.save
+    self.class.policies.find{|p| p[:name] == str}[:on_success_message]
   end
 
   class << self
     def policies
       [
-        {:name => "public", :desc => "Public (Anyone can collaborate with)"},
-        {:name => "school", :desc => "School (Can be collborated only within your schools)"},
-        {:name => "private", :desc => "Private (Cannot be collaborated with)"}
+        {
+          :name => "public", :desc => "Public (Anyone can collaborate with)", 
+          :on_success_message => "The policy has been set successfully. Anyone will be allowed to collaborate with this jam."
+        },
+        {
+          :name => "school", :desc => "School (Can be collborated only within your schools)",
+          :on_success_message => "The policy has been set successfully. All copies/descendants of this song will now have the same policy. Only artists belonging to your school(s) can use this jam in a collaboration"
+        },
+        {
+          :name => "private", :desc => "Private (Cannot be collaborated with)",
+          :on_success_message => "The policy has been set successfully. All copies/descendants of this song will now have the same policy. No one will be able to use this jam in a collaboration."
+        }
       ]
     end
     
     def policy_names
       policies.map{|p| p[:name]}
     end
+    
+    def policy_info(str)
+      policies.find{|p| p[:name] == str}
+    end
+    
   end
   
 end

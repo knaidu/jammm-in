@@ -474,7 +474,6 @@ function loadJamComments(jamId){
 
 function setJamPolicy(select, jamId){
 	var policy = select.value;
-	alert(policy);
 	var url = formatController("jam", jamId, "manage", "set_policy");
 	call(url, {
 		method: 'post', 
