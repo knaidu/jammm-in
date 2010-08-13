@@ -157,3 +157,9 @@ get '/jam/:jam_id/manage/delete_sheet_music' do
     "Successfully deleted sheet music"
   }
 end
+
+post '/jam/:jam_id/manage/set_policy' do
+  monitor {
+    jam = get_passed_jam.set_policy param?(:policy)
+  }
+end

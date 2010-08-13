@@ -472,6 +472,17 @@ function loadJamComments(jamId){
 	updateEl('jam-comments', url);
 }
 
+function setJamPolicy(select, jamId){
+	var policy = select.value;
+	alert(policy);
+	var url = formatController("jam", jamId, "manage", "set_policy");
+	call(url, {
+		method: 'post', 
+		onComplete: function(response){loadResponseMessage(response, 'policy-response')},
+		parameters: {policy: policy}
+	});	
+}
+
 /* USERS */
 
 function followUser(username){

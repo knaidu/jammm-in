@@ -30,3 +30,20 @@
     </td>
   </tr>
 </table>
+
+<!-- Policy for the jam -->
+<% policy_select_id = rand_id %>
+<%= field 'Policy' %>
+<select id='<%= policy_select_id %>' onchange="setJamPolicy(this, <%= jam.id %>)">
+  <% Jam.policies.each do |policy| %>
+    <option value='<%= policy[:name] %>'><%= policy[:desc] %></option>
+  <% end %>
+</select>
+<div id='policy-response'></div>
+
+<%= js_start %>
+  // Sets the policy in the dropdown
+  window.setTimeout(function(){
+    $('<%= policy_select_id').setValue('<%= jam.policy %>');
+  }, 1000)
+<%= js_end %>

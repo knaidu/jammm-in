@@ -222,4 +222,32 @@ class Jam < ActiveRecord::Base
     jam_artists.map(&:instruments).flatten
   end
   
+  def policy
+    read_attribute(:policy) or "public"
+  end
+  
+  def policy=(str)
+    raise "Cannot set policy. Allowed policies are #{self.class.policy_names.join(', ')}." unless self.class.policy_names.include?(str)
+    write_attribute(:policy, str)
+  end
+  
+  def set_policy(policy)
+    self.policy = policy
+    self.save
+  end
+
+  class << self
+    def policies
+      [
+        {:name => "public", :desc => "Public (Anyone can collaborate with)"},
+        {:name => "school", :desc => "School (Can be collborated only within your schools)"},
+        {:name => "private", :desc => "Private (Cannot be collaborated with)"}
+      ]
+    end
+    
+    def policy_names
+      policies.map{|p| p[:name]}
+    end
+  end
+  
 end
