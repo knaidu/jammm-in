@@ -610,6 +610,9 @@ function onMouseOutBlanket(el){
 	});
 }
 
+/* SCHOOLS */
+function addUserToSchool(){}
+
 /* Slider */
 
 function sliderRegister(id){
