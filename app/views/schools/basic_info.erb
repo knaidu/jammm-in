@@ -1,0 +1,21 @@
+<div class='main-info'>
+  <div>
+    <div class='music-title'><b><%= @school.name %></b></div>
+  </div>
+  
+  <%= vspace %><%= vspace %>
+  <div>
+    <span style='float: left; box-sizing: border-box'>
+    </span>
+	  <div class='pad-left-10' style='box-sizing: border-box'>
+    	<%= main_info_row("Members", @school.users.size) %>
+    	<%= main_info_hor_line %>
+    	<%= main_info_row("Jams", @school.jams.size) %>
+    	<%= main_info_hor_line %>
+    	<%= main_info_row("Songs / Collaborations", @school.songs.size) %>
+    	<%= main_info_hor_line %>
+    	<%= main_info_row("Address", (@school.address or "-")) %>
+    </div>
+  </div>
+</div>
+<br>

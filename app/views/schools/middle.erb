@@ -1,5 +1,11 @@
+<%= partial :"/schools/basic_info" %>
+
 <%= section_header 'Jams' %>
+<%= partial("common/jams", :locals => {:jams => @school.jams.first(9)}) %>
+
+<%= vspace 20 %>
 <%= section_header 'Songs' %>
+<%= partial("common/songs_in_cols", :locals => {:songs => @school.songs.first(12), :cols => 2}) %>
 
 <%= js_start %>
 	setSelectedMenuItem('menu-item-school-home')
