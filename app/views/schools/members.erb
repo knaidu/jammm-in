@@ -1,0 +1,6 @@
+<%= section_header 'Members' %>
+  <%= partial("common/users", :locals => {:users => @school.users, :cols => 3}) %>
+  
+<%= js_start %>
+	setSelectedMenuItem('menu-item-members')
+<%= js_end %>

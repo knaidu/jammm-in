@@ -22,6 +22,14 @@ get '/schools/:handle/songs' do
   }
 end
 
+get '/schools/:handle/members' do
+  school_exists?{
+    @school = get_passed_school  
+    @layout_info = {"middle_panel" => 'schools/members', "left_panel" => "schools/left"}
+    erb(:"body/structure")
+  }
+end
+
 get '/schools/:handle/admin' do
   school_exists?{
     @school = get_passed_school
