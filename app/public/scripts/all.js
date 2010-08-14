@@ -1,12 +1,9 @@
 
 var GLOBAL = {playerType: "large", selectedMenuItem: false, Slider: {}};
 
-
 /* INIT */
 
 // This is executed after the page has been loaded
-
-
 
 window.onload = function(){
 
