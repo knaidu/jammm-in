@@ -1,3 +1,5 @@
+<%= partial :"/schools/basic_info" %>
+
 <%= section_header 'Members' %>
   <%= partial("common/users", :locals => {:users => @school.users, :cols => 3}) %>
   
