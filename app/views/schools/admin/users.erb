@@ -1,0 +1,16 @@
+
+<%= section_header 'Add User' %>
+  <div class='heading'>Admin add Page</div>
+    <form id='school-admin-add' method='post' action='/schools/<%= @school.handle %>/admin/add_update' onsubmit='return false'>
+      <%= field 'User Name:' %><input type='text' name='name' value=''><%= vspace %>
+      <div id='save-information-response'></div>
+      <input type='button' value='Add' onClick='addSchoolUser("school-admin-add")'>
+    </form>
+  <div id='add-school-user-response'></div>
+
+<%= section_header 'Users' %>
+
+<%= js_start %>
+        setSelectedMenuItem('menu-item-school-users')
+<%= js_end %>
+
