@@ -80,3 +80,13 @@ get '/schools/:handle/admin/list' do
     erb(:"body/structure")
   }
 end
+
+
+get '/schools/:handle/admin/add_update' do
+  userName = params[:name]
+  school = School.find(params[:handle])
+  user =  User.with_username(userName)
+  ret = school.add_user(user)
+  status 700 if not ret
+  ret ? "Successfully Added user to the School" : "Failed to add the User"
+end

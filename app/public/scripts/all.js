@@ -812,3 +812,12 @@ function chatResetChatWindowTitle(){
 		document.title = "jamMm.in";
 	}	
 }
+
+
+
+/* School Admin */
+function addSchoolUser(){
+	var formId = 'school-admin-add';
+	var responseId = 'school-admin-add-response';
+	submitForm(formId, responseId);
+}

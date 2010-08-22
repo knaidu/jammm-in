@@ -1,7 +1,7 @@
-SQL (0.4ms)  SET client_min_messages TO 'panic'
-SQL (0.3ms)  SET standard_conforming_strings = on
-SQL (0.1ms)  SET client_min_messages TO 'notice'
-SQL (60.8ms)  SELECT version FROM schema_migrations
+SQL (0.3ms)  SET client_min_messages TO 'panic'
+SQL (0.2ms)  SET standard_conforming_strings = on
+SQL (0.2ms)  SET client_min_messages TO 'notice'
+SQL (51.9ms)  SELECT version FROM schema_migrations
 Migrating to CreateTestTable (1)
 Migrating to CreateUserTable (2)
 Migrating to CreateSongsTable (3)
@@ -43,8 +43,3 @@ Migrating to CreateSchoolsTable (38)
 Migrating to CreateSchoolUsersTable (39)
 Migrating to CreateSchoolAdminsTable (40)
 Migrating to AddPolicyToJamTable (41)
-SQL (0.3ms)  BEGIN
-SQL (159.6ms)  ALTER TABLE "jams" ADD COLUMN "policy" character varying(255)
-SQL (109.2ms)  ALTER TABLE "jams" ALTER COLUMN "policy" SET DEFAULT 'public'
-SQL (16.5ms)  INSERT INTO schema_migrations (version) VALUES ('41')
-SQL (2.2ms)  COMMIT
