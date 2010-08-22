@@ -140,6 +140,7 @@ class Song < ActiveRecord::Base
   
   def add_jam(jam, added_by_user=nil)
     raise "You cannot add this jam as it does not have a mp3 uploaded" if not jam.file_handle
+    raise "This jam cannot be added as the policy does not allow it" unless jam.addable?(added_by_user)
     jam_adam = (jam.adam or jam)
     jam_name = jam.name + " (#{(jam_adam.descendants.size + 1).to_s})"
     jam = jam.make_copy(jam_name, added_by_user) if jam.published or jam.song_jam # Adds a copy of a jam to the song, if jam already published
@@ -158,8 +159,13 @@ class Song < ActiveRecord::Base
     song_jams.select(&:active).map(&:jam)
   end
   
+  def addable_jams(user)
+    jams.select{|jam| jam.addable?(user)}
+  end
+  
   def add_to_song(song, added_by_user=nil)
-    self.jams.each do |jam|
+    jams = song.jams.select{|j| j.addable?(added_by_user)}
+    jams.each do |jam|
       song.add_jam(jam, added_by_user)
     end
   end

@@ -94,6 +94,12 @@ class Jam < ActiveRecord::Base
     self.find_all.select(&:published)
   end
   
+  def addable?(user)
+    return true if policy == 'public'
+    return true if policy == "school" and not (self.creator.schools & user.schools).empty?
+    false
+  end
+  
   def add_to_song(song, added_by_user=nil)
     song.add_jam(self, added_by_user)
   end
@@ -232,8 +238,10 @@ class Jam < ActiveRecord::Base
   end
   
   def set_policy(str)
-    self.policy = str
-    self.save
+    self.children.each{|jam|
+      jam.policy = str
+      jam.save
+    }
     self.class.policies.find{|p| p[:name] == str}[:on_success_message]
   end
 

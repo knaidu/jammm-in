@@ -1,6 +1,10 @@
 <%= partial("/homepage/chat") %>
 <%= vspace 20 %>
 
+<%= section_header 'Schools' %>
+<%= partial(:"/common/schools", :locals => {:schools => School.all}) %>
+<%= vspace 20 %>
+
 <%= section_header('About Us') %>
 <div class='menu height-inherit text' id='simple-menu'>
   <div style='margin-bottom: 10px'>

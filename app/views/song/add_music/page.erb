@@ -1,22 +1,48 @@
-<%= section_header("Add Jam/Song", {:icon => :add}) %>
+<% music_type, music_id = @add.split("_") %>
 
-<input type='radio' name='choice' value='new' SELECTED> Create new song
-<input type='radio' name='choice' value='existing'> Add to existing 
+<%= section_header 'Addable Jams' %>
+<%
+  jams = (music_type == "jam" ? [Jam.find(music_id)] : Song.find(music_id).jams)
+  jams = jams.select{|jam| jam.addable?(session_user?)}
+%>
+<% unless jams.empty? %>
+  <%= vspace 10 %>
+  <div class='text'>These are the jams that will be added to your song</div>
+<% end %>
+<%= partial(:"/common/jams", :locals => {:jams => jams}) %>
 
-<br><br>
-<div id='choice-div' style='padding-bottom: 10px'></div>
+<% if jams.empty? %>
+  <div class='text'>
+    <% if music_type == "song" %>
+      None of the jams from the song can be added since thier policies do not allow it.
+    <% else %>
+      The jam cannot be added since its policy does not allow it.
+    <% end %>
+  </div>
+<% end %>
 
-<script language="javascript">
-	(function (){
-		var radios = document.getElementsByName('choice');
-		var onclick = function(){
-			var value = this.getValue();
-			var url = (value == 'new' ? "/partial/song/create" : "/partial/song/add_music/existing")
-			url = formatUrl(url, {hide_header: true, add: '<%= @add %>'});
-			updateEl('choice-div', url);
-		}
-		$A(radios).each(function(el){el.onclick = onclick});
-		radios[0].checked = true;
-		onclick.call(radios[0]); // Forces the loading of one of the radio buttons
-	})();
-</script>
+<% if not jams.empty? %>
+  <%= vspace 20 %>
+  <%= section_header("Add Jam/Song") %>
+
+  <input type='radio' name='choice' value='new' SELECTED> Create new song
+  <input type='radio' name='choice' value='existing'> Add to existing 
+
+  <br><br>
+  <div id='choice-div' style='padding-bottom: 10px'></div>
+
+  <script language="javascript">
+  	(function (){
+  		var radios = document.getElementsByName('choice');
+  		var onclick = function(){
+  			var value = this.getValue();
+  			var url = (value == 'new' ? "/partial/song/create" : "/partial/song/add_music/existing")
+  			url = formatUrl(url, {hide_header: true, add: '<%= @add %>'});
+  			updateEl('choice-div', url);
+  		}
+  		$A(radios).each(function(el){el.onclick = onclick});
+  		radios[0].checked = true;
+  		onclick.call(radios[0]); // Forces the loading of one of the radio buttons
+  	})();
+  </script>
+<% end %>

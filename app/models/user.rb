@@ -20,6 +20,8 @@ class User < ActiveRecord::Base
   has_many :user_notifications, :order => "id DESC"
   has_many :notifications, :through => :user_notifications, :order => "id DESC"
   has_many :user_badges, :dependent => :destroy
+  has_many :school_users
+  has_many :schools, :through => :school_users
   has_one :facebook_policy, :class_name => "FacebookShare"
   has_one :twitter_policy, :class_name => "TwitterShare"
   has_one :chat_user, :foreign_key => :user_id
