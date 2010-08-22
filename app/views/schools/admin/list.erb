@@ -1,3 +1,8 @@
 <div>
 	<div class='heading'>Admin list Page</div>
 </div>
+
+
+<%= section_header 'All Users in School' %>
+<% users = SchoolUser.all %>
+<%= partial("common/users", :locals => {:users => users}) %>

@@ -818,6 +818,6 @@ function chatResetChatWindowTitle(){
 /* School Admin */
 function addSchoolUser(){
 	var formId = 'school-admin-add';
-	var responseId = 'school-admin-add-response';
+	var responseId = 'add-school-user-response';
 	submitForm(formId, responseId);
 }
