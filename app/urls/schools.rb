@@ -81,12 +81,14 @@ get '/schools/:handle/admin/list' do
   }
 end
 
-
-get '/schools/:handle/admin/add_update' do
-  userName = params[:name]
-  school = School.find(params[:handle])
-  user =  User.with_username(userName)
-  ret = school.add_user(user)
-  status 700 if not ret
-  ret ? "Successfully Added user to the School" : "Failed to add the User"
+post '/schools/:handle/admin/add_update' do # you had mentioned this api with the "get" method, but your form was using a "post" method. all operations must be post
+  monitor {
+    username = params[:name] # variable name does not follow camel casing, hence it should be username or user_name.
+    school = School.with_handle(params[:handle])
+    raise "The specifed school does not exists" unless school
+    user =  User.with_username(username)
+    raise "The specifed artist does not exist." unless user # "unless" is equivalent to "if not"
+    ret = school.add_user(user)
+    "Successfully Added user to the School"
+  } # Look at what "monitor" does. in helpers/all.rb
 end
