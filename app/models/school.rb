@@ -8,12 +8,24 @@ class School < ActiveRecord::Base
     SchoolUser.add(self, user)
   end
   
+  def remove_user(user)
+    school_user = SchoolUser.find_by_user_id_and_school_id(user.id, self.id)
+    school_user.destroy if school_user
+  end
+  
   def jams
     users.map(&:jams).flatten.uniq.sort_by{|jam| -(jam.id)}
   end
   
   def songs
     users.map(&:songs).flatten.uniq.sort_by{|song| -(song.id)}
+  end
+  
+  def update_info(info)
+    self.name = info[:name]
+    self.address = info[:address]
+    self.phone_number = info[:phone_number]
+    self.save
   end
   
   class << self

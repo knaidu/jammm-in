@@ -69,13 +69,11 @@ end
 
 post '/schools/:handle/admin/manage_school_api' do 
   monitor {
-    school_name = params[:school_name]
-    school_address = params[:school_address]
-    school_phone = params[:school_phone]
+    name, address, phone_number = get_params(:name, :address, :phone_number) # Look up what get_params is
     school = get_passed_school
     raise "The specifed school does not exists" unless school
-    ret = school.add_user(user)
-    "Successfully Added user to the School"
-  } # Look at what "monitor" does. in helpers/all.rb
+    ret = school.update_info({:name => name, :address => address, :phone_number => phone_number}) # Look up update_info in models/school.rb
+    "School information has been successfully updated"
+  }
 end
 
