@@ -1,5 +1,12 @@
 <%= partial('account/message_streams', :locals => {:only_unread => true}) %>
 
+<% schools = @session_user.schools %>
+<% unless schools.empty? %>
+  <%= section_header 'Schools' %>
+  <%= partial(:"/common/schools", :locals => {:schools => schools}) %>
+<% end %>
+<%= vspace 20 %>
+
 <%= section_header('My Songs') %>
 <% @session_user.songs.each do |song| %>
 	<%= partial('account/song', {:locals => {:song => song}}) %><%= vspace %><br>
