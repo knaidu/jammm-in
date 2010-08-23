@@ -16,6 +16,7 @@ module UserUtils
     })
     invite.mark_as_used if user
     user.send_acknowledgement
+    invite.school.add_user(user) if invite.school # Adds the user to a school if the invite states the same
     user
   end
   

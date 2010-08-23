@@ -1,7 +1,6 @@
-SQL (0.3ms)  SET client_min_messages TO 'panic'
-SQL (0.2ms)  SET standard_conforming_strings = on
-SQL (0.2ms)  SET client_min_messages TO 'notice'
-SQL (51.9ms)  SELECT version FROM schema_migrations
+SQL (0.2ms)  SET client_min_messages TO 'panic'
+SQL (0.1ms)  SET client_min_messages TO 'notice'
+SQL (0.8ms)  SELECT version FROM schema_migrations
 Migrating to CreateTestTable (1)
 Migrating to CreateUserTable (2)
 Migrating to CreateSongsTable (3)
@@ -43,3 +42,9 @@ Migrating to CreateSchoolsTable (38)
 Migrating to CreateSchoolUsersTable (39)
 Migrating to CreateSchoolAdminsTable (40)
 Migrating to AddPolicyToJamTable (41)
+Migrating to AddSchoolIdToInviteTable (42)
+SQL (0.1ms)  BEGIN
+SQL (326.2ms)  ALTER TABLE "invites" ADD COLUMN "school_id" integer
+SQL (0.6ms)  ALTER TABLE "invites" ALTER COLUMN "school_id" SET DEFAULT NULL
+SQL (19.8ms)  INSERT INTO schema_migrations (version) VALUES ('42')
+SQL (38.6ms)  COMMIT

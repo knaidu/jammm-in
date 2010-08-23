@@ -28,6 +28,10 @@ class School < ActiveRecord::Base
     self.save
   end
   
+  def invite(email)
+    Invite.add_for_school(self, email, nil)
+  end
+  
   class << self
     def add(data)
       self.create(data)

@@ -77,3 +77,12 @@ post '/schools/:handle/admin/manage_school_api' do
   }
 end
 
+post '/schools/:handle/admin/invite_email' do
+  monitor {
+    email = param?(:email)
+    raise "There is already a user with the email address #{email} registered with jammm.in" if User.find_by_email(email)
+    school = get_passed_school
+    school.invite(email)
+    "An invte has been sent to the email #{email}"
+  }
+end

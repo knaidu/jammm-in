@@ -1,5 +1,6 @@
 <div>
 	<%= section_header 'Add User' %>
+		<div class="text">Enter a username of a user who already exists</div><%= vspace %>
 	<div>
 		<form id='school-admin-add' method='post' action='/schools/<%= @school.handle %>/admin/add_user_api' onsubmit='return false'>
 			<%= field 'User Name:' %><input type='text' name='name' value=''><%= vspace %>
@@ -11,8 +12,14 @@
 
 <%= vspace 20 %>
 <div>
-	<%= section_header 'Invite User' %>
-	<div class='heading'>Add Send invite section</div>
+	<%= section_header 'Invite By Email' %>
+	<div class="text">Enter an email to send a jammm.in invite. On acceptance of the email the artist will be automatically joined to your school.</div>
+	<%= vspace %>
+	<form id='send-school-invite' method="post" action="/schools/<%= @school.handle %>/admin/invite_email" onsubmit='return false'>
+	  <input type='text' name='email'><%= vspace %>
+	  <input type='submit' onClick='sendSchoolInviteToUser()'>
+	</form>
+	<div id='send-school-invite-response'></div>
 </div>
 
 <%= vspace 20 %>

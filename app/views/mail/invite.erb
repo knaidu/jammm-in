@@ -16,10 +16,17 @@
   <div style='<%= section_content_style %>'>
   
     <% if invite.referrer %>
-      You have been invited by <b><%= invite.referrer.username %></b> (<%= invite.referrer.name %>) to join jamMm.in.
+      You have been invited by <b><%= invite.referrer.username %></b> (<%= invite.referrer.name %>) to join
     <% else %>
-      You have been invited to join jamMm.in.
+      You have been invited to join 
     <% end %>
+    
+    <% if invite.school %>
+      <a href='http://jammm.in/schools/<%= invite.school.handle %>'><%= invite.school.name %>'s</a> portal at
+    <% end %>
+    
+    jamMm.in.
+    
     <%= vspace %>
     Please <a href='<%= signup_url %>'>click here</a> to accept the invitation and create your account. Or paste the below link in the address bar of your browser.
     <%= vspace %>

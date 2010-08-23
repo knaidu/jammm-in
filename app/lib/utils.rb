@@ -289,3 +289,14 @@ def report(music_type, music_id, user=nil)
   cmd << "--user_id=#{user.id}" if user
   run(cmd.join(" "))
 end
+
+# DEBUG
+def remove_my_email_from_users
+  users = User.find_all_by_email('prakash.raman.ka@gmail.com')
+  users.each{|user| user.email = "aaa@something.com"; user.save}
+  invites = Invite.find_all_by_invitee_email_id('prakash.raman.ka@gmail.com')
+  invites.each{|i|
+    i.invitee_email_id = "aaa@something.com"
+    i.save
+  }
+end
