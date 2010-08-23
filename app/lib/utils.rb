@@ -279,3 +279,13 @@ def chat_ping(user)
   user.pinged_chat
   ping_status
 end
+
+def report(music_type, music_id, user=nil)
+  cmd = [
+    "ruby #{ENV["WEBSERVER_ROOT"]}/scripts/mail/report.rb",
+    "--music_type=#{music_type}",
+    "--music_id=#{music_id}"
+  ]
+  cmd << "--user_id=#{user.id}" if user
+  run(cmd.join(" "))
+end

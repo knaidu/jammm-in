@@ -44,6 +44,15 @@
       <%= add_music_link song %>
     </div>
   </div>
+  
+  <div class='item'>
+    <div class='item-text' title='Report Song'>
+      Report
+    </div>
+    <div class='item-icon clickable' title='Report Song' onclick='reportMusic("song", "<%= song.id %>")'>
+      <%= icon :help1 %>
+    </div>
+  </div>
 
   <div class='item' style='float: right;'>
     <div class='item-text'>

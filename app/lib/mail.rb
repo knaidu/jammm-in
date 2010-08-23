@@ -1,34 +1,9 @@
-=begin
-Pony.mail (
-  :to => 'prakash.raman.ka@gmail.com',
-  :from => 'invite@jammm.in',
-  :subject => 'Second',
-  :body => 'Welcome to jammm.in',
-  :via => :smtp,
-  :smtp => {
-          :host => 'smtp.gmail.com',
-          :port => '587',
-          :tls => true,
-          :user => 'invite@jammm.in',
-          :password => '3WiseMen',
-          :auth => :login,
-          :domain => 'jammm.in'
-  }
-)
-=end
-
 DEFAULT_MAIL_DETAILS = {
-#  :to => 'prakash.raman.ka@gmail.com',
-#  :from => 'invite@jammm.in',
-#  :subject => 'Second',
-#  :body => 'Welcome to jammm.in',
   :via => :smtp,
   :smtp => {
     :host => 'smtp.gmail.com',
     :port => '587',
     :tls => true,
-#    :user => 'invite@jammm.in',
-#    :password => 'password',
     :auth => :login,
     :domain => 'jammm.in'
   }

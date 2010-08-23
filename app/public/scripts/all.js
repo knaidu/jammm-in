@@ -826,3 +826,14 @@ function addUpdateSchoolDetails(){
 	var responseId = 'update-school-details-response';
 	submitForm(formId, responseId);
 }
+
+
+/* REPOT MUSIC */
+function reportMusic(musicType, musicId){
+	var url = formatController('report', musicType, musicId);
+	var ans = confirm("Would you like to report this peice of music?");
+	var onSuccess = function(){
+		alert('Your request has been registered, we will be looking through the music shortly.');
+	}
+	call(url, {onSuccess: onSuccess, method: 'post'});
+}

@@ -37,3 +37,10 @@ end
 get '/terms_and_conditions' do
   erb(:"/help/tandc")
 end
+
+post '/report/:music_type/:music_id' do
+  monitor {
+    report(param?(:music_type), param?(:music_id), session_user?)
+    "Request registered"
+  }
+end
