@@ -4,14 +4,14 @@
 %>
 
 <% users.each do |user| %>
-  <div style="position: relative; width: <%= width_div %>%; float: left">
-    <div style='margin-right: 25px;'>
-      <%= partial("/common/user", {:locals => {:user => user}}) %>
+  <div style="position: relative; width: <%= width_div %>%; float: left;">
+    <div style='position: absolute; right: 0px; top: 0px; margin-right: 10px'>
+      <span class='simple-delete'>
+        <a title='Remove <%= user.name %>' href='/school/<%= @school.handle %>/admin/delete/<%= user.username %>'>x</a>
+      </span>
     </div>
-	  <div style='position: absolute; right: 0px; top: 0px; margin-right: 10px'>
-    	<span class='simple-delete'>
-    	  <a title='Remove <%= user.name %>' href='/school/<%= @school.handle %>/admin/delete/<%= user.username %>'>x</a>
-    	</span>
+    <div style='position: relative; margin-right: 25px;'>
+      <%= partial("/common/user", {:locals => {:user => user}}) %>
     </div>
   </div>
 <% end %>
