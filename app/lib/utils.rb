@@ -291,12 +291,30 @@ def report(music_type, music_id, user=nil)
 end
 
 # DEBUG
-def remove_my_email_from_users
+def debug_remove_my_email_from_users
   users = User.find_all_by_email('prakash.raman.ka@gmail.com')
   users.each{|user| user.email = "aaa@something.com"; user.save}
   invites = Invite.find_all_by_invitee_email_id('prakash.raman.ka@gmail.com')
   invites.each{|i|
     i.invitee_email_id = "aaa@something.com"
     i.save
+  }
+end
+
+def debug_add_core_user
+  users = [
+    ["prakashraman", "prakashraman@jammm.in"], 
+    ["tarunrs", "tarun@jammm.in"], 
+    ["minesh_jatania", "minesh.jatania@jammm.in"], ["karthik", "karthik@jammm.in"], 
+    ["pallavi", "pallavi@jammm.in"]
+  ]  
+  users.each {|u|
+    user = User.create!({
+      :name => u[0],
+      :username => u[0],
+      :password => u[0],
+      :email => u[1],
+      :location => "location"
+    }) 
   }
 end
