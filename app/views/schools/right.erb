@@ -1,2 +1,6 @@
 <%= section_header 'Members' %>
   <%= partial("common/users", :locals => {:users => @school.users.shuffle.first(20), :cols => 2}) %>
+<%= vspace 20 %>
+
+<%= section_header 'School Admins' %>
+  <%= partial("common/users", :locals => {:users => @school.admins, :cols => 1}) %>

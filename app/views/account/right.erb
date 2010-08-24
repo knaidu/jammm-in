@@ -3,7 +3,7 @@
 <% schools = @session_user.schools %>
 <% unless schools.empty? %>
   <%= section_header 'Schools' %>
-  <%= partial(:"/common/schools", :locals => {:schools => schools}) %>
+  <%= partial(:"/common/schools", :locals => {:schools => schools, :show_admin_links => true}) %>
 <% end %>
 <%= vspace 20 %>
 

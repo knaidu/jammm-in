@@ -4,5 +4,6 @@ class SchoolAdmin < ActiveRecord::Base
   
   belongs_to :user
   belongs_to :school
-  
+  belongs_to :admin, :class_name => "User", :primary_key => "id", :foreign_key => "user_id"
+
 end

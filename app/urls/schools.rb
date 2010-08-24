@@ -33,8 +33,10 @@ end
 get '/schools/:handle/admin' do
   school_exists?{
     @school = get_passed_school
-    @layout_info = {"middle_panel" => 'schools/admin/manage_users', "left_panel" => "schools/admin/left", "right_panel" => "schools/admin/right"}
-    erb(:"body/structure")
+    allowed?(@school.admins){
+      @layout_info = {"middle_panel" => 'schools/admin/manage_users', "left_panel" => "schools/admin/left", "right_panel" => "schools/admin/right"}
+      erb(:"body/structure")
+    }
   }
 end
 

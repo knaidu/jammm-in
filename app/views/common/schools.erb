@@ -1,3 +1,4 @@
+<% show_admin_links ||= false %>
 <% schools.each {|school| %>
-    <%= partial(:'/common/school', :locals => {:school => school}) %>
+    <%= partial(:'/common/school', :locals => {:school => school, :show_admin_links => show_admin_links}) %>
 <% } %>

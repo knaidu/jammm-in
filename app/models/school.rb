@@ -3,7 +3,9 @@ class School < ActiveRecord::Base
   validates_uniqueness_of :handle
   has_many :school_users
   has_many :users, :through => :school_users
-  
+  has_many :school_admins 
+  has_many :admins, :through => :school_admins
+ 
   def add_user(user)
     SchoolUser.add(self, user)
   end
