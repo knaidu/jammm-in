@@ -312,7 +312,7 @@ def debug_add_core_user
     user = User.create!({
       :name => u[0],
       :username => u[0],
-      :password => u[0],
+      :password => md5(u[0]),
       :email => u[1],
       :location => "location"
     }) 
