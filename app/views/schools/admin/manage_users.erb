@@ -4,7 +4,7 @@
 	<div>
 		<form id='school-admin-add' method='post' action='/schools/<%= @school.handle %>/admin/add_user_api' onsubmit='return false'>
 			<%= field 'User Name:' %><input type='text' name='name' value=''><%= vspace %>
-			<input type='button' value='Add' onClick='addSchoolUser("school-admin-add")'>
+			<input type='button' value='Add' onClick='addSchoolUser("<%= @school.handle %>")'>
 			<div id='add-school-user-response'></div>
 		</form>
 	</div>
@@ -17,7 +17,9 @@
 <div>
 	<%= section_header 'Users' %>
 	<% users = @school.users %>
-	<%= partial("common/manage_school_users", :locals => {:users => users}) %>
+	<div id='manage-users-list'>
+	  <%= partial("common/manage_school_users", :locals => {:users => users}) %>
+	</div>
 </div>
 
 <%= js_start %>

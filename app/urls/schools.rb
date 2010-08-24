@@ -46,6 +46,13 @@ get '/schools/:handle/admin/manage_users' do
   }
 end
 
+get '/schools/:handle/admin/manage_users_list' do
+  school_exists?{
+    @school = get_passed_school
+    erb(:"/common/manage_school_users", :locals => {:users => @school.users}) 
+  }
+end
+
 get '/schools/:handle/admin/manage_school' do
   school_exists?{
     @school = get_passed_school
@@ -55,11 +62,10 @@ get '/schools/:handle/admin/manage_school' do
 end
 
 
-get '/school/:handle/user/delete' do
+post '/schools/:handle/admin/user/delete' do
   school = get_passed_school
-  uid = params[:userid]
-  user = User.find(uid)
-  school.find(id).remove_user(user) ? "Deleted User"  : "Error in deleting user"
+  user = User.find(param?(:id))
+  school.remove_user(user) ? "Deleted User"  : "Error in deleting user"
 end
 
 

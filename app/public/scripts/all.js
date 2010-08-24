@@ -227,13 +227,16 @@ function submitForm(formId){
 	var form = $(formId);
 	var responseId = arguments[1] || false;
 	var responseIdEl = $(responseId);
+	var options = arguments[2] || {};
 	var success = function(response){
+		if(options.onSuccess) options.onSuccess();
 		if(!responseIdEl) return;
-		loadSuccessMessage(responseId, getResponseText(response.transport))
+		loadSuccessMessage(responseId, getResponseText(response.transport));
 	};
 	var failure = function(response){
+		if(options.onFailure) options.onFailure();
 		if(!responseIdEl) return;
-		loadFailureMessage(responseId, getResponseText(response.transport))
+		loadFailureMessage(responseId, getResponseText(response.transport));
 	};
 	form.request({onSuccess: success, onFailure: failure});
 }
@@ -816,10 +819,10 @@ function chatResetChatWindowTitle(){
 
 
 /* School Admin */
-function addSchoolUser(){
+function addSchoolUser(school){
 	var formId = 'school-admin-add';
 	var responseId = 'add-school-user-response';
-	submitForm(formId, responseId);
+	submitForm(formId, responseId, {onSuccess: function(){updateSchoolManageUsersList(school)}});
 }
 
 function addUpdateSchoolDetails(){
@@ -833,9 +836,17 @@ function sendSchoolInviteToUser(){
 	var responseId = 'send-school-invite-response';
 	submitForm(formId, responseId);
 }
+
+
 function deleteUserFromSchool(userid,school){
-	var url = formatUrl('/school/'+school+'/user/delete', {id: userid});
-	call(url, {onSuccess: function() {displayComments(for_type, for_type_id, comments_div_id)}})
+	var url = formatUrl('/schools/'+school+'/admin/user/delete', {id: userid});
+	call(url, {method: 'post', onSuccess: function(){updateSchoolManageUsersList(school)}});
+}
+
+function updateSchoolManageUsersList(school){
+  var id = arguments[1] || 'manage-users-list';
+  var url = formatController("schools", school, "admin", "manage_users_list");
+  updateEl(id, url);
 }
 
 
