@@ -1,0 +1,25 @@
+<div>
+	<%= section_header 'Add User' %>
+	<div>
+		<form id='school-admin-add' method='post' action='/schools/<%= @school.handle %>/admin/add_user_api' onsubmit='return false'>
+			<%= field 'User Name:' %><input type='text' name='name' value=''><%= vspace %>
+			<input type='button' value='Add' onClick='addSchoolUser("school-admin-add")'>
+			<div id='add-school-user-response'></div>
+		</form>
+	</div>
+</div>
+
+<div>
+	<%= section_header 'Invite User' %>
+	<div class='heading'>Add Send invite section</div>
+</div>
+
+<div>
+	<%= section_header 'Users' %>
+	<% users = @school.users %>
+	<%= partial("common/manage_school_users", :locals => {:users => users}) %>
+</div>
+
+<%= js_start %>
+        setSelectedMenuItem('menu-item-school-users')
+<%= js_end %>

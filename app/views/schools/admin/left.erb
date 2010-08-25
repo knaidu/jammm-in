@@ -1,7 +1,8 @@
 <% 
 	items = [
   	  {:text => 'jamMm.in', 	:link => '/', 							:icon => :favicon, 	:id => 'menu-item-jammmin'},
-  	  {:text => 'Users', 	:link => "/schools/#{@school.handle}/admin/add", 		:icon => :add, 		:id => 'menu-item-school-users'}
+  	  {:text => 'Manage Users', 	:link => "/schools/#{@school.handle}/admin/manage_users",	:icon => :add, 		:id => 'menu-item-school-users'},
+  	  {:text => 'Manage School', 	:link => "/schools/#{@school.handle}/admin/manage_school",	:icon => :delete, 	:id => 'menu-item-school-manage'},
 	]
 %>
 
@@ -10,4 +11,3 @@
 	<%= load_menu_items(items) %>	
 	<%= vspace 20 %>
 </div>
-

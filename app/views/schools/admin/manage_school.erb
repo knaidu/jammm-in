@@ -1,0 +1,12 @@
+<div>
+	<%= section_header 'School Details' %>
+	<div>
+		<form id='school-admin-manage-school' method='post' action='/schools/<%= @school.handle %>/admin/manage_school_api' onsubmit='return false'>
+			<%= field 'School Name:' %><input type='text' name='school_name' value='<%= @school.name %>'><%= vspace %>
+			<%= field 'School Adress:' %><input type='text' name='school_address' value='<%= @school.address %>'><%= vspace %>
+			<%= field 'School Phone:' %><input type='text' name='school_phone' value='<%= @school.phone_number %>'><%= vspace %>
+			<input type='button' value='Update' onClick='addUpdateSchoolDetails("school-admin-school-update")'>
+			<div id='update-school-details-response'></div>
+		</form>
+	</div>
+</div>

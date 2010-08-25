@@ -821,3 +821,8 @@ function addSchoolUser(){
 	var responseId = 'add-school-user-response';
 	submitForm(formId, responseId);
 }
+function addUpdateSchoolDetails(){
+	var formId = 'school-admin-manage-school';
+	var responseId = 'update-school-details-response';
+	submitForm(formId, responseId);
+}

@@ -1,0 +1,36 @@
+<% 
+	cols ||= 1
+	width_div = (100 / cols)
+%>
+<div class='w300'>
+	<% users.each do |user| %>
+	<div style="width: <%= width_div %>%; float: left">
+		<div class='position-relative' style='min-height: 32px; margin-bottom: 10px'>
+			<div class='position-absolute' style='width: 32px'>
+				<%= profile_picture_thumbnail user %>
+			</div>
+			<div class='position-relative' style='margin-left: 35px'>
+				<div style='text-overflow:ellipsis; overflow:hidden; white-space:nowrap;'><a class='bold simple-link' href='/<%= user.username %>'><%= user.username %></a></div>
+					<div style='margin-top: 2px'>
+						<div class='float-left' style='padding-right: 5px'>
+							<a class='simple-link' title='songs' href='/<%= user.username %>/songs'><%= icon :song %></a>
+						</div>
+		  				<div class='float-left text' style='padding-top: 2px; padding-right: 5px'>
+							<%= user.published_songs.size %>
+						</div>
+						<div class='float-left' style='padding-right: 5px'>
+							<a class='simple-link' title='jams' href='/<%= user.username %>/jams'><%= icon :jam %></a>
+						</div>
+						<div class='float-left text' style='padding-top: 2px'>
+							<%= user.displayable_jams.size %>
+						</div>
+						<div class='float-left' style='padding-right: 5px'>
+							<a class='simple-link' title='delete' href='/school/<%= @school.handle %>/admin/delete/<%= user.username %>'><%= icon :delete %></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<% end %>
+</div>
