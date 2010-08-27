@@ -11,6 +11,14 @@
   </div>
 </div>
 
+<%= vspace 20 %>
+
+<% if params[:invalid] == "true" %>
+  <div class='failure-message'>
+    Invalid username or password entered. Please try again.
+  </div>
+<% end %>
+
 <%= js_start %>
 	setSelectedMenuItem('menu-item-signin')
 <%= js_end %>

@@ -343,6 +343,11 @@ function flattenSong(songId){
 		return el.checked ? (el.value + "," + (volume/25)) : null;
 	}).compact();
 	
+	if(checkedJamIds.size() == 0){
+		alert("Please select the jams you would like to be merged together.");
+		return;
+	}
+	
 	var callback = function(response){
 		var config = {
 			url: "/process_info/" + response.responseText,

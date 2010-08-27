@@ -8,6 +8,7 @@
 <div class='message' id='chat-message-<%= message.id.to_s %>'>
   <div class='icon'><%= profile_picture_thumbnail message.user %></div>
   <div class='content <%= class_names %>'>
+    <div class='simple-link'><%= add_profile_link message.user %></div>
     <%= message.message %>
   </div>
 </div>

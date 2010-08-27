@@ -4,13 +4,16 @@ class Invite < ActiveRecord::Base
   belongs_to :school
   belongs_to :referrer, :class_name => "User", :foreign_key => "referred_user_id", :primary_key => "id"
 
-  def self.add(invitee_email_id, referred_user=nil, options=nil)
+  def self.add(invitee_email_id, referred_user=nil, options={})
+    puts "1"
     raise "This email address has already been sent an invite" if self.find_by_invitee_email_id(invitee_email_id)
+    puts '2'
     invite = self.create({
       :referred_user_id => (referred_user ? referred_user.id : nil),
       :invitee_email_id => invitee_email_id,
       :school_id => (options[:school_id] ? options[:school_id] : nil)
     })
+    puts "3"
     invite.mail_invite
     invite
   end

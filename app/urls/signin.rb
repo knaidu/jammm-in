@@ -12,6 +12,6 @@ post '/signin/process' do
     user.increment_counter
     redirect_home if session[:username]
   else
-    redirect '/signin'
+    redirect '/signin?invalid=true'
   end
 end

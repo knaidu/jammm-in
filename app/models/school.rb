@@ -34,6 +34,10 @@ class School < ActiveRecord::Base
     Invite.add_for_school(self, email, nil)
   end
   
+  def add_admin(user)
+    SchoolAdmin.add(self, user)
+  end
+  
   class << self
     def add(data)
       self.create(data)
