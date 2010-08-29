@@ -833,6 +833,11 @@ function sendSchoolInviteToUser(){
 	var responseId = 'send-school-invite-response';
 	submitForm(formId, responseId);
 }
+function deleteUserFromSchool(userid,school){
+	var url = formatUrl('/school/'+school+'/user/delete', {id: userid});
+	call(url, {onSuccess: function() {displayComments(for_type, for_type_id, comments_div_id)}})
+}
+
 
 
 /* REPOT MUSIC */

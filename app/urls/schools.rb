@@ -54,6 +54,16 @@ get '/schools/:handle/admin/manage_school' do
   }
 end
 
+
+get '/school/:handle/user/delete' do
+  school = get_passed_school
+  uid = params[:userid]
+  user = User.find(uid)
+  school.find(id).remove_user(user) ? "Deleted User"  : "Error in deleting user"
+end
+
+
+
 post '/schools/:handle/admin/add_user_api' do
   monitor {
     username = params[:name]
