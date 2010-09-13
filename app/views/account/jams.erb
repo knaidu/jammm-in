@@ -4,7 +4,7 @@
 <% end %>
 <%= vspace %>
 
-<%= section_header 'Independant Jams' %>
+<%= section_header 'Published Jams' %>
 <% @session_user.published_jams.each do |jam| %>
     <%= partial('account/jam', {:locals => {:jam => jam}}) %><br>
 <% end %>
@@ -15,7 +15,7 @@
 <% end %>
 <%= vspace %>
 
-<%= section_header 'My Jams Added by Others' %>
+<%= section_header 'Jams Used by Others' %>
 <% @session_user.added_by_others_jams.each do |jam| %>
     <%= partial('account/jam', {:locals => {:jam => jam}}) %><br>
 <% end %>

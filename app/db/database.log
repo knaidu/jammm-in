@@ -1,6 +1,7 @@
-SQL (0.2ms)  SET client_min_messages TO 'panic'
-SQL (0.1ms)  SET client_min_messages TO 'notice'
-SQL (1.1ms)  SELECT version FROM schema_migrations
+SQL (3.1ms)  SET client_min_messages TO 'panic'
+SQL (0.3ms)  SET standard_conforming_strings = on
+SQL (0.3ms)  SET client_min_messages TO 'notice'
+SQL (83.8ms)  SELECT version FROM schema_migrations
 Migrating to CreateTestTable (1)
 Migrating to CreateUserTable (2)
 Migrating to CreateSongsTable (3)
@@ -39,29 +40,7 @@ Migrating to CreateSaysTable (35)
 Migrating to CreateChatTables (36)
 Migrating to ChangeJamSongDescriptionToText (37)
 Migrating to CreateSchoolsTable (38)
-SQL (0.2ms)  BEGIN
-SQL (112.6ms)  CREATE TABLE "schools" ("id" serial primary key, "name" character varying(255), "handle" character varying(255), "address" text, "phone_number" character varying(255)) 
-SQL (0.7ms)  INSERT INTO schema_migrations (version) VALUES ('38')
-SQL (1.7ms)  COMMIT
 Migrating to CreateSchoolUsersTable (39)
-SQL (0.6ms)  BEGIN
-SQL (36.4ms)  CREATE TABLE "school_users" ("id" serial primary key, "school_id" integer, "user_id" integer) 
-SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('39')
-SQL (0.7ms)  COMMIT
 Migrating to CreateSchoolAdminsTable (40)
-SQL (0.4ms)  BEGIN
-SQL (7.8ms)  CREATE TABLE "school_admins" ("id" serial primary key, "school_id" integer, "user_id" integer) 
-SQL (0.3ms)  INSERT INTO schema_migrations (version) VALUES ('40')
-SQL (17.6ms)  COMMIT
 Migrating to AddPolicyToJamTable (41)
-SQL (0.4ms)  BEGIN
-SQL (23.9ms)  ALTER TABLE "jams" ADD COLUMN "policy" character varying(255)
-SQL (0.6ms)  ALTER TABLE "jams" ALTER COLUMN "policy" SET DEFAULT E'public'
-SQL (0.3ms)  INSERT INTO schema_migrations (version) VALUES ('41')
-SQL (2.1ms)  COMMIT
 Migrating to AddSchoolIdToInviteTable (42)
-SQL (0.3ms)  BEGIN
-SQL (0.6ms)  ALTER TABLE "invites" ADD COLUMN "school_id" integer
-SQL (0.4ms)  ALTER TABLE "invites" ALTER COLUMN "school_id" SET DEFAULT NULL
-SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('42')
-SQL (0.6ms)  COMMIT

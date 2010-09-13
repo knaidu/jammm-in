@@ -1,7 +1,7 @@
 <div class='actions-panel'>
   <div class='item'>
     <div class='item-text'>
-      Play
+      <span onclick=play('','') class='simple-link display-inline'>Play</span>
     </div>
     <div class='item-icon'>
      <%= play jam %> 
@@ -12,9 +12,9 @@
     <div class='item'>
       <div class='item-text'>
         <% if session_user and not @session_user.likes_jam?(jam) %>
-          Like
+          <span class='simple-link display-inline float-left' onClick='likeJam("<%= jam.id %>")' title='Like'>Like</span>
         <% elsif @session_user %>
-          Unlike
+          <span class='simple-link display-inline' onClick='unlikeJam("<%= jam.id %>")' title='Unlike'>Unlike</span>
         <% end %>
       </div>
       <div class='item-icon'>
@@ -29,7 +29,7 @@
   
   <div class='item'>
     <div class='item-text'>
-      Download
+	<a href='/file/<%= jam.file_handle %>'> Download</a>
     </div>
     <div class='item-icon'>
       <%= download jam %>
@@ -38,7 +38,8 @@
   
   <div class='item'>
     <div class='item-text'>
-      Add
+<%= prm = obj.class.to_s.downcase + "_" + obj.id.to_s %>
+<%= "<a href='/song/add_music?add=#{prm}' style='text-decoration: none !important'><span class='display-inline' title='Add to garage'>Add</span></a>" %>
     </div>
     <div class='item-icon'>
       <%= add_music_link jam %>
@@ -46,7 +47,7 @@
   </div>
   
   <div class='item'>
-    <div class='item-text' title='Report Jam'>
+    <div class='item-text' title='Report Jam' onclick='reportMusic("jam", "<%= jam.id %>")'>
       Report
     </div>
     <div class='item-icon clickable' title='Report Jam' onclick='reportMusic("jam", "<%= jam.id %>")'>
@@ -56,7 +57,7 @@
   
   <div class='item' style='float: right;'>
     <div class='item-text'>
-      Edit Jam
+<%=  "<span class='display-inline-block pad1'><a href='/jam/#{jam.id}/manage' title='Edit Jam'> Edit Jam</a></song>"  %>
     </div>
     <div class='item-icon'>
       <%= manage_jam_link(jam) %>

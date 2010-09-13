@@ -15,7 +15,7 @@
 	
 	function createJam(){
 	  var form = $('create-jam-form');
-	  showLoadingMessage("create-response", "Please wait your jam is being created...");
+	  showLoadingMessage("create-response", "Please wait while the jam is being created...");
 	  form.request({
 	    onSuccess: function(response){
 	      loadJamManage(getResponseText(response.transport));
