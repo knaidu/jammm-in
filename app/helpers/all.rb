@@ -184,6 +184,11 @@ def add_music_link(obj)
   "<a href='/song/add_music?add=#{prm}' style='text-decoration: none !important'><span class='display-inline' title='Add to garage'>" + (icon :add) + "</span></a>" 
 end
 
+def add_music_link_text(obj, text)
+  prm = obj.class.to_s.downcase + "_" + obj.id.to_s
+  "<a href='/song/add_music?add=#{prm}' style='text-decoration: none !important'><span class='display-inline' title='Add to garage'>" + text + "</span></a>"
+end
+
 def play_link(obj)
   "<span onclick=play('','') class='simple-link display-inline'>#{icon :play2}</span>"
 end

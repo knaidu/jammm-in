@@ -860,6 +860,7 @@ function updateSchoolManageUsersList(school){
 function reportMusic(musicType, musicId){
 	var url = formatController('report', musicType, musicId);
 	var ans = confirm("Would you like to report this peice of music?");
+	if(!ans) return;
 	var onSuccess = function(){
 		alert('Your request has been registered, we will be looking through the music shortly.');
 	}

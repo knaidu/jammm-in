@@ -71,6 +71,7 @@ get '/jam/:jam_id/manage/tag_artist' do
     jam = get_passed_jam
     raise "User #{param?(:username)} does not exist." if not (user = User.with_username(params[:username]))
     jam.tag_artist(user)
+    "Successfully tagged artist to this jam"
   }
 end
 

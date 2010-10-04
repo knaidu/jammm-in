@@ -20,13 +20,12 @@ module JamUtils
   
   def tag_artist(artist)
     return nil if not self.class.to_s == "Jam"
-    puts " artist #{artist.name} id is: #{artist.id}"
     ja = JamArtist.create({:jam_id => self.id, :artist_id => artist.id})
     return ja if artist == self.creator
-    
+
     # Notification
     notification = Notification.add({:user_id => artist.id, :jam_id => self.id}, "jam_tag")
-    notification.add_users([artist])    
+    notification.add_users([artist])
   end
 
   def untag_artist(user)

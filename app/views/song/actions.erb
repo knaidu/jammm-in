@@ -1,7 +1,7 @@
 <div class='actions-panel'>
   <div class='item'>
     <div class='item-text'>
-      Play
+      <a href='javascript: playMusic("/file/<%= song.file_handle %>", "<%= song.name %>")'>Play</a>
     </div>
     <div class='item-icon'>
      <%= play song %> 
@@ -12,9 +12,9 @@
     <div class='item'>
       <div class='item-text'>
         <% if @session_user and not @session_user.likes_song?(song) %>
-          Like
+      	  <span class='display-inline float-left' onClick='likeSong("<%= song.id %>")' title='Like'>Like</span>
         <% elsif @session_user %>
-          Unlike
+      	  <span class='display-inline' onClick='unlikeSong("<%= song.id %>")' title='Unlike'>Unlike</span>
         <% end %>
       </div>
       <div class='item-icon'>
@@ -29,7 +29,7 @@
 
   <div class='item'>
     <div class='item-text'>
-      Download
+      <a href='/file/<%= song.file_handle %>'>Download</a>
     </div>
     <div class='item-icon'>
       <%= download song %>
@@ -38,7 +38,7 @@
 
   <div class='item'>
     <div class='item-text'>
-      Add
+      <%= add_music_link_text(song, "Add") %>
     </div>
     <div class='item-icon'>
       <%= add_music_link song %>
@@ -46,7 +46,7 @@
   </div>
   
   <div class='item'>
-    <div class='item-text' title='Report Song'>
+    <div class='clickable item-text' title='Report Song' onclick='reportMusic("song", "<%= song.id %>")'>
       Report
     </div>
     <div class='item-icon clickable' title='Report Song' onclick='reportMusic("song", "<%= song.id %>")'>
@@ -56,7 +56,7 @@
 
   <div class='item' style='float: right;'>
     <div class='item-text'>
-      Edit Song
+      <a href='/song/<%= song.id %>/manage'>Edit Song</a>
     </div>
     <div class='item-icon'>
       <%= manage_song_link(song) %>

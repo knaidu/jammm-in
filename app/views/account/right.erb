@@ -7,13 +7,13 @@
 <% end %>
 <%= vspace 20 %>
 
-<%= section_header('My Songs') %>
+<%= section_header('Songs') %>
 <% @session_user.songs.each do |song| %>
 	<%= partial('account/song', {:locals => {:song => song}}) %><%= vspace %><br>
 <% end %>
 <br>
 
-<%= section_header('My Jams') %>
+<%= section_header('Jams') %>
 <% @session_user.jams.each do |jam| %>
 	<%= partial('account/jam', {:locals => {:jam => jam}}) %><%= vspace %><%= vspace %>
 <% end %>
