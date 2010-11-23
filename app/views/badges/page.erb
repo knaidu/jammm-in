@@ -1,7 +1,7 @@
 <%= section_header 'Badges' %>
 Badges are awarded based on the user's contribution.<%= vspace 20 %>
 
-<% Badge.all.each do |badge| %>
+<% Badge.sort.each do |badge| %>
   <div class='position-relative' style='margin-bottom: 20px; min-height: 38px'>
     <div class='position-absolute' style='height: 32px; width: 32px; overflow: hidden'>
       <img height="32px" src="<%= badge.image_url %>">

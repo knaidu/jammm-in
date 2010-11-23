@@ -6,6 +6,12 @@ class Badge
     BADGES_DATA["types"].keys.sort.map{|id| Badge.find(id)}
   end
   
+  def self.sort
+    founder, core_team = find(1), find(4)
+    badges = all.reject{|b| b.id == founder.id}.reject{|b| b.id == core_team.id}
+    [founder, core_team] + badges
+  end
+  
   def self.find(id)
     Badge.new(id)
   end  
