@@ -14,3 +14,7 @@ types:
     name: Alpha Rhythm Session
     image: alpharhythmsession.png
     description: The set of musicians that took part in the "Alpha Rhythm Session".
+  4:
+    name: Core Team
+    image: coreteam.png
+    description: jamMm.in Core Team Member
