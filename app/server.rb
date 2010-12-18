@@ -28,9 +28,17 @@ before do
 end
 
 get '/' do
-  @layout_info = {"left_panel" => "homepage/left", "middle_panel" => "homepage/middle", "right_panel" => "homepage/right"}
   erb(:'body/structure')
 end
+
+get '/test1' do
+  erb(:"test/1")
+end
+
+get '/test2' do
+  erb(:"test/2")  
+end
+
 
 get '/env' do
   ENV.inspect

@@ -1,10 +1,6 @@
 <%= partial :"body/header_and_top_bar" %>
-	<!-- Content DIV -->
-	<div class="common-content-container round">
-		<div class='left-panel height-inherit' id='navigation-panel'><div class='height-inherit'><%= partial "#{@layout_info['left_panel']}" %></div></div>
-		<div class='middle-panel' id='content-panel'>
-			  <%= partial "#{@layout_info['middle_panel']}" %>
-		 </div>
-		<div class='right-panel' style='height: auto'><div class='pad-right-10'><%= partial "#{@layout_info['right_panel']}" %></div></div>
-	</div>
+<div class='top-bar'>
+  Top Bar
+</div>
+<%= partial :"body/middle_bar" %>
 <%= partial :"body/footer_and_body_end" %>

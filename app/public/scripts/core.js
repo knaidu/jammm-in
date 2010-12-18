@@ -1,4 +1,3 @@
-
 Ajax.Response.addMethods({
   evalJSON: function() {
     return this.transport.responseText.evalJSON()
@@ -126,3 +125,42 @@ Poll.start = function(poll){
 	this._processUrl(poll);
 }.bind(Poll);
 
+/* AJAX */
+function call(url){
+	var defaultOptions = {method: 'get'};
+	var options = $H(defaultOptions).update(arguments[1] || {}).toObject();
+	new Ajax.Request(url, options);
+}
+
+function updateEl(el, url){
+	var options = mergeHash({method: 'get', evalScripts: true}, (arguments[2] || {}));
+	new Ajax.Updater(el, url, options);
+}
+
+function formatUrl(url){
+	var params = arguments[1] || false;
+	if(!params) return url;
+	return url + '?' + $H(params).toQueryString();
+}
+
+function getResponseText(transport){
+	return transport.responseText;
+}
+
+function log(message){
+	try{
+		if(console && console.log) console.log(message)	
+	}catch(e){}
+}
+
+function loadUrl(url){
+  window.location = url;
+}
+
+function reload(){
+	window.location = window.location.href;
+}
+
+function mergeHash(hash1, hash2){
+	return $H(hash1).update(hash2).toObject();
+}

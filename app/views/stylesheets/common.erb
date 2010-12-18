@@ -1,22 +1,16 @@
 <%
 	default_color = "#990000"
 	default_dark_color = "#800000"
-	default_line_color = "#cccccc"
-	default_light_line_color = "#dddddd"
 	default_round = "-moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;"
 	light_gray  = "#eee9e9"
 	
-	default_desc_bg_color = "#F2FFE5"
-	default_desc_border_color = "#E6FFCC"
-	default_desc_text_color = "#707070"
-#	font_family = '"lucida grande",tahoma,verdana,arial,sans-serif;'
 	font_family = "Arial,Helvetica,sans-serif"
 %>
 
 /* DEFAULTS */
 
 .default-link-color {color: #990000;}
-.default-bg-color {background-color: blue;}
+
 
 /* HTML, BODY */
 html, body {
@@ -29,353 +23,23 @@ html, body {
   font-size: 12px;
 }
 
-.main-container {
-  text-align: left;
-  width: 980px;
-  overflow: auto;
+.top-bar {
+  height: 60px;
+  background-color: <%= default_color %>;
+  color: white;
+  position: absolute;
+  width: 100%;
+}
+
+.middle-bar {
+  margin-top: 60px;
   position: relative;
 }
 
-table {
-	font-size: inherit;
-	color: inherit;
-	overflow: auto;
-}
-TD {vertical-align: top}
+.middle-bar .menu-panel {position: absolute; width: 200px; border-right: 1px solid grey;}
+.middle-bar .content-panel {position: relative; margin-left: 200px;}
 
-pre, table, td, body, input, textarea {font-family: inherit; font-size: inherit}
-textarea {width: 200px}
-
-span {overflow: auto; word-wrap: break-word}
-div {display: block; overflow: auto; word-wrap: break-word;}
-IMG {border: 0}
-A, a {
-	color: inherit;
-	text-decoration: none;
-}
-a:hover {text-decoration: underline}
-input[type='text'], input[type='password'], TEXTAREA {border: thin groove #d4d4d4; width: 200; padding: 1px;}
-input[type='text'], input[type='password'] {height: 18px; width: 200px}
-
-/* BUTTON ACTIVE */
-SELECT, input[type='button'], input[type='submit'] {
-    background-color: #fefefe;
-    border: 1px solid #d4d4d4;
-    color: #616161;
-    font-size: 11px;
-    padding: 4px 7px 4px 7px;
-    font-weight: bold;
-    background-size: 100%;
-    margin-bottom: 1px solid #dcdcdc;
-} 
-SELECT:active, input[type='button']:active, input[type='submit']:active {
-  background-color: #dcdcdc;
-  border: 1px solid #d4d4d4;
-  font-size: 11px;
-  color: #616161;
-  font-weight: bold;
-  padding: 4px 7px 4px 7px;
-  background-size: 100%;
-}
-
-/* HR */
-
-hr {border: 0}
-hr.thin {background-color: <%= default_line_color %>; height: 1px;}
-hr.light{background-color: <%= default_light_line_color %>; height: 1px;}
-hr.w60-align-left {width: 60%; margin-left: 0; text-align: left}
-
-
-/* GENERAL PURPOSE */
-.simple-link{color: <%= default_color%>; cursor: pointer}
-.clickable {cursor: pointer}
-.default-color{color: <%= default_color %>;}
-.w1 {width: 1%}
-.w100 {width: 100%;}
-.w60 {width: 60%}
-.h10 {height: 10px}
-.width-auto {width: auto;}
-.border1 {border: thin groove grey}
-.bg-grey {background-color: #cccccc}
-.pad10 {padding: 10px 10px 10px 10px;}
-.pad1 {padding: 1px;}
-.pad-5 {padding: 5px;}
-.pad-right-10{padding-right: 10px;}
-.pad-right-5 {padding-right: 5px;}
-.pad-left-5{padding-left: 5px;}
-.pad-left-10{padding-left: 10px;}
-.bold {font-weight: bold}
-.grey {color: grey}
-.black {color: black}
-.left-float {float: left;}
-.float-left {float: left;}
-.float-right {float: right;}
-.clear-both {clear: both;}
-.clear-left {clear: left;}
-.clear-right {clear: right;}
-.underline {text-decoration: underline;}
-.italic {font-style: italic;}
-.display-inline {display: inline}
-.display-inline-block {display: inline-block}
-.display-table {display: table}
-.display-table-cell{display: table-cell}
-.text {font-size: 11px};
-.text-center {text-align: center}
-.text-right {text-align: right}
-.text-left {text-align: left}	
-.text-center {text-align: center}
-.field{color: #838b83; width: 100px; display: inline-block; font-weight: normal}
-.round {-moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;}
-.round-top {-moz-border-radius: 5px 5px 0px 0px; -webkit-border-radius: 5px; border-radius: 5px;}
-.height-inherit {height: inherit;}
-.simple-action{display: inline-block; background-color: <%= light_gray %>; <%= default_round %>; padding: 5px}
-.simple-cell {display: inline-block; width: 200px}
-.align-top{vertical-align: top}
-.align-middle{vertical-align: middle}
-.position-absolute {position: absolute}
-.position-relative {position: relative}
-.border-box-sizing{box-sizing: border-box; -moz-border-sizing: border-box; -webkit-box-sizing: border-box;}
-.hidden {visibility: hidden}
-.visible {visibility: visible}
-.margin-left-20 {margin-left: 20px;}
-.size-12 {font-size: 12px}
-.size-11 {font-size: 11px;}
-.left-0 {left: 0px}
-.right-0 {right: 0px}
-
-/* GERENAL ICONS */
-.small-icon {width: 16px; height: 16px; overflow: hidden; display: inline-block}
-
-/* JAMS */
-.lineage-song-count {padding: 3px 6px; align: center; background-color: #994500; color: white; <%= default_round %>; font-size: 10px}
-
-/* PROGRESS-BAR */
-.progress-bar-container{
-	border: 1px solid #cc7833;
-}
-.progress-bar-container .progress-bar {
-	background-color: #cc8f5c;
-	width: 0px;
-}
-
-
-/* MESSAGES */
-.success-message {background-color: #008A00; border: 1px solid #007000; text-align: center; padding: 5px; color: white;}
-.failure-message {background-color: #A30000; border: 1px solid <%= default_color %>; text-align: center; padding: 5px; color: white;}
-
-.message-stream-full {max-height: 400px; padding: 10px; border: thin solid <%= default_line_color %>;}
-.message-stream-partial {max-height: 200px;}
-
-/* TOP BAR */
-
-div.top-bar {background-color: #990000; height: 52px; color: white; text-align: center; vertical-align: middle; overflow: hidden}
-.top-bar .jammmin-logo {width: 1%; vertical-align: middle}
-.top-bar .fill {width: 100%}
-.top-bar .separator {width: 1%; border-right: 0px solid #800000; margin-top: 20px}
-.top-bar TD.icon {width: 1%; vertical-align: inherit; padding: 0px 10px 0px 10px; overflow: hidden;}
-.top-bar TD.icon .number {position: absolute; padding: 3px 5px; font-size: 8px; bottom: 0px; right: 0px; background-color: #e6e6e6; font-weight: bold; <%= default_round %>; color: <%= default_color %>}
-.top-bar TD.icon:hover {background-color: #800000; width: 1%; vertical-align: inherit; padding: 0px 10px 0px 10px; overflow: hidden}
-.top-bar .jammmin-logo IMG {height: 45px;}
-.top-bar .player {width: 1%; text-align: left; height: 45px;}
-.top-bar .search {width: 1%; text-align: right; vertical-align: middle; padding: 0px 10px 0px 10px}
-
-/* FOOTER */
-
-.footer {color: #990000; font-size: 11px}
-
-/* COMMON STRUCTURE */
-
-.common-content-container {overflow: auto; position: relative; width: 100%; }
-.common-content-container .left-panel {position: relative; width: 17%; float: left; overflow: auto; padding-right: 0px;}
-.common-content-container .middle-panel {position: relative; float: left; width: 51%; left: 0px; padding: 10px; padding-top: 0px; border-left: 1px solid <%= default_light_line_color %>; border-right: 1px solid <%= default_light_line_color %>; min-height: 300px}
-.common-content-container .text {font-size: 11px}
-.common-content-container .right-panel {position: relative; right: 0px; width: 29%; overflow: auto; float: right;}
-
-.profile-photo {height: 132px; width: 132px; overflow: hidden; border: 1px solid #dddddd; padding: 1px; display: inline-block}
-
-/* Simple Layouts */
-.three-panel
-.three-panel .left-panel {float: left; display: inline-block}
-.three-panel .middle-panel {margin: 0px 20px 0px 20px; text-align: left;}
-.three-panel .middle-panel {float: right: width: 20px; text-align: right}
-
-/* MAIN COLUMNS */
-
-
-.account-menu-item {}
-.account-menu-item .item-text {color: black;}
-
-/* PROFILE */
-
-.profile-content-container {overflow: auto;}
-.profile-content-container .left-panel {width: 20%; float: left; overflow: auto;}
-.profile-content-container .middle-panel {width: 50%; float: left;}
-.profile-content-container .right-panel {width: 30%; float: right;}
-
-/* MAIN INFO */
-
-.main-info {
-	<%= default_round %>;
-	background-color: <%= default_desc_bg_color %>;
-	color: <%= default_desc_text_color %>;
-	border: 1px solid <%= default_desc_border_color %>;;
-	padding: 10px;
-}
-.main-info .field {display: inline-block; color: inherit; font-weight: inherit; width: inherit;}
-.main-info .value {font-weight: bold;}
-.main-info .line {}
-.main-info .music-title {vertical-align: top; font-size: 13px; letter-spacing: 1px; display: inline-block;}
-
-/* ACTIONS */
-.actions-panel {
-	<%= default_round %>;
-	background-color: <%= default_desc_bg_color %>;
-	color: <%= default_desc_text_color %>;
-	border: 1px solid <%= default_desc_border_color %>;
-	height: 30px;
-}
-.actions-panel .item {padding: 6px 6px; float: left; }
-.actions-panel .item .item-text {display: inline-block; font-weight: normal; font-size: 11px; float: left; padding-right: 10px; padding-left: 10px; margin-top: 2px;}
-.actions-panel .item .item-icon {display: inline-block; float: left; overflow: hidden}
-
-span.simple-delete {color: gray; cursor: pointer; padding: 0px 3px 3px 3px; font-weight: bold;}
-span.simple-delete:hover {color: white; background-color: <%= default_color %>; cursor: pointer; padding: 0px 3px 3px 3px; font-weight: bold;}
-
-/* MENU */
-.menu {
-	background-color: white; 
-	padding: 0px 0px 0px 5px;
-	/*
-		border-color: #cccccc;
-		border-width: 5px 1px 0px 0; 
-		border-style: solid;
-	*/
-	-moz-border-radius: 5px 5px 0 0; 
-	-webkit-border-radius: 5px 0 0;
-	border-radius: 5px 5px 0 0;
-}
-
-div.menu-items {cursor: pointer; padding-right: 1px; padding-bottom: 1px;}
-div.menu-items A:HOVER {text-decoration: none; cursor: pointer;}
-div.menu-items div.menu-item {background-color: none; cursor: inherit; padding-right: 5px;}
-div.menu-items div.menu-item:hover {background-color: <%= default_desc_bg_color %>}
-div.menu-items div.menu-item div.text {display: inline-block; vertical-align: middle; cursor: inherit;}
-div.menu-items div.menu-item div.icon {display: inline-block; vertical-align: middle; padding-right: 5px; cursor: inherit; height: 16px; width: 16px; overflow: hidden;}
-
-.menu-item-hover {background-color: <%= default_desc_bg_color %>}
-.menu-item-selected {background-color: <%= default_desc_bg_color %>; font-weight: bold;}
-.menu-item-text-hover {color: white};
-
-/* MUSIC, i.e: songs, jams, lyrics */
-.music-desc {padding: 10px; background-color: #faebd7; border: thin solid #eedfcc;}
-.upload-jam-iframe {border: none; height: 80; width: 100%; overflow: hidden;}
-
-/* Feeds */
-.feed {
-	padding-bottom: 10px;
-	color: #4f4f4f;
-	font-size: 12px;
-}
-
-.feed .profile-link {font-weight: bold}
-.feed .comment {position: relative; font-size: 11px; min-height: 20px; margin-top: 5px}
-.feed .comment .icon {position: absolute}
-.feed .comment .content {color: grey; margin-top: 0px; margin-left: 20px; padding-right: 30px}
-
-/* Notifications */
-.notification {}
-.notification .icon {padding-right: 10px; float: left}
-.notification .content {float: left; display: inline-block;}
-
-/* Section Header */
-.section-header {
-
-}
-.section-header .text {
-  font-size: 11px;
-  color: grey;
-}
-
-.middle-panel .section-header .text {font-size: 13px}
-
-.panel-header {
-}
-
-.panel-header .icon {
-  padding-right: 5px;
-  display: inline-block;
-	vertical-align: middle;
-}
-
-.panel-header .text {
-	font-size: 14px;
-	font-weight: bold;
-	display: inline-block;
-	vertical-align: middle;
-}
-
-div.something {color: blue}
-div.something div.little:hover{color: red}
-div.something:active {color: green}
-
-/* BOX ITEMS */
-div.box {border: thin solid #d4d4d4}
-div.box div.text {float: left; font-weight: bold; color: #4a4a4a; padding: 5px; border-right: inherit}
-div.box div.action {padding: 5px; float: left; font-weight: bold}
-div.box div.action:hover {padding: 5px; float: left; font-weight: bold; color: black; background-color: #d4d4d4; cursor: pointer}
-
-/* SEARCH */
-.search-item {width: 100%}
-.search-item .icon {padding-right: 5px; width: 2%}
-.search-item .content {width: 100%}
-
-/* LINEAGE */
-.lineage {}
-.lineage .child {}
-.lineage .children {
-    border-left: 1px solid <%= default_light_line_color %>; 
-    margin-left: 5px; float-left; 
-}
-.lineage .child .pad {border-bottom: 1px solid <%= default_light_line_color %>; margin-top: 7px}
-.lineage .child .song-jam {color: #A6A6A6; font-weight: bold}
-.lineage .child .highlight {<%= default_round %>; background-color: #E3E3E3; padding: 3px;}
-
-
-/* THUMBNAIL */
-div.thumbnail {width: 24px; height: 24px; overflow: hidden;}
-div.thumbnail IMG{height: 24px}
-
-/* ACTIONS ON HOVER */
-.blanket {}
-
-/* Tutorial */
-.tutorial {}
-.tutorial .section {margin-bottom: 25px;}
-.tutorial .section .heading {font-size: 12px; font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid <%= default_light_line_color %>}
-.tutorial .section .answer {padding-left: 20px; font-size: 12px;}
-
-/* CHAT */
-.chat .window {min-height: 300px; max-height: 300px;}
-.chat .post-message {padding-top: 10px; position: relative; min-height: 25px; overflow: hidden}
-.chat .post-message .icon {position: absolute; width: 25px}
-.chat .post-message .input-text{position: relative; margin-left: 25px; margin-right: 80px}
-.chat .post-message .button {position: absolute; right: 0px; width: 80px; text-align: right}
-.chat .window .messages {}
-.chat .window .messages .message {min-height: 33px; position: relative; margin-bottom: 10px;}
-.chat .window .messages .message .icon {width: 30px; position: absolute}
-.chat .window .messages .message .content {margin-left: 40px; margin-top: 1px; position: relative}
-
-/* SPECIAL MESSAGE */
-.special-message {
-  position: relative;
-  background-color: #e0eee0; 
-  color: #2f4f4f;
-/*  border: 1px solid #FFA64D; */
-  padding: 10px;
-  <%= default_round %>
-}
-.special-message .icon {position: absolute; width: 20px}
-.special-message .content {position: relative; margin-left: 20px}
-
-
-.tandc {padding: 20px; text-align: justify}
+.menu-panel .navigation-bar {width: 100%; height: 50px; border-bottom: 1px solid grey;}
+.menu-panel .navigation-bar .icon {position: absolute; width: 32px; margin-top: 10px}
+.menu-panel .navigation-bar .content {position: relative; margin-left: 32px; margin-top: 5px}
+.menu-panel .navigation-bar .content .name {font-weight: bold;}

@@ -28,6 +28,10 @@ def redirect_manage_song(song)
   redirect "/song/#{song.id}/manage"
 end
 
+def render_state(state)
+  partial("common/state", :locals => {:state => state})
+end
+
 def show_profile(username)
   redirect "/#{username}"
 end
