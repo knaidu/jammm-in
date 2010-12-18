@@ -99,6 +99,16 @@ var Poll = Class.create({
 	stop: function(){this._completed = true}
 });
 
+jQuery.fn.center = function () {
+	var duration = arguments[0] || 0;
+	this.css("position","fixed");
+	this.animate({
+		"top": ( $j(window).height() - this.height() ) / 2+$j(window).scrollTop() + "px",
+		"left": ( $j(window).width() - this.width() ) / 2+$j(window).scrollLeft() + "px"
+	}, 0);
+	return this;
+}
+
 Poll._processUrl = function(poll){
 	if(poll._completed) return;
 	

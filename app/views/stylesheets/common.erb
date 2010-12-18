@@ -36,10 +36,12 @@ html, body {
   position: relative;
 }
 
-.middle-bar .menu-panel {position: absolute; width: 200px; border-right: 1px solid grey;}
-.middle-bar .content-panel {position: relative; margin-left: 200px;}
+.middle-bar .menu-panel {position: absolute; width: 200px; border-right: 1px solid grey; z-index: 2; background-color: white}
+.middle-bar .content-panel {position: relative; margin-left: 200px; z-index: 1}
 
 .menu-panel .navigation-bar {width: 100%; height: 50px; border-bottom: 1px solid grey;}
 .menu-panel .navigation-bar .icon {position: absolute; width: 32px; margin-top: 10px}
 .menu-panel .navigation-bar .content {position: relative; margin-left: 32px; margin-top: 5px}
 .menu-panel .navigation-bar .content .name {font-weight: bold;}
+
+.dialog {z-index: 10; display: none; min-width: 400px; height: 200px; position: fixed; background-color: yellow; border: 1px solid grey; left: 100px; top: 10px}

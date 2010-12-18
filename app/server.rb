@@ -39,6 +39,10 @@ get '/test2' do
   erb(:"test/2")  
 end
 
+get '/test3' do
+  
+end
+
 
 get '/env' do
   ENV.inspect
