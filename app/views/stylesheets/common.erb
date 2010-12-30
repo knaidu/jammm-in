@@ -3,8 +3,9 @@
 	default_dark_color = "#800000"
 	default_round = "-moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;"
 	light_gray  = "#eee9e9"
-	
 	font_family = "Arial,Helvetica,sans-serif"
+	left_panel_width = "200px";
+	right_panel_width = "200px";
 %>
 
 /* DEFAULTS */
@@ -23,21 +24,32 @@ html, body {
   font-size: 12px;
 }
 
+IMG {border: none}
+
 .top-bar {
   height: 60px;
   background-color: <%= default_color %>;
   color: white;
-  position: absolute;
+  position: fixed;
   width: 100%;
 }
+
+.top-bar .logo {position: absolute; width: <%= left_panel_width %>; height: 100%}
+.top-bar .search {position: absolute; right: 0px; width: <%= right_panel_width %>; height: 100%; padding: 18px;}
+.top-bar .search INPUT {width: 100%}
+.top-bar .menu {color: white; margin-left: <%= left_panel_width %>; font-size: 22px; padding: 5px}
+.top-bar .menu .item {display: inline-block; margin-right: 30px; background-color: red; cursor: pointer}
+.top-bar .menu .item .text {padding: 10px}
 
 .middle-bar {
   margin-top: 60px;
   position: relative;
 }
 
-.middle-bar .menu-panel {position: absolute; width: 200px; border-right: 1px solid grey; z-index: 2; background-color: white}
-.middle-bar .content-panel {position: relative; margin-left: 200px; z-index: 1}
+.middle-bar .menu-panel {position: absolute; width: <%= left_panel_width %>; border-right: 1px solid grey; z-index: 2; background-color: white;}
+.middle-bar .content-panel {position: relative; margin-left: 200px; z-index: 1;}
+
+.bottom-bar {position: fixed; background-color: #3D3D3D; bottom: 0px; width: 100%; height: 20px}
 
 .menu-panel .navigation-bar {width: 100%; height: 50px; border-bottom: 1px solid grey;}
 .menu-panel .navigation-bar .icon {position: absolute; width: 32px; margin-top: 10px}

@@ -1,42 +1,14 @@
-<% increment_site_counter(request.path_info) %>
-
 <div class='top-bar'>
-  <table class='w100' height='100%' cellpadding=0 cellspacing=0>
-    <tr>
-    
-    	<td class='jammmin-logo' style='vertical-align: middle'>
-	      <a href='/'><img src='/images/logos/logo.jpg'></a>
-	    </td>
-	    
-     	<td class='separator'></td>  
-      <td class='player' style='vertical-align: middle;'>
-        <%= load_player("large") %>
-    	</td>
-	    
-    	<td class='fill'></td>
-    
-      <% if session_user? %>
-        <td class='icon' title='Home'><a href='/account'><%= icon(:"home-header", :header) %></a></td>
-        <td class='icon' title='Profile'><a href='/<%= session_user?.username %>'><%= icon(:"profile-header", :header) %></a></td>        
-        <td class='icon' title='Messages'>
-          <%= partial "/body/top_bar_messages" %>
-        </td>
-        <td class='icon' title='Notifications'>
-          <%= partial "/body/top_bar_notifications" %>
-        </td>
-        <td class='icon' title='Settings / About Me'><a href='/account/aboutme'><%= icon(:"settings1", :header) %></td></td>
-        <td class='icon' title='Logout'><a href='/account/logout'><%= icon(:"logout-header", :header) %></a></td>
-      <% else %>
-        <td class='icon' title='Sign In'><a href='/signin'><%= icon(:"login-header", :header) %></a></td>      
-      <% end %>
-
-	    <td class='separator'>&nbsp;</td>
-    	<td class='search'>
-    	  <form action='/search'>
-      	  <input type='text' style='border: none; width: 150px' name='q' value='search'>
-      	</form>
-    	</td>
-   	
-    </tr>
-  </table>
+  <div class='logo'>
+    <a href='/'><img src='/images/logos/logo.jpg' height='100%'></a>
+  </div>
+  <div class='search'>
+    <input type='text'>
+  </div>
+  <div class='menu'>
+    <div class='item'><div class='text'>Jams</div></div>
+    <div class='item'><div class='text'>Collaborations</div></div>
+    <div class='item'><div class='text'>Schools</div></div>
+    <div class='item'><div class='text'>Artists</div></div>
+  </div>
 </div>

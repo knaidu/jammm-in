@@ -12,7 +12,7 @@ $j(document).ready(Layout.onReady);
 
 Layout.showStructure = function(){
 	var c = this.getMiddleBar();
-	var height = this.getWindowSize().height - this.getTopBar().height();
+	var height = this.getWindowSize().height - this.getTopBar().height() - $j(".bottom-bar").height();
 	var width = this.getWindowSize().width;
 	c.height(height);
 	c.children().first().height(height);
