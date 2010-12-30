@@ -82,7 +82,7 @@ Navigate.storeState = function(){
 	this.setBackButton();
 	var state = {
 		name: $j(".content-panel .state .name").html(),
-		description: $j(".content-panel .state .name").html(),
+		description: $j(".content-panel .state .description").html(),
 		url: $j(".content-panel .state .url").html()
 	};
 	if(state.url == this.currentState.url) // return if the new page is same as present page.

@@ -4,8 +4,7 @@ get '/songs' do
 end
 
 get '/jams' do
-  @layout_info = {"middle_panel" => 'homepage/jams', 'left_panel' => 'homepage/left', "right_panel" => "homepage/right"}
-  erb(:"body/structure")
+  erb(:"homepage/jams")
 end
 
 
