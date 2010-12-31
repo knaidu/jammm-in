@@ -1,6 +1,7 @@
 var Layout = {};
 var Navigate = {states: []};
 var Dialog = {};
+var Doc = {Player: {}};
 
 Layout.onReady = function(){
 	this.showStructure();
@@ -15,9 +16,10 @@ Layout.showStructure = function(){
 	var height = this.getWindowSize().height - this.getTopBar().height() - $j(".bottom-bar").height();
 	var width = this.getWindowSize().width;
 	c.height(height);
-	c.children().first().height(height);
+	c.children().height(height);
 	c.width(width);
 	c.fadeIn();
+	Doc.Player.collapse();
 }.bind(Layout);
 
 Layout.getWindowSize = function(){
@@ -47,24 +49,26 @@ var State = Class.create({
 });
 
 Navigate.saveHomeState = function(){
-	this.setCurrentState(new State({name: "Home", description: "Desc is here", url: "/home"}))
+	this.setCurrentState(new State({name: "Back", description: "Go Back", url: "/home"}))
 }.bind(Navigate);
 
 Navigate.loadContent = function(url){
 	var options = arguments[1] || {direction: "left"};
-	var child = $j(".content-panel").children();
+	var children = $j(".content-panel").children();
 	var callback = function(e){
-		ttt= child;
-		if(child.size())
-			$(child[0]).remove();
-		updateEl("content-panel", url, {onSuccess: function(){window.setTimeout(Navigate.storeState, 500)}});		
+		if(children.size())
+			$(children[0]).remove();
+		var div = new Element("div", {style: "padding-top: 20px"});
+		$("content-panel").insert(div, "bottom");
+		updateEl(div, url, {onSuccess: function(){window.setTimeout(Navigate.storeState, 500)}});		
 	}
-	if(child.size()){
-		child[0].absolutize();
+
+	if(children.size()){
+		children[0].absolutize();
 		if(options.direction == 'left')
-			child.animate({left: "-" + child.width() + "px"}, 1000, callback);
+			children.animate({left: "-" + children.width() + "px"}, 1000, callback);
 		else
-			child.fadeOut('slow', callback);
+			children.fadeOut('slow', callback);
 	}
 	else
 		callback();
@@ -99,7 +103,7 @@ Navigate.setBackButton = function(){
 	$j(".navigation-bar .content .name").html(state.name);
 	$j(".navigation-bar .content .description").html(state.description);
 	$j(".navigation-bar .content .url").html(state.url);
-};
+}.bind(Navigate);
 
 Navigate.back = function(){
 	var state = this.states.pop();
@@ -138,4 +142,22 @@ Dialog.hide = function(){
 
 Dialog.center = function(){
 	this.get().center();
-}.bind(Dialog)
+}.bind(Dialog);
+
+/* Doc Functions */
+
+Doc.get = function(){
+	return $j(".actions-docs");
+}.bind(Doc);
+
+Doc.Player.get = function(){
+	return $j(".player");
+}.bind(Doc.Player);
+
+Doc.Player.expand = function(){
+	this.get().animate({height: 300}, "slow");
+}.bind(Doc.Player);
+
+Doc.Player.collapse = function(){
+	this.get().animate({height: 30}, "slow");
+}.bind(Doc.Player);

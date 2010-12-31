@@ -80,10 +80,11 @@ get '/:username/unfollow' do
 end
 
 get '/:username/profile_picture' do
-  send_file(User.with_username(param?(:username)).profile_picture,{
-    :filename => "profile_picutre",
-    :disposistion => "inline"
-  })
+  send_file("/home/jammmin/storage/me.png")
+#  send_file(User.with_username(param?(:username)).profile_picture,{
+#    :filename => "profile_picutre",
+#    :disposistion => "inline"
+#  })
 end
 
 get '/:username/jammed_with' do

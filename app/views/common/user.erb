@@ -4,24 +4,11 @@
 	<div class='position-absolute' style='width: 32px'>
     <%= profile_picture_thumbnail user %>
 	</div>
-	<div class='position-relative' style='margin-left: 35px'>
-		<div style='text-overflow:ellipsis; overflow:hidden; white-space:nowrap;'><a class='bold simple-link' href='/<%= user.username %>'><%= user.username %></a></div>
-		<div style='margin-top: 2px'>
-		  <div class='float-left' style='padding-right: 5px'>
-		    <a class='simple-link' title='songs' href='/<%= user.username %>/songs'><%= icon :song %></a>
-		  </div>
-		
-		  <div class='float-left text' style='padding-top: 2px; padding-right: 5px'>
-        <%= user.published_songs.size %>
-      </div>
-
-		  <div class='float-left' style='padding-right: 5px'>
-        <a class='simple-link' title='jams' href='/<%= user.username %>/jams'><%= icon :jam %></a>
-      </div>
-      
-		  <div class='float-left text' style='padding-top: 2px'>
-        <%= user.displayable_jams.size %>
-	    </div>
+	<div class='position-relative' style='margin-left: 64px'>
+		<div style='text-overflow:ellipsis; overflow:hidden; white-space:nowrap; font-weight: bold'><%= user.username %></div>
+		<%= vspace 10 %>
+		<div>
+      <%= user.displayable_jams.size %> Jams, <%= user.published_songs.size %> Collaborations
     </div>
   </div>
 </div>

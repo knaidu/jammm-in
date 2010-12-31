@@ -1,11 +1,13 @@
-<%
+<%  
 	default_color = "#990000"
 	default_dark_color = "#800000"
 	default_round = "-moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;"
 	light_gray  = "#eee9e9"
 	font_family = "Arial,Helvetica,sans-serif"
 	left_panel_width = "200px";
-	right_panel_width = "200px";
+	right_panel_width = "270px";
+	footer_height = "20px";
+	actions_doc_height = "30px";
 %>
 
 /* DEFAULTS */
@@ -26,6 +28,7 @@ html, body {
 
 /* GENERAL */
 .clear-both {clear: both}
+.position-absolute {position: absolute}
 
 IMG {border: none}
 
@@ -52,14 +55,41 @@ IMG {border: none}
 }
 
 .middle-bar .menu-panel {position: fixed; width: <%= left_panel_width %>; border-right: 1px solid grey; z-index: 2; background-color: white;}
-.middle-bar .content-panel {position: relative; margin-left: 200px; z-index: 1; padding-left: 20px}
+.middle-bar .tips-panel {position: fixed; right: 0px; width: <%= right_panel_width %>; border-left: 0px solid grey; min-height: 300px}
+.middle-bar .content-panel {
+  position: relative; 
+  margin-left: <%= left_panel_width %>; 
+  margin-right: <%= right_panel_width %>; 
+  z-index: 1; 
+  padding: 0px 0px 0px 20px;
+  overflow: auto;
+}
 
-.bottom-bar {position: fixed; background-color: #3D3D3D; bottom: 0px; width: 100%; height: 20px}
+.bottom-bar {position: fixed; background-color: #3D3D3D; bottom: 0px; width: 100%; height: <%= footer_height %>}
 
 .menu-panel .navigation-bar {width: 100%; height: 50px; border-bottom: 1px solid grey;}
 .menu-panel .navigation-bar .icon {position: absolute; width: 32px; margin-top: 10px}
 .menu-panel .navigation-bar .content {position: relative; margin-left: 32px; margin-top: 5px}
 .menu-panel .navigation-bar .content .name {font-weight: bold;}
+
+.actions-doc {
+  position: fixed; 
+  bottom: <%= footer_height %>; 
+  width: <%= (right_panel_width.px - 2).px %>; 
+  right: 0px; 
+  height: <%= actions_doc_height %>;
+  border: 1px solid grey;
+}
+.player {
+  position: fixed; 
+  bottom: <%= (footer_height.gsub('px', '').to_i + actions_doc_height.gsub("px", '').to_i).to_s + "px" %>; 
+  width: <%= (right_panel_width.px - 2).px %>; 
+  right: 0px; 
+  height: 0px;
+  border: 1px solid grey;
+  overflow: hidden;
+  background-color: #dcdcdc;
+}
 
 .dialog {z-index: 10; display: none; min-width: 400px; height: 200px; position: fixed; background-color: yellow; border: 1px solid grey; left: 100px; top: 10px}
 
@@ -68,3 +98,16 @@ IMG {border: none}
 .jams .jam .icon {position: absolute; width: 64px; height: 64px}
 .jams .jam .content {position: relative; margin-left: 70px; overflow: hidden; }
 .jams .jam .content .name {overflow: hidden; font-weight: bold;}
+
+.feed {position: relative; min-height: 64px; padding-bottom: 20px}
+.feed .profile-picture {position: absolute; left: 0px; height: 48px; width: 48px;}
+.feed .profile-picture IMG {height: 100%; width: 100%}
+.feed .content {position: inherit; margin-left: 64px;}
+.feed .content .title {color: grey; font-size: 13px}
+.feed .content .title .name {font-weight: bold}
+
+.song {position: relative; min-height: 64px; padding-bottom: 20px}
+.song .image {position: absolute; left: 0px; height: 48px; width: 48px; border: 1px solid #dddddd; padding: 1px}
+.song .image IMG {height: 100%; width: 100%}
+.song .content {margin-left: 64px;}
+.song .content .title {font-weight: bold}

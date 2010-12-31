@@ -1,4 +1,15 @@
 <% users = fhlp_get_users(feed) %>
-<div>
-	<%= add_profile_link(users[0]) %> is now following <%= profile_link(users[1]) %>
+<div class='feed'>
+  <div class='profile-picture'>
+    <%= profile_picture users[0] %>
+  </div>
+  <div class='content'>
+    <div class='title'>
+  	  <span class='name'><%= users[0].username %></span> is now following <span class='name'><%= users[1].username %></span>
+  	  <%= vspace 10 %>
+  	  <div>
+      	<%= partial('common/user', :locals => {:user => users[1]}) %>
+      </div>
+  	</div>
+	</div>
 </div>

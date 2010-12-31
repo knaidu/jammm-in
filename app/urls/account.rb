@@ -1,3 +1,7 @@
+get '/account/home' do
+  erb(:"/account/home")
+end
+
 get '/account' do
   redirect_signin if not session[:username]
   redirect '/account/home'

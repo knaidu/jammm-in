@@ -23,8 +23,10 @@ helpers do
 end
 
 before do
-  @session_user ||= (User.with_username(session[:username]) rescue nil)
+#  @session_user ||= (User.with_username(session[:username]) rescue nil)
+  @session_user ||= (User.with_username('prakashraman') rescue nil)
   @use_full_paths = param?(:use_full_paths) or false
+  headers ("Content-Type" => "text/html; charset=utf-8")
 end
 
 get '/' do

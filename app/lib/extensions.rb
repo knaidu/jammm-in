@@ -28,6 +28,10 @@ class String
     }
   end
   
+  def px # Used in common.css
+    gsub("px", "").to_i
+  end
+  
 end
 
 class File
@@ -66,4 +70,8 @@ class Object
     end
     not not self
   end
+end
+
+class Integer
+  def px; (self.to_s + "px"); end # Used in common.css
 end

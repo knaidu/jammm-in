@@ -1,16 +1,13 @@
-<div>
-  <br><br>
-  <% jams = Jam.all %>
-  <% grouped_jams = jams.in_groups_of 3 %>
-  <% grouped_jams.each do |group| %>
-    <div class='jams'>
-      <% group.each do |jam| %>
-        <%= partial(:"homepage/jam", :locals => {:jam => jam}) if jam %>
-        <div style='float:left; padding-right: 30px;'>&nbsp;</div>
-      <% end %>
-    </div>
-    <div class='clear-both' style='height: 40px'></div>
-  <% end %>
-  <div class='clear-both'>
-  <%= render_state({:name => "Jams", :description => "All Jams are here", :url => "/jams"}) %>
-</div>
+<%= render_state({:name => "Jams", :description => "All Jams are here", :url => "/jams"}) %>
+<% jams = Jam.all %>
+<% grouped_jams = jams.in_groups_of 3 %>
+<% grouped_jams.each do |group| %>
+  <div class='jams'>
+    <% group.each do |jam| %>
+      <%= partial(:"homepage/jam", :locals => {:jam => jam}) if jam %>
+      <div style='float:left; padding-right: 30px;'>&nbsp;</div>
+    <% end %>
+  </div>
+  <div class='clear-both' style='height: 40px'></div>
+<% end %>
+<div class='clear-both'></div>

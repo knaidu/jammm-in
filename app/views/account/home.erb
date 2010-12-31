@@ -1,11 +1,3 @@
-<div class='account'>
-  <%= partial("account/main_info", :locals => {:user => session_user?}) %>
-  <%= vspace 20 %>
-  <%= partial("/account/say", :section_header => SectionHeader.new("Say")) %>
-  <%= vspace 20 %>  
-  <%= partial("account/feeds", :locals => {:feeds => @session_user.feeds, :show_as_updates => false}, :section_header => SectionHeader.new('Feeds')) %>
-</div>
-
-<%= js_start %>
-	setSelectedMenuItem('menu-item-home');
-<%= js_end %>
+<%= partial("common/feeds", :locals => {:feeds => session_user?.feeds.first(2), :show_as_updates => false}) %>
+<hr>
+<%= render_state({:name => "Home", :description => "My Home Page", :url => "/account/home"}) %>
