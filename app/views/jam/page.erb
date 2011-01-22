@@ -1,15 +1,31 @@
-<div id='basic-info'>
-	<%= partial('jam/basic_info', :locals => {:jam => @jam}) %>
+<%= render_state({:name => @jam.name, :description => @jam.description, :url => "/jam/#{@jam.id}"}) %>
+<div class='box'>
+  <div style='height: 20px'>PLAY ICON AND SPECTOGRAM</div>
+  <div class='section'>
+    <div class='header'><%= @jam.name %></div>
+    <div class='content'>
+      <%= main_info_row("Artists", @jam.creator.username) %>
+    </div>
+  </div>
 </div>
 
-
-<%= section_header 'Description' %>
-<%= @jam.description.format_html rescue "" %>
 <%= vspace 20 %>
-<%= section_header 'Artists' %>
-<%= partial('jam/jam_artists', :locals => {:jam_artists => @jam.jam_artists }) %>
-<br><br>
-<%= partial "jam/sheet_music", :section_header => SectionHeader.new('Sheet Music'), :locals => {:jam => @jam, :sheets => @jam.sheets_of_music} %>
-<br><br>
-<div id='lineage'></div>
-<%= partial 'jam/lineage/page', :section_header => SectionHeader.new('Lineage'), :locals => {:jam => @jam}, :collapsible => true %>
+
+<div class='box'>
+  <div class='section'>
+    <div class='header'>Lyrics</div>
+    <div class='content'>
+    </div>
+  </div>
+</div>
+
+<%= vspace 20 %>
+
+<div class='box'>
+  <div class='section'>
+    <div class='header'>Comments</div>
+    <div class='content'>
+    </div>
+  </div>
+</div>
+

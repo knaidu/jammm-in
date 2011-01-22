@@ -2,11 +2,13 @@ var Layout = {};
 var Navigate = {states: []};
 var Dialog = {};
 var Doc = {Player: {}};
+var Event = {};
 
 Layout.onReady = function(){
 	this.showStructure();
 	Navigate.saveHomeState();
 	Dialog.setup();
+	Event.runAll();
 }.bind(Layout);
 
 $j(document).ready(Layout.onReady);
@@ -20,6 +22,8 @@ Layout.showStructure = function(){
 	c.width(width);
 	c.fadeIn();
 	Doc.Player.collapse();
+	this.attachScrollEvent();
+	this.contentPanel = this.getContentPanel();
 }.bind(Layout);
 
 Layout.getWindowSize = function(){
@@ -37,6 +41,21 @@ Layout.getTopBar = function(){
 Layout.getContentPanel = function(){
 	return $j("#content-panel");
 }.bind(Layout)
+
+Layout.attachScrollEvent = function() {
+	$("content-panel").addEventListener('DOMMouseScroll', this.manageScrollEvent, false);
+	$("content-panel").addEventListener('mousewheel', this.manageScrollEvent, false);
+}.bind(Layout);
+
+Layout.manageScrollEvent = function(e){
+	eee = e;
+	var detail = e.wheelDelta ? -(e.wheelDelta / 60) : e.detail; 
+	var moveBy = -(30 * detail);
+	var content = this.contentPanel.children()[0];
+	var top = parseInt(content.style.top.replace("px", "")) + moveBy;
+	if (top > 0) return;
+	content.style.top = top + "px";
+}.bind(Layout);
 
 /* Navigate */
 
@@ -60,6 +79,8 @@ Navigate.loadContent = function(url){
 			$(children[0]).remove();
 		var div = new Element("div", {style: "padding-top: 20px"});
 		$("content-panel").insert(div, "bottom");
+		div.absolutize();
+		div.style.top = "0px";
 		updateEl(div, url, {onSuccess: function(){window.setTimeout(Navigate.storeState, 500)}});		
 	}
 
@@ -159,5 +180,25 @@ Doc.Player.expand = function(){
 }.bind(Doc.Player);
 
 Doc.Player.collapse = function(){
-	this.get().animate({height: 30}, "slow");
+	this.get().animate({height: 15}, "slow");
 }.bind(Doc.Player);
+
+Event.runAll = function(){
+	$j(".context-menu-image").live("mouseover", function(){
+		$j(this).animate({marginTop: "-24px"}, 0);
+	})
+	
+	$j(".context-menu-image").live("mouseout", function(){
+		$j(this).animate({marginTop: "0px"}, 0);
+	})
+}.bind(Event);
+
+function fillmeover(div){
+	div.style.backgroundColor = "#cc0000";
+	div.style.color = "white";
+}
+
+function fillmeout(div){
+	div.style.backgroundColor = "white";
+	div.style.color = "black";
+}

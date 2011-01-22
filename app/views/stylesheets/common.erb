@@ -1,13 +1,20 @@
 <%  
-	default_color = "#990000"
+	default_color = "#cc0000"
 	default_dark_color = "#800000"
 	default_round = "-moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;"
 	light_gray  = "#eee9e9"
-	font_family = "Arial,Helvetica,sans-serif"
-	left_panel_width = "200px";
+	font_family = "Verdana, Arial,Helvetica,sans-serif"
+	left_panel_width = "215px";
 	right_panel_width = "270px";
-	footer_height = "20px";
-	actions_doc_height = "30px";
+	footer_height = "0px";
+	actions_doc_height = "35px";
+	testing_gray = "#eeeeee";
+  shadow = "-moz-box-shadow: 2px 2px 5px #cc0000;
+  -webkit-box-shadow: 2px 2px 5px #888;
+  box-shadow: 2px 2px 5px #888;"
+  shadow_right = "-moz-box-shadow: 2px 2px 25px #888;
+  -webkit-box-shadow: 2px 2px 5px #888;
+  box-shadow: 2px 2px 5px #888;"
 %>
 
 /* DEFAULTS */
@@ -29,6 +36,8 @@ html, body {
 /* GENERAL */
 .clear-both {clear: both}
 .position-absolute {position: absolute}
+.float-left {float: left}
+.float-right {float: right}
 
 IMG {border: none}
 
@@ -43,8 +52,8 @@ IMG {border: none}
 
 .top-bar .logo {position: absolute; width: <%= left_panel_width %>; height: 100%}
 .top-bar .search {position: absolute; right: 0px; width: <%= right_panel_width %>; height: 100%; padding: 18px;}
-.top-bar .search INPUT {width: 100%}
-.top-bar .menu {color: white; margin-left: <%= left_panel_width %>; font-size: 22px; padding: 5px 5px 5px 20px}
+.top-bar .search INPUT {width: 100%; visibility: hidden}
+.top-bar .menu {visibility: hidden; color: white; margin-left: <%= left_panel_width %>; font-size: 22px; padding: 5px 5px 5px 20px}
 .top-bar .menu .item {display: inline-block; margin-right: 30px; background-color: red; cursor: pointer}
 .top-bar .menu .item .text {padding: 10px}
 
@@ -54,7 +63,7 @@ IMG {border: none}
   overflow: auto;
 }
 
-.middle-bar .menu-panel {position: fixed; width: <%= left_panel_width %>; border-right: 1px solid grey; z-index: 2; background-color: white;}
+.middle-bar .menu-panel {position: fixed; border-right: 0px solid <%= testing_gray %>; background-color: white; width: <%= left_panel_width %>; z-index: 2;}
 .middle-bar .tips-panel {position: fixed; right: 0px; width: <%= right_panel_width %>; border-left: 0px solid grey; min-height: 300px}
 .middle-bar .content-panel {
   position: relative; 
@@ -62,34 +71,53 @@ IMG {border: none}
   margin-right: <%= right_panel_width %>; 
   z-index: 1; 
   padding: 0px 0px 0px 20px;
-  overflow: auto;
+  overflow: hidden;
 }
 
-.bottom-bar {position: fixed; background-color: #3D3D3D; bottom: 0px; width: 100%; height: <%= footer_height %>}
+.bottom-bar {position: fixed; background-color: #990000; bottom: 0px; width: 100%; height: <%= footer_height %>}
 
-.menu-panel .navigation-bar {width: 100%; height: 50px; border-bottom: 1px solid grey;}
-.menu-panel .navigation-bar .icon {position: absolute; width: 32px; margin-top: 10px}
-.menu-panel .navigation-bar .content {position: relative; margin-left: 32px; margin-top: 5px}
+.menu-panel .navigation-bar {width: 100%; color: #666666; height: 70px;}
+.menu-panel .navigation-bar .icon {position: absolute;}
+.menu-panel .navigation-bar .context-icon {position: absolute; left: 20px; width: 32px; margin-top: 10px}
+.menu-panel .navigation-bar .content {position: relative; margin-left: 72px; padding-top: 7px; margin-top: 0px}
 .menu-panel .navigation-bar .content .name {font-weight: bold;}
+.menu-panel .navigation-bar .content .description {font-weight: normal; font-size: 10px}
+
+.context-menu {margin-left: 0px; margin-top: 10px; }
+.context-menu .item {position: relative; border-bottom: 0px solid <%= testing_gray %>}
+.context-menu .item .icon {position: absolute; left: 10px; top: 10px; color: #696969; overflow: hidden}
+.context-menu .item .text {position: relative; padding: 10px 0px 10px 0px; margin-left: 42px;}
+
 
 .actions-doc {
   position: fixed; 
   bottom: <%= footer_height %>; 
-  width: <%= (right_panel_width.px - 2).px %>; 
+  width: <%= (right_panel_width.px - 10).px %>; 
   right: 0px; 
   height: <%= actions_doc_height %>;
-  border: 1px solid grey;
+  border: 1px solid #a1a1a1;
+  background-color: white;
 }
+.actions-doc .contents {padding: 5px 0px 0px 5px}
+.actions-doc .icon {overflow: hidden; display: inline-block; overflow: hidden; height: 24px; width: 24px; margin-right: 18px}
 .player {
   position: fixed; 
-  bottom: <%= (footer_height.gsub('px', '').to_i + actions_doc_height.gsub("px", '').to_i).to_s + "px" %>; 
-  width: <%= (right_panel_width.px - 2).px %>; 
+  bottom: <%= (footer_height.px + actions_doc_height.px).px %>; 
+  width: <%= (right_panel_width.px - 10).px %>; 
   right: 0px; 
   height: 0px;
-  border: 1px solid grey;
+  border: 1px solid #a1a1a1;
   overflow: hidden;
-  background-color: #dcdcdc;
 }
+.player .seek {
+  background-color: white;
+  height: 15px;
+  font-size: 10px;
+  position: absolute; 
+  width: 100%;
+}
+.player .seek .text {padding-left: 5px;position: relative; z-index: 3; color: white; font-weight: bold;}
+.player .seek .position {position: absolute; width: 30%; height: 100%; background-color: #888888}
 
 .dialog {z-index: 10; display: none; min-width: 400px; height: 200px; position: fixed; background-color: yellow; border: 1px solid grey; left: 100px; top: 10px}
 
@@ -97,7 +125,7 @@ IMG {border: none}
 .jams .jam {position: relative; float: left; height: 70px; width: 200px; overflow: hidden;}
 .jams .jam .icon {position: absolute; width: 64px; height: 64px}
 .jams .jam .content {position: relative; margin-left: 70px; overflow: hidden; }
-.jams .jam .content .name {overflow: hidden; font-weight: bold;}
+.jams .jam .content .name {overflow: hidden; font-weight: bold; cursor: pointer}
 
 .feed {position: relative; min-height: 64px; padding-bottom: 20px}
 .feed .profile-picture {position: absolute; left: 0px; height: 48px; width: 48px;}
@@ -111,3 +139,7 @@ IMG {border: none}
 .song .image IMG {height: 100%; width: 100%}
 .song .content {margin-left: 64px;}
 .song .content .title {font-weight: bold}
+
+.box {border: 1px solid gray; overflow: auto}
+.box .section .header {padding-left: 10px; background-color: #dcdcdc; border-top: 1px solid gray}
+.box .section .content {padding: 10px}

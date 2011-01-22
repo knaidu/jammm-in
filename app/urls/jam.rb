@@ -112,7 +112,7 @@ get '/jam/:jam_id' do
   @jam = get_passed_jam
   @music_meta_data = music_meta_data(@jam)
   @jam.visited
-  erb(:"body/structure")
+  erb(:"jam/page")
 end
 
 

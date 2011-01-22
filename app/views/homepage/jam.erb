@@ -3,11 +3,11 @@
     <img src='/images/icons/default-jam.png' height='100%'>
   </div>
   <div class='content'>
-    <div class='name'>
+    <div class='name' onclick='Navigate.loadContent("/jam/<%= jam.id %>")'>
       <%= jam.name %>
     </div>
     <div class='artists'>
-      prakashraman
+      <%= jam.creator.username %>
     </div>
   </div>
 </div>
