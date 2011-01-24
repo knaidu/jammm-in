@@ -207,11 +207,11 @@ Event.runAll = function(){
 }.bind(Event);
 
 Event.addOnHoverRowSelect = function() {
-	$j(".jams .jam").live("mouseover", function(){
+	$j(".list .row").live("mouseover", function(){
 		$j(this).addClass("onhover");
 	});
 	
-	$j(".jams .jam").live("mouseout", function(){
+	$j(".list .row").live("mouseout", function(){
 		$j(this).removeClass("onhover");
 	});
 }.bind(Event);

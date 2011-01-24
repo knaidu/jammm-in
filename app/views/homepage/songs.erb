@@ -1,6 +1,2 @@
-<%= section_header 'Songs' %>
-<%= partial("common/songs_in_cols", :locals => {:songs => Song.published, :cols => 2}) %>
-
-<%= js_start %>
-	setSelectedMenuItem('menu-item-songs')
-<%= js_end %>
+<%= render_state({:name => "Songs", :description => "All Songs", :url => "/songs"}) %>
+<%= partial("common/songs", :locals => {:songs => Song.published, :cols => 2}) %>

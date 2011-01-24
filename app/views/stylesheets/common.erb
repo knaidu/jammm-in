@@ -39,6 +39,9 @@ html, body {
 .position-absolute {position: absolute}
 .float-left {float: left}
 .float-right {float: right}
+.field {display: inline-block; color: #888; width: 200px;}
+.w50 {width: 50px}
+.s11 {font-size: 11px}
 
 IMG {border: none}
 
@@ -134,18 +137,17 @@ IMG {border: none}
 
 .dialog {z-index: 10; display: none; min-width: 400px; height: 200px; position: fixed; background-color: yellow; border: 1px solid grey; left: 100px; top: 10px}
 
-.jams {position: relative; clear: both;}
-.jams .jam {position: relative; padding-top: 10px; height: 96px; overflow: auto; padding-left: 5px; border-bottom: 1px solid #f0f0f0;}
-.jams .jam .forward-icon {position: absolute; right: 20px; margin-top: 25px}
-.jams .jam .image {position: absolute; width: 78px; height: 78px; border: 1px solid #dcdcdc; padding: 1px}
-.jams .jam .content {position: relative;}
-.jams .jam .content .col1 {position: absolute; margin-left: 96px;}
-.jams .jam .content .col2 {position: absolute; margin-left: 316px;}
-.jams .jam .content .col3 {position: absolute; margin-left: 516px; color: black; font-size: 10px}
-.jams .jam .content .name {overflow: hidden; color: black; font-weight: bold; cursor: pointer; margin-bottom: 3px}
-.jams .jam .content .artist {overflow: hidden; font-size: 10px}
-
-.jams .onhover {background-color: #FBFFF0}
+.list {position: relative; clear: both;}
+.list .row {position: relative; padding-top: 10px; height: 96px; overflow: auto; padding-left: 5px; border-bottom: 1px solid #f0f0f0;}
+.list .row .forward-icon {position: absolute; right: 20px; margin-top: 25px}
+.list .row .image {position: absolute; width: 78px; height: 78px; border: 1px solid #dcdcdc; padding: 1px}
+.list .row .content {position: relative;}
+.list .row .content .col1 {position: absolute; margin-left: 96px; width: 200px}
+.list .row .content .col2 {position: absolute; margin-left: 316px;}
+.list .row .content .col3 {position: absolute; margin-left: 516px; color: black; font-size: 10px; width: 200px}
+.list .row .content .name {overflow: hidden; color: black; font-weight: bold; cursor: pointer; margin-bottom: 3px}
+.list .row .content .artist {overflow: hidden; font-size: 10px}
+.list .row.onhover {background-color: #FBFFF0}
 
 .feed {position: relative; min-height: 64px; padding-bottom: 20px}
 .feed .profile-picture {position: absolute; left: 0px; height: 48px; width: 48px;}
@@ -167,17 +169,6 @@ IMG {border: none}
 .state {visibility: hidden; height: 0px}
 
 .onhover-border-shadow {border: 1px solid #888888; <%= shadow %>}
-
-.list {border: 1px solid #C4C4C4; border-top-width: 1px; overflow: auto;}
-.list .list-header {height: 30px; background-image: url("/new-ui/list-header.png"); padding: 10px; border-bottom: 1px solid #C4C4C4}
-.list .list-header .heading {font-size: 18px}
-.list .column-headers {border-bottom: 1px solid #c4c4c4; background-image: url("/new-ui/list-header.png"); overflow: auto}
-.list .column {float: left; padding: 3px; 0px 3px 5px; width: 100px; }
-.list .column-headers .column {border-right: 1px solid #c4c4c4; color: #878787;}
-.list .autoexpand {display: inline-block; padding: 3px; 0px 3px 5px ; width: 400px}
-.list .rows {overflow: auto;}
-.list .rows .row {padding: 3px 3px 3px 3px; overflow: auto; border-bottom: 0px solid #dcdcdc; padding-bottom: 10px; cursor: pointer}
-.list .rows .onhover {background-color: #E5ECFF}
 
 .playlist {position: relative; padding: 5px}
 .playlist .item {position: relative; min-height: 50px; padding-bottom: 5px;}
@@ -201,12 +192,17 @@ IMG {border: none}
 
 .header {font-size: 20px; font-weight: normal; color: #444}
 
-.single-jam .jam {position: relative; height: 96px; overflow: auto; width: 800px; }
-.single-jam .jam .forward-icon {position: absolute; right: 20px; margin-top: 25px}
-.single-jam .jam .image {position: absolute; width: 78px; height: 78px; border: 1px solid #dcdcdc; padding: 1px}
-.single-jam .jam .content {position: relative;}
-.single-jam .jam .content .col1 {position: absolute; margin-left: 96px;}
-.single-jam .jam .content .name {overflow: hidden; color: black; font-weight: bold; cursor: pointer; margin-bottom: 3px}
-.single-jam .jam .content .artist {overflow: hidden; font-size: 10px}
+.single-jam.jam {position: relative; height: 96px; overflow: auto; width: 800px; }
+.single-jam.jam .forward-icon {position: absolute; right: 20px; margin-top: 25px}
+.single-jam.jam .image {position: absolute; width: 78px; height: 78px; border: 1px solid #dcdcdc; padding: 1px}
+.single-jam.jam .content {position: relative;}
+.single-jam.jam .content .col1 {position: absolute; margin-left: 96px;}
+.single-jam.jam .content .name {overflow: hidden; color: black; font-weight: bold; cursor: pointer; margin-bottom: 3px}
+.single-jam.jam .content .artist {overflow: hidden; font-size: 10px}
 
-.section-header {background-color: #dcdcdc; font-weight: bold; padding: 2px 0px 2px 5px; border-bottom: 1px solid gray}
+.section-header {background-color: #EBEBEB; font-weight: bold; padding: 2px 0px 2px 5px; border-bottom: 1px solid #ccc; margin-bottom: 10px}
+
+.comments {position: relative;}
+.comments .comment {position: inherit;}
+.comments .comment .image {position: absolute; width: 36px;}
+.comments .comment .body {position: relative; margin-left: 36px; max-width: 600px}

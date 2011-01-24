@@ -1,8 +1,3 @@
-<%= render_state({:name => "Jams", :description => "All Jams are here", :url => "/jams"}) %>
+<%= render_state({:name => "Jams", :description => "All Jams", :url => "/jams"}) %>
 <% jams = Jam.all %>
-<div class='jams' style='overflow: auto'>
-  <% jams.each {|jam| %>
-    <%= erb(:"/common/jam", :locals => {:jam => jam}) if jam %>
-  <% } %>
-  <div style='clear: both'></div>
-</div>
+<%= partial :"/common/jams", :locals => {:jams => jams} %>

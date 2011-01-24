@@ -1,3 +1,5 @@
-<% jams.each do |jam| %>
-  <%= partial (:'common/jam', :locals => {:jam => jam}) %><br>
-<% end %>
+<div class='list' style='overflow: auto'>
+  <% jams.each {|jam| %>
+    <%= erb(:"/common/jam", :locals => {:jam => jam}) if jam %>
+  <% } %>
+</div>

@@ -1,3 +1,5 @@
-<% songs.each do |song| %>
-  <%= partial (:'common/song', :locals => {:song => song}) %><br>
-<% end %>
+<div class='list'>
+  <% songs.each do |song| %>
+    <%= partial (:'common/song', :locals => {:song => song}) %><br>
+  <% end %>
+</div>

@@ -108,6 +108,10 @@ class Jam < ActiveRecord::Base
     Genre.fetch("jam", self.id)
   end
   
+  def genre_names
+    genres.map(&:name).join(", ")
+  end
+  
   def jam_picture
     return (ENV["WEBSERVER_ROOT"] + "/public/images/icons/8thnote.png") if not jam_picture_file_handle
     get_storage_file_path(jam_picture_file_handle)
@@ -226,6 +230,10 @@ class Jam < ActiveRecord::Base
   
   def instruments
     jam_artists.map(&:instruments).flatten
+  end
+  
+  def instrument
+    instruments.first
   end
   
   def policy

@@ -1,18 +1,40 @@
 <%= render_state({:name => @jam.name, :description => @jam.description, :url => "/jam/#{@jam.id}"}) %>
 
-<div class='single-jam'>
-  <div class='jam'>
-    <div class='image'>
-      <img src='/new-ui/song2.jpg' width='78px' height='78px'>
-    </div>
-    <div class='content'>
-      <div class='col1'>
-      <div class='name'><%= @jam.name %></div>
-      <div class='artist'><%= @jam.creator.name %></div>
-      </div>
+<div class='single-jam jam'>
+  <div class='image'>
+    <img src='/new-ui/song2.jpg' width='78px' height='78px'>
+  </div>
+  <div class='content'>
+    <div class='col1'>
+    <div class='name'><%= @jam.name %></div>
+    <div class='artist'><%= @jam.creator.name %></div>
     </div>
   </div>
 </div>
 
-<br><br>
+<%= vspace 20 %>
 <div class='section-header'>Information</div>
+<div class='field'>Name:</div><span><%= @jam.name %></span><%= vspace %>
+<div class='field'>Artist</div><span><%= @jam.creator.name %></span><%= vspace %>
+<div class='field'>Instrument</div><span><%= @jam.instrument ? @jam.instrument.name : "-" %></span><%= vspace %>
+<div class='field'>Genre:</div><span><%= @jam.genre_names %></span><%= vspace  %>
+
+<%= vspace 20 %>
+<div class='section-header'>Statistics</div>
+<div class='field'>Views:</div><span><%= @jam.views %></span><%= vspace  %>
+<div class='field'>Likes:</div><span><%= @jam.liked_by.count %></span><%= vspace  %>
+
+<%= vspace 20 %>
+<div class='section-header'>Comments</div>
+<div id='song-comments'>
+	<%= partial(:'common/comments', {
+		:locals => {
+			:comments => @jam.comments, 
+			:for_type => 'jam', 
+			:for_type_id => @jam.id,
+			:comments_div_id => 'jam-comments',
+			:managers => @jam.artists
+			}
+		}
+	)%>
+</div>

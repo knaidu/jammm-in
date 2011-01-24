@@ -1,10 +1,20 @@
-<div class='song'>
-  <div class='image'><%= song_picture song %></div>
+<div class='row'>
+  <div class='forward-icon'><img src='/new-ui/forward-arrow.png'></div>
+  <div class='image'>
+    <img src='/new-ui/song2.jpg' width='78px' height='78px'>
+  </div>
   <div class='content'>
-    <div class='title'>
-      <div><%= song.name %></a></div>
+    <div class='col1'>
+      <div class='name'><%= song.name %></div>
+      <div class='artist'><%= song.artists.map(&:username).join(", ") %></div>
     </div>
-    <%= vspace 10 %>
-    <%= song.artists.map{|user| user.username}.join(", ") %>
+    <div class='col2'>
+      <div class='field w50 s11'>Views:</div><%= song.views %> <%= vspace %>
+      <div class='field w50 s11'>Likes:</div><%= song.liked_by.count %><%= vspace %>
+      <div class='field w50 s11'>Length:</div>4:30
+    </div>
+    <div class='col3'>
+      <%= song.comments.first.comment unless song.comments.empty? %>
+    </div>
   </div>
 </div>

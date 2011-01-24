@@ -1,17 +1,17 @@
-<div class='jam' onclick="Navigate.loadContent('/jam/<%= jam.id %>')">
+<div class='row' onclick="Navigate.loadContent('/jam/<%= jam.id %>')">
   <div class='forward-icon'><img src='/new-ui/forward-arrow.png'></div>
   <div class='image'>
     <img src='/new-ui/song2.jpg' width='78px' height='78px'>
   </div>
   <div class='content'>
     <div class='col1'>
-    <div class='name'><%= jam.name %></div>
-    <div class='artist'><%= jam.creator.name %></div>
+      <div class='name'><%= jam.name %></div>
+      <div class='artist'><%= jam.creator.name %></div>
     </div>
     <div class='col2'>
-      Views: 12<br>
-      Likes: 111223<br>
-      Length: 4:30<br>
+    <div class='field w50 s11'>Views:</div><%= jam.views %> <%= vspace %>
+    <div class='field w50 s11'>Likes:</div><%= jam.liked_by.count %><%= vspace %>
+    <div class='field w50 s11'>Length:</div>4:30
     </div>
     <div class='col3'>
       <%= jam.comments[0].comment unless jam.comments.empty? %>
