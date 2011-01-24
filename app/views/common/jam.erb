@@ -1,20 +1,20 @@
-<div <%= blanket_events %> class='position-relative'>
-	<div class='position-absolute left-0' style='width: 20px'><%= play jam %></div>
-  <div class='hidden position-absolute right-0' style='width: 50px;'><%= download jam %> <%= add_music_link jam %>  </div>
-	<div class='position-relative' style='margin: 0px 50px 0px 25px;'>
-	  <a class='bold simple-link' href='/jam/<%= jam.id %>'><%= jam.name %></a> 
-	  <% if not jam.genres.empty? %>
-	    <span class='grey text'> - <%= list_genres jam.genres %></span>
-	  <% end %>
-	  <% if (count = jam.lineage_song_count) > 0 %>
-	    <% title = "Used in #{count} song(s)" %>
-  	  <a href='/jam/<%= jam.id %>#lineage' title='<%= title %>' style='position: relative; top: 1px'>
-  	    <span class='lineage-song-count'><%=  count %></span>
-  	  </a>
-	  <% end %>
-	  <div class='text grey'>
-  	  <%= list_artists jam.artists %> <%= " - " + jam.instruments.map(&:name).join(", ") unless jam.instruments.empty? %>
-  	</div>
-	</div>
+<div class='jam' onclick="Navigate.loadContent('/jam/<%= jam.id %>')">
+  <div class='forward-icon'><img src='/new-ui/forward-arrow.png'></div>
+  <div class='image'>
+    <img src='/new-ui/song2.jpg' width='78px' height='78px'>
+  </div>
+  <div class='content'>
+    <div class='col1'>
+    <div class='name'><%= jam.name %></div>
+    <div class='artist'><%= jam.creator.name %></div>
+    </div>
+    <div class='col2'>
+      Views: 12<br>
+      Likes: 111223<br>
+      Length: 4:30<br>
+    </div>
+    <div class='col3'>
+      <%= jam.comments[0].comment unless jam.comments.empty? %>
+    </div>
+  </div>
 </div>
-

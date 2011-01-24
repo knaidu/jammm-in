@@ -3,13 +3,14 @@
 	default_dark_color = "#800000"
 	default_round = "-moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;"
 	light_gray  = "#eee9e9"
-	font_family = "Verdana, Arial,Helvetica,sans-serif"
+	font_family = "Lucida Grande, Verdana, Arial,Helvetica,sans-serif"
 	left_panel_width = "215px";
 	right_panel_width = "270px";
+	top_bar_height = "44px";
 	footer_height = "0px";
 	actions_doc_height = "35px";
 	testing_gray = "#eeeeee";
-  shadow = "-moz-box-shadow: 2px 2px 5px #cc0000;
+  shadow = "-moz-box-shadow: 2px 2px 5px #888;
   -webkit-box-shadow: 2px 2px 5px #888;
   box-shadow: 2px 2px 5px #888;"
   shadow_right = "-moz-box-shadow: 2px 2px 25px #888;
@@ -42,23 +43,23 @@ html, body {
 IMG {border: none}
 
 .top-bar {
-  height: 60px;
-  background-color: <%= default_color %>;
+  height: <%= top_bar_height %>;
+  background-image: url("/new-ui/header-bg.png");
   color: white;
   position: fixed;
   width: 100%;
   z-index: 3;
 }
 
-.top-bar .logo {position: absolute; width: <%= left_panel_width %>; height: 100%}
-.top-bar .search {position: absolute; right: 0px; width: <%= right_panel_width %>; height: 100%; padding: 18px;}
-.top-bar .search INPUT {width: 100%; visibility: hidden}
-.top-bar .menu {visibility: hidden; color: white; margin-left: <%= left_panel_width %>; font-size: 22px; padding: 5px 5px 5px 20px}
-.top-bar .menu .item {display: inline-block; margin-right: 30px; background-color: red; cursor: pointer}
-.top-bar .menu .item .text {padding: 10px}
+.top-bar .logo {position: absolute; left: 35px; width: <%= left_panel_width %>; height: 100%; }
+.top-bar .search {position: absolute; right: 0px; width: <%= right_panel_width %>; height: 100%; padding: 5px; text-align: right}
+.top-bar .search INPUT {width: 100%; visibility: hidden; width: 0px}
+.top-bar .menu {position: absolute; right: 0px; color: white; font-size: 14px; padding: 5px 5px 5px 20px}
+.top-bar .menu .item {display: inline-block; margin-right: 10px; cursor: pointer}
+.top-bar .menu .item .text {padding: 5px 5px}
 
 .middle-bar {
-  margin-top: 60px;
+  margin-top: <%= top_bar_height %>;
   position: fixed;
   overflow: auto;
 }
@@ -70,22 +71,31 @@ IMG {border: none}
   margin-left: <%= left_panel_width %>; 
   margin-right: <%= right_panel_width %>; 
   z-index: 1; 
-  padding: 0px 0px 0px 20px;
+  padding: 0px 0px 0px 0px;
   overflow: hidden;
 }
 
-.bottom-bar {position: fixed; background-color: #990000; bottom: 0px; width: 100%; height: <%= footer_height %>}
+.bottom-bar {position: fixed; background-image: url("/new-ui/footer-bg.png"); bottom: 0px; width: 100%; height: <%= footer_height %>}
 
-.menu-panel .navigation-bar {width: 100%; color: #666666; height: 70px;}
+.menu-panel .navigation-bar {width: 102%; color: #666666; height: 70px;}
 .menu-panel .navigation-bar .icon {position: absolute;}
 .menu-panel .navigation-bar .context-icon {position: absolute; left: 20px; width: 32px; margin-top: 10px}
-.menu-panel .navigation-bar .content {position: relative; margin-left: 72px; padding-top: 7px; margin-top: 0px}
-.menu-panel .navigation-bar .content .name {font-weight: bold;}
+.menu-panel .navigation-bar .content {position: relative; margin-left: 72px; margin-top: 0px}
+.menu-panel .navigation-bar .content .name {font-weight: bold; padding-top: 8px}
 .menu-panel .navigation-bar .content .description {font-weight: normal; font-size: 10px}
 
 .context-menu {margin-left: 0px; margin-top: 10px; }
-.context-menu .item {position: relative; border-bottom: 0px solid <%= testing_gray %>}
-.context-menu .item .icon {position: absolute; left: 10px; top: 10px; color: #696969; overflow: hidden}
+.context-menu .item {position: relative; border-bottom: 0px solid <%= testing_gray %>; height: 35px}
+.context-menu .selected {
+/*  background-image: url("/new-ui/context-menu-selected.png");  */
+  text-decoration: underline;
+
+  width: 210px;
+/*  <%= shadow %>;
+  background-color: #E8E8E8; */
+  font-weight: bold;
+}
+.context-menu .item .icon {position: absolute; left: 10px; top: 10px; color: #696969; height: 24px; overflow: hidden}
 .context-menu .item .text {position: relative; padding: 10px 0px 10px 0px; margin-left: 42px;}
 
 
@@ -93,20 +103,20 @@ IMG {border: none}
   position: fixed; 
   bottom: <%= footer_height %>; 
   width: <%= (right_panel_width.px - 10).px %>; 
-  right: 0px; 
+  right: 1px; 
   height: <%= actions_doc_height %>;
-  border: 1px solid #a1a1a1;
-  background-color: white;
+  border: 0px solid #999;
 }
 .actions-doc .contents {padding: 5px 0px 0px 5px}
-.actions-doc .icon {overflow: hidden; display: inline-block; overflow: hidden; height: 24px; width: 24px; margin-right: 18px}
+.actions-doc .icon {overflow: hidden; display: inline-block; overflow: hidden; height: 24px; width: 28px; margin-right: 18px; cursor: pointer}
 .player {
   position: fixed; 
   bottom: <%= (footer_height.px + actions_doc_height.px).px %>; 
   width: <%= (right_panel_width.px - 10).px %>; 
-  right: 0px; 
+  right: 5px; 
   height: 0px;
-  border: 1px solid #a1a1a1;
+  border: 1px solid #888;
+  background-color:#fafafa;
   overflow: hidden;
 }
 .player .seek {
@@ -118,14 +128,24 @@ IMG {border: none}
 }
 .player .seek .text {padding-left: 5px;position: relative; z-index: 3; color: white; font-weight: bold;}
 .player .seek .position {position: absolute; width: 30%; height: 100%; background-color: #888888}
+.player .header {color: white; background-color: #888; font-weight: bold; padding: 1px 5px 2px 5px; font-size: 10px;}
+.player .item {margin-bottom: 10px; border-bottom: 1px solid #ededed; color: #aaa}
+.player .item-onhover {color: #666666}
 
 .dialog {z-index: 10; display: none; min-width: 400px; height: 200px; position: fixed; background-color: yellow; border: 1px solid grey; left: 100px; top: 10px}
 
 .jams {position: relative; clear: both;}
-.jams .jam {position: relative; float: left; height: 70px; width: 200px; overflow: hidden;}
-.jams .jam .icon {position: absolute; width: 64px; height: 64px}
-.jams .jam .content {position: relative; margin-left: 70px; overflow: hidden; }
-.jams .jam .content .name {overflow: hidden; font-weight: bold; cursor: pointer}
+.jams .jam {position: relative; padding-top: 10px; height: 96px; overflow: auto; padding-left: 5px; border-bottom: 1px solid #f0f0f0;}
+.jams .jam .forward-icon {position: absolute; right: 20px; margin-top: 25px}
+.jams .jam .image {position: absolute; width: 78px; height: 78px; border: 1px solid #dcdcdc; padding: 1px}
+.jams .jam .content {position: relative;}
+.jams .jam .content .col1 {position: absolute; margin-left: 96px;}
+.jams .jam .content .col2 {position: absolute; margin-left: 316px;}
+.jams .jam .content .col3 {position: absolute; margin-left: 516px; color: black; font-size: 10px}
+.jams .jam .content .name {overflow: hidden; color: black; font-weight: bold; cursor: pointer; margin-bottom: 3px}
+.jams .jam .content .artist {overflow: hidden; font-size: 10px}
+
+.jams .onhover {background-color: #FBFFF0}
 
 .feed {position: relative; min-height: 64px; padding-bottom: 20px}
 .feed .profile-picture {position: absolute; left: 0px; height: 48px; width: 48px;}
@@ -143,3 +163,50 @@ IMG {border: none}
 .box {border: 1px solid gray; overflow: auto}
 .box .section .header {padding-left: 10px; background-color: #dcdcdc; border-top: 1px solid gray}
 .box .section .content {padding: 10px}
+
+.state {visibility: hidden; height: 0px}
+
+.onhover-border-shadow {border: 1px solid #888888; <%= shadow %>}
+
+.list {border: 1px solid #C4C4C4; border-top-width: 1px; overflow: auto;}
+.list .list-header {height: 30px; background-image: url("/new-ui/list-header.png"); padding: 10px; border-bottom: 1px solid #C4C4C4}
+.list .list-header .heading {font-size: 18px}
+.list .column-headers {border-bottom: 1px solid #c4c4c4; background-image: url("/new-ui/list-header.png"); overflow: auto}
+.list .column {float: left; padding: 3px; 0px 3px 5px; width: 100px; }
+.list .column-headers .column {border-right: 1px solid #c4c4c4; color: #878787;}
+.list .autoexpand {display: inline-block; padding: 3px; 0px 3px 5px ; width: 400px}
+.list .rows {overflow: auto;}
+.list .rows .row {padding: 3px 3px 3px 3px; overflow: auto; border-bottom: 0px solid #dcdcdc; padding-bottom: 10px; cursor: pointer}
+.list .rows .onhover {background-color: #E5ECFF}
+
+.playlist {position: relative; padding: 5px}
+.playlist .item {position: relative; min-height: 50px; padding-bottom: 5px;}
+.playlist .item .image {position: absolute; width: 48px; opacity: 0.8}
+.playlist .item .contents {position: relative; margin-left: 54px; color: inherit; font-weight: bold; font-size: 11px}
+.playlist .item .contents .name {margin-bottom: 2px}
+.playlist .item .contents .artist {font-weight: normal; font-size: 10px}
+
+.notifications {position: relative; padding: 5px}
+.notifications .item {position: relative; min-height: 50px; padding-bottom: 5px;}
+.notifications .item .image {position: absolute; width: 48px; opacity: 0.8}
+.notifications .item .contents {position: relative; margin-left: 54px; color: inherit; font-weight: normal; font-size: 10px}
+.notifications .item .contents .name {margin-bottom: 2px}
+
+.messages {position: relative; padding: 5px}
+.messages .item {position: relative; min-height: 50px; padding-bottom: 5px;}
+.messages .item .image {position: absolute; width: 48px; opacity: 0.8}
+.messages .item .contents {position: relative; margin-left: 54px; color: inherit; font-weight: normal; }
+.messages .item .contents .name {margin-bottom: 2px; font-size: 11px; font-weight: bold}
+.messages .item .contents .body {font-size: 10px}
+
+.header {font-size: 20px; font-weight: normal; color: #444}
+
+.single-jam .jam {position: relative; height: 96px; overflow: auto; width: 800px; }
+.single-jam .jam .forward-icon {position: absolute; right: 20px; margin-top: 25px}
+.single-jam .jam .image {position: absolute; width: 78px; height: 78px; border: 1px solid #dcdcdc; padding: 1px}
+.single-jam .jam .content {position: relative;}
+.single-jam .jam .content .col1 {position: absolute; margin-left: 96px;}
+.single-jam .jam .content .name {overflow: hidden; color: black; font-weight: bold; cursor: pointer; margin-bottom: 3px}
+.single-jam .jam .content .artist {overflow: hidden; font-size: 10px}
+
+.section-header {background-color: #dcdcdc; font-weight: bold; padding: 2px 0px 2px 5px; border-bottom: 1px solid gray}

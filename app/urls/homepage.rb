@@ -43,3 +43,15 @@ post '/report/:music_type/:music_id' do
     "Request registered"
   }
 end
+
+get '/dock/playlist' do
+  erb(:"/dock/playlist")
+end
+
+get '/dock/notifications' do
+  erb(:"/dock/notifications")
+end
+
+get '/dock/messages' do
+  erb(:"/dock/messages")
+end

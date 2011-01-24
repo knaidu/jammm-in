@@ -1,7 +1,7 @@
 var Layout = {};
 var Navigate = {states: []};
 var Dialog = {};
-var Doc = {Player: {}};
+var Doc = {Player: {}, Playlist: {}, Notifications: {}, Messages: {}};
 var Event = {};
 
 Layout.onReady = function(){
@@ -53,7 +53,7 @@ Layout.manageScrollEvent = function(e){
 	var moveBy = -(30 * detail);
 	var content = this.contentPanel.children()[0];
 	var top = parseInt(content.style.top.replace("px", "")) + moveBy;
-	if (top > 0) return;
+	if (top > 0) top = 0;
 	content.style.top = top + "px";
 }.bind(Layout);
 
@@ -77,7 +77,7 @@ Navigate.loadContent = function(url){
 	var callback = function(e){
 		if(children.size())
 			$(children[0]).remove();
-		var div = new Element("div", {style: "padding-top: 20px"});
+		var div = new Element("div", {style: "padding-left: 10px; padding-top: 11px"});
 		$("content-panel").insert(div, "bottom");
 		div.absolutize();
 		div.style.top = "0px";
@@ -87,7 +87,7 @@ Navigate.loadContent = function(url){
 	if(children.size()){
 		children[0].absolutize();
 		if(options.direction == 'left')
-			children.animate({left: "-" + children.width() + "px"}, 1000, callback);
+			children.animate({left: "-" + children.width() + "px"}, 200, callback);
 		else
 			children.fadeOut('slow', callback);
 	}
@@ -176,29 +176,62 @@ Doc.Player.get = function(){
 }.bind(Doc.Player);
 
 Doc.Player.expand = function(){
-	this.get().animate({height: 300}, "slow");
+	var url = arguments[0] || false;
+	var callback = function(){
+		if(url)
+			updateEl(this.get()[0], url);
+	}.bind(this);
+	this.get().animate({height: 300}, "slow", callback);
 }.bind(Doc.Player);
 
 Doc.Player.collapse = function(){
 	this.get().animate({height: 15}, "slow");
 }.bind(Doc.Player);
 
+Doc.Playlist.show = function() {
+	Doc.Player.expand("/dock/playlist");
+}.bind(Doc.Playlist);
+
+Doc.Notifications.show = function() {
+	Doc.Player.expand("/dock/notifications");
+}.bind(Doc.Notifications);
+
+Doc.Messages.show = function() {
+	Doc.Player.expand("/dock/messages");
+}.bind(Doc.Messages);
+
 Event.runAll = function(){
-	$j(".context-menu-image").live("mouseover", function(){
-		$j(this).animate({marginTop: "-24px"}, 0);
-	})
-	
-	$j(".context-menu-image").live("mouseout", function(){
-		$j(this).animate({marginTop: "0px"}, 0);
-	})
+	this.addOnHoverRowSelect();
+	this.setListRowsHeight();
+	this.toogleDocItemClass();
 }.bind(Event);
 
-function fillmeover(div){
-	div.style.backgroundColor = "#cc0000";
-	div.style.color = "white";
-}
+Event.addOnHoverRowSelect = function() {
+	$j(".jams .jam").live("mouseover", function(){
+		$j(this).addClass("onhover");
+	});
+	
+	$j(".jams .jam").live("mouseout", function(){
+		$j(this).removeClass("onhover");
+	});
+}.bind(Event);
 
-function fillmeout(div){
-	div.style.backgroundColor = "white";
-	div.style.color = "black";
-}
+
+Event.setListRowsHeight = function(){
+	$j(".list .rows").livequery(function(){
+		var height = $(Layout.getContentPanel()[0]).getHeight() - ($($j(".list .list-header")[0]).getHeight() + $j(".list .column-headers").height());
+		$j(this).height(height);
+	});
+}.bind(Event);
+
+Event.toogleDocItemClass = function(){
+	$j(".player .item").live("mouseover", function(){
+		$j(this).addClass("item-onhover");
+//		$j(".player .item .image").css({opacity: 1});
+	});
+	
+	$j(".player .item").live("mouseout", function(){
+		$j(this).removeClass("item-onhover");
+//		$j(".player .item .image").css({opacity: 0.8});
+	});
+}.bind(Event)

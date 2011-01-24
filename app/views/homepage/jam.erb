@@ -1,13 +1,15 @@
-<div class='jam'>
-  <div class='icon'>
-    <img src='/images/icons/default-jam.png' height='100%'>
-  </div>
-  <div class='content'>
-    <div class='name' onclick='Navigate.loadContent("/jam/<%= jam.id %>")'>
-      <%= jam.name %>
+<div class='row' onclick="Navigate.loadContent('/jam/<%= jam.id %>')">
+  <div class='column autoexpand'>
+    <div style='position: relative; min-height: 30px'>
+      <div style='position: absolute; width: 30px; height: 30px'><img src='/new-ui/guitar.png'></div>
+      <div style='position: relative; margin-left: 30px'>
+        <%= jam.name %>
+        <br>
+        <div style='color: #888888'>- <%= jam.artists.map(&:username).join(", ") %></div>
+      </div>
     </div>
-    <div class='artists'>
-      <%= jam.creator.username %>
-    </div>
   </div>
+  <div class='column'><%= rand(10) %></div>
+  <div class='column'><%= jam.liked_by.count %></div>
+  <div class='column'><%= rand(10) %></div>
 </div>

@@ -1,31 +1,18 @@
 <%= render_state({:name => @jam.name, :description => @jam.description, :url => "/jam/#{@jam.id}"}) %>
-<div class='box'>
-  <div style='height: 20px'>PLAY ICON AND SPECTOGRAM</div>
-  <div class='section'>
-    <div class='header'><%= @jam.name %></div>
+
+<div class='single-jam'>
+  <div class='jam'>
+    <div class='image'>
+      <img src='/new-ui/song2.jpg' width='78px' height='78px'>
+    </div>
     <div class='content'>
-      <%= main_info_row("Artists", @jam.creator.username) %>
+      <div class='col1'>
+      <div class='name'><%= @jam.name %></div>
+      <div class='artist'><%= @jam.creator.name %></div>
+      </div>
     </div>
   </div>
 </div>
 
-<%= vspace 20 %>
-
-<div class='box'>
-  <div class='section'>
-    <div class='header'>Lyrics</div>
-    <div class='content'>
-    </div>
-  </div>
-</div>
-
-<%= vspace 20 %>
-
-<div class='box'>
-  <div class='section'>
-    <div class='header'>Comments</div>
-    <div class='content'>
-    </div>
-  </div>
-</div>
-
+<br><br>
+<div class='section-header'>Information</div>
