@@ -3,6 +3,9 @@
   <div class='info'>
     <div class='name'><%= jam.name %></div>
     <div class='artist'><%= jam.creator.username %></div>
+    <div class='instrument'><%= jam.instrument.name if jam.instrument %></div>
   </div>
-  <div class='spectrogram'>Spectrogram</div>
+  <div class='spectrogram'>
+    <img src='/new-ui/waveform.png'>
+  </div>
 </div>

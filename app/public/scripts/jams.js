@@ -1,7 +1,7 @@
 var Jam = {Create: {}, Manage: {}};
 
 Jam.create = function(){
-	Modal.load("/jam/create", {height: "300px"})
+	Modal.load("/jam/create", {minHeight: 250})
 }.bind(Jam);
 
 Jam.Create.showSpinner = function(el){

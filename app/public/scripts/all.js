@@ -2,7 +2,7 @@ var Layout = {};
 var Navigate = {states: []};
 var Modal = {};
 var Doc = {Player: {}, Playlist: {}, Notifications: {}, Messages: {}};
-var Event = {};
+var JEvent = {list: {}}; // 'list' is treated as an array. In the sense, on load all keys in 'list' are itereated over and run.
 
 Layout.onReady = function(){
 	if($("content-panel")){
@@ -10,7 +10,7 @@ Layout.onReady = function(){
 		Navigate.saveHomeState();
 		Modal.setup();
 	}
-	Event.runAll();
+	JEvent.runAll();
 }.bind(Layout);
 
 $j(document).ready(Layout.onReady);
@@ -24,7 +24,7 @@ Layout.showStructure = function(){
 	c.width(width);
 	c.fadeIn();
 	Doc.Player.collapse();
-	this.attachScrollEvent();
+	this.attachScrollJEvent();
 	this.contentPanel = this.getContentPanel();
 }.bind(Layout);
 
@@ -44,13 +44,12 @@ Layout.getContentPanel = function(){
 	return $j("#content-panel");
 }.bind(Layout)
 
-Layout.attachScrollEvent = function() {
-	$("content-panel").addEventListener('DOMMouseScroll', this.manageScrollEvent, false);
-	$("content-panel").addEventListener('mousewheel', this.manageScrollEvent, false);
+Layout.attachScrollJEvent = function() {
+	$("content-panel").addEventListener('DOMMouseScroll', this.manageScrollJEvent, false);
+	$("content-panel").addEventListener('mousewheel', this.manageScrollJEvent, false);
 }.bind(Layout);
 
-Layout.manageScrollEvent = function(e){
-	eee = e;
+Layout.manageScrollJEvent = function(e){
 	var detail = e.wheelDelta ? -(e.wheelDelta / 60) : e.detail; 
 	var moveBy = -(30 * detail);
 	var content = this.contentPanel.children()[0];
@@ -79,9 +78,9 @@ Navigate.loadContent = function(url){
 	var callback = function(e){
 		if(children.size())
 			$(children[0]).remove();
-		var div = new Element("div", {style: "padding-left: 10px; padding-top: 11px"});
+		var div = new Element("div", {style: "position: relative; padding-left: 10px; padding-top: 0px;"});
 		$("content-panel").insert(div, "bottom");
-		div.absolutize();
+//		div.absolutize();
 		div.style.top = "0px";
 		updateEl(div, url, {onSuccess: function(){window.setTimeout(Navigate.storeState, 500)}});		
 	}
@@ -151,7 +150,7 @@ Modal.show = function(){
 }.bind(Modal)
 
 Modal.load = function(url){
-	var defaultConfig = {};
+	var defaultConfig = {minHeight: 300, minWidth: 450};
 	var config = arguments[1] || {}
 	config = mergeHash(defaultConfig, config);
 	this.show(config);
@@ -203,13 +202,13 @@ Doc.Messages.show = function() {
 	Doc.Player.expand("/dock/messages");
 }.bind(Doc.Messages);
 
-Event.runAll = function(){
-	this.addOnHoverRowSelect();
-	this.setListRowsHeight();
-	this.toogleDocItemClass();
-}.bind(Event);
+JEvent.runAll = function(){
+	$H(JEvent.list).keys().each(function(e){
+		JEvent.list[e]();
+	});
+}.bind(JEvent);
 
-Event.addOnHoverRowSelect = function() {
+JEvent.list.addOnHoverRowSelect = function() {
 	$j(".list .row").live("mouseover", function(){
 		$j(this).addClass("onhover");
 	});
@@ -217,17 +216,17 @@ Event.addOnHoverRowSelect = function() {
 	$j(".list .row").live("mouseout", function(){
 		$j(this).removeClass("onhover");
 	});
-}.bind(Event);
+}.bind(JEvent.list);
 
 
-Event.setListRowsHeight = function(){
+JEvent.list.setListRowsHeight = function(){
 	$j(".list .rows").livequery(function(){
 		var height = $(Layout.getContentPanel()[0]).getHeight() - ($($j(".list .list-header")[0]).getHeight() + $j(".list .column-headers").height());
 		$j(this).height(height);
 	});
-}.bind(Event);
+}.bind(JEvent.list);
 
-Event.toogleDocItemClass = function(){
+JEvent.list.toogleDocItemClass = function(){
 	$j(".player .item").live("mouseover", function(){
 		$j(this).addClass("item-onhover");
 //		$j(".player .item .image").css({opacity: 1});
@@ -237,4 +236,4 @@ Event.toogleDocItemClass = function(){
 		$j(this).removeClass("item-onhover");
 //		$j(".player .item .image").css({opacity: 0.8});
 	});
-}.bind(Event)
+}.bind(JEvent.list)

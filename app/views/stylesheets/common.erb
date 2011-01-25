@@ -73,7 +73,7 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
 .middle-bar .content-panel {
   position: relative; 
   margin-left: <%= left_panel_width %>; 
-  margin-right: <%= right_panel_width %>; 
+  margin-right: <%= ((right_panel_width).px + 20).px %>; 
   z-index: 1; 
   padding: 0px 0px 0px 0px;
   overflow: hidden;
@@ -138,7 +138,7 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
 
 
 
-.list {position: relative; clear: both;}
+.list {position: relative;}
 .list .row {position: relative; padding-top: 10px; height: 96px; overflow: auto; padding-left: 5px; border-bottom: 1px solid #f0f0f0;}
 .list .row .forward-icon {position: absolute; right: 20px; margin-top: 25px}
 .list .row .image {position: absolute; width: 78px; height: 78px; border: 1px solid #dcdcdc; padding: 1px}
@@ -184,14 +184,18 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
 
 .content-panel .header {font-size: 20px; font-weight: normal; color: #444}
 .content-panel .field {display: inline-block; color: #888; width: 200px;}
+.content-panel .field.w50 {width: 50px}
 
-.single-jam.jam {position: relative; height: 96px; overflow: auto; width: 800px; }
+.single-jam.jam {position: relative; height: 96px; overflow: auto;}
 .single-jam.jam .forward-icon {position: absolute; right: 20px; margin-top: 25px}
 .single-jam.jam .image {position: absolute; width: 78px; height: 78px; border: 1px solid #dcdcdc; padding: 1px}
-.single-jam.jam .content {position: relative;}
-.single-jam.jam .content .col1 {position: absolute; margin-left: 96px;}
+.single-jam.jam .content {position: relative; margin-left: 96px}
 .single-jam.jam .content .name {overflow: hidden; color: black; font-weight: bold; cursor: pointer; margin-bottom: 3px}
 .single-jam.jam .content .artist {overflow: hidden; font-size: 10px}
+.single-jam.jam .content .play-waveform {position: relative}
+.single-jam.jam .content .play-waveform .play {position: absolute; width: 50px; left: -9px}
+.single-jam.jam .content .play-waveform .waveform {padding-top: 0px; position: relative; margin-left: 50px; height: 50px}
+.single-jam.jam .content .play-waveform .waveform IMG {height: 100%; width: 100%}
 
 .section-header {background-color: #EBEBEB; font-weight: bold; padding: 2px 0px 2px 5px; border-bottom: 1px solid #ccc; margin-bottom: 10px}
 
@@ -201,22 +205,26 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
 .comments .comment .body {position: relative; margin-left: 36px; max-width: 600px}
 .comments .comment .body .username {color: #888}
 
-.song-page.song {position: relative; height: 96px; overflow: auto; width: 800px; }
+.song-page.song {position: relative; height: 96px; overflow: auto;}
 .song-page.song .forward-icon {position: absolute; right: 20px; margin-top: 25px}
 .song-page.song .image {position: absolute; width: 78px; height: 78px; border: 1px solid #dcdcdc; padding: 1px}
-.song-page.song .content {position: relative; overflow: auto; min-height: 78px; }
-.song-page.song .content .spectrogram {position: absolute; left: 90px; top: 38px}
-.song-page.song .content .col1 {position: absolute; margin-left: 96px;}
+.song-page.song .content {position: relative; overflow: auto; min-height: 78px; margin-left: 96px;}
 .song-page.song .content .name {overflow: hidden; color: black; font-weight: bold; cursor: pointer; margin-bottom: 3px}
 .song-page.song .content .artist {overflow: hidden; font-size: 10px}
+.song-page.song .content .play-waveform {position: relative}
+.song-page.song .content .play-waveform .play {position: absolute; width: 50px; left: -5px}
+.song-page.song .content .play-waveform .waveform {padding-top: 0px; position: relative; margin-left: 50px; height: 50px;}
+.song-page.song .content .play-waveform .waveform IMG {height: 100%; width: 100%}
 
 .song-page.jams {position: relative}
-.song-page.jams .jam {position: relative; height: 50px}
+.song-page.jams .jam {position: relative; height: 50px; margin-bottom: 10px}
 .song-page.jams .jam .play-icon {position: absolute; width: 50px}
 .song-page.jams .jam .info {position: absolute; left: 52px; top: 5px; width: 140px}
 .song-page.jams .jam .info .name {font-size: 11px; font-weight: bold}
 .song-page.jams .jam .info .artist {font-size: 10px; font-weight: normal}
-.song-page.jams .jam .spectrogram {position: relative; margin-left: 200px}
+.song-page.jams .jam .info .instrument {font-size: 10px; font-weight: normal}
+.song-page.jams .jam .spectrogram {position: relative; margin-left: 200px; height: 50px}
+.song-page.jams .jam .spectrogram IMG {height: 100%; width: 100%}
 
 
 #basic-modal-content {display:none;}
@@ -225,7 +233,7 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
 #simplemodal-overlay {background-color:#000; cursor:wait;}
 
 /* Container */
-#simplemodal-container {height:360px; width:400px; color:#bbb; background-color:#333; border:4px solid #444; padding:12px;}
+#simplemodal-container {color:#bbb; background-color:#333; border:4px solid #444; padding:12px;}
 .simplemodal-data {padding:8px; color:#bbb;}
 #simplemodal-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
 #simplemodal-container a {color:#ddd;}
