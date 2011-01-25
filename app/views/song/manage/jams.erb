@@ -1,30 +1,13 @@
-<% 
-	jams ||= @jams
-	jams = jams.sort_by(&:id)
-%>
+<div class='song-manage-page jams'>
+  <% jams.each{|jam| %>
+    <%= partial(:"/song/manage/jam", :locals => {:jam => jam}) %>
+  <% } %>
 
-<select id='song-manage-my-jams'>
-	<option>My JAMS</option>
-	<option>-------</option>
-	<% (@session_user.jams - jams).each { |jam| %>
-		<option value='<%= jam.id %>'><%= jam.name %></option>
-	<% } %>
-</select>
-&nbsp;<input type='button' value='Add JAM' onclick='addJamToSong("<%= @song.id %>")'><br><br>
-<% jams.each do |jam| %>
-  <%= partial('song/manage/jam', {:locals => {:jam => jam }}) %><br>
-<% end %>
-<br>
-<div>
-  <input type='button' class='float-left' value='Preview Song' onclick='flattenSong("<%= @song.id %>")'>
-  <% if @song.flattened_file_handle %>
-    <input type='button' class='float-left' value='Play Preview' onclick='playMusic("/file/<%= @song.flattened_file_handle %>", "Preview")'>
-  <% end %>
+  <div class='jam'>
+    <div class='info'>
+      <div class='name'>Untitled Jam</div>
+    </div>
+    <div class='checkbox'><input type='checkbox'></div>
+    <div class='play'><img src='/new-ui/play.png'></div>
+  </div>
 </div>
-
-<%= vspace 20 %>
-<div id='flatten-response' class='text'></div>
-<div id='add-jam-response'></div>
-
-<br>
-

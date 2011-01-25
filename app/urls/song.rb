@@ -21,6 +21,7 @@ post '/song/register' do
   }
 end
 
+
 get '/song/add_music' do
   logged_in? {
     @add = param?(:add)
@@ -37,12 +38,9 @@ get '/song/:song_id' do
   erb(:"song/page")
 end
 
-get '/song/:song_id/basic_info' do
-  erb(:"song/basic_info", :locals => {:song => get_passed_song})
-end
-
-get '/song/:song_id/likes' do 
-  erb(:"song/likes", :locals => {:song => get_passed_song})
+get '/song/:song_id/context_menu' do
+  @song = get_passed_song
+  erb(:"/song/context_menu")
 end
 
 get '/song/:song_id/add_music' do
@@ -68,10 +66,7 @@ end
 get '/song/:song_id/manage' do
   @song = get_passed_song
   @music_meta_data = music_meta_data(@song)
-  allowed?(@song.managers) {
-    @layout_info = {'middle_panel' => 'song/manage/page', 'left_panel' => 'account/menu', 'right_panel' => 'song/manage/right'}
-    erb(:"body/structure")
-  }
+  erb(:"song/manage/page")
 end
 
 

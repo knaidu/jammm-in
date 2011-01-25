@@ -1,67 +1,33 @@
 <% song = @song %>
 
-<!-- To make everything in this page a little smaller -->
-<div class='text'>
+<%= render_state({:name => "Manage - " + @song.name, :description => "", :url => "/song/#{@song.id}/manage", :context_menu => "/song/#{@song.id}/context_menu"}) %>
 
-  <div class='main-info'>
-    <div>
-      <div class='align-middle display-inline-block'><%= icon :song %></div>
-      <div class='music-title'><b><%= song.name %></b></div>
-      <span class='align-middle'> - <%= profile_link(song.creator) %> </span>
-    </div>
-    <%= vspace %>
-
-    <div class='pad-left-10'>
-      <%= main_info_row('Creator', profile_link(song.creator)) %>
-      <%= main_info_hor_line %>
-      <%= main_info_row('Created On', song.created_at.date) %>
-      <%= main_info_hor_line %>
-      <%= main_info_row('Type', song.published ? display_published : display_unpublished) %>
+<%= vspace 10 %>
+<div class='song-page song'>
+  <div class='image'>
+    <img src='/new-ui/song2.jpg' width='78px' height='78px'>
+  </div>
+  <div class='content'>
+    <div class='name'><%= @song.name %></div>
+    <div class='artist'><%= @song.artists.map(&:username).join(", ") %></div>
+    <div class='play-waveform'>
+      <div class='play'><img src='/new-ui/play.png'></div>
+      <div class='waveform'><img src='/new-ui/waveform.png'></div>
     </div>
   </div>
-
-  <%= vspace %>
-  <table>
-    <tr>
-      <td><a href='/song/<%= song.id %>'><%= icon :song_page %></a></td>
-      <td class='text-right w100 align-middle'>
-        <% if @song.published %>
-  	      <input type='button' value='Unpublish' onclick='unpublishSong("<%= @song.id %>")'>
-        <% else %>
-  	      <input type='button' value='Publish' onclick='publishSong("<%= @song.id %>")'>
-        <% end %>
-        <input type='button' value='Delete Song' onclick='deleteSong("<%= @song.id %>")'>
-      </td>
-    </tr>
-  </table>
-
-  <%= partial('song/manage/song_picture', :section_header => SectionHeader.new('STEP 1: Song Picture'), :collapsible => true, :locals => {:song => @song}) %>
-  <br>
-
-  <%= section_header 'STEP 2: Jams' %>
-  <div id='song-manage-jams'>
-    <%= partial('song/manage/jams', {:locals => {:jams => @song.jams}}) %>
-  </div><br>
-
-  <%= section_header 'STEP 3: Information' %>
-    <%= partial('song/manage/information', {:locals => {:song => @song}}) %>
-
-  <%= vspace 20 %>
-  <%= section_header 'STEP 4: Artists / Managers' %>
-  <div id='song-manage-artists-div'>
-    <%= partial('song/manage/artists', {:locals => {:artists => @song.managers}}) %>
-  </div>
-  <br>
-
-  <%= section_header 'STEP 5: Lyrics' %>
-  <form action='/song/<%= @song.id %>/manage/add_lyrics' method='post' onsubmit='return false' id='song-lyrics-form'>
-  	<textarea name='lyrics' style='height: 150px; width: 250px'><%= @song.lyrics %></textarea>
-  	<br><br>
-  	<input type='submit' value='Save' onclick="submitForm('song-lyrics-form', 'song-lyrics-form-response')">
-  </form>  
-  <div id='song-lyrics-form-response'></div>
-
-  <%= vspace 20 %>
-  <%= partial('song/manage/file_information', :section_header => SectionHeader.new('File Information (information only)'), :collapsible => true, :collapsed => true) %>
-
 </div>
+
+<%= vspace 30 %>
+<div class='section-header'>Information</div>
+<div class='field'>Name:</div><input type='text' name='name' value='<%= song.name %>'><%= vspace %>
+<div class='field float-left'>Genre:</div>
+<%= partial ("common/manage_genres", :locals => {
+    :for_type => "song",
+    :for_type_id => song.id
+}) %>
+<%= vspace 10 %>
+<div class='field float-left'>Description:</div><textarea name='description'><%= song.description %></textarea>
+
+<%= vspace 30 %>
+<div class='section-header'>Jams</div>
+<%= partial :"/song/manage/jams", :locals => {:jams => song.jams} %>

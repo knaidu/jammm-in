@@ -1,4 +1,5 @@
-<%= render_state({:name => @song.name, :description => @song.description, :url => "/song/#{@song.id}"}) %>
+<%= render_state({:name => @song.name, :description => @song.description, :url => "/song/#{@song.id}", :context_menu => "/song/#{@song.id}/context_menu"}) %>
+
 <%= vspace 10 %>
 <div class='song-page song'>
   <div class='image'>
