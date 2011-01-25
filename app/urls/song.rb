@@ -31,11 +31,10 @@ end
 
 
 get '/song/:song_id' do
-  @layout_info = {"left_panel" => "common/little_menu", "middle_panel" => 'song/page', "right_panel" => 'song/right'}
   @song = Song.find(params[:song_id])
   @song.visited
   @music_meta_data = music_meta_data(@song)
-  erb(:"body/structure")
+  erb(:"song/page")
 end
 
 get '/song/:song_id/basic_info' do

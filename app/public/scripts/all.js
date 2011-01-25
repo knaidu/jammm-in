@@ -1,13 +1,15 @@
 var Layout = {};
 var Navigate = {states: []};
-var Dialog = {};
+var Modal = {};
 var Doc = {Player: {}, Playlist: {}, Notifications: {}, Messages: {}};
 var Event = {};
 
 Layout.onReady = function(){
-	this.showStructure();
-	Navigate.saveHomeState();
-	Dialog.setup();
+	if($("content-panel")){
+		this.showStructure();
+		Navigate.saveHomeState();
+		Modal.setup();
+	}
 	Event.runAll();
 }.bind(Layout);
 
@@ -133,37 +135,38 @@ Navigate.back = function(){
 	this.setBackButton();
 }.bind(Navigate);
 
-/* Dialog */
-Dialog.get = function(){
-	return $j(".dialog");
-}.bind(Dialog)
+/* Modal */
+Modal.get = function(){
+	return $j("#basic-modal-content");
+}.bind(Modal)
 
-Dialog.setup = function(){
+Modal.setup = function(){
+}.bind(Modal)
+
+Modal.show = function(){
+	var config = arguments[0] || {};
 	var d = this.get();
-	d.bind('resize', function(){d.center()});
-	d.center();
-}.bind(Dialog)
+//	d.center();
+	this.cmp = d.modal(config);
+}.bind(Modal)
 
-Dialog.show = function(){
+Modal.load = function(url){
+	var defaultConfig = {};
+	var config = arguments[1] || {}
+	config = mergeHash(defaultConfig, config);
+	this.show(config);
 	var d = this.get();
-	d.show('slow', this.center);
-}.bind(Dialog)
+	updateEl($j("#simplemodal-container .simplemodal-data")[0], url);
+}.bind(Modal)
 
-Dialog.load = function(url){
-	this.show();
-	var d = this.get();
-	d.html("");
-	updateEl(d[0], url, {onComplete: this.center});
-}.bind(Dialog)
-
-Dialog.hide = function(){
+Modal.hide = function(){
 	var d = this.get();
 	d.hide('slow');
-}.bind(Dialog)
+}.bind(Modal)
 
-Dialog.center = function(){
+Modal.center = function(){
 	this.get().center();
-}.bind(Dialog);
+}.bind(Modal);
 
 /* Doc Functions */
 

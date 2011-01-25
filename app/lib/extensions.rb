@@ -74,4 +74,9 @@ end
 
 class Integer
   def px; (self.to_s + "px"); end # Used in common.css
+  
+  def to_mb
+    (self.to_f / 1024 / 1024) + " MB" 
+  end
+  
 end

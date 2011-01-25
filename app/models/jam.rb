@@ -29,6 +29,20 @@ class Jam < ActiveRecord::Base
     Feed.delete_by_data("jam_id", self.id)
   end
   
+  def self.construct_jam(user, name, instrument, file_details)
+    puts "FILE: " + file_details.inspect
+    regex = DATA["name_regex"]
+    raise "The name can accept only alphabets,numbers, '-' and '_'" if not eval(regex).match(name)
+    jam = Jam.create({
+      :name => name,
+      :registered_user_id => user.id,
+      :created_at => Time.now,
+      :added_by_user_id => user.id
+    })
+    jam.update_file(file_details)
+    jam
+  end
+  
   def displayable?
     self.published or (self.song_jam.active and self.song.published?) rescue nil
   end

@@ -15,8 +15,8 @@
 <%= vspace 20 %>
 <div class='section-header'>Information</div>
 <div class='field'>Name:</div><span><%= @jam.name %></span><%= vspace %>
-<div class='field'>Artist</div><span><%= @jam.creator.name %></span><%= vspace %>
-<div class='field'>Instrument</div><span><%= @jam.instrument ? @jam.instrument.name : "-" %></span><%= vspace %>
+<div class='field'>Artists:</div><span><%= @jam.creator.name %></span><%= vspace %>
+<div class='field'>Instruments:</div><span><%= @jam.instrument ? @jam.instrument.name : "-" %></span><%= vspace %>
 <div class='field'>Genre:</div><span><%= @jam.genre_names %></span><%= vspace  %>
 
 <%= vspace 20 %>

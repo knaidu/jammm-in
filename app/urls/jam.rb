@@ -1,8 +1,19 @@
 
 get '/jam/create' do
-  manage_if_not_signed_in
-  @layout_info = {"middle_panel" => 'jam/create', "left_panel" => "account/menu"}
-  erb(:"body/structure")
+  erb(:"jam/create")
+end
+
+get '/jam/create_form' do
+  erb(:"/jam/create_form")
+end
+
+post '/jam/create/submit' do
+  file = params[:file][:tempfile]
+  puts params[:file].inspect
+  jam = Jam.construct_jam(@session_user, param?(:name), param?(:instrument), param?(:file))
+  puts jam.inspect
+  @jam = jam
+  erb(:"/jam/created")
 end
 
 post '/jam/register' do
@@ -36,8 +47,7 @@ get '/jam/:jam_id/manage' do
   @jam = get_passed_jam
   @music_meta_data = music_meta_data(@jam)
   allowed?(@jam.artists) {
-    @layout_info = {'middle_panel' => 'jam/manage/page', 'right_panel' => 'jam/manage/instructions', 'left_panel' => 'account/menu'}
-    erb(:"body/structure")
+    erb(:"/jam/manage/page")
   }
 end
 

@@ -204,6 +204,19 @@ class Song < ActiveRecord::Base
     "/song/#{self.id}/song_picture?#{self.song_picture_file_handle.to_s}"
   end
   
+  def instruments
+    jams.map(&:instrument).compact
+  end
+  
+  def genres
+    Genre.fetch("song", self.id)
+  end
+  
+  def genre_names
+    genres.map(&:name).join(", ")
+  end
+  
+  
   def tags
     Tag.fetch('song', self.id)
   end

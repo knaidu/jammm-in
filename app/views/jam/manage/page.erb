@@ -1,66 +1,33 @@
+<%= render_state({:name => "MANAGE - " + @jam.name, :description => @jam.description, :url => "/jam/#{@jam.id}"}) %>
 <% jam = @jam %>
 
-<div class='text'>
-  <div class='main-info'>
-    <div>
-      <div class='align-middle display-inline-block'><%= icon :jam %></div>
-      <div class='music-title'><b><%= jam.name %></b></div>
-      <span class='align-middle'> - <%= profile_link(jam.creator) %> </span>
-    </div>
-    <%= vspace %>
-    <div class='pad-left-10'>
-      <%= main_info_row('Creator', profile_link(jam.creator)) %>
-      <%= main_info_hor_line %>
-      <%= main_info_row('Created On', jam.created_at.date) %>
-      <%= main_info_hor_line %>
-      <%= main_info_row('Type', display_jam_type(jam)) %>
-    </div>
-  </div>
-  <%= vspace %>
-  <table class='w100'>
-    <tr>
-      <td class='align-middle'><a title='Song Page' alt='Song Page' href='/jam/<%= jam.id %>'><%= icon :jam_page %></a></td>
-      <td class='display-inline-block text-right align-right align-middle w100'>
-        <% if not @jam.published %>
-        	<input type='button' value='Publish' onclick='publishJam("<%= @jam.id %>")'>
-        <% else %>
-        	<input type='button' value='Unpublish' onclick='unpublishJam("<%= @jam.id %>")'>
-        <% end %>
-        <input type='button' value='Delete' onclick='deleteJam("<%= @jam.id %>")'>
-      </td>
-    </tr>
-  </table>
+<img src='/new-ui/song2.jpg'>
 
-  <div id='jam-actions-response'></div>
+<%= vspace 30 %>
+<div class='section-header'>Update Audio File</div>
+<form>
+  <div class='field'>File Handle:</div><%= jam.file_handle %><%= vspace 10 %>
+  <div class='field'>File Size:</div><%= jam.file.size.to_s %><%= vspace 10 %>
+  <div class='field'>Choose File</div><input type='file' name='file'>
+    <%= vspace 10 %>
+    <input type='submit' value='Update'
+</form>
 
-  <%= section_header 'STEP 1: Upload File' %>
-  <div id='jam-file-actions'>
-  	<%= partial('jam/manage/file_actions') %>
-  </div>
+<%= vspace 30 %>
+<div class='section-header'>Information</div>
+<div class='field'>Jam Name:</div><input type='text' name='name' value="<%= jam.name %>"><%= vspace 10 %>
 
-  <%= partial('jam/manage/information', {
-  	:locals => {:jam => @jam}, 
-  	:section_header => SectionHeader.new('STEP 2: Information'),
-  	:collapsible => true
-  }) %>
-  
-  
-  <%= vspace 20 %>
-  <%= section_header 'STEP 3: Artists & Instruments' %>
-    <div id='jam-artists'>
-      <%= partial('jam/manage/artists', {:locals => {:artists => @jam.artists}}) %>
-    </div>
-  </div>
+<div class='field'>Instrument:</div>
+<select name='instrument'>
+  <% Instrument.all.each{|i| %>
+    <option value='<%= i.id %>'><%= i.name %></option>
+  <% } %>
+</select>
+<%= vspace 10 %>
 
-  <%= vspace 20 %>
-  <%= partial('jam/manage/sheet_music/sheet_music', {
-  	:locals => {:jam => @jam}, 
-  	:section_header => SectionHeader.new('STEP 4: Sheet Music'),
-  	:collapsible => true,
-  	:collapsed => true
-  }) %>
+<div class='field'>Genre:</div><%= jam.name %><%= vspace 10 %>
 
+<div class='field float-left'>Description:</div><textarea name='description'><%= jam.description %></textarea>
 
-<%= js_start %>
-	setSelectedMenuItem('menu-item-jams')
-<%= js_end %>
+<div class='clear-both'></div>
+<%= vspace %>

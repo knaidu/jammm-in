@@ -1,0 +1,26 @@
+<html>
+<head>
+	<%= partial('body/includes') %>
+</head>
+<body>
+  <%= vspace 20 %>
+  <div class='simplemodal-data'>
+    <form action="/jam/create/submit" method='post' enctype='multipart/form-data' >
+      <div class='field'>Choose Audio File:</div><input type='file' name='file'><%= vspace 10 %>
+      <div class='field'>Name:</div><input type='text' name='name'><%= vspace 10 %>
+      <div class='field'>Instrument:</div>
+        <select name='instrument'>
+          <% Instrument.all.each{|i| %>
+            <option value='<%= i.id %>'><%= i.name %></option>
+          <% } %>
+        </select>
+      <%= vspace %>
+      <%= vspace 30 %>
+      <div>
+        <img src="/new-ui/ajax-loader.gif" class="ajax-loader" style='display: none'>
+        <input type='submit' value='Create' onclick='Jam.Create.showSpinner(this)'>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

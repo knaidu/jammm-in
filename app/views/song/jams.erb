@@ -1,4 +1,6 @@
-<% jams.each do |jam| %>
-  <%= partial(:'song/jam', {:locals => {:jam => jam}}) %>
-  <%= vspace %>
-<% end %>
+<div class='song-page jams'>
+  <% jams.each do |jam| %>
+    <%= partial(:'song/jam', {:locals => {:jam => jam}}) %>
+    <%= vspace %>
+  <% end %>
+</div>

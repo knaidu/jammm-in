@@ -1,13 +1,26 @@
-<div id='basic-info'>
-	<%= partial("song/basic_info", :locals => {:song => @song}) %>
+<%= render_state({:name => @song.name, :description => @song.description, :url => "/song/#{@song.id}"}) %>
+
+<div class='song-page song'>
+  <div class='image'>
+    <img src='/new-ui/song2.jpg' width='78px' height='78px'>
+  </div>
+  <div class='content'>
+    <div class='spectrogram'><img src='/new-ui/play.png'></div>
+    <div class='col1'>
+      <div class='name'><%= @song.name %></div>
+      <div class='artist'><%= @song.creator.name %></div>
+    </div>
+  </div>
 </div>
 
-<%= section_header 'Description' %>
-<%= @song.description.format_html rescue "" %>
 <%= vspace 20 %>
+<div class='section-header'>Information</div>
+<div class='field'>Name:</div><span><%= @song.name %></span><%= vspace %>
+<div class='field'>Artists:</div><span><%= @song.artists.map(&:username).join(", ") %></span><%= vspace %>
+<div class='field'>Instruments:</div><span><%= @song.instruments.map(&:name).join(", ") %></span><%= vspace %>
+<div class='field'>Genre:</div><span><%= @song.genre_names %></span><%= vspace  %>
 
-<%= section_header 'Jams' %>
-<%= partial(:'song/jams', {:locals => {:jams => @song.active_jams}}) %>
-<br>
-<%= section_header 'Lyrics' %>
-<%= format_lyrics(@song.lyrics) %>
+<%= vspace 20 %>
+<div class='section-header'>Jams</div>
+<%= partial :"/song/jams", :locals => {:jams => @song.jams} %>
+

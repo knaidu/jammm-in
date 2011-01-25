@@ -42,7 +42,7 @@ get '/test2' do
 end
 
 get '/test3' do
-  
+  "Data is here"
 end
 
 

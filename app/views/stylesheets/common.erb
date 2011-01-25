@@ -39,11 +39,12 @@ html, body {
 .position-absolute {position: absolute}
 .float-left {float: left}
 .float-right {float: right}
-.field {display: inline-block; color: #888; width: 200px;}
 .w50 {width: 50px}
 .s11 {font-size: 11px}
 
 IMG {border: none}
+
+IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
 
 .top-bar {
   height: <%= top_bar_height %>;
@@ -83,7 +84,7 @@ IMG {border: none}
 .menu-panel .navigation-bar {width: 102%; color: #666666; height: 70px;}
 .menu-panel .navigation-bar .icon {position: absolute;}
 .menu-panel .navigation-bar .context-icon {position: absolute; left: 20px; width: 32px; margin-top: 10px}
-.menu-panel .navigation-bar .content {position: relative; margin-left: 72px; margin-top: 0px}
+.menu-panel .navigation-bar .content {position: relative; height: 60px; margin-left: 72px; margin-top: 0px; padding-right: 5px; overflow: hidden;}
 .menu-panel .navigation-bar .content .name {font-weight: bold; padding-top: 8px}
 .menu-panel .navigation-bar .content .description {font-weight: normal; font-size: 10px}
 
@@ -135,7 +136,7 @@ IMG {border: none}
 .player .item {margin-bottom: 10px; border-bottom: 1px solid #ededed; color: #aaa}
 .player .item-onhover {color: #666666}
 
-.dialog {z-index: 10; display: none; min-width: 400px; height: 200px; position: fixed; background-color: yellow; border: 1px solid grey; left: 100px; top: 10px}
+
 
 .list {position: relative; clear: both;}
 .list .row {position: relative; padding-top: 10px; height: 96px; overflow: auto; padding-left: 5px; border-bottom: 1px solid #f0f0f0;}
@@ -156,15 +157,6 @@ IMG {border: none}
 .feed .content .title {color: grey; font-size: 13px}
 .feed .content .title .name {font-weight: bold}
 
-.song {position: relative; min-height: 64px; padding-bottom: 20px}
-.song .image {position: absolute; left: 0px; height: 48px; width: 48px; border: 1px solid #dddddd; padding: 1px}
-.song .image IMG {height: 100%; width: 100%}
-.song .content {margin-left: 64px;}
-.song .content .title {font-weight: bold}
-
-.box {border: 1px solid gray; overflow: auto}
-.box .section .header {padding-left: 10px; background-color: #dcdcdc; border-top: 1px solid gray}
-.box .section .content {padding: 10px}
 
 .state {visibility: hidden; height: 0px}
 
@@ -190,7 +182,8 @@ IMG {border: none}
 .messages .item .contents .name {margin-bottom: 2px; font-size: 11px; font-weight: bold}
 .messages .item .contents .body {font-size: 10px}
 
-.header {font-size: 20px; font-weight: normal; color: #444}
+.content-panel .header {font-size: 20px; font-weight: normal; color: #444}
+.content-panel .field {display: inline-block; color: #888; width: 200px;}
 
 .single-jam.jam {position: relative; height: 96px; overflow: auto; width: 800px; }
 .single-jam.jam .forward-icon {position: absolute; right: 20px; margin-top: 25px}
@@ -206,3 +199,39 @@ IMG {border: none}
 .comments .comment {position: inherit;}
 .comments .comment .image {position: absolute; width: 36px;}
 .comments .comment .body {position: relative; margin-left: 36px; max-width: 600px}
+.comments .comment .body .username {color: #888}
+
+.song-page.song {position: relative; height: 96px; overflow: auto; width: 800px; }
+.song-page.song .forward-icon {position: absolute; right: 20px; margin-top: 25px}
+.song-page.song .image {position: absolute; width: 78px; height: 78px; border: 1px solid #dcdcdc; padding: 1px}
+.song-page.song .content {position: relative; overflow: auto; min-height: 78px; }
+.song-page.song .content .spectrogram {position: absolute; left: 90px; top: 38px}
+.song-page.song .content .col1 {position: absolute; margin-left: 96px;}
+.song-page.song .content .name {overflow: hidden; color: black; font-weight: bold; cursor: pointer; margin-bottom: 3px}
+.song-page.song .content .artist {overflow: hidden; font-size: 10px}
+
+.song-page.jams {position: relative}
+.song-page.jams .jam {position: relative; height: 50px}
+.song-page.jams .jam .play-icon {position: absolute; width: 50px}
+.song-page.jams .jam .info {position: absolute; left: 52px; top: 5px; width: 140px}
+.song-page.jams .jam .info .name {font-size: 11px; font-weight: bold}
+.song-page.jams .jam .info .artist {font-size: 10px; font-weight: normal}
+.song-page.jams .jam .spectrogram {position: relative; margin-left: 200px}
+
+
+#basic-modal-content {display:none;}
+
+/* Overlay */
+#simplemodal-overlay {background-color:#000; cursor:wait;}
+
+/* Container */
+#simplemodal-container {height:360px; width:400px; color:#bbb; background-color:#333; border:4px solid #444; padding:12px;}
+.simplemodal-data {padding:8px; color:#bbb;}
+#simplemodal-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
+#simplemodal-container a {color:#ddd;}
+#simplemodal-container a.modalCloseImg {background:url(/new-ui/x.png) no-repeat; width:25px; height:29px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
+#simplemodal-container h3 {color:#84b8d9;}
+
+/* DATA */
+.simplemodal-data .header {font-size: 16px; color: #fafafa; border-bottom: 1px solid #666; padding-bottom: 5px}
+.simplemodal-data .field {display: inline-block; color: #aaa; width: 130px}

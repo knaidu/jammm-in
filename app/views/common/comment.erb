@@ -4,10 +4,11 @@
   <div class='image'><img src='/new-ui/pickles.jpg' height='24px'></div>
   <div class='body'>
     <% if (managers + [comment.user]).include?(session_user?) %>
-    	<span class='float-right simple-delete simple-link' onclick="deleteComment('<%= comment.id %>', '<%= comments_div_id %>', '<%= form_id %>')" title='Delete comment'>x</span>
+    	<span class='float-right' onclick="deleteComment('<%= comment.id %>', '<%= comments_div_id %>', '<%= form_id %>')" title='Delete comment'>x</span>
     <% end %>
-    &nbsp;<%= comment.comment.format_html %>
-    <% if @session_user == comment.user %>
-    <% end %>
+    <div class='username'><%= comment.user.username %>:</div>
+    <div class='string'>
+      <%= comment.comment.format_html %>
+    </div>
   </div>
 </div>

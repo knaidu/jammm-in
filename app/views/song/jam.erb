@@ -1,14 +1,8 @@
-<div class='position-relative' style='min-height: 20px'>
-  <div class='position-absolute left-0' style='width: 20px'><%= play jam %></div>
-  <div class='position-absolute right-0'><%= add_music_link jam %></div>  
-  <div class='position-absolute' style='right: 20px'><%= download jam %></div>    
-  <div class='position-relative' style='margin-left: 20px; margin-right: 40px'>
-    <span class='bold'><%= jam_link jam %></span>
-    <span class='grey text'>
-      &nbsp;-
-      <% jam.jam_artists.each do |jam_artist| %>
-        <%= profile_link jam_artist.artist %> <%= " #{list_instruments(jam_artist.instruments)}. " if not jam_artist.instruments.empty? %> 
-      <% end %>
-    </span>
+<div class='jam'>
+  <div class='play-icon'><img src='/new-ui/play.png' height='48px'></div>
+  <div class='info'>
+    <div class='name'><%= jam.name %></div>
+    <div class='artist'><%= jam.creator.username %></div>
   </div>
+  <div class='spectrogram'>Spectrogram</div>
 </div>
