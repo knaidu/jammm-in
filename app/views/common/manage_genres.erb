@@ -1,46 +1,49 @@
-<div id='genres-list'>
+<div id='genres-list' class='display-inline-block'>
 	<% 
 		contains_genres = ContainsGenre.find_all_by_for_type_and_for_type_id(for_type, for_type_id)
 		genres = contains_genres.map(&:genre)
 	%>
 
-	<div class='display-inline-block pad-right-5' style='overflow: hidden'>
+	<div class='display-inline-block' style='overflow: hidden; '>
 		<% user_genres = session_user?.genres %>
+	
+	  <div class='editable-genres'>
+  		<% contains_genres.each do |contains_genre| %>
+  			<% genre = contains_genre.genre %>
+  			<div class='editable-genre'>
+  			  <div class='action' onClick="remove_genre('<%= contains_genre.id %>')" title='Remove Genre'>
+  			    <img src='/new-ui/x.png' height='16px'>
+  			  </div>
+  			  <div class='text'><%= genre.name %></div>
+  			</div>
+  		<% end %>
+		</div>
+		<%= vspace  %>
+
 		<select id='user-genre-select'>
 			<% (Genre.all - genres).sort_by(&:name).each do |genre| %>
 				<option value="<%= genre.id %>"><%= genre.name %>
 			<% end %>
 		</select>	
 		<input type='button' value='Add' onclick="add_genre()">
-    <%= vspace %>
-	
-		<% contains_genres.each do |contains_genre| %>
-			<% genre = contains_genre.genre %>
-  			<div class='box display-inline-block'>
-  			  <div class='text'><%= genre.name %></div>
-  			  <div class='action' onClick="remove_genre('<%= contains_genre.id %>')">x
-  			  </div>
-  			</div>
-			
-		<% end %>
-
+    
 	</div>
 </div>
 
 <%= js_start %>
-	function reload_genres(){
+
+  reload_genres = function(){
 		var url = formatUrl("/partial/common/manage_genres", {for_type: "<%= for_type %>", for_type_id: <%= for_type_id %>});
 		updateEl('genres-list', url);
 	}
 
-	function add_genre(){
+	add_genre = function(){
 		var select = $('user-genre-select');
-		var url = formatController("genre", "add");
-		url = formatUrl(url, {for_type: "<%= for_type %>", for_type_id: <%= for_type_id %>, genre_id: select.getValue()});
+		var url = formatUrl("/genre/add", {for_type: "<%= for_type %>", for_type_id: <%= for_type_id %>, genre_id: select.getValue()});
 		call(url, {onComplete: reload_genres});
 	}
 
-	function remove_genre(id){
+	remove_genre = function(id){
 		var url = formatUrl("/genre/remove", {contains_genre_id: id});
 		call(url, {onComplete: reload_genres});
 	}

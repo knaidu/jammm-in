@@ -250,6 +250,18 @@ class Jam < ActiveRecord::Base
     instruments.first
   end
   
+  def update_instrument(instrument)
+    ja_id = jam_artists[0].id
+    instrument_objs = Instrument.fetch("jam_artist", ja_id) 
+    instrument_objs.compact.each(&:destroy)
+    ContainsInstrument.add(instrument, "jam_artist", ja_id)
+  end
+  
+  def update_info(key, value)
+    write_attribute(key.to_s, value)
+    save
+  end
+  
   def policy
     read_attribute(:policy) or "public"
   end

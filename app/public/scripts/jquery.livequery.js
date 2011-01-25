@@ -162,6 +162,8 @@ $.extend($.livequery, {
 		$.livequery.running = true;
 		// Request a run of the Live Queries
 		$.livequery.run();
+		if ($.livequery.playTimeout) clearTimeout($.livequery.playTimeout);
+//		$.livequery.playTimeout = window.setTimeout($.livequery.play, 1000); // Added this to fix livequery
 	},
 	
 	registerPlugin: function() {

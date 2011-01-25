@@ -1,4 +1,4 @@
-<%= render_state({:name => @jam.name, :description => @jam.description, :url => "/jam/#{@jam.id}"}) %>
+<%= render_state({:name => @jam.name, :description => @jam.description, :url => "/jam/#{@jam.id}", :context_menu => "/jam/context_menu?jam_id=#{@jam.id}"}) %>
 <%= vspace 10 %>
 <div class='single-jam jam'>
   <div class='image'>

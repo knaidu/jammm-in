@@ -16,6 +16,11 @@ post '/jam/create/submit' do
   erb(:"/jam/created")
 end
 
+get '/jam/context_menu' do
+  @jam = get_passed_jam
+  erb(:"/jam/context_menu")
+end
+
 post '/jam/register' do
   monitor {
     name = params['name']
@@ -46,9 +51,9 @@ end
 get '/jam/:jam_id/manage' do
   @jam = get_passed_jam
   @music_meta_data = music_meta_data(@jam)
-  allowed?(@jam.artists) {
+#  allowed?(@jam.artists) {
     erb(:"/jam/manage/page")
-  }
+#  }
 end
 
 post '/jam/:jam_id/manage/change_jam_picture' do
@@ -63,17 +68,37 @@ post '/jam/:jam_id/manage/change_jam_picture' do
 #  }
 end
 
-get '/jam/:jam_id/manage/upload' do
+get '/jam/:jam_id/manage/update_file' do
   @jam = Jam.find(params[:jam_id])
   erb(:"jam/manage/upload")
 end
 
-post '/jam/:jam_id/manage/upload_file' do
-  file = params[:mefile][:tempfile]
+get '/jam/:jam_id/manage/update_file_form' do
+  @jam = Jam.find(params[:jam_id])
+  erb(:"jam/manage/upload_form")
+end
+
+post '/jam/:jam_id/manage/update_file/submit' do
+  file = params[:file][:tempfile]
   puts params[:mefile].inspect
-  jam = Jam.find(params[:jam_id]).update_file(params[:mefile])
+  jam = Jam.find(params[:jam_id]).update_file(params[:file])
   file.unlink
-  erb(:"jam/manage/file_uploaded")
+  erb(:"jam/manage/uploaded")
+end
+
+post '/jam/:jam_id/manage/update_info' do
+  monitor {
+    get_passed_jam.update_info(param?(:key), param?(:value))
+    "Successfully saved information"
+  }
+end
+
+post '/jam/:jam_id/manage/update_instrument' do
+  monitor {
+    i = Instrument.find(param?(:value))
+    get_passed_jam.update_instrument(i)
+    "Successfully saved information"
+  }
 end
 
 get '/jam/:jam_id/manage/tag_artist' do

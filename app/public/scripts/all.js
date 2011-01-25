@@ -1,8 +1,9 @@
-var Layout = {};
+var Layout = {ContextMenu: {}};
 var Navigate = {states: []};
 var Modal = {};
 var Doc = {Player: {}, Playlist: {}, Notifications: {}, Messages: {}};
 var JEvent = {list: {}}; // 'list' is treated as an array. In the sense, on load all keys in 'list' are itereated over and run.
+var General = {};
 
 Layout.onReady = function(){
 	if($("content-panel")){
@@ -58,18 +59,37 @@ Layout.manageScrollJEvent = function(e){
 	content.style.top = top + "px";
 }.bind(Layout);
 
+Layout.ContextMenu.get = function() {
+	return $j("#context-menu");
+}.bind(Layout.ContextMenu);
+
+Layout.ContextMenu.load = function(url) {
+	updateEl(this.get()[0], url);
+}.bind(Layout.ContextMenu);
+
+Layout.ContextMenu.insertLoadingText = function() {
+	var html = "<img style='padding-left: 10px; padding-right: 10px; padding-top: 5px;' src='/new-ui/loading.gif'> <font color='#aaa'>Loading ...</font>";
+	this.insertHTML(html);
+}.bind(Layout.ContextMenu);
+
+Layout.ContextMenu.insertHTML = function(html) {
+	this.get().html(html);
+}.bind(Layout.ContextMenu);
+
 /* Navigate */
 
 var State = Class.create({
 	initialize: function(attrs){
-		this.name = attrs.name;
-		this.description = attrs.description;
-		this.url = attrs.url;
+		var me = this;
+		$H(attrs).keys().each(function(k){
+			me[k] = attrs[k];
+		});
 	}
 });
 
 Navigate.saveHomeState = function(){
-	this.setCurrentState(new State({name: "Back", description: "Go Back", url: "/home"}))
+	var state = new State({name: "jamMm.in Home", description: "", url: "/home"}); 
+	this.setCurrentState(state);
 }.bind(Navigate);
 
 Navigate.loadContent = function(url){
@@ -98,21 +118,30 @@ Navigate.loadContent = function(url){
 
 Navigate.setCurrentState = function(state){
 	this.currentState = new State(state);
+	
+	if(this.currentState.context_menu){
+		Layout.ContextMenu.insertLoadingText();
+		Layout.ContextMenu.load(this.currentState.context_menu);
+	}
 }.bind(Navigate)
 
 Navigate.storeState = function(){
 	if(!$j(".content-panel .state").size()) // return if there is no state available in the page
 		return;
-	if(this.currentState)
-		this.saveState(this.currentState);
-	this.setBackButton();
-	var state = {
-		name: $j(".content-panel .state .name").html(),
-		description: $j(".content-panel .state .description").html(),
-		url: $j(".content-panel .state .url").html()
-	};
+	
+	var state = {};
+	var children = $j(".content-panel .state").children();
+	$A(children).each(function(i){
+		state[i.className] = i.innerHTML;
+	});
+	
 	if(state.url == this.currentState.url) // return if the new page is same as present page.
 		return;
+
+	if(this.currentState)
+		this.saveState(this.currentState);
+	this.setBackButton();		
+		
 	this.setCurrentState(new State(state));
 }.bind(Navigate);
 
@@ -132,6 +161,10 @@ Navigate.back = function(){
 	this.currentState = false; // Made to false so that the current state does not get pushed to stack
 	this.loadContent(state.url, {direction: "right"});
 	this.setBackButton();
+}.bind(Navigate);
+
+Navigate.reload = function() {
+	this.loadContent(this.currentState.url);
 }.bind(Navigate);
 
 /* Modal */
@@ -158,9 +191,9 @@ Modal.load = function(url){
 	updateEl($j("#simplemodal-container .simplemodal-data")[0], url);
 }.bind(Modal)
 
-Modal.hide = function(){
-	var d = this.get();
-	d.hide('slow');
+Modal.close = function(){
+	if(this.cmp)
+		this.cmp.close();
 }.bind(Modal)
 
 Modal.center = function(){
@@ -220,10 +253,7 @@ JEvent.list.addOnHoverRowSelect = function() {
 
 
 JEvent.list.setListRowsHeight = function(){
-	$j(".list .rows").livequery(function(){
-		var height = $(Layout.getContentPanel()[0]).getHeight() - ($($j(".list .list-header")[0]).getHeight() + $j(".list .column-headers").height());
-		$j(this).height(height);
-	});
+
 }.bind(JEvent.list);
 
 JEvent.list.toogleDocItemClass = function(){
@@ -237,3 +267,35 @@ JEvent.list.toogleDocItemClass = function(){
 //		$j(".player .item .image").css({opacity: 0.8});
 	});
 }.bind(JEvent.list)
+
+JEvent.list.smartFormFields = function() {
+	$j("[onedit=blur]").live('blur', function(){
+		General.saveSmartFieldValue(this);
+	});
+	
+	$j("[onedit=change]").live('change', function(){
+		General.saveSmartFieldValue(this);
+	});
+	
+}.bind(JEvent.list);
+
+/* General */
+General.saveSmartFieldValue = function(el){
+	var onSuccess = function() {
+		var left = $j(el).offset().left + $(el).getWidth() + 20;
+		var top = $j(el).offset().top;
+		var div = new Element("div", {style: 'position: fixed;'});
+		var jd = $j(div);
+		div.innerHTML = "<img src='/new-ui/tick.png' height='16px'>";
+		jd.insertAfter($j(document.body));
+		jd.show();
+		jd.css({left: left, top: top});
+		window.setTimeout(function() {
+			$j(div).hide('slow');
+		}, 1000)
+	};
+	var url = el.getAttribute("run");
+	call(url, {method: 'post', onSuccess: onSuccess, parameters: {
+		value: $(el).getValue()
+	}});
+}.bind(General);

@@ -1,5 +1,5 @@
 <div class='state'>
-  <div class='name'><%= state[:name] %></div>
-  <div class='description'><%= state[:description] %></div>
-  <div class='url'><%= state[:url] %></div>
+  <% state.each{|k,v| %>
+    <div class='<%= k %>'><%= v %></div>
+  <% } %>
 </div>

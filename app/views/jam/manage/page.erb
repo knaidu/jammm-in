@@ -1,33 +1,56 @@
-<%= render_state({:name => "MANAGE - " + @jam.name, :description => @jam.description, :url => "/jam/#{@jam.id}"}) %>
+<%= vspace 10 %>
+<%= render_state({:name => "MANAGE - " + @jam.name, :description => @jam.description, :url => "/jam/#{@jam.id}/manage"}) %>
 <% jam = @jam %>
 
-<img src='/new-ui/song2.jpg'>
+<div class='single-jam jam'>
+  <div class='image'>
+    <img src='/new-ui/song2.jpg' width='78px' height='78px'>
+  </div>
+  <div class='content'>
+    <div class='name'><%= @jam.name %></div>
+    <div class='artist'><%= @jam.creator.name %></div>
+    <div class='play-waveform'>
+      <div class='play'><img src='/new-ui/play.png'></div>
+      <div class='waveform'><img src='/new-ui/waveform.png'></div>
+    </div>
+  </div>
+</div>
 
 <%= vspace 30 %>
 <div class='section-header'>Update Audio File</div>
 <form>
   <div class='field'>File Handle:</div><%= jam.file_handle %><%= vspace 10 %>
-  <div class='field'>File Size:</div><%= jam.file.size.to_s %><%= vspace 10 %>
-  <div class='field'>Choose File</div><input type='file' name='file'>
-    <%= vspace 10 %>
-    <input type='submit' value='Update'
+  <div class='field'>File Size:</div><%= jam.file.size.to_s rescue "-" %><%= vspace 10 %>
+  <div class='field'>Choose File</div><input type='button' value='Update Audio File' onclick='Jam.Manage.updateAudioFile("<%= jam.id %>")'>
+  <%= vspace 10 %>
 </form>
 
 <%= vspace 30 %>
 <div class='section-header'>Information</div>
-<div class='field'>Jam Name:</div><input type='text' name='name' value="<%= jam.name %>"><%= vspace 10 %>
-
-<div class='field'>Instrument:</div>
-<select name='instrument'>
-  <% Instrument.all.each{|i| %>
-    <option value='<%= i.id %>'><%= i.name %></option>
-  <% } %>
-</select>
+<div class='field'>Jam Name:</div>
+<input type='text' name='name' value="<%= jam.name %>" onedit='blur' run="/jam/<%= jam.id %>/manage/update_info?key=name">
 <%= vspace 10 %>
 
-<div class='field'>Genre:</div><%= jam.name %><%= vspace 10 %>
+<div class='field float-left'>Instrument:</div>
+<div class='display-inline-block'>
+  <% instrument = jam.instrument %>
+  <select name='instrument' onedit='change' run="/jam/<%= jam.id %>/manage/update_instrument?">
+    <% Instrument.all.each{|i| %>
+      <option value='<%= i.id %>' <%= "SELECTED" if i.id == instrument.id %>><%= i.name %></option>
+    <% } %>
+  </select>
+</div>
+<%= vspace 10 %>
 
-<div class='field float-left'>Description:</div><textarea name='description'><%= jam.description %></textarea>
+<div class='field float-left'>Genre:</div>
+<%= partial ("common/manage_genres", :locals => {
+    :for_type => "jam",
+    :for_type_id => jam.id
+}) %>
+
+<%= vspace 15 %>
+
+<div class='field float-left'>Description:</div><textarea name='description' onedit='blur' run="/jam/<%= jam.id %>/manage/update_info?key=description"><%= jam.description %></textarea>
 
 <div class='clear-both'></div>
 <%= vspace %>

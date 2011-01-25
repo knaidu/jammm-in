@@ -17,3 +17,17 @@ Jam.Create.done = function(id){
 Jam.Manage.load = function(id){
 	Navigate.loadContent("/jam/" + id + "/manage");
 }.bind(Jam.Manage);
+
+Jam.Manage.updateAudioFile = function(id){
+	Modal.load("/jam/" + id + "/manage/update_file", {minHeight: 150});
+}.bind(Jam.Manage);
+
+Jam.Manage.updateAudioFile.showSpinner = function(el) {
+	$j("form").hide();
+	$j(".waiting-message").show();
+}.bind(Jam.Manage.updateAudioFile);
+
+Jam.Manage.updateAudioFile.done = function(){
+	Modal.close();
+	Navigate.reload();
+}.bind(Jam.Manage.updateAudioFile);

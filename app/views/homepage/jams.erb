@@ -1,3 +1,3 @@
-<%= render_state({:name => "Jams", :description => "All Jams", :url => "/jams"}) %>
-<% jams = Jam.all %>
+<%= render_state({:name => "Jams", :description => "", :url => "/jams"}) %>
+<% jams = Jam.all.sort_by(&:id).reverse %>
 <%= partial :"/common/jams", :locals => {:jams => jams} %>
