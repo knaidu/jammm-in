@@ -18,7 +18,6 @@
   			</div>
   		<% end %>
 		</div>
-		<%= vspace  %>
 
 		<select id='user-genre-select'>
 			<% (Genre.all - genres).sort_by(&:name).each do |genre| %>

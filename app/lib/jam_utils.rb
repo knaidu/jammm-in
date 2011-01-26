@@ -11,12 +11,6 @@ module JamUtils
       :added_by_user_id => user.id
     })
   end
-
-  def update_information(name, description)
-    self.name = name
-    self.description = description
-    self.save
-  end
   
   def tag_artist(artist)
     return nil if not self.class.to_s == "Jam"
@@ -47,6 +41,7 @@ module JamUtils
     self.file_handle = filename
     self.save
     run("ruby scripts/normalize_jam.rb #{self.id}")
+    self.save_file_data
   end
 
   def delete_file_handle

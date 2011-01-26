@@ -22,6 +22,15 @@
 <div class='field'>Genre:</div><span><%= @jam.genre_names %></span><%= vspace  %>
 
 <%= vspace 20 %>
+<div class='section-header'>More Information</div>
+<% file_data = @jam.file_data  %>
+<div class='field'>Length:</div><%= file_data.length %> <%= vspace %>
+<div class='field'>Mode:</div><%= file_data.mode %> <%= vspace %>
+<div class='field'>Sample Rate:</div><%= file_data.samplerate %> Hz<%= vspace %>
+<div class='field'>Bit Rate:</div><%= file_data.bitrate %> kbps<%= vspace %>
+<div class='field'>File Size:</div><%= file_data.filesize %> bytes<%= vspace %>
+
+<%= vspace 20 %>
 <div class='section-header'>Statistics</div>
 <div class='field'>Views:</div><span><%= @jam.views %></span><%= vspace  %>
 <div class='field'>Likes:</div><span><%= @jam.liked_by.count %></span><%= vspace  %>

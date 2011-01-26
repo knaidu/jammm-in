@@ -19,6 +19,8 @@ class Jam < ActiveRecord::Base
     for_type_id=#{id}
   )
   
+  has_one :file_data, :primary_key => 'file_handle', :foreign_key => 'file_handle', :class_name => "FileData"
+  
   after_destroy after_destroy
 
   include JamUtils
@@ -273,6 +275,10 @@ class Jam < ActiveRecord::Base
       jam.save
     }
     self.class.policies.find{|p| p[:name] == str}[:on_success_message]
+  end
+  
+  def save_file_data
+    FileData.gather self
   end
 
   class << self

@@ -1,227 +1,50 @@
-SQL (0.2ms)  SET client_min_messages TO 'panic'
+SQL (0.3ms)  SET client_min_messages TO 'panic'
 SQL (0.1ms)  SET client_min_messages TO 'notice'
-SQL (0.5ms)  SELECT version FROM schema_migrations
-SQL (0.4ms)  SELECT version FROM schema_migrations
-Migrating to AddSchoolIdToInviteTable (42)
-SQL (0.1ms)  BEGIN
-SQL (1.5ms)  ALTER TABLE "invites" DROP "school_id"
-SQL (1.6ms)  DELETE FROM schema_migrations WHERE version = '42'
-SQL (26.5ms)  COMMIT
-Migrating to AddPolicyToJamTable (41)
-SQL (0.2ms)  BEGIN
-SQL (1.4ms)  ALTER TABLE "jams" DROP "policy"
-SQL (0.3ms)  DELETE FROM schema_migrations WHERE version = '41'
-SQL (1.5ms)  COMMIT
-Migrating to CreateSchoolAdminsTable (40)
-SQL (0.2ms)  BEGIN
-SQL (2.0ms)  DROP TABLE "school_admins"
-SQL (0.3ms)  DELETE FROM schema_migrations WHERE version = '40'
-SQL (1.9ms)  COMMIT
-Migrating to CreateSchoolUsersTable (39)
-SQL (0.1ms)  BEGIN
-SQL (1.4ms)  DROP TABLE "school_users"
-SQL (0.3ms)  DELETE FROM schema_migrations WHERE version = '39'
-SQL (1.5ms)  COMMIT
-Migrating to CreateSchoolsTable (38)
-SQL (0.1ms)  BEGIN
-SQL (2.1ms)  DROP TABLE "schools"
-SQL (0.3ms)  DELETE FROM schema_migrations WHERE version = '38'
-SQL (1.2ms)  COMMIT
-Migrating to ChangeJamSongDescriptionToText (37)
-SQL (0.1ms)  BEGIN
-SQL (137.2ms)  ALTER TABLE "jams" ALTER COLUMN "description" TYPE character varying(255)
-SQL (47.8ms)  ALTER TABLE "songs" ALTER COLUMN "description" TYPE character varying(255)
-SQL (0.4ms)  DELETE FROM schema_migrations WHERE version = '37'
-SQL (3.0ms)  COMMIT
-Migrating to CreateChatTables (36)
-SQL (0.6ms)  BEGIN
-SQL (2.0ms)  DROP TABLE "chat_users"
-SQL (2.0ms)  DROP TABLE "chat_messages"
-SQL (0.6ms)  DELETE FROM schema_migrations WHERE version = '36'
-SQL (2.6ms)  COMMIT
-Migrating to CreateSaysTable (35)
-SQL (0.2ms)  BEGIN
-SQL (1.7ms)  DROP TABLE "says"
-SQL (0.2ms)  DELETE FROM schema_migrations WHERE version = '35'
-SQL (1.8ms)  COMMIT
-Migrating to ChangeStringColumnsToText (34)
-SQL (0.1ms)  BEGIN
-SQL (0.3ms)  DELETE FROM schema_migrations WHERE version = '34'
-SQL (0.5ms)  COMMIT
-Migrating to CreateDumpsTable (33)
-SQL (0.1ms)  BEGIN
-SQL (1.5ms)  DROP TABLE "dumps"
-SQL (0.3ms)  DELETE FROM schema_migrations WHERE version = '33'
-SQL (1.7ms)  COMMIT
-Migrating to CreateUserBadgesTable (32)
-SQL (0.1ms)  BEGIN
-SQL (1.6ms)  DROP TABLE "user_badges"
-SQL (0.2ms)  DELETE FROM schema_migrations WHERE version = '32'
-SQL (1.6ms)  COMMIT
-Migrating to CreateConnectedSitesTables (31)
-SQL (0.1ms)  BEGIN
-SQL (2.3ms)  DROP TABLE "facebook_share"
-SQL (1.3ms)  DROP TABLE "twitter_share"
-SQL (0.3ms)  DELETE FROM schema_migrations WHERE version = '31'
-SQL (2.2ms)  COMMIT
-Migrating to CreateInvitesTable (30)
-SQL (0.1ms)  BEGIN
-SQL (1.9ms)  DROP TABLE "invites"
-SQL (0.3ms)  DELETE FROM schema_migrations WHERE version = '30'
-SQL (1.9ms)  COMMIT
-Migrating to CreateSongManageMessagesTable (29)
-SQL (0.1ms)  BEGIN
-SQL (2.3ms)  DROP TABLE "song_manage_messages"
-SQL (0.3ms)  DELETE FROM schema_migrations WHERE version = '29'
-SQL (1.9ms)  COMMIT
-Migrating to CreateBugsTable (28)
-SQL (0.1ms)  BEGIN
-SQL (2.2ms)  DROP TABLE "bugs"
-SQL (2.0ms)  DROP TABLE "bugs_body"
-SQL (0.2ms)  DELETE FROM schema_migrations WHERE version = '28'
-SQL (2.7ms)  COMMIT
-Migrating to CreateSiteCounterTable (27)
-SQL (0.2ms)  BEGIN
-SQL (1.6ms)  DROP TABLE "site_counter"
-SQL (0.3ms)  DELETE FROM schema_migrations WHERE version = '27'
-SQL (1.4ms)  COMMIT
-Migrating to CreateNotificationsAndUserNotificationsTables (26)
-SQL (0.1ms)  BEGIN
-SQL (2.2ms)  DROP TABLE "notifications"
-SQL (1.3ms)  DROP TABLE "user_notifications"
-SQL (0.3ms)  DELETE FROM schema_migrations WHERE version = '26'
-SQL (2.3ms)  COMMIT
-Migrating to CreateTagsTable (25)
-SQL (0.2ms)  BEGIN
-SQL (1.5ms)  DROP TABLE "tags"
-SQL (1.4ms)  DROP TABLE "contains_tags"
-SQL (0.3ms)  DELETE FROM schema_migrations WHERE version = '25'
-SQL (1.9ms)  COMMIT
-Migrating to CreateInstrumentsAndContainsIntrumentsTables (24)
-SQL (0.1ms)  BEGIN
-SQL (1.9ms)  DROP TABLE "contains_instruments"
-SQL (2.2ms)  DROP TABLE "instruments"
-SQL (0.3ms)  DELETE FROM schema_migrations WHERE version = '24'
-SQL (15.9ms)  COMMIT
-Migrating to CreateSheetMusicTable (23)
-SQL (0.2ms)  BEGIN
-SQL (2.1ms)  DROP TABLE "sheet_music"
-SQL (0.3ms)  DELETE FROM schema_migrations WHERE version = '23'
-SQL (2.0ms)  COMMIT
-Migrating to CreateGenresAndUserGenresTables (22)
-SQL (0.1ms)  BEGIN
-SQL (1.4ms)  DROP TABLE "contains_genres"
-SQL (1.3ms)  DROP TABLE "genres"
-SQL (0.2ms)  DELETE FROM schema_migrations WHERE version = '22'
-SQL (2.4ms)  COMMIT
-Migrating to CreateFeedsAndUserFeedsTables (21)
-SQL (0.1ms)  BEGIN
-SQL (2.4ms)  DROP TABLE "feeds"
-SQL (1.3ms)  DROP TABLE "user_feeds"
-SQL (0.2ms)  DELETE FROM schema_migrations WHERE version = '21'
-SQL (3.4ms)  COMMIT
-Migrating to CreateProcessInfoTable (20)
-SQL (0.1ms)  BEGIN
-SQL (1.5ms)  DROP TABLE "process_info"
-SQL (0.3ms)  DELETE FROM schema_migrations WHERE version = '20'
-SQL (3.1ms)  COMMIT
-Migrating to CreateSongLyricsTable (19)
-SQL (0.1ms)  BEGIN
-SQL (2.0ms)  DROP TABLE "song_lyrics"
-SQL (0.3ms)  DELETE FROM schema_migrations WHERE version = '19'
-SQL (1.9ms)  COMMIT
-Migrating to CreateMessageStreamTables (18)
-SQL (0.1ms)  BEGIN
-SQL (1.5ms)  DROP TABLE "user_message_stream_maps"
-SQL (3.1ms)  DROP TABLE "user_message_streams"
-SQL (1.5ms)  DROP TABLE "message_streams"
-SQL (0.3ms)  DELETE FROM schema_migrations WHERE version = '18'
-SQL (11.9ms)  COMMIT
-Migrating to CreateCommentsTable (17)
-SQL (0.2ms)  BEGIN
-SQL (2.2ms)  DROP TABLE "comments"
-SQL (0.8ms)  DELETE FROM schema_migrations WHERE version = '17'
-SQL (2.0ms)  COMMIT
-Migrating to CreateJamAndSongLikesTable (16)
-SQL (0.1ms)  BEGIN
-SQL (1.9ms)  DROP TABLE "likes"
-SQL (0.3ms)  DELETE FROM schema_migrations WHERE version = '16'
-SQL (1.9ms)  COMMIT
-Migrating to AddFileHandleForSongsTable (15)
-SQL (0.1ms)  BEGIN
-SQL (1.0ms)  ALTER TABLE "songs" DROP "file_handle"
-SQL (0.3ms)  ALTER TABLE "songs" DROP "flattened_file_handle"
-SQL (0.2ms)  DELETE FROM schema_migrations WHERE version = '15'
-SQL (1.0ms)  COMMIT
-Migrating to AddActiveForSongJamsTable (14)
-SQL (0.2ms)  BEGIN
-SQL (0.6ms)  ALTER TABLE "song_jams" DROP "active"
-SQL (0.4ms)  DELETE FROM schema_migrations WHERE version = '14'
-SQL (1.1ms)  COMMIT
-Migrating to CreatePublishedJamsTable (13)
-SQL (0.2ms)  BEGIN
-SQL (1.9ms)  DROP TABLE "published_jams"
-SQL (0.4ms)  DELETE FROM schema_migrations WHERE version = '13'
-SQL (1.9ms)  COMMIT
-Migrating to CreateSongManagersTable (12)
-SQL (0.1ms)  BEGIN
-SQL (2.0ms)  DROP TABLE "song_managers"
-SQL (0.3ms)  DELETE FROM schema_migrations WHERE version = '12'
-SQL (1.5ms)  COMMIT
-Migrating to AddFileHandleToJamTable (11)
-SQL (0.1ms)  BEGIN
-SQL (0.7ms)  ALTER TABLE "jams" DROP "file_handle"
-SQL (0.3ms)  DELETE FROM schema_migrations WHERE version = '11'
-SQL (1.1ms)  COMMIT
-Migrating to AddDescriptionViewsToJamSongTable (10)
-SQL (0.2ms)  BEGIN
-SQL (0.8ms)  ALTER TABLE "jams" DROP "views"
-SQL (0.5ms)  ALTER TABLE "jams" DROP "description"
-SQL (1.0ms)  ALTER TABLE "songs" DROP "views"
-SQL (0.3ms)  DELETE FROM schema_migrations WHERE version = '10'
-SQL (0.4ms)  COMMIT
-Migrating to AddRegisteredUserIdToJamTable (9)
-SQL (0.2ms)  BEGIN
-SQL (0.8ms)  ALTER TABLE "jams" DROP "registered_user_id"
-SQL (0.2ms)  DELETE FROM schema_migrations WHERE version = '9'
-SQL (0.4ms)  COMMIT
-Migrating to AddRegisteredUserIdToSongTable (8)
-SQL (0.2ms)  BEGIN
-SQL (1.0ms)  ALTER TABLE "songs" DROP "registered_user_id"
-SQL (0.3ms)  DELETE FROM schema_migrations WHERE version = '8'
-SQL (1.0ms)  COMMIT
-Migrating to CreateFollowersTable (7)
-SQL (0.2ms)  BEGIN
-SQL (1.7ms)  DROP TABLE "followers"
-SQL (0.5ms)  DELETE FROM schema_migrations WHERE version = '7'
-SQL (1.7ms)  COMMIT
-Migrating to CreateSongJamsTable (6)
-SQL (0.1ms)  BEGIN
-SQL (1.7ms)  DROP TABLE "song_jams"
-SQL (0.3ms)  DELETE FROM schema_migrations WHERE version = '6'
-SQL (1.5ms)  COMMIT
-Migrating to CreateJamArtistsTable (5)
-SQL (0.1ms)  BEGIN
-SQL (1.8ms)  DROP TABLE "jam_artists"
-SQL (0.3ms)  DELETE FROM schema_migrations WHERE version = '5'
-SQL (1.5ms)  COMMIT
-Migrating to CreateJamsTable (4)
-SQL (0.1ms)  BEGIN
-SQL (2.3ms)  DROP TABLE "jams"
-SQL (0.3ms)  DELETE FROM schema_migrations WHERE version = '4'
-SQL (1.3ms)  COMMIT
-Migrating to CreateSongsTable (3)
-SQL (0.3ms)  BEGIN
-SQL (3.1ms)  DROP TABLE "songs"
-SQL (0.4ms)  DELETE FROM schema_migrations WHERE version = '3'
-SQL (1.8ms)  COMMIT
-Migrating to CreateUserTable (2)
-SQL (0.1ms)  BEGIN
-SQL (2.8ms)  DROP TABLE "users"
-SQL (0.3ms)  DELETE FROM schema_migrations WHERE version = '2'
-SQL (1.8ms)  COMMIT
+SQL (34.3ms)  SELECT version FROM schema_migrations
 Migrating to CreateTestTable (1)
+Migrating to CreateUserTable (2)
+Migrating to CreateSongsTable (3)
+Migrating to CreateJamsTable (4)
+Migrating to CreateJamArtistsTable (5)
+Migrating to CreateSongJamsTable (6)
+Migrating to CreateFollowersTable (7)
+Migrating to AddRegisteredUserIdToSongTable (8)
+Migrating to AddRegisteredUserIdToJamTable (9)
+Migrating to AddDescriptionViewsToJamSongTable (10)
+Migrating to AddFileHandleToJamTable (11)
+Migrating to CreateSongManagersTable (12)
+Migrating to CreatePublishedJamsTable (13)
+Migrating to AddActiveForSongJamsTable (14)
+Migrating to AddFileHandleForSongsTable (15)
+Migrating to CreateJamAndSongLikesTable (16)
+Migrating to CreateCommentsTable (17)
+Migrating to CreateMessageStreamTables (18)
+Migrating to CreateSongLyricsTable (19)
+Migrating to CreateProcessInfoTable (20)
+Migrating to CreateFeedsAndUserFeedsTables (21)
+Migrating to CreateGenresAndUserGenresTables (22)
+Migrating to CreateSheetMusicTable (23)
+Migrating to CreateInstrumentsAndContainsIntrumentsTables (24)
+Migrating to CreateTagsTable (25)
+Migrating to CreateNotificationsAndUserNotificationsTables (26)
+Migrating to CreateSiteCounterTable (27)
+Migrating to CreateBugsTable (28)
+Migrating to CreateSongManageMessagesTable (29)
+Migrating to CreateInvitesTable (30)
+Migrating to CreateConnectedSitesTables (31)
+Migrating to CreateUserBadgesTable (32)
+Migrating to CreateDumpsTable (33)
+Migrating to ChangeStringColumnsToText (34)
+Migrating to CreateSaysTable (35)
+Migrating to CreateChatTables (36)
+Migrating to ChangeJamSongDescriptionToText (37)
+Migrating to CreateSchoolsTable (38)
+Migrating to CreateSchoolUsersTable (39)
+Migrating to CreateSchoolAdminsTable (40)
+Migrating to AddPolicyToJamTable (41)
+Migrating to AddSchoolIdToInviteTable (42)
+Migrating to CreateFileDataTable (43)
 SQL (0.1ms)  BEGIN
-SQL (1.4ms)  DROP TABLE "test_tables"
-SQL (0.3ms)  DELETE FROM schema_migrations WHERE version = '1'
-SQL (1.5ms)  COMMIT
+SQL (876.8ms)  CREATE TABLE "file_data" ("id" serial primary key, "file_handle" character varying(255), "length" integer, "samplerate" integer, "filesize" integer, "bitrate" integer, "mode" character varying(255), "waveform_path" character varying(255)) 
+SQL (10.7ms)  INSERT INTO schema_migrations (version) VALUES ('43')
+SQL (56.4ms)  COMMIT
