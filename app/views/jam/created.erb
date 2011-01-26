@@ -5,5 +5,8 @@
 <body>
   <%= vspace 20 %>
   <%= @jam.inspect %>
+  <%= js_start %>
+    window.top.Jam.Create.done("<%= @jam.id %>");
+  <%= js_end %>
 </body>
 </html>

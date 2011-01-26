@@ -97,7 +97,7 @@ class Song < ActiveRecord::Base
   
   def publish
     self.delete_file_handle if self.file_handle_exists?  
-    song_jams.each do |song_jam|
+    song_jams(true).each do |song_jam|
       song_jam.is_flattened ? song_jam.activate : song_jam.deactivate
     end
     new_file_handle = new_file_handle_name
@@ -142,7 +142,7 @@ class Song < ActiveRecord::Base
     raise "You cannot add this jam as it does not have a mp3 uploaded" if not jam.file_handle
     raise "This jam cannot be added as the policy does not allow it" unless jam.addable?(added_by_user)
     jam_adam = (jam.adam or jam)
-    jam_name = jam.name + " (#{(jam_adam.descendants.size + 1).to_s})"
+    jam_name = jam.name
     jam = jam.make_copy(jam_name, added_by_user) if jam.published or jam.song_jam # Adds a copy of a jam to the song, if jam already published
     SongJam.create({:song_id => self.id, :jam_id => jam.id})
     
@@ -215,7 +215,6 @@ class Song < ActiveRecord::Base
   def genre_names
     genres.map(&:name).join(", ")
   end
-  
   
   def tags
     Tag.fetch('song', self.id)

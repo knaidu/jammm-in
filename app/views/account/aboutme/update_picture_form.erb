@@ -1,0 +1,18 @@
+<html>
+<head>
+	<%= partial('body/includes') %>
+</head>
+<body>
+  <div class='simplemodal-data'>
+    <%= vspace 20 %>
+    <div class='waiting-message hide'>
+  	  Please wait while your picture is being uploaded... <%= vspace %>
+    	<img src="/new-ui/ajax-loader.gif" >
+    </div>
+    <form method='post' action='/account/aboutme/update_picture/submit' enctype='multipart/form-data'>
+    	<div class='field'>Choose:</div><input type='file' name='picture'><br><br>
+    	<input type='submit' value='Update Picture' onclick='Account.updatePicture.showSpinner(this)'>
+    </form>
+  </div>
+</body>
+</html>

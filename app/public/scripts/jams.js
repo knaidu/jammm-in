@@ -1,7 +1,7 @@
-var Jam = {Create: {}, Manage: {}};
+var Jam = {Create: {callback: false}, Manage: {}};
 
 Jam.create = function(){
-	Modal.load("/jam/create", {minHeight: 250})
+	Modal.load("/jam/create", {minHeight: 250});
 }.bind(Jam);
 
 Jam.Create.showSpinner = function(el){
@@ -11,8 +11,19 @@ Jam.Create.showSpinner = function(el){
 
 Jam.Create.done = function(id){
 	Modal.cmp.close();
-	Jam.Manage.load(id);
+	this.callback = this.callback || function(){
+		Jam.Manage.load(id);	
+	}
+	this.callback(id);
+	this.callback = false;
 }.bind(Jam.Create);
+
+Jam.createAndToSong = function(id) {
+	Jam.Create.callback = function(jamId){
+		Song.Manage.uploadJam.add(id, jamId);
+	}.bind(Jam.Create);
+	Jam.create();
+}.bind(Jam);
 
 Jam.Manage.load = function(id){
 	Navigate.loadContent("/jam/" + id + "/manage");

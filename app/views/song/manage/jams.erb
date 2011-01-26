@@ -1,6 +1,6 @@
 <div class='song-manage-page jams'>
-  <% jams.each{|jam| %>
-    <%= partial(:"/song/manage/jam", :locals => {:jam => jam}) %>
+  <% song_jams.each{|song_jam| %>
+    <%= partial(:"/song/manage/jam", :locals => {:song_jam => song_jam}) %>
   <% } %>
 
   <div class='jam'>
@@ -9,5 +9,8 @@
     </div>
     <div class='checkbox'><input type='checkbox'></div>
     <div class='play'><img src='/new-ui/play.png'></div>
+    <div style='position: relative; margin-left: 75px; margin-top: 8px'>
+      <input type='button' value='Upload Audio File / Create Jam' onclick='Song.Manage.uploadJam("<%= @song.id %>")'>
+    </div>
   </div>
 </div>

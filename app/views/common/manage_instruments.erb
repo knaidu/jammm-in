@@ -2,13 +2,24 @@
 	main_instruments_div_id = rand_id 
 	instruments_select_div_id = rand_id
 %>
-<div id='<%= main_instruments_div_id %>'>
+<div id='<%= main_instruments_div_id %>' class='display-inline-block'>
 	<% 
 		contains_instruments = ContainsInstrument.find_all_by_for_type_and_for_type_id(for_type, for_type_id)
 		instruments = contains_instruments.map(&:instrument) 
 	%>
-
-	<div class='display-inline-block pad-right-5'>
+  
+  <div class='editable-genres'>
+		<% contains_instruments.each do |contains_instrument| %>
+			<% instrument = contains_instrument.instrument %>
+			<div class='editable-genre'>
+				<div class='action' onClick="remove_instrument('<%= contains_instrument.id %>', '<%= main_instruments_div_id %>', '<%= for_type %>', '<%= for_type_id %>')">
+          <img src='/new-ui/x.png' height='16px'>
+				</div>
+				<div class='text'><%= instrument.name %></div>
+			</div>
+		<% end %>
+		
+		<%= vspace %>
 		<select id='<%= instruments_select_div_id %>'>
 			<% (Instrument.all - instruments).sort_by(&:name).each do |instrument| %>
 				<option value="<%= instrument.id %>"><%= instrument.name %>
@@ -16,13 +27,5 @@
 		</select>	
 		<input type='button' value='Add' onclick="add_instrument('<%= instruments_select_div_id %>', '<%= main_instruments_div_id %>', '<%= for_type %>', '<%= for_type_id %>')">
 		<%= vspace %>
-	
-		<% contains_instruments.each do |contains_instrument| %>
-			<% instrument = contains_instrument.instrument %>
-			<div class='box display-inline-block'>
-				<div class='text'><%= instrument.name %></div>
-				<div class='action' onClick="remove_instrument('<%= contains_instrument.id %>', '<%= main_instruments_div_id %>', '<%= for_type %>', '<%= for_type_id %>')">x</div>
-			</div>
-		<% end %>
 	</div>
 </div>

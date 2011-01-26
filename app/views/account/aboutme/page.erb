@@ -1,32 +1,41 @@
-<!-- Personal Information -->
-<div class='text'>
-  <div class='main-info underline'>
-    Personal Information
-  </div>
+<%= render_state({:name => "Settings", :description => "", :url => "/account/aboutme", :context_menu => ""}) %>
+<%= vspace 10 %>
+Update your information, interests, profile picture and password.
+<%= vspace 10 %>
+<div class='section-header'>My Information</div>
+<div class='field'>Name:</div>
+<input type='text' name='name' value='<%= session_user?.name %>' onedit='blur' run="/account/update_info?key=name">
+<%= vspace %>
 
-  <div style='padding: 10px'>
-    <%= partial('account/aboutme/basic_info', :section_header => SectionHeader.new('About Me'), :collapsible => true, :collapsed => true) %><%= vspace %>
-    <%= partial('account/aboutme/profile_picture', :section_header => SectionHeader.new('Profile Picture'), :collapsible => true, :collapsed => false) %><%= vspace %>
-    <%= partial('account/aboutme/into/page', :section_header => SectionHeader.new('Interests'), :collapsible => true, :collapsed => true) %><%= vspace %>
-  </div>
-  <%= vspace %>
+<div class='field'>Location:</div>
+<input type='text' name='location' value='<%= session_user?.location %>' onedit='blur' run="/account/update_info?key=name">
+<%= vspace 10 %>
 
-  <!-- Settings -->
-  <div class='main-info underline'>
-    Security
-  </div>
-  <div style='padding: 10px'>
-    <%= partial('account/aboutme/change_password', :section_header => SectionHeader.new('Change Password'), :collapsible => true, :collapsed => true) %>
-  </div>
-  <%= vspace %>
-
-
-  <!-- Facebook / Twitter Polocies -->
-  <div class='main-info underline'>
-    Policies
-  </div>
-  <div style='padding: 10px'>
-    <%= partial('account/aboutme/facebook_policy', :section_header => SectionHeader.new('Facebook'), :collapsible => true, :collapsed => true) %><%= vspace %>
-    <%= partial('account/aboutme/twitter_policy', :section_header => SectionHeader.new('Twitter'), :collapsible => true, :collapsed => true) %>
-  </div>
+<div class='field float-left'>Profile Picture:</div>
+<div class='display-inline-block'>
+  <img src='<%= session_user?.profile_picture_url %>' height='78px'><%= vspace 5 %>
+  <input type='button' value='Update' onclick='Account.updatePicture()'>
 </div>
+
+<%= vspace 30 %>
+<div class='section-header'>Change Password</div>
+<div class='field'>Old Password</div><input type='password' name='current-password'><%= vspace %>
+<div class='field'>New Password</div><input type='password' name='password'><%= vspace %>
+<div class='field'>Confirm New Password</div><input type='password' name='confirm-password'><%= vspace %>
+<input type='button' value='Update' onclick='Account.changePassword()'>
+
+<%= vspace 30 %>
+<div class='section-header'>Interests</div>
+The below information will also be used by the system to determine the best music to refer to you. <%= vspace 10 %>
+<div class='field float-left'>Genres</div>
+<%= partial ("common/manage_genres", :locals => {
+    :for_type => "user",
+    :for_type_id => session_user?.id
+}) %>
+<%= vspace 10 %>
+<div class='field float-left'>Instruments</div>
+<%= partial ("common/manage_instruments", :locals => {
+	:for_type => "user",
+	:for_type_id => session_user?.id
+}) %>
+<%= vspace 10 %>

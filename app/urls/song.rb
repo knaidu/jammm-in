@@ -2,20 +2,21 @@
 # Loads a songs
 
 get '/song/create' do
-  manage_if_not_signed_in
-  @layout_info = {"middle_panel" => 'song/create', 'left_panel' => 'account/menu'}
-  erb(:"body/structure")
+  @music_type, @music_id = param?(:music_type), param?(:music_id)
+  @obj = eval(@music_type.capitalize).find(@music_id)
+  erb(:"song/create")
 end
 
-post '/song/register' do
+post '/song/create/submit' do
   monitor {
     name = params['name']
     song = register_song(session[:username], name)
   
     # Registers a song and adds music to it.
     if add_music = param?(:add)
-      music_type, music_id = get_add_music_info
-      song.add_music(music_type, music_id, session_user?)
+      puts "trying to register"
+      music_type, music_id = get_params?(:music_type, :music_id)
+      song.add_music(eval(music_type.capitalize), music_id, session_user?)
     end
     song.id.to_s
   }
@@ -69,15 +70,23 @@ get '/song/:song_id/manage' do
   erb(:"song/manage/page")
 end
 
+get '/song/:song_id/manage/update_picture' do
+  @song = get_passed_song
+  erb(:"/song/manage/update_picture")
+end
 
-post '/song/:song_id/manage/change_song_picture' do
+get '/song/:song_id/manage/update_picture_form' do
+  @song = get_passed_song
+  erb(:"/song/manage/update_picture_form")
+end
+
+post '/song/:song_id/manage/update_picture/submit' do
 #  monitor {
     file = param?(:picture)[:tempfile]
     puts file
     get_passed_song.change_song_picture(file)
     file.unlink
-    redirect_path = "/partial/song/manage/song_picture_form?song_id=#{param?(:song_id)}"
-    redirect redirect_path
+    erb(:"/song/manage/picture_updated")
 #  }
 end
 
@@ -87,6 +96,12 @@ get '/song/:song_id/manage/jams' do
   erb(:"song/manage/jams")
 end
 
+post '/song/:song_id/manage/update_info' do
+  monitor {
+    get_passed_song.update_info(param?(:key), param?(:value))
+    "Successfully saved information"
+  }
+end
 
 get '/song/:song_id/manage/add_jam' do
   monitor {

@@ -21,5 +21,10 @@ class ActiveRecord::Base < Object
     self.update_attributes(attrs)
     self.save
   end
+  
+  def update_info(key, value)
+    write_attribute(key.to_s, value)
+    save
+  end
 
 end

@@ -93,8 +93,7 @@ var Poll = Class.create({
 	start: function(){return Poll.start(this)},
 	loadMessage: function(message) {
 		if(!this.messageDiv || !this.messageDivEl) return;
-		var img = "<img src='/images/icons/loading.gif' height=16>";
-		this.messageDivEl.innerHTML = img + "&nbsp; &nbsp;" + message;
+		this.messageDivEl.innerHTML = message;
 	},
 	stop: function(){this._completed = true}
 });

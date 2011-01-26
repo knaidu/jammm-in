@@ -1,2 +1,2 @@
-<%= render_state({:name => "Songs", :description => "All Songs", :url => "/songs"}) %>
-<%= partial("common/songs", :locals => {:songs => Song.published, :cols => 2}) %>
+<%= render_state({:name => "Songs", :description => "", :url => "/songs"}) %>
+<%= partial("common/songs", :locals => {:songs => Song.all.sort_by{|s| -(s.id)}}) %>

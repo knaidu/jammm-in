@@ -52,8 +52,7 @@ end
 
 get '/account/aboutme' do
   logged_in? {
-    @layout_info = {"left_panel" => "account/menu", "middle_panel" => "account/aboutme/page"}  
-    erb(:"body/structure")
+    erb(:"/account/aboutme/page")
   }
 end
 
@@ -64,7 +63,14 @@ get '/account/invite' do
   }
 end
 
-get '/account/aboutme/change_password' do
+post '/account/update_info' do
+  monitor {
+    session_user?.update_info(param?(:key), param?(:value))
+    "Successfully saved information"
+  }
+end
+
+post '/account/aboutme/change_password' do
   monitor {
     current_password, password, confirm_password = get_params(:current_password, :password, :confirm_password)
     raise "The your current password does not match the one in our system" if not session_user?.is_password?(current_password)
@@ -82,13 +88,21 @@ get '/account/aboutme/save_basic_info' do
   }
 end
 
-post '/account/aboutme/change_profile_picture' do
+get '/account/aboutme/update_picture' do
+  erb(:"/account/aboutme/update_picture")
+end
+
+get '/account/aboutme/update_picture/form' do
+  erb(:"/account/aboutme/update_picture_form")
+end
+
+post '/account/aboutme/update_picture/submit' do
   monitor {
     file = param?(:picture)[:tempfile]
     puts file
     session_user?.change_profile_picture(file)
     file.unlink
-    redirect "/partial/account/aboutme/profile_picture_form"
+    erb(:"/account/aboutme/picture_updated")
   }
 end
 

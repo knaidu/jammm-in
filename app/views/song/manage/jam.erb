@@ -1,10 +1,29 @@
-<div class='jam'>
+<% 
+  jam = song_jam.jam 
+  classes = "jam"
+  classes += " selected" if song_jam.is_flattened 
+%>
+
+<div class='<%= classes %>' jamid='<%= jam.id %>' volume='<%= song_jam.volume %>'>
   <div class='info'>
     <div class='name'><%= jam.name %></div>
     <div class='artist'><%= jam.creator.username %></div>
+    <% if song_jam.active %>
+      <div class='active'>used in current published version</div>
+    <% end %>
   </div>
-  <div class='checkbox'><input type='checkbox'></div>
+  <div class='checkbox'><input type='checkbox' <%= "CHECKED" if song_jam.is_flattened %>></div>
   <div class='play'><img src='/new-ui/play.png'></div>
   <div class='instrument'><img src='/new-ui/guitar-icon.png' height='36px'></div>
+  <div class='volume'>
+    <div class='icon'><img src='/new-ui/volume-icon.gif' height='20px'></div>
+    <div class='slider'>
+      <div class='jquery-slider' jamid='<%= jam.id %>'></div>
+    </div>
+  </div>
+  <div class='actions'>                                          
+    Delete <%= vspace %>
+    <div class='link' onclick='Jam.Manage.load("<%= jam.id %>")'>Update</div>
+  </div>
   <div class='waveform'><img src='/new-ui/waveform.png' height='100%' width='100%'></div>
 </div>

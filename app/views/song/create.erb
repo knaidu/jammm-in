@@ -1,23 +1,10 @@
-<% 
-	hide_header ||= nil
-	add ||= nil 
-%>
-
-<%= section_header 'Create Song' if not hide_header %>
-<br>
-<form id='create-song-form' method='post' action='/song/register' onsubmit='createSong(); return false;'>
-  <%= field 'Name' %>
-  <input type='text' name='name'>
-  <%= vspace %>
-	<% if add %>
-		<input type='hidden' name='add' value='<%= add %>'>
-	<% end %>
-  <input type='submit' value='Create Song'>
-</form>
-<%= vspace 10 %>
-<div id='create-response'></div>
-
-
-<%= js_start %>
-	setSelectedMenuItem('menu-item-song-create');
-<%= js_end %>
+<div class='header'>Create Collaboration</div>
+<%= vspace 30 %>
+You have chosen to collaborate with "<%= @obj.name %>". Enter the name for your Collaboration.
+<%= vspace 30 %>
+<div class='field'>Collaboration Name:</div>
+<input type='text' name='name'>
+<input type='hidden' name='music_type' value='<%= @music_type %>'>
+<input type='hidden' name='music_id' value='<%= @music_id %>'>
+<%= vspace 20 %>
+<div class='align-right'><input type='button' value='Create' onclick='Song.create.submit()'></div>

@@ -84,7 +84,8 @@ class Jam < ActiveRecord::Base
 
   def publish
     raise "You may not publish the jam as there is no mp3 uploaded." if not self.file_handle
-    jam = self.song ? self.make_copy_and_publish("#{self.name} (published)") : self # If jam part of a song, then a copy of the jam will be published 
+#    jam = self.song ? self.make_copy_and_publish("#{self.name} (published)") : self # If jam part of a song, then a copy of the jam will be published 
+    jam = self
     PublishedJam.add(jam)
     users = jam.artists
     feed = Feed.add({:user_ids => users.map(&:id), :jam_id => self.id}, "jam_published", "global")
@@ -255,11 +256,6 @@ class Jam < ActiveRecord::Base
     instrument_objs = Instrument.fetch("jam_artist", ja_id) 
     instrument_objs.compact.each(&:destroy)
     ContainsInstrument.add(instrument, "jam_artist", ja_id)
-  end
-  
-  def update_info(key, value)
-    write_attribute(key.to_s, value)
-    save
   end
   
   def policy

@@ -170,7 +170,11 @@ Navigate.reload = function() {
 /* Modal */
 Modal.get = function(){
 	return $j("#basic-modal-content");
-}.bind(Modal)
+}.bind(Modal);
+
+Modal.getDataContainer = function() {
+	return $j("#simplemodal-container .simplemodal-data");
+};
 
 Modal.setup = function(){
 }.bind(Modal)
@@ -189,7 +193,8 @@ Modal.load = function(url){
 	this.show(config);
 	var d = this.get();
 	updateEl($j("#simplemodal-container .simplemodal-data")[0], url);
-}.bind(Modal)
+}.bind(Modal);
+
 
 Modal.close = function(){
 	if(this.cmp)
@@ -198,6 +203,31 @@ Modal.close = function(){
 
 Modal.center = function(){
 	this.get().center();
+}.bind(Modal);
+
+Modal.showWaitingText = function() {
+	var msg = arguments[0] || "Please wait ...";
+	var d = new Element("div", {class: "modal-text"});
+	d.innerHTML = msg;
+	var di = new Element("div", {style: "margin-top: 10px"});
+	di.innerHTML = "<img src='/new-ui/ajax-loader.gif'>";
+	this.show({minHeight: "80px", minWidth: "350px"});
+	var dataContainer = this.getDataContainer();
+	dataContainer.append(d);
+	dataContainer.append(di);
+}.bind(Modal);
+
+Modal.alert = function(msg) {
+	var d = new Element("div", {class: "modal-text"});
+	d.innerHTML = msg;
+	this.show({minHeight: "80px", minWidth: "250px"});
+	var dataContainer = this.getDataContainer();
+	dataContainer.append(d);
+}.bind(Modal);
+
+Modal.slowAlert = function(msg) {
+	var fn = function(){Modal.alert(msg)}
+	window.setTimeout(fn, 1000);
 }.bind(Modal);
 
 /* Doc Functions */
@@ -279,6 +309,45 @@ JEvent.list.smartFormFields = function() {
 	
 }.bind(JEvent.list);
 
+JEvent.list.higlightJamOnSelect = function() {
+	$j(".song-manage-page.jams .jam INPUT[type=checkbox]").live('change', function(){
+		var fn = $(this).checked ? "addClassName" : "removeClassName";
+		$j(this).parents()[1][fn]("selected");
+	})
+}.bind(JEvent.list);
+
+JEvent.list.highlightLinks = function() {
+	$j(".link").live('mouseover', function(){
+		$j(this).addClass("red");
+	})
+	
+	$j(".link").live('mouseout', function(){
+		$j(this).removeClass("red");
+	})
+}.bind(JEvent.list);
+
+JEvent.list.mouseDownOnButton = function() {
+	$j("input[type=button]").live('mousedown', function() {
+		$j(this).addClass("down");
+	});
+	$j("input[type=submit]").live('mousedown', function() {
+		$j(this).addClass("down");
+	});
+	
+	$j("input[type=button]").live('mouseup', function() {
+		$j(this).removeClass("down");
+	});
+	$j("input[type=button]").live('mouseout', function() {
+		$j(this).removeClass("down");
+	});
+	$j("input[type=submit]").live('mouseup', function() {
+		$j(this).removeClass("down");
+	});
+	$j("input[type=submit]").live('mouseout', function() {
+		$j(this).removeClass("down");
+	});
+}.bind(JEvent.list);
+
 /* General */
 General.saveSmartFieldValue = function(el){
 	var onSuccess = function() {
@@ -299,3 +368,27 @@ General.saveSmartFieldValue = function(el){
 		value: $(el).getValue()
 	}});
 }.bind(General);
+
+
+/* INSTRUMENTS */
+function reload_manage_instruments(container_div, for_type, for_type_id){
+	var url = formatUrl("/partial/common/manage_instruments", {for_type: for_type, for_type_id: for_type_id});
+	updateEl(container_div, url);
+}
+
+function add_instrument(select_div_id, container_div, for_type, for_type_id){
+	var select = $(select_div_id);
+	url = formatUrl("/instrument/add", {for_type: for_type, for_type_id: for_type_id, instrument_id: select.getValue()});
+	var onComplete = function() {
+		reload_manage_instruments(container_div, for_type, for_type_id)
+	}
+	call(url, {onComplete: onComplete});
+}
+
+function remove_instrument(id, container_div, for_type, for_type_id){
+	var url = formatUrl("/instrument/remove", {contains_instrument_id: id});
+	var onComplete = function() {
+		reload_manage_instruments(container_div, for_type, for_type_id)
+	};
+	call(url, {onComplete: onComplete});
+}
