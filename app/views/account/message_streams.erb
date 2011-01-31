@@ -1,28 +1,30 @@
-<%= section_header('My Message Streams') %>
 <% 
   only_unread ||= nil 
   unread_exists = false
   sorted_streams = session_user?.message_streams.sort_by{|ms| (ms.users - [session_user?])[0].username.downcase}
 %>
-
-<div id='message-streams'>
-  <% sorted_streams.each do |message_stream| %>
-		<!-- Goes to NEXT iteration if the this partial is meant to display only unread streams -->
-		<% next if only_unread  and message_stream.unread_messages(session_user?).empty? %>
-		<% unread_exists = true %>
-    <div>
+<div class='list'>
+  <div id='message-streams'>
+    <% sorted_streams.each do |message_stream| %>
+    
+  		<!-- Goes to NEXT iteration if the this partial is meant to display only unread streams -->
+  		<% next if only_unread  and message_stream.unread_messages(session_user?).empty? %>
+  		<% unread_exists = true %>
       <% with_user = message_stream.users.without(session_user?)[0] %>
-      <span class='float-left display-inline pad-right-10' style='height: 24px; width: 24px; overflow: hidden;'><%= profile_picture_thumbnail with_user %></span>
-      <span>
-        <a href='/account/message_stream/<%= message_stream.id %>' class='simple-link bold'><%= with_user.username %></a><br>
-        <div class='text grey'>
-          <%= message_stream.user_message_streams.size.to_s %> messages
-  				<%= "<b>(#{message_stream.unread_messages(session_user?).size} new)</b>" if not message_stream.unread_messages(session_user?).empty? %>
-  			</div>
-      </span>
-    </div>
-    <%= vspace 10 %>
-  <% end %>
+      
+      <div class='row' onclick="Navigate.loadContent('/account/message_stream/<%= message_stream.id %>')">
+        <div class='forward-icon'><img src='/new-ui/forward-arrow.png'></div>
+        <div class='image'>
+          <img src='/new-ui/song2.jpg' width='78px' height='78px'>
+        </div>
+        <div class='content'>
+          <div class='col1'>
+            <div class='name'><%= with_user.username %></div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 <% if not unread_exists %>

@@ -53,4 +53,12 @@
 <div class='field float-left'>Description:</div><textarea name='description' onedit='blur' run="/jam/<%= jam.id %>/manage/update_info?key=description"><%= jam.description %></textarea>
 
 <div class='clear-both'></div>
-<%= vspace %>
+
+<%= vspace 20 %>
+<div class='section-header'>More Information</div>
+<% file_data = jam.file_data  %>
+<div class='field'>Length:</div><%= file_data.length %> <%= vspace %>
+<div class='field'>Mode:</div><%= file_data.mode %> <%= vspace %>
+<div class='field'>Sample Rate:</div><%= file_data.samplerate %> Hz<%= vspace %>
+<div class='field'>Bit Rate:</div><%= file_data.bitrate %> kbps<%= vspace %>
+<div class='field'>File Size:</div><%= file_data.filesize %> bytes<%= vspace %>

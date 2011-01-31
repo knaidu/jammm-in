@@ -41,7 +41,7 @@ module JamUtils
     self.file_handle = filename
     self.save
     run("ruby scripts/normalize_jam.rb #{self.id}")
-    self.save_file_data
+    self.class.find(self.id).save_file_data
   end
 
   def delete_file_handle

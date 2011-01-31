@@ -1,11 +1,1 @@
-<div class='main-info'>
-  <%= main_info_row('New Songs Messages', session_user?.unread_song_messages.size) %>
-  <%= main_info_hor_line %>
-  <%= main_info_row('New Messages in Streams', session_user?.unread_messages.size) %>
-</div>
-
-<%= vspace 20 %>
-<%= partial ("/account/song_messages", :locals => {:message_streams => session_user?.message_streams}, :section_header => SectionHeader.new('Song Messages'), :collapsible => true) %>
-
-<%= vspace 20 %>
 <%= partial ("/account/message_streams", :locals => {:message_streams => session_user?.message_streams}) %>

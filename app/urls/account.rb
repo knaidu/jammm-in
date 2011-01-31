@@ -15,8 +15,7 @@ end
 
 get '/account/messages' do
   logged_in? {
-    @layout_info = {"left_panel" => "account/menu", "middle_panel" => "account/messages"}  
-    erb(:"body/structure")
+    erb(:"/account/messages")
   }
 end
 
@@ -30,8 +29,7 @@ end
 get '/account/message_stream/:id' do
   @message_stream = MessageStream.find(params[:id])
   allowed?(@message_stream.users) {
-    @layout_info = {"left_panel" => "account/menu", "middle_panel" => "account/message_stream"}  
-    erb(:"body/structure")
+    erb(:"/account/message_stream")
   }
 end
 
