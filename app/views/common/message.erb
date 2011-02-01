@@ -1,9 +1,12 @@
 <% unread = ((message.user != session_user?) and message.unread) %>
-<div class="<%= 'round bg-grey pad10' if unread %>">
-  <div>
-	  <%= message.user == session_user? ? add_field_name("You") : "<span class='display-inline bold'>#{message.user.name}:</span>" %>
-		<%= "<font color='green'>(* NEW)</font>" if unread %>
-	</div>  
-	<%= message.body.format_html %><br>
-	<i class='grey'><%= message.created_at.date %></i>
+<% user = (message.user == session_user?) ? session_user? : message.user %>
+<div class='message'>
+  <div class='image'>
+    <img src='<%= user.profile_picture_url %>' height='78px'>
+  </div>
+  <div class='content'>
+    <div class='username'><%= user.username %></div>
+    <div class='body'><%= message.body.format_html %></div>
+
+	</div>
 </div>

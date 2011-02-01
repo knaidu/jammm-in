@@ -1,6 +1,6 @@
-SQL (0.3ms)  SET client_min_messages TO 'panic'
+SQL (0.2ms)  SET client_min_messages TO 'panic'
 SQL (0.1ms)  SET client_min_messages TO 'notice'
-SQL (34.3ms)  SELECT version FROM schema_migrations
+SQL (0.8ms)  SELECT version FROM schema_migrations
 Migrating to CreateTestTable (1)
 Migrating to CreateUserTable (2)
 Migrating to CreateSongsTable (3)
@@ -45,6 +45,6 @@ Migrating to AddPolicyToJamTable (41)
 Migrating to AddSchoolIdToInviteTable (42)
 Migrating to CreateFileDataTable (43)
 SQL (0.1ms)  BEGIN
-SQL (876.8ms)  CREATE TABLE "file_data" ("id" serial primary key, "file_handle" character varying(255), "length" integer, "samplerate" integer, "filesize" integer, "bitrate" integer, "mode" character varying(255), "waveform_path" character varying(255)) 
-SQL (10.7ms)  INSERT INTO schema_migrations (version) VALUES ('43')
-SQL (56.4ms)  COMMIT
+SQL (12.0ms)  CREATE TABLE "file_data" ("id" serial primary key, "file_handle" character varying(255), "length" integer, "samplerate" integer, "filesize" integer, "bitrate" integer, "mode" character varying(255), "waveform_path" character varying(255)) 
+SQL (0.5ms)  INSERT INTO schema_migrations (version) VALUES ('43')
+SQL (1.2ms)  COMMIT

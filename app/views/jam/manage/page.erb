@@ -11,7 +11,7 @@
     <div class='artist'><%= @jam.creator.name %></div>
     <div class='play-waveform'>
       <div class='play'><img src='/new-ui/play.png'></div>
-      <div class='waveform'><img src='/new-ui/waveform.png'></div>
+      <div class='waveform'><img src='<%= jam.file_data.waveform_url %>'></div>
     </div>
   </div>
 </div>

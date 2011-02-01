@@ -15,11 +15,15 @@
       <div class='row' onclick="Navigate.loadContent('/account/message_stream/<%= message_stream.id %>')">
         <div class='forward-icon'><img src='/new-ui/forward-arrow.png'></div>
         <div class='image'>
-          <img src='/new-ui/song2.jpg' width='78px' height='78px'>
+          <img src='<%= with_user.profile_picture_url %>' height='78px'><%= vspace 5 %>
         </div>
         <div class='content'>
           <div class='col1'>
             <div class='name'><%= with_user.username %></div>
+            <%= with_user.name %>
+          </div>
+          <div class='col2'>
+            <div class='field w50 s11'>Total:</div><%= message_stream.messages.count %>
           </div>
         </div>
       </div>

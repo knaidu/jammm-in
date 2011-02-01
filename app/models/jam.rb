@@ -184,6 +184,7 @@ class Jam < ActiveRecord::Base
       newjam.tag_artist(artist) 
     end
     self.tags.each do |tag| newjam.add_tag(tag.name) end # Copies over the tags from jam to the new am 
+    FileData.create_waveform(newjam)
     newjam
   end
   
@@ -279,6 +280,10 @@ class Jam < ActiveRecord::Base
   
   def save_file_data
     FileData.gather self
+  end
+  
+  def waveform_path
+    file_data.waveform_path
   end
 
   class << self

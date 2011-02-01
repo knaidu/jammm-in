@@ -16,3 +16,8 @@ get "/file/:file_handle" do
   end
 
 end
+
+get "/file/waveform/:file_handle" do
+  file_data = FileData.fetch(param?(:file_handle))
+  send_file(file_data.waveform_path)
+end

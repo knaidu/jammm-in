@@ -104,6 +104,7 @@ class Song < ActiveRecord::Base
     utils_make_copy_of_file_handle(self.flattened_file_handle, new_file_handle)
     self.file_handle = new_file_handle
     self.save
+    FileData.create_waveform(self)
     self.send_publish_feed_and_notification
     self
   end

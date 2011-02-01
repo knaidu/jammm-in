@@ -41,7 +41,9 @@ module JamUtils
     self.file_handle = filename
     self.save
     run("ruby scripts/normalize_jam.rb #{self.id}")
-    self.class.find(self.id).save_file_data
+    fresh_jam = self.class.find(self.id) # Since the above lines might have updated the object
+    fresh_jam.save_file_data
+    FileData.create_waveform(fresh_jam)
   end
 
   def delete_file_handle
