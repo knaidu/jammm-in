@@ -37,7 +37,7 @@ html, body {
 TEXTAREA, INPUT[type='text'], INPUT[type='password'], INPUT[type='file'], SELECT {width: 200px}
 TEXTAREA {height: 60px}
 
-INPUT[type='button'], INPUT[type='submit'] {border: 1px solid #bbb; background-color: #f5f5f5; padding: 6px 12px; color: #444; font-weight: bold}
+INPUT[type='button'], INPUT[type='submit'] {border: 1px solid #bbb; background-image: url("/new-ui/button-bg.png"); padding: 6px 12px; color: #444; font-weight: bold}
 INPUT[type='button'].down, INPUT[type='submit'].down {border: 1px solid #888}
 
 /* GENERAL */
@@ -52,6 +52,9 @@ INPUT[type='button'].down, INPUT[type='submit'].down {border: 1px solid #888}
 .align-right {text-align: right}
 .link {cursor: default !important}
 .red {color: <%= default_color %>}
+.red.important {color: <%= default_color %> !important}
+.bold {font-weight: bold}
+.gray {color: #888}
 
 IMG {border: none}
 
@@ -96,21 +99,16 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
 .menu-panel .navigation-bar .icon {position: absolute;}
 .menu-panel .navigation-bar .context-icon {position: absolute; left: 20px; width: 32px; margin-top: 10px}
 .menu-panel .navigation-bar .content {position: relative; height: 60px; margin-left: 72px; margin-top: 0px; padding-right: 5px; overflow: hidden;}
-.menu-panel .navigation-bar .content .name {font-weight: bold; padding-top: 8px}
+.menu-panel .navigation-bar .content .name {font-weight: normal; padding-top: 8px}
 .menu-panel .navigation-bar .content .description {font-weight: normal; font-size: 10px}
 
-.context-menu {margin-left: 0px; margin-top: 10px; }
-.context-menu .item {position: relative; border-bottom: 0px solid <%= testing_gray %>; height: 35px}
-.context-menu .selected {
-/*  background-image: url("/new-ui/context-menu-selected.png");  */
-  text-decoration: underline;
-
-  width: 210px;
-/*  <%= shadow %>;
-  background-color: #E8E8E8; */
-  font-weight: bold;
+.context-menu {margin-left: 0px; margin-top: 10px; cursor: default !important}
+.context-menu .item {position: relative; border-bottom: 0px solid <%= testing_gray %>; height: 35px; color: #555}
+.context-menu .item.onhover {
+  background-color: #EBEBEB;
+  color: #555;
 }
-.context-menu .item .icon {position: absolute; left: 10px; top: 10px; color: #696969; height: 24px; overflow: hidden}
+.context-menu .item .icon {position: absolute; left: 10px; top: 0px; color: #696969; height: 24px; overflow: hidden; padding-top: 10px; height: 35px}
 .context-menu .item .text {position: relative; padding: 10px 0px 10px 0px; margin-left: 42px;}
 
 
@@ -118,9 +116,11 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
   position: fixed; 
   bottom: <%= footer_height %>; 
   width: <%= (right_panel_width.px - 10).px %>; 
-  right: 1px; 
+  right: 5px; 
   height: <%= actions_doc_height %>;
-  border: 0px solid #999;
+  border: 1px solid #999;
+  border-width: 0px 1px;
+  background-image: url("/new-ui/button-bg.png");
 }
 .actions-doc .contents {padding: 5px 0px 0px 5px}
 .actions-doc .icon {overflow: hidden; display: inline-block; overflow: hidden; height: 24px; width: 28px; margin-right: 18px; cursor: pointer}
@@ -208,13 +208,13 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
 .single-jam.jam .content .play-waveform .waveform {padding-top: 0px; position: relative; margin-left: 50px; height: 50px; background-color: #888}
 .single-jam.jam .content .play-waveform .waveform IMG {height: 100%; width: 100%}
 
-.section-header {background-color: #EBEBEB; font-weight: bold; padding: 2px 0px 2px 5px; border-bottom: 1px solid #ccc; margin-bottom: 10px}
+.section-header {background-color: #EBEBEB; color: #333; font-weight: bold; padding: 2px 0px 2px 5px; border-bottom: 1px solid #ccc; margin-bottom: 10px}
 
 .comments {position: relative;}
-.comments .comment {position: inherit;}
+.comments .comment {position: inherit; min-height: 30px; margin-bottom: 20px}
 .comments .comment .image {position: absolute; width: 36px;}
 .comments .comment .body {position: relative; margin-left: 36px; max-width: 600px}
-.comments .comment .body .username {color: #888}
+.comments .comment .body .username {color: #888; font-size: 11px}
 
 .song-page.song {position: relative; height: 96px; overflow: auto;}
 .song-page.song .forward-icon {position: absolute; right: 20px; margin-top: 25px}
@@ -284,3 +284,5 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
 .messages .message .content {position: relative; margin-left: 80px;}
 .messages .message .content .username {font-weight: bold; font-size: 11px}
 .messages .message .content .body {}
+
+.waveform {background-color: #888;}

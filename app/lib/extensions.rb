@@ -76,7 +76,29 @@ class Integer
   def px; (self.to_s + "px"); end # Used in common.css
   
   def to_mb
-    (self.to_f / 1024 / 1024) + " MB" 
+    self.to_f.to_mb
   end
   
+  def to_time_str
+    (self / 60).to_s + "m " + (self % 60).to_s + 's'
+  end
+  
+end
+
+class Float
+  def to_mb
+    (self / 1024 / 1024).round_to(2).to_s + " MB"
+  end
+  
+  def round_to(x)  
+    (self * 10**x).round.to_f / 10**x  
+  end  
+
+  def ceil_to(x)  
+    (self * 10**x).ceil.to_f / 10**x  
+  end  
+
+  def floor_to(x)  
+    (self * 10**x).floor.to_f / 10**x  
+  end
 end

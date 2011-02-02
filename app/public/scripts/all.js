@@ -1,9 +1,9 @@
-var Layout = {ContextMenu: {}};
+var Layout = {ContextMenu: {}, RightPanel: {}};
 var Navigate = {states: []};
 var Modal = {};
 var Doc = {Player: {}, Playlist: {}, Notifications: {}, Messages: {}};
 var JEvent = {list: {}}; // 'list' is treated as an array. In the sense, on load all keys in 'list' are itereated over and run.
-var General = {};
+var General = {Comment: {}};
 
 Layout.onReady = function(){
 	if($("content-panel")){
@@ -76,6 +76,23 @@ Layout.ContextMenu.insertHTML = function(html) {
 	this.get().html(html);
 }.bind(Layout.ContextMenu);
 
+Layout.RightPanel.get = function() {
+	return $j("#right-panel");
+}.bind(Layout.RightPanel);
+
+Layout.RightPanel.load = function(url) {
+	updateEl(this.get()[0], url);
+}.bind(Layout.RightPanel);
+
+Layout.RightPanel.insertLoadingText = function() {
+	var html = "<img style='padding-left: 10px; padding-right: 10px; padding-top: 5px;' src='/new-ui/loading.gif'> <font color='#aaa'>Loading ...</font>";
+	this.insertHTML(html);
+}.bind(Layout.RightPanel);
+
+Layout.RightPanel.insertHTML = function(html) {
+	this.get().html(html);
+}.bind(Layout.RightPanel);
+
 /* Navigate */
 
 var State = Class.create({
@@ -122,6 +139,10 @@ Navigate.setCurrentState = function(state){
 	if(this.currentState.context_menu){
 		Layout.ContextMenu.insertLoadingText();
 		Layout.ContextMenu.load(this.currentState.context_menu);
+	}
+	
+	if(this.currentState.right_panel){
+		Layout.RightPanel.load(this.currentState.right_panel);		
 	}
 }.bind(Navigate)
 
@@ -281,10 +302,16 @@ JEvent.list.addOnHoverRowSelect = function() {
 	});
 }.bind(JEvent.list);
 
-
-JEvent.list.setListRowsHeight = function(){
-
+JEvent.list.addOnHoverContextMenuItem = function() {
+	$j(".context-menu .item").live("mouseover", function(){
+		$j(this).addClass("onhover");
+	});
+	
+	$j(".context-menu .item").live("mouseout", function(){
+		$j(this).removeClass("onhover");
+	});
 }.bind(JEvent.list);
+
 
 JEvent.list.toogleDocItemClass = function(){
 	$j(".player .item").live("mouseover", function(){
@@ -318,7 +345,7 @@ JEvent.list.higlightJamOnSelect = function() {
 
 JEvent.list.highlightLinks = function() {
 	$j(".link").live('mouseover', function(){
-		$j(this).addClass("red");
+		$j(this).addClass("red important");
 	})
 	
 	$j(".link").live('mouseout', function(){
@@ -392,3 +419,19 @@ function remove_instrument(id, container_div, for_type, for_type_id){
 	};
 	call(url, {onComplete: onComplete});
 }
+
+/* COMMENTS */
+General.Comment.add = function() {
+	var url = formatUrl('/comments/add', {
+		for_type: $j("[name=for_type]").val(),
+		for_type_id: $j("[name=for_type_id]").val(),
+		comment: $j("[name=comment]").val()
+	});
+	
+	var onSuccess = function(t) {
+		$j(".comments").append(t.responseText);
+		$j("[name=comment]").val('');
+	};
+	
+	call(url, {method: 'post', onSuccess: onSuccess})
+}.bind(General.Comment);

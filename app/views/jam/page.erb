@@ -1,4 +1,10 @@
-<%= render_state({:name => @jam.name, :description => @jam.description, :url => "/jam/#{@jam.id}", :context_menu => "/jam/context_menu?jam_id=#{@jam.id}"}) %>
+<%= render_state({
+  :name => @jam.name, 
+  :description => @jam.description, 
+  :url => "/jam/#{@jam.id}", 
+  :context_menu => "/jam/context_menu?jam_id=#{@jam.id}",
+  :right_panel => "/partial/jam/right_panel"
+}) %>
 <%= vspace 10 %>
 <div class='single-jam jam'>
   <div class='image'>
@@ -9,7 +15,7 @@
     <div class='artist'><%= @jam.creator.name %></div>
     <div class='play-waveform'>
       <div class='play'><img src='/new-ui/play.png'></div>
-      <div class='waveform'><img src='/new-ui/waveform.png'></div>
+      <div class='waveform'><img src='<%= @jam.file_data.waveform_url %>'></div>
     </div>
   </div>
 </div>
@@ -21,19 +27,21 @@
 <div class='field'>Instruments:</div><span><%= @jam.instrument ? @jam.instrument.name : "-" %></span><%= vspace %>
 <div class='field'>Genre:</div><span><%= @jam.genre_names %></span><%= vspace  %>
 
-<%= vspace 20 %>
-<div class='section-header'>More Information</div>
 <% file_data = @jam.file_data  %>
-<div class='field'>Length:</div><%= file_data.length %> <%= vspace %>
+<div class='field'>Length:</div><%= file_data.length.to_time_str %> <%= vspace %>
 <div class='field'>Mode:</div><%= file_data.mode %> <%= vspace %>
 <div class='field'>Sample Rate:</div><%= file_data.samplerate %> Hz<%= vspace %>
 <div class='field'>Bit Rate:</div><%= file_data.bitrate %> kbps<%= vspace %>
-<div class='field'>File Size:</div><%= file_data.filesize %> bytes<%= vspace %>
+<div class='field'>File Size:</div><%= file_data.filesize.to_mb %><%= vspace %>
 
 <%= vspace 20 %>
-<div class='section-header'>Statistics</div>
-<div class='field'>Views:</div><span><%= @jam.views %></span><%= vspace  %>
-<div class='field'>Likes:</div><span><%= @jam.liked_by.count %></span><%= vspace  %>
+<div class='section-header'>Collaborations</div>
+<div style='position: relative; min-height: 40px;'>
+  <img src='/new-ui/play.png' style='position: absolute'>
+  <div style='margin-left: 50px; padding-top: 5px; font-size: 11px; font-weight: bold'>Horton Bay</div>
+</div>
+<div class='align-right link s11' style='color: #777'>more</div>
+
 
 <%= vspace 20 %>
 <div class='section-header'>Comments</div>

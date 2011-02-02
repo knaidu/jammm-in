@@ -73,7 +73,7 @@ Song.Manage.flatten = function(id) {
 			messageDiv: $j(".modal-text")[0],
 			onSuccess: function() {
 				Modal.close();
-				Navigate.reload();
+//				Navigate.reload();
 			}
 		};
 		var poll = new Poll(config);

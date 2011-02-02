@@ -42,6 +42,7 @@ class Jam < ActiveRecord::Base
       :added_by_user_id => user.id
     })
     jam.update_file(file_details)
+    jam.update_instrument(instrument)
     jam
   end
   

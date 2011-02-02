@@ -3,7 +3,8 @@ class FileData < ActiveRecord::Base
   
   def self.gather(obj)
     filedata = find_by_file_handle_or_create(obj)
-    data = parse(obj.file_handle)
+    path = fetch_local_file_path(obj)
+    data = parse(path)
     puts data.inspect
     filedata.append({
       :file_handle => obj.file_handle,
@@ -16,8 +17,7 @@ class FileData < ActiveRecord::Base
     filedata.save
   end
   
-  def self.parse(file_handle)
-    path = "/home/jammmin/files/#{file_handle}"
+  def self.parse(path)
     cmd = "python #{ENV["WEBSERVER_ROOT"]}/scripts/MP3Info.py #{path}"
     lines = run(cmd)
     data = {}

@@ -4,7 +4,8 @@ post '/comments/add' do
   comment = params[:comment]
   for_type_id = params[:for_type_id]
   for_type = params[:for_type]
-  Comment.add(user, comment, for_type, for_type_id)
+  comment = Comment.add(user, comment, for_type, for_type_id)
+  erb(:"/common/comment", :locals => {:comment => comment, :managers => []})
 end
 
 

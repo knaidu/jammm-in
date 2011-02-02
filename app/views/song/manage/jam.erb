@@ -9,7 +9,7 @@
     <div class='name'><%= jam.name %></div>
     <div class='artist'><%= jam.creator.username %></div>
     <% if song_jam.active %>
-      <div class='active'>used in current published version</div>
+      <div class='active' style='visibility: hidden'>used in current published version</div>
     <% end %>
   </div>
   <div class='checkbox'><input type='checkbox' <%= "CHECKED" if song_jam.is_flattened %>></div>
@@ -25,5 +25,7 @@
     Delete <%= vspace %>
     <div class='link' onclick='Jam.Manage.load("<%= jam.id %>")'>Update</div>
   </div>
-  <div class='waveform'><img src='/new-ui/waveform.png' height='100%' width='100%'></div>
+  <div class='waveform'>
+    <img src='<%= jam.file_data.waveform_url %>' height='100%' width='100%'>
+  </div>
 </div>

@@ -1,14 +1,13 @@
-<% delete_js_callback ||= '' %>
-
 <div class='comment'>
   <div class='image'><img src='/new-ui/pickles.jpg' height='24px'></div>
   <div class='body'>
-    <% if (managers + [comment.user]).include?(session_user?) %>
-    	<span class='float-right' onclick="deleteComment('<%= comment.id %>', '<%= comments_div_id %>', '<%= form_id %>')" title='Delete comment'>x</span>
-    <% end %>
     <div class='username'><%= comment.user.username %>:</div>
     <div class='string'>
       <%= comment.comment.format_html %>
+      <br>
+      <% if (managers + [comment.user]).include?(session_user?) %>
+      	<span title='Delete comment' class='link s11 gray'>(delete)</span>
+      <% end %>
     </div>
   </div>
 </div>

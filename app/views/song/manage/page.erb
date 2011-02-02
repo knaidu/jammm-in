@@ -27,11 +27,12 @@
 <%= vspace 10 %>
 <div class='section-header'>Jams</div>
 <%= partial :"/song/manage/jams", :locals => {:song_jams => song.song_jams.sort_by(&:id)} %>
+<div style='text-align: center; background-color: #e7e7e7; padding: 5px; '>
+<input type='button' value='Preview' onclick='Song.Manage.flatten("<%= @song.id %>")'>
+</div>
 
-<%= vspace 10 %>
-<input type='button' value='Flatten / Play' onclick='Song.Manage.flatten("<%= @song.id %>")'>
 
-<%= vspace 30 %>
+<%= vspace 20 %>
 
 <div class='section-header'>Information</div>
 <div class='field'>Name:</div>

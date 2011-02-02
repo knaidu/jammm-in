@@ -17,6 +17,8 @@ class Song < ActiveRecord::Base
       WHERE (("likes".for_type_id = #{id} AND ("likes".for_type = 'song')))
   )
   
+  has_one :file_data, :primary_key => 'file_handle', :foreign_key => 'file_handle', :class_name => "FileData"
+  
   after_destroy after_destroy
 
   include SongUtils
@@ -105,6 +107,7 @@ class Song < ActiveRecord::Base
     self.file_handle = new_file_handle
     self.save
     FileData.create_waveform(self)
+    FileData.gather(self.class.find(self.id))
     self.send_publish_feed_and_notification
     self
   end

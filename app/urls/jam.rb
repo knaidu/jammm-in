@@ -10,7 +10,8 @@ end
 post '/jam/create/submit' do
   file = params[:file][:tempfile]
   puts params[:file].inspect
-  jam = Jam.construct_jam(@session_user, param?(:name), param?(:instrument), param?(:file))
+  instrument = Instrument.find(param?(:instrument))
+  jam = Jam.construct_jam(@session_user, param?(:name), instrument, param?(:file))
   puts jam.inspect
   @jam = jam
   erb(:"/jam/created")
