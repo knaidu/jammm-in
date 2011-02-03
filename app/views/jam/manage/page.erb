@@ -10,19 +10,25 @@
     <div class='name'><%= @jam.name %></div>
     <div class='artist'><%= @jam.creator.name %></div>
     <div class='play-waveform'>
-      <div class='play'><img src='/new-ui/play.png'></div>
+      <% seek_id = rand_id %>
+      <div class='play' <%= play_info jam %> seekid='<%= seek_id %>'><img src='/new-ui/play.png'></div>
       <div class='waveform'>
-        <img src='<%= jam.file_data.waveform_url %>'>
+        <div class='seek' id='<%= seek_id %>'>
+          <img src='<%= jam.file_data.waveform_url %>' class='waveform-image'>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<%= vspace 30 %>
+<div class='align-right'>
+  <input type='button' value='Publish'>
+</div>
+
+<%= vspace 20 %>
 <div class='section-header'>Update Audio File</div>
 <form>
   <div class='field'>File Handle:</div><%= jam.file_handle %><%= vspace 10 %>
-  <div class='field'>File Size:</div><%= jam.file.size.to_s rescue "-" %><%= vspace 10 %>
   <div class='field'>Choose File</div><input type='button' value='Update Audio File' onclick='Jam.Manage.updateAudioFile("<%= jam.id %>")'>
   <%= vspace 10 %>
 </form>

@@ -1,28 +1,4 @@
-<% 
-  flash_vars = "url=/file/#{@music_meta_data[:file]}&name=#{@music_meta_data[:title]}" if @music_meta_data
-%>
-
-<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="" ID="jammminplayer" WIDTH="260px" HEIGHT="50px"> 
-	<PARAM NAME="movie" VALUE="/swf/player.swf"> 
-	<EMBED 
-	  play="false" 
-	  swliveconnect="true" 
-	  name="jammminplayer" 
-	  src="/swf/player.swf" 
-	  quality="high" 
-	  bgcolor="#990000" 
-	  WIDTH="260px" 
-	  HEIGHT="35px" 
-	  <%= "FlashVars=#{flash_vars}" if @music_meta_data %>
-	  TYPE="application/x-shockwave-flash">
-	</EMBED> 
-</OBJECT>
-
-<% if @music_meta_data %>
-  <%= js_start %>
-    (function(){
-      var showSong = function(){loadSong("/file/<%= @music_meta_data[:file] %>", "<%= @music_meta_data[:title] %>");}
-//      window.setTimeout(showSong, 1000);
-    })();
-  <%= js_end %>  
-<% end %>
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="550" height="400" id="jammminPlayer" align="middle">
+<param name="allowScriptAccess" value="sameDomain" />
+<param name="movie" value="/swf/jammminPlayer.swf" /><param name="quality" value="high" /><param name="bgcolor" value="#ffffff" /><embed src="/swf/jammminPlayer.swf" quality="high" bgcolor="#ffffff" width="550" height="400" name="jammminPlayer" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+</object>

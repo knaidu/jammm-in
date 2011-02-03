@@ -14,8 +14,13 @@
     <div class='name'><%= @jam.name %></div>
     <div class='artist'><%= @jam.creator.name %></div>
     <div class='play-waveform'>
-      <div class='play'><img src='/new-ui/play.png'></div>
-      <div class='waveform'><img src='<%= @jam.file_data.waveform_url %>'></div>
+      <% seek_id = rand_id %>
+      <div class='play' <%= play_info @jam %> seekid='<%= seek_id %>'><img src='/new-ui/play.png'></div>
+      <div class='waveform'>
+        <div class='seek' id='<%= seek_id %>'>
+          <img src='<%= @jam.file_data.waveform_url %>' class='waveform-image'>
+        </div>
+      </div>
     </div>
   </div>
 </div>

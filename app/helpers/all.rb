@@ -203,5 +203,19 @@ def school_exists?
   end
 end
 
+def download_url(obj)
+  "/file/#{obj.file_handle}"
+end
+
+def play_info(obj)
+  info = {
+    :play => download_url(obj),
+    :musicname => obj.name,
+    :musicdata => obj.class.to_s.downcase + "_" + obj.id.to_s,
+    :length => obj.file_data.length
+  }
+  info.map{|k,v| "#{k}='#{v}'"}.join(' ')
+end
+
 
 load 'helpers/profile.rb'

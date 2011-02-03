@@ -1,0 +1,56 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<script>  
+ function getFlashMovie(movieName) {
+   var isIE = navigator.appName.indexOf("Microsoft") != -1;
+   return (isIE) ? window[movieName] : document[movieName];  
+ }  
+
+function flashPlay(url) {
+   getFlashMovie("jammminPlayer").playFileFromJavaScript(url);
+}
+function flashPause() {
+   getFlashMovie("jammminPlayer").pauseFileFromJavaScript();
+}
+function flashContinue(url) {
+   getFlashMovie("jammminPlayer").continueFileFromJavaScript();
+}
+function flashGetStatus(url) {
+   getFlashMovie("jammminPlayer").getStatusFromJavaScript();
+}  
+
+function flashPlayed(str) {
+ alert("flash played"+str);  
+}
+ 
+function flashPaused(str) {
+ alert("flash paused"+str);  
+}
+
+function flashContinued(str) {
+ alert("flash continued"+str);  
+}
+
+function flashGotStatus(str) {
+ alert("flash got status"+str);  
+}
+
+
+</script> 
+<title>jammminPlayer</title>
+</head>
+<body bgcolor="#ffffff">
+
+<!--url's used in the movie-->
+<!--text used in the movie-->
+<!--
+<p align="left"></p>
+-->
+<!-- saved from url=(0013)about:internet -->
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="0" height="0" id="jammminPlayer" align="middle" style='visibility: hidden'>
+<param name="allowScriptAccess" value="sameDomain" />
+<param name="movie" value="jammminPlayer.swf" /><param name="quality" value="high" /><param name="bgcolor" value="#ffffff" /><embed src="jammminPlayer.swf" quality="high" bgcolor="#ffffff" width="550" height="400" name="jammminPlayer" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+</object>
+</body>
+</html>

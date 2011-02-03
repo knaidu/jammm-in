@@ -11,7 +11,7 @@
     <div class='col2'>
     <div class='field w50 s11'>Views:</div><%= jam.views %> <%= vspace %>
     <div class='field w50 s11'>Likes:</div><%= jam.liked_by.count %><%= vspace %>
-    <div class='field w50 s11'>Length:</div>4:30
+    <div class='field w50 s11'>Length:</div><%= jam.file_data.length.to_time_str rescue "-" %>
     </div>
     <div class='col3'>
       <%= jam.comments[0].comment unless jam.comments.empty? %>

@@ -3,12 +3,14 @@
 	<%= partial('body/includes') %>
 </head>
 <body>
-  <%= vspace 20 %>
+  <%= vspace 10 %>
   <div class='simplemodal-data'>
     <form action="/jam/create/submit" method='post' enctype='multipart/form-data' >
+      Choose a name, the instrument and the audio file. Accepted audio formats are MP3, WAV, MP4.
+      <%= vspace 10 %>
       <div class='field'>Choose Audio File:</div><input type='file' name='file' style='color: inherit'><%= vspace 10 %>
       <div class='field'>Name:</div><input type='text' name='name'><%= vspace 10 %>
-      <div class='field'>Instrument:</div>
+      <div class='field float-left'>Instrument:</div>
         <select name='instrument'>
           <% Instrument.all.each{|i| %>
             <option value='<%= i.id %>'><%= i.name %></option>
@@ -18,7 +20,9 @@
       <%= vspace 30 %>
       <div>
         <img src="/new-ui/ajax-loader.gif" class="ajax-loader" style='display: none'>
-        <input type='submit' value='Create' onclick='Jam.Create.showSpinner(this)'>
+        <div class='align-right'>
+          <input type='submit' value='Create' onclick='Jam.Create.showSpinner(this)'>
+        </div>
       </div>
     </form>
   </div>

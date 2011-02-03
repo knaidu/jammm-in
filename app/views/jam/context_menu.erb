@@ -1,17 +1,26 @@
 <div class='context-menu'>
+  <div class='item' onclick='Jam.create()'>
+      <div class='icon'><img src='/new-ui/add.png' width='24px' class='context-menu-image'></div>
+      <div class='text'>Create Jam</div>
+  </div>
+</div>
+
+<div style='border-bottom: 1px solid #dcdcdc'>&nbsp;</div>
+
+<div class='context-menu'>
 
   <div class='item' onclick='Navigate.loadContent("/jam/<%= @jam.id %>/manage")'>
-      <div class='icon'><img src='/new-ui/test-genre.png' width='24px' class='context-menu-image'></div>
+      <div class='icon'><img src='/new-ui/settings.png' width='24px' class='context-menu-image'></div>
       <div class='text'>Manage</div>
   </div>
 
   <div class='item' onclick='Song.create("jam", <%= @jam.id %>)'>
-      <div class='icon'><img src='/new-ui/test-genre.png' width='24px' class='context-menu-image'></div>
+      <div class='icon'><img src='/new-ui/add.png' width='24px' class='context-menu-image'></div>
       <div class='text'>Collaborate</div>
   </div>
   
   <div class='item' onclick='Navigate.loadContent("/jam/<%= @jam.id %>/manage")'>
-      <div class='icon'><img src='/images/icons/user.png' width='24px' class='context-menu-image'></div>
+      <div class='icon'><img src='/new-ui/download.png' width='24px' class='context-menu-image'></div>
       <div class='text'>Download</div>
   </div>
   
