@@ -16,13 +16,37 @@ JEvent.list.addOnHoverRowSelect = function() {
 }.bind(JEvent.list);
 
 JEvent.list.addOnHoverContextMenuItem = function() {
-	$j(".context-menu .item").live("mouseover", function(){
+	$j(".context-menu .container").live("mouseover", function(){
 		$j(this).addClass("onhover");
 	});
 	
-	$j(".context-menu .item").live("mouseout", function(){
+	$j(".context-menu .container").live("mouseout", function(){
 		$j(this).removeClass("onhover");
 	});
+}.bind(JEvent.list);
+
+
+JEvent.list.constructTreeForSubItems = function() {
+	var draw = function() {
+		var subs = $(this).getElementsBySelector(".sub");
+		var parents = $A(subs).map(function(i){return i.parentNode}).uniq();
+		$A(parents).each(function(p) {
+			var subs = $(p.parentNode).getElementsBySelector(".sub");
+			var count = $A(subs).size();
+			var height = (count * 31) - 13;
+			var vline = new Element('div', {class: 'fun'});
+			$j(vline).css({position: 'absolute', borderLeft: '1px dotted #aaa', top: 34, left: 22, height: height});
+			$j(p).append(vline);
+			
+			$A(subs).each(function(sub) {
+				var hline = new Element('div', {class: 'me'});
+				$j(hline).css({position: "absolute", width: 17, borderBottom: '1px dotted #aaa', top: 15, left: 22});
+				$j(sub).append(hline);
+			});
+			
+		});
+	};
+	$j(".context-menu .item").livequery(draw);
 }.bind(JEvent.list);
 
 
@@ -89,7 +113,7 @@ JEvent.list.mouseDownOnButton = function() {
 }.bind(JEvent.list);
 
 JEvent.list.onClickPlay = function() {
-	$j("[play]").live('click', function(){Flash.startOperations(this)})
+	$j("[play]").live('click', function(){console.log('clicked'); Flash.startOperations(this)})
 }.bind(JEvent.list);
 
 

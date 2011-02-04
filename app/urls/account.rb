@@ -33,6 +33,10 @@ get '/account/message_stream/:id' do
   }
 end
 
+get '/account/jams' do
+  @jams = session_user?.jams
+  erb(:"/account/jams")
+end
 
 get '/account/following' do
   logged_in? {

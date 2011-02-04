@@ -271,7 +271,7 @@ Doc.Player.expand = function(){
 }.bind(Doc.Player);
 
 Doc.Player.collapse = function(){
-	this.get().animate({height: 15}, "slow");
+	this.get().animate({height: 20}, "slow");
 }.bind(Doc.Player);
 
 Doc.Playlist.show = function() {
