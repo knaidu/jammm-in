@@ -26,30 +26,6 @@ JEvent.list.addOnHoverContextMenuItem = function() {
 }.bind(JEvent.list);
 
 
-JEvent.list.constructTreeForSubItems = function() {
-	var draw = function() {
-		var subs = $(this).getElementsBySelector(".sub");
-		var parents = $A(subs).map(function(i){return i.parentNode}).uniq();
-		$A(parents).each(function(p) {
-			var subs = $(p.parentNode).getElementsBySelector(".sub");
-			var count = $A(subs).size();
-			var height = (count * 31) - 13;
-			var vline = new Element('div', {class: 'fun'});
-			$j(vline).css({position: 'absolute', borderLeft: '1px dotted #aaa', top: 34, left: 22, height: height});
-			$j(p).append(vline);
-			
-			$A(subs).each(function(sub) {
-				var hline = new Element('div', {class: 'me'});
-				$j(hline).css({position: "absolute", width: 17, borderBottom: '1px dotted #aaa', top: 15, left: 22});
-				$j(sub).append(hline);
-			});
-			
-		});
-	};
-	$j(".context-menu .item").livequery(draw);
-}.bind(JEvent.list);
-
-
 JEvent.list.toogleDocItemClass = function(){
 	$j(".player .item").live("mouseover", function(){
 		$j(this).addClass("item-onhover");
@@ -128,3 +104,9 @@ JEvent.list.sizeWaveform = function() {
 	$j(".seek .waveform-image").livequery(resize);
 }.bind(JEvent.list);
 
+
+JEvent.list.onClickMore = function() {
+	$j(".more").live('click', function() {
+		General.onClickMore(this);
+	});
+}.bind(JEvent.list);

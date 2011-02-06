@@ -9,6 +9,7 @@ class CreateFileDataTable < ActiveRecord::Migration
       i.column :bitrate, :integer
       i.column :mode, :string
       i.column :waveform_path, :string
+      i.column :waveform_path_2, :string
     end    
     
   end

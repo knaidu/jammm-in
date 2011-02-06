@@ -64,7 +64,10 @@ Layout.ContextMenu.get = function() {
 }.bind(Layout.ContextMenu);
 
 Layout.ContextMenu.load = function(url) {
-	updateEl(this.get()[0], url);
+	var onSuccess = function() {
+		window.setTimeout(this.drawTree, 400)
+	}.bind(this);
+	updateEl(this.get()[0], url, {onSuccess: onSuccess});
 }.bind(Layout.ContextMenu);
 
 Layout.ContextMenu.insertLoadingText = function() {
@@ -76,12 +79,38 @@ Layout.ContextMenu.insertHTML = function(html) {
 	this.get().html(html);
 }.bind(Layout.ContextMenu);
 
+Layout.ContextMenu.drawTree = function() {
+	var draw = function(el) {
+		var subs = $(el).getElementsBySelector(".sub");
+		var parents = $A(subs).map(function(i){return i.parentNode}).uniq();
+		$A(parents).each(function(p) {
+			var subs = $(p).getElementsBySelector(".sub");
+			var count = $A(subs).size();
+			var height = (count * 31) - 13;
+			var vline = new Element('div', {class: 'fun'});
+			$j(vline).css({position: 'absolute', borderLeft: '1px dotted #aaa', top: 34, left: 22, height: height});
+			$j(p).append(vline);
+
+			$A(subs).each(function(sub) {
+				var hline = new Element('div', {class: 'me'});
+				$j(hline).css({position: "absolute", width: 17, borderBottom: '1px dotted #aaa', top: 15, left: 22});
+				$j(sub).append(hline);
+			});
+		});
+	};
+	$A($j(".context-menu .item")).each(function(el) {draw(el)});
+}.bind(Layout.ContextMenu);
+
 Layout.RightPanel.get = function() {
 	return $j("#right-panel");
 }.bind(Layout.RightPanel);
 
 Layout.RightPanel.load = function(url) {
-	updateEl(this.get()[0], url);
+	var d = new Element('div', {style: "padding: 0px 20px"});
+	var l = Layout.RightPanel.get();
+	l.html("");
+	l.append(d);
+	updateEl(d, url);
 }.bind(Layout.RightPanel);
 
 Layout.RightPanel.insertLoadingText = function() {
@@ -347,3 +376,15 @@ General.Comment.add = function() {
 	
 	call(url, {method: 'post', onSuccess: onSuccess})
 }.bind(General.Comment);
+
+General.onClickMore = function(el) {
+	aaa = el;
+	var id = $(el).getAttribute("moreref");
+	var container = $(id);
+	$j(el).hide();
+	var prevHeight = container.getHeight();
+	container.style.height = '';
+	var newHeight = container.getHeight();
+	container.style.height = prevHeight + "px";
+	$j(container).animate({height: newHeight}, 500);
+}.bind(General);

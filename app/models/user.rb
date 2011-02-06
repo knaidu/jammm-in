@@ -311,6 +311,13 @@ class User < ActiveRecord::Base
     chat_user.pinged
   end
   
+  def used_memory
+    sizes = jams.map(&:file_data).compact.map(&:filesize)
+    sizes.reduce(0) do |sum, value|
+      sum + value
+    end
+  end
+  
   def self.broadcast_message(message)
     from = User.with_username('prakashraman')
     (User.all - [from]).each do |user|

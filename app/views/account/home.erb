@@ -1,3 +1,9 @@
-<%= partial("common/feeds", :locals => {:feeds => session_user?.feeds.first(2), :show_as_updates => false}) %>
-<hr>
-<%= render_state({:name => "Home", :description => "My Home Page", :url => "/account/home"}) %>
+<%# partial("common/feeds", :locals => {:feeds => session_user?.feeds.first(2), :show_as_updates => false}) 
+%>
+<%= render_state({
+  :name => "Home", 
+  :description => "My Home Page", 
+  :url => "/account/home", 
+  :context_menu => "/partial/account/context_menu",
+  :right_panel => "/partial/account/right_panel"
+}) %>

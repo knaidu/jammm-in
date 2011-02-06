@@ -1,6 +1,6 @@
 SQL (0.2ms)  SET client_min_messages TO 'panic'
 SQL (0.1ms)  SET client_min_messages TO 'notice'
-SQL (0.8ms)  SELECT version FROM schema_migrations
+SQL (0.7ms)  SELECT version FROM schema_migrations
 Migrating to CreateTestTable (1)
 Migrating to CreateUserTable (2)
 Migrating to CreateSongsTable (3)
@@ -45,6 +45,13 @@ Migrating to AddPolicyToJamTable (41)
 Migrating to AddSchoolIdToInviteTable (42)
 Migrating to CreateFileDataTable (43)
 SQL (0.1ms)  BEGIN
-SQL (12.0ms)  CREATE TABLE "file_data" ("id" serial primary key, "file_handle" character varying(255), "length" integer, "samplerate" integer, "filesize" integer, "bitrate" integer, "mode" character varying(255), "waveform_path" character varying(255)) 
-SQL (0.5ms)  INSERT INTO schema_migrations (version) VALUES ('43')
-SQL (1.2ms)  COMMIT
+SQL (85.5ms)  CREATE TABLE "file_data" ("id" serial primary key, "file_handle" character varying(255), "length" integer, "samplerate" integer, "filesize" integer, "bitrate" integer, "mode" character varying(255), "waveform_path" character varying(255), "waveform_path_2" character varying(255)) 
+SQL (0.4ms)  INSERT INTO schema_migrations (version) VALUES ('43')
+SQL (1.5ms)  COMMIT
+Migrating to AddTotalMemoryThumbnailToUser (44)
+SQL (0.4ms)  BEGIN
+SQL (1.1ms)  ALTER TABLE "users" ADD COLUMN "total_memory" float
+SQL (0.9ms)  ALTER TABLE "users" ALTER COLUMN "total_memory" SET DEFAULT 209715200
+SQL (0.4ms)  ALTER TABLE "users" ADD COLUMN "thumbnail" character varying(255)
+SQL (0.3ms)  INSERT INTO schema_migrations (version) VALUES ('44')
+SQL (0.8ms)  COMMIT

@@ -18,7 +18,7 @@
       <div class='play' <%= play_info @jam %> seekid='<%= seek_id %>'><img src='/new-ui/play.png'></div>
       <div class='waveform'>
         <div class='seek' id='<%= seek_id %>'>
-          <img src='<%= @jam.file_data.waveform_url %>' class='waveform-image'>
+          <img src='<%= @jam.file_data.waveform_url rescue "-" %>' class='waveform-image'>
         </div>
       </div>
     </div>
@@ -27,17 +27,23 @@
 
 <%= vspace 20 %>
 <div class='section-header'>Information</div>
-<div class='field'>Name:</div><span><%= @jam.name %></span><%= vspace %>
-<div class='field'>Artists:</div><span><%= @jam.creator.name %></span><%= vspace %>
-<div class='field'>Instruments:</div><span><%= @jam.instrument ? @jam.instrument.name : "-" %></span><%= vspace %>
-<div class='field'>Genre:</div><span><%= @jam.genre_names %></span><%= vspace  %>
+<% moreref = rand_id %>
+<div class='overflow-hidden' style='height: 113px' id='<%= moreref %>'>
+  <div class='field'>Name:</div><span><%= @jam.name %></span><%= vspace %>
+  <div class='field'>Artists:</div><span><%= @jam.creator.name %></span><%= vspace %>
+  <div class='field'>Instruments:</div><span><%= @jam.instrument ? @jam.instrument.name : "-" %></span><%= vspace %>
+  <div class='field'>Genre:</div><span><%= @jam.genre_names %></span><%= vspace  %>
 
-<% file_data = @jam.file_data  %>
-<div class='field'>Length:</div><%= file_data.length.to_time_str %> <%= vspace %>
-<div class='field'>Mode:</div><%= file_data.mode %> <%= vspace %>
-<div class='field'>Sample Rate:</div><%= file_data.samplerate %> Hz<%= vspace %>
-<div class='field'>Bit Rate:</div><%= file_data.bitrate %> kbps<%= vspace %>
-<div class='field'>File Size:</div><%= file_data.filesize.to_mb %><%= vspace %>
+  <% file_data = @jam.file_data  %>
+  <% if file_data %>
+    <div class='field'>Length:</div><%= file_data.length.to_time_str %> <%= vspace %>
+    <div class='more link' moreref='<%= moreref %>'>more</div>
+    <div class='field'>Mode:</div><%= file_data.mode %> <%= vspace %>
+    <div class='field'>Sample Rate:</div><%= file_data.samplerate %> Hz<%= vspace %>
+    <div class='field'>Bit Rate:</div><%= file_data.bitrate %> kbps<%= vspace %>
+    <div class='field'>File Size:</div><%= file_data.filesize.to_mb %><%= vspace %>
+  <% end %>
+</div>
 
 <%= vspace 20 %>
 <div class='section-header'>Collaborations</div>
@@ -45,7 +51,7 @@
   <img src='/new-ui/play.png' style='position: absolute'>
   <div style='margin-left: 50px; padding-top: 5px; font-size: 11px; font-weight: bold'>Horton Bay</div>
 </div>
-<div class='align-right link s11' style='color: #777'>more</div>
+<div class='more'>more</div>
 
 
 <%= vspace 20 %>

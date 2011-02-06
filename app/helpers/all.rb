@@ -215,6 +215,8 @@ def play_info(obj)
     :length => obj.file_data.length
   }
   info.map{|k,v| "#{k}='#{v}'"}.join(' ')
+rescue 
+  {}
 end
 
 

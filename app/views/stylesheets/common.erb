@@ -56,6 +56,7 @@ INPUT[type='button'].down, INPUT[type='submit'].down {border: 1px solid #888}
 .red.important {color: <%= default_color %> !important}
 .bold {font-weight: bold}
 .gray {color: #888}
+.overflow-hidden {overflow: hidden}
 
 IMG {border: none}
 
@@ -84,7 +85,7 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
 }
 
 .middle-bar .menu-panel {position: fixed; border-right: 0px solid <%= testing_gray %>; background-color: white; width: <%= left_panel_width %>; z-index: 2;}
-.middle-bar .tips-panel {position: fixed; right: 0px; width: <%= right_panel_width %>; border-left: 0px solid grey; min-height: 300px}
+.middle-bar .tips-panel {position: fixed; right: 0px; width: <%= right_panel_width %>; border-left: 0px solid grey; min-height: 300px; color: #777; font-size: 11px; padding: 10px 0px 0px 0px}
 .middle-bar .content-panel {
   position: relative; 
   margin-left: <%= left_panel_width %>; 
@@ -159,7 +160,7 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
 .list {position: relative;}
 .list .row {position: relative; padding-top: 10px; height: 96px; overflow: auto; padding-left: 5px; border-bottom: 1px solid #f0f0f0;}
 .list .row .forward-icon {position: absolute; right: 20px; margin-top: 25px}
-.list .row .image {position: absolute; width: 78px; height: 78px; border: 1px solid #dcdcdc; padding: 1px}
+.list .row .image {position: absolute; width: 78px; height: 78px; border: 0px solid #dcdcdc; padding: 1px}
 .list .row .content {position: relative;}
 .list .row .content .col1 {position: absolute; margin-left: 96px; width: 200px}
 .list .row .content .col2 {position: absolute; margin-left: 316px;}
@@ -250,16 +251,16 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
 #simplemodal-overlay {background-color:#000; cursor:wait;}
 
 /* Container */
-#simplemodal-container {color:#bbb; background-color:#333; border:4px solid #444; padding:12px;}
-.simplemodal-data {padding:8px; color:#bbb;}
+#simplemodal-container {color:#bbb; background-color: white; border:4px solid #444; padding:12px;}
+.simplemodal-data {padding:8px; color: #333; }
 #simplemodal-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
 #simplemodal-container a {color:#ddd;}
 #simplemodal-container a.modalCloseImg {background:url(/new-ui/x.png) no-repeat; width:25px; height:29px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
 #simplemodal-container h3 {color:#84b8d9;}
 
 /* DATA */
-.simplemodal-data .header {font-size: 16px; color: #fafafa; border-bottom: 1px solid #666; padding-bottom: 5px}
-.simplemodal-data .field {display: inline-block; color: #aaa; width: 130px}
+.simplemodal-data .header {font-size: 16px; color: #666; border-bottom: 1px solid #bbb; padding-bottom: 5px}
+.simplemodal-data .field {display: inline-block; color: #888; width: 130px}
 
 .editable-genres {width: 300px;}
 .editable-genres .editable-genre {display: inline-block; position: relative; min-height: 20px; margin-right: 20px}
@@ -294,3 +295,11 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
 .waveform {background-color: #888; }
 .waveform .seek {position: absolute; width: 0px; background-color: #cc0000};
 .waveform .seek .waveform-image {border: none}
+
+.tip {color: #777; border: 1px solid #e8e8e8; background-color: #f6f6f6; position: relative; font-size: 11px; padding: 10px}
+.tip .image {position: absolute; right: -3px; top: -15px; height: 36px}
+
+.memory-usage {position: relative; height: 15px; border: 1px solid #bbb}
+.memory-usage .fill {display: inline-block; height: inherit; background-color: #ebebeb}
+
+.more {text-align: right; color: #777; font-size: 11px}
