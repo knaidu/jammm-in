@@ -1,9 +1,0 @@
-<% 
-	jam = fhlp_get_jam(feed) 
-	users = fhlp_get_users(feed)
-%>
-<div>
-	<%= list_artists(users) %>  published the Jam <%= jam_link(jam) %>
-  <%= vspace 2 %>
-	<%= play jam %>
-</div>

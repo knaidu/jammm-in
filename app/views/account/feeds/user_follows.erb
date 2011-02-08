@@ -1,0 +1,24 @@
+<% users = feed.dataObj.users %>
+<div class='feed'>
+  <div class='thumbnail'>
+    <img src='<%= session_user?.profile_picture_url %>'>
+  </div>
+  <div class='content'>
+    <span class='bold'><%= users[0].username %></span> is following
+    <div class='entity'>
+      <div class='entity-image'>
+        <img src='<%= users[1].profile_picture_url %>'>
+      </div>
+      <div class='entity-info'>
+        <div class='bold'><%= users[1].name %></div>
+        <%= vspace 10 %>
+        <div>
+          <div class='field-name'>Jams:</div><%= users[1].jams.count %>
+          <%= hspace 10 %>
+          <div class='field-name'>Collaborations:</div><%= users[1].songs.count %>
+        </div>
+      </div>
+    </div>
+    <div class='time'><%= feed.created_at.reference_string %></div>
+  </div>
+</div>

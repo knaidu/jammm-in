@@ -115,6 +115,10 @@ def vspace(height=5)
   "<div style='height: #{height}px; overflow: hidden'>&nbsp;</div>"
 end
 
+def hspace(width=5)
+  "<div style='width: #{width}px; display: inline-block; overflow: hidden'>&nbsp;</div>"
+end
+
 def hor_line(px='1px', style='solid', color='black', margin='0px')
   "<div style='border-top: #{px} #{style} #{color}; margin: #{margin}'> </div>"
 end

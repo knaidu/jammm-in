@@ -1,22 +1,22 @@
 
 <div class='context-menu'>
 
-<div class='item container' onclick='Navigate.loadContent("/account")'>
-    <div class='icon'><img src='/new-ui/add.png' width='24px' class='context-menu-image'></div>
-    <div class='text'>Home</div>
-</div>
+  <div class='item container' onclick='Navigate.loadContent("/account")'>
+      <div class='icon'><img src='/new-ui/home-dock.png' width='24px' class='context-menu-image'></div>
+      <div class='text'>Home</div>
+  </div>
 
   <div class='item container' onclick='Jam.create()'>
-      <div class='icon'><img src='/new-ui/add.png' width='24px' class='context-menu-image'></div>
+      <div class='icon'><img src='/new-ui/create-jam.png' width='24px' class='context-menu-image'></div>
       <div class='text'>Create Jam</div>
   </div>
 
   <div class='item' onclick='Navigate.loadContent("/jam/<%= @jam.id %>/manage")'>
     <div class='container'>
-      <div class='icon'><img src='/new-ui/settings.png' width='24px' class='context-menu-image'></div>
+      <div class='icon'><img src='/new-ui/create-jam.png' width='24px' class='context-menu-image'></div>
       <div class='text'>My Jams</div>
     </div>
-    <div class='item sub container'>
+    <div class='item sub container' onclick='Navigate.loadContent("/account/jams")'>
       <div class='text'>Published Jams</div>
     </div>
     <div class='item sub container'>
@@ -26,7 +26,7 @@
 
   <div class='item' onclick='Song.create("jam", <%= @jam.id %>)'>
     <div class='container'>
-      <div class='icon'><img src='/new-ui/add.png' width='24px' class='context-menu-image'></div>
+      <div class='icon'><img src='/new-ui/collaborate.png' width='24px' class='context-menu-image'></div>
       <div class='text'>My Collaborations</div>
     </div>
     <div class='item sub container'>
@@ -46,7 +46,7 @@
   
   <div class='item' onclick='Navigate.loadContent("/account/aboutme")'>
     <div class='container'>
-      <div class='icon'><img src='/new-ui/settings.png' width='24px' class='context-menu-image'></div>
+      <div class='icon'><img src='/new-ui/manage1.png' width='24px' class='context-menu-image'></div>
       <div class='text'>Settings</div>
     </div>
   </div>

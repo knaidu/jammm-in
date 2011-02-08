@@ -123,15 +123,14 @@ class User < ActiveRecord::Base
   
   # Determines the Feeds for the User
   def feeds(limit=20)
+    follows_user_ids = self.follows.map(&:id).join(",")
     range = Range.new(0, (limit.to_i - 1))
     my_feeds = (Feed.find_by_sql [
         "SELECT f.*",
         "FROM feeds f, user_feeds uf",
-        "WHERE (f.scope='global')",
-        "ORDER BY created_at DESC"
-      ].join(' ')).uniq
-    followings_updates = self.follows.map(&:updates).flatten
-    (my_feeds + followings_updates).uniq.sort_by(&:created_at).reverse[range] # Aggregate of User's feeds and followings updates
+        "WHERE (f.id=uf.feed_id and uf.user_id in (#{follows_user_ids})) and f.feed_type != 'say'",
+        "ORDER BY created_at DESC limit 100"
+      ].join(' '))
   end
   
   # Determines the Updates for the User

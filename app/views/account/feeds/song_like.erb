@@ -1,0 +1,28 @@
+<% 
+  song = feed.dataObj.song 
+  users = feed.dataObj.users
+%>
+<div class='feed'>
+  <div class='thumbnail'>
+    <img src='<%= session_user?.profile_picture_url %>'>
+  </div>
+  <div class='content'>
+    <span class='bold'><%= users[0].username %></span> liked
+    <div class='entity'>
+      <div class='entity-image'>
+        <img src='/new-ui/acoustic-guitar.png'>
+      </div>
+      <div class='entity-info'>
+        <div class='bold'><%= song.name %></div>
+        <%= vspace 10 %>
+        <div>
+          <div class='field-name'>Views:</div><%= song.views %>
+          <%= hspace 10 %>
+          <div class='field-name'>Length:</div><%= song.file_data.length.to_time_str rescue "-" %>
+          <%= hspace 10 %>
+          <div class='field-name'>Likes:</div><%= song.liked_by.count %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

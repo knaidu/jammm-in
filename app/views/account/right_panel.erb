@@ -1,7 +1,14 @@
 <% used_memory = session_user?.used_memory %>
-<div class='bold'>Your Memory Usage:</div><%= vspace %>
-Used <%= used_memory.to_mb %> of <%= session_user?.total_memory.to_mb %><%= vspace %>
-<% width =  (used_memory / session_user?.total_memory) * 100 %>
-<div class='memory-usage'>
-  <div class='fill' style="width: <%= width %>%"></div>
+<div class='position-relative'>
+  <div class='position-absolute' style='margin-top: 8px'>
+    <img src='/new-ui/storage.png' height='24px'>
+  </div>
+  <div class='position-relative' style='margin-left: 30px'>
+    <div class='bold'>Your Memory Usage:</div><%= vspace %>
+    Used <%= used_memory.to_mb %> of <%= session_user?.total_memory.to_mb %><%= vspace %>
+    <% width =  (used_memory / session_user?.total_memory) * 100 %>
+  </div>
+  <div class='memory-usage'>
+    <div class='fill' style="width: <%= width %>%"></div>
+  </div>
 </div>

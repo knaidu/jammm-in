@@ -1,0 +1,22 @@
+<% badge = feed.dataObj.badge %>
+<div class='feed'>
+  <div class='thumbnail'>
+    <img src='<%= session_user?.profile_picture_url %>'>
+  </div>
+  <div class='content'>
+    <span class='bold'><%= feed.dataObj.user.username %></span> earned the badge <%= vspace %>
+    <div class='entity'>
+      <div class='entity-image'>
+        <img src='<%= badge.image_url %>'>
+      </div>
+      <div class='entity-info'>
+        <div class='bold'><%= badge.name %></div>
+        <%= vspace 10 %>
+        <div style='color: #888'>
+          <%= badge.description %>
+        </div>
+      </div>
+    </div>
+    <div class='time'><%= feed.created_at.reference_string %></div>
+  </div>
+</div>

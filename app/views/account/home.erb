@@ -1,5 +1,3 @@
-<%# partial("common/feeds", :locals => {:feeds => session_user?.feeds.first(2), :show_as_updates => false}) 
-%>
 <%= render_state({
   :name => "Home", 
   :description => "My Home Page", 
@@ -7,3 +5,10 @@
   :context_menu => "/partial/account/context_menu",
   :right_panel => "/partial/account/right_panel"
 }) %>
+
+<% feeds = session_user?.feeds 100 %>
+<div class='feeds'>
+  <% feeds.each{|feed| %>
+    <%= partial :"/account/feeds/#{feed.feed_type}", :locals => {:feed => feed} %>
+  <% } %>
+</div>

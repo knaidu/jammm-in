@@ -44,6 +44,7 @@ INPUT[type='button'].down, INPUT[type='submit'].down {border: 1px solid #888}
 /* GENERAL */
 .clear-both {clear: both}
 .position-absolute {position: absolute}
+.position-relative {position: relative}
 .float-left {float: left}
 .float-right {float: right}
 .w50 {width: 50px}
@@ -57,6 +58,7 @@ INPUT[type='button'].down, INPUT[type='submit'].down {border: 1px solid #888}
 .bold {font-weight: bold}
 .gray {color: #888}
 .overflow-hidden {overflow: hidden}
+.qoute {font-size: 16px; color: #888}
 
 IMG {border: none}
 
@@ -132,7 +134,7 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
   right: 5px; 
 }
 .actions-doc .contents {padding: 3px 0px 0px 5px}
-.actions-doc .icon {overflow: hidden; display: inline-block; overflow: hidden; height: 24px; width: 28px; margin-right: 18px; cursor: pointer}
+.actions-doc .icon {overflow: hidden; display: inline-block; overflow: hidden; height: 24px; width: 24px; margin-right: 18px; cursor: pointer}
 .player {
   position: fixed; 
   bottom: <%= (footer_height.px + 1).px %>; 
@@ -303,3 +305,15 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
 .memory-usage .fill {display: inline-block; height: inherit; background-color: #ebebeb}
 
 .more {text-align: right; color: #777; font-size: 11px}
+
+.feeds {position: relative}
+.feeds .feed {position: relative; border-bottom: 1px solid #f0f0f0; padding: 10px 0px 10px 0px; font-size: 11px}
+.feeds .feed .thumbnail {position: absolute; top: 12px; height: 48px; width: 48px;}
+.feeds .feed .thumbnail IMG {height: 100%; width: 100%}
+.feeds .feed .content {position: relative; margin-left: 60px;}
+.feeds .feed .content .entity {position: relative; margin-top: 10px; margin-bottom: 10px}
+.feeds .feed .content .entity-image {position: absolute; height: 42px; width: 42px}
+.feeds .feed .content .entity-image IMG {height: 100%; width: 100%}
+.feeds .feed .content .entity-info {position: relative; margin-left: 54px}
+.feeds .feed .content .entity-info .field-name{color: #888; display: inline-block; margin-right: 5px; }
+.feeds .feed .content .time {margin-top: 15px; color: #aaa; font-size: 10px}

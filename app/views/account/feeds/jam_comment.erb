@@ -1,0 +1,30 @@
+<% 
+  jam = feed.dataObj.jam 
+  comment = feed.dataObj.comment 
+%>
+<div class='feed'>
+  <div class='thumbnail'>
+    <img src='<%= session_user?.profile_picture_url %>'>
+  </div>
+  <div class='content'>
+    <div class='bold'><%= comment.user.username %></div><%= vspace %>
+    "<%= feed.dataObj.comment.comment %>"
+    <div class='entity'>
+      <div class='entity-image'>
+        <img src='/new-ui/acoustic-guitar.png'>
+      </div>
+      <div class='entity-info'>
+        <div class='bold'><%= jam.name %></div>
+        <%= vspace 10 %>
+        <div>
+          <div class='field-name'>Views:</div><%= jam.views %>
+          <%= hspace 10 %>
+          <div class='field-name'>Length:</div><%= jam.file_data.length.to_time_str rescue "-" %>
+          <%= hspace 10 %>
+          <div class='field-name'>Likes:</div><%= jam.liked_by.count %>
+        </div>
+      </div>
+    </div>
+    <div class='time'><%= feed.created_at.reference_string %></div>
+  </div>
+</div>

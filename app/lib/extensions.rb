@@ -44,6 +44,29 @@ class Time
   def date
     strftime("%d/%m/%Y")
   end
+  
+  def reference_string
+    now = Time.now
+    diff_arr = [now.day, now.month, now.year].zip([day, month, year]).map{|a| a[0] - a[1]}
+    if diff_arr[2] > 0 
+      self.strftime("%B, %Y")
+    elsif diff_arr[1] > 0 
+      self.strftime("%B")
+    else
+      if diff_arr[0] == 0
+        "Today"
+      elsif diff_arr[0] == 1
+        "Yesterday"
+      elsif diff_arr[0] == 2
+        "2 days ago"
+      elsif diff_arr[0] > 0 and diff_arr[0] < 10
+        "In the past 10 days" 
+      else
+        "This Month"
+      end
+    end
+  end
+  
 end
 
 class Hash
