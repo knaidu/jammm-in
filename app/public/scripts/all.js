@@ -3,7 +3,7 @@ var Navigate = {states: []};
 var Modal = {};
 var Doc = {Player: {}, Playlist: {}, Notifications: {}, Messages: {}};
 var JEvent = {list: {}}; // 'list' is treated as an array. In the sense, on load all keys in 'list' are itereated over and run.
-var General = {Comment: {}};
+var General = {Comment: {}, Tabs: {}};
 
 Layout.onReady = function(){
 	if($("content-panel")){
@@ -388,3 +388,29 @@ General.onClickMore = function(el) {
 	container.style.height = prevHeight + "px";
 	$j(container).animate({height: newHeight}, 500);
 }.bind(General);
+
+/* TABS */
+General.Tabs.setup = function(container) {
+	var el = $j("#" + container);
+	var children = $A(el.children());
+	
+	var rightTab = $A(el.children()).pop();
+	var tabs = $j("#" + container + " .tab");
+	children.pop();
+	var widths = $A(children).map(function(i) {return i.getWidth()}).sum();
+	var width = el.width() - widths - 10;
+	$j(rightTab).width(width);
+	tabs.click('click', function() {
+		General.Tabs.loadTab(this);
+	});
+	this.loadTab(tabs[0]); // Loads the First Tab
+}.bind(General.Tabs);
+
+General.Tabs.loadTab = function(el) {
+	parent = $j(el).parent();
+	var contentDivId = $j(el).parent()[0].getAttribute('contentdivid');
+	updateEl(contentDivId, el.getAttribute('url'));
+	var tabs = $j("#" + parent[0].id + " .tab");
+	tabs.removeClass("selected");
+	$j(el).addClass("selected");
+}.bind(General.Tabs);

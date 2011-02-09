@@ -17,20 +17,25 @@
 
 <%= vspace 30 %>
 <div class='section-header'>Information</div>
-<div class='field'>Name:</div><span><%= @song.name %></span><%= vspace %>
-<div class='field'>Artists:</div><span><%= @song.artists.map(&:username).join(", ") %></span><%= vspace %>
-<div class='field'>Instruments:</div><span><%= @song.instruments.map(&:name).join(", ") %></span><%= vspace %>
-<div class='field'>Genre:</div><span><%= @song.genre_names %></span><%= vspace  %>
-<% file_data = @song.file_data  %>
-<% if file_data %>
-  <div class='field'>Length:</div><%= file_data.length.to_time_str %> <%= vspace %>
-  <div class='field'>Mode:</div><%= file_data.mode %> <%= vspace %>
-  <div class='field'>Sample Rate:</div><%= file_data.samplerate %> Hz<%= vspace %>
-  <div class='field'>Bit Rate:</div><%= file_data.bitrate %> kbps<%= vspace %>
-  <div class='field'>File Size:</div><%= file_data.filesize.to_mb %><%= vspace %>
-<% else %>
-  This information is available only to Published Songs.
-<% end %>
+<% moreref = rand_id %>
+<div class='overflow-hidden' style='height: 113px' id='<%= moreref %>'>
+  <div class='field'>Name:</div><span><%= @song.name %></span><%= vspace %>
+  <div class='field'>Artists:</div><span><%= @song.artists.map(&:username).join(", ") %></span><%= vspace %>
+  <div class='field'>Instruments:</div><span><%= @song.instruments.map(&:name).join(", ") %></span><%= vspace %>
+  <div class='field'>Genre:</div><span><%= @song.genre_names %></span><%= vspace  %>
+  <% file_data = @song.file_data  %>
+  <% if file_data %>
+    <div class='field'>Length:</div><%= file_data.length.to_time_str %> <%= vspace %>
+    <div class='more link' moreref='<%= moreref %>'>more</div>
+  
+    <div class='field'>Mode:</div><%= file_data.mode %> <%= vspace %>
+    <div class='field'>Sample Rate:</div><%= file_data.samplerate %> Hz<%= vspace %>
+    <div class='field'>Bit Rate:</div><%= file_data.bitrate %> kbps<%= vspace %>
+    <div class='field'>File Size:</div><%= file_data.filesize.to_mb %><%= vspace %>
+  <% else %>
+    This information is available only to Published Songs.
+  <% end %>
+</div>
 
 <%= vspace 30 %>
 <div class='section-header'>Jams</div>

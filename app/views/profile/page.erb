@@ -1,0 +1,52 @@
+<%= render_state({
+  :name => "#{@user.username}", 
+  :description => "", 
+  :url => "/#{@user.username}",
+  :context_menu => "/#{@user.username}/context_menu"
+}) %>
+
+<h3>Artists <span class='slash'>/</span> <%= @user.username %></h3>
+<%= vspace  %>
+<div class='user-profile'>
+  <div class='profile-picture'><img src='<%= @user.profile_picture_url %>'></div>
+  <div class='content'>
+    <div style='position: absolute; width: 300px'>
+      <div class='field' style='font-size: 11px; width: 100px'>Name:</div> <%= @user.name %><%= vspace %>
+      <div class='field' style='font-size: 11px; width: 100px'>Location:</div> <%= @user.location %><%= vspace %>
+      <div class='field' style='font-size: 11px; width: 100px'>Follows:</div> <%= @user.following.count %><%= vspace %>
+    </div>
+    <div style='position: absolute; left: 350px'>
+      <div class='small-field' style='width: 80px'>Jams:</div> <%= @user.jams.count %><%= vspace %>
+      <div class='small-field' style='width: 80px'>Collaborations:</div> <%= @user.songs.count %> <%= vspace %>
+      <div class='small-field' style='width: 80px'>Followers:</div> <%= @user.followed_by.count %>
+    </div>
+  </div>
+</div>
+
+
+<% 
+  id = rand_id 
+  contentdivid = id + "-content"
+%>
+<div class='tabs' id='<%= id %>' contentdivid='<%= contentdivid %>'>
+  <div class='padding-left'>&nbsp;</div>
+  <div class='tab' url='/<%= @user.username %>/feeds'>
+    <div class='content'><div class='image'><img src='/new-ui/Notifications-dock.png'></div><div class='text'>Update</div></div>
+  </div>
+  <div class='tab' url='/<%= @user.username %>/jams'>
+    <div class='content'><div class='image'><img src='/new-ui/create-jam.png'></div><div class='text'>Jams</div></div>
+  </div>
+  <div class='tab' url='/<%= @user.username %>/songs'>
+    <div class='content'><div class='image'><img src='/new-ui/collaborate.png'></div><div class='text'>Collaborations</div></div>
+  </div>
+  <div class='padding-right'>&nbsp;</div>
+</div>
+
+<div class='clear-both'>
+
+<%= vspace 10 %>
+
+<div id='<%= contentdivid %>'></div>
+<%= js_start %>
+  General.Tabs.setup('<%= id %>');
+<%= js_end %>

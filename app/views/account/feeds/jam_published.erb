@@ -1,13 +1,13 @@
 <% jam = feed.dataObj.jam %>
 <div class='feed'>
   <div class='thumbnail'>
-    <img src='<%= session_user?.profile_picture_url %>'>
+    <img src='<%= jam.creator.profile_picture_url %>'>
   </div>
   <div class='content'>
     <span class='bold'><%= jam.creator.username %></span> published
     <div class='entity'>
       <div class='entity-image'>
-        <img src='/new-ui/collaborate.png'>
+        <img src='/new-ui/saxophone.png'>
       </div>
       <div class='entity-info'>
         <div class='bold'><%= jam.name %></div>

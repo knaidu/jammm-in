@@ -1,16 +1,11 @@
 <div class='context-menu'>
 
-  <div class='item container' onclick='Jam.create()'>
-      <div class='icon'><img src='/new-ui/generic-add.png' width='24px' class='context-menu-image'></div>
-      <div class='text'>Create Jam</div>
-  </div>
-
-  <div class='item' onclick='Navigate.loadContent("/jam/<%= @jam.id %>/manage")'>
+  <div class='item container' onclick='Navigate.loadContent("/jam/<%= @jam.id %>/manage")'>
       <div class='icon'><img src='/new-ui/manage1.png' width='24px' class='context-menu-image'></div>
       <div class='text'>Manage</div>
   </div>
 
-  <div class='item' onclick='Song.create("jam", <%= @jam.id %>)'>
+  <div class='item container' onclick='Song.create("jam", <%= @jam.id %>)'>
       <div class='icon'><img src='/new-ui/collaborate.png' width='24px' class='context-menu-image'></div>
       <div class='text'>Collaborate</div>
   </div>

@@ -205,6 +205,7 @@ class Song < ActiveRecord::Base
   end
   
   def song_picture_url
+    return "/new-ui/collaborate.png" if song_picture_file_handle.nil?
     "/song/#{self.id}/song_picture?#{self.song_picture_file_handle.to_s}"
   end
   

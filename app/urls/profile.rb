@@ -3,14 +3,21 @@
 get '/:username' do
   user = params[:username]
   is_user = User.find_by_username(user)
-  @layout_info = is_user ? layout_info("profile") : layout_info("profile", "usernotfound")
-  if is_user
-    @menu_data = profile_home_info(user) 
-  else
-    @layout_info["left_panel"] = "/homepage/left"
-  end
-  set_profile_page_info user
-  erb(:"body/structure")
+  @user = is_user
+  erb(:"profile/page")
+end
+
+
+get '/:username/context_menu' do
+  @user = User.with_username param?(:username)
+  erb(:"/profile/context_menu")
+end
+
+
+get '/:username/feeds' do
+  @user = User.with_username param?(:username)
+  @feeds = @user.updates
+  erb(:"/profile/feeds")
 end
 
 
@@ -19,7 +26,7 @@ get '/:username/songs' do
   @layout_info = layout_info("profile", 'songs')
   @menu_data = profile_home_info(params[:username])
   @songs = @user.published_songs rescue []
-  erb(:"body/structure")
+  erb(:"/profile/songs")
 end
 
 
@@ -28,7 +35,7 @@ get '/:username/jams' do
   @layout_info = layout_info("profile", 'jams')
   @menu_data = profile_home_info(user)
   set_profile_page_info user
-  erb(:"body/structure")
+  erb(:"/profile/jams")
 end
 
 get '/:username/followers' do

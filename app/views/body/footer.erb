@@ -9,7 +9,7 @@
       <div class='icon' onclick='Navigate.loadContent("/account")'>
         <img src='/new-ui/home-dock.png' height='24px'>
       </div>
-      <div class='icon'>
+      <div class='icon' onclick='Navigate.loadContent("/<%= session_user?.username %>")'>
         <img src='/new-ui/profile-dock.png' height='24px'>
       </div>
       <div class='icon' onclick="Doc.Messages.show()">

@@ -137,7 +137,7 @@ def get_params?(*keys)
 end
 
 def rand_id
-  "id-" + rand.to_s
+  "id-" + rand(10**10).to_s
 end
 
 def list_genres(genres)

@@ -1,0 +1,5 @@
+<div class='feeds'>
+  <% @feeds.each{|feed| %>
+    <%= partial :"/account/feeds/#{feed.feed_type}", :locals => {:feed => feed} %>
+  <% } %>
+</div>

@@ -134,17 +134,14 @@ class User < ActiveRecord::Base
   end
   
   # Determines the Updates for the User
-  def updates(limit=20)
-    range = Range.new(0, limit.to_i)
-    (Feed.find_by_sql [
+  def updates(limit=60)
+    feed_types = "'jam_published', 'song_published', 'jam_like', 'song_like'"
+    my_feeds = (Feed.find_by_sql [
         "SELECT f.*",
         "FROM feeds f, user_feeds uf",
-        "WHERE f.id = uf.feed_id",
-        "AND uf.user_id=#{self.id}",
-        "AND (f.scope = 'public' OR f.scope = 'protected' OR f.scope = 'global')",
-        "ORDER BY created_at DESC"
-      ].join(' ')
-    ).uniq.sort_by(&:created_at).reverse[range]
+        "WHERE (f.id=uf.feed_id and uf.user_id=#{self.id} and f.feed_type in (#{feed_types}))",
+        "ORDER BY created_at DESC limit #{limit}"
+      ].join(' '))
   end
   
   def url

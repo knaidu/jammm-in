@@ -1,10 +1,10 @@
 <% song = feed.dataObj.song %>
 <div class='feed'>
   <div class='thumbnail'>
-    <img src='<%= session_user?.profile_picture_url %>'>
+    <img src='<%= song.creator.profile_picture_url %>'>
   </div>
   <div class='content'>
-    <span class='bold'><%= song.creator.username %></span> published
+    <span class='bold link' onclick='Navigate.loadContent("/<%= song.creator.username %>")'><%= song.creator.username %></span> published
     <div class='entity'>
       <div class='entity-image'>
         <img src='/new-ui/collaborate.png'>

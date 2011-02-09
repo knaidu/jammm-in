@@ -18,9 +18,16 @@ Object.extend(Array.prototype, function(){
 		var o = this.clone();
 		for(var j, x, i = o.length; i; j = parseInt(Math.round(Math.random() * 100) % i), x = o[--i], o[i] = o[j], o[j] = x);
 		return o;
-	}
+	};
+	
+	function sum(){
+		for(var i=0,sum=0;i<this.length;sum+=this[i++]);
+		return sum;
+	};
+	
 	return {
-		shuffle: shuffle
+		shuffle: shuffle,
+		sum: sum
 	}
 }());
 
