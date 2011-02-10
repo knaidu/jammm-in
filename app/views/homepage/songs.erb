@@ -1,2 +1,7 @@
+<%= vspace 10 %>
 <%= render_state({:name => "Songs", :description => "", :url => "/songs"}) %>
+<div style='margin-left: 10px'>
+  <div class='page-header'>Collaborations</div> 
+</div>
+<%= vspace 10 %>
 <%= partial("common/songs", :locals => {:songs => Song.all.sort_by{|s| -(s.id)}}) %>

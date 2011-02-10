@@ -135,7 +135,7 @@ class User < ActiveRecord::Base
   
   # Determines the Updates for the User
   def updates(limit=60)
-    feed_types = "'jam_published', 'song_published', 'jam_like', 'song_like'"
+    feed_types = "'jam_published', 'song_published', 'jam_like', 'song_like', 'jam_comment', 'song_comment'"
     my_feeds = (Feed.find_by_sql [
         "SELECT f.*",
         "FROM feeds f, user_feeds uf",

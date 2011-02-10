@@ -1,0 +1,42 @@
+<%= render_state({
+  :name => "#{@group.name}", 
+  :description => "", 
+  :url => "/groups/#{@group.handle}/manage",
+  :context_menu => "/groups/#{@group.handle}/context_menu"
+}) %>
+<% group = @group %>
+<%= vspace %>
+<div class="page-header">Groups <span class="slash">/</span> <%= @group.name %> <span class="slash">/</span> Edit</div>
+<%= vspace 20 %>
+
+<div class="section-header">Information</div>
+<div class="field">Handle:</div> <%= @group.handle %> <%= vspace %>
+<div class="field">Name:</div> 
+<input type='text' name='name' value='<%= @group.name %>' onedit='blur' run="/groups/<%= group.handle %>/manage/update_info?key=name"> 
+<%= vspace %>
+<div class="field">Phone:</div> 
+<input type='text' name='phone' value='<%= @group.phone %>' onedit='blur' run="/groups/<%= group.handle %>/manage/update_info?key=phone"> 
+<%= vspace %>
+<div class="field float-left">Description:</div>
+<textarea name='phone' onedit='blur' run="/groups/<%= group.handle %>/manage/update_info?key=description"><%= group.description %></textarea><%= vspace  %>
+<div class="field float-left">Profile Picture:</div>
+<div class='display-inline-block'>
+  <img src='<%= group.profile_picture_url %>' height='78px'><%= vspace %>
+  <input type='button' value='Update' onclick="Group.Manage.updatePicture('<%= group.handle %>')">
+</div>
+<%= vspace 20 %>
+
+<div class="section-header">Invite Members</div>
+<div class="s12">Enter the email address of the artist you would like to invite. </div><%= vspace 10 %>
+<div class="field float-left">Email:</div>
+<input type='text' name='email'><%= vspace %>
+<input type='button' value='Invite'>
+
+<%= vspace 20 %>
+<div class="section-header">Members</div>
+<div class="field">Search:</div> <input id="<%= id = rand_id %>" class='filter-input' type='text' name='search' filterfn="Group.Manage.filter"><%= vspace %>
+<%= partial :"/groups/manage/users", :locals => {:users => group.users} %>
+
+<%= js_start %>
+  General.List.filter.monitor("<%= id %>")
+<%= js_end %>

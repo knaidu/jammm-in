@@ -17,6 +17,7 @@
   shadow_right = "-moz-box-shadow: 2px 2px 25px #888;
   -webkit-box-shadow: 2px 2px 5px #888;
   box-shadow: 2px 2px 5px #888;"
+  row_bottom_border = "border-bottom: 1px solid #f0f0f0;"
 %>
 
 /* DEFAULTS */
@@ -48,6 +49,7 @@ INPUT[type='button'].down, INPUT[type='submit'].down {border: 1px solid #888}
 .float-left {float: left}
 .float-right {float: right}
 .w50 {width: 50px}
+.w100 {width: 100px}
 .s11 {font-size: 11px}
 .hide {display: none}
 .display-inline-block {display: inline-block}
@@ -61,6 +63,8 @@ INPUT[type='button'].down, INPUT[type='submit'].down {border: 1px solid #888}
 .qoute {font-size: 16px; color: #888}
 .small-field {font-size: 11px; color: #888; display: inline-block; margin-right: 20px}
 .slash {color: #bbb; font-size: 16px}
+.simple-field {display: inline-block; color: #888}
+.onhover {background-color: #FBFFF0}
 
 IMG {border: none}
 
@@ -159,7 +163,7 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
 .player .item {margin-bottom: 10px; border-bottom: 1px solid #ededed; color: #aaa}
 .player .item-onhover {color: #666666}
 
-
+.page-header {font-size: 14px; font-weight: bold}
 
 .list {position: relative;}
 .list .row {position: relative; padding-top: 10px; min-height: 80px; overflow: auto; padding-left: 5px; border-bottom: 1px solid #f0f0f0;}
@@ -336,3 +340,26 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
 .tabs .tab .content .text {position: relative; margin-left: 25px; padding: 5px 10px 5px 5px}
 .tabs .tab .content .image {position: absolute; height: 24px; width: 24px}
 .tabs .tab .content .image IMG {height: 100%; width: 100%}
+
+.group-profile {position: relative; min-height: 100px}
+.group-profile .profile-picture {position: absolute; height: 78px; width: 78px}
+.group-profile .profile-picture IMG {height: 100%; width: 100%}
+.group-profile .content {margin-left: 84px;}
+.group-profile .content .info {margin-top: 0px}
+
+.manage-group-users {position: relative}
+.manage-group-users .user {min-height: 40px; <%= row_bottom_border %>; padding: 10px 0px}
+.manage-group-users .user .image {position: absolute; height: 40px; width: 40px}
+.manage-group-users .user .image IMG {height: 100%; width: 100%}
+.manage-group-users .user .content {margin-left: 50px}
+.manage-group-users .user .actions {position: absolute; right: 0px; padding-top: 3px}
+
+.users {}
+.users .user {position: relative; min-height: 54px; padding: 10px 0px; <%= row_bottom_border %>}
+.users .user .profile-picture {position: absolute; height: 54px; width: 54px}
+.users .user .profile-picture IMG {height: 100%; width: 100%}
+.users .user .actions {position: absolute; right: 0px}
+.users .user .content {margin-left: 60px}
+.users .user .content .col1 {position: absolute; left: 60px}
+.users .user .content .col2 {position: absolute; left: 300px}
+.users .user .content .col3 {position: absolute; left: 480px}

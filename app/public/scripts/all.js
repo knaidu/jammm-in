@@ -3,7 +3,7 @@ var Navigate = {states: []};
 var Modal = {};
 var Doc = {Player: {}, Playlist: {}, Notifications: {}, Messages: {}};
 var JEvent = {list: {}}; // 'list' is treated as an array. In the sense, on load all keys in 'list' are itereated over and run.
-var General = {Comment: {}, Tabs: {}};
+var General = {Comment: {}, Tabs: {}, List: {}};
 
 Layout.onReady = function(){
 	if($("content-panel")){
@@ -414,3 +414,26 @@ General.Tabs.loadTab = function(el) {
 	tabs.removeClass("selected");
 	$j(el).addClass("selected");
 }.bind(General.Tabs);
+
+/* SEARCH LIST FILTER */
+General.List.filter = function(list, searchStr) {
+	var toshow = [];
+	var tohide = [];
+	$A(list).each(function(u) {
+		var fields = u.findDescendantsByClassName('search-field');
+		var show = $A(fields).any(function(el) {return el.innerHTML.toLowerCase().include(searchStr)});
+		show ? toshow.push(u) : tohide.push(u)
+	});
+	$j(tohide).hide();
+	$j(toshow).show();
+}.bind(General.List);
+
+General.List.filter.monitor = function(el) {
+	el = $(el);
+	var onkeyup = function() {
+		if(el.keyuptimer) clearTimeout(el.keyuptimer);
+		var fn = eval(el.getAttribute("filterfn"));
+		el.keyuptimer = window.setTimeout(function() {fn(el.value)}, 300);
+	};
+	$j(el).keyup(onkeyup)
+}.bind(General.List.filter);

@@ -1,6 +1,6 @@
-SQL (0.2ms)  SET client_min_messages TO 'panic'
+SQL (0.3ms)  SET client_min_messages TO 'panic'
 SQL (0.1ms)  SET client_min_messages TO 'notice'
-SQL (1.6ms)  SELECT version FROM schema_migrations
+SQL (0.9ms)  SELECT version FROM schema_migrations
 Migrating to CreateTestTable (1)
 Migrating to CreateUserTable (2)
 Migrating to CreateSongsTable (3)
@@ -45,9 +45,11 @@ Migrating to AddPolicyToJamTable (41)
 Migrating to AddSchoolIdToInviteTable (42)
 Migrating to CreateFileDataTable (43)
 Migrating to AddTotalMemoryThumbnailToUser (44)
-Migrating to AddColumnsForV10 (45)
-SQL (0.2ms)  BEGIN
-SQL (144.8ms)  ALTER TABLE "user_feeds" ADD COLUMN "feed_type" character varying(255)
-SQL (94.1ms)  ALTER TABLE "user_feeds" ALTER COLUMN "feed_type" SET DEFAULT E'feed'
-SQL (0.8ms)  INSERT INTO schema_migrations (version) VALUES ('45')
-SQL (0.9ms)  COMMIT
+Migrating to CreateGroupsTables (45)
+SQL (0.1ms)  BEGIN
+SQL (88.3ms)  CREATE TABLE "groups" ("id" serial primary key, "name" character varying(255), "handle" character varying(255), "address" character varying(255), "description" character varying(255), "phone" character varying(255), "public" boolean DEFAULT 'f', "profile_picture" character varying(255), "profile_picture_thumbnail" character varying(255), "category_id" integer) 
+SQL (5.0ms)  CREATE TABLE "group_users" ("id" serial primary key, "group_id" integer, "user_id" integer) 
+SQL (4.5ms)  CREATE TABLE "group_admins" ("id" serial primary key, "group_id" integer, "user_id" integer) 
+SQL (6.8ms)  CREATE TABLE "group_categories" ("id" serial primary key, "name" character varying(255), "description" character varying(255)) 
+SQL (0.6ms)  INSERT INTO schema_migrations (version) VALUES ('45')
+SQL (2.0ms)  COMMIT

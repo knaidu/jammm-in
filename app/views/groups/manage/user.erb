@@ -1,0 +1,10 @@
+<div class="user">
+  <div class="image"><img src='<%= user.profile_picture_url %>'></div>
+  <div class="actions"><input type='button' value='Remove User'></div>
+  <div class="content">
+    <div class="bold search-field"><%= user.username %></div><%= vspace %>
+    <div class="small-field">Name:</div> <span class="search-field"><%= user.name %></span> <%= hspace 10 %>
+    <div class="small-field">Jams:</div> <%= user.jams.count %> <%= hspace 10 %>
+    <div class="small-field">Collaborations:</div> <%= user.songs.count %> <%= hspace 10 %>
+  </div>
+</div>

@@ -1,0 +1,95 @@
+# GROUP
+class Group < ActiveRecord::Base
+  has_many :group_users, :dependent => :destroy
+  has_many :users, :through => :group_users
+  has_many :group_admins, :dependent => :destroy
+  validates_uniqueness_of :handle 
+  
+  def add_user(user)
+    GroupUser.add(self, user)
+  end
+  
+  def add_admin(user)
+    GroupAdmin.add(self, user)    
+  end
+  
+  def jams
+    ids = users.map(&:id).join(",")
+    jams = (Jam.find_by_sql [
+        "SELECT *",
+        "FROM jams",
+        "WHERE registered_user_id in (#{ids})",
+        "ORDER BY id DESC limit 100"
+      ].join(' '))
+    jams
+  end
+  
+  def songs
+    ids = users.map(&:id).join(",")
+    songs = (Song.find_by_sql [
+        "SELECT s.*",
+        "FROM songs s, song_managers sm",
+        "WHERE (s.id=sm.song_id and sm.manager_id in (#{ids}))",
+        "ORDER BY created_at DESC limit 100"
+      ].join(' '))
+    songs
+  end
+  
+  def feeds(limit=100)
+    ids = users.map(&:id).join(",")
+    my_feeds = (Feed.find_by_sql [
+        "SELECT f.*",
+        "FROM feeds f, user_feeds uf",
+        "WHERE (f.id=uf.feed_id and uf.user_id in (#{ids})) and f.feed_type != 'say'",
+        "ORDER BY created_at DESC limit #{limit}"
+      ].join(' '))
+  end
+  
+  def change_profile_picture(file)
+    storage_dir = ENV['STORAGE_DIR']
+    filename = new_file_handle_name(false)
+    full_file_name = storage_dir + "/" + filename
+    File.copy(file.path, full_file_name)
+    self.profile_picture = full_file_name
+    self.save
+    temp_img = Image.new(self.profile_picture)
+    temp_img.resize_and_crop(100, 100)
+    true
+  end
+  
+  def profile_picture_url
+    return "/new-ui/collaborate.png" unless profile_picture
+    r = profile_picture.split("/").pop
+    "/groups/#{handle}/profile_picture?#{r}"
+  end
+  
+end
+
+# GROUP USER
+class GroupUser < ActiveRecord::Base
+  belongs_to :group
+  belongs_to :user
+  validates_uniqueness_of :user_id, :scope => [:group_id]
+  
+  def self.add(group, user)
+    create({:group_id => group.id, :user_id => user.id})
+  end
+end
+
+class GroupAdmin < ActiveRecord::Base
+  belongs_to :group
+  belongs_to :user
+  validates_uniqueness_of :user_id, :scope => [:group_id]
+  
+  def self.add(group, user)
+    create({:group_id => group.id, :user_id => user.id})
+  end
+  
+end
+
+class GroupCategories < ActiveRecord::Base
+  set_table_name "group_categories"
+  has_many :groups
+  has_many :groups, :primary_key => 'id', :foreign_key => 'category_id', :class_name => "Group"
+  validates_uniqueness_of :name
+end

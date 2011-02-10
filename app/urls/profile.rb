@@ -22,19 +22,15 @@ end
 
 
 get '/:username/songs' do
-  @user = User.with_username(params[:username])
-  @layout_info = layout_info("profile", 'songs')
-  @menu_data = profile_home_info(params[:username])
-  @songs = @user.published_songs rescue []
+  @user = get_passed_user
+  @songs = @user.songs
   erb(:"/profile/songs")
 end
 
 
 get '/:username/jams' do
-  user = params[:username]
-  @layout_info = layout_info("profile", 'jams')
-  @menu_data = profile_home_info(user)
-  set_profile_page_info user
+  user = get_passed_user
+  @jams = user.jams
   erb(:"/profile/jams")
 end
 

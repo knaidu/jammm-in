@@ -1,0 +1,7 @@
+<div class='s11'>
+  <div class="manage-group-users">  
+    <% users.each {|user| %>
+      <%= partial(:"/groups/manage/user", :locals => {:user => user}) %>
+    <% } %>
+  </div>
+</div>

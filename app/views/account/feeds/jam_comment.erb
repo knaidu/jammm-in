@@ -7,7 +7,7 @@
     <img src='<%= session_user?.profile_picture_url %>'>
   </div>
   <div class='content'>
-    <div class='bold'><%= comment.user.username %></div><%= vspace %>
+    <div class='bold link' onclick='Navigate.loadContent("/<%= comment.user.username %>")'><%= comment.user.username %></div><%= vspace %>
     "<%= feed.dataObj.comment.comment %>"
     <div class='entity'>
       <div class='entity-image'>

@@ -8,8 +8,7 @@ end
 
 
 get '/artists' do
-  @layout_info = {"middle_panel" => 'homepage/artists', 'left_panel' => 'homepage/left', "right_panel" => "homepage/right"}
-  erb(:"body/structure")
+  erb(:"/homepage/artists")
 end
 
 get '/send_invite' do

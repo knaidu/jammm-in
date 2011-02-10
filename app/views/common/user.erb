@@ -1,14 +1,20 @@
-<% show_actions ||= nil %>
-
-<div class='position-relative' style='min-height: 32px; margin-bottom: 10px'>
-	<div class='position-absolute' style='width: 32px'>
-    <%= profile_picture_thumbnail user %>
-	</div>
-	<div class='position-relative' style='margin-left: 64px'>
-		<div style='text-overflow:ellipsis; overflow:hidden; white-space:nowrap; font-weight: bold'><%= user.username %></div>
-		<%= vspace 10 %>
-		<div>
-      <%= user.displayable_jams.size %> Jams, <%= user.published_songs.size %> Collaborations
+<div class="user highlight-row" onclick='Navigate.loadContent("/<%= user.username %>")'>
+  <div class="profile-picture"><img src='<%= user.profile_picture_url %>'></div>
+  <div class='actions' style='margin-right: 5px; margin-top: 15px'>
+    <img src='/new-ui/forward-arrow.png'>
+  </div>
+  <div class="content">
+    <div class="col1">
+      <div class="bold"><%= user.username %></div><%= vspace 15 %>
+      <%= user.name %> <%= hspace 10 %>
+    </div>
+    <div class="col2">
+      <div class="simple-field w100">Jams:</div><%= user.jams.count %> <%= vspace 13 %>
+      <div class="simple-field w100">Collaboration:</div><%= user.songs.count %> 
+    </div>
+    <div class="col3">
+      <div class="simple-field w100">Followers:</div><%= user.followed_by.count %> <%= vspace 13 %>
+      <div class="simple-field w100">Following:</div><%= user.following.count %> 
     </div>
   </div>
 </div>

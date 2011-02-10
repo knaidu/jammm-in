@@ -1,6 +1,4 @@
-<%= section_header 'Artists' %>
+<%= vspace 10 %>
+<div class="page-header">Artists</div><%= vspace 10 %>
 <%= partial("common/users", :locals => {:users => User.all}) %>
 
-<%= js_start %>
-	setSelectedMenuItem('menu-item-artists')
-<%= js_end %>

@@ -6,11 +6,11 @@ JEvent.runAll = function(){
 }.bind(JEvent);
 
 JEvent.list.addOnHoverRowSelect = function() {
-	$j(".list .row").live("mouseover", function(){
+	$j(".highlight-row").live("mouseover", function(){
 		$j(this).addClass("onhover");
 	});
 	
-	$j(".list .row").live("mouseout", function(){
+	$j(".highlight-row").live("mouseout", function(){
 		$j(this).removeClass("onhover");
 	});
 }.bind(JEvent.list);
