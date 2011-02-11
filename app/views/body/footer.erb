@@ -5,22 +5,6 @@
     <div class='item'><span class='bold'>&middot;</span> Contact</div>
   </div>
   <div class='actions-doc'>
-    <div class='contents'>
-      <div class='icon' onclick='Navigate.loadContent("/account")'>
-        <img src='/new-ui/home-dock.png' height='24px'>
-      </div>
-      <div class='icon' onclick='Navigate.loadContent("/<%= session_user?.username %>")'>
-        <img src='/new-ui/profile-dock.png' height='24px'>
-      </div>
-      <div class='icon' onclick="Doc.Messages.show()">
-        <img src='/new-ui/messages-dock.png' height='24px'>
-      </div>
-      <div class='icon' onclick="Doc.Notifications.show()">
-        <img src='/new-ui/notification-dock-2.png' height='24px'>
-      </div>
-      <div class='icon' onclick="Doc.Playlist.show()" style='margin-top: -5px !important; padding: 0px'>
-        <img src='/new-ui/playlist-dock2.png' height='16px' style='margin-top: -1px'>
-      </div>
-    </div>
+    <%= partial :"/body/doc_icons" %>
   </div>
 </div>

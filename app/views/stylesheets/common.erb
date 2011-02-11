@@ -50,6 +50,7 @@ INPUT[type='button'].down, INPUT[type='submit'].down {border: 1px solid #888}
 .float-right {float: right}
 .w50 {width: 50px}
 .w100 {width: 100px}
+.h30 {height: 30px}
 .s11 {font-size: 11px}
 .hide {display: none}
 .display-inline-block {display: inline-block}
@@ -116,8 +117,8 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
 
 .menu-panel .navigation-bar {width: 102%; color: #666666; height: 70px;}
 .menu-panel .navigation-bar .icon {position: absolute;}
-.menu-panel .navigation-bar .context-icon {position: absolute; left: 20px; width: 32px; margin-top: 10px}
-.menu-panel .navigation-bar .content {position: relative; height: 60px; margin-left: 72px; margin-top: 0px; padding-right: 5px; overflow: hidden;}
+.menu-panel .navigation-bar .context-icon {position: absolute; left: 23px; width: 32px; margin-top: 10px}
+.menu-panel .navigation-bar .content {position: relative; height: 60px; margin-left: 80px; margin-top: 0px; padding-right: 25px; overflow: hidden;}
 .menu-panel .navigation-bar .content .name {font-weight: normal; padding-top: 8px}
 .menu-panel .navigation-bar .content .description {font-weight: normal; font-size: 10px}
 
@@ -149,16 +150,19 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
   height: 20px;
   border: 1px solid #aaa;
   overflow: hidden;
+  background-color: #ebebeb;
 }
+.actions-doc .text {display: inline-block; margin-top: 0px; color: #333; background-color: #aaa; width: 40px; padding: 3px 5px 3px 10px; <%= round_2 %>}
+
+.player .buffer {position: absolute; background-color: #888}
 .player .seek {
-  background-color: white;
+  background-color: #888;
   height: 100%;
   font-size: 10px;
   position: absolute; 
-  width: 100%;
+  width: 0px;
 }
-.player .seek .text {padding: 3px; position: relative; z-index: 3; color: #888; font-weight: bold;}
-.player .seek .position {position: absolute; width: 30%; height: 100%; background-color: #ebebeb}
+.player .text {padding: 3px; position: absolute; z-index: 3; color: black; font-weight: bold; font-size: 11px}
 .player .header {color: white; background-color: #888; font-weight: bold; padding: 3px 5px 5px 5px; font-size: 10px;}
 .player .item {margin-bottom: 10px; border-bottom: 1px solid #ededed; color: #aaa}
 .player .item-onhover {color: #666666}
@@ -166,9 +170,9 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
 .page-header {font-size: 14px; font-weight: bold}
 
 .list {position: relative;}
-.list .row {position: relative; padding-top: 10px; min-height: 80px; overflow: auto; padding-left: 5px; border-bottom: 1px solid #f0f0f0;}
-.list .row .forward-icon {position: absolute; right: 20px; margin-top: 25px}
-.list .row .image {position: absolute; width: 78px; height: 78px; border: 0px solid #dcdcdc; padding: 1px}
+.list .row {position: relative; padding: 10px 0px; min-height: 60px; overflow: auto; padding-left: 5px; border-bottom: 1px solid #f0f0f0;}
+.list .row .forward-icon {position: absolute; right: 20px; margin-top: 15px}
+.list .row .image {position: absolute; width: 54px; height: 54px; border: 0px solid #dcdcdc; padding: 1px}
 .list .row .content {position: relative;}
 .list .row .content .col1 {position: absolute; margin-left: 96px; width: 200px}
 .list .row .content .col2 {position: absolute; margin-left: 316px;}
@@ -223,6 +227,13 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
 .single-jam.jam .content .play-waveform .play {position: absolute; width: 50px; left: -9px}
 .single-jam.jam .content .play-waveform .waveform {padding-top: 0px; position: relative; margin-left: 50px; height: 50px;}
 
+.jam-page.songs {}
+.jam-page.songs .song {position: relative; height: 50px; padding: 5px 0px 10px 0px; font-size: 11px}
+.jam-page.songs .song .play {position: absolute; width: 50px}
+.jam-page.songs .song .name {position: absolute; left: 50px}
+.jam-page.songs .song .content {position: relative; margin-left: 200px}
+
+
 .section-header {background-color: #EBEBEB; color: #333; font-weight: bold; padding: 2px 0px 2px 5px; border-bottom: 1px solid #ccc; margin-bottom: 10px}
 
 .comments {position: relative;}
@@ -249,7 +260,7 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
 .song-page.jams .jam .info .name {font-size: 11px; font-weight: bold}
 .song-page.jams .jam .info .artist {font-size: 10px; font-weight: normal}
 .song-page.jams .jam .info .instrument {font-size: 10px; font-weight: normal}
-.song-page.jams .jam .spectrogram {position: relative; margin-left: 200px; height: 50px}
+.song-page.jams .jam .spectrogram {position: relative; margin-left: 200px; height: 50px;}
 .song-page.jams .jam .spectrogram IMG {height: 100%; width: 100%}
 
 
@@ -300,8 +311,9 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
 .messages .message .content .username {font-weight: bold; font-size: 11px}
 .messages .message .content .body {}
 
-.waveform {background-color: #888; }
-.waveform .seek {position: absolute; width: 0px; background-color: #cc0000};
+.waveform {min-height: 50px; background-color: #bbb;}
+.waveform .buffer {position: absolute; width: 0px; height: 100%; background-color: #888; }
+.waveform .seek {position: absolute; width: 0px; background-color: #cc0000; height: 100%}
 .waveform .seek .waveform-image {border: none}
 
 .tip {color: #777; border: 1px solid #e8e8e8; background-color: #f6f6f6; position: relative; font-size: 11px; padding: 10px}
@@ -363,3 +375,12 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
 .users .user .content .col1 {position: absolute; left: 60px}
 .users .user .content .col2 {position: absolute; left: 300px}
 .users .user .content .col3 {position: absolute; left: 480px}
+
+.button {position: relative; display: inline-block; height: 28px; border: 1px solid #bbb; background-image: url("/new-ui/button-bg.png"); cursor: default;}
+.button .icon {position: absolute; height: 16px; width: 16px; left: 8px; top: 7px}
+.button .icon IMG {height: 100%; width: 100%}
+.button .text {margin-left: 30px; padding: 7px 12px 0px 0px; font-weight: bold; font-size: 11px}
+.button.down {border: 1px solid #888}
+
+.notifications-page {}
+.notifications-page .notification {font-size: 11px; margin-bottom: 10px}

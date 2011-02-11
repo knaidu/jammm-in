@@ -1,6 +1,34 @@
 <div class='context-menu'>
   <div class='item' onclick='Navigate.loadContent("/song/<%= @song.id %>/manage")'>
-      <div class='icon'><img src='/new-ui/test-genre.png' width='24px' class='context-menu-image'></div>
+      <div class='icon'><img src='/new-ui/manage1.png' width='24px' class='context-menu-image'></div>
       <div class='text'>Manage</div>
   </div>  
+  
+  <div class='item container' onclick='Song.create("song", <%= @song.id %>)'>
+      <div class='icon'><img src='/new-ui/collaborate.png' width='24px' class='context-menu-image'></div>
+      <div class='text'>Collaborate</div>
+  </div>
+  
+  <div class='item container' onclick='General.download("<%= @song.file_handle %>")'>
+    <div class='icon'><img src='/new-ui/download.png' width='24px' class='context-menu-image'></div>
+    <div class='text'>Download</div>
+  </div>
+  
+  <% if not session_user?.likes_song?(@song) %>
+    <div class='item container' onclick='Song.Manage.like("<%= @song.id %>")'>
+      <div class='icon'><img src='/new-ui/like.png' width='24px' class='context-menu-image'></div>
+      <div class='text'>Like</div>
+    </div>
+  <% else %>
+    <div class='item container' onclick='Song.Manage.unlike("<%= @song.id %>")'>
+      <div class='icon'><img src='/new-ui/like.png' width='24px' class='context-menu-image'></div>
+      <div class='text'>Unlike</div>
+    </div>  
+  <% end %>
+
+  <div class='item container' onclick='Navigate.loadContent("/song/<%= @song.id %>/manage")'>
+    <div class='icon'><img src='/new-ui/comments.png' width='24px' class='context-menu-image'></div>
+    <div class='text'>Comment</div>
+  </div>
+  
 </div>

@@ -1,24 +1,20 @@
-<div class='main-info'>
-  <div class='bold'>Sign In</div>
-  <%= main_info_hor_line %>
-  <%= vspace %>
-  <div>
-    <form action='/signin/process' method='post'>
-    <div class='float-left' style='width: 100px'>Username</div><input type='text' name='username'><%= vspace %>
-    <div class='float-left' style='width: 100px'>Password</div><input type='password' name='password'></td><%= vspace %>
-    <input type='submit' value='Sign In'></td>
+<div class='header'>Login</div>
+  <div style='padding: 5px'>
+    <form action="/signin/process" method='post' onsubmit='General.login(); return false'>
+    
+      <div class="small-field">Username:</div><%= vspace %>
+      <input type='text' name='username'> <%= vspace 10 %>
+      <div class="small-field">Password</div><%= vspace %>
+      <input type='password' name='password'>
+      <%= vspace 20 %>
+      
+      <div class="button" style='width: 70px'>
+        <div class="icon"><img src='/new-ui/collaborate.png'></div>
+        <div class="text">Login</div>
+      </div>
+      
+      <input type='submit' style='visibility: hidden'>
+      <div class="error-response"></div>
     </form>
   </div>
 </div>
-
-<%= vspace 20 %>
-
-<% if params[:invalid] == "true" %>
-  <div class='failure-message'>
-    Invalid username or password entered. Please try again.
-  </div>
-<% end %>
-
-<%= js_start %>
-	setSelectedMenuItem('menu-item-signin')
-<%= js_end %>

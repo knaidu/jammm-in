@@ -1,7 +1,14 @@
 <%= vspace 10 %>
-<%= render_state({:name => "MANAGE - " + @jam.name, :description => @jam.description, :url => "/jam/#{@jam.id}/manage"}) %>
+<%= render_state({
+  :name => @jam.name, 
+  :description => @jam.description, 
+  :url => "/jam/#{@jam.id}/manage",
+  :context_menu => false,
+  :img => "/new-ui/manage1.png"
+}) %>
 <% jam = @jam %>
-
+<div class="page-header">Jams <span class="slash">/</span> <%= @jam.name %> <span class="slash">/</span> Edit</div>
+<%= vspace 20 %>
 <div class='single-jam jam'>
   <div class='image'>
     <img src='/new-ui/song2.jpg' width='78px' height='78px'>
@@ -21,8 +28,18 @@
   </div>
 </div>
 
-<div class='align-right'>
-  <input type='button' value='Publish'>
+<div class='position-relative h30'>
+  <% if not @jam.published %>
+    <div class="button" style='position: absolute; right: 10px' onclick='Jam.Manage.publish("<%= @jam.id %>")'>
+      <div class="icon"><img src='/new-ui/generic-add.png'></div>
+      <div class="text">Publish</div>
+    </div>
+  <% else  %>
+    <div class="button" style='position: absolute; right: 10px' onclick='Jam.Manage.unpublish("<%= @jam.id %>")'>
+      <div class="icon"><img src='/new-ui/generic-delete.png'></div>
+      <div class="text">Publish</div>
+    </div>
+  <% end %>
 </div>
 
 <%= vspace 20 %>

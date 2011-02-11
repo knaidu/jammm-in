@@ -67,25 +67,18 @@ JEvent.list.highlightLinks = function() {
 }.bind(JEvent.list);
 
 JEvent.list.mouseDownOnButton = function() {
-	$j("input[type=button]").live('mousedown', function() {
-		$j(this).addClass("down");
-	});
-	$j("input[type=submit]").live('mousedown', function() {
+	$j(".button").live('mousedown', function() {
 		$j(this).addClass("down");
 	});
 	
-	$j("input[type=button]").live('mouseup', function() {
+	$j(".button").live('mouseup', function() {
 		$j(this).removeClass("down");
 	});
-	$j("input[type=button]").live('mouseout', function() {
+
+	$j(".button").live('mouseout', function() {
 		$j(this).removeClass("down");
 	});
-	$j("input[type=submit]").live('mouseup', function() {
-		$j(this).removeClass("down");
-	});
-	$j("input[type=submit]").live('mouseout', function() {
-		$j(this).removeClass("down");
-	});
+
 }.bind(JEvent.list);
 
 JEvent.list.onClickPlay = function() {

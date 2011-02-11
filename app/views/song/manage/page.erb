@@ -9,8 +9,14 @@
     <div class='name'><%= @song.name %></div>
     <div class='artist'><%= @song.artists.map(&:username).join(", ") %></div>
     <div class='play-waveform'>
-      <div class='play'><img src='/new-ui/play.png'></div>
-      <div class='waveform'><img src='/new-ui/waveform.png'></div>
+      <% waveformid = rand_id %>
+      <div style='position: absolute; left: 0px;' class='play' <%= play_info @song %> waveformid='<%= waveformid %>'><img src='/new-ui/play.png'></div>
+      <div class='waveform' style='position: relative; margin-left: 50px' id="<%= waveformid %>">
+        <div class="buffer"></div>
+        <div class='seek'>
+          <img src='<%= @song.file_data.waveform_url rescue "-" %>' class='waveform-image'>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -18,9 +24,15 @@
 <%= vspace 10 %>
 <div class='align-right'>
   <% if @song.published? %>
-    <input type='button' value='Unpublish' onclick='Song.Manage.unpublish("<%= song.id %>")'>
+    <div class="button" onclick='Song.Manage.unpublish("<%= song.id %>")'>
+      <div class="icon"><img src='/new-ui/generic-delete.png'></div>
+      <div class="text">Unpublish</div>
+    </div>
   <% else %>
-    <input type='button' value='Publish' onclick='Song.Manage.publish("<%= song.id %>")'>
+  <div class="button" onclick='Song.Manage.publish("<%= song.id %>")'>
+    <div class="icon"><img src='/new-ui/generic-add.png'></div>
+    <div class="text">Publish</div>
+  </div>
   <% end %>
 </div>
 
@@ -28,7 +40,10 @@
 <div class='section-header'>Jams</div>
 <%= partial :"/song/manage/jams", :locals => {:song_jams => song.song_jams.sort_by(&:id)} %>
 <div style='text-align: center; background-color: #e7e7e7; padding: 5px; '>
-<input type='button' value='Preview' onclick='Song.Manage.flatten("<%= @song.id %>")'>
+  <div class="button" onclick='Song.Manage.flatten("<%= @song.id %>")'>
+    <div class="icon"><img src='/new-ui/collaborate.png'></div>
+    <div class="text">Preview</div>
+  </div>
 </div>
 
 

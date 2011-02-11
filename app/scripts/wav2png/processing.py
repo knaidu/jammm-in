@@ -284,12 +284,12 @@ class WaveformImage(object):
     Given peaks and spectral centroids from the AudioProcessor, this class will construct
     a wavefile image which can be saved as PNG.
     """
-    def __init__(self, image_width, image_height, palette=1):
+    def __init__(self, image_width, image_height, palette=1, image_red=255, image_green=255, image_blue=255):
         if image_height % 2 == 0:
             raise AudioProcessingException, "Height should be uneven: images look much better at uneven height"
 
         if palette == 1:
-            background_color = (255,255,255)
+            background_color = (image_red or 255,image_green or 255,image_blue or 255)
             colors = [
                         (50,0,200),
                         (0,220,80),
@@ -297,19 +297,21 @@ class WaveformImage(object):
                         (255,70,0),
                      ]
         elif palette == 2:
-            background_color = (255,255,255)
+            background_color = (image_red or 255,image_green or 255,image_blue or 255)
             colors = [self.color_from_value(value/29.0) for value in range(0,30)]
         elif palette == 3:
-            background_color = (213, 217, 221)
+            background_color = (image_red or 255,image_green or 255,image_blue or 255)
             colors = map( partial(desaturate, amount=0.7), [
                         (50,0,200),
                         (0,220,80),
                         (255,224,0),
                      ])
         elif palette == 4:
-            background_color = (213, 217, 221)
+            background_color = (image_red or 255,image_green or 255,image_blue or 255)
             colors = map( partial(desaturate, amount=0.8), [self.color_from_value(value/29.0) for value in range(0,30)])
-            
+
+        background_color = (image_red or 255,image_green or 255,image_blue or 255)
+
         self.image = Image.new("RGBA", (image_width, image_height), background_color)
         
         self.image_width = image_width
@@ -357,7 +359,7 @@ class WaveformImage(object):
             g = int((1-alpha)*current_pix[1] + alpha*color[1])
             b = int((1-alpha)*current_pix[2] + alpha*color[2])
             
-            self.pix[x, y_max_int + 1] = (r,g,b)
+            self.pix[x, y_max_int + 1] = (255,255,255,0)
             
         y_min = min(y1, y2)
         y_min_int = int(y_min)
@@ -370,13 +372,13 @@ class WaveformImage(object):
             g = int((1-alpha)*current_pix[1] + alpha*color[1])
             b = int((1-alpha)*current_pix[2] + alpha*color[2])
             
-            self.pix[x, y_min_int - 1] = (r,g,b)
+            self.pix[x, y_min_int - 1] = (255,255,255,0)
             
     def save(self, filename):
         # draw a zero "zero" line
-        a = 25
-        for x in range(self.image_width):
-            self.pix[x, self.image_height/2] = tuple(map(lambda p: p+a, self.pix[x, self.image_height/2]))
+        #a = 25
+       # for x in range(self.image_width):
+        #    self.pix[x, self.image_height/2] = tuple(map(lambda p: p+a, self.pix[x, self.image_height/2]))
         
         self.image.save(filename)
         
@@ -439,14 +441,15 @@ class SpectrogramImage(object):
         self.image.transpose(Image.ROTATE_90).save(filename, quality=quality)
 
 
-def create_wave_images(input_filename, output_filename_w, output_filename_s, image_width, image_height, fft_size, progress_callback=None):
+def create_wave_images(input_filename, output_filename_w, output_filename_s, image_width, image_height, fft_size, progress_callback=None, image_red=255, image_green=255, image_blue=255):
     """
     Utility function for creating both wavefile and spectrum images from an audio input file.
     """
     processor = AudioProcessor(input_filename, fft_size, numpy.hanning)
     samples_per_pixel = processor.audio_file.nframes / float(image_width)
     
-    waveform = WaveformImage(image_width, image_height)
+    waveform = WaveformImage(image_width, image_height,1, image_red, image_green, image_blue)
+    background_color = (image_red or 255,image_green or 255,image_blue or 255)
     #spectrogram = SpectrogramImage(image_width, image_height, fft_size)
     
     for x in range(image_width):

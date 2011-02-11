@@ -1,7 +1,7 @@
 var Layout = {ContextMenu: {}, RightPanel: {}};
 var Navigate = {states: []};
 var Modal = {};
-var Doc = {Player: {}, Playlist: {}, Notifications: {}, Messages: {}};
+var Doc = {Player: {}, Playlist: {}, Notifications: {}, Messages: {}, Login: {}};
 var JEvent = {list: {}}; // 'list' is treated as an array. In the sense, on load all keys in 'list' are itereated over and run.
 var General = {Comment: {}, Tabs: {}, List: {}};
 
@@ -63,11 +63,19 @@ Layout.ContextMenu.get = function() {
 	return $j("#context-menu");
 }.bind(Layout.ContextMenu);
 
+Layout.ContextMenu.empty = function() {
+	this.get().html("");
+}.bind(Layout.ContextMenu);
+
 Layout.ContextMenu.load = function(url) {
 	var onSuccess = function() {
 		window.setTimeout(this.drawTree, 400)
 	}.bind(this);
 	updateEl(this.get()[0], url, {onSuccess: onSuccess});
+}.bind(Layout.ContextMenu);
+
+Layout.ContextMenu.reload = function() {
+	this.load(Navigate.currentState.context_menu);
 }.bind(Layout.ContextMenu);
 
 Layout.ContextMenu.insertLoadingText = function() {
@@ -165,7 +173,10 @@ Navigate.loadContent = function(url){
 Navigate.setCurrentState = function(state){
 	this.currentState = new State(state);
 	
-	if(this.currentState.context_menu){
+	if(this.currentState.context_menu == 'false'){
+		Layout.ContextMenu.empty();
+	}
+	else if(this.currentState.context_menu){
 		Layout.ContextMenu.insertLoadingText();
 		Layout.ContextMenu.load(this.currentState.context_menu);
 	}
@@ -204,6 +215,7 @@ Navigate.setBackButton = function(){
 	$j(".navigation-bar .content .name").html(state.name);
 	$j(".navigation-bar .content .description").html(state.description);
 	$j(".navigation-bar .content .url").html(state.url);
+	$j(".navigation-bar .context-icon IMG")[0].src = state.img;
 }.bind(Navigate);
 
 Navigate.back = function(){
@@ -314,6 +326,11 @@ Doc.Notifications.show = function() {
 Doc.Messages.show = function() {
 	Doc.Player.expand("/dock/messages");
 }.bind(Doc.Messages);
+
+
+Doc.Login.show = function() {
+	Doc.Player.expand("/signin");
+}.bind(Doc.Login);
 
 
 /* General */
@@ -437,3 +454,37 @@ General.List.filter.monitor = function(el) {
 	};
 	$j(el).keyup(onkeyup)
 }.bind(General.List.filter);
+
+General.resizeWaveforms = function() {
+	var resize = function(el) {
+		var parent = $j(el).parents()[1];
+		var width = parent.getWidth();
+		var height = parent.getHeight();
+		$j(el).css({width: width, height: height});
+		$j(parent).css({width: width, height: height});
+		el.setAttribute("resized", true)
+	};
+	var imgs = $j(".waveform-image[resized!=true]");
+	$A(imgs).each(function(i){resize(i)});
+}.bind(General);
+
+General.download = function(fileHandle) {
+	window.location = "/file/" + fileHandle;
+}.bind(General);
+
+General.login = function() {
+	var onSuccess = function() {
+		var el = $j(".actions-doc")[0];
+		updateEl(el, "/partial/body/doc_icons");
+		Doc.Player.collapse();
+	};
+	
+	var onFailure = function(t) {
+		$j(".error-response").html(t.responseText);
+	};
+	var params = {
+		username: $j("[name=username]").val(),
+		password: $j("[name=password]").val()
+	};
+	call('/signin/process', {parameters: params, method: 'post', onSuccess: onSuccess, onFailure: onFailure});
+}.bind(General);

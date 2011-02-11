@@ -1,20 +1,3 @@
-<% total_unread = session_user?.unread_notifications.size %>
-
-<%= section_header 'Unread notifications' %>
-<%= partial("/account/notifications/notifications", :locals => {:notifications => session_user?.unread_notifications}) %>
-<% if session_user?.unread_notifications.empty? %>
-  <div class='text'>You have no unread notifications</div>
-<% end %>
-
-
-<%= vspace 20 %>
-<%= partial(
-  "/account/notifications/old_notifications", 
-  :section_header => SectionHeader.new('Old (read) notifications'), 
-  :collapsible => true, 
-  :collapsed => true,
-  :locals => {:notifications => session_user?.read_notifications(20)}
-) %>
-
-<!-- Marks all user notifications as read -->
-<% session_user?.mark_notifications_as_read if total_unread > 0 %>
+<div class="notifications-page">
+  <%= partial("/account/notifications/notifications", :locals => {:notifications => session_user?.notifications(30)}) %>
+</div>

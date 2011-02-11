@@ -2,7 +2,8 @@
   :name => "#{@user.username}", 
   :description => "", 
   :url => "/#{@user.username}",
-  :context_menu => "/#{@user.username}/context_menu"
+  :context_menu => "/#{@user.username}/context_menu",
+  :img => "#{@user.profile_picture_url}"
 }) %>
 
 <h3>Artists <span class='slash'>/</span> <%= @user.username %></h3>

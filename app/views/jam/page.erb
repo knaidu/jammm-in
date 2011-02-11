@@ -6,6 +6,8 @@
   :right_panel => "/partial/jam/right_panel"
 }) %>
 <%= vspace 10 %>
+<div class="page-header">Jams <span class="slash">/</span> <%= @jam.name %></div>
+<%= vspace 20 %>
 <div class='single-jam jam'>
   <div class='image'>
     <img src='/new-ui/song2.jpg' width='78px' height='78px'>
@@ -14,10 +16,11 @@
     <div class='name'><%= @jam.name %></div>
     <div class='artist'><%= @jam.creator.name %></div>
     <div class='play-waveform'>
-      <% seek_id = rand_id %>
-      <div class='play' <%= play_info @jam %> seekid='<%= seek_id %>'><img src='/new-ui/play.png'></div>
-      <div class='waveform'>
-        <div class='seek' id='<%= seek_id %>'>
+      <% waveformid = rand_id %>
+      <div class='play' <%= play_info @jam %> waveformid='<%= waveformid %>'><img src='/new-ui/play.png'></div>
+      <div class='waveform' id="<%= waveformid %>">
+        <div class="buffer"></div>
+        <div class='seek'>
           <img src='<%= @jam.file_data.waveform_url rescue "-" %>' class='waveform-image'>
         </div>
       </div>
@@ -47,12 +50,7 @@
 
 <%= vspace 20 %>
 <div class='section-header'>Collaborations</div>
-<div style='position: relative; min-height: 40px;'>
-  <img src='/new-ui/play.png' style='position: absolute'>
-  <div style='margin-left: 50px; padding-top: 5px; font-size: 11px; font-weight: bold'>Horton Bay</div>
-</div>
-<div class='more'>more</div>
-
+<%= partial :"/jam/songs", :locals => {:songs => @jam.songs} %>
 
 <%= vspace 20 %>
 <div class='section-header'>Comments</div>

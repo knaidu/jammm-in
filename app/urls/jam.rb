@@ -11,7 +11,8 @@ post '/jam/create/submit' do
   file = params[:file][:tempfile]
   puts params[:file].inspect
   instrument = Instrument.find(param?(:instrument))
-  jam = Jam.construct_jam(@session_user, param?(:name), instrument, param?(:file))
+  genre = Genre.find(param?(:genre))
+  jam = Jam.construct_jam(@session_user, param?(:name), instrument, genre, param?(:description), param?(:file))
   puts jam.inspect
   @jam = jam
   erb(:"/jam/created")
@@ -126,14 +127,14 @@ get '/jam/:jam_id/manage/file_actions' do
   erb :'jam/manage/file_actions'
 end
 
-get '/jam/:jam_id/manage/publish' do
+post '/jam/:jam_id/manage/publish' do
   monitor {
     get_passed_jam.publish
     "Jam successfully published"
   }
 end
 
-get '/jam/:jam_id/manage/unpublish' do
+post '/jam/:jam_id/manage/unpublish' do
   get_passed_jam.unpublish ? "Jam successfully unpublished" : "Jam could not be unpublished"
   erb(:"jam/manage/upload")
 end
@@ -161,13 +162,12 @@ post '/jam/:jam_id/manage/update_information' do
   ret ? "Successfully updated JAM information" : "Failed to update JAM information"
 end
 
-get '/jam/:jam_id/manage/like' do
+post '/jam/:jam_id/manage/like' do
   jam = get_passed_jam
   jam.like(session_user) ? "Successfully liked jam" : "Error in liking jam"
 end
 
-
-get '/jam/:jam_id/manage/unlike' do
+post '/jam/:jam_id/manage/unlike' do
   jam = get_passed_jam
   jam.unlike(session_user) ? "Successfully unliked jam" : "Error in unliking jam"
 end
@@ -199,4 +199,9 @@ post '/jam/:jam_id/manage/set_policy' do
   monitor {
     jam = get_passed_jam.set_policy param?(:policy)
   }
+end
+
+get '/jam/:jam_id/manage/publish_popup' do
+  @jam = get_passed_jam
+  erb(:"/jam/manage/publish_popup")
 end

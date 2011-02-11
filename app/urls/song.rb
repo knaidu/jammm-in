@@ -176,12 +176,12 @@ get '/song/:song_id/manage/delete_song' do
   song.destroy ? "Successfully removed song" : "Error in removing song"
 end
 
-get '/song/:song_id/manage/like' do
+post '/song/:song_id/manage/like' do
   song = get_passed_song
   song.like(session_user) ? "Successfully liked song" : "Error in liking song"
 end
 
-get '/song/:song_id/manage/unlike' do
+post '/song/:song_id/manage/unlike' do
   song = get_passed_song
   song.unlike(session_user) ? "Successfully unliked song" : "Error in unliking song"
 end

@@ -19,3 +19,7 @@ Group.Manage.updatePicture.done = function() {
 	Navigate.reload();
 	Modal.slowAlert("Your schools profile picture has been successfully changed.");
 }.bind(Group.Manage.updatePicture);
+
+Group.Manage.removeUser = function(id) {
+	
+}.bind(Group.Manage);

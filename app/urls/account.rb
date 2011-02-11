@@ -110,8 +110,7 @@ end
 
 get '/account/notifications' do
   logged_in? {
-    @layout_info = {"left_panel" => "account/menu", "middle_panel" => "account/notifications/page"}  
-    erb(:"body/structure")
+    erb(:"account/notifications/page")
   }
 end
 

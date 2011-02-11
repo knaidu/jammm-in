@@ -1,5 +1,14 @@
 var Song = {Manage: {}};
 
+Song.Manage.like = function(id) {
+	call("/song/" + id + "/manage/like", {onSuccess: Layout.ContextMenu.reload, method: 'post'});
+}.bind(Song.Manage);
+
+Song.Manage.unlike = function(id) {
+	call("/song/" + id + "/manage/unlike", {onSuccess: Layout.ContextMenu.reload, method: 'post'});
+}.bind(Song.Manage);
+
+
 Song.create = function(musicType, musicId) {
 	var url = formatUrl('/song/create', {music_type: musicType, music_id: musicId});
 	Modal.load(url, {minHeight: "210px"});

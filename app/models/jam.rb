@@ -31,7 +31,7 @@ class Jam < ActiveRecord::Base
     Feed.delete_by_data("jam_id", self.id)
   end
   
-  def self.construct_jam(user, name, instrument, file_details)
+  def self.construct_jam(user, name, instrument, genre, description, file_details)
     puts "FILE: " + file_details.inspect
     regex = DATA["name_regex"]
     raise "The name can accept only alphabets,numbers, '-' and '_'" if not eval(regex).match(name)
@@ -39,10 +39,12 @@ class Jam < ActiveRecord::Base
       :name => name,
       :registered_user_id => user.id,
       :created_at => Time.now,
-      :added_by_user_id => user.id
+      :added_by_user_id => user.id,
+      :description => description
     })
     jam.update_file(file_details)
     jam.update_instrument(instrument)
+    ContainsGenre.add(genre, "jam", id)
     jam
   end
   
@@ -199,6 +201,11 @@ class Jam < ActiveRecord::Base
     Jam.find(self.origin_jam_id) if origin_jam_id
   end
   
+  # Means itself is adam
+  def adam?
+    true unless adam
+  end
+  
   # Points to the ROOT of a Jam's Lineage
   def adam  
     return nil unless (jam = self.father)
@@ -219,6 +226,11 @@ class Jam < ActiveRecord::Base
     jams = []
     jams = self.children
     jams + jams.map{ |child| child.descendants}.flatten
+  end
+  
+  def songs
+    list = self.adam? ? ([self] + self.children) : ([self] + self.adam.children)
+    list.map(&:song).compact.uniq 
   end
   
   def lineage_song_count

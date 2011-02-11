@@ -1,0 +1,16 @@
+<% waveformid = rand_id %>
+<div class="song">
+  <div class='play' <%= play_info @jam %> waveformid='<%= waveformid %>'><img src='/new-ui/play.png'></div>
+  <div class="name">
+    <div class="bold" onClick='Navigate.loadContent("/song/<%= song.id %>")'><%= song.name %></div><%= vspace 10 %>
+    <div class=""><%= song.creator.username %></div>
+  </div>
+  <div class="content">
+    <div class='waveform' id="<%= waveformid %>">
+      <div class="buffer"></div>
+      <div class='seek'>
+        <img src='<%= song.file_data.waveform_url rescue "-" %>' class='waveform-image'>
+      </div>
+    </div>
+  </div>
+</div>

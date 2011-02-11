@@ -9,8 +9,14 @@
     <div class='name'><%= @song.name %></div>
     <div class='artist'><%= @song.creator.name %></div>
     <div class='play-waveform'>
-      <div class='play'><img src='/new-ui/play.png'></div>
-      <div class='waveform'><img src='/new-ui/waveform.png'></div>
+      <% waveformid = rand_id %>
+      <div style='position: absolute; left: 0px;' class='play' <%= play_info @song %> waveformid='<%= waveformid %>'><img src='/new-ui/play.png'></div>
+      <div class='waveform' style='position: relative; margin-left: 50px' id="<%= waveformid %>">
+        <div class="buffer"></div>
+        <div class='seek'>
+          <img src='<%= @song.file_data.waveform_url rescue "-" %>' class='waveform-image'>
+        </div>
+      </div>
     </div>
   </div>
 </div>

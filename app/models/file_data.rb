@@ -35,15 +35,19 @@ class FileData < ActiveRecord::Base
     wav_path = file_path + ".wav"
     cmd = "sox #{file_path} #{wav_path}"
     run(cmd)
-    cmd = "python #{ENV["WEBSERVER_ROOT"]}/scripts/wav2png/wav2png.py #{wav_path} -h 41 -w 700 -a #{path}"
+    cmd = "python #{ENV["WEBSERVER_ROOT"]}/scripts/wav2png/wav2png.py #{wav_path} -h 41 -w 700 -a #{path} -r 255 -g 255 -b 255"
     run(cmd)
-    File.delete(wav_path)
     filedata.append({:waveform_path => path})
     filedata.save
+    File.delete(wav_path)
+    puts filedata.inspect
+    filedata
   end
   
   def self.find_by_file_handle_or_create(obj)
-    self.find_by_file_handle(obj.file_handle) || self.new 
+    filedata = self.find_by_file_handle(obj.file_handle) || self.new 
+    filedata.file_handle = obj.file_handle
+    filedata
   end
   
   def self.fetch(file_handle)

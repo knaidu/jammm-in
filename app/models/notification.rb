@@ -30,6 +30,7 @@ class Notification < ActiveRecord::Base
   end
   
   def icon
+    return "/new-ui/collaborate.png"
     self.class::ICON[self.notification_type.to_sym] || self.notification_type.to_sym
   end
   

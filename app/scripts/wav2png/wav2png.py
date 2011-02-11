@@ -11,6 +11,10 @@ parser.add_option("-h", "--height", action="store", dest="image_height", type="i
 parser.add_option("-f", "--fft", action="store", dest="fft_size", type="int", help="fft size, power of 2 for increased performance (default %default)")
 parser.add_option("-p", "--profile", action="store_true", dest="profile", help="run profiler and output profiling information")
 
+parser.add_option("-r", "--red", action="store", dest="image_red", type="int", help="image background color red component (default %default)")
+parser.add_option("-g", "--green", action="store", dest="image_green", type="int", help="image background color green component (default %default)")
+parser.add_option("-b", "--blue", action="store", dest="image_blue", type="int", help="image background color blue component (default %default)")
+
 parser.set_defaults(output_filename_w=None, output_filename_s=None, image_width=500, image_height=171, fft_size=2048)
 
 (options, args) = parser.parse_args()
@@ -32,7 +36,7 @@ for input_file in args:
     output_file_w = options.output_filename_w or input_file + "_w.png"
     output_file_s = options.output_filename_s or input_file + "_s.jpg"
     
-    args = (input_file, output_file_w, output_file_s, options.image_width, options.image_height, options.fft_size, progress_callback)
+    args = (input_file, output_file_w, output_file_s, options.image_width, options.image_height, options.fft_size, progress_callback, options.image_red, options.image_green, options.image_blue )
 
     print "processing file %s:\n\t" % input_file,
 

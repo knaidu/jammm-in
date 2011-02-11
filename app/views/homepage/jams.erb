@@ -1,3 +1,7 @@
-<%= render_state({:name => "Jams", :description => "", :url => "/jams"}) %>
+<%= render_state({:name => "Jams", :description => "", :url => "/jams", :context_menu => false, :img => "/new-ui/create-jam.png"}) %>
+<%= vspace 10 %>
+<div style='margin-left: 10px'>
+  <div class='page-header'>Jams</div> 
+</div>
 <% jams = Jam.all.sort_by(&:id).reverse %>
 <%= partial :"/common/jams", :locals => {:jams => jams} %>
