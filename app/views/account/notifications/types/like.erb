@@ -1,1 +1,5 @@
-liked
+<% about = notification.data.jam ? "jam" : "song" %> 
+<span class="bold"><%= notification.data.user.username %></span> likes your 
+<%= about %>
+<% music = eval("notification.data.#{about}") %>
+<span class="bold"><%= music.name %></span>

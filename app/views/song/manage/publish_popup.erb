@@ -1,25 +1,25 @@
-Your jam has been successfully created. Click 'publish' to publish the jam.
+Your song has been successfully mixed. Click 'publish' to publish the song.
 <%= vspace 10 %>
 <div>
   <div class='play-waveform' style='position: relative'>
     <% waveformid = rand_id %>
-    <div style='position: absolute; left: 0px;' class='play' <%= play_info @jam %> waveformid='<%= waveformid %>'><img src='/new-ui/play.png'></div>
+    <div style='position: absolute; left: 0px;' class='play' <%= play_info @song, true %> waveformid='<%= waveformid %>'><img src='/new-ui/play.png'></div>
     <div class='waveform' style='position: relative; margin-left: 50px' id="<%= waveformid %>">
       <div class="buffer"></div>
       <div class='seek'>
-        <img src='<%= @jam.file_data.waveform_url rescue "-" %>' class='waveform-image'>
+        <img src='<%= @song.flattened_file_data.waveform_url rescue "-" %>' class='waveform-image'>
       </div>
     </div>
   </div>
 </div>
 
 <div class='position-relative'>
-  <div class="button" style='position: absolute; right: 10px' onclick='Jam.Manage.publishPopup.publish("<%= @jam.id %>")'>
+  <div class="button" style='position: absolute; right: 10px' onclick='Song.Manage.publishPopup.publish("<%= @song.id %>")'>
     <div class="icon"><img src='/new-ui/generic-add.png' height='16px'></div>
     <div class="text">Publish</div>
   </div>
   
-  <div class="button" style='position: absolute; right: 110px'  onclick='Jam.Manage.publishPopup.publishLater("<%= @jam.id %>")'>
+  <div class="button" style='position: absolute; right: 110px'  onclick='Song.Manage.publishPopup.publishLater("<%= @song.id %>")'>
     <div class="icon"><img src='/new-ui/generic-delete.png' height='16px'></div>
     <div class="text">Publish Later</div>
   </div>

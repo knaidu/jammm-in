@@ -16,8 +16,16 @@ get "/file/:file_handle" do
   end
 
 end
+  
 
 get "/file/waveform/:file_handle" do
+  puts "FILE HANDLE: #{param?(:file_handle)}"
   file_data = FileData.fetch(param?(:file_handle))
+  puts "FILE #{file_data.inspect}"
   send_file(file_data.waveform_path)
+end
+
+get "/file/waveform2/:file_handle" do
+  file_data = FileData.fetch(param?(:file_handle))
+  send_file(file_data.waveform_path_2)
 end

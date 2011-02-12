@@ -1,7 +1,6 @@
 <div class='notification'>
-  <div class='icon position-absolute' style='left: 0px; width: 20px; height: 20px; overflow: hidden'>
-    <img src="<%= notification.icon %>" height='24px'>
-    <%= notification.icon %>
+  <div class='icon position-absolute' style='left: 0px; width: 16px; height: 16px; overflow: hidden'>
+    <img src="<%= notification.icon[:url] %>" height='16px' style="margin-left: -<%= (notification.icon[:index] * 16 rescue 0) %>px">
   </div>
   <div style='margin-left: 25px'>
     <%= partial("/account/notifications/types/#{notification.notification_type}", :locals => {:notification => notification}) %>

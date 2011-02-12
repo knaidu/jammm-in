@@ -140,8 +140,10 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
   width: <%= (right_panel_width.px - 10).px %>; 
   right: 5px; 
 }
-.actions-doc .contents {padding: 3px 0px 0px 5px}
-.actions-doc .icon {overflow: hidden; display: inline-block; overflow: hidden; height: 24px; width: 24px; margin-right: 18px; cursor: pointer}
+.actions-doc .contents {margin-left: 3px; overflow: auto; height: <%= footer_height %>}
+.actions-doc .contents .item {float: left; height: 20px; overflow: auto; margin-right: 13px; height: 100%; cursor: pointer}
+.actions-doc .contents .item .text {margin-top: 5px; padding: 4px 10px; <%= round_2 %>; background-color: #bbb; color: #555; font-size: 11px}
+.actions-doc .contents .item .icon {margin-top: 3px}
 .player {
   position: fixed; 
   bottom: <%= (footer_height.px + 1).px %>; 
@@ -152,7 +154,7 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
   overflow: hidden;
   background-color: #ebebeb;
 }
-.actions-doc .text {display: inline-block; margin-top: 0px; color: #333; background-color: #aaa; width: 40px; padding: 3px 5px 3px 10px; <%= round_2 %>}
+.actions-doc
 
 .player .buffer {position: absolute; background-color: #888}
 .player .seek {
@@ -193,6 +195,9 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
 
 .onhover-border-shadow {border: 1px solid #888888; <%= shadow %>}
 
+.show-all {font-size: 11px; position: absolute; bottom: 0px; height: 15px; background-color: #ccc; padding: 3px; width: 100%; text-align: center; cursor: pointer}
+.show-all:hover {background-color: #aaa}
+
 .playlist {position: relative; padding: 5px}
 .playlist .item {position: relative; min-height: 50px; padding-bottom: 5px;}
 .playlist .item .image {position: absolute; width: 48px; opacity: 0.8}
@@ -201,10 +206,9 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
 .playlist .item .contents .artist {font-weight: normal; font-size: 10px}
 
 .notifications {position: relative; padding: 5px}
-.notifications .item {position: relative; min-height: 50px; padding-bottom: 5px;}
-.notifications .item .image {position: absolute; width: 48px; opacity: 0.8}
-.notifications .item .contents {position: relative; margin-left: 54px; color: inherit; font-weight: normal; font-size: 10px}
-.notifications .item .contents .name {margin-bottom: 2px}
+.notifications .item {position: relative; min-height: 20px; padding-bottom: 5px;}
+.notifications .item .image {position: absolute; width: 16px; opacity: 0.8; overflow: hidden}
+.notifications .item .contents {position: relative; margin-left: 30px; color: inherit; font-weight: normal; font-size: 10px}
 
 .messages {position: relative; padding: 5px}
 .messages .item {position: relative; min-height: 50px; padding-bottom: 5px;}
@@ -295,7 +299,7 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
 .song-manage-page.jams .jam .info .name {display: inline-block; font-size: 11px; font-weight: bold;}
 .song-manage-page.jams .jam .info .artist {display: inline-block; font-size: 10px}
 .song-manage-page.jams .jam .info .active {margin-left: 20px; display: inline-block; font-size: 10px; color: green}
-.song-manage-page.jams .jam .waveform {position: relative; margin-left: 200px; margin-right: 50px; height: 50px;}
+.song-manage-page.jams .jam .waveform {position: relative; margin-left: 200px; margin-right: 100px; height: 50px;}
 .song-manage-page.jams .jam .volume {position: absolute; margin-left: 120px; height: inherit}
 .song-manage-page.jams .jam .actions {position: absolute; right: 0px; font-size: 11px}
 .song-manage-page.jams .jam .volume .icon {height: 24px; width: 24px; padding: 5px; margin-left: -5px}
@@ -378,9 +382,9 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
 
 .button {position: relative; display: inline-block; height: 28px; border: 1px solid #bbb; background-image: url("/new-ui/button-bg.png"); cursor: default;}
 .button .icon {position: absolute; height: 16px; width: 16px; left: 8px; top: 7px}
-.button .icon IMG {height: 100%; width: 100%}
+.button .icon IMG {}
 .button .text {margin-left: 30px; padding: 7px 12px 0px 0px; font-weight: bold; font-size: 11px}
 .button.down {border: 1px solid #888}
 
-.notifications-page {}
-.notifications-page .notification {font-size: 11px; margin-bottom: 10px}
+.notifications-page {position: relative}
+.notifications-page .notification {position: relative; margin-left: 10px; font-size: 11px; margin-bottom: 10px}

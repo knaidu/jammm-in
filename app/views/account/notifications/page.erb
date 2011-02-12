@@ -1,3 +1,22 @@
-<div class="notifications-page">
-  <%= partial("/account/notifications/notifications", :locals => {:notifications => session_user?.notifications(30)}) %>
-</div>
+<%= render_state({
+  :name => "Home", 
+  :description => "My Home Page", 
+  :url => "/account/home", 
+  :context_menu => "/partial/account/context_menu",
+  :right_panel => "/partial/account/right_panel"
+}) %>
+
+<%= vspace 10 %>
+<div class="page-header">Account <span class="slash">/</span> Notifications</div>
+<%= vspace 20 %>
+<% notifications =  session_user?.notifications.first 50 %>
+
+<% groups = group_notifications notifications %>
+<% groups.each {|group| %>
+  <% next if group[:list].empty? %>
+  <div class="bold s11 gray"><%= group[:name] %></div><%= vspace 10 %>
+  <div class="notifications-page">
+    <%= partial("/account/notifications/notifications", :locals => {:notifications => group[:list] }) %>
+  </div>
+  <%= vspace 15 %>
+<% } %>

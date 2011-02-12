@@ -18,6 +18,7 @@ class Song < ActiveRecord::Base
   )
   
   has_one :file_data, :primary_key => 'file_handle', :foreign_key => 'file_handle', :class_name => "FileData"
+  has_one :flattened_file_data, :primary_key => 'flattened_file_handle', :foreign_key => 'file_handle', :class_name => "FileData"
   
   after_destroy after_destroy
 
@@ -72,6 +73,10 @@ class Song < ActiveRecord::Base
   
   def flattened_file_handle_exists?
     true if flattened_file_handle
+  end
+  
+  def flattened_file_data
+    FileData.find_by_file_handle(flattened_file_handle) || FileData.create({:file_handle => flattened_file_handle})
   end
   
   def save_song_jams_data(jams_arr)
@@ -140,7 +145,7 @@ class Song < ActiveRecord::Base
   end
   
   def self.published_songs
-    self.find_all.select(&:published)
+    self.find_all.select(&:published).sort_by{|s| -(s.id)}
   end
   
   def add_jam(jam, added_by_user=nil)

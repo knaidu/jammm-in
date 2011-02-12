@@ -29,14 +29,18 @@
 </div>
 
 <div class='position-relative h30'>
-  <% if not @jam.published %>
-    <div class="button" style='position: absolute; right: 10px' onclick='Jam.Manage.publish("<%= @jam.id %>")'>
-      <div class="icon"><img src='/new-ui/generic-add.png'></div>
-      <div class="text">Publish</div>
+  <div class="button" style='position: absolute; right: 10px' onclick='Jam.Manage.unpublish("<%= @jam.id %>")'>
+    <div class="icon"><img src='/new-ui/generic-delete.png' height='16px'></div>
+    <div class="text">Delete Jam</div>
+  </div>
+  <% if @jam.published %>
+    <div class="button" style='position: absolute; right: 120px' onclick='Jam.Manage.unpublish("<%= @jam.id %>")'>
+      <div class="icon"><img src='/new-ui/generic-delete.png' height='16px'></div>
+      <div class="text">Unpublish</div>
     </div>
   <% else  %>
-    <div class="button" style='position: absolute; right: 10px' onclick='Jam.Manage.unpublish("<%= @jam.id %>")'>
-      <div class="icon"><img src='/new-ui/generic-delete.png'></div>
+    <div class="button" style='position: absolute; right: 120px' onclick='Jam.Manage.publish("<%= @jam.id %>")'>
+      <div class="icon"><img src='/new-ui/generic-add.png' height='16px'></div>
       <div class="text">Publish</div>
     </div>
   <% end %>
@@ -78,12 +82,3 @@
 <div class='field float-left'>Description:</div><textarea name='description' onedit='blur' run="/jam/<%= jam.id %>/manage/update_info?key=description"><%= jam.description %></textarea>
 
 <div class='clear-both'></div>
-
-<%= vspace 20 %>
-<div class='section-header'>More Information</div>
-<% file_data = jam.file_data  %>
-<div class='field'>Length:</div><%= file_data.length.to_time_str %> <%= vspace %>
-<div class='field'>Mode:</div><%= file_data.mode %> <%= vspace %>
-<div class='field'>Sample Rate:</div><%= file_data.samplerate %> Hz<%= vspace %>
-<div class='field'>Bit Rate:</div><%= file_data.bitrate %> kbps<%= vspace %>
-<div class='field'>File Size:</div><%= file_data.filesize.to_mb %><%= vspace %>

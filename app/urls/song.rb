@@ -160,13 +160,13 @@ get '/song/:song_id/manage/flatten' do
   song.flatten_jams(jams).to_json
 end
 
-get '/song/:song_id/manage/publish' do
+post '/song/:song_id/manage/publish' do
   song = get_passed_song
   song.publish
   "Your song has been successfully published"
 end
 
-get '/song/:song_id/manage/unpublish' do
+post '/song/:song_id/manage/unpublish' do
   song = get_passed_song
   song.unpublish ? "Successfully removed song" : "Error in removing song"
 end
@@ -198,4 +198,10 @@ post '/song/:song_id/manage/post_message' do
     song.add_manage_message(session_user?, param?(:message))
     "Successfully added song message"
   }
+end
+
+
+get '/song/:song_id/manage/publish_popup' do
+  @song = get_passed_song
+  erb(:"/song/manage/publish_popup")
 end

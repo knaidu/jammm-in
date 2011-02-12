@@ -4,4 +4,4 @@
   <div class='page-header'>Collaborations</div> 
 </div>
 <%= vspace 10 %>
-<%= partial("common/songs", :locals => {:songs => Song.all.sort_by{|s| -(s.id)}}) %>
+<%= partial("common/songs", :locals => {:songs => Song.published_songs}) %>

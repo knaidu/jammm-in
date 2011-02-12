@@ -53,6 +53,9 @@ JEvent.list.higlightJamOnSelect = function() {
 	$j(".song-manage-page.jams .jam INPUT[type=checkbox]").live('change', function(){
 		var fn = $(this).checked ? "addClassName" : "removeClassName";
 		$j(this).parents()[1][fn]("selected");
+		var img = this.parentNode.parentNode.findDescendantsByClassName("waveform-image")[0];
+		waveformUrl = $(this).checked ? img.getAttribute("waveform2") : img.getAttribute("waveform");
+		img.src = waveformUrl;
 	})
 }.bind(JEvent.list);
 

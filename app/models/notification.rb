@@ -6,17 +6,18 @@ class Notification < ActiveRecord::Base
   
   # Mapping of Notifications-Types to ICONs
   ICON = {
-    :user_follows => :following,
-    :comment => :comments,
-    :jam_tag => :jam,
-    :new_message => :msg,
-    :song_invite => :song,
-    :song_publish => :song,
-    :jam_comment => :jam,
-    :song_message => :comments,
-    :jam_added_to_song => :add,
-    :badge_added => :update,
-    :say_mention => :say
+    :user_follows => 18,
+    :comment => 6,
+    :jam_tag => 0,
+    :new_message => 8,
+    :song_invite => 1,
+    :song_publish => 16,
+    :jam_comment => 6,
+    :song_message => 8,
+    :jam_added_to_song => 3,
+    :badge_added => 17,
+    :say_mention => 9,
+    :like => 5
   }
   
   def self.add(data={}, notification_type="update")
@@ -30,8 +31,7 @@ class Notification < ActiveRecord::Base
   end
   
   def icon
-    return "/new-ui/collaborate.png"
-    self.class::ICON[self.notification_type.to_sym] || self.notification_type.to_sym
+    return {:url => "/images/16.png", :index => self.class::ICON[notification_type.to_sym]}
   end
   
   def data

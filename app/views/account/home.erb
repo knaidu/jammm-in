@@ -6,6 +6,10 @@
   :right_panel => "/partial/account/right_panel"
 }) %>
 
+<%= vspace 10 %>
+<div class="page-header">Account <span class="slash">/</span> Home</div>
+<%= vspace 20 %>
+
 <% feeds = session_user?.feeds 100 %>
 <div class='feeds'>
   <% feeds.each{|feed| %>

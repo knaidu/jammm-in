@@ -207,16 +207,18 @@ def school_exists?
   end
 end
 
-def download_url(obj)
-  "/file/#{obj.file_handle}"
+def download_url(obj, flattened_file=false)
+  file_handle = flattened_file ? obj.flattened_file_handle : obj.file_handle
+  "/file/#{file_handle}"
 end
 
-def play_info(obj)
+def play_info(obj, flattened_file=false)
+  file_data = flattened_file ? obj.flattened_file_data : obj.file_data
   info = {
-    :play => download_url(obj),
+    :play => download_url(obj, flattened_file),
     :musicname => obj.name,
     :musicdata => obj.class.to_s.downcase + "_" + obj.id.to_s,
-    :length => obj.file_data.length
+    :length => file_data.length
   }
   info.map{|k,v| "#{k}='#{v}'"}.join(' ')
 rescue 

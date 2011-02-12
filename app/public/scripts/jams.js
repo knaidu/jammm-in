@@ -9,6 +9,8 @@ Jam.Manage.unlike = function(id) {
 }.bind(Jam.Manage);
 
 Jam.create = function(){
+	var callback = arguments[0] || false;
+	this.Create.callback = callback;
 	Modal.load("/jam/create", {minHeight: 350});
 }.bind(Jam);
 
@@ -35,21 +37,18 @@ Jam.Create.showSpinner = function(el){
 Jam.Create.done = function(id){
 	Modal.cmp.close();
 	this.callback = this.callback || function(){
-		console.log('upload done');
 		Jam.Manage.load(id);
-		console.log('going to publish popup done');
 		window.setTimeout(function() {Jam.Manage.publishPopup(id)}, 1000);
-		console.log('popup published');
 	}
 	this.callback(id);
 	this.callback = false;
 }.bind(Jam.Create);
 
 Jam.createAndToSong = function(id) {
-	Jam.Create.callback = function(jamId){
+	var fn = function(jamId){
 		Song.Manage.uploadJam.add(id, jamId);
 	}.bind(Jam.Create);
-	Jam.create();
+	Jam.create(fn);
 }.bind(Jam);
 
 Jam.Manage.load = function(id){

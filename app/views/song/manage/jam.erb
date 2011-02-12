@@ -13,7 +13,8 @@
     <% end %>
   </div>
   <div class='checkbox'><input type='checkbox' <%= "CHECKED" if song_jam.is_flattened %>></div>
-  <div class='play'><img src='/new-ui/play.png'></div>
+  <% waveformid = rand_id %>
+  <div class='play' <%= play_info jam %> waveformid='<%= waveformid %>'><img src='/new-ui/play.png'></div>
   <div class='instrument'><img src='/new-ui/acoustic-guitar.png' height='36px'></div>
   <div class='volume'>
     <div class='icon'><img src='/new-ui/volume-icon.gif' height='20px'></div>
@@ -22,10 +23,16 @@
     </div>
   </div>
   <div class='actions'>                                          
-    Delete <%= vspace %>
-    <div class='link' onclick='Jam.Manage.load("<%= jam.id %>")'>Update</div>
+    <%= vspace %>
+    <div class="button" onclick='Jam.Manage.load("<%= jam.id %>")'>
+      <div class="icon"><%= icon '/images/16.png', 14, 16, true %></div>
+      <div class="text">Update</div>
+    </div>
   </div>
-  <div class='waveform'>
-    <img src='<%= jam.file_data.waveform_url %>' height='100%' width='100%'>
+  <div class='waveform' id="<%= waveformid %>">
+    <div class="buffer"></div>
+    <div class='seek'>
+      <img src='<%= jam.file_data.waveform_url rescue "-" %>' class='waveform-image' width='100%' height='100%'  waveform2="<%= jam.file_data.waveform_url_2 %>" waveform="<%= jam.file_data.waveform_url %>">
+    </div>
   </div>
 </div>

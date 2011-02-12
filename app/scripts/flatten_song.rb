@@ -46,16 +46,34 @@ def delete_old_song_file_handle(song, jams)
   song.delete_flattened_file_handle if song.flattened_file_handle_exists?  
 end
 
+def create_temp_waveform(song, wav_path)
+  fd = song.flattened_file_data
+  path = new_file_handle_full_name('.png')
+  cmd = FileData.waveform_cmd(wav_path, path, 255, 255, 255)
+  run(cmd)
+  fd.waveform_path = path
+  fd.save
+  puts fd.inspect
+  FileData.gather(song, true)
+  puts song.flattened_file_data.inspect
+end
+
 if jams.size == 1
   process_info.set_message "Copying the Jam into the song..."
   delete_old_song_file_handle(song, jams)
   jam_file_handle = fetch_local_file_path(jams[0])
   song_flattened_file_handle = new_file_handle_full_name(".mp3")
   File.copy(jam_file_handle, song_flattened_file_handle)
+  puts "song_flattened_file_handle: #{song_flattened_file_handle}"
   song.flattened_file_handle = song_flattened_file_handle.split("/").pop
   song.save
   mark_jams_as_flattened(song, jams)  
   process_info.set_done "Song has been successfully created."
+  temp_wav_path = new_file_handle_full_name(".wav")
+  cmd = "sox #{song_flattened_file_handle} #{temp_wav_path}"
+  run(cmd)
+  create_temp_waveform(song, temp_wav_path)
+  File.delete(temp_wav_path)
   exit  
 end
 
@@ -85,5 +103,6 @@ mark_jams_as_flattened(song, jams)
 song.flattened_file_handle = lame_output.split("/").pop
 song.save
 
-process_info.set_done "Song has been successfully flattened."
+create_temp_waveform(song, wav_output_file_handle)
 
+process_info.set_done "Song has been successfully flattened."

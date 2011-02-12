@@ -25,12 +25,12 @@
 <div class='align-right'>
   <% if @song.published? %>
     <div class="button" onclick='Song.Manage.unpublish("<%= song.id %>")'>
-      <div class="icon"><img src='/new-ui/generic-delete.png'></div>
+      <div class="icon"><img src='/new-ui/generic-delete.png' height='16px'></div>
       <div class="text">Unpublish</div>
     </div>
   <% else %>
   <div class="button" onclick='Song.Manage.publish("<%= song.id %>")'>
-    <div class="icon"><img src='/new-ui/generic-add.png'></div>
+    <div class="icon"><img src='/new-ui/generic-add.png' height='16px'></div>
     <div class="text">Publish</div>
   </div>
   <% end %>
@@ -41,7 +41,7 @@
 <%= partial :"/song/manage/jams", :locals => {:song_jams => song.song_jams.sort_by(&:id)} %>
 <div style='text-align: center; background-color: #e7e7e7; padding: 5px; '>
   <div class="button" onclick='Song.Manage.flatten("<%= @song.id %>")'>
-    <div class="icon"><img src='/new-ui/collaborate.png'></div>
+    <div class="icon"><img src='/new-ui/collaborate.png' height='16px'></div>
     <div class="text">Preview</div>
   </div>
 </div>

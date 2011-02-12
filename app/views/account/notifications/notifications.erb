@@ -1,6 +1,3 @@
-<div class="notifications-page">
-  <% notifications.each do |notification| %>
-    <%= partial("/account/notifications/notification", :locals => {:notification => notification}) %>
-    <%= vspace 5 %>
-  <% end %>
-</div>
+<% notifications.each do |notification| %>
+  <%= partial("/account/notifications/notification", :locals => {:notification => notification}) %>
+<% end %>

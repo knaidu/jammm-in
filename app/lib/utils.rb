@@ -318,3 +318,21 @@ def debug_add_core_user
     }) 
   }
 end
+
+# NOTIFICATIONS
+def group_notifications(notifications)
+  ranges = [
+    {:time => (Time.now - 1.day), :name => "Today", :list => []},
+    {:time => (Time.now - 2.day), :name => "Yesterday", :list => []},
+    {:time => (Time.now - 7.day), :name => "This Week", :list => []},
+    {:time => Time.at(0), :name => "Archived Notifications", :list => []}
+  ]
+  range_index = 0
+  notifications.each{|n|
+    until (n.created_at > ranges[range_index][:time]) do 
+      range_index += 1;
+    end
+    ranges[range_index][:list] << n
+  }
+  ranges
+end

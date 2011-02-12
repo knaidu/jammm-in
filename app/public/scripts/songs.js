@@ -82,7 +82,7 @@ Song.Manage.flatten = function(id) {
 			messageDiv: $j(".modal-text")[0],
 			onSuccess: function() {
 				Modal.close();
-//				Navigate.reload();
+				window.setTimeout(function() {Song.Manage.publishPopup(id)}, 1500);
 			}
 		};
 		var poll = new Poll(config);
@@ -99,7 +99,7 @@ Song.Manage.publish = function(id) {
 	call(url, {onSuccess: function() {
 		Modal.alert("Your Collaboration has been successfully published.");
 		Navigate.reload();
-	}})
+	}, method: 'post'})
 }.bind(Song.Manage);
 
 Song.Manage.unpublish = function(id) {
@@ -107,7 +107,7 @@ Song.Manage.unpublish = function(id) {
 	call(url, {onSuccess: function() {
 		Modal.alert("Your Collaboration has been unpublished.");
 		Navigate.reload();		
-	}})
+	}, method: 'post'})
 }.bind(Song.Manage);
 
 Song.Manage.updatePicture = function(id) {
@@ -124,3 +124,16 @@ Song.Manage.updatePicture.done = function() {
 	Navigate.reload();
 	Modal.slowAlert("The collaboration picture has been changed successfully.");
 }.bind(Song.Manage.updatePicture);
+
+Song.Manage.publishPopup = function(id) {
+	Modal.load("/song/" + id + "/manage/publish_popup", {minHeight: 120, minWidth: 600});
+}.bind(Song.Manage);
+
+Song.Manage.publishPopup.publish = function(id) {
+	Modal.close();
+	Song.Manage.publish(id);
+}.bind(Song.Manage);
+
+Song.Manage.publishPopup.publishLater = function(id) {
+	Modal.close();
+}.bind(Song.Manage.publish);
