@@ -5,8 +5,8 @@
   </div>
   <div class='position-relative' style='margin-left: 30px'>
     <div class='bold'>Your Memory Usage:</div><%= vspace %>
-    Used <%= used_memory.to_mb rescue "0MB" %> of <%= session_user?.total_memory.to_mb %><%= vspace %>
-    <% width =  (used_memory / session_user?.total_memory) * 100 %>
+    Used <%= used_memory.to_mb rescue "0MB" %> of <%= session_user?.total_memory.to_mb rescue "0MB"%><%= vspace %>
+    <% width =  (used_memory / session_user?.total_memory) * 100 rescue 100 %>
   </div>
   <div class='memory-usage'>
     <div class='fill' style="width: <%= width %>%"></div>
