@@ -12,7 +12,7 @@ Your song has been successfully mixed. Click 'publish' to publish the song.
     </div>
   </div>
 </div>
-
+<%= vspace 20 %>
 <div class='position-relative'>
   <div class="button" style='position: absolute; right: 10px' onclick='Song.Manage.publishPopup.publish("<%= @song.id %>")'>
     <div class="icon"><img src='/new-ui/generic-add.png' height='16px'></div>
@@ -21,7 +21,7 @@ Your song has been successfully mixed. Click 'publish' to publish the song.
   
   <div class="button" style='position: absolute; right: 110px'  onclick='Song.Manage.publishPopup.publishLater("<%= @song.id %>")'>
     <div class="icon"><img src='/new-ui/generic-delete.png' height='16px'></div>
-    <div class="text">Publish Later</div>
+    <div class="text">Discard</div>
   </div>
   
 </div>

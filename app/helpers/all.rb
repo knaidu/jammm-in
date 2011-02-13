@@ -225,5 +225,10 @@ rescue
   {}
 end
 
+def page_header(list)
+  s = list.join(" <span class='slash'>/</span> ")
+  "<div class='page-header'>#{s}</div>"
+end
+
 
 load 'helpers/profile.rb'

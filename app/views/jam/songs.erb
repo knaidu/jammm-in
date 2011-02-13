@@ -1,7 +1,9 @@
 <div class='jam-page songs'>
   <% moreref = rand_id %>
   <div class='position-relative overflow-hidden' style='height: 70px;' id='<%= moreref %>'>
-    <div class='more link' moreref='<%= moreref %>' style='position: absolute; bottom: 0px; right: 0px; z-index: 2'>more</div>
+    <% if songs.size > 1 %>
+      <div class='more link' moreref='<%= moreref %>' style='position: absolute; bottom: 0px; right: 0px; z-index: 2'>more</div>
+    <% end %>
     <% songs.each {|song| %>
       <%= partial :"/jam/song", :locals => {:song => song} %>
     <%  } %>

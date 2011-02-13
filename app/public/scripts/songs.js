@@ -126,7 +126,7 @@ Song.Manage.updatePicture.done = function() {
 }.bind(Song.Manage.updatePicture);
 
 Song.Manage.publishPopup = function(id) {
-	Modal.load("/song/" + id + "/manage/publish_popup", {minHeight: 120, minWidth: 600});
+	Modal.load("/song/" + id + "/manage/publish_popup", {minHeight: 140, minWidth: 600});
 }.bind(Song.Manage);
 
 Song.Manage.publishPopup.publish = function(id) {

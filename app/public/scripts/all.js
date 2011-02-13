@@ -4,10 +4,12 @@ var Modal = {};
 var Doc = {Player: {}, Playlist: {}, Notifications: {}, Messages: {}, Login: {}};
 var JEvent = {list: {}}; // 'list' is treated as an array. In the sense, on load all keys in 'list' are itereated over and run.
 var General = {Comment: {}, Tabs: {}, List: {}};
+var Playlist = {list: [], position: false};
 
 Layout.onReady = function(){
 	if($("content-panel")){
 		this.showStructure();
+		this.load();
 		Navigate.saveHomeState();
 		Modal.setup();
 	}
@@ -27,6 +29,16 @@ Layout.showStructure = function(){
 	Doc.Player.collapse();
 	this.attachScrollJEvent();
 	this.contentPanel = this.getContentPanel();
+}.bind(Layout);
+
+Layout.load = function() {
+	var hash = window.location.hash;
+	if(hash.blank())
+		this.loadOverview();
+}.bind(Layout);
+
+Layout.loadOverview = function() {
+	Navigate.loadContent("/partial/homepage/overview")
 }.bind(Layout);
 
 Layout.getWindowSize = function(){
@@ -95,12 +107,12 @@ Layout.ContextMenu.drawTree = function() {
 			var subs = $(p).getElementsBySelector(".sub");
 			var count = $A(subs).size();
 			var height = (count * 31) - 13;
-			var vline = new Element('div', {class: 'fun'});
+			var vline = new Element('div');
 			$j(vline).css({position: 'absolute', borderLeft: '1px dotted #aaa', top: 34, left: 22, height: height});
 			$j(p).append(vline);
 
 			$A(subs).each(function(sub) {
-				var hline = new Element('div', {class: 'me'});
+				var hline = new Element('div');
 				$j(hline).css({position: "absolute", width: 17, borderBottom: '1px dotted #aaa', top: 15, left: 22});
 				$j(sub).append(hline);
 			});
@@ -108,6 +120,7 @@ Layout.ContextMenu.drawTree = function() {
 	};
 	$A($j(".context-menu .item")).each(function(el) {draw(el)});
 }.bind(Layout.ContextMenu);
+
 
 Layout.RightPanel.get = function() {
 	return $j("#right-panel");
@@ -269,7 +282,9 @@ Modal.center = function(){
 
 Modal.showWaitingText = function() {
 	var msg = arguments[0] || "Please wait ...";
-	var d = new Element("div", {class: "modal-text"});
+//	var d = new Element("div", {class: "modal-text"});
+	var d = new Element("div");
+	d.addClassName("modal-text");
 	d.innerHTML = msg;
 	var di = new Element("div", {style: "margin-top: 10px"});
 	di.innerHTML = "<img src='/new-ui/ajax-loader.gif'>";
@@ -280,7 +295,8 @@ Modal.showWaitingText = function() {
 }.bind(Modal);
 
 Modal.alert = function(msg) {
-	var d = new Element("div", {class: "modal-text"});
+	var d = new Element("div");
+	d.addClassName("modal-text");
 	d.innerHTML = msg;
 	this.show({minHeight: "80px", minWidth: "250px"});
 	var dataContainer = this.getDataContainer();
@@ -326,6 +342,11 @@ Doc.Notifications.show = function() {
 Doc.Messages.show = function() {
 	Doc.Player.expand("/dock/messages");
 }.bind(Doc.Messages);
+
+Doc.reload = function() {
+	var el = $j(".actions-doc")[0];
+	updateEl(el, "/partial/body/doc_icons");
+}.bind(Doc);
 
 
 Doc.Login.show = function() {
@@ -473,10 +494,10 @@ General.download = function(fileHandle) {
 }.bind(General);
 
 General.login = function() {
-	var onSuccess = function() {
-		var el = $j(".actions-doc")[0];
-		updateEl(el, "/partial/body/doc_icons");
+	var onSuccess = function() {	
+		Doc.reload();
 		Doc.Player.collapse();
+		Navigate.loadContent("/account");
 	};
 	
 	var onFailure = function(t) {
@@ -486,5 +507,18 @@ General.login = function() {
 		username: $j("[name=username]").val(),
 		password: $j("[name=password]").val()
 	};
+	$j(".player .error-response").html("<img src='/new-ui/loading.gif'");
 	call('/signin/process', {parameters: params, method: 'post', onSuccess: onSuccess, onFailure: onFailure});
 }.bind(General);
+
+General.logout = function() {
+	Navigate.loadContent("/account/logout");
+}.bind(General);
+
+/* Playlist */
+Playlist.get = function() {
+	var onSuccess = function(t) {
+		this.list = t.evalJSON();
+	}.bind(this);
+	call("/playlist", {onSuccess: onSuccess});
+}.bind(Playlist);

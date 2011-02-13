@@ -43,6 +43,7 @@ post '/report/:music_type/:music_id' do
 end
 
 get '/dock/playlist' do
+  @playlist = playlist
   erb(:"/dock/playlist")
 end
 
@@ -52,4 +53,19 @@ end
 
 get '/dock/messages' do
   erb(:"/dock/messages")
+end
+
+get '/playlist' do
+  playlist.to_json
+end
+
+post '/playlist/add' do
+  music = eval(param?(:type).capitalize).find(param?(:id))
+  playlist_add(music)
+  "Your music has been added to the playlist successfully"
+end
+
+post '/playlist/destroy' do
+  playlist_destroy
+  "Your playlist is now empty"
 end

@@ -9,12 +9,16 @@
       <%= vspace 20 %>
       
       <div class="button" style='width: 70px'>
-        <div class="icon"><img src='/new-ui/collaborate.png'></div>
+        <div class="icon"><img src='/new-ui/collaborate.png' height='16px'></div>
         <div class="text">Login</div>
       </div>
       
       <input type='submit' style='visibility: hidden'>
-      <div class="error-response"></div>
+      <div class="s11 error-response"></div>
     </form>
   </div>
 </div>
+
+<%= js_start %>
+  $j("[name=username]").focus();
+<%= js_end %>

@@ -35,19 +35,13 @@ get '/:username/jams' do
 end
 
 get '/:username/followers' do
-  user = params[:username]
-  @layout_info = {"left_panel" => "profile/menu", "middle_panel" => "profile/followers"}
-  @menu_data = profile_home_info(user)
-  set_profile_page_info user
-  erb(:"body/structure")
+  @user = User.with_username param?(:username)
+  erb(:"/profile/followers")
 end
 
 get '/:username/following' do
-  user = params[:username]
-  @layout_info = {"left_panel" => "profile/menu", "middle_panel" => "profile/following"}
-  @menu_data = profile_home_info(user)
-  set_profile_page_info user
-  erb(:"body/structure")
+  @user = User.with_username param?(:username)
+  erb(:"/profile/following")
 end
 
 get '/:username/follow' do

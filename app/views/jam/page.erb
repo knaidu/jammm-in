@@ -48,9 +48,11 @@
   <% end %>
 </div>
 
-<%= vspace 20 %>
-<div class='section-header'>Collaborations</div>
-<%= partial :"/jam/songs", :locals => {:songs => @jam.songs} %>
+<% unless @jam.songs.empty? %>
+  <%= vspace 20 %>
+  <div class='section-header'>Collaborations</div>
+  <%= partial :"/jam/songs", :locals => {:songs => @jam.songs} %>
+<% end %>
 
 <%= vspace 20 %>
 <div class='section-header'>Comments</div>

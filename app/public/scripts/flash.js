@@ -58,7 +58,8 @@ Flash.saveCurrentData = function(el) {
 		waveformEl: waveformEl,
 		length: parseInt($(el).getAttribute('length')) * 1000,
 		seekEl: seekEl,
-		bufferEl: bufferEl
+		bufferEl: bufferEl,
+		musicname: el.getAttribute("musicname")
 	}
 }.bind(Flash);
 
@@ -89,5 +90,5 @@ Flash.stopSeekRepositioning = function() {
 }.bind(Flash);
 
 Flash.displayMusicInDoc = function() {
-	$j(".player .text").html("Song");
+	$j(".player .text").html(this.currentData.musicname);
 }.bind(Flash);

@@ -6,6 +6,5 @@ LOGGER = Logger.new(log_path, "daily")
 log = File.new(log_path, "a+")
 STDOUT.reopen(log)
 STDERR.reopen(log)
-  
 
 run Sinatra::Application

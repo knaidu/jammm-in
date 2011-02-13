@@ -13,7 +13,11 @@
 <form id='<%= form_id %>' method='post' action='/comments/add'>
 	<input type='hidden' name='for_type' value="<%= for_type %>">
 	<input type='hidden' name='for_type_id' value="<%= for_type_id %>">
-	<textarea id='jam-comment-textarea' name='comment' <%= "disabled" if not session_user? %>></textarea><br><br>
-	<input type='button' value='Comment' onclick="General.Comment.add()" <%= "disabled" if not session_user? %>>
+	<textarea id='jam-comment-textarea' style='width: 300px' name='comment' <%= "disabled" if not session_user? %>></textarea><br><br>
+
+	<div class="button" onclick="General.Comment.add()">
+	  <div class="icon"><%= icon "/images/16.png", 6, 16, true %></div>
+    <div class="text">Comment</div>
+	</div>
 </form>
 	

@@ -1,12 +1,13 @@
 <div class='contents'>
-  <% if not session_user? %>
-    <div class="item" onclick='Doc.Login.show()'><div class="text">Login</div></div>
-  <% else %>
-    <div class="item"><div class="text">Logout</div></div>
-    <div class="item"><div class="icon" onclick='Navigate.loadContent("/account")'><%= icon '/images/dock.png', 0, 24, true %></div></div>
+  <% if session_user? %>
+    <div class="item" onclick='General.logout()'><div class="text">Logout</div></div>
+    <div class="item" onClick='Doc.Playlist.show()'><div class="icon"><%= icon '/images/dock.png', 6, 24, true %></div></div>  
+    <div class="item" onclick='Doc.Notifications.show()'><div class="icon"><%= icon '/images/dock.png', 4, 24, true %></div></div>
+    <div class="item" onclick='Doc.Messages.show()'><div class="icon"><%= icon '/images/dock.png', 2, 24, true %></div></div>
     <div class="item"><div class="icon" onclick='Navigate.loadContent("/<%= session_user?.username %>")'><%= icon '/images/dock.png', 1, 24, true %></div></div>
-    <div class="item"><div class="icon"><%= icon '/images/dock.png', 2, 24, true %></div></div>
-    <div class="item"><div class="icon"><%= icon '/images/dock.png', 4, 24, true %></div></div>
-    <div class="item"><div class="icon"><%= icon '/images/dock.png', 6, 24, true %></div></div>  
+    <div class="item"><div class="icon" onclick='Navigate.loadContent("/account")'><%= icon '/images/dock.png', 0, 24, true %></div></div>
+  <% else %>
+    <div class="item" onclick='Doc.Login.show()'><div class="text">Login</div></div>
+    <div class="item" onClick='Doc.Playlist.show()'><div class="icon"><%= icon '/images/dock.png', 6, 24, true %></div></div>  
   <% end %>
 </div>

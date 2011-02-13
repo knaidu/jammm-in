@@ -10,6 +10,7 @@ require 'net/http'
 set :public, File.dirname(__FILE__) + '/public'
 enable :sessions
 
+
 load 'db/db_connect.rb'
 load 'scripts/s3_connect.rb'
 load 'scripts/load_libs.rb'
@@ -61,8 +62,7 @@ get '/test' do
 end
 
 get '/aboutus' do
-  @layout_info = {"left_panel" => "homepage/left", "middle_panel" => "help/aboutus", "right_panel" => "homepage/right"}
-  erb(:'body/structure')
+  erb(:"/help/aboutus")
 end
 
 get '/partial/*' do

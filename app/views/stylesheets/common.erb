@@ -24,6 +24,8 @@
 
 .default-link-color {color: #990000;}
 
+.round-2 {<%= round_2 %>}
+.shadow {<%= shadow %>}
 
 /* HTML, BODY */
 html, body {
@@ -112,6 +114,7 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
   font-size: 11px;
   width: 400px;
   padding: 8px 2px;
+  cursor: pointer;
 }
 .bottom-bar .items .item {display: inline-block; margin-left: 4px;}
 
@@ -141,7 +144,7 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
   right: 5px; 
 }
 .actions-doc .contents {margin-left: 3px; overflow: auto; height: <%= footer_height %>}
-.actions-doc .contents .item {float: left; height: 20px; overflow: auto; margin-right: 13px; height: 100%; cursor: pointer}
+.actions-doc .contents .item {float: right; height: 20px; overflow: auto; margin-right: 13px; height: 100%; cursor: pointer}
 .actions-doc .contents .item .text {margin-top: 5px; padding: 4px 10px; <%= round_2 %>; background-color: #bbb; color: #555; font-size: 11px}
 .actions-doc .contents .item .icon {margin-top: 3px}
 .player {
@@ -158,13 +161,13 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
 
 .player .buffer {position: absolute; background-color: #888}
 .player .seek {
-  background-color: #888;
+  background-color: #bbb;
   height: 100%;
   font-size: 10px;
   position: absolute; 
   width: 0px;
 }
-.player .text {padding: 3px; position: absolute; z-index: 3; color: black; font-weight: bold; font-size: 11px}
+.player .text {padding: 3px; position: absolute; z-index: 3; color: #555; font-weight: bold; font-size: 11px}
 .player .header {color: white; background-color: #888; font-weight: bold; padding: 3px 5px 5px 5px; font-size: 10px;}
 .player .item {margin-bottom: 10px; border-bottom: 1px solid #ededed; color: #aaa}
 .player .item-onhover {color: #666666}
@@ -176,9 +179,9 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
 .list .row .forward-icon {position: absolute; right: 20px; margin-top: 15px}
 .list .row .image {position: absolute; width: 54px; height: 54px; border: 0px solid #dcdcdc; padding: 1px}
 .list .row .content {position: relative;}
-.list .row .content .col1 {position: absolute; margin-left: 96px; width: 200px}
-.list .row .content .col2 {position: absolute; margin-left: 316px;}
-.list .row .content .col3 {position: absolute; margin-left: 516px; color: black; font-size: 10px; width: 200px}
+.list .row .content .col1 {position: absolute; margin-left: 70px; width: 200px}
+.list .row .content .col2 {position: absolute; margin-left: 300px;}
+.list .row .content .col3 {position: absolute; margin-left: 490px; color: black; font-size: 10px; width: 200px}
 .list .row .content .name {overflow: hidden; color: black; font-weight: bold; cursor: pointer; margin-bottom: 3px}
 .list .row .content .artist {overflow: hidden; font-size: 10px}
 .list .row.onhover {background-color: #FBFFF0}
@@ -195,8 +198,8 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
 
 .onhover-border-shadow {border: 1px solid #888888; <%= shadow %>}
 
-.show-all {font-size: 11px; position: absolute; bottom: 0px; height: 15px; background-color: #ccc; padding: 3px; width: 100%; text-align: center; cursor: pointer}
-.show-all:hover {background-color: #aaa}
+.show-all {color: #777; font-size: 11px; position: absolute; bottom: 0px; height: 15px; background-color: #ccc; padding: 3px; width: 100%; text-align: center; cursor: pointer}
+.show-all:hover {background-color: #bbb}
 
 .playlist {position: relative; padding: 5px}
 .playlist .item {position: relative; min-height: 50px; padding-bottom: 5px;}
@@ -340,22 +343,21 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
 .feeds .feed .content .entity-info .field-name{color: #888; display: inline-block; margin-right: 5px; }
 .feeds .feed .content .time {margin-top: 15px; color: #aaa; font-size: 10px}
 
-.user-profile {position: relative; min-height: 100px}
-.user-profile .profile-picture {position: absolute; height: 78px; width: 78px}
+.user-profile {position: relative; min-height: 80px; padding: 10px; background-color: #ebebeb; border: 1px solid #ccc; font-size: 11px}
+.user-profile .profile-picture {position: absolute; height: 78px; width: 78px; border: 1px solid #999;}
 .user-profile .profile-picture IMG {height: 100%; width: 100%}
-.user-profile .content {margin-left: 84px;}
+.user-profile .content {margin-left: 90px;}
 .user-profile .content .info {margin-top: 0px}
 
 .tabs {position: relative; font-size: 0px; height: 35px}
-.tabs .padding-left {float: left; width: 50px; border-bottom: 1px solid #aaa; height: inherit; font-size: 11px;}
-.tabs .padding-right {float: left; width: 250px; border-bottom: 1px solid #aaa; height: inherit; font-size: 11px;}
-.tabs .tab {float: left; min-width: 50px; border-bottom: 1px solid #aaa; height: inherit;  font-size: 11px;}
+.tabs .padding-left {float: right; width: 0px; border-bottom: 1px solid #aaa; height: inherit; font-size: 11px;}
+.tabs .padding-right {float: right; width: 250px; border-bottom: 1px solid #aaa; height: inherit; font-size: 11px;}
+.tabs .tab {float: right; min-width: 50px; border-bottom: 1px solid #aaa; height: inherit;  font-size: 11px;}
 .tabs .tab:hover {background-color: #f5f5f5}
 .tabs .tab.selected {border: 1px solid #aaa !important; border-bottom-width: 0px !important; background-color: #ebebeb; font-weight: bold}
 .tabs .tab .content {float: left; padding: 5px 0px 0px 5px}
 .tabs .tab .content .text {position: relative; margin-left: 25px; padding: 5px 10px 5px 5px}
-.tabs .tab .content .image {position: absolute; height: 24px; width: 24px}
-.tabs .tab .content .image IMG {height: 100%; width: 100%}
+.tabs .tab .content .image {position: absolute; height: 24px; width: 24px; margin-top: 5px; margin-left: 3px}
 
 .group-profile {position: relative; min-height: 100px}
 .group-profile .profile-picture {position: absolute; height: 78px; width: 78px}
@@ -388,3 +390,5 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
 
 .notifications-page {position: relative}
 .notifications-page .notification {position: relative; margin-left: 10px; font-size: 11px; margin-bottom: 10px}
+
+.error-response {color: #cc0000}

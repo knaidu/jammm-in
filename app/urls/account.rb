@@ -9,7 +9,7 @@ end
 
 get '/account/logout' do
   unset_session_user
-  redirect '/'
+  erb(:"/account/logged_out")
 end
 
 
@@ -34,7 +34,7 @@ get '/account/message_stream/:id' do
 end
 
 get '/account/jams' do
-  @jams = session_user?.jams
+  @jams = session_user?.displayable_jams
   erb(:"/account/jams")
 end
 

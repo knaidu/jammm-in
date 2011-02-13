@@ -44,7 +44,7 @@ class Jam < ActiveRecord::Base
     })
     jam.update_file(file_details)
     jam.update_instrument(instrument)
-    ContainsGenre.add(genre, "jam", id)
+    ContainsGenre.add(genre, "jam", jam.id)
     jam
   end
   

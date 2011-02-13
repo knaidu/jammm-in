@@ -73,7 +73,6 @@ end
 
 def unset_session_user
   session[:username] = nil
-  @session_user = nil
 end
 
 def sql(str)
@@ -335,4 +334,20 @@ def group_notifications(notifications)
     ranges[range_index][:list] << n
   }
   ranges
+end
+
+# PLAYLIST
+
+def playlist_add(music)
+  session[:playlist] ||= []
+  item_id = (session[:playlist].last["item_id"] + 1) rescue 1
+  session[:playlist] << music.attributes.update({"item_id" => item_id, "music_type" => music.class.to_s.downcase})
+end
+
+def playlist
+  session[:playlist] ||= []
+end
+
+def playlist_destroy
+  session[:playlist] = []
 end

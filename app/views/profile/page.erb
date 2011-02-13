@@ -24,6 +24,7 @@
   </div>
 </div>
 
+<%= vspace 20 %>
 
 <% 
   id = rand_id 
@@ -32,13 +33,19 @@
 <div class='tabs' id='<%= id %>' contentdivid='<%= contentdivid %>'>
   <div class='padding-left'>&nbsp;</div>
   <div class='tab' url='/<%= @user.username %>/feeds'>
-    <div class='content'><div class='image'><img src='/new-ui/Notifications-dock.png'></div><div class='text'>Update</div></div>
-  </div>
-  <div class='tab' url='/<%= @user.username %>/jams'>
-    <div class='content'><div class='image'><img src='/new-ui/create-jam.png'></div><div class='text'>Jams</div></div>
+    <div class='content'><div class='image'><%= icon "/images/16.png", 17, 16, true %></div><div class='text'>Updates</div></div>
   </div>
   <div class='tab' url='/<%= @user.username %>/songs'>
-    <div class='content'><div class='image'><img src='/new-ui/collaborate.png'></div><div class='text'>Collaborations</div></div>
+    <div class='content'><div class='image'><%= icon "/images/16.png", 1, 16, true %></div><div class='text'>Collaborations</div></div>
+  </div>
+  <div class='tab' url='/<%= @user.username %>/jams'>
+    <div class='content'><div class='image'><%= icon "/images/16.png", 0, 16, true %></div><div class='text'>Jams</div></div>
+  </div>
+  <div class='tab' url='/<%= @user.username %>/following'>
+    <div class='content'><div class='image'><%= icon "/images/16.png", 18, 16, true %></div><div class='text'>Following</div></div>
+  </div>
+  <div class='tab' url='/<%= @user.username %>/followers'>
+    <div class='content'><div class='image'><%= icon "/images/16.png", 19, 16, true %></div><div class='text'>Followers</div></div>
   </div>
   <div class='padding-right'>&nbsp;</div>
 </div>
@@ -47,7 +54,7 @@
 
 <%= vspace 10 %>
 
-<div id='<%= contentdivid %>'></div>
+<div id='<%= contentdivid %>' style='font-size: 11px'></div>
 <%= js_start %>
   General.Tabs.setup('<%= id %>');
 <%= js_end %>

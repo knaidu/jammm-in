@@ -10,7 +10,6 @@ post '/signin/process' do
       user = User.with_username(username)
       session[:username] = user ? username : nil
       user.increment_counter
-      redirect_home if session[:username]
     else
       raise "Please check the username and password you have provided"
     end

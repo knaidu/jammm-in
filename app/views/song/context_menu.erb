@@ -1,7 +1,7 @@
 <div class='context-menu'>
-  <div class='item' onclick='Navigate.loadContent("/song/<%= @song.id %>/manage")'>
+  <div class='item container' onclick='Navigate.loadContent("/song/<%= @song.id %>/manage")'>
       <div class='icon'><img src='/new-ui/manage1.png' width='24px' class='context-menu-image'></div>
-      <div class='text'>Manage</div>
+      <div class='text'>Edit Collaboration</div>
   </div>  
   
   <div class='item container' onclick='Song.create("song", <%= @song.id %>)'>
