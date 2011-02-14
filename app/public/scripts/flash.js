@@ -1,4 +1,4 @@
-var Flash = {currentData: {}};
+var Flash = {currentData: {}, playing: false};
 function getFlashMovie(movieName) {
   var isIE = navigator.appName.indexOf("Microsoft") != -1;
   return (isIE) ? window[movieName] : document[movieName];  
@@ -45,6 +45,7 @@ Flash.startOperations = function(el) {
 }.bind(Flash);
 
 Flash.play = function(path) {
+	this.playing = true;
 	flashPlay(path);
 	this.displayMusicInDoc();
 }.bind(Flash);
@@ -82,7 +83,12 @@ Flash.gotStatus = function(buffered, played) {
 	$j(".player .buffer").width(bufferedPercent);
 	$j(".player .seek").width(playedPercent);
 	
-	if(playerPercent >= length) this.stopSeekRepositioning();
+	if(playerPercent >= length)	this.songDone();
+}.bind(Flash);
+
+Flash.songDone = function() {
+	this.playing = false;
+	this.stopSeekRepositioning();
 }.bind(Flash);
 
 Flash.stopSeekRepositioning = function() {
@@ -90,5 +96,10 @@ Flash.stopSeekRepositioning = function() {
 }.bind(Flash);
 
 Flash.displayMusicInDoc = function() {
+	Doc.Player.show();
 	$j(".player .text").html(this.currentData.musicname);
+}.bind(Flash);
+
+Flash.isPlaying = function() {
+	return this.playing;
 }.bind(Flash);

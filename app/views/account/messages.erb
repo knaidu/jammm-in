@@ -1,1 +1,5 @@
+<%= vspace 10 %>
+<%= page_header ["Account", "Messages"] %>
+<%= vspace 20 %>
+
 <%= partial ("/account/message_streams", :locals => {:message_streams => session_user?.message_streams}) %>

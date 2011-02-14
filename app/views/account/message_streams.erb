@@ -1,38 +1,25 @@
-<%= render_state({:name => "Message Streams", :description => "", :url => "/account/messages", :context_menu => ""}) %>
-<% 
-  only_unread ||= nil 
-  unread_exists = false
-  sorted_streams = session_user?.message_streams.sort_by{|ms| (ms.users - [session_user?])[0].username.downcase}
-%>
-<div class='list'>
-  <div id='message-streams'>
-    <% sorted_streams.each do |message_stream| %>
-    
-  		<!-- Goes to NEXT iteration if the this partial is meant to display only unread streams -->
-  		<% next if only_unread  and message_stream.unread_messages(session_user?).empty? %>
-  		<% unread_exists = true %>
-      <% with_user = message_stream.users.without(session_user?)[0] %>
+<%= render_state({:name => "Message Streams", :description => "", :url => "/account/messages", :context_menu => "/partial/account/context_menu"}) %>
+
+<div class='message-streams'>
+
+    <% session_user?.message_streams.each do |message_stream| %>
       
-      <div class='row' onclick="Navigate.loadContent('/account/message_stream/<%= message_stream.id %>')">
-        <div class='forward-icon'><img src='/new-ui/forward-arrow.png'></div>
-        <div class='image'>
-          <img src='<%= with_user.profile_picture_url %>' height='78px'><%= vspace 5 %>
+      <% with_user = message_stream.users.without(session_user?)[0] %>
+      <div class='message-stream highlight-row' onclick="Navigate.loadContent('/account/message_stream/<%= message_stream.id %>')">
+        <div class='actions' style='margin-top: 10px'><img src='/new-ui/forward-arrow.png'></div>
+        <div class='profile-picture'>
+          <img src='<%= with_user.profile_picture_url %>'><%= vspace 5 %>
         </div>
         <div class='content'>
-          <div class='col1'>
-            <div class='name'><%= with_user.username %></div>
-            <%= with_user.name %>
-          </div>
-          <div class='col2'>
-            <div class='field w50 s11'>Total:</div><%= message_stream.messages.count %>
-          </div>
+            <div class='bold'><%= with_user.username %></div><%= vspace %>
+            <div class="s11"><%= with_user.name %></div><%= vspace %>
+            <div class='small-field s11'>Total Messages:</div><%= message_stream.messages.count %> <%= hspace 10 %>
+            <div class="small-field s11">Last Message: </div><span class='s11'><%= message_stream.messages.last.body.first(50) %>...</span>
         </div>
       </div>
+      
     <% end %>
-  </div>
+    
 </div>
 
-<% if not unread_exists %>
-  <span class='text'>You have no unread message streams</span>
-<% end %>
-<br><br>
+

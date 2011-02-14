@@ -288,7 +288,6 @@ Modal.center = function(){
 
 Modal.showWaitingText = function() {
 	var msg = arguments[0] || "Please wait ...";
-//	var d = new Element("div", {class: "modal-text"});
 	var d = new Element("div");
 	d.addClassName("modal-text");
 	d.innerHTML = msg;
@@ -325,6 +324,7 @@ Doc.Player.get = function(){
 }.bind(Doc.Player);
 
 Doc.Player.expand = function(){
+	Doc.Player.show();
 	var url = arguments[0] || false;
 	var callback = function(){
 		if(url)
@@ -334,7 +334,18 @@ Doc.Player.expand = function(){
 }.bind(Doc.Player);
 
 Doc.Player.collapse = function(){
-	this.get().animate({height: 20}, "slow");
+	this.get().animate({height: 20}, "slow", function() {
+		updateEl(Doc.Player.get()[0], "/partial/body/actions_doc");
+		if(!Flash.isPlaying()) Doc.Player.hide();
+	});
+}.bind(Doc.Player);
+
+Doc.Player.show = function() {
+	this.get().show();
+}.bind(Doc.Player);
+
+Doc.Player.hide = function() {
+	this.get().fadeOut();
 }.bind(Doc.Player);
 
 Doc.Playlist.show = function() {
@@ -545,8 +556,12 @@ General.Overview.getOverlay = function() {
 }.bind(General.Overview);
 
 General.Overview.setup = function() {
-	this.getOverlay().center().fadeIn();
-	this.showWhat();
+	this.show(this.showWhat);
+;}.bind(General.Overview);
+
+General.Overview.show = function() {
+	var callback = arguments[0] || function() {};
+	this.getOverlay().center().fadeIn(callback);
 ;}.bind(General.Overview);
 
 
@@ -557,12 +572,18 @@ General.Overview.close = function() {
 
 General.Overview.showWhat = function() {
 	var el = this.getOverlay();
-	updateEl(el[0], "/partial/homepage/overview_what")
+	var fn = function() {
+		updateEl(el[0], "/partial/homepage/overview_what");
+	}.bind(this);
+	el[0].visible() ? fn() : this.show(fn)
 }.bind(General.Overview);
 
 
 General.Overview.showWhy = function() {
 	var el = this.getOverlay();
-	updateEl(el[0], "/partial/homepage/overview_why")
+	var fn = function() {
+		updateEl(el[0], "/partial/homepage/overview_why");
+	}.bind(this);
+	el[0].visible() ? fn() : this.show(fn)
 }.bind(General.Overview);
 
