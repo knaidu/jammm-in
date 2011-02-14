@@ -5,21 +5,29 @@
   :context_menu => "/partial/account/context_menu"
 }) %>
 
+<% message_streams = session_user?.message_streams.sort_by{|m| 
+  m.unread?(session_user?) ? 0 : 1 # 0 : 1 added as sort_by only works on int/string and the function returns boolean 
+} %>
+
 <div class='message-streams'>
 
-    <% session_user?.message_streams.each do |message_stream| %>
-      
+    <% message_streams.each do |message_stream| %>
+      <% class_str = "message-stream highlight-row" %>
+      <% class_str = message_stream.unread?(session_user?) ? (class_str += " unread") : class_str %>
       <% with_user = message_stream.users.without(session_user?)[0] %>
-      <div class='message-stream highlight-row' onclick="Navigate.loadContent('/account/message_stream/<%= message_stream.id %>')">
+      <div class='<%= class_str %>' onclick="Navigate.loadContent('/account/message_stream/<%= message_stream.id %>')">
         <div class='actions' style='margin-top: 10px'><img src='/new-ui/forward-arrow.png'></div>
         <div class='profile-picture'>
           <img src='<%= with_user.profile_picture_url %>'><%= vspace 5 %>
         </div>
         <div class='content'>
             <div class='bold'><%= with_user.username %></div><%= vspace %>
-            <div class="s11"><%= with_user.name %></div><%= vspace %>
+            <div class="s11"><%= with_user.name %> </div><%= vspace %>
             <div class='small-field s11'>Total Messages:</div><%= message_stream.messages.count %> <%= hspace 10 %>
-            <div class="small-field s11">Last Message: </div><span class='s11'><%= message_stream.messages.last.body.first(50) %>...</span>
+            <div class="small-field s11">Last Message: </div>
+            <span class='s11'>
+              <%= message_stream.messages.last.body.first(50) %>...
+            </span>
         </div>
       </div>
       

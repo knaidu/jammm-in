@@ -231,10 +231,24 @@ Navigate.saveState = function(state){
 Navigate.setBackButton = function(){
 	var state = $A(this.states).last();
 	if(!state) return;
-	$j(".navigation-bar .content .name").html(state.name);
-	$j(".navigation-bar .content .description").html(state.description);
-	$j(".navigation-bar .content .url").html(state.url);
-	$j(".navigation-bar .context-icon IMG")[0].src = state.img;
+	var states = $A(this.states).reverse().slice(0,3);
+	var opacity = 1.0;
+	var left = 0; var top = 0;
+	var zIndex = 10;
+	var images = $j(".navigation-bar .images");
+	images.html("");
+	$A(states).each(function(state) {
+		var d = new Element('div');
+		$j(d).css({zIndex: zIndex, left: left, opacity: opacity, top: top});
+		d.addClassName("image");
+		
+		var img = new Element('img');
+		img.src = state.img;
+		d.appendChild(img);
+		
+		$j(".navigation-bar .images")[0].appendChild(d);
+		opacity -= 0.3; left += 40; zIndex -= 1; top += 5;
+	})
 }.bind(Navigate);
 
 Navigate.back = function(){

@@ -39,4 +39,8 @@ class MessageStream < ActiveRecord::Base
     ")
   end
   
+  def unread?(self_user)
+    not unread_messages(self_user).empty?
+  end
+  
 end

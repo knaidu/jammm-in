@@ -4,7 +4,7 @@
 %>
 <div class='feed'>
   <div class='thumbnail'>
-    <img src='<%= session_user?.profile_picture_url %>'>
+    <img src='<%= comment.user.profile_picture_url %>'>
   </div>
   <div class='content'>
     <div class='bold'><%= comment.user.username %></div><%= vspace %>
