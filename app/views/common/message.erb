@@ -1,12 +1,10 @@
 <% unread = ((message.user != session_user?) and message.unread) %>
 <% user = (message.user == session_user?) ? session_user? : message.user %>
-<div class='message'>
-  <div class='image'>
-    <img src='<%= user.profile_picture_url %>' height='78px'>
+<div class='user-message'>
+  <div class='profile-picture'>
+    <img src='<%= user.profile_picture_url %>'>
   </div>
   <div class='content'>
-    <div class='username'><%= user.username %></div>
     <div class='body'><%= message.body.format_html %></div>
-
 	</div>
 </div>

@@ -1,3 +1,8 @@
 <% message_stream = @message_stream %>
-
-<%= partial("common/message_stream", {:locals => {:message_stream => message_stream, :full => true}}) %>
+<%= render_state({
+  :name => "Message Stream", 
+  :description => "", 
+  :url => "/account/message_stream/#{message_stream.id}", 
+  :context_menu => "/partial/account/context_menu"
+}) %>
+<%= partial("common/message_stream", {:locals => {:message_stream => message_stream}}) %>

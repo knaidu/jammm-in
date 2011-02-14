@@ -1,61 +1,23 @@
-<% div_id = rand.to_s %>
-<% response_div_id = rand.to_s %>
 <% 
 	user1, user2 = message_stream ? [message_stream.users[0], message_stream.users[1]] : [session_user?, @user] 
-	full ||= nil
-	unread_messages = message_stream.unread_messages(session_user?) rescue []
 %>
 
-<div id='<%= div_id %>'>
-  <% if message_stream %>
+<%= vspace 10 %>
+<%= page_header ["Account", "Messages", user1.username] %>
+<%= vspace 20 %>
 
-	  <% 
-				messages = message_stream.user_message_streams
-				plucked_messages = messages.clone
-				if not full
-			 		max_rows = messages.size > 4 ? 4 : messages.size
-	     		if messages.size > max_rows
-	      	%>... <a class='simple-link' href='/account/message_stream/<%= message_stream.id %>'>Full stream</a><br><br><%
-					range = Range.new(-(max_rows), -1)
-					plucked_messages = messages[range]
-	    		end
-	      end
-		%>
-		  <% messages_div_id = div_id + "-messages" %>
-			<% div_class = full ? "message-stream-full round" : "message-stream-partial" %>
-			<div id='<%= messages_div_id %>' class='<%= div_class %>'>
-			  <div class='messages'>
-  		    <% plucked_messages.each do |message| %>
-  		  		<%= partial ("common/message", :locals => {:message => message}) %>
-  		  		<br>
-  		  	<% end %>
-  		  </div>
-			</div>
-  <% end %>
-  <br>
-  <% form_id = "message-stream-form-#{rand.to_s}" %>
-  <form action='/message_stream/new_post' method='post' onsubmit='return false' id='<%= form_id %>'>
-    <input type='hidden' name='user_ids' value='<%= "#{user1.id},#{user2.id}" %>'>
-    <input type='hidden' name='div_id' value='<%= div_id %>'>
-    <input type='hidden' name='response_div_id' value='<%= response_div_id %>'>
-		<% if full %>
-			<input type='hidden' name='full' value=true>
-		<% end %>	
-	  <textarea name='body'></textarea>
-	  <br><br>
-	  <input type='submit' value='Post' onclick="addMessage('<%= form_id %>')">
-  </form>
+
+<div class='user-messages'>
+  <% message_stream.messages.each do |message| %>
+		<%= partial ("common/message", :locals => {:message => message}) %>
+		<br>
+	<% end %>
 </div>
+<%= vspace 10 %>
 
-<div id='<%= response_div_id %>'></div>
-
-<%= vspace %>
-
-<script language='javascript'>
-  (function(){
-    var el = $('<%= messages_div_id %>');
-    if(!el) return;
-    el.scrollTop = el.scrollHeight;
-  })();
-</script>
-
+<form action='/message_stream/new_post' method='post' onsubmit='return false'>
+  <input type='hidden' name='user_ids' value='<%= "#{user1.id},#{user2.id}" %>'>
+  <textarea name='body'></textarea>
+  <%= vspace 10 %>
+  <input type='submit' value='Post' onclick="addMessage('')">
+</form>
