@@ -1,0 +1,7 @@
+<%= render_state({:name => "Unpublished Jams", :description => "", :url => "/account/unpublished_jams", :context_menu => "/partial/account/context_menu"}) %>
+
+<%= vspace 10 %>
+<%= page_header ["Account", "Jams", "Unpublished Jams"] %>
+<%= vspace 20 %>
+
+<%= erb(:"/common/jams", :locals => {:jams => @jams }) %>

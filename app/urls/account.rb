@@ -38,6 +38,12 @@ get '/account/jams' do
   erb(:"/account/jams")
 end
 
+get '/account/unpublished_jams' do
+  @jams = session_user?.unpublished_jams
+  erb(:"/account/unpublished_jams")
+end
+
+
 get '/account/following' do
   logged_in? {
     @layout_info = {"left_panel" => "account/menu", "middle_panel" => "account/following"}  

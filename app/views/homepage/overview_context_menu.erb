@@ -1,0 +1,10 @@
+<%= vspace 170 %>
+<div class="overview menu">
+  <div class="item what" onclick='General.Overview.showWhat()'>What</div>
+  <div class="item why" onclick='General.Overview.showWhy()'>Why</div>
+  <div class="item how">How</div>
+</div>
+
+<%= js_start %>
+  General.Overview.animateItems();
+<%= js_end %>

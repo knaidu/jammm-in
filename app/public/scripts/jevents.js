@@ -106,3 +106,4 @@ JEvent.list.onClickMore = function() {
 		General.onClickMore(this);
 	});
 }.bind(JEvent.list);
+

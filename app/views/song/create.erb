@@ -7,4 +7,9 @@ You have chosen to collaborate with "<%= @obj.name %>". Enter the name for your 
 <input type='hidden' name='music_type' value='<%= @music_type %>'>
 <input type='hidden' name='music_id' value='<%= @music_id %>'>
 <%= vspace 20 %>
-<div class='align-right'><input type='button' value='Create' onclick='Song.create.submit()'></div>
+<div class='align-right'>
+  <div class="button" onclick='Song.create.submit()'>
+    <div class="icon"><%= icon "/images/16.png", 1, 16, true %></div>
+    <div class="text">Create Collaboration</div>
+  </div>
+</div>

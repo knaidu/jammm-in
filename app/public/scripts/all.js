@@ -3,14 +3,14 @@ var Navigate = {states: []};
 var Modal = {};
 var Doc = {Player: {}, Playlist: {}, Notifications: {}, Messages: {}, Login: {}};
 var JEvent = {list: {}}; // 'list' is treated as an array. In the sense, on load all keys in 'list' are itereated over and run.
-var General = {Comment: {}, Tabs: {}, List: {}};
+var General = {Comment: {}, Tabs: {}, List: {}, Overview: {}};
 var Playlist = {list: [], position: false};
 
 Layout.onReady = function(){
 	if($("content-panel")){
 		this.showStructure();
 		this.load();
-		Navigate.saveHomeState();
+//		Navigate.saveHomeState();
 		Modal.setup();
 	}
 	JEvent.runAll();
@@ -131,7 +131,7 @@ Layout.RightPanel.load = function(url) {
 	var l = Layout.RightPanel.get();
 	l.html("");
 	l.append(d);
-	updateEl(d, url);
+ 	url != "false" ? updateEl(d, url) : true;
 }.bind(Layout.RightPanel);
 
 Layout.RightPanel.insertLoadingText = function() {
@@ -209,7 +209,7 @@ Navigate.storeState = function(){
 		state[i.className] = i.innerHTML;
 	});
 	
-	if(state.url == this.currentState.url) // return if the new page is same as present page.
+	if(this.currentState && state.url == this.currentState.url) // return if the new page is same as present page.
 		return;
 
 	if(this.currentState)
@@ -217,6 +217,11 @@ Navigate.storeState = function(){
 	this.setBackButton();		
 		
 	this.setCurrentState(new State(state));
+
+	// Used to either hide or show the navigation bar. Navigation bar is only shown when there are items in the stack
+	var bar = $j(".navigation-bar");
+	(this.states.size() > 0) ? bar.show('slow') : bar.hide('slow');
+
 }.bind(Navigate);
 
 Navigate.saveState = function(state){
@@ -225,6 +230,7 @@ Navigate.saveState = function(state){
 
 Navigate.setBackButton = function(){
 	var state = $A(this.states).last();
+	if(!state) return;
 	$j(".navigation-bar .content .name").html(state.name);
 	$j(".navigation-bar .content .description").html(state.description);
 	$j(".navigation-bar .content .url").html(state.url);
@@ -315,7 +321,7 @@ Doc.get = function(){
 }.bind(Doc);
 
 Doc.Player.get = function(){
-	return $j(".player");
+	return $j(".player-container");
 }.bind(Doc.Player);
 
 Doc.Player.expand = function(){
@@ -522,3 +528,41 @@ Playlist.get = function() {
 	}.bind(this);
 	call("/playlist", {onSuccess: onSuccess});
 }.bind(Playlist);
+
+
+/* GENERAL */
+General.Overview.animateItems = function() {
+	$j(".overview .item").hover(function() {
+		$j(this).animate({paddingLeft: 130})
+	}, function() {
+		$j(this).animate({paddingLeft: 15})
+	})
+}.bind(General.Overview);
+
+
+General.Overview.getOverlay = function() {
+	return $j("#overview-overlay");
+}.bind(General.Overview);
+
+General.Overview.setup = function() {
+	this.getOverlay().center().fadeIn();
+	this.showWhat();
+;}.bind(General.Overview);
+
+
+General.Overview.close = function() {
+	this.getOverlay().fadeOut();
+;}.bind(General.Overview);
+
+
+General.Overview.showWhat = function() {
+	var el = this.getOverlay();
+	updateEl(el[0], "/partial/homepage/overview_what")
+}.bind(General.Overview);
+
+
+General.Overview.showWhy = function() {
+	var el = this.getOverlay();
+	updateEl(el[0], "/partial/homepage/overview_why")
+}.bind(General.Overview);
+

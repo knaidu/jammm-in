@@ -73,6 +73,10 @@ class User < ActiveRecord::Base
     jams.select(&:published)
   end
   
+  def unpublished_jams
+    jams.reject(&:displayable?)
+  end
+  
   def latest_displayable_jams(count=:all)
     jams.select(&:displayable?).slice(0, count).sort_by{|jam| -(jam.id)}
   end

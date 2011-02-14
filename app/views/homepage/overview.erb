@@ -1,5 +1,18 @@
-<img src='/images/map.png' width='100%' name='map'>
+<%= render_state({
+  :name => "Overview", 
+  :description => "", 
+  :url => "/partial/homepage/overview", 
+  :context_menu => "/partial/homepage/overview_context_menu", 
+  :img => "/new-ui/collaborate.png",
+  :right_panel => "/partial/homepage/overview_tips"
+}) %>
+<div class="position-relative; height: 100%; width: 100%">
+  <img src='/images/map.png' width='100%' name='map'>
+</div>
+
+<div class='overview-overlay' id='overview-overlay'>
+</div>
 
 <%= js_start %>
-
+  window.setTimeout(General.Overview.setup, 400);
 <%= js_end %>
