@@ -6,7 +6,8 @@
 }) %>
 
 <% message_streams = session_user?.message_streams.sort_by{|m| 
-  m.unread?(session_user?) ? 0 : 1 # 0 : 1 added as sort_by only works on int/string and the function returns boolean 
+  # 0 : 1 added as sort_by only works on int/string and the function returns boolean 
+  m.unread?(session_user?) ? "0" : m.users.without(session_user?)[0].username 
 } %>
 
 <div class='message-streams'>

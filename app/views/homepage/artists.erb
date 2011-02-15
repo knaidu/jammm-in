@@ -1,3 +1,11 @@
+<%= render_state({
+  :name => "Artists", 
+  :description => "", 
+  :url => "/artists", 
+  :context_menu => false, 
+  :img => "/new-ui/create-jam.png",
+  :right_panel => false
+}) %>
 <%= vspace 10 %>
 <div class="page-header">Artists</div><%= vspace 10 %>
 <%= partial("common/users", :locals => {:users => User.all}) %>

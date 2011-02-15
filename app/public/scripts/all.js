@@ -3,7 +3,7 @@ var Navigate = {states: []};
 var Modal = {};
 var Doc = {Player: {}, Playlist: {}, Notifications: {}, Messages: {}, Login: {}};
 var JEvent = {list: {}}; // 'list' is treated as an array. In the sense, on load all keys in 'list' are itereated over and run.
-var General = {Comment: {}, Tabs: {}, List: {}, Overview: {}};
+var General = {Comment: {}, Tabs: {}, List: {}, Overview: {}, User: {}};
 var Playlist = {list: [], position: false};
 
 Layout.onReady = function(){
@@ -231,15 +231,15 @@ Navigate.saveState = function(state){
 Navigate.setBackButton = function(){
 	var state = $A(this.states).last();
 	if(!state) return;
-	var states = $A(this.states).reverse().slice(0,3);
+	var states = $A(this.states).slice(-3).reverse();
 	var opacity = 1.0;
-	var left = 0; var top = 0;
+	var right = 0;
 	var zIndex = 10;
 	var images = $j(".navigation-bar .images");
 	images.html("");
 	$A(states).each(function(state) {
 		var d = new Element('div');
-		$j(d).css({zIndex: zIndex, left: left, opacity: opacity, top: top});
+		$j(d).css({zIndex: zIndex, right: right, opacity: opacity, top: top});
 		d.addClassName("image");
 		
 		var img = new Element('img');
@@ -247,7 +247,7 @@ Navigate.setBackButton = function(){
 		d.appendChild(img);
 		
 		$j(".navigation-bar .images")[0].appendChild(d);
-		opacity -= 0.3; left += 40; zIndex -= 1; top += 5;
+		opacity -= 0.3; right += 60; zIndex -= 1;
 	})
 }.bind(Navigate);
 
@@ -601,3 +601,37 @@ General.Overview.showWhy = function() {
 	el[0].visible() ? fn() : this.show(fn)
 }.bind(General.Overview);
 
+/* FOLLOW UN FOLLOW */
+General.User.follow = function(username) {
+	var onSuccess = function() {
+		Modal.alert("You are now following " + username);
+		Layout.ContextMenu.reload();
+	};
+	call("/" + username + "/follow", {method: 'post', onSuccess: onSuccess})
+}.bind(General.User);
+
+General.User.unfollow = function(username) {
+	call("/" + username + "/unfollow", {method: 'post', onSuccess: Layout.ContextMenu.reload})
+}.bind(General.User);
+
+
+General.User.sendMessage = function(username) {
+	var url = "/" + username + "/send_message";
+	Modal.load(url, {minHeight: 215, minWidth: 380})
+}.bind(General.User);
+
+
+General.User.sendMessage.submit = function(id1, id2) {
+	var body = $j("[name=message-textarea]").val();
+	$j("[name=send-message-status] .waiting-message").show();
+	General.addMessageStreamPost(id1, id2, body, Modal.close)
+}.bind(General.User.sendMessage);
+
+
+/* GENERAL SEND MESSAGE FUNCTION */
+General.addMessageStreamPost = function(id1, id2, body) {
+	var callback = arguments[3] || function() {};
+	var onFailure = arguments[4] || function() {};
+	var url = formatUrl("/message_stream/new_post");
+	call(url, {method: 'post', onSuccess: callback, onFailure: onFailure, parameters: {user_ids: id1+","+id2, body: body}})
+}.bind(General);

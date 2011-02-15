@@ -1,17 +1,29 @@
 <div class='context-menu'>
-  <div class='item'>
-    <div class='container'>
-      <div class='icon'><%= icon "/images/24.png", 8, 24, true %></div>
-      <div class='text'>Send Message</div>
+  <% if session_user? and session_user? != @user %>
+    <div class='item' onclick='General.User.sendMessage("<%= @user.username %>")'>
+      <div class='container'>
+        <div class='icon'><%= icon "/images/24.png", 8, 24, true %></div>
+        <div class='text'>Send Message</div>
+      </div>
     </div>
-  </div>
+  <% end %>
 
-  
-  <div class='item' onclick='Navigate.loadContent("/account/aboutme")'>
-    <div class='container'>
-      <div class='icon'><%= icon "/images/24.png", 18, 24, true %></div>
-      <div class='text'>Follow</div>
-    </div>
-  </div>
+  <% if session_user? and session_user? != @user %>
+    <% if session_user?.follows?(@user) %>
+      <div class='item' onclick='General.User.unfollow("<%= @user.username %>")'>
+        <div class='container'>
+          <div class='icon'><%= icon "/images/24.png", 18, 24, true %></div>
+          <div class='text'>Unfollow</div>
+        </div>
+      </div>
+    <% else %>
+      <div class='item' onclick='General.User.follow("<%= @user.username %>")'>
+        <div class='container'>
+          <div class='icon'><%= icon "/images/24.png", 18, 24, true %></div>
+          <div class='text'>Follow</div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
   
 </div>

@@ -44,7 +44,7 @@ get '/:username/following' do
   erb(:"/profile/following")
 end
 
-get '/:username/follow' do
+post '/:username/follow' do
   begin
     Follower.add(session_user?, get_passed_user)
     "You are following #{get_passed_user.name}"
@@ -66,7 +66,7 @@ get '/:username/actions' do
   erb(:"profile/actions", :locals => {:user => get_passed_user})
 end
 
-get '/:username/unfollow' do
+post '/:username/unfollow' do
   begin
     Follower.remove(session_user?, get_passed_user)
     "You are not following #{get_passed_user.name} anymore"
@@ -97,4 +97,9 @@ get '/:username/info' do
   }
   @menu_data = profile_home_info(params[:username])
   erb(:"body/structure")
+end
+
+get '/:username/send_message' do
+  @user = get_passed_user
+  erb(:"/profile/send_message")
 end

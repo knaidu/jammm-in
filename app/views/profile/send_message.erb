@@ -1,0 +1,27 @@
+<div class='header'>Send a message to: <%= @user.username %></div>
+<%= vspace 20 %>
+<div class="position-relative">
+  <div style='position: absolute; height: 54px; width: 54px; top: 2px'>
+    <img src='<%= session_user?.profile_picture_url %>' height='100%' width='100%'>
+  </div>
+  <div style='margin-left: 64px'>
+    <textarea style='width: 300px; height: 100px' name='message-textarea'></textarea>
+  </div>
+  <%= vspace 20 %>
+  
+  <div name='send-message-status'>
+    <div class='waiting-message float-left s11 hide'>
+  	  Your message is being sent ... <%= vspace %>
+    	<img src="/new-ui/ajax-loader.gif" >
+    </div>
+  
+    <div class="button" name='send-message-submit' style='float: right' onclick='General.User.sendMessage.submit(<%= session_user?.id %>, <%= @user.id %> )'>
+      <div class="icon"><%= icon "/images/16.png", 6, 16, true %></div>
+      <div class="text">Send</div>
+    </div>
+  </div>
+</div>
+
+<%= js_start %>
+  $j("[name=message-textarea]").focus();
+<%= js_end %>
