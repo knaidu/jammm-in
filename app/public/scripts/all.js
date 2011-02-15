@@ -627,6 +627,23 @@ General.User.sendMessage.submit = function(id1, id2) {
 	General.addMessageStreamPost(id1, id2, body, Modal.close)
 }.bind(General.User.sendMessage);
 
+General.User.postViaMessageStream = function(id1, id2) {
+	var body = $j("[name=post-message-text-area]").val();
+	var onSuccess = function(t) {
+		var id = t.evalJSON().id;
+		this.updatePostInList(id)
+	}.bind(this);
+	General.addMessageStreamPost(id1, id2, body, onSuccess);
+}.bind(General.User);
+
+General.User.updatePostInList = function(id) {
+	var onSuccess = function(t) {
+		$j(".user-messages").append(t.responseText)
+	};
+	var url = formatUrl('/message_stream/message', {id: id})
+	call(url, {onSuccess: onSuccess});
+}.bind(General.User);
+
 
 /* GENERAL SEND MESSAGE FUNCTION */
 General.addMessageStreamPost = function(id1, id2, body) {
@@ -635,3 +652,4 @@ General.addMessageStreamPost = function(id1, id2, body) {
 	var url = formatUrl("/message_stream/new_post");
 	call(url, {method: 'post', onSuccess: callback, onFailure: onFailure, parameters: {user_ids: id1+","+id2, body: body}})
 }.bind(General);
+

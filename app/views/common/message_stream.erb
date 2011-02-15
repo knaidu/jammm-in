@@ -15,9 +15,10 @@
 </div>
 <%= vspace 10 %>
 
-<form action='/message_stream/new_post' method='post' onsubmit='return false'>
-  <input type='hidden' name='user_ids' value='<%= "#{user1.id},#{user2.id}" %>'>
-  <textarea name='body'></textarea>
-  <%= vspace 10 %>
-  <input type='submit' value='Post' onclick="addMessage('')">
-</form>
+<textarea style='height: 100px; width: 300px' name="post-message-text-area"></textarea>
+<%= vspace 10 %>
+
+<div class="button" onclick='General.User.postViaMessageStream(<%= user1.id %>, <%= user2.id %>)'>
+  <div class="icon"><%= icon "/images/16.png", 6, 16, true %></div>
+  <div class="text">Post</div>
+</div>

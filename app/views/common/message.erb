@@ -4,6 +4,9 @@
   <div class='profile-picture'>
     <img src='<%= user.profile_picture_url %>'>
   </div>
+  <div class="actions">
+    <div class="gray s11"><%= message.created_at.date %></div>
+  </div>
   <div class='content'>
     <div class='body'><%= message.body.format_html %></div>
 	</div>

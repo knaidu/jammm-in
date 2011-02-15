@@ -5,7 +5,8 @@ post '/message_stream/new_post' do
     if user_2 == session_user?
       user_1, user_2 = user_2, user_1
     end
-    add_message(user_1, user_2, params[:body])
+    ret = add_message(user_1, user_2, params[:body])
+    ret.to_json
   }
 end
 
@@ -29,4 +30,10 @@ get '/message_stream/mark_as_read' do
     status 500
     e.message
   end
+end
+
+
+get '/message_stream/message' do
+  message = UserMessageStream.find(param?(:id))
+  erb(:"/common/message", :locals => {:message => message})
 end

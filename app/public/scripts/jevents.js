@@ -107,3 +107,10 @@ JEvent.list.onClickMore = function() {
 	});
 }.bind(JEvent.list);
 
+JEvent.list.highlightNavigationItem = function() {
+	$j(".navigation-bar").hover(function() {
+		$j(".navigation-bar .images .image:first-child").addClass("highlight");
+	}, function() {
+		$j(".navigation-bar .images .image:first-child").removeClass("highlight")
+	});
+}.bind(JEvent.list);
