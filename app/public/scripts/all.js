@@ -131,8 +131,10 @@ Layout.RightPanel.load = function(url) {
 	var l = Layout.RightPanel.get();
 	l.html("");
 	l.append(d);
-	$j(d).html(General.loadingText());
- 	url != "false" ? updateEl(d, url) : true;
+	if(url != "false"){
+		$j(d).html(General.loadingText());
+		updateEl(d, url);
+	}
 }.bind(Layout.RightPanel);
 
 Layout.RightPanel.insertLoadingText = function() {
