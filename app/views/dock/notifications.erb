@@ -1,4 +1,7 @@
-<div class='header'>Notifications</div>
+<div class='header' onclick='Doc.Player.collapse()'>
+  Notifications
+  <div class="minimize">-</div>
+</div>
 <% notifications = session_user?.notifications.first(5) %>
 <%= vspace %>
 <div style='padding: 5px'>
@@ -6,6 +9,6 @@
     <%= partial :"/account/notifications/notifications", :locals => {:notifications => notifications} %>
   </div>
 </div>
-<div class='show-all' onclick='Navigate.loadContent("/account/notifications")'>
+<div class='show-all' onclick='Navigate.loadContent("/account/notifications"); Doc.Player.collapse()'>
   View all notifications
 </div>

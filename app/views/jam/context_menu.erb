@@ -6,18 +6,20 @@
         <div class='text'>Edit Jam</div>
     </div>
   <% end %>
-
-  <div class='item container' onclick='Song.create("jam", <%= @jam.id %>)'>
-      <div class='icon'><img src='/new-ui/collaborate.png' width='24px' class='context-menu-image'></div>
-      <div class='text'>Collaborate</div>
-  </div>
+  
+  <% if @jam.displayable? %>
+    <div class='item container' onclick='Song.create("jam", <%= @jam.id %>)'>
+        <div class='icon'><img src='/new-ui/collaborate.png' width='24px' class='context-menu-image'></div>
+        <div class='text'>Collaborate</div>
+    </div>
+  <% end %>
   
   <div class='item container' onclick='General.download("<%= @jam.file_handle %>")'>
     <div class='icon'><img src='/new-ui/download.png' width='24px' class='context-menu-image'></div>
     <div class='text'>Download</div>
   </div>
   
-  <% if session_user? %>
+  <% if session_user? and @jam.displayable? %>
     <% if not session_user?.likes_jam?(@jam) %>
       <div class='item container' onclick='Jam.Manage.like("<%= @jam.id %>")'>
         <div class='icon'><img src='/new-ui/like.png' width='24px' class='context-menu-image'></div>

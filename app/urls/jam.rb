@@ -139,7 +139,7 @@ post '/jam/:jam_id/manage/unpublish' do
   erb(:"jam/manage/upload")
 end
 
-get '/jam/:jam_id/manage/delete_jam' do
+post '/jam/:jam_id/manage/delete_jam' do
   get_passed_jam.destroy ? "Jam successfully deleted" : "Jam could not be deleted"
 end
 

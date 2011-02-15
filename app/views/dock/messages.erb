@@ -1,16 +1,20 @@
-<div class='header'>Messages</div>
-  <% unread = session_user?.unread_messages %>
-  <div class="messages">
-    <% unread.each {|message| %>
-      <div class='item'>
-        <div class='image' style='opacity: 0.8'><img src='<%= message.user.profile_picture_url %>' width='48px'></div>
-        <div class='contents'>
-          <div class='name'><%= message.user.username %></div>
-          <div class='body'><%= message.body %></div>    
-        </div>
-      </div>
-    <% } %>
-  </div>
+<div class='header' onclick='Doc.Player.collapse()'>
+  Messages
+  <div class="minimize">-</div>
 </div>
-
-<div class="show-all" onclick='Navigate.loadContent("/account/messages")'>View all messages</div>
+<% unread = session_user?.unread_messages %>
+<div class="messages">
+  <% unread.each {|message| %>
+    <div class='item'>
+      <div class='image' style='opacity: 0.8'><img src='<%= message.user.profile_picture_url %>' width='48px'></div>
+      <div class='contents'>
+        <div class='name'><%= message.user.username %></div>
+        <div class='body'><%= message.body %></div>    
+      </div>
+    </div>
+  <% } %>
+</div>
+<% if unread.empty? %>
+  <div class="s11" style='padding: 0px 10px'>You have no unread messages</div>
+<% end %>
+<div class="show-all" onclick='Navigate.loadContent("/account/messages"); Doc.Player.collapse();'>View all messages</div>

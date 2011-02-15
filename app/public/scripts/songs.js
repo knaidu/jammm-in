@@ -16,6 +16,7 @@ Song.create = function(musicType, musicId) {
 
 
 Song.create.submit = function() {
+	$j(".error-response").show();
 	var params = {
 		name: $j(".simplemodal-data [name=name]").val(),
 		music_type: $j(".simplemodal-data [name=music_type]").val(),
@@ -137,3 +138,18 @@ Song.Manage.publishPopup.publish = function(id) {
 Song.Manage.publishPopup.publishLater = function(id) {
 	Modal.close();
 }.bind(Song.Manage.publish);
+
+Song.Manage.deleteSong = function(id) {
+	var url = formatUrl('/partial/account/confirm_delete_song', {song_id: id});
+	Modal.load(url, {minHeight: '100px', minWidth: '300px'});
+}.bind(Song.Manage);
+
+Song.Manage.deleteSong.submit = function(id) {
+	Modal.close();
+	var callback = function() {
+		General.User.loadHome();
+		window.setTimeout(function() {Modal.alert("Your collaboration has been successfully deleted.")}, 1000);
+	};
+	var url = "/song/"+ id +"/manage/delete_song";
+	call(url, {method: 'post', onSuccess: callback});
+}.bind(Song.Manage.deleteSong);

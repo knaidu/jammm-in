@@ -131,6 +131,7 @@ Layout.RightPanel.load = function(url) {
 	var l = Layout.RightPanel.get();
 	l.html("");
 	l.append(d);
+	$j(d).html(General.loadingText());
  	url != "false" ? updateEl(d, url) : true;
 }.bind(Layout.RightPanel);
 
@@ -169,6 +170,7 @@ Navigate.loadContent = function(url){
 		$("content-panel").insert(div, "bottom");
 //		div.absolutize();
 		div.style.top = "0px";
+		$j(div).html(General.loadingText());
 		updateEl(div, url, {onSuccess: function(){window.setTimeout(Navigate.storeState, 500)}});		
 	}
 
@@ -234,12 +236,11 @@ Navigate.setBackButton = function(){
 	var states = $A(this.states).slice(-3).reverse();
 	var opacity = 1.0;
 	var right = 0;
-	var zIndex = 10;
 	var images = $j(".navigation-bar .images");
 	images.html("");
 	$A(states).each(function(state) {
 		var d = new Element('div');
-		$j(d).css({zIndex: zIndex, right: right, opacity: opacity, top: top});
+		$j(d).css({right: right, opacity: opacity, top: top});
 		d.addClassName("image");
 		
 		var img = new Element('img');
@@ -247,7 +248,7 @@ Navigate.setBackButton = function(){
 		d.appendChild(img);
 		
 		$j(".navigation-bar .images")[0].appendChild(d);
-		opacity -= 0.3; right += 60; zIndex -= 1;
+		opacity -= 0.3; right += 60;
 	})
 }.bind(Navigate);
 
@@ -341,8 +342,11 @@ Doc.Player.expand = function(){
 	Doc.Player.show();
 	var url = arguments[0] || false;
 	var callback = function(){
-		if(url)
-			updateEl(this.get()[0], url);
+		if(url){
+			var el = this.get()[0];
+			$j(el).html("<div class='s11' style='padding: 10px'>Loading...</div>");
+			updateEl(el, url);
+		}
 	}.bind(this);
 	this.get().animate({height: 300}, "slow", callback);
 }.bind(Doc.Player);
@@ -556,6 +560,11 @@ Playlist.get = function() {
 
 
 /* GENERAL */
+
+General.loadingText = function() {
+	return "<img style='padding-left: 10px; padding-right: 10px; padding-top: 5px;' src='/new-ui/loading.gif'> <font color='#aaa'>Loading ...</font>";
+}.bind(General);
+
 General.Overview.animateItems = function() {
 	$j(".overview .item").hover(function() {
 		$j(this).animate({paddingLeft: 130})
@@ -644,6 +653,11 @@ General.User.updatePostInList = function(id) {
 	call(url, {onSuccess: onSuccess});
 }.bind(General.User);
 
+/* Account */
+General.User.loadHome = function() {
+	Navigate.loadContent('/account');
+}.bind(General.User);
+
 
 /* GENERAL SEND MESSAGE FUNCTION */
 General.addMessageStreamPost = function(id1, id2, body) {
@@ -652,4 +666,3 @@ General.addMessageStreamPost = function(id1, id2, body) {
 	var url = formatUrl("/message_stream/new_post");
 	call(url, {method: 'post', onSuccess: callback, onFailure: onFailure, parameters: {user_ids: id1+","+id2, body: body}})
 }.bind(General);
-

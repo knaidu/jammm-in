@@ -1,0 +1,8 @@
+<% song = Song.find(param?(:song_id)) %>
+Are you sure you want to delete <span class="bold"><%= song.name %></span> ?
+<%= vspace 20 %>
+
+<div class="button float-right" onclick='Song.Manage.deleteSong.submit("<%= song.id %>")'>
+  <div class="icon"><img src='/new-ui/generic-delete.png' height='16px'></div>
+  <div class="text">Delete</div>
+</div>

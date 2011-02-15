@@ -1,0 +1,8 @@
+<% jam = Jam.find(param?(:jam_id)) %>
+Are you sure you want to delete <span class="bold"><%= jam.name %></span> ?
+<%= vspace 20 %>
+
+<div class="button float-right" onclick='Jam.Manage.deleteJam.submit("<%= jam.id %>")'>
+  <div class="icon"><img src='/new-ui/generic-delete.png' height='16px'></div>
+  <div class="text">Delete</div>
+</div>

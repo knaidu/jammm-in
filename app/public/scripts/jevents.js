@@ -85,7 +85,7 @@ JEvent.list.mouseDownOnButton = function() {
 }.bind(JEvent.list);
 
 JEvent.list.onClickPlay = function() {
-	$j("[play]").live('click', function(){console.log('clicked'); Flash.startOperations(this)})
+	$j("[play]").live('click', function(){Flash.startOperations(this)})
 }.bind(JEvent.list);
 
 

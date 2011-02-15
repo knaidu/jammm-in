@@ -174,7 +174,6 @@ class Song < ActiveRecord::Base
   end
   
   def add_to_song(song, added_by_user=nil)
-    jams = song.jams.select{|j| j.addable?(added_by_user)}
     jams.each do |jam|
       song.add_jam(jam, added_by_user)
     end

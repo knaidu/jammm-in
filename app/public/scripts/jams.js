@@ -15,15 +15,24 @@ Jam.create = function(){
 }.bind(Jam);
 
 Jam.Create.submit = function(el) {
+	var setErrorMsg = function(msg) {
+		$j(".error-response").html(msg);
+	};
 	var names = ['name', 'file', 'instrument', 'genre'];
 	var any  = $A(names).any(function(e) {
 		var je = $j("[name="+e+"]");
 		return (je.val().blank() || je.val() == 'false');
 	});
 	if(any){
-		$j(".error-response").html("Please fill in all the details");
+		setErrorMsg("Please fill in all the details");
 		return;
 	}
+	
+	if(!$j("[name=name]").val().match("^[a-zA-Z0\ \.\-]*$")){
+		setErrorMsg("Jam name can contain only alphabets, numbers, spaces, periods and hyphens.");
+		return;
+	}
+	
 	var f = $(document.getElementsByTagName("form")[0]);
 	f.submit();
 	this.showSpinner(el);
@@ -99,3 +108,18 @@ Jam.Manage.publishPopup.publish = function(id) {
 Jam.Manage.publishPopup.publishLater = function(id) {
 	Modal.close();
 }.bind(Jam.Manage.publish);
+
+Jam.Manage.deleteJam = function(id) {
+	var url = formatUrl('/partial/account/confirm_delete_jam', {jam_id: id});
+	Modal.load(url, {minHeight: '100px', minWidth: '300px'});
+}.bind(Jam.Manage);
+
+Jam.Manage.deleteJam.submit = function(id) {
+	Modal.close();
+	var callback = function() {
+		General.User.loadHome();
+		window.setTimeout(function() {Modal.alert("Your jam has been successfully deleted.")}, 1000);
+	};
+	var url = "/jam/"+ id +"/manage/delete_jam";
+	call(url, {method: 'post', onSuccess: callback});
+}.bind(Jam.Manage.deleteJam);

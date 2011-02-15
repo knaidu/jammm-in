@@ -31,7 +31,7 @@
 <%= vspace 20 %>
 <div class='section-header'>Information</div>
 <% moreref = rand_id %>
-<div class='overflow-hidden' style='height: 113px' id='<%= moreref %>'>
+<div class='overflow-hidden s11' style='height: 113px' id='<%= moreref %>'>
   <div class='field'>Name:</div><span><%= @jam.name %></span><%= vspace %>
   <div class='field'>Artists:</div><span><%= @jam.creator.name %></span><%= vspace %>
   <div class='field'>Instruments:</div><span><%= @jam.instrument ? @jam.instrument.name : "-" %></span><%= vspace %>
