@@ -23,7 +23,7 @@ end
 
 get '/:username/songs' do
   @user = get_passed_user
-  @songs = @user.songs
+  @songs = @user.published_songs
   erb(:"/profile/songs")
 end
 
