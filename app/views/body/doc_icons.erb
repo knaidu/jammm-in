@@ -1,10 +1,12 @@
-<%
-  messages_icon_index = session_user?.unread_messages.empty? ? 2 : 3
-  notifications_icon_index = session_user?.unread_notifications.empty? ? 4 : 5
-%>
-
 <div class='contents'>
   <% if session_user? %>
+    
+    <%
+      # determines the icon to be shown for messages and notifications
+      messages_icon_index = session_user?.unread_messages.empty? ? 2 : 3
+      notifications_icon_index = session_user?.unread_notifications.empty? ? 4 : 5
+    %>
+    
     <div class="item" onclick='General.logout()'><div class="text">Logout</div></div>
 <!--    <div class="item" onClick='Doc.Playlist.show()'><div class="icon"><%= icon '/images/dock.png', 6, 24, true %></div></div> -->
     <div class="item" onclick='Doc.Notifications.show()'><div class="icon"><%= icon '/images/dock.png', notifications_icon_index, 24, true %></div></div>
