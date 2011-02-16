@@ -17,8 +17,8 @@
       <div class='field' style='font-size: 11px; width: 100px'>Follows:</div> <%= @user.following.count %><%= vspace %>
     </div>
     <div style='position: absolute; left: 350px'>
-      <div class='small-field' style='width: 80px'>Jams:</div> <%= @user.jams.count %><%= vspace %>
-      <div class='small-field' style='width: 80px'>Collaborations:</div> <%= @user.songs.count %> <%= vspace %>
+      <div class='small-field' style='width: 80px'>Jams:</div> <%= @user.jam_count %><%= vspace %>
+      <div class='small-field' style='width: 80px'>Collaborations:</div> <%= @user.published_songs.count %> <%= vspace %>
       <div class='small-field' style='width: 80px'>Followers:</div> <%= @user.followed_by.count %>
     </div>
   </div>

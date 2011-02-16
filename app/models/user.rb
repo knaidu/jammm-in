@@ -61,6 +61,10 @@ class User < ActiveRecord::Base
     jams.select(&:displayable?)
   end
   
+  def jam_count
+    displayable_jams.size
+  end
+  
   def manages_songs
     SongManager.find_all_by_manager_id(self.id).map(&:song)
   end
