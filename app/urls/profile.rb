@@ -29,8 +29,8 @@ end
 
 
 get '/:username/jams' do
-  user = get_passed_user
-  @jams = user.jams
+  @user = get_passed_user
+  @jams = @user.displayable_jams
   erb(:"/profile/jams")
 end
 

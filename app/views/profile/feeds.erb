@@ -3,3 +3,7 @@
     <%= partial :"/account/feeds/#{feed.feed_type}", :locals => {:feed => feed} %>
   <% } %>
 </div>
+
+<% if @feeds.empty? %>
+  <div class="s11"><%= @user.username %> does not have updates. Shame on them.</div>
+<% end %>

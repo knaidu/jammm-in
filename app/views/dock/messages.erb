@@ -5,7 +5,7 @@
 <% unread = session_user?.unread_messages %>
 <div class="messages">
   <% unread.each {|message| %>
-    <div class='item'>
+    <div class='item' onclick="Navigate.loadContent('/account/message_stream/<%= message.message_stream.id %>')">
       <div class='image' style='opacity: 0.8'><img src='<%= message.user.profile_picture_url %>' width='48px'></div>
       <div class='contents'>
         <div class='name'><%= message.user.username %></div>

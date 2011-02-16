@@ -49,7 +49,7 @@ class Jam < ActiveRecord::Base
   end
   
   def displayable?
-    self.published or (self.song_jam.active and self.song.published?) rescue nil
+    self.adam? and (self.published or (self.song_jam.active and self.song.published?)) rescue nil
   end
   
   def after_create

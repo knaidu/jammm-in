@@ -1,1 +1,6 @@
-<%= partial("common/users", :locals => {:users => @user.follows}) %>
+<% users = @user.follows %>
+<%= partial("common/users", :locals => {:users => users}) %>
+
+<% if users.empty? %>
+  <div class="s11"><%= @user.username %> is not following anyone.</div>
+<% end %>

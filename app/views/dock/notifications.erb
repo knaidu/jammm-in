@@ -4,11 +4,14 @@
 </div>
 <% notifications = session_user?.notifications.first(5) %>
 <%= vspace %>
-<div style='padding: 5px'>
-  <div class="notifications-page" style='margin-left: -10px; color: #888'>
-    <%= partial :"/account/notifications/notifications", :locals => {:notifications => notifications} %>
+
+<div class="doc-notifications">
+  <div style='padding: 5px'>
+    <div class="notifications-page" style='margin-left: -10px; color: #888'>
+      <%= partial :"/account/notifications/notifications", :locals => {:notifications => notifications} %>
+    </div>
   </div>
-</div>
-<div class='show-all' onclick='Navigate.loadContent("/account/notifications"); Doc.Player.collapse()'>
-  View all notifications
+  <div class='show-all' onclick='Navigate.loadContent("/account/notifications"); Doc.Player.collapse()'>
+    View all notifications
+  </div>
 </div>

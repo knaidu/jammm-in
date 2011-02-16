@@ -189,7 +189,7 @@ Navigate.loadContent = function(url){
 
 Navigate.setCurrentState = function(state){
 	this.currentState = new State(state);
-	
+//	console.log(this.currentState.context_menu);
 	if(this.currentState.context_menu == 'false'){
 		Layout.ContextMenu.empty();
 	}
@@ -198,9 +198,8 @@ Navigate.setCurrentState = function(state){
 		Layout.ContextMenu.load(this.currentState.context_menu);
 	}
 	
-	if(this.currentState.right_panel){
-		Layout.RightPanel.load(this.currentState.right_panel);		
-	}
+	var rightPanel = this.currentState.right_panel || "false";
+	Layout.RightPanel.load(rightPanel);
 }.bind(Navigate)
 
 Navigate.storeState = function(){
@@ -355,8 +354,11 @@ Doc.Player.expand = function(){
 
 Doc.Player.collapse = function(){
 	this.get().animate({height: 20}, "slow", function() {
-		updateEl(Doc.Player.get()[0], "/partial/body/actions_doc");
-		if(!Flash.isPlaying()) Doc.Player.hide();
+		if(Flash.isPlaying()){
+			updateEl(Doc.Player.get()[0], "/partial/body/actions_doc");
+			return;
+		}
+		Doc.Player.hide(); // If no items is currently being played
 	});
 }.bind(Doc.Player);
 
@@ -373,10 +375,18 @@ Doc.Playlist.show = function() {
 }.bind(Doc.Playlist);
 
 Doc.Notifications.show = function() {
+	if($j(".player-container .doc-notifications").size()){
+		Doc.Player.collapse();
+		return;
+	}
 	Doc.Player.expand("/dock/notifications");
 }.bind(Doc.Notifications);
 
 Doc.Messages.show = function() {
+	if($j(".player-container .messages").size()){
+		Doc.Player.collapse();
+		return;
+	}
 	Doc.Player.expand("/dock/messages");
 }.bind(Doc.Messages);
 
@@ -468,26 +478,34 @@ General.onClickMore = function(el) {
 General.Tabs.setup = function(container) {
 	var el = $j("#" + container);
 	var children = $A(el.children());
-	
-	var rightTab = $A(el.children()).pop();
 	var tabs = $j("#" + container + " .tab");
-	children.pop();
-	var widths = $A(children).map(function(i) {return i.getWidth()}).sum();
-	var width = el.width() - widths - 10;
-	$j(rightTab).width(width);
+	General.Tabs.resizeLine(container);
 	tabs.click('click', function() {
 		General.Tabs.loadTab(this);
 	});
 	this.loadTab(tabs[0]); // Loads the First Tab
 }.bind(General.Tabs);
 
-General.Tabs.loadTab = function(el) {
-	parent = $j(el).parent();
+General.Tabs.resizeLine = function(container) {
+	var el = $j("#" + container);
+	var children = $A(el.children());
+	
+	var rightTab = $A(el.children()).pop();
+	var tabs = $j("#" + container + " .tab");
+	children.pop();
+	var widths = $A(children).map(function(i) {return i.getWidth()}).sum();
+	var width = el.width() - widths - 3;
+	$j(rightTab).width(width);
+}.bind(General.Tabs);
+
+General.Tabs.loadTab = function(el, container) {
+	var parent = $j(el).parent();
 	var contentDivId = $j(el).parent()[0].getAttribute('contentdivid');
 	updateEl(contentDivId, el.getAttribute('url'));
 	var tabs = $j("#" + parent[0].id + " .tab");
 	tabs.removeClass("selected");
 	$j(el).addClass("selected");
+	this.resizeLine($j(el).parent()[0].id);
 }.bind(General.Tabs);
 
 /* SEARCH LIST FILTER */
@@ -567,14 +585,6 @@ General.loadingText = function() {
 	return "<img style='padding-left: 10px; padding-right: 10px; padding-top: 5px;' src='/new-ui/loading.gif'> <font color='#aaa'>Loading ...</font>";
 }.bind(General);
 
-General.Overview.animateItems = function() {
-	$j(".overview .item").hover(function() {
-		$j(this).animate({paddingLeft: 130})
-	}, function() {
-		$j(this).animate({paddingLeft: 15})
-	})
-}.bind(General.Overview);
-
 
 General.Overview.getOverlay = function() {
 	return $j("#overview-overlay");
@@ -586,7 +596,8 @@ General.Overview.setup = function() {
 
 General.Overview.show = function() {
 	var callback = arguments[0] || function() {};
-	this.getOverlay().center().fadeIn(callback);
+//	this.getOverlay().center().fadeIn(callback);
+	this.getOverlay().css({padding: "10px"}).animate({height: "100%"}, 'slow', callback);
 ;}.bind(General.Overview);
 
 
