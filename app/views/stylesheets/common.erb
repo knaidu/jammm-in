@@ -158,9 +158,10 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
 .actions-doc .contents {margin-left: 3px; overflow: auto; height: <%= footer_height %>}
 .actions-doc .contents .item {float: right; height: 20px; overflow: auto; margin-right: 13px; height: 100%; cursor: pointer}
 .actions-doc .contents .item .text {margin-top: 5px; padding: 4px 10px; <%= round_2 %>; background-color: #bbb; color: #555; font-size: 11px}
+.actions-doc .contents .item .text.login {background-color: #34d134; color: white}
 .actions-doc .contents .item .icon {margin-top: 3px}
 .player-container {
-  display: none;
+  display: none; 
   position: fixed; 
   bottom: <%= (footer_height.px + 1).px %>; 
   width: <%= (right_panel_width.px - 10).px %>; 

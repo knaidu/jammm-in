@@ -29,6 +29,7 @@ Layout.showStructure = function(){
 	Doc.Player.collapse();
 	this.attachScrollJEvent();
 	this.contentPanel = this.getContentPanel();
+	General.periodicallySetMaxScrollHeight();
 }.bind(Layout);
 
 Layout.load = function() {
@@ -67,7 +68,10 @@ Layout.manageScrollJEvent = function(e){
 	var moveBy = -(30 * detail);
 	var content = this.contentPanel.children()[0];
 	var top = parseInt(content.style.top.replace("px", "")) + moveBy;
-	if (top > 0) top = 0;
+	if (top > 0) 
+		top = 0;
+	else if (top < parseInt(Layout.contentPanel[0].getAttribute("maxscrollheight")))
+		top = Layout.contentPanel[0].getAttribute("maxscrollheight");
 	content.style.top = top + "px";
 }.bind(Layout);
 
@@ -162,6 +166,7 @@ Navigate.saveHomeState = function(){
 	this.setCurrentState(state);
 }.bind(Navigate);
 
+
 Navigate.loadContent = function(url){
 	var options = arguments[1] || {direction: "left"};
 	var children = $j(".content-panel").children();
@@ -173,7 +178,7 @@ Navigate.loadContent = function(url){
 //		div.absolutize();
 		div.style.top = "0px";
 		$j(div).html(General.loadingText());
-		updateEl(div, url, {onSuccess: function(){window.setTimeout(Navigate.storeState, 500)}});		
+		updateEl(div, url, {onSuccess: function(){window.setTimeout(Navigate.loadContent.callback, 500)}});		
 	}
 
 	if(children.size()){
@@ -186,6 +191,17 @@ Navigate.loadContent = function(url){
 	else
 		callback();
 }.bind(Navigate);
+
+Navigate.loadContent.callback = function(t) {
+	Navigate.storeState();
+	this.setMaxScrollHeight();
+}.bind(Navigate.loadContent);
+
+Navigate.loadContent.setMaxScrollHeight = function() {
+	var cp = $("content-panel");
+	var maxScrollHeight = cp.getContentHeight() - cp.getHeight() + 90;
+	$("content-panel").setAttribute("maxscrollheight", -maxScrollHeight);
+}.bind(Navigate.loadContent);
 
 Navigate.setCurrentState = function(state){
 	this.currentState = new State(state);
@@ -464,15 +480,10 @@ General.Comment.add = function() {
 }.bind(General.Comment);
 
 General.onClickMore = function(el) {
-	aaa = el;
 	var id = $(el).getAttribute("moreref");
 	var container = $(id);
 	$j(el).hide();
-	var prevHeight = container.getHeight();
-	container.style.height = '';
-	var newHeight = container.getHeight();
-	container.style.height = prevHeight + "px";
-	$j(container).animate({height: newHeight}, 500);
+	$j(container).animate({height: container.getContentHeight()}, 500, Navigate.loadContent.setMaxScrollHeight);
 }.bind(General);
 
 /* TABS */
@@ -502,7 +513,10 @@ General.Tabs.resizeLine = function(container) {
 General.Tabs.loadTab = function(el, container) {
 	var parent = $j(el).parent();
 	var contentDivId = $j(el).parent()[0].getAttribute('contentdivid');
-	updateEl(contentDivId, el.getAttribute('url'));
+	var callback = function() {
+		window.setTimeout(Navigate.loadContent.setMaxScrollHeight, 400);
+	};
+	updateEl(contentDivId, el.getAttribute('url'), {onSuccess: callback});
 	var tabs = $j("#" + parent[0].id + " .tab");
 	tabs.removeClass("selected");
 	$j(el).addClass("selected");
@@ -679,4 +693,8 @@ General.addMessageStreamPost = function(id1, id2, body) {
 	var onFailure = arguments[4] || function() {};
 	var url = formatUrl("/message_stream/new_post");
 	call(url, {method: 'post', onSuccess: callback, onFailure: onFailure, parameters: {user_ids: id1+","+id2, body: body}})
+}.bind(General);
+
+General.periodicallySetMaxScrollHeight = function() {
+	this.maxScrollTimer = new PeriodicalExecuter(Navigate.loadContent.setMaxScrollHeight, 2);
 }.bind(General);

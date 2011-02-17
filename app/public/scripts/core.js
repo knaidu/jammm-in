@@ -43,6 +43,13 @@ Element.addMethods({
 	findDescendantsByName: function(element, name){
 		var decs = element.descendants();
 		return decs.findAll(function(i){return i.getAttribute('name') == name}) 
+	},
+	getContentHeight: function(element) {
+		var prevHeight = element.getHeight();
+		element.style.height = '';
+		var newHeight = element.getHeight();
+		element.style.height = prevHeight + "px";
+		return newHeight;
 	}
 });
 
