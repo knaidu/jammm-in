@@ -14,7 +14,7 @@
   </div>
   <div class='content'>
     <div class='name'><%= @jam.name %></div>
-    <div class='artist'><%= @jam.creator.name %></div>
+    <div class='artist link' <%= profile_link @jam.creator %>><%= @jam.creator.username %></div>
     <div class='play-waveform'>
       <% waveformid = rand_id %>
       <div class='play' <%= play_info @jam %> waveformid='<%= waveformid %>' playtype='waveform'>
@@ -33,7 +33,7 @@
 <%= vspace 20 %>
 <div class='section-header'>Information</div>
 <% moreref = rand_id %>
-<div class='overflow-hidden s11' style='height: 105px' id='<%= moreref %>'>
+<div class='overflow-hidden s11' style='height: 106px' id='<%= moreref %>'>
   <div class='field'>Name:</div><span><%= @jam.name %></span><%= vspace %>
   <div class='field'>Artists:</div><span><%= @jam.creator.name %></span><%= vspace %>
   <div class='field'>Instruments:</div><span><%= @jam.instrument ? @jam.instrument.name : "-" %></span><%= vspace %>

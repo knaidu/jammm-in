@@ -4,13 +4,13 @@
     <img src='<%= jam.creator.profile_picture_url %>'>
   </div>
   <div class='content'>
-    <span class='bold'><%= jam.creator.username %></span> published
+    <span class='bold link clickable' <%= profile_link jam.creator %>><%= jam.creator.username %></span> published
     <div class='entity'>
       <div class='entity-image'>
         <img src='/new-ui/saxophone.png'>
       </div>
       <div class='entity-info'>
-        <div class='bold'><%= jam.name %></div>
+        <div class='bold clickable link' <%= music_link jam %>><%= jam.name %></div>
         <%= vspace 10 %>
         <div>
           <div class='field-name'>Views:</div><%= jam.views %>

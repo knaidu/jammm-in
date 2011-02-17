@@ -7,7 +7,7 @@
   </div>
   <div class='content'>
     <div class='name'><%= @song.name %></div>
-    <div class='artist'><%= @song.creator.name %></div>
+    <div class='artist link' <%= profile_link @song.creator %>><%= @song.creator.username %></div>
     <div class='play-waveform'>
       <% waveformid = rand_id %>
       <div style='position: absolute; left: 0px;' class='play' <%= play_info @song %> waveformid='<%= waveformid %>' playtype='waveform'><%= icon "/images/42.png", 2, 42, true %></div>
@@ -24,7 +24,7 @@
 <%= vspace 30 %>
 <div class='section-header'>Information</div>
 <% moreref = rand_id %>
-<div class='overflow-hidden' style='height: 113px' id='<%= moreref %>'>
+<div class='overflow-hidden s11' style='height: 106px' id='<%= moreref %>'>
   <div class='field'>Name:</div><span><%= @song.name %></span><%= vspace %>
   <div class='field'>Artists:</div><span><%= @song.artists.map(&:username).join(", ") %></span><%= vspace %>
   <div class='field'>Instruments:</div><span><%= @song.instruments.map(&:name).join(", ") %></span><%= vspace %>

@@ -4,13 +4,13 @@
     <img src='<%= song.creator.profile_picture_url %>'>
   </div>
   <div class='content'>
-    <span class='bold link' onclick='Navigate.loadContent("/<%= song.creator.username %>")'><%= song.creator.username %></span> published
+    <span class='bold link clickable' <%= profile_link song.creator %>><%= song.creator.username %></span> published
     <div class='entity'>
       <div class='entity-image'>
         <img src='/new-ui/collaborate.png'>
       </div>
       <div class='entity-info'>
-        <div class='bold'><%= song.name %></div>
+        <div class='bold link' <%= music_link song %>><%= song.name %></div>
         <%= vspace 10 %>
         <div>
           <div class='field-name'>Views:</div><%= song.views %>
@@ -24,5 +24,8 @@
       </div>
     </div>
     <div class='time'><%= feed.created_at.reference_string %></div>
+    <div class='time'><%= feed.created_at.reference_string %>&nbsp;
+      <div class="float-right"><%= render_mini_play_text(song) %></div>
+    </div>
   </div>
 </div>

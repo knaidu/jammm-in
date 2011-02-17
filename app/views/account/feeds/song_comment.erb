@@ -7,14 +7,14 @@
     <img src='<%= comment.user.profile_picture_url %>'>
   </div>
   <div class='content'>
-    <div class='bold'><%= comment.user.username %></div><%= vspace %>
-    "<%= feed.dataObj.comment.comment %>"
+    <div class='bold link clickable' <%= profile_link comment.user %>><%= comment.user.username %></div><%= vspace %>
+    <%= feed.dataObj.comment.comment %>
     <div class='entity'>
       <div class='entity-image'>
         <img src='/new-ui/collaborate.png'>
       </div>
       <div class='entity-info'>
-        <div class='bold'><%= song.name %></div>
+        <div class='bold link' <%= music_link song %>><%= song.name %></div>
         <%= vspace 10 %>
         <div>
           <div class='field-name'>Views:</div><%= song.views %>
@@ -26,5 +26,8 @@
       </div>
     </div>
     <div class='time'><%= feed.created_at.reference_string %></div>
+    <div class='time'><%= feed.created_at.reference_string %>&nbsp;
+      <div class="float-right"><%= render_mini_play_text(song) %></div>
+    </div>
   </div>
 </div>

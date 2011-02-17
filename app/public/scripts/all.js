@@ -355,6 +355,7 @@ Doc.Player.expand = function(){
 Doc.Player.collapse = function(){
 	this.get().animate({height: 20}, "slow", function() {
 		var onSuccess = function() {
+			if(!Flash.isPlaying()) return;
 			window.setTimeout(Flash.displayMusicInDoc, 1000); // Waits 1 sec as the dom might not be ready to update the divs
 		};
 		updateEl(Doc.Player.get()[0], "/partial/body/actions_doc", {onSuccess: 	onSuccess});

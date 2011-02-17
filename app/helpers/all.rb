@@ -239,5 +239,9 @@ def render_mini_play_text(obj)
   ].join ''
 end
 
+def music_link(music)
+  " onclick='Navigate.loadContent(\"/#{music.class.to_s.downcase}/#{music.id}\")' "
+end
+
 
 load 'helpers/profile.rb'

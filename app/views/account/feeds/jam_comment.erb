@@ -7,14 +7,14 @@
     <img src='<%= comment.user.profile_picture_url %>'>
   </div>
   <div class='content'>
-    <div class='bold link' onclick='Navigate.loadContent("/<%= comment.user.username %>")'><%= comment.user.username %></div><%= vspace %>
-    "<%= feed.dataObj.comment.comment %>"
+    <div class='bold link clickable' <%= profile_link comment.user %>><%= comment.user.username %></div><%= vspace %>
+    <%= feed.dataObj.comment.comment %>
     <div class='entity'>
       <div class='entity-image'>
         <img src='/new-ui/acoustic-guitar.png'>
       </div>
       <div class='entity-info'>
-        <div class='bold'><%= jam.name %></div>
+        <div class='bold link' <%= music_link jam %>><%= jam.name %></div>
         <%= vspace 10 %>
         <div>
           <div class='field-name'>Views:</div><%= jam.views %>
@@ -26,5 +26,8 @@
       </div>
     </div>
     <div class='time'><%= feed.created_at.reference_string %></div>
+    <div class='time'><%= feed.created_at.reference_string %>&nbsp;
+      <div class="float-right"><%= render_mini_play_text(jam) %></div>
+    </div>
   </div>
 </div>
