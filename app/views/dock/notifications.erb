@@ -15,3 +15,11 @@
     View all notifications
   </div>
 </div>
+<% if notifications.empty? %>
+    <div class="s11" style='padding: 0px 10px'>You have no notifications</div>
+<% else %>
+  <% session_user?.mark_notifications_as_read %>
+  <%= js_start %>
+    Doc.reload();
+  <%= js_end %>
+<% end %>
