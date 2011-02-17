@@ -193,13 +193,13 @@ Navigate.loadContent = function(url){
 }.bind(Navigate);
 
 Navigate.loadContent.callback = function(t) {
+//	this.setMaxScrollHeight();
 	Navigate.storeState();
-	this.setMaxScrollHeight();
 }.bind(Navigate.loadContent);
 
 Navigate.loadContent.setMaxScrollHeight = function() {
 	var cp = $("content-panel");
-	var maxScrollHeight = cp.getContentHeight() - cp.getHeight() + 90;
+	var maxScrollHeight = cp.getContentHeight() - cp.getHeight();
 	$("content-panel").setAttribute("maxscrollheight", -maxScrollHeight);
 }.bind(Navigate.loadContent);
 
@@ -513,10 +513,7 @@ General.Tabs.resizeLine = function(container) {
 General.Tabs.loadTab = function(el, container) {
 	var parent = $j(el).parent();
 	var contentDivId = $j(el).parent()[0].getAttribute('contentdivid');
-	var callback = function() {
-		window.setTimeout(Navigate.loadContent.setMaxScrollHeight, 400);
-	};
-	updateEl(contentDivId, el.getAttribute('url'), {onSuccess: callback});
+	updateEl(contentDivId, el.getAttribute('url'));
 	var tabs = $j("#" + parent[0].id + " .tab");
 	tabs.removeClass("selected");
 	$j(el).addClass("selected");
