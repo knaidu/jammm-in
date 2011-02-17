@@ -18,7 +18,7 @@
     <div class='artist'><%= @jam.creator.name %></div>
     <div class='play-waveform'>
       <% seek_id = rand_id %>
-      <div class='play' <%= play_info jam %> seekid='<%= seek_id %>'><img src='/new-ui/play.png'></div>
+      <div class='play' <%= play_info jam %> seekid='<%= seek_id %>' playtype='waveform'><%= icon "/images/42.png", 2, 42, true %></div>
       <div class='waveform'>
         <div class='seek' id='<%= seek_id %>'>
           <img src='<%= jam.file_data.waveform_url %>' class='waveform-image'>

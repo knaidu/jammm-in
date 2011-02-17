@@ -358,7 +358,7 @@ Doc.Player.collapse = function(){
 			updateEl(Doc.Player.get()[0], "/partial/body/actions_doc");
 			return;
 		}
-		Doc.Player.hide(); // If no items is currently being played
+//		Doc.Player.hide(); // If no items is currently being played
 	});
 }.bind(Doc.Player);
 

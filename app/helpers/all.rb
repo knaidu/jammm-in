@@ -218,7 +218,8 @@ def play_info(obj, flattened_file=false)
     :play => download_url(obj, flattened_file),
     :musicname => obj.name,
     :musicdata => obj.class.to_s.downcase + "_" + obj.id.to_s,
-    :length => file_data.length
+    :length => file_data.length,
+    :playid => rand_id
   }
   info.map{|k,v| "#{k}='#{v}'"}.join(' ')
 rescue 
@@ -228,6 +229,14 @@ end
 def page_header(list)
   s = list.join(" <span class='slash'>/</span> ")
   "<div class='page-header'>#{s}</div>"
+end
+
+def render_mini_play_text(obj)
+  [
+    "<div class='mini-play' #{play_info(obj)} onhovershow=true playtype=mini>",
+      "<div class='text'>Play</div><div class='icon'>#{icon '/images/24.png', 26, 24, true}</div>",
+    "</div>"
+  ].join ''
 end
 
 

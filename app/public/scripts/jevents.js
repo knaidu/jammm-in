@@ -114,3 +114,14 @@ JEvent.list.highlightNavigationItem = function() {
 		$j(".navigation-bar .images .image:first-child").removeClass("highlight")
 	});
 }.bind(JEvent.list);
+
+
+JEvent.list.onhoverFeedShowHiddenItems = function() {
+	$j(".feeds .feed").live('mouseover', function(){
+		$j("[onhovershow=true]", this).show();
+	})
+	
+	$j(".feeds .feed").live('mouseout', function(){
+		$j("[onhovershow=true]", this).hide();
+	})
+}.bind(JEvent.list);
