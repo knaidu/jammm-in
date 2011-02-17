@@ -29,9 +29,8 @@ function flashGotStatus(str) {
 /* API */
 Flash.startOperations = function(el) {
 	var path = $(el).getAttribute('play');
-	
 	// Checks if the a song is already playing, but is play event is of another song, it plays the new song.
-	if(this.isPlaying() && (this.currentData && this.currentData.playId == el.getAttribute('playid'))){
+	if(this.isPlaying() && (el.getAttribute('playtype') == 'doc' || this.currentData.playId == el.getAttribute('playid'))){
 		this.pause();
 		return;
 	}else if (this.isPaused()){
@@ -47,7 +46,6 @@ Flash.play = function(path) {
 	this.paused = false;
 	flashPlay(path);
 	this.displayMusicInDoc();
-	this.setImageStates();
 	this.startGettingStatus();
 	if(this.currentData.playType == 'mini'){
 		this.makeMiniLinkPersistent();
@@ -82,7 +80,6 @@ Flash.continuePlaying = function() {
 	this.playing = true;
 	this.setImageStates();
 	this.startGettingStatus();
-	
 }.bind(Flash);
 
 Flash.saveCurrentData = function(el) {
@@ -142,6 +139,7 @@ Flash.displayMusicInDoc = function() {
 	Doc.Player.show();
 	if(this.currentData.musicname)
 		$j(".player .text").html(this.currentData.musicname);
+	this.setImageStates();
 }.bind(Flash);
 
 Flash.isPlaying = function() {

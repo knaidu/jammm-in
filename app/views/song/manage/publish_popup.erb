@@ -3,7 +3,7 @@ Your song has been successfully mixed. Click 'publish' to publish the song.
 <div>
   <div class='play-waveform' style='position: relative'>
     <% waveformid = rand_id %>
-    <div style='position: absolute; left: 0px;' class='play' <%= play_info @song, true %> waveformid='<%= waveformid %>'><img src='/new-ui/play.png'></div>
+    <div style='position: absolute; left: 0px;' class='play' <%= play_info @song, true %> waveformid='<%= waveformid %>' playtype='waveform'><%= icon "/images/42.png", 2, 42, true %></div>
     <div class='waveform' style='position: relative; margin-left: 50px' id="<%= waveformid %>">
       <div class="buffer"></div>
       <div class='seek'>
