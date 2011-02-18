@@ -43,6 +43,20 @@ get '/account/unpublished_jams' do
   erb(:"/account/unpublished_jams")
 end
 
+get '/account/published_songs' do
+  @songs = session_user?.published_songs
+  erb(:"/account/published_songs")
+end
+
+get '/account/unpublished_songs' do
+  @songs = session_user?.unpublished_songs
+  erb(:"/account/unpublished_songs")
+end
+
+get '/account/songs_created_by_others' do
+  @songs = session_user?.songs_created_by_others
+  erb(:"/account/songs_created_by_others")
+end
 
 get '/account/following' do
   logged_in? {

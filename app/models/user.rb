@@ -94,7 +94,15 @@ class User < ActiveRecord::Base
   end
   
   def published_songs
-    songs.select(&:published?)
+    songs.select{|s| s.published? and s.creator == self}
+  end
+  
+  def unpublished_songs
+    songs.reject{|s| s.published? or s.creator != self}
+  end
+  
+  def songs_created_by_others
+    songs.select{|s| s.published? and s.creator != self}
   end
   
   def in_progress_songs
@@ -131,6 +139,7 @@ class User < ActiveRecord::Base
   
   # Determines the Feeds for the User
   def feeds(limit=20)
+    return [] if self.follows.empty?
     follows_user_ids = self.follows.map(&:id).join(",")
     range = Range.new(0, (limit.to_i - 1))
     my_feeds = (Feed.find_by_sql [

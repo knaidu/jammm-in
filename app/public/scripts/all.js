@@ -3,7 +3,7 @@ var Navigate = {states: []};
 var Modal = {};
 var Doc = {Player: {}, Playlist: {}, Notifications: {}, Messages: {}, Login: {}};
 var JEvent = {list: {}}; // 'list' is treated as an array. In the sense, on load all keys in 'list' are itereated over and run.
-var General = {Comment: {}, Tabs: {}, List: {}, Overview: {}, User: {}};
+var General = {Comment: {}, Tabs: {}, List: {}, Overview: {}, User: {}, RequestInvite: {}};
 var Playlist = {list: [], position: false};
 
 Layout.onReady = function(){
@@ -34,8 +34,12 @@ Layout.showStructure = function(){
 
 Layout.load = function() {
 	var hash = window.location.hash;
-	if(hash.blank())
-		this.loadOverview();
+
+	// General.Overview.setup.showContent is used to determine what is shown when the home page loads
+	var ret = hash.match("^#code=([^ ]*)")
+	General.Overview.setup.showContent = ret ? function() {General.Overview.showSignUpForm(ret[1])} : false;
+	
+	this.loadOverview();
 }.bind(Layout);
 
 Layout.loadOverview = function() {
@@ -168,7 +172,9 @@ Navigate.saveHomeState = function(){
 
 
 Navigate.loadContent = function(url){
-	var options = arguments[1] || {direction: "left"};
+	var defaultOptions = {direction: "left"}
+	var options = arguments[1] || {};
+	options = mergeHash(defaultOptions, options);
 	var children = $j(".content-panel").children();
 	var callback = function(e){
 		if(children.size())
@@ -297,6 +303,8 @@ Modal.show = function(){
 	var d = this.get();
 //	d.center();
 	this.cmp = d.modal(config);
+	var datadiv = $j(".simplemodal-data");
+	datadiv.height(datadiv.parent().height() - 15);
 }.bind(Modal)
 
 Modal.load = function(url){
@@ -603,14 +611,41 @@ General.Overview.getOverlay = function() {
 }.bind(General.Overview);
 
 General.Overview.setup = function() {
-	this.show(this.showWhat);
-;}.bind(General.Overview);
+	var show = this.setup.showContent ? this.setup.showContent : this.showWhat;
+	this.setup.showContent = false;
+	this.show(show);
+}.bind(General.Overview);
+
+
+General.Overview.showRequestInvite = function() {
+	var el = this.getOverlay();
+	if(!el) return;
+	var fn = function() {
+		updateEl(el[0], "/request_invite");
+	}.bind(this);
+	el[0].visible() ? fn() : this.show(fn)
+}.bind(General.Overview);
+
+General.Overview.showSignUpForm = function(code) {
+	var el = this.getOverlay();
+	if(!el) return;
+	var fn = function() {
+		var url = formatUrl('/signup', {code: code})
+		updateEl(el[0], url);
+	}.bind(this);
+	el[0].visible() ? fn() : this.show(fn)
+}.bind(General.Overview);
 
 General.Overview.show = function() {
 	var callback = arguments[0] || function() {};
 //	this.getOverlay().center().fadeIn(callback);
-	this.getOverlay().css({padding: "10px"}).animate({height: "100%"}, 'slow', callback);
+	this.getOverlay().animate({padding: "10px"}, 'slow', callback);
 ;}.bind(General.Overview);
+
+General.Overview.animateResize = function() {
+	var height = $(this.getOverlay()[0]).getContentHeight();
+	this.getOverlay().animate({height: height});
+}.bind(General.Overview);
 
 
 General.Overview.close = function() {
@@ -694,4 +729,55 @@ General.addMessageStreamPost = function(id1, id2, body) {
 
 General.periodicallySetMaxScrollHeight = function() {
 	this.maxScrollTimer = new PeriodicalExecuter(Navigate.loadContent.setMaxScrollHeight, 2);
+}.bind(General);
+
+General.getAjaxLoader = function(str) {
+	var cd = new Element('div');
+	var t = new Element('div', {paddingBottom: "5px"}).update(str);
+	var img = new Element('img', {src: "/new-ui/ajax-loader.gif"});
+	cd.appendChild(t);
+	cd.appendChild(img);
+	return cd;
+}.bind(General);
+
+General.getErrorText = function(str) {
+	return new Element('div').update(str).addClassName('red');
+}.bind(General);
+
+/* REQUEST FOR AN INVITE */
+General.RequestInvite.submit = function() {
+	var f = $('form-request');
+	var responseField = $j(".response", $('form-request'))[0];
+	var onSuccess = function() {
+		responseField.update("Your invite request has been registered. We will get back to you shortly.");
+	};
+	var onFailure = function(t) {
+		responseField.update(General.getErrorText(t.responseText));
+	};
+	responseField.update(General.getAjaxLoader("Please wait..."));
+	f.request({onSuccess: onSuccess, onFailure: onFailure});
+}.bind(General.RequestInvite);
+
+General.User.signup = function() {
+	var f = $('form-new-user');
+	var responseField = $j(".response", f)[0];
+	
+	var onSuccess = function() {
+		Doc.reload();
+		Navigate.loadContent('/account');
+	};
+	var onFailure = function(t) {
+		responseField.update(General.getErrorText(t.responseText));
+	};
+	
+	if(!$('checkbox-tc').checked){
+		onFailure({responseText: "Please check the terms and conditions"});
+		return;
+	}
+	responseField.update(General.getAjaxLoader("Please wait while your account is being created..."));
+	f.request({onSuccess: onSuccess, onFailure: onFailure});
+}.bind(General.User);
+
+General.showTermsAndConditions = function() {
+	Modal.load("/terms_and_conditions", {minHeight: '400px', minWidth: '500px'});
 }.bind(General);

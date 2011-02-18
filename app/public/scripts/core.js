@@ -46,7 +46,7 @@ Element.addMethods({
 	},
 	getContentHeight: function(element) {
 		var prevHeight = element.getHeight();
-		element.style.height = '';
+		element.style.height = 'auto';
 		var newHeight = element.getHeight();
 		element.style.height = prevHeight + "px";
 		return newHeight;
@@ -181,7 +181,7 @@ function loadUrl(url){
 }
 
 function reload(){
-	window.location = window.location.href;
+	window.location = '';
 }
 
 function mergeHash(hash1, hash2){

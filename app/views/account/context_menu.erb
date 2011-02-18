@@ -1,7 +1,7 @@
 
 <div class='context-menu'>
 
-  <div class='item container' onclick='Jam.create()'>
+  <div class='item container highlight' onclick='Jam.create()' >
       <div class='icon'><%= icon "/images/24.png", 3, 24, true %></div>
       <div class='text'>Create Jam
         <%= vspace 5 %>
@@ -9,7 +9,7 @@
       </div>
   </div>
   <%= vspace 10 %>
-  <div class='item container' onclick='Navigate.loadContent("/account")'>
+  <div class='item container highlight' onclick='Navigate.loadContent("/account")'  >
       <div class='icon'><%= icon "/images/24.png", 9, 24, true %></div>
       <div class='text'>My Home</div>
   </div>
@@ -19,36 +19,39 @@
       <div class='icon'><%= icon "/images/24.png", 0, 24, true %></div>
       <div class='text'>My Jams</div>
     </div>
-    <div class='item sub container' onclick='Navigate.loadContent("/account/jams")'>
+    <div class='item sub container highlight' onclick='Navigate.loadContent("/account/jams")'  >
       <div class='text'>Published Jams</div>
     </div>
-    <div class='item sub container' onclick='Navigate.loadContent("/account/unpublished_jams")'>
+    <div class='item sub container highlight' onclick='Navigate.loadContent("/account/unpublished_jams")' >
       <div class='text'>Unpublished Jams</div>
     </div>
   </div>
 
-  <div class='item' onclick='Song.create("jam", <%= @jam.id %>)'>
+  <div class='item'>
     <div class='container'>
       <div class='icon'><%= icon "/images/24.png", 1, 24, true %></div>
       <div class='text'>My Collaborations</div>
     </div>
-    <div class='item sub container'>
-      <div class='text'>Created by Me</div>
+    <div class='item sub container highlight' onclick='Navigate.loadContent("/account/published_songs")'>
+      <div class='text'>Published Collaborations</div>
     </div>
-    <div class='item sub container'>
+    <div class='item sub container highlight' onclick='Navigate.loadContent("/account/unpublished_songs")'>
+      <div class='text'>Unpublished Collaborations</div>
+    </div>
+    <div class='item sub container highlight' onclick='Navigate.loadContent("/account/songs_created_by_others")'>
       <div class='text'>Created by Others</div>
     </div>
   </div>
 
   <div class='item' onclick='Navigate.loadContent("/account/messages")'>
-    <div class='container'>
+    <div class='container highlight'>
       <div class='icon'><%= icon "/images/24.png", 8, 24, true %></div>
       <div class='text'>Messages</div>
     </div>
   </div>
   
   <div class='item' onclick='Navigate.loadContent("/account/aboutme")'>
-    <div class='container'>
+    <div class='container highlight'>
       <div class='icon'><%= icon "/images/24.png", 15, 24, true %></div>
       <div class='text'>Settings</div>
     </div>

@@ -1,33 +1,33 @@
 <div class='context-menu'>
 
   <% if session_user? == @jam.creator %>
-    <div class='item container' onclick='Navigate.loadContent("/jam/<%= @jam.id %>/manage")'>
-        <div class='icon'><img src='/new-ui/manage1.png' width='24px' class='context-menu-image'></div>
+    <div class='item container highlight' onclick='Navigate.loadContent("/jam/<%= @jam.id %>/manage")'>
+      <div class='icon'><%= icon "/images/24.png", 14, 24, true %></div>
         <div class='text'>Edit Jam</div>
     </div>
   <% end %>
   
   <% if @jam.displayable? %>
-    <div class='item container' onclick='Song.create("jam", <%= @jam.id %>)'>
-        <div class='icon'><img src='/new-ui/collaborate.png' width='24px' class='context-menu-image'></div>
+    <div class='item container highlight' onclick='Song.create("jam", <%= @jam.id %>)'>
+      <div class='icon'><%= icon "/images/24.png", 1, 24, true %></div>
         <div class='text'>Collaborate</div>
     </div>
   <% end %>
   
-  <div class='item container' onclick='General.download("<%= @jam.file_handle %>")'>
-    <div class='icon'><img src='/new-ui/download.png' width='24px' class='context-menu-image'></div>
+  <div class='item container highlight' onclick='General.download("<%= @jam.file_handle %>")'>
+      <div class='icon'><%= icon "/images/24.png", 4, 24, true %></div>
     <div class='text'>Download</div>
   </div>
   
   <% if session_user? and @jam.displayable? %>
     <% if not session_user?.likes_jam?(@jam) %>
-      <div class='item container' onclick='Jam.Manage.like("<%= @jam.id %>")'>
-        <div class='icon'><img src='/new-ui/like.png' width='24px' class='context-menu-image'></div>
+      <div class='item container highlight' onclick='Jam.Manage.like("<%= @jam.id %>")'>
+      <div class='icon'><%= icon "/images/24.png", 5, 24, true %></div>
         <div class='text'>Like</div>
       </div>
     <% else %>
-      <div class='item container' onclick='Jam.Manage.unlike("<%= @jam.id %>")'>
-        <div class='icon'><img src='/new-ui/like.png' width='24px' class='context-menu-image'></div>
+      <div class='item container highlight' onclick='Jam.Manage.unlike("<%= @jam.id %>")'>
+      <div class='icon'><%= icon "/images/24.png", 22, 24, true %></div>
         <div class='text'>Unlike</div>
       </div>  
     <% end %>

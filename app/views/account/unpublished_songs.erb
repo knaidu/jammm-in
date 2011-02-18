@@ -1,0 +1,11 @@
+<%= render_state({
+  :url => "/account/published_songs", 
+  :context_menu => "/partial/account/context_menu",
+  :right_panel => "/partial/account/right_panel"
+}) %>
+
+<%= vspace 10 %>
+<%= page_header ["Account", "Songs", "Unpublished Songs"] %>
+<%= vspace 20 %>
+
+<%= partial("common/songs", :locals => {:songs => @songs}) %>

@@ -25,6 +25,8 @@ class Jam < ActiveRecord::Base
 
   include JamUtils
   
+  DEFAULT_JAM_IMAGE = "/images/jam.png"
+  
   def after_destroy
     self.children.each{|jam| jam.set_father(self.father)} # Set all its children's father to its father
     Notification.delete_by_data("jam_id", self.id)
@@ -108,6 +110,10 @@ class Jam < ActiveRecord::Base
   def jam_type
     return :song_jam if song_jam
     published ? :published : :unpublished
+  end
+  
+  def image_url_big
+    self.instrument.icon_image_url_big rescue DEFAULT_JAM_IMAGE
   end
   
   def self.published_jams

@@ -16,3 +16,12 @@
     <%= partial :"/account/feeds/#{feed.feed_type}", :locals => {:feed => feed} %>
   <% } %>
 </div>
+
+<% if feeds.empty? %>
+  <div class="info-box">
+    Thank you for joining jammm.in. <%= vspace 5 %>
+    <ul>
+      <li>To get started click on "Create Jam" in your left menu and upload your music. </li><%= vspace %>
+      <li>By following other artists you can view their updates in this page.</li> 
+  </div>
+<% end %>

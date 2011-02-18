@@ -16,11 +16,11 @@ JEvent.list.addOnHoverRowSelect = function() {
 }.bind(JEvent.list);
 
 JEvent.list.addOnHoverContextMenuItem = function() {
-	$j(".context-menu .container").live("mouseover", function(){
+	$j(".context-menu .highlight").live("mouseover", function(){
 		$j(this).addClass("onhover");
 	});
 	
-	$j(".context-menu .container").live("mouseout", function(){
+	$j(".context-menu .highlight").live("mouseout", function(){
 		$j(this).removeClass("onhover");
 	});
 }.bind(JEvent.list);

@@ -1,53 +1,50 @@
 <% code = param?(:code) %>
 
-<%= section_header "Sign up" %>
-<%= vspace %>
+<div class="overview-header">
+  Sign Up
+</div>
 
-<form method='post' id='form-new-user' action='/signup/create' onsubmit="makeNewUser(); return false;">
-  <%= field 'Full Name' %>
+
+<form method='post' id='form-new-user' action='/signup/create' onsubmit="return false;">
+  <%= field 'Full Name' %><%= vspace %>
   <input type='text' name='form[name]'>
-  <%= vspace %>
-  <%= field 'Username' %>
+  <%= vspace 10 %>
+  
+  <%= field 'Username' %> <%= vspace 5 %>
   <input type='text' name='form[username]'>
-  <%= vspace %>
-  <%= field 'Password' %>
+  <%= vspace 10 %>
+  
+  <%= field 'Password' %> <%= vspace 5 %>
   <input type='password' name='form[password]'>
-  <%= vspace %>
-  <%= field 'Confirm Password' %>
+  <%= vspace 10 %>
+  
+  <%= field 'Confirm Password' %> <%= vspace 5 %>
   <input type='password' name='form[confirm_password]'>
-  <%= vspace %> 
-  <%= field 'Location' %> 
-  <input type='text' name='form[location]'><%= vspace 20 %>
-  <div class='text grey pad1'>
+  <%= vspace 10 %> 
+  
+  <%= field 'Location (e.g Bangalore, India)' %> <%= vspace 5 %>
+  <input type='text' name='form[location]'><%= vspace 10 %>
+  <div>
     <input type='checkbox' id='checkbox-tc' name='form[tc]' CHECKED> 
-    I agree to the <span onclick='viewTC()' class='simple-link'>terms and conditions.</span>
+    I agree to the <span class='bold clickable underline' onclick='General.showTermsAndConditions()'>terms and conditions</span>
   </div>
   <%= vspace 25 %>  
   <input type='hidden' value='<%= code %>' name='form[code]'>
-  <input type='submit' value='Sign Up'>
+
+  <div class="class-relative" onclick='General.User.signup()'>
+    <div class="button float-right" style='overflow: auto; margin-right: 40px'>
+      <div class="icon"><%= icon "/images/16.png", 1, 16, true %></div>
+      <div class="text" style='color: black'>Sign Up</div>
+    </div>
+  </div>
+  <div class="clear-both"></div>
+  <%= vspace  %>
+  <div class="response" style='height: 30px'>
+
+  
 </form>
 <%= vspace %>
-<div id='new-user-response'></div>
-<br>
-<br>
-
 
 <%= js_start %>
-  function makeNewUser(){
-    var form = $('form-new-user');
-    var cb = $('checkbox-tc');
-    if(!cb.checked){
-      alert("Please agree to the terms and conditions in order to create an account.");
-      return false;
-    }
-    showLoadingMessage("new-user-response", "Please wait while your jamMmin account is being created...")
-    form.request({
-      onSuccess: function(){loadUrl("/account/aboutme")},
-      onFailure: loadResponseFn('new-user-response')
-    });
-  }
-  
-  function viewTC(){
-    window.open("/terms_and_conditions", "Terms and Conditions", "height=500px, width=500px");
-  }
+  General.Overview.animateResize();
 <%= js_end %>

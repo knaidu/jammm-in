@@ -1,29 +1,29 @@
 <div class='context-menu'>
   <% if @song.artists.include?(session_user?) %>
-    <div class='item container' onclick='Navigate.loadContent("/song/<%= @song.id %>/manage")'>
-        <div class='icon'><img src='/new-ui/manage1.png' width='24px' class='context-menu-image'></div>
+    <div class='item container highlight' onclick='Navigate.loadContent("/song/<%= @song.id %>/manage")'>
+        <div class='icon'><%= icon "/images/24.png", 14, 24, true %></div>
         <div class='text'>Edit Collaboration</div>
     </div>  
   <% end %>
   
-  <div class='item container' onclick='Song.create("song", <%= @song.id %>)'>
-      <div class='icon'><img src='/new-ui/collaborate.png' width='24px' class='context-menu-image'></div>
+  <div class='item container highlight' onclick='Song.create("song", <%= @song.id %>)'>
+      <div class='icon'><%= icon "/images/24.png", 1, 24, true %></div>
       <div class='text'>Collaborate</div>
   </div>
   
-  <div class='item container' onclick='General.download("<%= @song.file_handle %>")'>
-    <div class='icon'><img src='/new-ui/download.png' width='24px' class='context-menu-image'></div>
+  <div class='item container highlight' onclick='General.download("<%= @song.file_handle %>")'>
+      <div class='icon'><%= icon "/images/24.png", 4, 24, true %></div>
     <div class='text'>Download</div>
   </div>
   
   <% if session_user? and not session_user?.likes_song?(@song) %>
-    <div class='item container' onclick='Song.Manage.like("<%= @song.id %>")'>
-      <div class='icon'><img src='/new-ui/like.png' width='24px' class='context-menu-image'></div>
+    <div class='item container highlight' onclick='Song.Manage.like("<%= @song.id %>")'>
+      <div class='icon'><%= icon "/images/24.png", 5, 24, true %></div>
       <div class='text'>Like</div>
     </div>
   <% else %>
-    <div class='item container' onclick='Song.Manage.unlike("<%= @song.id %>")'>
-      <div class='icon'><img src='/new-ui/like.png' width='24px' class='context-menu-image'></div>
+    <div class='item container highlight' onclick='Song.Manage.unlike("<%= @song.id %>")'>
+      <div class='icon'><%= icon "/images/24.png", 22, 24, true %></div>
       <div class='text'>Unlike</div>
     </div>  
   <% end %>

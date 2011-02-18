@@ -20,8 +20,7 @@ get '/send_invite' do
 end
 
 get '/request_invite' do
-  @layout_info = {"left_panel" => "homepage/left", "middle_panel" => "homepage/request_invite", "right_panel" => "homepage/right"}
-  erb(:'body/structure')
+  erb(:'/homepage/request_invite')
 end
 
 post '/request_invite/process' do

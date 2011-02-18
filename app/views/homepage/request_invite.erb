@@ -1,39 +1,40 @@
-<%= section_header('Request an Invite', {:icon => :invite }) %>
+<div class="overview-header">
+  Request for an Invite
+</div>
 
-<form id='form-request' action='/request_invite/process' method='post' onsubmit="sendRequest(); return false">
-  <%= field 'Name *' %> <input type='text' name='name'>
-  <%= vspace %>
-  <%= field 'Email *' %> <input type='text' name='email'>
-  <%= vspace %>
-  <%= field 'You are a' %> 
+<form id='form-request' action='/request_invite/process' method='post' onsubmit="General.RequestInvite.submit(); return false">
+  <%= field 'Name *' %> <%= vspace %>
+  <input type='text' name='name'>
+  <%= vspace 10 %>
+  <%= field 'Email *' %> <%= vspace 5 %> <input type='text' name='email'> <%= vspace 10 %>
+  
+  <%= field 'You are a' %> <%= vspace %>
     <select name='is_a'>
       <option>Singer-Songwriter</option>
       <option>Instrumentalist</option>
       <option>Enthusiast</option>
     </select>
-  <%= vspace %>
-  <%= field 'Description & Links' %> <textarea name='description'></textarea>
-  <%= vspace %>
-  <div class='text'>
-    Name and Email are mandatory<br>
-    Please include links to your work in the description.
-  </div>
+  <%= vspace 10 %>
+  
+  <%= field 'Description & Links' %> <%= vspace %><textarea name='description'></textarea>
+  <%= vspace 10 %>
+  
+  Name and Email are mandatory<br>
+  Please include links to your work in the description.
+  
   <%= vspace 20 %>
-  <input type='submit' value='Send Request'>
+  <div class="class-relative" onclick='General.RequestInvite.submit()'>
+    <div class="button float-right" style='overflow: auto; margin-right: 40px'>
+      <div class="icon"><%= icon "/images/16.png", 1, 16, true %></div>
+      <div class="text" style='color: black'>Request Invite</div>
+    </div>
+  </div>
+  <div class="clear-both"></div>
+  <%= vspace 10 %>
+  <div class="response" style='height: 30px'>
+  </div>
 </form>
-<br>
-
-<%= vspace %>
-<div id='form-response'></div>
 
 <%= js_start %>
-
-  function sendRequest(){
-    showLoadingMessage('form-response', 'Please wait while the request is registered...');
-    var form = $('form-request');
-    form.request({onSuccess: loadResponseFn('form-response'), onFailure: loadResponseFn('form-response')});
-  }
-
-	setSelectedMenuItem('menu-item-request-invite')
+  General.Overview.animateResize();
 <%= js_end %>
-

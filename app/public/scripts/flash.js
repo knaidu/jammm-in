@@ -4,18 +4,24 @@ function getFlashMovie(movieName) {
   return (isIE) ? window[movieName] : document[movieName];  
 }  
 
-function flashPlay(url) {
-   getFlashMovie("jammminPlayer").playFileFromJavaScript(url);
+function flashStop() {
+   var retVal = getFlashMovie("jammminPlayer").stopFileFromJavaScript();
 }
+
+function flashPlay(url) {
+	flashStop();
+	getFlashMovie("jammminPlayer").playFileFromJavaScript(url);
+}
+
 function flashPause() {
-   getFlashMovie("jammminPlayer").pauseFileFromJavaScript();
+  getFlashMovie("jammminPlayer").pauseFileFromJavaScript();
 }
 function flashContinue(url) {
-   getFlashMovie("jammminPlayer").continueFileFromJavaScript();
+  getFlashMovie("jammminPlayer").continueFileFromJavaScript();
 }
 function flashGetStatus(url) {
-  var ret = getFlashMovie("jammminPlayer").getStatusFromJavaScript();
-	flashGotStatus(ret);
+ var ret = getFlashMovie("jammminPlayer").getStatusFromJavaScript();
+flashGotStatus(ret);
 }  
 
 function flashGotStatus(str) {
