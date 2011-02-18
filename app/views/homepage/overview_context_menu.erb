@@ -1,7 +1,45 @@
-<%= vspace 120 %>
-<div class="overview menu">
+<%= vspace 10 %>
+
+<div class="overview menu hide">
   <div class="item what" onclick='General.Overview.showWhat()'>What</div>
   <div class="item why" onclick='General.Overview.showWhy()'>Why</div>
   <div class="item how">How</div>
   <div class="item what" onclick='General.Overview.showRequestInvite()'>Request Invite</div>
+</div>
+
+<div class='context-menu'>
+
+  <div class='item'>
+    <div class='container'>
+      <div class='icon'><img src='/images/navigation/jammmin.png' height='24px'></div>
+      <div class='text'>jamMm.in</div>
+    </div>
+    <div class='item sub container highlight' onclick='General.Overview.showWhat()'>
+      <div class='text'>What</div>
+    </div>
+    <div class='item sub container highlight' onclick='General.Overview.showWhy()'>
+      <div class='text'>Why</div>
+    </div>
+    <div class='item sub container highlight'>
+      <div class='text'>How</div>
+    </div>
+    <div class='item sub container highlight' onclick='General.Overview.showRequestInvite()'>
+      <div class='text'>Request Invite</div>
+    </div>
+    <div class='item sub container highlight'>
+      <div class='text'>Facebook</div>
+    </div>
+    <div class='item sub container highlight'>
+      <div class='text'>Twitter</div>
+    </div>
+    <div class='item sub container highlight'>
+      <div class='text'>Blog</div>
+    </div>
+    <% unless session_user? %>
+      <div class='item sub container highlight' onclick="Doc.Login.show()">
+        <div class='text red'>Login</div>
+      </div>
+    <% end %>
+  </div>
+
 </div>

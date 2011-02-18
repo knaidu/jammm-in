@@ -9,3 +9,23 @@
 <div class="position-relative; height: 100%; width: 100%">
   <img src='/images/map.png' width='100%' name='map'>
 </div>
+
+<div style='position: absolute; bottom: 10px; min-height: 52px; width: 90%; display: none'>
+  <% jam = Jam.find(36) %>
+  <div class='position-relative play-waveform'>
+    <% waveformid = rand_id %>
+    <div style='position: absolute; width: 50px' class='play' <%= play_info jam %> waveformid='<%= waveformid %>' playtype='waveform'>
+      <%= icon "/images/42.png", 2, 42, true %>
+    </div>
+    <div class='waveform' id="<%= waveformid %>" style='position: relative; margin-left: 54px'>
+      <div class="buffer"></div>
+      <div class='seek'>
+        <img src='<%= jam.file_data.waveform_url rescue "-" %>' class='waveform-image'>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= js_start %>
+  var el = $j("#content-panel").children().height("100%");
+<%= js_end %>
