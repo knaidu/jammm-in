@@ -1,4 +1,7 @@
-<div class='header'>Login</div>
+<div class='header' onclick='Doc.Player.collapse()'>
+  Login
+  <div class="minimize">-</div>
+</div>
   <div style='padding: 5px'>
     <form action="/signin/process" method='post' onsubmit='General.login(); return false'>
     
@@ -8,14 +11,19 @@
       <input type='password' name='password'>
       <%= vspace 20 %>
       
-      <div class="button" style='width: 70px; position: absolute; right: 47px'>
-        <div class="icon"><img src='/new-ui/collaborate.png' height='16px'></div>
-        <div class="text">Login</div>
+      <div style='height: 35px'>
+        <div class="button" style='width: 70px; position: absolute; right: 47px'>
+          <div class="icon"><img src='/new-ui/collaborate.png' height='16px'></div>
+          <div class="text">Login</div>
+        </div>
       </div>
+      <div class="clear-both"></div>
+      <%= vspace 5 %>
       
-      <input type='submit' style='visibility: hidden'>
+      <div class='s11 red clickable' style='text-align: right; margin-right: 47px' onclick='General.User.forgotPassword()'>Forgot Password</div>
       <%= vspace 10 %>
-      <div class="s11 error-response"></div>
+      <div class="s11 error-response" style='margin-right: 47px'></div>
+      <input type='submit' style='visibility: hidden;'>
     </form>
   </div>
 </div>

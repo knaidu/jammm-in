@@ -2,7 +2,8 @@
   :name => "Message Streams", 
   :description => "", 
   :url => "/account/messages", 
-  :context_menu => "/partial/account/context_menu"
+  :context_menu => "/partial/account/context_menu",
+  :img => "/images/navigation/message-streams.png"
 }) %>
 
 <% message_streams = session_user?.message_streams.sort_by{|m| 

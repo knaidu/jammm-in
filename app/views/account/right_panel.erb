@@ -8,7 +8,27 @@
     Used <%= used_memory.to_mb rescue "0MB" %> of <%= session_user?.total_memory.to_mb rescue "0MB"%><%= vspace %>
     <% width =  (used_memory / session_user?.total_memory) * 100 rescue 100 %>
   </div>
-  <div class='memory-usage'>
+  <div class='memory-usage' style='margin-left: 30px'>
     <div class='fill' style="width: <%= width %>%"></div>
   </div>
+</div>
+
+<%= vspace 20 %>
+
+<!-- invite user -->
+<div style='margin-left: 30px'>
+  <span class="bold">Invite a Musician</span>
+  <%= vspace %>
+  You have <%= session_user?.invites_remaining %> invitation remaining.
+  <%= vspace %>
+  Email:<%= vspace 3 %>
+  <input type='text' name='invite-email' style='width: 193px'>
+  <%= vspace 5 %>
+  <div class="button float-right" onclick='General.User.invite()'>
+    <div class="icon"><%= icon "/images/16.png", 1, 16, true %></div>
+    <div class="text">Invite</div>
+  </div>
+  <div class="clear-both"></div>
+  <%= vspace 5 %>
+  <div class="invite-response"></div>
 </div>

@@ -197,6 +197,13 @@ class User < ActiveRecord::Base
     self.save
   end
   
+  def reset_password
+    word = rand_word
+    self.change_password word
+    cmd = "ruby #{ENV["WEBSERVER_ROOT"]}/scripts/mail/forgot_password.rb #{self.id} #{word}"
+    run(cmd)
+  end
+  
   def change_profile_picture(file)
     storage_dir = ENV['STORAGE_DIR']
     filename = new_file_handle_name(false)
@@ -329,6 +336,11 @@ class User < ActiveRecord::Base
     sizes.reduce(0) do |sum, value|
       sum + value
     end
+  end
+  
+  def add_memory(bytes)
+    self.total_memory += bytes
+    self.save
   end
   
   def self.broadcast_message(message)

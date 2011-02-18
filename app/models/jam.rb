@@ -116,6 +116,10 @@ class Jam < ActiveRecord::Base
     self.instrument.icon_image_url_big rescue DEFAULT_JAM_IMAGE
   end
   
+  def image_url_small
+    self.instrument.icon_image_url_small rescue DEFAULT_JAM_IMAGE
+  end
+  
   def self.published_jams
     self.find_all.select(&:published)
   end

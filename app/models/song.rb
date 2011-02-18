@@ -39,6 +39,10 @@ class Song < ActiveRecord::Base
     jams.map(&:artists).flatten.uniq
   end
   
+  def active_artists
+    active_jams.map(&:artists).flatten.uniq
+  end
+  
   def add_to_manager_list
     add_manager(creator)
   end
@@ -115,8 +119,10 @@ class Song < ActiveRecord::Base
     FileData.create_waveform(fresh_song)
     FileData.gather(fresh_song)
     self.send_publish_feed_and_notification
+    self.add_memory_to_users
     self
   end
+
   
   def published
     song_jams.any?(&:active?)
@@ -254,6 +260,12 @@ class Song < ActiveRecord::Base
       last_read_at = song_manager.last_read_messages_at
       (last_read_at == nil) or (message.created_at > last_read_at)
     end
+  end
+  
+  def add_memory_to_users
+    creator.add_memory(MEMORY_DETAILS["collaborate"])
+    users = active_artists - [creator]
+    users.each{|u| u.add_memory(MEMORY_DETAILS["used_in_collaboration"])}
   end
   
   def self.published(count=:all)

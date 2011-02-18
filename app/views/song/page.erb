@@ -1,4 +1,11 @@
-<%= render_state({:name => @song.name, :description => @song.description, :url => "/song/#{@song.id}", :context_menu => "/song/#{@song.id}/context_menu"}) %>
+<%= render_state({
+  :name => @song.name, 
+  :description => @song.description, 
+  :url => "/song/#{@song.id}", 
+  :context_menu => "/song/#{@song.id}/context_menu",
+  :right_panel => false,
+  :img => @song.song_picture_url
+}) %>
 
 <%= vspace 10 %>
 <%= page_header ["Songs", @song.name] %>
@@ -45,7 +52,7 @@
 
 <%= vspace 30 %>
 <div class='section-header'>Jams</div>
-<%= partial :"/song/jams", :locals => {:jams => @song.jams} %>
+<%= partial :"/song/jams", :locals => {:jams => @song.active_jams} %>
 
 
 <%= vspace 20 %>

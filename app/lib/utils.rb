@@ -2,6 +2,7 @@
 # ONE TIME OP: Loads all layout info into global variable $layout_info
 $layout_info = YAML.load_file("#{ENV["WEBSERVER_ROOT"]}/config/layout.yml")
 INVALID_INFO = YAML.load_file("#{ENV["WEBSERVER_ROOT"]}/config/invalid.yml")
+MEMORY_DETAILS = YAML.load_file("#{ENV["WEBSERVER_ROOT"]}/config/memory.yml")
 DATA = YAML.load_file("#{ENV["WEBSERVER_ROOT"]}/config/data.yml")
 BADGES_DATA = YAML.load_file("#{ENV["WEBSERVER_ROOT"]}/config/badges.yml")
 FILES_DIR = ENV["FILES_DIR"]
@@ -287,6 +288,10 @@ def report(music_type, music_id, user=nil)
   ]
   cmd << "--user_id=#{user.id}" if user
   run(cmd.join(" "))
+end
+
+def rand_word
+  ('a'..'z').map.shuffle.first(8).join ''
 end
 
 # DEBUG

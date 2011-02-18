@@ -15,3 +15,18 @@ post '/signin/process' do
     end
   }
 end
+
+
+get '/signin/forgot_password' do
+  erb(:"/signin/forgot_password")
+end
+
+post '/signin/forgot_password/submit' do
+  monitor{
+    email = param?(:email)
+    user = User.find_by_email(email)
+    raise "The email address is not registered to any account." unless user
+    user.reset_password
+    "Successfully set temporary password"
+  }
+end

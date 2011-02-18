@@ -1,5 +1,9 @@
 <% song = @song %>
-<%= render_state({:name => "Manage - " + @song.name, :description => "", :url => "/song/#{@song.id}/manage", :context_menu => "/song/#{@song.id}/context_menu"}) %>
+<%= render_state({
+  :url => "/song/#{@song.id}/manage", 
+  :context_menu => false,
+  :img => "/images/navigation/manage.png"
+}) %>
 <%= vspace 10 %>
 <div class='song-page song'>
   <div class='image'>
@@ -44,7 +48,7 @@
 
 <%= vspace 10 %>
 <div class='section-header'>Jams</div>
-<%= partial :"/song/manage/jams", :locals => {:song_jams => song.active_jams.map(&:song_jam).sort_by(&:id)} %>
+<%= partial :"/song/manage/jams", :locals => {:song_jams => song.song_jams.sort_by(&:id)} %>
 <div style='text-align: center; background-color: #e7e7e7; padding: 5px; '>
   <div class="button" onclick='Song.Manage.flatten("<%= @song.id %>")'>
     <div class="icon"><img src='/new-ui/collaborate.png' height='16px'></div>

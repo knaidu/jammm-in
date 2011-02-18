@@ -3,7 +3,8 @@
   :description => @jam.description, 
   :url => "/jam/#{@jam.id}", 
   :context_menu => "/jam/context_menu?jam_id=#{@jam.id}",
-  :right_panel => "/partial/jam/right_panel"
+  :right_panel => "/partial/jam/right_panel",
+  :img => @jam.image_url_big
 }) %>
 <%= vspace 10 %>
 <div class="page-header">Jams <span class="slash">/</span> <%= @jam.name %></div>

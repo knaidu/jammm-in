@@ -78,7 +78,7 @@ get '/account/aboutme' do
   }
 end
 
-get '/account/invite' do
+post '/account/invite' do
   monitor {
     session_user?.invite(param?(:email))
     "Success. The invitation will be delivered in 30 minutes."

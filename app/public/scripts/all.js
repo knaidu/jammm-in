@@ -145,6 +145,10 @@ Layout.RightPanel.load = function(url) {
 	}
 }.bind(Layout.RightPanel);
 
+Layout.RightPanel.reload = function() {
+	this.load(Navigate.currentState.right_panel);
+}.bind(Layout.RightPanel);;
+
 Layout.RightPanel.insertLoadingText = function() {
 	var html = "<img style='padding-left: 10px; padding-right: 10px; padding-top: 5px;' src='/new-ui/loading.gif'> <font color='#aaa'>Loading ...</font>";
 	this.insertHTML(html);
@@ -205,7 +209,7 @@ Navigate.loadContent.callback = function(t) {
 
 Navigate.loadContent.setMaxScrollHeight = function() {
 	var cp = $("content-panel");
-	var maxScrollHeight = cp.getContentHeight() - cp.getHeight();
+	var maxScrollHeight = cp.getContentHeight() - cp.getHeight() - 80;
 	$("content-panel").setAttribute("maxscrollheight", -maxScrollHeight);
 }.bind(Navigate.loadContent);
 
@@ -781,3 +785,34 @@ General.User.signup = function() {
 General.showTermsAndConditions = function() {
 	Modal.load("/terms_and_conditions", {minHeight: '400px', minWidth: '500px'});
 }.bind(General);
+
+
+General.User.invite = function() {
+	var responseField = $j(".invite-response")[0];
+	var onSuccess = function() {
+		responseField.update("An invite has been succesfully sent");
+	};
+	var onFailure = function(t) {
+		responseField.update(General.getErrorText(t.responseText));
+	};
+	responseField.update(General.getAjaxLoader("Please wait..."));
+	var url = formatUrl('/account/invite', {email: $j("[name=invite-email]").val()});
+	call(url, {method: 'post', onSuccess: onSuccess, onFailure: onFailure});
+}.bind(General.RequestInvite);
+
+General.User.forgotPassword = function() {
+	Modal.load("/signin/forgot_password", {minHeight: '190px', minWidth: '400px'});
+}.bind(General.User);
+
+General.User.forgotPassword.submit = function() {
+	var responseField = $j(".forgot-email-response")[0];
+	var onSuccess = function() {
+		responseField.update("An email has been sent with a temporary password. Please reset your password.");
+	};
+	var onFailure = function(t) {
+		responseField.update(General.getErrorText(t.responseText));
+	};
+	responseField.update(General.getAjaxLoader("Please wait..."));
+	var url = formatUrl('/signin/forgot_password/submit', {email: $j("[name=forgot-email]").val()});
+	call(url, {method: 'post', onSuccess: onSuccess, onFailure: onFailure});
+}.bind(General.User.forgotPassword);

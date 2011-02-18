@@ -1,3 +1,11 @@
+<%= render_state({
+  :url => "/account/message_stream/#{message_stream.id}", 
+  :context_menu => "/partial/account/context_menu",
+  :img => "/images/navigation/message-stream.png",
+  :right_panel => false
+}) %>
+
+
 <% 
 	user1, user2 = message_stream ? [message_stream.users[0], message_stream.users[1]] : [session_user?, @user] 
 %>
