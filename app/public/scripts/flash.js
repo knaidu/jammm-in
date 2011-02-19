@@ -36,10 +36,12 @@ function flashGotStatus(str) {
 Flash.startOperations = function(el) {
 	var path = $(el).getAttribute('play');
 	// Checks if the a song is already playing, but is play event is of another song, it plays the new song.
-	if(this.isPlaying() && (el.getAttribute('playtype') == 'doc' || this.currentData.playId == el.getAttribute('playid'))){
+	// in the scope of a jam/song
+	var samePlayClicked = (el.getAttribute('playtype') == 'doc' || this.currentData.playId == el.getAttribute('playid'));
+	if(this.isPlaying() && samePlayClicked){
 		this.pause();
 		return;
-	}else if (this.isPaused()){
+	}else if (this.isPaused() && samePlayClicked){
 		this.continuePlaying();
 	}else{
 		this.saveCurrentData(el);
