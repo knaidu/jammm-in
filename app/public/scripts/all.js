@@ -145,6 +145,10 @@ Layout.RightPanel.load = function(url) {
 	}
 }.bind(Layout.RightPanel);
 
+Layout.RightPanel.empty = function() {
+	this.load("false");
+}.bind(Layout.RightPanel);
+
 Layout.RightPanel.reload = function() {
 	this.load(Navigate.currentState.right_panel);
 }.bind(Layout.RightPanel);;
@@ -188,6 +192,8 @@ Navigate.loadContent = function(url){
 //		div.absolutize();
 		div.style.top = "0px";
 		$j(div).html(General.loadingText());
+		Layout.RightPanel.empty();
+		Layout.ContextMenu.empty();
 		updateEl(div, url, {onSuccess: function(){window.setTimeout(Navigate.loadContent.callback, 500)}});		
 	}
 
@@ -209,7 +215,7 @@ Navigate.loadContent.callback = function(t) {
 
 Navigate.loadContent.setMaxScrollHeight = function() {
 	var cp = $("content-panel");
-	var maxScrollHeight = cp.getContentHeight() - cp.getHeight() - 80;
+	var maxScrollHeight = cp.getContentHeight() - cp.getHeight() + 80;
 	$("content-panel").setAttribute("maxscrollheight", -maxScrollHeight);
 }.bind(Navigate.loadContent);
 

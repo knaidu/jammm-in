@@ -6,11 +6,8 @@
   :img => "/images/navigation/jammmin.png",
   :right_panel => "/partial/homepage/overview_tips"
 }) %>
-<div class="position-relative; height: 100%; width: 100%">
-  <img src='/images/map.png' width='100%' name='map'>
-</div>
 
-<div style='position: absolute; bottom: 10px; min-height: 52px; width: 90%; display: none'>
+<div style='min-height: 52px; width: 90%; display: none'>
   <% jam = Jam.find(36) %>
   <div class='position-relative play-waveform'>
     <% waveformid = rand_id %>
@@ -25,6 +22,14 @@
     </div>
   </div>
 </div>
+
+<%= vspace 10 %>
+
+<div class="position-relative; height: 100%; width: 100%">
+  <img src='/images/map.png' width='100%' name='map'>
+</div>
+
+
 
 <%= js_start %>
   var el = $j("#content-panel").children().height("100%");

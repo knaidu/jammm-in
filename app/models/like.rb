@@ -5,6 +5,7 @@ class Like < ActiveRecord::Base
     like = Like.create({:user_id => user.id, :for_type => for_type, :for_type_id => for_type_id})
     like.add_notification
     like.add_feed
+    user.add_memory(MEMORY_DETAILS['like'])
   end  
   
   def self.remove(user, for_type, for_type_id)

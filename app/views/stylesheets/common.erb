@@ -375,7 +375,7 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
 .tabs {position: relative; font-size: 0px; height: 35px}
 .tabs .padding-left {float: right; width: 0px; border-bottom: 1px solid #aaa; height: inherit; font-size: 11px;}
 .tabs .padding-right {float: right; width: 250px; border-bottom: 1px solid #aaa; height: inherit; font-size: 11px;}
-.tabs .tab {float: right; min-width: 50px; border-bottom: 1px solid #aaa; height: inherit;  font-size: 11px;}
+.tabs .tab {float: right; min-width: 50px; border-bottom: 1px solid #aaa; height: inherit;  font-size: 11px;  cursor: pointer}
 .tabs .tab:hover {background-color: #f5f5f5}
 .tabs .tab.selected {border: 1px solid #aaa !important; border-bottom-width: 0px !important; background-color: #ebebeb; font-weight: bold}
 .tabs .tab .content {float: left; padding: 5px 0px 0px 5px}
@@ -425,7 +425,9 @@ IFRAME {border-width: 0px; margin-left: -5px; width: 100%; height: 200px;}
 
 #overview-overlay {
   position: absolute; 
-  border: 0px solid #777; 
+  border: px solid #777; 
+  border: 1px solid #ccc;
+  border-top-width: 0px;
 /*  background: rgba(50, 50, 50, 0.78); */
   background-color: #ebebeb;
   opacity: 0.78;

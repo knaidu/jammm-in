@@ -8,38 +8,59 @@
 <%= page_header ["jamMm.in","Team"] %>
 <%= vspace 20 %>
 <div style='font-size: 11px'>
-  <b>Prakash Raman</b><br>
-  <div class='text'>
-    <i>Founder, Developer</i><br>
-    +91 990-192-6261<br>
-    prakashraman@jammm.in<br>
-    http://www.twitter.com/prakash_raman
+  <div class="position-relative">
+    <div class="position-absolute" style='top: 2px'>
+      <img src='<%= User.find(1).profile_picture_url %>' height='54px' width='54px'>
+    </div>
+    <div class="position-relative" style='margin-left: 64px'>
+      <b>Prakash Raman</b><br>
+      <div class='text'>
+        <i>Founder, Developer</i><br>
+        +91 990-192-6261<br>
+        prakashraman@jammm.in<br>
+        http://www.twitter.com/prakash_raman
+      </div>
+    </div>
   </div>
 
-  <br><br>
-  <b>Tarun RS</b>
-  <div class='text'>
-    <i>Founder, Designer, Developer</i><br>
-    +91 973-931-3860<br>
-    tarunrs@jammm.in<br>
-    http://www.twitter.com/tarunrs
+  <%= vspace 30 %>
+  <div class="position-relative">
+    <div class="position-absolute" style='top: 2px'>
+      <img src='<%= User.find(2).profile_picture_url %>' height='54px' width='54px'>
+    </div>
+    <div class="position-relative" style='margin-left: 64px'>
+      <b>Tarun RS</b>
+      <div class='text'>
+        <i>Founder, Designer, Developer</i><br>
+        +91 973-931-3860<br>
+        tarunrs@jammm.in<br>
+        http://www.twitter.com/tarunrs
+      </div>
+    </div>
   </div>
 
-
-  <br><br>
-  <b>Karthik Naidu</b>
-  <div class='text'>
-    <i>Core Team, Strategist</i><br>
-    +01 352-278-8210<br>
-    karthik@jammm.in<br>
-    http://www.twitter.com/karthiknaidudj
-  </div>
-
-  <%= vspace 20 %>
+  <%= vspace 30 %>
+  <div class="position-relative">
+    <div class="position-absolute" style='top: 2px'>
+      <img src='<%= User.find(50).profile_picture_url %>' height='54px' width='54px'>
+    </div>
+    <div class="position-relative" style='margin-left: 64px'>
+      <b>Karthik Naidu</b>
+      <div class='text'>
+        <i>Core Team, Strategist</i><br>
+        +01 352-278-8210<br>
+        karthik@jammm.in<br>
+        http://www.twitter.com/karthiknaidudj
+      </div>
+    </div>
+  </div>  
+  <%= vspace 30 %>
   <div class="section-header">Special thanks to</div>
   Ashish Kumar<br>
   Bharath Nagaraj<br>
   Divya Dilip<br>
+  Minesh Jatania<br>
+  Pallavi Muralidharan<br>
   Sheja Ehtesham<br>
   Sripriya Padmananbhan<br>
   Varun Nandakumar<br>

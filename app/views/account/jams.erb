@@ -1,4 +1,8 @@
-<%= render_state({:name => "My Jams", :description => "", :url => "/account/jams", :context_menu => "/partial/account/context_menu"}) %>
+<%= render_state({
+  :url => "/account/jams", 
+  :context_menu => "/partial/account/context_menu",
+  :img => "/images/navigation/jam.png"
+}) %>
 
 <%= vspace 10 %>
 <%= page_header ["Account", "Jams", "Published Jams"] %>
