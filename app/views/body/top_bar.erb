@@ -1,6 +1,7 @@
+<% logoOnclick = session_user? ? "General.User.loadHome()" : "Layout.loadOverview()" %>
 <div class='top-bar'>
-  <div class='logo'>
-    <a href='/'><img src='/new-ui/logo.png' height='90%'></a>
+  <div class='logo' onclick='<%= logoOnclick %>'> 
+    <img src='/new-ui/logo.png' height='90%'>
   </div>
   <div class='search'>
 

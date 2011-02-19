@@ -245,7 +245,10 @@ Navigate.storeState = function(){
 	});
 	
 	if(this.currentState && state.url == this.currentState.url) // return if the new page is same as present page.
+	{		
+		this.setCurrentState(new State(state));
 		return;
+	}
 
 	if(this.currentState)
 		this.saveState(this.currentState);
@@ -582,7 +585,8 @@ General.login = function() {
 	var onSuccess = function() {	
 		Doc.reload();
 		Doc.Player.collapse();
-		Navigate.loadContent("/account");
+		General.User.loadHome();
+		$j(".logo")[0].onclick = General.User.loadHome;
 	};
 	
 	var onFailure = function(t) {
@@ -599,6 +603,12 @@ General.login = function() {
 General.logout = function() {
 	Navigate.loadContent("/account/logout");
 }.bind(General);
+
+General.logout.success = function() {
+	Doc.reload();
+  Layout.ContextMenu.empty();
+	$j('.logo')[0].onclick = Layout.loadOverview;
+}.bind(General.logout);
 
 /* Playlist */
 Playlist.get = function() {
@@ -628,19 +638,18 @@ General.Overview.setup = function() {
 
 
 General.Overview.showRequestInvite = function() {
-	var el = this.getOverlay();
-	if(!el) return;
-	var fn = function() {
-		updateEl(el[0], "/request_invite");
-	}.bind(this);
-	el[0].visible() ? fn() : this.show(fn)
+	this.showSection("/request_invite");
 }.bind(General.Overview);
 
 General.Overview.showSignUpForm = function(code) {
+	var url = formatUrl('/signup', {code: code})
+	this.showSection(url);
+}.bind(General.Overview);
+
+General.Overview.showSection = function(url) {
 	var el = this.getOverlay();
 	if(!el) return;
 	var fn = function() {
-		var url = formatUrl('/signup', {code: code})
 		updateEl(el[0], url);
 	}.bind(this);
 	el[0].visible() ? fn() : this.show(fn)
@@ -648,8 +657,7 @@ General.Overview.showSignUpForm = function(code) {
 
 General.Overview.show = function() {
 	var callback = arguments[0] || function() {};
-//	this.getOverlay().center().fadeIn(callback);
-	this.getOverlay().animate({padding: "10px"}, 'slow', callback);
+	callback();
 ;}.bind(General.Overview);
 
 General.Overview.animateResize = function() {
@@ -664,20 +672,12 @@ General.Overview.close = function() {
 
 
 General.Overview.showWhat = function() {
-	var el = this.getOverlay();
-	var fn = function() {
-		updateEl(el[0], "/partial/homepage/overview_what");
-	}.bind(this);
-	el[0].visible() ? fn() : this.show(fn)
+	this.showSection("/partial/homepage/overview_what");
 }.bind(General.Overview);
 
 
 General.Overview.showWhy = function() {
-	var el = this.getOverlay();
-	var fn = function() {
-		updateEl(el[0], "/partial/homepage/overview_why");
-	}.bind(this);
-	el[0].visible() ? fn() : this.show(fn)
+	this.showSection("/partial/homepage/overview_why");
 }.bind(General.Overview);
 
 /* FOLLOW UN FOLLOW */

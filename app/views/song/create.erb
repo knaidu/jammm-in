@@ -1,19 +1,26 @@
 <div class='header'>Create Collaboration</div>
-<%= vspace 30 %>
-You have chosen to collaborate with "<%= @obj.name %>". Enter the name for your Collaboration.
-<%= vspace 30 %>
-<div class='field'>Collaboration Name:</div>
-<input type='text' name='name'>
-<input type='hidden' name='music_type' value='<%= @music_type %>'>
-<input type='hidden' name='music_id' value='<%= @music_id %>'>
-<%= vspace 20 %>
-<div class="error-response float-left hide" style='width: 200px'>
-  <%= vspace 10 %>
-  <img src="/new-ui/ajax-loader.gif" class="ajax-loader">
-</div>
-<div class='align-right'>
-  <div class="button" onclick='Song.create.submit()'>
-    <div class="icon"><%= icon "/images/16.png", 1, 16, true %></div>
-    <div class="text">Create Collaboration</div>
+
+<% if session_user? %>
+  <%= vspace 30 %>  
+  You have chosen to collaborate with "<%= @obj.name %>". Enter the name for your Collaboration.
+  <%= vspace 30 %>
+  <div class='field'>Collaboration Name:</div>
+  <input type='text' name='name'>
+  <input type='hidden' name='music_type' value='<%= @music_type %>'>
+  <input type='hidden' name='music_id' value='<%= @music_id %>'>
+  <%= vspace 20 %>
+  <div class="error-response float-left hide" style='width: 200px'>
+    <%= vspace 10 %>
+    <img src="/new-ui/ajax-loader.gif" class="ajax-loader">
   </div>
-</div>
+  <div class='align-right'>
+    <div class="button" onclick='Song.create.submit()'>
+      <div class="icon"><%= icon "/images/16.png", 1, 16, true %></div>
+      <div class="text">Create Collaboration</div>
+    </div>
+  </div>
+  
+<% else %>
+  <%= vspace 20 %>
+  <div class="info-box">You must be logged in to collaborate with a jam or another collaboration.</div>
+<% end %>
