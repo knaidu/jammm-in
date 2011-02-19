@@ -78,7 +78,7 @@ class User < ActiveRecord::Base
   end
   
   def unpublished_jams
-    jams.reject(&:displayable?)
+    jams.select(&:unpublished?)
   end
   
   def latest_displayable_jams(count=:all)
@@ -226,7 +226,7 @@ class User < ActiveRecord::Base
   end
   
   def profile_picture
-    return (ENV["WEBSERVER_ROOT"] + "/public/images/icons/user3.png") if not profile_picture_file_handle
+    return (ENV["WEBSERVER_ROOT"] + "/public/images/user3_48.png") if not profile_picture_file_handle
     get_storage_file_path(profile_picture_file_handle)
   end
 

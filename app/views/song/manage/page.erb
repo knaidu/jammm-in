@@ -2,9 +2,13 @@
 <%= render_state({
   :url => "/song/#{@song.id}/manage", 
   :context_menu => false,
-  :img => "/images/navigation/manage.png"
+  :img => "/images/navigation/manage.png",
+  :right_panel => "/partial/song/manage/right"
 }) %>
+
 <%= vspace 10 %>
+<%= page_header ["Collaborations", @song.name, "Edit Collaboration"] %>
+<%= vspace 20 %>
 <div class='song-page song'>
   <div class='image'>
     <img src='<%= song.song_picture_url %>' width='78px' height='78px'>
@@ -13,9 +17,12 @@
     <div class='name'><%= @song.name %></div>
     <div class='artist'><%= @song.artists.map(&:username).join(", ") %></div>
     <div class='play-waveform'>
+    <% if @song.unpublished? %>
+      <div class='unpublished-overlay'>This collaboration is unpublished.</div>
+    <% end %>
       <% waveformid = rand_id %>
       <div style='position: absolute; left: 0px;' class='play' <%= play_info @song %> waveformid='<%= waveformid %>' playtype='waveform'><%= icon "/images/42.png", 2, 42, true %></div>
-      <div class='waveform' style='position: relative; margin-left: 50px' id="<%= waveformid %>">
+      <div class='waveform <%= "hide" if song.unpublished? %>' style='position: relative; margin-left: 50px' id="<%= waveformid %>">
         <div class="buffer"></div>
         <div class='seek'>
           <img src='<%= @song.file_data.waveform_url rescue "-" %>' class='waveform-image'>

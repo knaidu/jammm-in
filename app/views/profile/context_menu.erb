@@ -1,7 +1,7 @@
 <div class='context-menu'>
   <% if session_user? and session_user? != @user %>
     <div class='item' onclick='General.User.sendMessage("<%= @user.username %>")'>
-      <div class='container'>
+      <div class='container highlight'>
         <div class='icon'><%= icon "/images/24.png", 8, 24, true %></div>
         <div class='text'>Send Message</div>
       </div>
@@ -10,7 +10,7 @@
 
   <% if session_user? and session_user? != @user %>
     <% if session_user?.follows?(@user) %>
-      <div class='item' onclick='General.User.unfollow("<%= @user.username %>")'>
+      <div class='item highlight' onclick='General.User.unfollow("<%= @user.username %>")'>
         <div class='container'>
           <div class='icon'><%= icon "/images/24.png", 18, 24, true %></div>
           <div class='text'>Unfollow</div>
@@ -18,7 +18,7 @@
       </div>
     <% else %>
       <div class='item' onclick='General.User.follow("<%= @user.username %>")'>
-        <div class='container'>
+        <div class='container highlight'>
           <div class='icon'><%= icon "/images/24.png", 18, 24, true %></div>
           <div class='text'>Follow</div>
         </div>

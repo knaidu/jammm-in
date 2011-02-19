@@ -54,6 +54,10 @@ class Jam < ActiveRecord::Base
     self.adam? and (self.published or (self.song_jam.active and self.song.published?)) rescue nil
   end
   
+  def unpublished?
+    (displayable? or self.song_jam) ? false : true
+  end
+  
   def after_create
     return true if not self.artists.empty?
     self.tag_artist(self.creator)

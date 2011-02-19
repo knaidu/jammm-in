@@ -1,35 +1,18 @@
-<%= partial ('song/manage/messages', :locals => {:song => @song, :messages => @song.messages}, :section_header => SectionHeader.new('Song Discussion'), :section_body_div => 'div-song-messages') %>
-<br>
-<hr class='light'>
-<div class='text'>
+<%= vspace %>
 
-  <div>
-    <span><a href='/song/<%= @song.id %>'><%= icon :song_page %></a></span> Song Page
-  </div>
+<div class='tip'>
+  <div class="image"><%= icon "/images/24.png", 11, 24, true %></div>
+  <span class="bold">How to Collaborate ?</span>
+  <ol style='margin-left: -20px'>
+    <li>Click "Create Jam" in the jams console of this page and upload your audio file</li>
+    <li>Select (tick) the jams that you would like to merge together</li>
+    <li>Click "Preview" in the jams console</li>
+    <li>Click "Publish" to publish your collaboration</li>
+  </ol>
+</div>
+<%= vspace 20 %>
 
-  <br><br>
-  <b>Jams</b><br>
-  From the dropdown you may add any number of your published and unpublished jams.
-  <li>If you add a published jam: A copy of the jam will be created and added to the song</li>
-  <li>If you add a unpublished jam: The same jam will be directly added to the song</li>
-  <%= vspace %>
-  <i>Suggested workflow</i>: Add your unpublished jam(s) to the song, as it then creates a clear distinction between independent (published) jams and Song Jams.
-  <br><br>
-  
-  <b>Publishing</b><br>
-  <li>Select (tick) the jams you want to choose for the song. All the selected jams are mixed into one MP3.</li>
-  <li>Click Preview Song</li>
-  <li>Click Play Preview, if you would like to listen to the mix</li>
-  <li>Click Publish Song</li>
-  <%= vspace %>
-  This will publish this song to your profile
- 
-  <br><br>
-  <b>Artists</b><br>
-  You may invite all the artists you would like to be a part of this song. Those artists will have access to the manage console (this page) of this song. They will be able to add jams to the song.
-  <%= vspace %>
-  Note: 
-    <li>The only artists that have jams selected for the song will show up as artists of the song. 
-    <li>Deleting an artist from the list will cause thier jams to be deleted as well.</li>
-
+<div class='tip'>
+  <div class="image"><%= icon "/images/24.png", 11, 24, true %></div>
+  Publishing this collaboration will publish all the jams as well.
 </div>

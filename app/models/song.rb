@@ -129,6 +129,10 @@ class Song < ActiveRecord::Base
   end
   alias published? published
   
+  def unpublished?
+    not published
+  end
+  
   def unpublish
     song_jams.each(&:deactivate)
     delete_file_handle
