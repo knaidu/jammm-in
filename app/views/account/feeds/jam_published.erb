@@ -1,5 +1,5 @@
 <% jam = feed.dataObj.jam %>
-<div class='feed'  containsonhoveritems=true>
+<div class='feed' containsonhoveritems=true>
   <div class='thumbnail'>
     <img src='<%= jam.creator.profile_picture_url %>'>
   </div>
@@ -7,7 +7,7 @@
     <span class='bold link clickable' <%= profile_link jam.creator %>><%= jam.creator.username %></span> published
     <div class='entity'>
       <div class='entity-image'>
-        <img src='/new-ui/saxophone.png'>
+        <img src='<%= jam.image_url_big %>'>
       </div>
       <div class='entity-info'>
         <div class='bold clickable link' <%= music_link jam %>><%= jam.name %></div>

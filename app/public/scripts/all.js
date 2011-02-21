@@ -413,8 +413,10 @@ Doc.Player.expand = function(){
 }.bind(Doc.Player);
 
 Doc.Player.collapse = function(){
+	var callback = arguments[0] || function() {};
 	this.get().animate({height: 20}, "slow", function() {
 		var onSuccess = function() {
+			callback();
 			if(!Flash.isPlaying()) return;
 			window.setTimeout(Flash.displayMusicInDoc, 1000); // Waits 1 sec as the dom might not be ready to update the divs
 		};

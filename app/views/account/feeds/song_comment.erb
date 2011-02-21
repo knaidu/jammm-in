@@ -2,7 +2,7 @@
   song = feed.dataObj.song 
   comment = feed.dataObj.comment
 %>
-<div class='feed'>
+<div class='feed' containsonhoveritems=true>
   <div class='thumbnail'>
     <img src='<%= comment.user.profile_picture_url %>'>
   </div>
@@ -11,7 +11,7 @@
     <%= feed.dataObj.comment.comment %>
     <div class='entity'>
       <div class='entity-image'>
-        <img src='/new-ui/collaborate.png'>
+        <img src='<%= song.song_picture_url %>'>
       </div>
       <div class='entity-info'>
         <div class='bold link' <%= music_link song %>><%= song.name %></div>

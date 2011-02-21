@@ -4,7 +4,7 @@
     <img src='<%= session_user?.profile_picture_url %>'>
   </div>
   <div class='content'>
-    <span class='bold'><%= feed.dataObj.user.username %></span> earned the badge <%= vspace %>
+    <span class='bold link' <%= profile_link feed.dataObj.user %>><%= feed.dataObj.user.username %></span> earned the badge <%= vspace %>
     <div class='entity'>
       <div class='entity-image'>
         <img src='<%= badge.image_url %>'>

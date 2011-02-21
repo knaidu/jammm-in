@@ -10,7 +10,7 @@
     <span class='bold link clickable' <%= profile_link users[0] %>><%= users[0].username %></span> liked
     <div class='entity'>
       <div class='entity-image'>
-        <img src='/new-ui/acoustic-guitar.png'>
+        <img src='<%= song.song_picture_url %>'>
       </div>
       <div class='entity-info'>
         <div class='bold link' <%= music_link song %>><%= song.name %></div>

@@ -7,7 +7,7 @@
     <span class='bold link clickable' <%= profile_link song.creator %>><%= song.creator.username %></span> published
     <div class='entity'>
       <div class='entity-image'>
-        <img src='/new-ui/collaborate.png'>
+        <img src='<%= song.song_picture_url %>'>
       </div>
       <div class='entity-info'>
         <div class='bold link' <%= music_link song %>><%= song.name %></div>
