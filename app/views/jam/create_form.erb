@@ -4,7 +4,7 @@
 </head>
 <body>
   <%= vspace 10 %>
-  <div class='simplemodal-data-iframe' style='height: 300px'>
+  <div class='simplemodal-data-iframe' style='height: 320px'>
     <form action="/jam/create/submit" method='post' enctype='multipart/form-data' >
       Choose a name, an audio file, instrument and genre. Accepted audio formats are MP3, WAV, MP4.
       <%= vspace 10 %>
@@ -30,8 +30,10 @@
       <textarea name='description'></textarea>
       <%= vspace 30 %>
       <div>
+      <div class="ajax-loader" style='display: none'>
         Please wait while your audio file is being updated and registered ... <%= vspace %>
-        <img src="/new-ui/ajax-loader.gif" class="ajax-loader" style='display: none'>
+        <img src="/new-ui/ajax-loader.gif">
+      </div>
         <div style='position: relative'>
           <div class="error-response" style='position: absolute; left: 0px; top: 3px; width: 250px'></div>
           <div class="button" onclick='Jam.Create.submit(this)' style='position: absolute; right: 10px'>

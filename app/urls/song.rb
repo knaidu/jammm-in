@@ -2,9 +2,11 @@
 # Loads a songs
 
 get '/song/create' do
-  @music_type, @music_id = param?(:music_type), param?(:music_id)
-  @obj = eval(@music_type.capitalize).find(@music_id)
-  erb(:"song/create")
+  logged_in?{
+    @music_type, @music_id = param?(:music_type), param?(:music_id)
+    @obj = eval(@music_type.capitalize).find(@music_id)
+    erb(:"song/create")
+  }
 end
 
 post '/song/create/submit' do
@@ -66,28 +68,34 @@ end
 
 get '/song/:song_id/manage' do
   @song = get_passed_song
-  @music_meta_data = music_meta_data(@song)
-  erb(:"song/manage/page")
+  allowed?(@song.artists){
+    @music_meta_data = music_meta_data(@song)
+    erb(:"song/manage/page")
+  }
 end
 
 get '/song/:song_id/manage/update_picture' do
   @song = get_passed_song
-  erb(:"/song/manage/update_picture")
+  allowed?(@song.artists){
+    erb(:"/song/manage/update_picture")
+  }
 end
 
 get '/song/:song_id/manage/update_picture_form' do
   @song = get_passed_song
-  erb(:"/song/manage/update_picture_form")
+  allowed?(@song.artists){
+    erb(:"/song/manage/update_picture_form")
+  }
 end
 
 post '/song/:song_id/manage/update_picture/submit' do
-#  monitor {
+  monitor {
     file = param?(:picture)[:tempfile]
     puts file
     get_passed_song.change_song_picture(file)
     file.unlink
     erb(:"/song/manage/picture_updated")
-#  }
+  }
 end
 
 get '/song/:song_id/manage/jams' do
@@ -162,8 +170,10 @@ end
 
 post '/song/:song_id/manage/publish' do
   song = get_passed_song
-  song.publish
-  "Your song has been successfully published"
+  allowed?(song.artists){
+    song.publish
+    "Your song has been successfully published"
+  }
 end
 
 post '/song/:song_id/manage/unpublish' do

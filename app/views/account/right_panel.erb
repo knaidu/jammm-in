@@ -1,3 +1,11 @@
+<%= vspace 20 %>
+<div class='tip' style='margin-left: 30px'>
+  <div class="image"><%= icon "/images/24.png", 11, 24, true %></div>
+  Use the scroll wheel or the trackpad to scroll through the lists
+</div>
+
+<%= vspace 20 %>
+
 <% used_memory = session_user?.used_memory %>
 <div class='position-relative'>
   <div class='position-absolute' style='margin-top: 8px'>
@@ -19,7 +27,7 @@
 <div style='margin-left: 30px'>
   <span class="bold">Invite a Musician</span>
   <%= vspace %>
-  You have <%= session_user?.invites_remaining %> invitation remaining.
+  You have <%= session_user?.invites_remaining %> invitation<%= session_user?.invites_remaining == 1 ? '' : 's' %> remaining.
   <%= vspace %>
   Email:<%= vspace 3 %>
   <input type='text' name='invite-email' style='width: 193px'>

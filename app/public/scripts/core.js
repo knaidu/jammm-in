@@ -156,6 +156,8 @@ function call(url){
 }
 
 function updateEl(el, url){
+	var randStr = "&randno=" + Math.random();
+	url = url.include("?") ? (url + randStr) : (url + "?" + randStr);
 	var options = mergeHash({method: 'get', evalScripts: true}, (arguments[2] || {}));
 	new Ajax.Updater(el, url, options);
 }

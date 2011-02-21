@@ -51,6 +51,9 @@ JEvent.list.smartFormFields = function() {
 
 JEvent.list.higlightJamOnSelect = function() {
 	$j(".song-manage-page.jams .jam INPUT[type=checkbox]").live('change', function(){
+		if(this.getAttribute('raiseevent') == 'false'){
+			return;
+		}
 		var fn = $(this).checked ? "addClassName" : "removeClassName";
 		$j(this).parents()[1][fn]("selected");
 		var img = this.parentNode.parentNode.findDescendantsByClassName("waveform-image")[0];
@@ -117,11 +120,11 @@ JEvent.list.highlightNavigationItem = function() {
 
 
 JEvent.list.onhoverFeedShowHiddenItems = function() {
-	$j(".feeds .feed").live('mouseover', function(){
+	$j("[containsonhoveritems=true]").live('mouseover', function(){
 		$j("[onhovershow=true]", this).show();
 	})
 	
-	$j(".feeds .feed").live('mouseout', function(){
+	$j("[containsonhoveritems=true]").live('mouseout', function(){
 		$j("[onhovershow=true]", this).hide();
 	})
 }.bind(JEvent.list);

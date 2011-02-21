@@ -10,9 +10,10 @@
       <div class="small-field">Password</div><%= vspace %>
       <input type='password' name='password'>
       <%= vspace 20 %>
-      
       <div style='height: 35px'>
-        <div class="button" style='width: 70px; position: absolute; right: 47px'>
+      <!-- the button is hidden behind, as this is required to fix the onenter event in ie -->
+      <input type='submit' style='position: absolute; right: 47px; height: 0px; width: 0px;'>
+        <div class="button" style='width: 70px; position: absolute; right: 47px' onclick='General.login();'> 
           <div class="icon"><img src='/new-ui/collaborate.png' height='16px'></div>
           <div class="text">Login</div>
         </div>
@@ -23,7 +24,7 @@
       <div class='s11 red clickable' style='text-align: right; margin-right: 47px' onclick='General.User.forgotPassword()'>Forgot Password</div>
       <%= vspace 10 %>
       <div class="s11 error-response" style='margin-right: 47px'></div>
-      <input type='submit' style='visibility: hidden;'>
+
     </form>
   </div>
 </div>

@@ -22,7 +22,7 @@ get '/comments/fetch' do
   })
 end
 
-get '/comments/delete' do
+post '/comments/delete' do
   id = params[:id]
   Comment.find(id).remove_comment(session_user) ? "Deleted comment"  : "Error in deleting comment"
 end

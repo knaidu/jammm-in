@@ -11,7 +11,7 @@ Jam.Manage.unlike = function(id) {
 Jam.create = function(){
 	var callback = arguments[0] || false;
 	this.Create.callback = callback;
-	Modal.load("/jam/create", {minHeight: 380});
+	Modal.load("/jam/create", {minHeight: 400});
 }.bind(Jam);
 
 Jam.Create.submit = function(el) {

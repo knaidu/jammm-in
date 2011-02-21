@@ -2,4 +2,9 @@
 <%= page_header ["Account", "Messages"] %>
 <%= vspace 20 %>
 
-<%= partial ("/account/message_streams", :locals => {:message_streams => session_user?.message_streams}) %>
+<% mss = session_user?.message_streams %>
+<%= partial ("/account/message_streams", :locals => {:message_streams => mss}) %>
+
+<% if mss.count == 0 %>
+  <div class="info-box">You have no messages.</div>
+<% end %>

@@ -38,7 +38,7 @@
 <% moreref = rand_id %>
 <div class='overflow-hidden s11' style='height: 106px' id='<%= moreref %>'>
   <div class='field'>Name:</div><span><%= @song.name %></span><%= vspace %>
-  <div class='field'>Artists:</div><span><%= @song.artists.map(&:username).join(", ") %></span><%= vspace %>
+  <div class='field'>Artists:</div><span><%= list_users @song.artists %></span><%= vspace %>
   <div class='field'>Instruments:</div><span><%= @song.instruments.map(&:name).join(", ") %></span><%= vspace %>
   <div class='field'>Genre:</div><span><%= @song.genre_names %></span><%= vspace  %>
   <% file_data = @song.file_data  %>

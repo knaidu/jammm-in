@@ -1,9 +1,9 @@
-var Layout = {ContextMenu: {}, RightPanel: {}};
+var Layout = {ContextMenu: {}, RightPanel: {}, ContentPanel: {}};
 var Navigate = {states: []};
 var Modal = {};
 var Doc = {Player: {}, Playlist: {}, Notifications: {}, Messages: {}, Login: {}};
 var JEvent = {list: {}}; // 'list' is treated as an array. In the sense, on load all keys in 'list' are itereated over and run.
-var General = {Comment: {}, Tabs: {}, List: {}, Overview: {}, User: {}, RequestInvite: {}};
+var General = {WaitingDialog: {}, Comment: {}, Tabs: {}, List: {}, Overview: {}, User: {}, RequestInvite: {}};
 var Playlist = {list: [], position: false};
 
 Layout.onReady = function(){
@@ -63,8 +63,8 @@ Layout.getContentPanel = function(){
 }.bind(Layout)
 
 Layout.attachScrollJEvent = function() {
-	$("content-panel").addEventListener('DOMMouseScroll', this.manageScrollJEvent, false);
-	$("content-panel").addEventListener('mousewheel', this.manageScrollJEvent, false);
+	try{$("content-panel").addEventListener('DOMMouseScroll', this.manageScrollJEvent, false);}catch(e){}
+	try{$("content-panel").addEventListener('mousewheel', this.manageScrollJEvent, false);}catch(e){}
 }.bind(Layout);
 
 Layout.manageScrollJEvent = function(e){
@@ -78,6 +78,23 @@ Layout.manageScrollJEvent = function(e){
 		top = Layout.contentPanel[0].getAttribute("maxscrollheight");
 	content.style.top = top + "px";
 }.bind(Layout);
+
+Layout.ContentPanel.scrollToBottom = function() {
+	var cp = Layout.contentPanel;
+	var pos = parseInt(cp[0].getAttribute('maxscrollheight'));
+	if(pos == 0)
+		return;
+	var callback = arguments[0] || function() {};
+	var scrollComplete = function() {
+		cp.children()[0].style.top = pos + "px";
+		callback();
+	};
+	if(!pos){
+		window.setTimeout(function() {Layout.ContentPanel.scrollToBottom(scrollComplete)}, 300);
+		return;
+	}
+	Layout.contentPanel.children().first().animate({top: pos + "px"}, 1000, scrollComplete);
+}.bind(Layout.ContentPanel);
 
 Layout.ContextMenu.get = function() {
 	return $j("#context-menu");
@@ -194,6 +211,7 @@ Navigate.loadContent = function(url){
 		$j(div).html(General.loadingText());
 		Layout.RightPanel.empty();
 		Layout.ContextMenu.empty();
+		Layout.contentPanel[0].removeAttribute("maxscrollheight");
 		updateEl(div, url, {onSuccess: function(){window.setTimeout(Navigate.loadContent.callback, 500)}});		
 	}
 
@@ -215,7 +233,8 @@ Navigate.loadContent.callback = function(t) {
 
 Navigate.loadContent.setMaxScrollHeight = function() {
 	var cp = $("content-panel");
-	var maxScrollHeight = cp.getContentHeight() - cp.getHeight() + 80;
+	var contentHeight = cp.getContentHeight();
+	var maxScrollHeight =  (contentHeight < cp.getHeight()) ? 0 : contentHeight - cp.getHeight() + 80;
 	$("content-panel").setAttribute("maxscrollheight", -maxScrollHeight);
 }.bind(Navigate.loadContent);
 
@@ -276,7 +295,8 @@ Navigate.setBackButton = function(){
 	images.html("");
 	$A(states).each(function(state) {
 		var d = new Element('div');
-		$j(d).css({right: right, opacity: opacity, top: top});
+		var o = opacity > 0 ? opacity : 0.2;
+		$j(d).css({right: right, opacity: o, top: top});
 		d.addClassName("image");
 		
 		var img = new Element('img');
@@ -284,7 +304,7 @@ Navigate.setBackButton = function(){
 		d.appendChild(img);
 		
 		$j(".navigation-bar .images")[0].appendChild(d);
-		opacity -= 0.3; right += 60;
+		opacity -= 0.8; right += 60;
 	})
 }.bind(Navigate);
 
@@ -312,6 +332,7 @@ Modal.setup = function(){
 }.bind(Modal)
 
 Modal.show = function(){
+	General.WaitingDialog.hide(); // Hides the waiting dialog just in case it is open.
 	var config = arguments[0] || {};
 	var d = this.get();
 //	d.center();
@@ -340,6 +361,7 @@ Modal.center = function(){
 }.bind(Modal);
 
 Modal.showWaitingText = function() {
+	General.WaitingDialog.hide();
 	var msg = arguments[0] || "Please wait ...";
 	var d = new Element("div");
 	d.addClassName("modal-text");
@@ -353,6 +375,7 @@ Modal.showWaitingText = function() {
 }.bind(Modal);
 
 Modal.alert = function(msg) {
+	General.WaitingDialog.hide();
 	var d = new Element("div");
 	d.addClassName("modal-text");
 	d.innerHTML = msg;
@@ -486,10 +509,11 @@ function remove_instrument(id, container_div, for_type, for_type_id){
 
 /* COMMENTS */
 General.Comment.add = function() {
+	var comment = $j("[name=comment]").val();
 	var url = formatUrl('/comments/add', {
 		for_type: $j("[name=for_type]").val(),
 		for_type_id: $j("[name=for_type_id]").val(),
-		comment: $j("[name=comment]").val()
+		comment: comment
 	});
 	
 	var onSuccess = function(t) {
@@ -497,8 +521,22 @@ General.Comment.add = function() {
 		$j("[name=comment]").val('');
 	};
 	
+	if(comment.blank()){
+		$j(".comment-response").html(General.getErrorText("The body of the comment cannot be empty."));
+		return;
+	}
+	
 	call(url, {method: 'post', onSuccess: onSuccess})
 }.bind(General.Comment);
+
+General.Comment.deleteComment = function(divId) {
+	var div = $(divId);
+	var onSuccess = function() {
+		$j(div).hide('slow');
+	};
+	var url = formatUrl('/comments/delete', {id: div.getAttribute('commentid')});
+	call(url, {method: 'post', onSuccess: onSuccess});
+}.bind();
 
 General.onClickMore = function(el) {
 	var id = $(el).getAttribute("moreref");
@@ -608,6 +646,9 @@ General.logout.success = function() {
 	Doc.reload();
   Layout.ContextMenu.empty();
 	$j('.logo')[0].onclick = Layout.loadOverview;
+	Navigate.states = [];
+	Navigate.currentState = false;
+	window.setTimeout(Layout.loadOverview, 1000);
 }.bind(General.logout);
 
 /* Playlist */
@@ -723,6 +764,15 @@ General.User.updatePostInList = function(id) {
 	call(url, {onSuccess: onSuccess});
 }.bind(General.User);
 
+General.User.deletePostFromList = function(divId) {
+	var div = $(divId);
+	var onSuccess = function() {
+		$j(div).hide('slow');
+	};
+	var url = formatUrl('/comments/delete', {id: div.getAttribute('commentid')});
+	call(url, {method: 'post', onSuccess: onSuccess});
+}.bind(General.User);
+
 /* Account */
 General.User.loadHome = function() {
 	Navigate.loadContent('/account');
@@ -753,6 +803,25 @@ General.getAjaxLoader = function(str) {
 General.getErrorText = function(str) {
 	return new Element('div').update(str).addClassName('red');
 }.bind(General);
+
+General.WaitingDialog.show = function() {
+	if(this.dialog){
+		this.dialog.show();
+		return;
+	}
+	this.dialog = new Element('div').addClassName("waiting-dialog");
+	document.body.appendChild(this.dialog);
+	var img = new Element('img', {src: "/new-ui/loading.gif"});
+	this.dialog.appendChild(img);
+	$j(img).center();
+}.bind(General);
+
+General.WaitingDialog.hide = function() {
+	if(this.dialog)
+		this.dialog.hide();
+}.bind(General);
+
+
 
 /* REQUEST FOR AN INVITE */
 General.RequestInvite.submit = function() {

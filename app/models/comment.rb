@@ -18,6 +18,7 @@ class Comment < ActiveRecord::Base
     })
     comment.add_notification
     comment.add_feed
+    user.add_memory(MEMORY_DETAILS['comment'])
     comment
   end
   

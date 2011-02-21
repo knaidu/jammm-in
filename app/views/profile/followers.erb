@@ -2,5 +2,5 @@
 <%= partial("common/users", :locals => {:users => users}) %>
 
 <% if users.empty? %>
-  <div class="s11"><%= @user.username %> has no followers.</div>
+  <div class="info-box"><%= @user.username %> has no followers.</div>
 <% end %>

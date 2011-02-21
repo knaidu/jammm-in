@@ -107,6 +107,7 @@ class Song < ActiveRecord::Base
   end
   
   def publish
+    raise "You must first preview the collaboration in order to publish it" if song_jams.select(&:is_flattened).empty?
     self.delete_file_handle if self.file_handle_exists?  
     song_jams(true).each do |song_jam|
       song_jam.is_flattened ? song_jam.activate : song_jam.deactivate
@@ -114,6 +115,7 @@ class Song < ActiveRecord::Base
     new_file_handle = new_file_handle_name
     utils_make_copy_of_file_handle(self.flattened_file_handle, new_file_handle)
     self.file_handle = new_file_handle
+    self.flattened_file_handle = nil
     self.save
     fresh_song = self.class.find(self.id)
     FileData.create_waveform(fresh_song)

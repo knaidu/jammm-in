@@ -1,5 +1,5 @@
 <% song = feed.dataObj.song %>
-<div class='feed'>
+<div class='feed'  containsonhoveritems=true>
   <div class='thumbnail'>
     <img src='<%= song.creator.profile_picture_url %>'>
   </div>
@@ -19,7 +19,7 @@
           <%= hspace 10 %>
           <div class='field-name'>Likes:</div><%= song.liked_by.count %>
           <%= hspace 10 %>
-          <div class='field-name'>Artists:</div><%= song.artists.map(&:username).join(", ") %>
+          <div class='field-name'>Artists:</div><%= list_users song.artists %>
         </div>
       </div>
     </div>

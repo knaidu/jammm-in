@@ -9,3 +9,7 @@
 <%= vspace 20 %>
 
 <%= erb(:"/common/jams", :locals => {:jams => @jams }) %>
+
+<% if @jams.count == 0 %>
+  <div class="info-box">You have not published any jams.</div>
+<% end %>

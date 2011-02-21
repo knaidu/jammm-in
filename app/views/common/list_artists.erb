@@ -1,5 +1,9 @@
-<% artists_size = artists.size
-  artists_size.times.each do |i| 
-   artist = artists[i] %>
-   <%= add_profile_link(artist) %><%= ', ' if i < (artists_size - 1)%>
+<div class="display-inline-block">
+  <% users.each_with_index{|u, i| %>
+    <div class="display-inline-block link" <%= profile_link u %>><%= u.username %></div><%= "," if i < (users.count - 1) %>
+  <% } %>
+</div>
+
+<% def it %>
+
 <% end %>

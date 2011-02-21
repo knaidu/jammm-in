@@ -145,7 +145,7 @@ class User < ActiveRecord::Base
     my_feeds = (Feed.find_by_sql [
         "SELECT f.*",
         "FROM feeds f, user_feeds uf",
-        "WHERE (f.id=uf.feed_id and uf.user_id in (#{follows_user_ids})) and f.feed_type != 'say'",
+        "WHERE (f.id=uf.feed_id and uf.user_id in (#{follows_user_ids})) and f.feed_type != 'say' and f.feed_type != 'user_created'",
         "ORDER BY created_at DESC limit 100"
       ].join(' '))
   end

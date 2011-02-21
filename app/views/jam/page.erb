@@ -40,7 +40,7 @@
 <% moreref = rand_id %>
 <div class='overflow-hidden s11' style='height: 106px' id='<%= moreref %>'>
   <div class='field'>Name:</div><span><%= @jam.name %></span><%= vspace %>
-  <div class='field'>Artists:</div><span><%= @jam.creator.name %></span><%= vspace %>
+  <div class='field'>Artists:</div><span><%= list_users [@jam.creator] %></span><%= vspace %>
   <div class='field'>Instruments:</div><span><%= @jam.instrument ? @jam.instrument.name : "-" %></span><%= vspace %>
   <div class='field'>Genre:</div><span><%= @jam.genre_names %></span><%= vspace  %>
 
@@ -58,7 +58,7 @@
 <% unless @jam.songs.select(&:published?).empty? %>
   <%= vspace 20 %>
   <div class='section-header'>Collaborations</div>
-  <%= partial :"/jam/songs", :locals => {:songs => @jam.songs} %>
+  <%= partial :"/jam/songs", :locals => {:songs => @jam.songs.select(&:published?)} %>
 <% end %>
 
 <%= vspace 20 %>

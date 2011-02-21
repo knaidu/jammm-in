@@ -79,10 +79,11 @@ end
 
 def allowed?(users)
   if (not users.include?(session_user?))
-    @layout_info = {'middle_panel' => 'common/not_allowed', 'left_panel' => 'homepage/left'}
-    erb(:"body/structure")
+    "You do not have access to this page"
   else
-    yield if block_given?
+    monitor {
+      yield if block_given?
+    }
   end
 end 
 
@@ -241,6 +242,10 @@ end
 
 def music_link(music)
   " onclick='Navigate.loadContent(\"/#{music.class.to_s.downcase}/#{music.id}\")' "
+end
+
+def list_users(user)
+  erb(:"/common/list_artists", :locals => {:users => user})
 end
 
 

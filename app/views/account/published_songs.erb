@@ -10,3 +10,7 @@
 <%= vspace 20 %>
 
 <%= partial("common/songs", :locals => {:songs => @songs}) %>
+
+<% if @songs.count == 0 %>
+  <div class="info-box">You have not published any collaborations.</div>
+<% end %>

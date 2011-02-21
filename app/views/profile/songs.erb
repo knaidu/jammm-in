@@ -1,5 +1,5 @@
 <%= partial(:"/common/songs", :locals => {:songs => @songs})%>
 
 <% if @songs.empty? %>
-  <div class="s11"><%= @user.username %> does not have any collaborations.</div>
+  <div class="info-box"><%= @user.username %> does not have any collaborations.</div>
 <% end %>

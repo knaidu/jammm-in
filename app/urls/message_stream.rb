@@ -37,3 +37,13 @@ get '/message_stream/message' do
   message = UserMessageStream.find(param?(:id))
   erb(:"/common/message", :locals => {:message => message})
 end
+
+
+## NOT COMPLETED.
+post '/message_stream/delete_post' do
+  ms, message = MessageStream.find(params?(:ms_id)), UserMessageStream.find(id)
+  allowed?(ms.users){
+    message.destroy()
+    'sucessfully deleted message stream post'
+  }
+end

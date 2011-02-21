@@ -16,7 +16,9 @@ Song.create = function(musicType, musicId) {
 
 
 Song.create.submit = function() {
-	$j(".error-response").show();
+	var er = 	$j(".error-response");
+	er.html(new Element('img', {src: "/new-ui/ajax-loader.gif"}));
+	er.show();
 	var params = {
 		name: $j(".simplemodal-data [name=name]").val(),
 		music_type: $j(".simplemodal-data [name=music_type]").val(),
@@ -28,7 +30,10 @@ Song.create.submit = function() {
 		var id = t.responseText;
 		Navigate.loadContent("/song/" + id + "/manage");
 	};
-	call("/song/create/submit", {method: "post", parameters: params, onSuccess: onSuccess});
+	var onFailure = function(t) {
+		er.html(General.getErrorText(t.responseText));
+	};
+	call("/song/create/submit", {method: "post", parameters: params, onSuccess: onSuccess, onFailure: onFailure});
 }.bind(Song.create);
 
 
@@ -74,6 +79,11 @@ Song.Manage.flatten = function(id) {
 	var info = $A(jams).map(function(jam) {
 		return jam.getAttribute("jamid") + "," + jam.getAttribute('volume')
 	});
+	if(jams.size() == 0){
+		Modal.alert('<div class="red">Select (tick) the jams you would like to preview.</div>');
+		return;
+	}
+	
 	var url = formatUrl('/song/' + id + "/manage/flatten", {jam_ids: info.join(";")});
 	
 	var callback = function(response){
@@ -90,17 +100,24 @@ Song.Manage.flatten = function(id) {
 		poll.start();
 	}
   
+	General.WaitingDialog.show();
 	var url = formatUrl('/song/' + id + "/manage/flatten", {jam_ids: info.join(";")})
   call(url, {onSuccess: callback});
 	
 }.bind(Song.Manage);
 
 Song.Manage.publish = function(id) {
+	General.WaitingDialog.show();
 	var url = formatUrl('/song/' + id + "/manage/publish");
-	call(url, {onSuccess: function() {
+	var onSuccess = function() {
 		Modal.alert("Your Collaboration has been successfully published.");
 		Navigate.reload();
-	}, method: 'post'})
+	};
+	var onFailure = function(t) {
+		var s = "<span class='red'>Error: " + t.responseText + "</span>";
+		Modal.alert(s);
+	};
+	call(url, {onSuccess: onSuccess, onFailure: onFailure, method: 'post'})
 }.bind(Song.Manage);
 
 Song.Manage.unpublish = function(id) {
