@@ -3,7 +3,7 @@
   users = feed.dataObj.users
 %>
 <div class='feed' containsonhoveritems=true>
-  <div class='thumbnail'>
+  <div class='thumbnail link' <%= profile_link users[0] %>>
     <img src='<%= users[0].profile_picture_url %>'>
   </div>
   <div class='content'>

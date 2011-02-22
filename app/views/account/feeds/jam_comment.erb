@@ -3,7 +3,7 @@
   comment = feed.dataObj.comment 
 %>
 <div class='feed' containsonhoveritems=true>
-  <div class='thumbnail'>
+  <div class='thumbnail link' <%= profile_link comment.user %>>
     <img src='<%= comment.user.profile_picture_url %>'>
   </div>
   <div class='content'>

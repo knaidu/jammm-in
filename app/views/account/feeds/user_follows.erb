@@ -1,12 +1,12 @@
 <% users = feed.dataObj.users %>
 <div class='feed'>
-  <div class='thumbnail'>
+  <div class='thumbnail link' <%= profile_link users[0] %>>
     <img src='<%= users[0].profile_picture_url %>'>
   </div>
   <div class='content'>
     <span class='bold link clickable' <%= profile_link users[0] %>><%= users[0].username %></span> is following
     <div class='entity'>
-      <div class='entity-image'>
+      <div class='entity-image link' <%= profile_link users[1] %>>
         <img src='<%= users[1].profile_picture_url %>'>
       </div>
       <div class='entity-info'>

@@ -112,9 +112,9 @@ JEvent.list.onClickMore = function() {
 
 JEvent.list.highlightNavigationItem = function() {
 	$j(".navigation-bar").hover(function() {
-		$j(".navigation-bar .images .image:first-child").addClass("highlight");
+		$j(".navigation-bar .images .image:first-child").children().addClass("highlight");
 	}, function() {
-		$j(".navigation-bar .images .image:first-child").removeClass("highlight")
+		$j(".navigation-bar .images .image:first-child").children().removeClass("highlight");
 	});
 }.bind(JEvent.list);
 

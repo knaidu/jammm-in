@@ -1,3 +1,7 @@
+get '/groups/home' do
+  erb(:"/groups/home")
+end
+
 get '/groups/:handle' do
   @group = Group.with_handle param?(:handle)
   erb(:"/groups/page")

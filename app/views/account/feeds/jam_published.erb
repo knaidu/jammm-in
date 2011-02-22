@@ -1,6 +1,6 @@
 <% jam = feed.dataObj.jam %>
 <div class='feed' containsonhoveritems=true>
-  <div class='thumbnail'>
+  <div class='thumbnail link' <%= profile_link jam.creator %>>
     <img src='<%= jam.creator.profile_picture_url %>'>
   </div>
   <div class='content'>
