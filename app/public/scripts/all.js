@@ -853,7 +853,7 @@ General.User.signup = function() {
 	};
 	
 	if(!$('checkbox-tc').checked){
-		onFailure({responseText: "Please check the terms and conditions"});
+		onFailure({responseText: "Please accept the terms and conditions"});
 		return;
 	}
 	responseField.update(General.getAjaxLoader("Please wait while your account is being created..."));

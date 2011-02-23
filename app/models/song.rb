@@ -257,7 +257,7 @@ class Song < ActiveRecord::Base
     feed.add_users(artists)
     
     notification = Notification.add({:song_id => self.id}, "song_publish")
-    notification.add_users(artists)
+    notification.add_users([artists] - [self.creator])
   end
   
   def unread_messages(user)

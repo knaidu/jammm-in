@@ -1,0 +1,12 @@
+<% if session_user? %>
+  <div class='context-menu'>
+
+    <div class='item' onclick='Navigate.loadContent("/account/jams")'>
+      <div class='container highlight'>
+        <div class='icon'><%= icon "/images/24.png", 0, 24, true %></div>
+        <div class='text'>My Jams</div>
+      </div>
+    </div>
+  
+  </div>
+<% end %>

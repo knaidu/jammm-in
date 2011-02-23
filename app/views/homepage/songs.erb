@@ -1,5 +1,11 @@
 <%= vspace 10 %>
-<%= render_state({:name => "Songs", :description => "", :url => "/songs", :context_menu => "false", :img => "/new-ui/collaborate.png"}) %>
+<%= render_state({
+  :name => "Songs", 
+  :description => "", 
+  :url => "/songs", 
+  :context_menu => "/partial/homepage/songs_context_menu", 
+  :img => "/new-ui/collaborate.png"
+}) %>
 <div style='margin-left: 10px'>
   <div class='page-header'>Collaborations</div> 
 </div>
