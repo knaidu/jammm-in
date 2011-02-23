@@ -18,7 +18,7 @@
       <% class_str = message_stream.unread?(session_user?) ? (class_str += " unread") : class_str %>
       <% with_user = message_stream.users.without(session_user?)[0] %>
       <div class='<%= class_str %>' onclick="Navigate.loadContent('/account/message_stream/<%= message_stream.id %>')">
-        <div class='actions' style='margin-top: 10px'><img src='/new-ui/forward-arrow.png'></div>
+        <div class='actions' style='margin-top: 10px'><img src='/images/arrow.png'></div>
         <div class='profile-picture'>
           <img src='<%= with_user.profile_picture_url %>'><%= vspace 5 %>
         </div>

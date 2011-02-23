@@ -740,7 +740,7 @@ General.User.unfollow = function(username) {
 
 General.User.sendMessage = function(username) {
 	var url = "/" + username + "/send_message";
-	Modal.load(url, {minHeight: 215, minWidth: 380})
+	Modal.load(url, {minHeight: 235, minWidth: 400})
 }.bind(General.User);
 
 

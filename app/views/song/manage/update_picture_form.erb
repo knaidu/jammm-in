@@ -11,7 +11,7 @@
     </div>
     <form method='post' action='/song/<%= @song.id %>/manage/update_picture/submit' enctype='multipart/form-data'>
     	<div class='field'>Choose:</div><input type='file' name='picture'><br><br>
-    	<input type='submit' value='Update Picture' onclick='Song.Manage.updatePicture.showSpinner(this)'>
+    	<input type='submit' class='float-right' value='Update Picture' onclick='Song.Manage.updatePicture.showSpinner(this)'>
     </form>
   </div>
 </body>

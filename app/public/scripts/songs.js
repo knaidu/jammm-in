@@ -131,7 +131,7 @@ Song.Manage.unpublish = function(id) {
 }.bind(Song.Manage);
 
 Song.Manage.updatePicture = function(id) {
-	Modal.load("/song/" + id + "/manage/update_picture", {minHeight: "170px"});
+	Modal.load("/song/" + id + "/manage/update_picture", {minHeight: "200px"});
 }.bind(Song.Manage);
 
 Song.Manage.updatePicture.showSpinner = function() {
