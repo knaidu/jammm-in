@@ -24,10 +24,15 @@ function flashGetStatus(url) {
 flashGotStatus(ret);
 }  
 
-function flashSetVolume(){
-	var vol = arguments[0] || 100;
-//	console.log('setting volume to: ' + vol);
+function flashSetVolume(vol){
+  var retVal = getFlashMovie("jammminPlayer").setVolumeFromJavaScript(vol);
 }
+
+
+function flashGetVolume() {
+   var retVal = getFlashMovie("jammminPlayer").getVolumeFromJavaScript();
+}  
+
 
 function flashGotStatus(str) {
 //	console.log("status: " + str);
@@ -58,6 +63,7 @@ Flash.play = function(path) {
 	this.playing = true;
 	this.paused = false;
 	flashPlay(path);
+	this.setVolume(this.getSliderVolumeValue());
 	this.displayMusicInDoc();
 	this.startGettingStatus();
 	if(this.currentData.playType == 'mini'){
@@ -65,11 +71,19 @@ Flash.play = function(path) {
 	}
 }.bind(Flash);
 
+
 Flash.setVolume = function() {
-	var vol = arguments[0] || 100;
+	var vol = arguments[0];
+	if(vol == 0) vol = 1;
+	vol = vol ? vol : 100;
 	flashSetVolume(vol);
 }.bind(Flash);
 
+Flash.getSliderVolumeValue = function() {
+	if(!this.currentData.sliderEl) return 100;
+	var slider = this.currentData.sliderEl;
+	return (slider.slider('value') * 100);
+}.bind(Flash);
 
 Flash.makeMiniLinkPersistent = function() {
 	$A($j("[onhovershow=false]")).each(function(e) {
@@ -94,6 +108,7 @@ Flash.isPaused = function() {
 
 Flash.continuePlaying = function() {
 	flashContinue();
+	this.setVolume(this.getSliderVolumeValue());
 	this.paused = false;
 	this.playing = true;
 	this.setImageStates();
