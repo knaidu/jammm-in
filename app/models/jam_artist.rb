@@ -7,4 +7,8 @@ class JamArtist < ActiveRecord::Base
     Instrument.fetch("jam_artist", self.id)
   end
   
+  def remove_instrument(instrument)
+    ci = ContainsInstrument.find_by_for_type_and_for_type_id_and_instrument_id("jam_artist", id, instrument.id)
+  end
+  
 end

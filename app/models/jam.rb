@@ -283,8 +283,8 @@ class Jam < ActiveRecord::Base
   
   def update_instrument(instrument)
     ja_id = jam_artists[0].id
-    instrument_objs = Instrument.fetch("jam_artist", ja_id) 
-    instrument_objs.compact.each(&:destroy)
+    cis = ContainsInstrument.find_all_by_for_type_and_for_type_id("jam_artist", ja_id)
+    cis.each(&:destroy)
     ContainsInstrument.add(instrument, "jam_artist", ja_id)
   end
   
