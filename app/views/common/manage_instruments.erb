@@ -9,13 +9,14 @@
 	%>
   
   <div class='editable-genres'>
-		<% contains_instruments.each do |contains_instrument| %>
+		<% contains_instruments.compact.each do |contains_instrument| %>
 			<% instrument = contains_instrument.instrument %>
+			<% next if instrument.nil? %>
 			<div class='editable-genre'>
 				<div class='action' onClick="remove_instrument('<%= contains_instrument.id %>', '<%= main_instruments_div_id %>', '<%= for_type %>', '<%= for_type_id %>')">
           <img src='/new-ui/x.png' height='16px'>
 				</div>
-				<div class='text'><%= instrument.name %></div>
+				<div class='text'><%= instrument.name rescue "-" %></div>
 			</div>
 		<% end %>
 		

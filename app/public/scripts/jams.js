@@ -79,9 +79,10 @@ Jam.Manage.updateAudioFile.showSpinner = function() {
 	$j(".waiting-message").show();
 }.bind(Jam.Manage.updateAudioFile);
 
-Jam.Manage.updateAudioFile.done = function(){
+Jam.Manage.updateAudioFile.done = function(id){
 	Modal.close();
 	Navigate.reload();
+	window.setTimeout(function() {Jam.Manage.publishPopup(id)}, 1000);
 }.bind(Jam.Manage.updateAudioFile);
 
 Jam.Manage.publish = function(id) {
