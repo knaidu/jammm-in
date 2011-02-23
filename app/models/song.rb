@@ -170,7 +170,7 @@ class Song < ActiveRecord::Base
     
     # Sends notification to all the other song managers
     notification = Notification.add({:song_id => self.id, :jam_id => jam.id}, "jam_added_to_song")
-    notification.add_users(managers - [jam.creator])
+    notification.add_users([jam.creator])
   end
   
   def remove_jam(jam)

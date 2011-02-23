@@ -100,7 +100,7 @@ class Jam < ActiveRecord::Base
     PublishedJam.add(jam)
     users = jam.artists
     feed = Feed.add({:user_ids => users.map(&:id), :jam_id => self.id}, "jam_published", "global")
-    feed.add_users(users)
+    feed.add_users([jam.creator])
   end
 
   def like(user)

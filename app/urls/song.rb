@@ -2,11 +2,9 @@
 # Loads a songs
 
 get '/song/create' do
-  logged_in?{
-    @music_type, @music_id = param?(:music_type), param?(:music_id)
-    @obj = eval(@music_type.capitalize).find(@music_id)
-    erb(:"song/create")
-  }
+  @music_type, @music_id = param?(:music_type), param?(:music_id)
+  @obj = eval(@music_type.capitalize).find(@music_id)
+  erb(:"song/create")
 end
 
 post '/song/create/submit' do
@@ -68,7 +66,7 @@ end
 
 get '/song/:song_id/manage' do
   @song = get_passed_song
-  allowed?(@song.artists){
+  allowed?(@song.managers){
     @music_meta_data = music_meta_data(@song)
     erb(:"song/manage/page")
   }

@@ -52,10 +52,10 @@ end
 
 get '/jam/:jam_id/manage' do
   @jam = get_passed_jam
-  @music_meta_data = music_meta_data(@jam)
-#  allowed?(@jam.artists) {
+  allowed?([@jam.creator]){
+    @music_meta_data = music_meta_data(@jam)
     erb(:"/jam/manage/page")
-#  }
+  }
 end
 
 post '/jam/:jam_id/manage/change_jam_picture' do

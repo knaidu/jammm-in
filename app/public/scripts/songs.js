@@ -80,8 +80,8 @@ Song.Manage.flatten = function(id) {
 	var info = $A(jams).map(function(jam) {
 		return jam.getAttribute("jamid") + "," + jam.getAttribute('volume')
 	});
-	if(jams.size() == 0){
-		Modal.alert('<div class="red">Select (tick) the jams you would like to preview.</div>');
+	if(jams.size() > 2){
+		Modal.alert('<div class="red">Please select 2 or more jams to mix and preview.</div>');
 		return;
 	}
 	
