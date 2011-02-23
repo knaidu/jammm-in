@@ -6,7 +6,7 @@
   <div class='content'>
     <div class='col1'>
       <div class='name'><%= song.name %></div>
-      <div class='artist'><%= song.artists.map(&:username).join(", ") %></div>
+      <div class='artist'><%= ([song.creator] + song.artists).uniq.map(&:username).join(", ") %></div>
     </div>
     <div class='col2'>
       <div class='field w50 s11'>Views:</div><%= song.views %> <%= vspace %>

@@ -574,6 +574,7 @@ General.Tabs.resizeLine = function(container) {
 General.Tabs.loadTab = function(el, container) {
 	var parent = $j(el).parent();
 	var contentDivId = $j(el).parent()[0].getAttribute('contentdivid');
+	$(contentDivId).update('Loading...');
 	updateEl(contentDivId, el.getAttribute('url'));
 	var tabs = $j("#" + parent[0].id + " .tab");
 	tabs.removeClass("selected");

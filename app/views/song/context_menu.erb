@@ -1,5 +1,5 @@
 <div class='context-menu'>
-  <% if @song.artists.include?(session_user?) %>
+  <% if @song.managers.include?(session_user?) %>
     <div class='item container highlight' onclick='Navigate.loadContent("/song/<%= @song.id %>/manage")'>
         <div class='icon'><%= icon "/images/24.png", 14, 24, true %></div>
         <div class='text'>Edit Collaboration</div>
