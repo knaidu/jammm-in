@@ -814,7 +814,7 @@ General.WaitingDialog.show = function() {
 	}
 	this.dialog = new Element('div').addClassName("waiting-dialog");
 	document.body.appendChild(this.dialog);
-	var img = new Element('img', {src: "/new-ui/loading.gif"});
+	var img = new Element('img', {src: "/images/ajax-loader-big.gif"});
 	this.dialog.appendChild(img);
 	$j(img).center();
 }.bind(General);

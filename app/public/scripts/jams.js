@@ -28,7 +28,7 @@ Jam.Create.submit = function(el) {
 		return;
 	}
 	
-	if(!$j("[name=name]").val().match("^[a-zA-Z0\ \.\-]*$")){
+	if(!$j("[name=name]").val().match("^[a-zA-Z0-9\ \.\-]*$")){
 		setErrorMsg("Jam name can contain only alphabets, numbers, spaces, periods and hyphens.");
 		return;
 	}
