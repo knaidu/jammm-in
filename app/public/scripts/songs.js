@@ -49,7 +49,8 @@ Song.Manage.generateSliders = function() {
 			value: jam.volume, 
 			step: 0.04,
 			change: function(e, ui){
-				Song.Manage.monitorSlider(jam.jamid, e, ui)
+				Song.Manage.monitorSlider(jam.jamid, e, ui);
+				Flash.setVolume(ui.value * 100);
 			}
 		});
 	})

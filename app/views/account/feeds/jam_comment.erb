@@ -10,8 +10,8 @@
     <div class='bold link clickable' <%= profile_link comment.user %>><%= comment.user.username %></div><%= vspace %>
     <%= feed.dataObj.comment.comment %>
     <div class='entity'>
-      <div class='entity-image'>
-        <img src='<%= jam.image_url_big %>'>
+      <div class='entity-image link'>
+        <img src='<%= jam.image_url_big %>' <%= music_link jam %>>
       </div>
       <div class='entity-info'>
         <div class='bold link' <%= music_link jam %>><%= jam.name %></div>

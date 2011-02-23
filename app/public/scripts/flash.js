@@ -24,6 +24,11 @@ function flashGetStatus(url) {
 flashGotStatus(ret);
 }  
 
+function flashSetVolume(){
+	var vol = arguments[0] || 100;
+//	console.log('setting volume to: ' + vol);
+}
+
 function flashGotStatus(str) {
 //	console.log("status: " + str);
 	var arr = $A(str.split(","));
@@ -60,6 +65,11 @@ Flash.play = function(path) {
 	}
 }.bind(Flash);
 
+Flash.setVolume = function() {
+	var vol = arguments[0] || 100;
+	flashSetVolume(vol);
+}.bind(Flash);
+
 
 Flash.makeMiniLinkPersistent = function() {
 	$A($j("[onhovershow=false]")).each(function(e) {
@@ -91,6 +101,7 @@ Flash.continuePlaying = function() {
 }.bind(Flash);
 
 Flash.saveCurrentData = function(el) {
+	aaa = el;
 	var seekEl = false, bufferEl = false; 
 	var waveformEl = $(el.getAttribute('waveformid'));
 	if(waveformEl){
@@ -98,6 +109,7 @@ Flash.saveCurrentData = function(el) {
 		bufferEl = waveformEl.findDescendantsByClassName("buffer");
 	}
 	var length = el.getAttribute("length") ? (parseInt($(el).getAttribute('length')) * 1000) : false;
+	var sliderEl = $j("#" + el.getAttribute("sliderid"));
 	this.currentData = {
 		playEl: el,
 		waveformEl: waveformEl,
@@ -106,7 +118,8 @@ Flash.saveCurrentData = function(el) {
 		bufferEl: bufferEl,
 		musicname: el.getAttribute("musicname"),
 		playId: el.getAttribute("playid"),
-		playType: el.getAttribute("playtype")
+		playType: el.getAttribute("playtype"),
+		sliderEl: sliderEl 
 	}
 }.bind(Flash);
 
