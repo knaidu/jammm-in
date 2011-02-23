@@ -3,7 +3,7 @@ Your song has been successfully mixed. Click 'Publish' to publish the collaborat
 <div>
   <div class='play-waveform' style='position: relative'>
     <% waveformid = rand_id %>
-    <div style='position: absolute; left: 0px;' class='play' <%= play_info @song, true %> waveformid='<%= waveformid %>' playtype='waveform'><%= icon "/images/42.png", 2, 42, true %></div>
+    <div style='position: absolute; left: 0px;' class='play clickable' <%= play_info @song, true %> waveformid='<%= waveformid %>' playtype='waveform'><%= icon "/images/42.png", 2, 42, true %></div>
     <div class='waveform' style='position: relative; margin-left: 50px' id="<%= waveformid %>">
       <div class="buffer"></div>
       <div class='seek'>
@@ -15,13 +15,13 @@ Your song has been successfully mixed. Click 'Publish' to publish the collaborat
 <%= vspace 20 %>
 <div class='position-relative'>
   <div class="button" style='position: absolute; right: 10px' onclick='Song.Manage.publishPopup.publish("<%= @song.id %>")'>
-    <div class="icon"><img src='/new-ui/generic-add.png' height='16px'></div>
+    <div class="icon"><%= icon "/images/button-images-16.png", 1, 16, true %></div>
     <div class="text">Publish</div>
   </div>
   
   <div class="button" style='position: absolute; right: 110px'  onclick='Song.Manage.publishPopup.publishLater("<%= @song.id %>")'>
-    <div class="icon"><img src='/new-ui/generic-delete.png' height='16px'></div>
-    <div class="text">Discard</div>
+    <div class="icon"><%= icon "/images/button-images-16.png", 2, 16, true %></div>
+    <div class="text">Not Now</div>
   </div>
   
 </div>

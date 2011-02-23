@@ -70,7 +70,7 @@
 <div class='display-inline-block'>
   <% instrument = jam.instrument %>
   <select name='instrument' onedit='change' run="/jam/<%= jam.id %>/manage/update_instrument?">
-    <% Instrument.all.each{|i| %>
+    <% Instrument.all.sort_by(&:name).each{|i| %>
       <option value='<%= i.id %>' <%= "SELECTED" if i.id == instrument.id %>><%= i.name %></option>
     <% } %>
   </select>

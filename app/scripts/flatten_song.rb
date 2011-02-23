@@ -29,7 +29,7 @@ end
 process_info = ProcessInfo.find_by_process_id(options[:process_id].to_i) || ProcessInfo.add(options[:process_id].to_i)
 process_info.clear
 
-process_info.set_message "Please wait ..."
+process_info.set_message "Please wait while your jams are being mixed and processed ..."
 
 def new_file_handle_full_name(ext=nil)
   ENV["FILES_DIR"] + "/" + new_file_handle_name(ext)

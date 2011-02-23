@@ -1,7 +1,7 @@
 var Account = {};
 
 Account.updatePicture = function(id) {
-	Modal.load("/account/aboutme/update_picture", {minHeight: "170px"});
+	Modal.load("/account/aboutme/update_picture", {minHeight: "200px"});
 }.bind(Account);
 
 Account.updatePicture.showSpinner = function() {

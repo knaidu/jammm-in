@@ -36,17 +36,17 @@
 <div class='align-right clear-both'>
   <% if @song.published? %>
     <div class="button float-right" onclick='Song.Manage.unpublish("<%= song.id %>")'>
-      <div class="icon"><img src='/new-ui/generic-delete.png' height='16px'></div>
+      <div class="icon"><%= icon "/images/button-images-16.png", 2, 16, true %></div>
       <div class="text">Unpublish</div>
     </div>
   <% else %>
   <div class="button float-right" onclick='Song.Manage.publish("<%= song.id %>")'>
-    <div class="icon"><img src='/new-ui/generic-add.png' height='16px'></div>
+    <div class="icon"><%= icon "/images/button-images-16.png", 1, 16, true %></div>
     <div class="text">Publish</div>
   </div>
   <% end %>
   <div class="button" style='float: right; margin-right: 10px' onclick='Song.Manage.deleteSong("<%= song.id %>")'>
-    <div class="icon"><img src='/new-ui/generic-delete.png' height='16px'></div>
+    <div class="icon"><%= icon "/images/button-images-16.png", 2, 16, true %></div>
     <div class="text">Delete Collaboration</div>
   </div>
 </div>

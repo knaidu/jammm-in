@@ -4,7 +4,6 @@
 
 <%= js_start %>
   (function(){
-    alert(<%= @jam.id %>);
     window.top.Jam.Manage.updateAudioFile.done(<%= @jam.id %>);
   })();
 <%= js_end %>

@@ -24,10 +24,12 @@
   </div>
   <div class='actions'>                                          
     <%= vspace %>
-    <div class="button" onclick='Jam.Manage.load("<%= jam.id %>")'>
-      <div class="icon"><%= icon '/images/16.png', 14, 16, true %></div>
-      <div class="text">Update</div>
-    </div>
+    <% if session_user? == jam.creator %>
+      <div class="button" onclick='Jam.Manage.load("<%= jam.id %>")'>
+        <div class="icon"><%= icon "/images/button-images-16.png", 4, 16, true %></div>
+        <div class="text">Update</div>
+      </div>
+    <% end %>
   </div>
   <div class='waveform' id="<%= waveformid %>">
     <div class="buffer"></div>
