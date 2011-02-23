@@ -847,6 +847,7 @@ General.User.signup = function() {
 	var onSuccess = function() {
 		Doc.reload();
 		Navigate.loadContent('/account');
+		window.location.hash = "";
 	};
 	var onFailure = function(t) {
 		responseField.update(General.getErrorText(t.responseText));

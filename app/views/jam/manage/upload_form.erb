@@ -6,12 +6,17 @@
   <div class='simplemodal-data'>
     <%= vspace 20 %>
     <div class='waiting-message hide'>
-  	  Please wait while your jam is being uploaded and normalized... <%= vspace %>
+  	  Please wait while your jam is being uploaded and processed... <%= vspace %>
     	<img src="/new-ui/ajax-loader.gif" >
     </div>
     <form id='upload-jam-form' method='post' action='/jam/<%= @jam.id %>/manage/update_file/submit' enctype='multipart/form-data'>
-    	<div class='field'>Choose:</div><input type='file' name='file'><br><br>
-    	<input type='submit' value='Update Audio File' onclick='Jam.Manage.updateAudioFile.showSpinner(this)'>
+    	<div class='field'>Choose File:</div><input type='file' name='file'><br><br> 
+<!--    	<input type='submit' value='Update Audio File' onclick='Jam.Manage.updateAudioFile.showSpinner(this)'> -->
+    	<div class="button" style='position: absolute; right: 20px' onclick='Jam.Manage.updateAudioFile.submit()'>
+        <div class="icon"><%= icon "/images/button-images-16.png", 4, 16, true %></div>
+        <div class="text">Update</div>
+      </div>
+      <div class="clear-both"></div>
     </form>
   </div>
 </body>

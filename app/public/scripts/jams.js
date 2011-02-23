@@ -65,10 +65,16 @@ Jam.Manage.load = function(id){
 }.bind(Jam.Manage);
 
 Jam.Manage.updateAudioFile = function(id){
-	Modal.load("/jam/" + id + "/manage/update_file", {minHeight: 150});
+	Modal.load("/jam/" + id + "/manage/update_file", {minHeight: 220});
 }.bind(Jam.Manage);
 
-Jam.Manage.updateAudioFile.showSpinner = function(el) {
+Jam.Manage.updateAudioFile.submit = function(){
+	$('upload-jam-form').submit();
+	Jam.Manage.updateAudioFile.showSpinner();
+}.bind(Jam.Manage.updateAudioFile);
+
+
+Jam.Manage.updateAudioFile.showSpinner = function() {
 	$j("form").hide();
 	$j(".waiting-message").show();
 }.bind(Jam.Manage.updateAudioFile);

@@ -39,22 +39,22 @@
 <div class='position-relative h30'>
   <% if @jam.published %>
     <div class="button" style='float: right; margin-left: 10px' onclick='Jam.Manage.unpublish("<%= @jam.id %>")'>
-      <div class="icon"><img src='/new-ui/generic-delete.png' height='16px'></div>
+      <div class="icon"><%= icon "/images/button-images-16.png", 2, 16, true %></div>
       <div class="text">Unpublish</div>
     </div>
   <% else  %>
     <div class="button" style='float: right; margin-left: 10px' onclick='Jam.Manage.publish("<%= @jam.id %>")'>
-      <div class="icon"><img src='/new-ui/generic-add.png' height='16px'></div>
+      <div class="icon"><%= icon "/images/button-images-16.png", 1, 16, true %></div>
       <div class="text">Publish</div>
     </div>
   <% end %>
   <div class="button" style='float: right; margin-left: 10px' onclick='Jam.Manage.deleteJam("<%= @jam.id %>")'>
-    <div class="icon"><img src='/new-ui/generic-delete.png' height='16px'></div>
+    <div class="icon"><%= icon "/images/button-images-16.png", 2, 16, true %></div>
     <div class="text">Delete Jam</div>
   </div>
   
   <div class="button" style='float: right; margin-left: 10px' onclick='Jam.Manage.updateAudioFile("<%= jam.id %>")'>
-    <div class="icon"><%= icon "/images/16.png", 0, 16, true %></div>
+    <div class="icon"><%= icon "/images/button-images-16.png", 4, 16, true %></div>
     <div class="text">Update Audio File</div>
   </div>
   
