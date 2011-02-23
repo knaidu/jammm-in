@@ -58,7 +58,7 @@
 <%= partial :"/song/manage/jams", :locals => {:song_jams => song.song_jams.sort_by(&:id)} %>
 <div style='text-align: center; background-color: #e7e7e7; padding: 5px; '>
   <div class="button" onclick='Song.Manage.flatten("<%= @song.id %>")'>
-    <div class="icon"><img src='/new-ui/collaborate.png' height='16px'></div>
+    <div class="icon"><%= icon "/images/button-images-16.png", 8, 16, true %></div>
     <div class="text">Preview</div>
   </div>
 </div>
