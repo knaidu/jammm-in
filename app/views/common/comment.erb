@@ -1,14 +1,15 @@
 <% div_id = rand_id %>
-<div class='comment' id="<%= div_id %>" commentid="<%= comment.id %>">
+<div class='comment' id="<%= div_id %>" commentid="<%= comment.id %>" containsonhoveritems=true>
   <div class='image'><img src='<%= comment.user.profile_picture_url %>' height='24px'></div>
   <div class='body'>
+    <div class="actions hide link" onhovershow=true>
+      <% if (managers + [comment.user]).include?(session_user?) %>
+      	<span onclick="General.Comment.deleteComment('<%= div_id %>')"><img src='/images/delete.png' height='16px'></span>
+      <% end %>
+    </div>
     <div class='username'><%= comment.user.username %>:</div>
     <div class='string'>
       <%= comment.comment.format_html %>
-      <br>
-      <% if (managers + [comment.user]).include?(session_user?) %>
-      	<span title='Delete comment' class='link s11 gray' onclick="General.Comment.deleteComment('<%= div_id %>')">(delete)</span>
-      <% end %>
     </div>
   </div>
 </div>

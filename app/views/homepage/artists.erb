@@ -8,5 +8,5 @@
 }) %>
 <%= vspace 10 %>
 <div class="page-header">Artists</div><%= vspace 10 %>
-<%= partial("common/users", :locals => {:users => User.all}) %>
+<%= partial("common/users", :locals => {:users => User.all.sort_by{|u| -(u.id)}}) %>
 
