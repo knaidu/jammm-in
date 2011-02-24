@@ -32,7 +32,10 @@ Update your information, interests, profile picture and password.
 <div class='field'>Old Password</div><input type='password' name='current-password'><%= vspace %>
 <div class='field'>New Password</div><input type='password' name='password'><%= vspace %>
 <div class='field'>Confirm New Password</div><input type='password' name='confirm-password'><%= vspace %>
-<input type='button' value='Update' onclick='Account.changePassword()'>
+<div class="position-relative" style='min-height: 20px; '>
+  <input type='button' value='Update' style='position: absolute; left: 0px' onclick='Account.changePassword()'>
+  <div style='position: relative; margin-left: 80px; padding-top: 8px' class='s11 password-response'></div>
+</div>
 
 <%= vspace 30 %>
 <div class='section-header'>Interests</div>

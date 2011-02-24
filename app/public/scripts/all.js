@@ -638,6 +638,7 @@ General.login = function() {
 		password: $j("[name=password]").val()
 	};
 	$j(".player .error-response").html("<img src='/new-ui/loading.gif'");
+	response.html("Please wait...");
 	call('/signin/process', {parameters: params, method: 'post', onSuccess: onSuccess, onFailure: onFailure});
 }.bind(General);
 

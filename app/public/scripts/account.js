@@ -16,14 +16,18 @@ Account.updatePicture.done = function() {
 }.bind(Account.updatePicture);
 
 Account.changePassword = function() {
+	var response = $j(".password-response");
 	var onSuccess = function() {
-		Modal.alert("Your password has been successfully changed.");
+		response.html("Your password has been successfully changed.");
 		$j("[type=password]").val("");
+	};
+	var onFailure = function(t) {
+		response.html(General.getErrorText(t.responseText));
 	};
 	var params = {
 		current_password: $j("[name=current-password]").val(),
 		password: $j("[name=password]").val(), 
 		confirm_password: $j("[name=confirm-password]").val()
 	};
-	call('/account/aboutme/change_password', {method: 'post', parameters: params, onSuccess: onSuccess})
+	call('/account/aboutme/change_password', {method: 'post', parameters: params, onSuccess: onSuccess, onFailure: onFailure})
 }.bind(Account);
