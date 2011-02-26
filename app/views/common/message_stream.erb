@@ -7,7 +7,7 @@
 
 
 <% 
-	user1, user2 = ([message_stream.users[0]] - [session_user?] + [session_user?]) # Sorts the users
+	user1, user2 = (message_stream.users - [session_user?] + [session_user?]) # Sorts the users
 %>
 
 <%= vspace 10 %>
