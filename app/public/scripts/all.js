@@ -163,7 +163,10 @@ Layout.RightPanel.load = function(url) {
 	l.append(d);
 	if(url != "false"){
 		$j(d).html(General.loadingText());
-		updateEl(d, url);
+		var run = function() {
+			if(!Doc.Player.visible()) Doc.Player.collapse(); 
+		};
+		updateEl(d, url, {onSuccess: function() {window.setTimeout(run, 400)}});
 	}
 }.bind(Layout.RightPanel);
 
