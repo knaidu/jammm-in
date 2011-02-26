@@ -434,6 +434,7 @@ Doc.Player.collapse = function(){
 }.bind(Doc.Player);
 
 Doc.Player.visible = function() {
+	if(this.get()[0].style.display == '') return false;
 	return this.get()[0].visible();
 }.bind(Doc.Player);
 
