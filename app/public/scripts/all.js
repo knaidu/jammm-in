@@ -106,7 +106,12 @@ Layout.ContextMenu.empty = function() {
 
 Layout.ContextMenu.load = function(url) {
 	var onSuccess = function() {
-		window.setTimeout(this.drawTree, 400)
+		var run = function() {
+			this.drawTree();
+			// This was added as the context menu was not being visible and on adding this line, things started to work. This needs investigation
+			if(!Doc.Player.visible()) Doc.Player.collapse(); 
+		}.bind(this);
+		window.setTimeout(run, 400);
 	}.bind(this);
 	updateEl(this.get()[0], url, {onSuccess: onSuccess});
 }.bind(Layout.ContextMenu);
@@ -425,6 +430,10 @@ Doc.Player.collapse = function(){
 	});
 }.bind(Doc.Player);
 
+Doc.Player.visible = function() {
+	return this.get()[0].visible();
+}.bind(Doc.Player);
+
 Doc.Player.show = function() {
 	this.get().show();
 }.bind(Doc.Player);
@@ -638,7 +647,6 @@ General.login = function() {
 		password: $j("[name=password]").val()
 	};
 	$j(".player .error-response").html("<img src='/new-ui/loading.gif'");
-	response.html("Please wait...");
 	call('/signin/process', {parameters: params, method: 'post', onSuccess: onSuccess, onFailure: onFailure});
 }.bind(General);
 

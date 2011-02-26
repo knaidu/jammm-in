@@ -169,6 +169,7 @@ class User < ActiveRecord::Base
     self.message_streams.map{|ms| ms.unread_messages(self)}.flatten
   end
   
+  
   def unread_song_messages
     self.manages_songs.map{|song|
       song.unread_messages(self)

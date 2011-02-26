@@ -9,7 +9,7 @@
   </div>
   <%= vspace 20 %>
   
-  <div name='send-message-status'>
+  <div name='send-message-status' style='min-height: 20px'>
     <div class='waiting-message float-left s11 hide'>
   	  Your message is being sent ... <%= vspace %>
     	<img src="/new-ui/ajax-loader.gif" >
@@ -20,6 +20,15 @@
       <div class="text">Send</div>
     </div>
   </div>
+  
+  <% message_stream = MessageStream.find_stream(session_user?, @user) %>
+  <% if message_stream %>
+    <%= vspace 10 %>
+    <div class='clear-both s11'>
+      View <span class="red clickable" onclick='Modal.close(); Navigate.loadContent("/account/message_stream/<%= message_stream.id %>")'>all messages</span> with <%= @user.username %>
+    </div>
+  <% end %>
+  
 </div>
 
 <%= js_start %>
