@@ -1,4 +1,4 @@
-var Account = {};
+var Account = {Messages: {}};
 
 Account.updatePicture = function(id) {
 	Modal.load("/account/aboutme/update_picture", {minHeight: "200px"});
@@ -31,3 +31,8 @@ Account.changePassword = function() {
 	};
 	call('/account/aboutme/change_password', {method: 'post', parameters: params, onSuccess: onSuccess, onFailure: onFailure})
 }.bind(Account);
+
+Account.Messages.filter = function(searchStr) {
+	var messageStreams = $j(".message-stream");
+	General.List.filter(messageStreams, searchStr)
+}.bind(Account.Messages);

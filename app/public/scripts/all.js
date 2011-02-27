@@ -764,10 +764,12 @@ General.User.sendMessage.submit = function(id1, id2) {
 }.bind(General.User.sendMessage);
 
 General.User.postViaMessageStream = function(id1, id2) {
-	var body = $j("[name=post-message-text-area]").val();
+	var textarea = $j("[name=post-message-text-area]");
+	var body = textarea.val();
 	var onSuccess = function(t) {
 		var id = t.evalJSON().id;
-		this.updatePostInList(id)
+		this.updatePostInList(id);
+		textarea.val("");
 	}.bind(this);
 	General.addMessageStreamPost(id1, id2, body, onSuccess);
 }.bind(General.User);

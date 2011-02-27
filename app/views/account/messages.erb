@@ -1,6 +1,18 @@
+<%= render_state({
+  :name => "Message Streams", 
+  :description => "", 
+  :url => "/account/messages", 
+  :context_menu => "/partial/account/context_menu",
+  :img => "/images/navigation/message-streams.png"
+}) %>
+
 <%= vspace 10 %>
 <%= page_header ["Account", "Messages"] %>
 <%= vspace 20 %>
+<div class="s11">
+  <span class="gray">Filter:</span> <%= hspace 24 %><input type='text' filterfn="Account.Messages.filter" id="<%= filterid = rand_id %>" class='filter-input'>
+</div>
+<%= vspace 10 %>
 
 <% mss = session_user?.message_streams %>
 <%= partial ("/account/message_streams", :locals => {:message_streams => mss}) %>
@@ -8,3 +20,7 @@
 <% if mss.count == 0 %>
   <div class="info-box">You have no messages.</div>
 <% end %>
+
+<%= js_start %>
+  General.List.filter.monitor("<%= filterid %>")
+<%= js_end %>

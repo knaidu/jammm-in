@@ -1,11 +1,3 @@
-<%= render_state({
-  :name => "Message Streams", 
-  :description => "", 
-  :url => "/account/messages", 
-  :context_menu => "/partial/account/context_menu",
-  :img => "/images/navigation/message-streams.png"
-}) %>
-
 <% message_streams = session_user?.message_streams.sort_by{|m| 
   # 0 : 1 added as sort_by only works on int/string and the function returns boolean 
   m.unread?(session_user?) ? "0" : m.users.without(session_user?)[0].username 
@@ -23,8 +15,8 @@
           <img src='<%= with_user.profile_picture_url %>'><%= vspace 5 %>
         </div>
         <div class='content'>
-            <div class='bold'><%= with_user.username %></div><%= vspace %>
-            <div class="s11"><%= with_user.name %> </div><%= vspace %>
+            <div class='bold search-field'><%= with_user.username %></div><%= vspace %>
+            <div class="s11 search-field"><%= with_user.name %> </div><%= vspace %>
             <div class='small-field s11'>Total Messages:</div><%= message_stream.messages.count %> <%= hspace 10 %>
             <div class="small-field s11">Last Message: </div>
             <span class='s11'>
