@@ -50,6 +50,10 @@ class Jam < ActiveRecord::Base
     jam
   end
   
+  def normalize
+    run("ruby scripts/normalize_jam.rb #{self.id}")
+  end
+  
   def displayable?
     self.adam? and (self.published or (self.song_jam.active and self.song.published?)) rescue nil
   end

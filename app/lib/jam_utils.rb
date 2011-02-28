@@ -40,7 +40,8 @@ module JamUtils
     File.copy(file.path, files_dir + "/" + filename)
     self.file_handle = filename
     self.save
-    run("ruby scripts/normalize_jam.rb #{self.id}")
+#    run("ruby scripts/normalize_jam.rb #{self.id}")
+    self.normalize
     fresh_jam = self.class.find(self.id) # Since the above lines might have updated the object
     fresh_jam.save_file_data
     FileData.create_waveform(fresh_jam)
@@ -50,6 +51,14 @@ module JamUtils
     file_path = ENV['FILES_DIR'] + "/" + self.file_handle if file_handle
     File.delete(file_path) if file_handle and File.exists?(file_path)
     self.save
+  end
+
+  def reconstruct_file
+    path = fetch_local_file_path(self)
+    self.normalize
+    jam = Jam.find(self.id)
+    FileData.gather(jam)
+    FileData.create_waveform(jam)
   end
 
 end 
