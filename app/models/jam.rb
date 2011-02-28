@@ -293,8 +293,7 @@ class Jam < ActiveRecord::Base
   end
   
   def policy=(str)
-    raise "Cannot set policy. Allowed policies are #{self.class.policy_names.join(', ')}." unless self.class.policy_names.include?(str)
-    write_attribute(:policy, str)
+    write_attribute(:policy, "public")
   end
   
   def set_policy(str)
