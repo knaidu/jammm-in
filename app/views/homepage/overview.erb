@@ -29,15 +29,13 @@
   <img src='/images/map.png' width='100%' name='map'>
 </div>
 
-<div style='position: absolute; bottom: 0px; width: 94%; margin-bottom: 5px'>
+<div style='position: absolute; bottom: 0px; width: 94%; margin-bottom: 5px;'>
   <div class="s11 bold">On jamMm.in</div>
   <% feed = Feed.global(1).first %>
   <div class='feeds'>
     <%= partial :"/account/feeds/#{feed.feed_type}", :locals => {:feed => feed} %>
   </div>
 </div>
-
-
 
 <%= js_start %>
   var el = $j("#content-panel").children().height("100%");
