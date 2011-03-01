@@ -37,6 +37,15 @@ class Feed < ActiveRecord::Base
     FeedData.new(self.data_str.eval_json) rescue nil
   end
   
+  def self.global(limit=30)
+    (Feed.find_by_sql [
+        "SELECT *",
+        "FROM feeds",
+        "WHERE feed_type in ('like', 'jam_published', 'song_published', 'jam_comment', 'song_comment')",
+        "ORDER BY created_at DESC limit #{limit}"
+      ].join(' '))
+  end
+  
   def self.delete_by_data(key, value)
     self.all.select{|n| n.dataObj.data[key] == value}.each(&:destroy)
   end
