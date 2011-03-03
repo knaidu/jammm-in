@@ -252,7 +252,7 @@ def process_invite_request(name, email, is_a, description)
     :password => "3WiseMen",
     :subject => "Invite Request - #{name}",
     :body => "name: #{name}; email: #{email}; is_a: #{is_a}, desc: #{description}",
-    :to => "prakashraman@jammm.in, tarun@jammm.in"
+    :to => "prakashraman@jammm.in, tarun@jammm.in, karthik@jammm.in"
   }
   mail(mail_info)
 end
