@@ -32,6 +32,11 @@ post '/jam/register' do
   }
 end
 
+get '/jam/sample' do
+  @jam = Jam.find(38)
+  erb(:"/jam/sample")
+end
+
 get '/jam/:jam_id/basic_info' do
   erb(:"jam/basic_info", :locals => {:jam => get_passed_jam})
 end

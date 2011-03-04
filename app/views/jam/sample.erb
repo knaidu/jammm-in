@@ -1,0 +1,32 @@
+<div class="header">Welcome to jamMm.in</div><%= vspace 10 %>
+jamMm.in is all about <span class="bold">jams</span> and <span class="bold">collaborations</span>. 
+To understand jamMm.in quickly, try collaborating with this jam ("<%= @jam.name %>"). 
+<%= vspace %>Click on the "<span class="bold">collaborate</span>" button 
+to collaborate with this jam.
+<%= vspace 10 %>
+<div class="bold"><%= @jam.creator.username %> - <%= @jam.name %></div>
+<%= vspace 10 %>
+<div>
+  <div class='play-waveform' style='position: relative'>
+    <% waveformid = rand_id %>
+    <div style='position: absolute; left: 0px;' class='play clickable' <%= play_info @jam %> waveformid='<%= waveformid %>' playtype='waveform'><%= icon "/images/42.png", 2, 42, true %></div>
+    <div class='waveform' style='position: relative; margin-left: 50px' id="<%= waveformid %>">
+      <div class="buffer"></div>
+      <div class='seek'>
+        <img src='<%= @jam.file_data.waveform_url rescue "-" %>' class='waveform-image'>
+      </div>
+    </div>
+  </div>
+</div>
+<%= vspace 20 %>
+<div class='position-relative'>
+  <div class="button" style='position: absolute; right: 10px' onclick='Jam.showSample.collaborate("<%= @jam.id %>")'>
+    <div class="icon"><%= icon "/images/button-images-16.png", 1, 16, true %></div>
+    <div class="text">Collaborate</div>
+  </div>
+  
+</div>
+
+<%= js_start %>
+  General.resizeWaveforms();
+<%= js_end %>

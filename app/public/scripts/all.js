@@ -358,6 +358,13 @@ Modal.load = function(url){
 	updateEl($j("#simplemodal-container .simplemodal-data")[0], url);
 }.bind(Modal);
 
+// Closes the modal waits for a while and then loads the modal
+Modal.slowLoad = function(url) {
+	Modal.close();
+	window.setTimeout(function() {
+		Modal.load(url);
+	}, 1500);
+}.bind(Modal);
 
 Modal.close = function(){
 	if(this.cmp)
@@ -862,6 +869,7 @@ General.User.signup = function() {
 	var onSuccess = function() {
 		Doc.reload();
 		Navigate.loadContent('/account');
+		Jam.showSample();
 		window.location.hash = "";
 	};
 	var onFailure = function(t) {

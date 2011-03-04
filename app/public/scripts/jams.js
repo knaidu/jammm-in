@@ -130,3 +130,16 @@ Jam.Manage.deleteJam.submit = function(id) {
 	var url = "/jam/"+ id +"/manage/delete_jam";
 	call(url, {method: 'post', onSuccess: callback});
 }.bind(Jam.Manage.deleteJam);
+
+Jam.showSample = function() {
+	Modal.load("/jam/sample", {minHeight: 250, minWidth: 600});
+}.bind(Jam);
+
+Jam.showSample.collaborate = function(id) {
+	Modal.close();
+	General.WaitingDialog.show();
+	var after = function() {
+		Song.create("jam", id);
+	};
+	window.setTimeout(after, 1500);
+}.bind(Jam.showSample);
