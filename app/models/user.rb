@@ -344,6 +344,10 @@ class User < ActiveRecord::Base
     self.save
   end
   
+  def soundcloud_connect
+    SoundCloudConnect.fetch_or_create(self)
+  end
+  
   def self.broadcast_message(message)
     from = User.with_username('prakashraman')
     (User.all - [from]).each do |user|

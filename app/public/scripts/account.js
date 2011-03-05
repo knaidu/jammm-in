@@ -37,10 +37,26 @@ Account.Messages.filter = function(searchStr) {
 	General.List.filter(messageStreams, searchStr)
 }.bind(Account.Messages);
 
-Account.SoundCloud.importFromSoundCloud = function() {
-	Modal.load("/soundcloud/connect/intro", {minHeight: "200px"});
-}.bind(Account.SoundCloud);
+
+// SOUNDCLOUD CONNECT
 
 Account.SoundCloud.connect = function() {
-	
+	window.open("http://jammm.in/connect/soundcloud/connect", "");
 }.bind(Account.SoundCloud);
+
+Account.SoundCloud.importFromSoundCloud = function() {
+	Modal.load("/connect/soundcloud/connect/intro", {minHeight: "200px"});
+}.bind(Account.SoundCloud);
+
+Account.SoundCloud.importFromSoundCloud.getContentPanel = function() {
+	return $j("#import-soundcloud-div");
+}.bind(Account.SoundCloud.importFromSoundCloud);
+
+Account.SoundCloud.importFromSoundCloud.connect = function() {
+	Account.SoundCloud.connect();
+	this.getContentPanel().html(General.getAjaxLoader("Please wait while your accounts are being connected ..."));
+}.bind(Account.SoundCloud.importFromSoundCloud);
+
+Account.SoundCloud.importFromSoundCloud.waitForConnection = function() {
+	updateEl(this.getContentPanel()[0], "/connect/soundcloud/choose_tracks");
+}.bind(Account.SoundCloud.importFromSoundCloud);
