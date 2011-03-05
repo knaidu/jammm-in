@@ -7,6 +7,7 @@ DATA = YAML.load_file("#{ENV["WEBSERVER_ROOT"]}/config/data.yml")
 BADGES_DATA = YAML.load_file("#{ENV["WEBSERVER_ROOT"]}/config/badges.yml")
 FILES_DIR = ENV["FILES_DIR"]
 APP_ROOT = ENV["WEBSERVER_ROOT"]
+CONFIG = YAML.load_file("/home/jammmin/config/config.yml")
 
 def run(cmd)
   puts "RUNNING: #{cmd}"

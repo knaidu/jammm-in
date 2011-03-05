@@ -1,4 +1,4 @@
-var Account = {Messages: {}};
+var Account = {Messages: {}, SoundCloud: {}};
 
 Account.updatePicture = function(id) {
 	Modal.load("/account/aboutme/update_picture", {minHeight: "200px"});
@@ -36,3 +36,11 @@ Account.Messages.filter = function(searchStr) {
 	var messageStreams = $j(".message-stream");
 	General.List.filter(messageStreams, searchStr)
 }.bind(Account.Messages);
+
+Account.SoundCloud.importFromSoundCloud = function() {
+	Modal.load("/soundcloud/connect/intro", {minHeight: "200px"});
+}.bind(Account.SoundCloud);
+
+Account.SoundCloud.connect = function() {
+	
+}.bind(Account.SoundCloud);

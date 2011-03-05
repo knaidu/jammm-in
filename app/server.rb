@@ -71,6 +71,7 @@ get '/partial/*' do
   erb(:"#{path}", :locals => params.clone)
 end
 
+load 'urls/connect.rb'
 load 'urls/signin.rb'
 load 'urls/signup.rb'
 load 'urls/schools.rb'
