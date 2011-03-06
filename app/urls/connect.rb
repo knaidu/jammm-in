@@ -24,3 +24,7 @@ get '/connect/soundcloud/choose_tracks' do
   @tracks = session_user?.soundcloud_connect.public_tracks
   erb(:"/connect/soundcloud/choose_tracks")
 end
+
+get '/connect/soundcloud/is_connection_alive' do
+  (Time.now < session_user?.soundcloud_connect.expires_at).to_json
+end

@@ -30,7 +30,7 @@ end
 
 def import_track(track)
   $process_info.set_message "Importing track '#{track["title"]}'"
-  output_file = new_file_handle_full_name("." + track["original_format"])
+  output_file = new_file_handle_full_name(".mp3")
   $user.soundcloud_connect.download_track(track, output_file)
   file_details = {:tempfile => File.open(output_file), :filename => output_file.split("/").pop}
   jam = Jam.construct_jam($user, track["title"], nil, nil, nil, file_details)
