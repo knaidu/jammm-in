@@ -45,7 +45,7 @@ Account.SoundCloud.connect = function() {
 }.bind(Account.SoundCloud);
 
 Account.SoundCloud.importFromSoundCloud = function() {
-	Modal.load("/connect/soundcloud/connect/intro", {minHeight: "200px"});
+	Modal.load("/connect/soundcloud/connect/intro", {minHeight: "300px"});
 }.bind(Account.SoundCloud);
 
 Account.SoundCloud.importFromSoundCloud.getContentPanel = function() {

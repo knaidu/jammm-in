@@ -33,7 +33,7 @@ class Jam < ActiveRecord::Base
     Feed.delete_by_data("jam_id", self.id)
   end
   
-  def self.construct_jam(user, name, instrument, genre, description, file_details)
+  def self.construct_jam(user, name, instrument=nil, genre=nil, description=nil, file_details=nil)
     puts "FILE: " + file_details.inspect
     regex = DATA["name_regex"]
     raise "The name can accept only alphabets,numbers, '-' and '_'" if not eval(regex).match(name)
@@ -45,8 +45,8 @@ class Jam < ActiveRecord::Base
       :description => description
     })
     jam.update_file(file_details)
-    jam.update_instrument(instrument)
-    ContainsGenre.add(genre, "jam", jam.id)
+    jam.update_instrument(instrument) if instrument
+    ContainsGenre.add(genre, "jam", jam.id) if genre
     jam
   end
   

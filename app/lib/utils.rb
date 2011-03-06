@@ -28,6 +28,18 @@ def get_localhost_response(path)
   Net::HTTP.get("localhost", path)
 end
 
+def get_http_response(path, data={})
+  puts path.inspect
+  url = URI.parse(path)
+
+  http = Net::HTTP.new(url.host, url.port)
+  http.use_ssl = true if (url.port == 443)
+  data_str = data.map{|k,v| "#{k}=#{v}"}.join("&")
+  path = url.path + "?" + data_str
+
+  # GET request -> so the host can set his cookies
+  resp = http.get(path, nil)
+end
 
 def get_passed_song
   Song.find(params[:song_id])

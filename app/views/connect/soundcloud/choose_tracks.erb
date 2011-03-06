@@ -1,0 +1,30 @@
+<div class='soundcloud-tracks' style='height: 200px; overflow: auto'>
+  <% unless @tracks.empty? %>
+    Select the tracks you would like to import from your SoundCloud account.
+    <%= vspace 5 %>
+    <div class="s11">Note: You may import only <%= session_user?.soundcloud_connect.imports_remaining %> track(s)</div>
+  <% end %>
+  <%= vspace 10 %>
+  <% @tracks.each{|track| %>
+    <div class="soundcloud-track position-relative">
+      <div class="checkbox"><input type='checkbox'></div>
+      <div class="contents">
+        <div class="bold"><%= track["title"] %></div>
+        <div class="s11">created at: <%= track["created_at"] %></div>
+      </div>
+    </div>
+  <% } %>
+  
+  <% if @tracks.empty? %>
+    <div class="info-box">You do not have any tracks available in your SoundCloud account.</div>
+  <% end %>
+  
+</div>
+
+<% unless @tracks.empty? %>
+  <div class="button float-right">
+    <div class="icon"><%= icon "/images/button-images-16.png", 3, 16, true %></div>
+    <div class="text">Import Tracks</div>
+  </div>
+  <div class="clear-both"></div>
+<% end %>

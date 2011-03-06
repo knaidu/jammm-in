@@ -43,6 +43,17 @@ class SoundCloudConnect < ActiveRecord::Base
   
   def public_tracks
     tracks = get_http_response("https://api.soundcloud.com/me/tracks.json", {"oauth_token" => self.access_token}).body.eval_json
+#    tracks.select{|t| t["downloadable"]}
+  end
+  
+  def fetch_tracks(ids=[])
+    public_tracks.select{|t| ids.include?(t["id"])}
+  end
+  
+  def download_track(track, output_file)
+    track_url = track["stream_url"] + "?oauth_token=#{access_token}&secret_token=#{track['secret_token']}"
+    cmd = "wget --no-check-certificate \"#{track_url}\" -O #{output_file}"
+    run(cmd)
   end
   
 end
