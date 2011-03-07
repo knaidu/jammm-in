@@ -2,7 +2,7 @@ require 'net/http'
 
 class SoundCloudConnect < ActiveRecord::Base
   set_table_name "soundcloud_connect"
-  has_one :user
+  belongs_to :user
     
   REDIRECT_URL = "http://jammm.in/connect/soundcloud/request_token"
   
@@ -54,6 +54,28 @@ class SoundCloudConnect < ActiveRecord::Base
     track_url = track["stream_url"] + "?oauth_token=#{access_token}&secret_token=#{track['secret_token']}"
     cmd = "wget --no-check-certificate \"#{track_url}\" -O #{output_file}"
     run(cmd)
+  end
+  
+  def connection_alive?
+    Time.now < self.expires_at
+  end
+  
+  def import_tracks(tracks=[])
+    process_id = ProcessInfo.available_process_id
+    cmd = [
+        "ruby",
+        "#{APP_ROOT}/scripts/import_soundcloud_tracks.rb",
+        "--tracks=#{tracks.join(',')}",
+        "--user_id=#{self.user.id}",
+        "--process_id=#{process_id}"
+    ].join(' ')
+    run(cmd)
+    process_id
+  end
+  
+  def disconnect
+    self.expires_at = (Time.now - 1)
+    self.save
   end
   
 end

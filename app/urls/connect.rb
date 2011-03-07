@@ -21,10 +21,24 @@ get '/connect/soundcloud/request_token' do
 end
 
 get '/connect/soundcloud/choose_tracks' do
-  @tracks = session_user?.soundcloud_connect.public_tracks
-  erb(:"/connect/soundcloud/choose_tracks")
+  monitor {
+    begin
+      @tracks = session_user?.soundcloud_connect.public_tracks
+      erb(:"/connect/soundcloud/choose_tracks")
+    rescue
+      raise "Something went wrong while trying to retrieve your tracks. Please try again soon."
+    end
+  }
 end
 
 get '/connect/soundcloud/is_connection_alive' do
-  (Time.now < session_user?.soundcloud_connect.expires_at).to_json
+  session_user?.soundcloud_connect.connection_alive?.to_json
+end
+
+get '/connect/soundcloud/import_tracks' do 
+  monitor {
+    tracks = param?(:tracks)
+    raise "You may not import anymore tracks as you have exceeded your import limit." if tracks.split(",").size > session_user?.soundcloud_connect.imports_remaining
+    session_user?.soundcloud_connect.import_tracks(tracks.split(",")).to_json
+  }
 end

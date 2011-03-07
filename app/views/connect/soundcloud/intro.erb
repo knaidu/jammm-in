@@ -1,8 +1,20 @@
 <div class="header">Import tracks from your SoundCloud account</div>
 <%= vspace 10 %>
 <div class="" id='import-soundcloud-div'>
-  <a href="javascript: Account.SoundCloud.importFromSoundCloud.connect()">
-    <%= vspace 30 %>
-    <img src="/images/misc/soundcloud_connect.png">
-  </a>
+
+  <% unless session_user?.soundcloud_connect.connection_alive? %>
+    Using this feature you can import (upto <%= session_user?.soundcloud_connect.imports_remaining %>) tracks from your SoundCloud account. 
+    <%= vspace %>
+    To begin click on "Connect with SoundCloud".
+    <a href="javascript: Account.SoundCloud.importFromSoundCloud.connect()">
+      <%= vspace 10 %>
+      <img src="/images/misc/soundcloud_connect.png">
+    </a>
+  <% end %>
 </div>
+
+<% if session_user.soundcloud_connect.connection_alive? %>
+  <%= js_start %>
+    Account.SoundCloud.importFromSoundCloud.chooseTracks();
+  <%= js_end %>
+<% end %>

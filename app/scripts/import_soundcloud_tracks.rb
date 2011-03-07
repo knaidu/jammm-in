@@ -3,11 +3,11 @@ require 'daemons'
 
 log_path = "/home/jammmin/log/sinatra.log"
 log = File.new(log_path, "a+")
-#STDOUT.reopen(log)
-#STDERR.reopen(log)
+STDOUT.reopen(log)
+STDERR.reopen(log)
 
 puts "Running script in the background"
-#Daemons.daemonize # Runs the script in the background
+Daemons.daemonize # Runs the script in the background
 
 options = {}
 ARGV.each do |arg|
@@ -36,6 +36,9 @@ def import_track(track)
   jam = Jam.construct_jam($user, track["title"], nil, nil, nil, file_details)
   jam.publish
   puts "track imported"
+  sc = $user.soundcloud_connect
+  sc.imports_remaining -= 1
+  sc.save
 end
 
 tracks = $user.soundcloud_connect.fetch_tracks(options[:tracks].split(",").map(&:to_i))

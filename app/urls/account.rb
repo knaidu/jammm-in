@@ -1,3 +1,9 @@
+# Show on first login
+get '/account/welcome' do
+  erb(:"/account/welcome")
+end
+
+
 get '/account/home' do
   erb(:"/account/home")
 end

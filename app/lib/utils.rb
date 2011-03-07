@@ -29,7 +29,7 @@ def get_localhost_response(path)
 end
 
 def get_http_response(path, data={})
-  puts path.inspect
+  puts path + data.to_query_string
   url = URI.parse(path)
 
   http = Net::HTTP.new(url.host, url.port)

@@ -1,5 +1,25 @@
 var Account = {Messages: {}, SoundCloud: {}};
 
+Account.welcome = function() {
+	Modal.load("/account/welcome", {minHeight: "400px"});	
+}.bind(Account);
+
+Account.welcome.load = function(str) {
+	var fn = function(){};
+	switch(str){
+		case "create-jam":
+			fn = Jam.create; break;
+		case "import":
+			fn = Account.SoundCloud.importFromSoundCloud; break;
+		case "collaborate":
+			fn = Jam.showSample; break;
+		default:;
+	}
+	Modal.close();
+	General.WaitingDialog.show();
+	window.setTimeout(fn, 1500);
+}.bind(Account.welcome);
+
 Account.updatePicture = function(id) {
 	Modal.load("/account/aboutme/update_picture", {minHeight: "200px"});
 }.bind(Account);
@@ -55,8 +75,64 @@ Account.SoundCloud.importFromSoundCloud.getContentPanel = function() {
 Account.SoundCloud.importFromSoundCloud.connect = function() {
 	Account.SoundCloud.connect();
 	this.getContentPanel().html(General.getAjaxLoader("Please wait while your accounts are being connected ..."));
+	this.waitForConnection();
 }.bind(Account.SoundCloud.importFromSoundCloud);
 
 Account.SoundCloud.importFromSoundCloud.waitForConnection = function() {
+	var onSuccess = function(t) {
+		var res = t.evalJSON();
+		if(res)
+			this.chooseTracks();
+		else
+			window.setTimeout(this.waitForConnection, 2000);
+	}.bind(this);
+	call("/connect/soundcloud/is_connection_alive", {onSuccess: onSuccess});
+}.bind(Account.SoundCloud.importFromSoundCloud);
+
+Account.SoundCloud.importFromSoundCloud.chooseTracks = function() {
+	this.getContentPanel().html("Loading ...");
 	updateEl(this.getContentPanel()[0], "/connect/soundcloud/choose_tracks");
 }.bind(Account.SoundCloud.importFromSoundCloud);
+
+Account.SoundCloud.importFromSoundCloud.trackClicked = function(el) {
+	var cb = $j("INPUT[type=checkbox]", el)[0];
+	cb.checked ? el.addClassName("selected") : el.removeClassName("selected");
+}.bind(Account.SoundCloud.importFromSoundCloud);
+
+
+Account.SoundCloud.importFromSoundCloud.importTracks = function() {
+
+	var responseEl = $j("#soundcloud-tracks-response-el");
+	var tracks = $j(".soundcloud-tracks .soundcloud-track.selected");
+	var info = $A(tracks).map(function(track) {
+		return track.getAttribute("trackid");
+	});
+	
+	if(tracks.size() < 1){
+		responseEl.html("Please select atleast one track to import.");
+		return;
+	}
+ 	
+	var callback = function(response){
+		responseEl.html("Please wait while your tracks are being imported ...");
+		var config = {
+			url: "/process_info/" + response.responseText,
+			messageDiv: responseEl[0],
+			onSuccess: function() {
+				Modal.close();
+				Modal.slowAlert("Your tracks have been successfully imported. <br><br>Note: The instrument and genre for the jams have not been added, please update them");
+				Navigate.loadContent("/account/jams");
+			}
+		};
+		var poll = new Poll(config);
+		poll.start();
+	}
+ 	var onFailure = function(t) {
+		responseEl.html(General.getErrorText(t.responseText));
+	};
+	responseEl.html("Please wait ...");
+	var url = formatUrl('/connect/soundcloud/import_tracks', {tracks: info.join(",")});
+  call(url, {onSuccess: callback, onFailure: onFailure});
+	
+}.bind(Account.SoundCloud.importFromSoundCloud);
+

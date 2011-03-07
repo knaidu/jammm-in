@@ -1,0 +1,39 @@
+<div class="header">Welcome to jamMm.in</div>
+<%= vspace 10 %>
+jamMm.in is all about jams and collaborations. <span class="bold">Jams</span> can be looked upon as individual tracks and
+<span class="bold">Collaborations</span> can be looked upon as a combintation of jams.
+
+<%= vspace 10 %>
+Get started:
+<%= vspace 10 %> 
+<div class="s11"><span class="bold">Create a Jam</span>: Upload an audio file</div><%= vspace %>
+<div class="button" onclick='Account.welcome.load("create-jam")'>
+  <div class="icon"><%= icon "/images/button-images-16.png", 1, 16, true %></div>
+  <div class="text">Create Jam</div>
+</div>
+<%= vspace 10 %>
+
+<div class='position-relative'>
+  <div style='position: absolute; background-color: white; left: 190px; top: 0px; text-align: center; padding: 0px 10px; font-weight: bold; font-size: 15px;'>OR</div>
+  <div style='padding-top: 7px' class="line"></div>
+</div>
+
+<%= vspace 10 %>
+<div class="s11">Import tracks from your <span class="bold">SoundCloud</span> account</div>
+<%= vspace 5 %>
+<a href='javascript: Account.welcome.load("import")'>
+  <img src='/images/misc/soundcloud.png' width='100px'>
+</a>
+<%= vspace 10 %>
+
+<div class='position-relative'>
+  <div style='position: absolute; background-color: white; left: 190px; top: 0px; text-align: center; padding: 0px 10px; font-weight: bold; font-size: 15px;'>OR</div>
+  <div style='padding-top: 7px' class="line"></div>
+</div>
+
+<%= vspace 10 %>
+<div class="s11"><span class="bold">Collaborate</span> with a Sample Jam</div><%= vspace %>
+<div class="button" onclick='Account.welcome.load("collaborate")'>
+  <div class="icon"><%= icon "/images/button-images-16.png", 0, 16, true %></div>
+  <div class="text">Collaborate</div>
+</div>

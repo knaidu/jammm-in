@@ -869,7 +869,7 @@ General.User.signup = function() {
 	var onSuccess = function() {
 		Doc.reload();
 		Navigate.loadContent('/account');
-		Jam.showSample();
+		Account.welcome();
 		window.location.hash = "";
 	};
 	var onFailure = function(t) {

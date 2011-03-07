@@ -2,11 +2,11 @@
   <% unless @tracks.empty? %>
     Select the tracks you would like to import from your SoundCloud account.
     <%= vspace 5 %>
-    <div class="s11">Note: You may import only <%= session_user?.soundcloud_connect.imports_remaining %> track(s)</div>
+    <div class="s11">Note: You may import only <%= session_user?.soundcloud_connect.imports_remaining %> track(s). Each track may take upto 30 secs to import.</div>
   <% end %>
   <%= vspace 10 %>
   <% @tracks.each{|track| %>
-    <div class="soundcloud-track position-relative">
+    <div class="soundcloud-track position-relative" onclick='Account.SoundCloud.importFromSoundCloud.trackClicked(this)' trackid='<%= track["id"] %>'>
       <div class="checkbox"><input type='checkbox'></div>
       <div class="contents">
         <div class="bold"><%= track["title"] %></div>
@@ -21,10 +21,13 @@
   
 </div>
 
-<% unless @tracks.empty? %>
-  <div class="button float-right">
-    <div class="icon"><%= icon "/images/button-images-16.png", 3, 16, true %></div>
-    <div class="text">Import Tracks</div>
-  </div>
-  <div class="clear-both"></div>
-<% end %>
+<div>
+  <div id='soundcloud-tracks-response-el' class='float-left s11' style='width: 250px; padding: 10px'></div>
+  <% unless @tracks.empty? %>
+    <div class="button float-right" onclick='Account.SoundCloud.importFromSoundCloud.importTracks()'>
+      <div class="icon"><%= icon "/images/button-images-16.png", 3, 16, true %></div>
+      <div class="text">Import Tracks</div>
+    </div>
+  <% end %>
+</div>
+<div class="clear-both"></div>
