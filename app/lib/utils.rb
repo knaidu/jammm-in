@@ -369,3 +369,19 @@ end
 def playlist_destroy
   session[:playlist] = []
 end
+
+# MAILS
+def send_mails_to(subject, mail_number, users)
+  mail_files = `ls #{APP_ROOT}/views/mails`.split("\n")
+  mail_file = mail_files.find{|m| m.split("_")[0].to_i == mail_number}
+  mail_partial = "/partial/mails/" + mail_file.gsub(".erb", '')
+  bug_mail_details = {
+    :from => "support@jammm.in",
+    :to => "support@jammm.in",
+    :password => "3WiseMen",
+    :subject => subject,
+    :body => get_localhost_response(mail_partial)
+  }
+  bcc_list = users.map(&:email).compact.join(",")
+  mail bug_mail_details.clone.update({:bcc => bcc_list})
+end

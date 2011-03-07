@@ -6,13 +6,15 @@ DEFAULT_MAIL_DETAILS = {
     :tls => true,
     :auth => :login,
     :domain => 'jammm.in'
-  }
+  },
+  :bcc => ""
 }
 
 def mail(details={})
   mail_details = DEFAULT_MAIL_DETAILS.clone
   mail_details[:from] = details[:from]
   mail_details[:to] = details[:to]
+  mail_details[:bcc] = details[:bcc]
   mail_details[:subject] = details[:subject]
   mail_details[:body] = details[:body]
   mail_details[:smtp][:user] = details[:from]
