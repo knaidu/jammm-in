@@ -57,6 +57,7 @@ class SoundCloudConnect < ActiveRecord::Base
   end
   
   def connection_alive?
+    return nil unless self.expires_at
     Time.now < self.expires_at
   end
   
