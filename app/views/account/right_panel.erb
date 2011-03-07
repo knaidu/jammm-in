@@ -1,14 +1,16 @@
-<%= vspace 10 %>
 
-<div class='tip' style='margin-left: 30px'>
-  Import tracks from your sound cloud account. <%= vspace %>
-  <img src="/images/misc/soundcloud.png?1" width='100px'><%= vspace %>
-  <%= vspace 5 %>
-  <div class="button" onclick='Account.SoundCloud.importFromSoundCloud()'>
-    <div class="icon"><%= icon "/images/button-images-16.png", 3, 16, true %></div>
-    <div class="text">Import Tracks</div>
+<% if session_user?.soundcloud_connect.imports_remaining > 0 %>
+  <%= vspace 10 %>
+  <div class='tip' style='margin-left: 30px'>
+    Import tracks from your sound cloud account. <%= vspace %>
+    <img src="/images/misc/soundcloud.png?1" width='100px'><%= vspace %>
+    <%= vspace 5 %>
+    <div class="button" onclick='Account.SoundCloud.importFromSoundCloud()'>
+      <div class="icon"><%= icon "/images/button-images-16.png", 3, 16, true %></div>
+      <div class="text">Import Tracks</div>
+    </div>
   </div>
-</div>
+<% end %>
 
 <%= vspace 20 %>
 <div class='tip' style='margin-left: 30px'>
