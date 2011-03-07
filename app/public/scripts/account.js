@@ -109,7 +109,7 @@ Account.SoundCloud.importFromSoundCloud.importTracks = function() {
 	});
 	
 	if(tracks.size() < 1){
-		responseEl.html("Please select atleast one track to import.");
+		responseEl.html(General.getErrorText("Please select atleast one track to import."));
 		return;
 	}
  	

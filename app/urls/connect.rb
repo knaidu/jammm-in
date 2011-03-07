@@ -38,7 +38,6 @@ end
 get '/connect/soundcloud/import_tracks' do 
   monitor {
     tracks = param?(:tracks)
-    raise "You may not import anymore tracks as you have exceeded your import limit." if tracks.split(",").size > session_user?.soundcloud_connect.imports_remaining
     session_user?.soundcloud_connect.import_tracks(tracks.split(",")).to_json
   }
 end

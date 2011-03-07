@@ -62,6 +62,9 @@ class SoundCloudConnect < ActiveRecord::Base
   end
   
   def import_tracks(tracks=[])
+    raise "You may not import anymore tracks as you have exceeded your import limit." if self.imports_remaining < 1
+    raise "You may import only #{self.imports_remaining} more track(s)" if tracks.size > self.imports_remaining
+    
     process_id = ProcessInfo.available_process_id
     cmd = [
         "ruby",
