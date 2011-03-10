@@ -2,7 +2,7 @@
   <% unless @tracks.empty? %>
     Select the tracks you would like to import from your SoundCloud account.
     <%= vspace 5 %>
-    <div class="s11">Note: You may import only <%= session_user?.soundcloud_connect.imports_remaining %> track(s). Each track may take upto 30 secs to import.</div>
+    <div class="s11">Note: You may import only <span class="bold"><%= session_user?.soundcloud_connect.imports_remaining %> track(s)</span>. Each track may take upto 30 secs to import.</div>
   <% end %>
   <%= vspace 10 %>
   <% @tracks.each{|track| %>
