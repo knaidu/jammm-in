@@ -836,15 +836,19 @@ General.WaitingDialog.show = function() {
 	}
 	this.dialog = new Element('div').addClassName("waiting-dialog");
 	document.body.appendChild(this.dialog);
-	var img = new Element('img', {src: "/images/ajax-loader-big.gif"});
-	this.dialog.appendChild(img);
-	$j(img).center();
-}.bind(General);
+//	var img = new Element('img', {src: "/images/ajax-loader-big.gif"});
+	var imgContainer = new Element("div", {style: "background-color: white; position: absolute; padding: 10px"});
+	imgContainer.addClassName("round");
+	var img = new Element('img', {src: "/images/spinners/ajax-loader-spinner.gif?id"});
+	imgContainer.appendChild(img)
+	this.dialog.appendChild(imgContainer);
+	$j(imgContainer).center();
+}.bind(General.WaitingDialog);
 
 General.WaitingDialog.hide = function() {
 	if(this.dialog)
 		this.dialog.hide();
-}.bind(General);
+}.bind(General.WaitingDialog);
 
 
 

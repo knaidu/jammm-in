@@ -115,10 +115,10 @@ var Poll = Class.create({
 jQuery.fn.center = function () {
 	var duration = arguments[0] || 0;
 	this.css("position","fixed");
-	this.animate({
-		"top": ( $j(window).height() - this.height() ) / 2+$j(window).scrollTop() + "px",
-		"left": ( $j(window).width() - this.width() ) / 2+$j(window).scrollLeft() + "px"
-	}, 0);
+	this.css({
+		"top": ( $j(window).height() - this[0].getHeight() ) / 2+$j(window).scrollTop() + "px",
+		"left": ( $j(window).width() - this[0].getWidth() ) / 2+$j(window).scrollLeft() + "px"
+	}, 1000);
 	return this;
 }
 
