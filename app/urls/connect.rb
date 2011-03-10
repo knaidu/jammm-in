@@ -12,8 +12,12 @@ end
 
 get '/connect/soundcloud/request_token' do
   sc = session_user?.soundcloud_connect
-  sc.save_tokens(param?(:code))
-  erb(:"/connect/soundcloud/connected")
+  unless param?(:error) == "access_denied"
+      sc.save_tokens(param?(:code))
+      erb(:"/connect/soundcloud/connected")
+  else
+    "You have chosen not to connect to your SoundCloud account. You may close this window and contiue using jammm.in"
+  end
 end
 
 get '/connect/soundcloud/request_token' do
