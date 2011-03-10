@@ -260,11 +260,12 @@ end
 # REQUEST INVITE 
 def process_invite_request(name, email, is_a, description)
   raise "Kindly fill Name and Email field as they are mandatory" if name.nil? or name.blank? or email.nil? or email.blank?
+  invite_link = "http://jammm.in/send_invite?email=#{email}"
   mail_info = {
     :from => "support@jammm.in",
     :password => "3WiseMen",
     :subject => "Invite Request - #{name}",
-    :body => "name: #{name}; email: #{email}; is_a: #{is_a}, desc: #{description}",
+    :body => "name: #{name}; email: #{email}; is_a: #{is_a}, desc: #{description}, <br><br> send invite link: #{invite_link}",
     :to => "prakashraman@jammm.in, tarun@jammm.in, karthik@jammm.in"
   }
   mail(mail_info)

@@ -818,7 +818,7 @@ General.periodicallySetMaxScrollHeight = function() {
 
 General.getAjaxLoader = function(str) {
 	var cd = new Element('div');
-	var t = new Element('div', {paddingBottom: "5px"}).update(str);
+	var t = new Element('div', {style: "padding-bottom: 5px"}).update(str);
 	var img = new Element('img', {src: "/new-ui/ajax-loader.gif"});
 	cd.appendChild(t);
 	cd.appendChild(img);
