@@ -839,7 +839,7 @@ General.WaitingDialog.show = function() {
 	var imgContainer = new Element("div", {style: "background-color: white; position: absolute; padding: 10px"});
 	imgContainer.addClassName("round");
 	var img = new Element('img', {src: "/images/spinners/ajax-loader-spinner.gif?id"});
-	img.onload = function() {$j(imgContainer).center(1000)};
+	img.onload = function() {$j(imgContainer).center(500)};
 	imgContainer.appendChild(img)
 	this.dialog.appendChild(imgContainer);
 	$j(imgContainer).center();
