@@ -10,8 +10,12 @@ APP_ROOT = ENV["WEBSERVER_ROOT"]
 CONFIG = YAML.load_file("/home/jammmin/config/config.yml")
 
 def run(cmd)
-  puts "RUNNING: #{cmd}"
+  log "RUNNING: #{cmd}"
   `#{cmd}`
+end
+
+def log(msg)
+  puts "[#{Time.now.to_s}] #{msg}"
 end
 
 def argv_options

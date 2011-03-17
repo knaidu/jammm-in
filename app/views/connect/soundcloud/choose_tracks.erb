@@ -24,7 +24,7 @@
 <div>
   <div id='soundcloud-tracks-response-el' class='float-left s11' style='width: 250px; padding: 10px'></div>
   <% unless @tracks.empty? %>
-    <div class="button float-right" onclick='Account.SoundCloud.importFromSoundCloud.importTracks()'>
+    <div id='import-button' class="button float-right" onclick='Account.SoundCloud.importFromSoundCloud.importTracks()'>
       <div class="icon"><%= icon "/images/button-images-16.png", 3, 16, true %></div>
       <div class="text">Import Tracks</div>
     </div>

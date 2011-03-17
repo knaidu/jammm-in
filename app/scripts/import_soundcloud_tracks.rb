@@ -33,9 +33,11 @@ def import_track(track)
   output_file = new_file_handle_full_name(".mp3")
   $user.soundcloud_connect.download_track(track, output_file)
   file_details = {:tempfile => File.open(output_file), :filename => output_file.split("/").pop}
-  jam = Jam.construct_jam($user, track["title"], nil, nil, nil, file_details)
+  title = track['title'].gsub(/[^#{DATA['allowed_name_chars']}]/i, "-")
+  log "Creating Jam with name: #{title}"
+  jam = Jam.construct_jam($user, title, nil, nil, nil, file_details)
   jam.publish
-  puts "track imported"
+  log "track imported"
   sc = $user.soundcloud_connect
   sc.imports_remaining -= 1
   sc.save

@@ -1,6 +1,7 @@
 
 bug_statuses: [open, fixed, invalid, later]
-name_regex: /^[a-z0-9\-_\ ]+$/i
+allowed_name_chars: "a-z0-9\-_\ \(\)\{\}" # This should reflect in name_regex 
+name_regex: /^[a-z0-9\-_\ \(\)\{\}]+$/i
 host: "http://jammm.in"
 say_mention_username_regex: /(@[^ :\'\"]+)/
 href_regex: /(http:\/\/[^ ]+)/i

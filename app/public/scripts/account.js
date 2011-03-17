@@ -113,6 +113,7 @@ Account.SoundCloud.importFromSoundCloud.importTracks = function() {
 		return;
 	}
  	
+	var button = $j("#import-button");
 	var callback = function(response){
 		responseEl.html("Please wait while your tracks are being imported ...");
 		var config = {
@@ -128,9 +129,11 @@ Account.SoundCloud.importFromSoundCloud.importTracks = function() {
 		poll.start();
 	}
  	var onFailure = function(t) {
+		button.show();
 		responseEl.html(General.getErrorText(t.responseText));
 	};
 	responseEl.html("Please wait ...");
+	button.hide();
 	var url = formatUrl('/connect/soundcloud/import_tracks', {tracks: info.join(",")});
   call(url, {onSuccess: callback, onFailure: onFailure});
 	
