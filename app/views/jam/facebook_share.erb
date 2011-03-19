@@ -1,5 +1,6 @@
+<html>
+<head>
 <% 
-  meta = @music_meta_data 
   full_image_src = "http://www.jammm.in#{@jam.image_url_big}"
   page_url = "http://jammm.in"
   artists = @jam.creator.username
@@ -15,3 +16,8 @@
 <meta name="video_height" content="120" />
 <meta name="video_width" content="460" />
 <meta name="video_type" content="application/x-shockwave-flash" />
+</head>
+<body>
+  Facebook share of <span class="bold"><%= @jam.name %></span>
+</body>
+</html>
