@@ -156,15 +156,16 @@ Flash.gotStatus = function(buffered, played) {
 	
 	$j(".player .buffer").width(bufferedPercent);
 	$j(".player .seek").width(playedPercent);
-	
-	if(playedPercent == "100%")	this.songDone();
+	if((length - played) < 1000) this.songDone();
 }.bind(Flash);
 
 Flash.songDone = function() {
 	this.playing = false;
 	this.paused = false;
+	this.setImagesToPlay();
 	this.currentData = false;
 	this.stopSeekRepositioning();
+	Doc.Player.hide();
 }.bind(Flash);
 
 Flash.stopSeekRepositioning = function() {
