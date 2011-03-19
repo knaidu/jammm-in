@@ -211,3 +211,8 @@ get '/jam/:jam_id/manage/publish_popup' do
   @jam = get_passed_jam
   erb(:"/jam/manage/publish_popup")
 end
+
+get '/jam/:jam_id/facebook_share' do
+  @jam = get_passed_jam
+  erb(:"/jam/facebook_share")
+end

@@ -5,6 +5,7 @@ var Doc = {Player: {}, Playlist: {}, Notifications: {}, Messages: {}, Login: {}}
 var JEvent = {list: {}}; // 'list' is treated as an array. In the sense, on load all keys in 'list' are itereated over and run.
 var General = {WaitingDialog: {}, Comment: {}, Tabs: {}, List: {}, Overview: {}, User: {}, RequestInvite: {}};
 var Playlist = {list: [], position: false};
+var Share = {};
 
 Layout.onReady = function(){
 	if($("content-panel")){
@@ -923,3 +924,10 @@ General.User.forgotPassword.submit = function() {
 	var url = formatUrl('/signin/forgot_password/submit', {email: $j("[name=forgot-email]").val()});
 	call(url, {method: 'post', onSuccess: onSuccess, onFailure: onFailure});
 }.bind(General.User.forgotPassword);
+
+
+// Facebook Share
+Share.facebook = function(url, title) {
+  var shareUrl = "http://www.facebook.com/share.php?u=" + url + "&t=" + title;
+  window.open(shareUrl, "Share", "height=400px,width=800px")
+}.bind(Share);

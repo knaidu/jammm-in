@@ -1,0 +1,17 @@
+<% 
+  meta = @music_meta_data 
+  full_image_src = "http://www.jammm.in#{@jam.image_url_big}"
+  page_url = "http://jammm.in"
+  artists = @jam.creator.username
+%>
+
+<link rel="video_src" href="http://www.jammm.in/swf/new-player.swf?imageurl=<%= full_image_src %>&songtitle=<%= @jam.name %>&url=http://www.jammm.in/file/<%= @jam.file_handle %>&artists=<%= artists %>&pageurl=<%= page_url %>"/>
+
+<meta name="title" content="<%= @jam.name %>" />
+<% if @jam.description %>
+  <meta name="description" content="<%= @jam.description %>" />
+<% end %>
+<link rel="image_src" href="<%= full_image_src %>">
+<meta name="video_height" content="120" />
+<meta name="video_width" content="460" />
+<meta name="video_type" content="application/x-shockwave-flash" />
