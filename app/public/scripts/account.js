@@ -139,3 +139,16 @@ Account.SoundCloud.importFromSoundCloud.importTracks = function() {
 	
 }.bind(Account.SoundCloud.importFromSoundCloud);
 
+// Reloads the doc every 25 secs
+Account.refreshDocAfterInterval = function() {
+	if(this.docRefreshTimer){
+		window.clearTimeout(this.docRefreshTimer);
+	}
+	this.docRefreshTimer = window.setTimeout(Doc.reload, 25000);
+}.bind(Account);
+
+Account.stopDocRefreshTimer = function() {
+	if(this.docRefreshTimer)
+		window.setTimeout(this.docRefreshTimer);
+	this.docRefreshTimer = false;
+}.bind(Account);

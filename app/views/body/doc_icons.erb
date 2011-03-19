@@ -17,3 +17,11 @@
     <div class="item" onclick='Doc.Login.show()'><div class="text login">Login</div></div>
   <% end %>
 </div>
+
+<% if session_user? %>
+  <%= js_start %>
+    Account.refreshDocAfterInterval();
+  <%= js_end %>
+<% end %>
+  
+  

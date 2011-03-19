@@ -672,6 +672,7 @@ General.logout.success = function() {
 	Navigate.states = [];
 	Navigate.currentState = false;
 	window.setTimeout(Layout.loadOverview, 1000);
+	Account.stopDocRefreshTimer();
 }.bind(General.logout);
 
 /* Playlist */
