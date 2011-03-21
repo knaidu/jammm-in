@@ -19,6 +19,10 @@
   <meta name="video_type" content="application/x-shockwave-flash" />
 </head>
 <body>
-  Facebook share of <span class="bold"><%= @jam.name %></span>
+  <!-- Facebook share of <span class="bold"><%= @jam.name %></span> -->
+  Redirecting to jammm.in ...
+  <%= js_start %>
+    window.setTimeout(function(){window.location = "http://jammm.in"}, 1000);
+  <%= js_end %>
 </body>
 </html>
