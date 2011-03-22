@@ -227,7 +227,11 @@ class User < ActiveRecord::Base
   end
   
   def profile_picture
-    return (ENV["WEBSERVER_ROOT"] + "/public/images/user3_48.png") if not profile_picture_file_handle
+    if not profile_picture_file_handle
+      img_index = self.id % 4
+      img_index = img_index == 0 ? 2 : img_index
+      return (ENV["WEBSERVER_ROOT"] + "/public/images/users/user#{img_index.to_s}_48.png") 
+    end
     get_storage_file_path(profile_picture_file_handle)
   end
 
