@@ -9,7 +9,7 @@
 <div class="page-header">Account <span class="slash">/</span> Home</div>
 <%= vspace 20 %>
 
-<% feeds = session_user?.feeds 100 %>
+<% feeds = session_user?.feeds 40 %>
 <div class='feeds'>
   <% feeds.each{|feed| %>
     <%= partial :"/account/feeds/#{feed.feed_type}", :locals => {:feed => feed} %>
