@@ -22,7 +22,7 @@ run(cmd)
 # Converting into a MP3 using lame
 mp3_filename = FILES_DIR + "/" + new_file_handle_name
 # Fixes the bitrate and the sampling rate
-cmd = "lame #{wav_filename} -b 128 --resample 44.1 #{mp3_filename}"
+cmd = "lame #{wav_filename} -b 192 --resample 44.1 #{mp3_filename}"
 run(cmd)
 puts mp3_filename
 jam.file_handle = mp3_filename.split("/").pop
