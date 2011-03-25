@@ -213,3 +213,8 @@ get '/song/:song_id/manage/publish_popup' do
   @song = get_passed_song
   erb(:"/song/manage/publish_popup")
 end
+
+get '/song/:song_id/facebook_share' do
+  @song = get_passed_song
+  erb(:"/song/facebook_share")
+end

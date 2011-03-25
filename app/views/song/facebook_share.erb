@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <% 
+    full_image_src = "http://www.jammm.in#{@song.song_picture_url}"
+    page_url = "http://jammm.in"
+    artists = @song.artists.map(&:username).join(", ")
+  %>
+
+  <link rel="video_src" href="http://www.jammm.in/swf/new-player.swf?imageurl=<%= full_image_src %>&songtitle=<%= @song.name %>&url=http://www.jammm.in/file/<%= @song.file_handle %>&artists=<%= artists %>&pageurl=<%= page_url %>"/>
+
+  <meta name="title" content="<%= @song.name %>" />
+  <% if @song.description %>
+    <meta name="description" content="<%= @song.description %>" />
+  <% end %>
+  <link rel="image_src" href="<%= full_image_src %>">
+  <meta name="video_height" content="120" />
+  <meta name="video_width" content="460" />
+  <meta name="video_type" content="application/x-shockwave-flash" />
+</head>
+<body>
+  <!-- Facebook share of <span class="bold"><%= @song.name %></span> -->
+  Redirecting to jammm.in ...
+  <%= js_start %>
+    window.setTimeout(function(){window.location = "http://jammm.in"}, 1000);
+  <%= js_end %>
+</body>
+</html>
