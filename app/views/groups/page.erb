@@ -2,28 +2,31 @@
   :name => "#{@group.name}", 
   :description => "", 
   :url => "/groups/#{@group.handle}",
-  :context_menu => "/groups/#{@group.handle}/context_menu"
+  :context_menu => "/groups/#{@group.handle}/context_menu",
+  :img => @group.profile_picture_url
 }) %>
 
 <%= vspace %>
-<div class="page-header">Groups <span class="slash">/</span> <%= @group.name %></div>
+<div class="page-header">School <span class="slash">/</span> <%= @group.name %></div>
 <%= vspace 20 %>
+<!-- 
 <div class="group-profile">
   <div class="profile-picture"><img src='<%= @group.profile_picture_url %>'></div>
   <div class='content'>
-    <div style='position: absolute; width: 300px'>
-      <div class='field' style='font-size: 11px; width: 100px'>Name:</div> <%= @group.name %><%= vspace %>
-      <div class='field' style='font-size: 11px; width: 100px'>Members:</div> <%= @group.users.count %><%= vspace %>
-      <div class='field' style='font-size: 11px; width: 100px'>Follows:</div> <%= vspace %>
-    </div>
-    <div style='position: absolute; left: 350px'>
-      <div class='small-field' style='width: 80px'>Jams:</div> <%= @group.jams.count %><%= vspace %>
-      <div class='small-field' style='width: 80px'>Collaborations:</div> <%= @group.songs.count %> <%= vspace %>
-      <div class='small-field' style='width: 80px'>Followers:</div> 
-    </div>
+
   </div>
 </div>
+-->
 
+<div class="">
+  <div style='font-size: 15px; font-weight: bold'><%= @group.name %></div>
+  <%= vspace 5 %>
+  <div style='width: 200px'><%= @group.address %></div>
+  <%= vspace 5 %>
+  <div class=""><span class="bold">PH NO:</span> <%= @group.phone %></div>
+  <%= vspace 5 %>
+  <div class=""><span class="bold">website: </span><a class='red clickable' style='text-decoration: none' href='<%= @group.website %>'><%= @group.website %></a></div>
+</div>
 <%= vspace 10 %>
 
 <% 
@@ -33,16 +36,16 @@
 <div class='tabs' id='<%= id %>' contentdivid='<%= contentdivid %>'>
   <div class='padding-left'>&nbsp;</div>
   <div class='tab' url='/groups/<%= @group.handle %>/feeds'>
-    <div class='content'><div class='image'><img src='/new-ui/Notifications-dock.png'></div><div class='text'>Update</div></div>
+    <div class='content'><div class='image'><%= icon "/images/16.png", 17, 16, true %></div><div class='text'>Updates</div></div>
   </div>
   <div class='tab' url='/groups/<%= @group.handle %>/jams'>
-    <div class='content'><div class='image'><img src='/new-ui/create-jam.png'></div><div class='text'>Jams</div></div>
+    <div class='content'><div class='image'><%= icon "/images/16.png", 0, 16, true %></div><div class='text'>Jams</div></div>
   </div>
   <div class='tab' url='/groups/<%= @group.handle %>/songs'>
-    <div class='content'><div class='image'><img src='/new-ui/collaborate.png'></div><div class='text'>Collaborations</div></div>
+    <div class='content'><div class='image'><%= icon "/images/16.png", 1, 16, true %></div><div class='text'>Collaborations</div></div>
   </div>
   <div class='tab' url='/groups/<%= @group.handle %>/members'>
-    <div class='content'><div class='image'><img src='/new-ui/collaborate.png'></div><div class='text'>Members</div></div>
+    <div class='content'><div class='image'><%= icon "/images/16.png", 19, 16, true %></div><div class='text'>Members</div></div>
   </div>
   <div class='padding-right'>&nbsp;</div>
 </div>

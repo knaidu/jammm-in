@@ -2,10 +2,18 @@ module UserUtils
 
   def create_new_user(user_info)
     validate_username(user_info[:username])
-    puts user_info[:code]
-    invite = Invite.extract_invite(user_info[:code])
+    code = user_info[:code]
+    is_promotion_code = code.split(";")[1] == "group" ? true : false
+    if is_promotion_code
+      group = Group.group_from_code(code)
+      raise "No more accounts may be creating using this promotion code. Please contact your groups administrator" if group.invites_remaining < 1
+    else
+      invite = Invite.extract_invite(user_info[:code])
+    end
+    
     user_info[:password] = md5(user_info[:password])
-    email = invite.invitee_email_id
+    email = user_info[:email]
+    raise "Please enter a valid email address" if email.empty?
     raise "An account with this email address has already been created." if User.find_by_email(email)
     user = User.create!({
       :name => user_info[:name],
@@ -14,9 +22,12 @@ module UserUtils
       :email => email,
       :location => user_info[:location]
     })
-    invite.mark_as_used if user
+    invite.mark_as_used if user and (not is_promotion_code)
     user.send_acknowledgement
-    invite.school.add_user(user) if invite.school # Adds the user to a school if the invite states the same
+    if is_promotion_code
+      group.add_user(user) 
+      group.decrement_invites_remaining
+    end
     user
   end
   

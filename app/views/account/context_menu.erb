@@ -9,10 +9,22 @@
       </div>
   </div>
   <%= vspace 10 %>
+
   <div class='item container highlight' onclick='Navigate.loadContent("/account")'  >
       <div class='icon'><%= icon "/images/24.png", 9, 24, true %></div>
       <div class='text'>My Home</div>
   </div>
+  
+  <% unless session_user?.groups.empty? %>
+    <% group = session_user?.groups.first %>
+    <div class='item container highlight' onclick='Navigate.loadContent("/groups/<%= group.handle %>")'  >
+        <div class='icon'><%= icon "/images/24.png", 9, 24, true %></div>
+        <div class='text'>My School
+          <%= vspace 5 %>
+          <div class="s11"><%= group.name %></div>
+        </div>
+    </div>
+  <% end %>
 
   <div class='item'>
     <div class='container'>

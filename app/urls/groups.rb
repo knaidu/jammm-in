@@ -64,6 +64,15 @@ post '/groups/:handle/manage/update_picture/submit' do
   erb(:"/groups/manage/picture_updated")
 end
 
+post '/groups/:handle/manage/remove_user' do
+  monitor {
+    group = Group.with_handle param?(:handle)
+    user = User.find(param?(:user_id))
+    group.remove_user(user)
+    "Successfully removed user"
+  }
+end
+
 get '/groups/:handle/profile_picture' do
   send_file(Group.with_handle(param?(:handle)).profile_picture, {
     :filename => "group_picutre",

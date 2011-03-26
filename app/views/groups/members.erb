@@ -1,2 +1,6 @@
 <%= vspace %>
-<%= partial("common/users", :locals => {:users => User.all}) %>
+<%= partial("common/users", :locals => {:users => @users}) %>
+
+<% if @users.empty? %>
+  <div class="info-box">"<%= @group.name %>" does not have any students yet.</div>
+<% end %>

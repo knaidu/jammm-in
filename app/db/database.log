@@ -1,7 +1,6 @@
-SQL (0.8ms)  SET client_min_messages TO 'panic'
-SQL (1.2ms)  SET client_min_messages TO 'notice'
-SQL (3.2ms)  SELECT version FROM schema_migrations
-SQL (1.1ms)  SELECT version FROM schema_migrations
+SQL (0.2ms)  SET client_min_messages TO 'panic'
+SQL (0.1ms)  SET client_min_messages TO 'notice'
+SQL (1.0ms)  SELECT version FROM schema_migrations
 Migrating to CreateTestTable (1)
 Migrating to CreateUserTable (2)
 Migrating to CreateSongsTable (3)
@@ -48,7 +47,10 @@ Migrating to CreateFileDataTable (43)
 Migrating to AddTotalMemoryThumbnailToUser (44)
 Migrating to CreateGroupsTables (45)
 Migrating to CreateSoundcloudTable (46)
-SQL (0.4ms)  BEGIN
-SQL (127.2ms)  CREATE TABLE "soundcloud_connect" ("id" serial primary key, "user_id" integer, "access_token" character varying(255), "refresh_token" character varying(255), "expires_at" timestamp, "imports_remaining" integer DEFAULT 3) 
-SQL (1.6ms)  INSERT INTO schema_migrations (version) VALUES ('46')
-SQL (17.8ms)  COMMIT
+Migrating to AddPromotionCodeToGroups (47)
+SQL (0.2ms)  BEGIN
+SQL (93.0ms)  ALTER TABLE "groups" ADD COLUMN "promotion_code" character varying(255)
+SQL (0.8ms)  ALTER TABLE "groups" ADD COLUMN "invites_remaining" integer
+SQL (0.3ms)  ALTER TABLE "groups" ADD COLUMN "website" character varying(255)
+SQL (13.2ms)  INSERT INTO schema_migrations (version) VALUES ('47')
+SQL (0.8ms)  COMMIT

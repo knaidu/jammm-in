@@ -2,8 +2,10 @@
   :name => "#{@group.name}", 
   :description => "", 
   :url => "/groups/#{@group.handle}/manage",
-  :context_menu => "/groups/#{@group.handle}/context_menu"
+  :context_menu => "/groups/#{@group.handle}/context_menu",
+  :img => "/images/navigation/jam-manage.png"
 }) %>
+
 <% group = @group %>
 <%= vspace %>
 <div class="page-header">Groups <span class="slash">/</span> <%= @group.name %> <span class="slash">/</span> Edit</div>
@@ -17,8 +19,11 @@
 <div class="field">Phone:</div> 
 <input type='text' name='phone' value='<%= @group.phone %>' onedit='blur' run="/groups/<%= group.handle %>/manage/update_info?key=phone"> 
 <%= vspace %>
+<div class="field">Website:</div> 
+<input type='text' name='phone' value='<%= @group.website %>' onedit='blur' run="/groups/<%= group.handle %>/manage/update_info?key=website">
+<%= vspace  %>
 <div class="field float-left">Description:</div>
-<textarea name='phone' onedit='blur' run="/groups/<%= group.handle %>/manage/update_info?key=description"><%= group.description %></textarea><%= vspace  %>
+<textarea style='margin-left: 3px;' name='phone' onedit='blur' run="/groups/<%= group.handle %>/manage/update_info?key=description"><%= group.description %></textarea><%= vspace  %>
 <div class="field float-left">Profile Picture:</div>
 <div class='display-inline-block'>
   <img src='<%= group.profile_picture_url %>' height='78px'><%= vspace %>
@@ -27,10 +32,14 @@
 <%= vspace 20 %>
 
 <div class="section-header">Invite Members</div>
-<div class="s12">Enter the email address of the artist you would like to invite. </div><%= vspace 10 %>
-<div class="field float-left">Email:</div>
-<input type='text' name='email'><%= vspace %>
-<input type='button' value='Invite'>
+<div class="s11">
+  <div class="field">promotion code: </div><%= @group.promotion_code %><%= vspace %>
+  <div class="field">number of accounts remaining with the promotion code:</div> <%= @group.invites_remaining %> <%= vspace 10 %>
+</div>
+<div class="s12">Provide this link to anyone to join your school page.</div><%= vspace 15 %>
+<div class="red"><%= @group.signup_link %></div><%= vspace 10 %>
+
+
 
 <%= vspace 20 %>
 <div class="section-header">Members</div>

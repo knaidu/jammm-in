@@ -25,6 +25,8 @@ class User < ActiveRecord::Base
   has_one :facebook_policy, :class_name => "FacebookShare"
   has_one :twitter_policy, :class_name => "TwitterShare"
   has_one :chat_user, :foreign_key => :user_id
+  has_many :group_users
+  has_many :groups, :through => :group_users
   validates_uniqueness_of :username, :message => "has already been registered"
   
   # Sets the created_at attr

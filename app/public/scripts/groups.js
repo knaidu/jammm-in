@@ -20,6 +20,15 @@ Group.Manage.updatePicture.done = function() {
 	Modal.slowAlert("Your schools profile picture has been successfully changed.");
 }.bind(Group.Manage.updatePicture);
 
-Group.Manage.removeUser = function(id) {
-	
+Group.Manage.removeUser = function(divId) {
+	var el = $(divId);
+	var groupHandle = el.getAttribute("grouphandle");
+	var userId = el.getAttribute("userid");
+	var url = formatUrl('/groups/' + groupHandle + "/manage/remove_user", {user_id: userId});
+	var onSuccess = function() {
+		Modal.alert("Successfully removed user from your school.");
+		el.remove();
+	};
+	General.WaitingDialog.show();
+	call(url, {onSuccess: onSuccess, method: 'post'});
 }.bind(Group.Manage);

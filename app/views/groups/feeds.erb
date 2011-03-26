@@ -1,5 +1,10 @@
+<%= vspace %>
 <div class='feeds'>
   <% @feeds.each{|feed| %>
     <%= partial :"/account/feeds/#{feed.feed_type}", :locals => {:feed => feed} %>
   <% } %>
 </div>
+
+<% if @feeds.empty? %>
+  <div class="info-box">"<%= @group.name %>" does not have any updates.</div>
+<% end %>

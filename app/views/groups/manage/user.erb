@@ -1,6 +1,7 @@
-<div class="user">
+<% div_id =  rand_id %>
+<div class="user" id="<%= div_id %>" userid='<%= user.id %>' grouphandle="<%= @group.handle %>">
   <div class="image"><img src='<%= user.profile_picture_url %>'></div>
-  <div class="actions"><input type='button' value='Remove User'></div>
+  <div class="actions"><input type='button' value='Remove User' onclick='Group.Manage.removeUser("<%= div_id %>")'></div>
   <div class="content">
     <div class="bold search-field"><%= user.username %></div><%= vspace %>
     <span class="search-field"><%= user.name %></span> <%= hspace 10 %>

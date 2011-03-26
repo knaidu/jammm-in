@@ -1,4 +1,5 @@
 <% code = param?(:code) %>
+<% invite = Invite.extract_invite code rescue nil %>
 
 <div class="overview-header">
   Sign Up
@@ -21,6 +22,10 @@
   <%= field 'Confirm Password' %> <%= vspace 5 %>
   <input type='password' name='form[confirm_password]'>
   <%= vspace 10 %> 
+  
+  <%= field 'Email' %> <%= vspace 5 %>
+  <input type='text' name='form[email]' value="<%= invite.invitee_email_id  if invite %>" <%= "READONLY" if invite %>>
+  <%= vspace 10 %>
   
   <%= field 'Location (e.g Bangalore, India)' %> <%= vspace 5 %>
   <input type='text' name='form[location]'><%= vspace 10 %>
