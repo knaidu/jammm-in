@@ -1,0 +1,5 @@
+<div class="groups">
+  <% groups.each{|group| %>
+    <%= erb(:"common/group", :locals => {:group => group}) %>
+  <% } %>
+</div>

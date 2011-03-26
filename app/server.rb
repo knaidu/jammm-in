@@ -74,7 +74,6 @@ end
 load 'urls/connect.rb'
 load 'urls/signin.rb'
 load 'urls/signup.rb'
-load 'urls/schools.rb'
 load 'urls/badge.rb'
 load 'urls/chat.rb'
 load 'urls/help.rb'

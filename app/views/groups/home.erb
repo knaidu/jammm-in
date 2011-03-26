@@ -1,3 +1,10 @@
+<%= render_state({
+  :name => "Schools", 
+  :url => "/groups/home", 
+  :img => "/images/navigation/song.png"
+}) %>
+
+
 <%= vspace 10 %>
 <%= page_header ['jamMm.in', 'Schools'] %>
 <%= vspace 20 %>
@@ -6,3 +13,6 @@ jamMm.in provides portals for music schools to showcase their jams and collabora
 
 <%= vspace 10 %>
 To know more regarding the school portals email us at <a href='mailto: support@jammm.in' style='color: none; text-decoration: none' class='red'>support@jammm.in</a>
+<%= vspace 10 %>
+
+<%= erb(:"/common/groups", :locals => {:groups => Group.all}) %>

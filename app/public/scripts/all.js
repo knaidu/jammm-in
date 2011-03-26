@@ -35,7 +35,11 @@ Layout.showStructure = function(){
 
 Layout.load = function() {
 	var hash = window.location.hash;
-
+	if(hash.match(/^#\//)){
+		var url = hash.gsub("#", "");
+		Navigate.loadContent(url);
+		return;
+	}
 	// General.Overview.setup.showContent is used to determine what is shown when the home page loads
 	var ret = hash.match("^#code=([^ ]*)")
 	General.Overview.setup.showContent = ret ? function() {General.Overview.showSignUpForm(ret[1])} : false;

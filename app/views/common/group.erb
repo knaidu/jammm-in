@@ -1,0 +1,12 @@
+<div class="group highlight-row" onclick='Navigate.loadContent("/groups/<%= group.handle %>")'>
+  <div class="profile-picture"><img src='<%= group.profile_picture_url %>'></div>
+  <div class='actions' style='margin-right: 5px; margin-top: 15px'>
+    <img src='/images/arrow.png'>
+  </div>
+  <div class="content">
+    <div class="col1">
+      <div class="bold"><%= group.name %></div><%= vspace 5 %>
+      <div class=""><%= group.address %></div>
+    </div>
+  </div>
+</div>

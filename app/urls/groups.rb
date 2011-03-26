@@ -1,3 +1,7 @@
+get '/schools/:school_handle' do
+  redirect "/groups/#{param?(:school_handle)}"
+end
+
 get '/groups/home' do
   erb(:"/groups/home")
 end
