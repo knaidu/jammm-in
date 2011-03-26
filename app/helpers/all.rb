@@ -79,7 +79,7 @@ end
 
 def allowed?(users)
   if (not users.include?(session_user?))
-    "You do not have access to this page"
+    "<br><div class='info-box'>You are not athorized to view this page</div>"
   else
     monitor {
       yield if block_given?

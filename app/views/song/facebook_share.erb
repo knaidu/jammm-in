@@ -22,7 +22,7 @@
   <!-- Facebook share of <span class="bold"><%= @song.name %></span> -->
   Redirecting to jammm.in ...
   <%= js_start %>
-    window.setTimeout(function(){window.location = "http://jammm.in"}, 1000);
+    window.setTimeout(function(){window.location = "http://jammm.in#/song/<%= @song.id %>"}, 1000);
   <%= js_end %>
 </body>
 </html>

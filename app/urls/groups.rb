@@ -41,39 +41,53 @@ get '/groups/:handle/context_menu' do
 end
 
 get '/groups/:handle/manage' do
-  @group = Group.with_handle param?(:handle)
-  erb(:"/groups/manage/page")
+  @group = get_passed_group
+  allowed?(@group.admins){
+    erb(:"/groups/manage/page")
+  }
 end
 
 post '/groups/:handle/manage/update_info' do
-  group = Group.with_handle(param?(:handle)).update_info(param?(:key), param?(:value))
+  @group = get_passed_group
+  allowed?(@group.admins){
+    group = Group.with_handle(param?(:handle)).update_info(param?(:key), param?(:value))
+  }
 end
 
 get '/groups/:handle/manage/update_picture' do
-  @group = Group.with_handle param?(:handle)
-  erb(:"/groups/manage/update_picture")
+  @group = get_passed_group
+  allowed?(@group.admins){
+    erb(:"/groups/manage/update_picture")
+  }
 end
 
 get '/groups/:handle/manage/update_picture/form' do
-  @group = Group.with_handle param?(:handle)
-  erb(:"/groups/manage/update_picture_form")
+  @group = get_passed_group
+  allowed?(@group.admins){
+    erb(:"/groups/manage/update_picture_form")
+  }
 end
 
 post '/groups/:handle/manage/update_picture/submit' do
-  @group = Group.with_handle param?(:handle)
-  file = param?(:picture)[:tempfile]
-  puts file
-  @group.change_profile_picture(file)
-  file.unlink
-  erb(:"/groups/manage/picture_updated")
+  @group = get_passed_group
+  allowed?(@group.admins){
+    file = param?(:picture)[:tempfile]
+    puts file
+    @group.change_profile_picture(file)
+    file.unlink
+    erb(:"/groups/manage/picture_updated")
+  }
 end
 
 post '/groups/:handle/manage/remove_user' do
-  monitor {
-    group = Group.with_handle param?(:handle)
-    user = User.find(param?(:user_id))
-    group.remove_user(user)
-    "Successfully removed user"
+  @group = get_passed_group
+  allowed?(@group.admins){
+    monitor {
+      group = Group.with_handle param?(:handle)
+      user = User.find(param?(:user_id))
+      group.remove_user(user)
+      "Successfully removed user"
+    }
   }
 end
 
