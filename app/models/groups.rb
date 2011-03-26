@@ -67,7 +67,7 @@ class Group < ActiveRecord::Base
   end
   
   def profile_picture_url
-    return "/new-ui/collaborate.png" unless profile_picture
+    return "/images/navigation/school.png" unless profile_picture
     r = profile_picture.split("/").pop
     "/groups/#{handle}/profile_picture?#{r}"
   end
