@@ -21,11 +21,11 @@
 <div class="">
   <div style='font-size: 15px; font-weight: bold'><%= @group.name %></div>
   <%= vspace 5 %>
-  <div style='width: 200px'><%= @group.address %></div>
+  <div style='width: 200px'><%= @group.address.format_html %></div>
+  <%= vspace 10 %>
+  <div class=""><span class="bold gray s11">Phone No:</span> <%= @group.phone %></div>
   <%= vspace 5 %>
-  <div class=""><span class="bold">PH NO:</span> <%= @group.phone %></div>
-  <%= vspace 5 %>
-  <div class=""><span class="bold">website: </span><a class='red clickable' style='text-decoration: none' href='<%= @group.website %>'><%= @group.website %></a></div>
+  <div class=""><span class="bold gray s11">Website: </span><a class='red clickable' style='text-decoration: none' href='<%= @group.website %>'><%= @group.website %></a></div>
 </div>
 <%= vspace 10 %>
 

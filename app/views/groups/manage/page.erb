@@ -22,8 +22,8 @@
 <div class="field">Website:</div> 
 <input type='text' name='phone' value='<%= @group.website %>' onedit='blur' run="/groups/<%= group.handle %>/manage/update_info?key=website">
 <%= vspace  %>
-<div class="field float-left">Description:</div>
-<textarea style='margin-left: 3px;' name='phone' onedit='blur' run="/groups/<%= group.handle %>/manage/update_info?key=description"><%= group.description %></textarea><%= vspace  %>
+<div class="field float-left">Address:</div>
+<textarea style='margin-left: 3px;' name='address' onedit='blur' run="/groups/<%= group.handle %>/manage/update_info?key=address"><%= group.address %></textarea><%= vspace  %>
 <div class="field float-left">Profile Picture:</div>
 <div class='display-inline-block'>
   <img src='<%= group.profile_picture_url %>' height='78px'><%= vspace %>
