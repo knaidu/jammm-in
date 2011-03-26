@@ -48,7 +48,7 @@ Layout.load = function() {
 }.bind(Layout);
 
 Layout.loadOverview = function() {
-	Navigate.loadContent("/partial/homepage/overview")
+	Navigate.loadContent("/partial/homepage/overview", {setHash: false})
 }.bind(Layout);
 
 Layout.getWindowSize = function(){
@@ -210,7 +210,7 @@ Navigate.saveHomeState = function(){
 
 
 Navigate.loadContent = function(url){
-	var defaultOptions = {direction: "left"}
+	var defaultOptions = {direction: "left", setHash: true}
 	var options = arguments[1] || {};
 	options = mergeHash(defaultOptions, options);
 	var children = $j(".content-panel").children();
@@ -225,6 +225,7 @@ Navigate.loadContent = function(url){
 		Layout.RightPanel.empty();
 		Layout.ContextMenu.empty();
 		Layout.contentPanel[0].removeAttribute("maxscrollheight");
+		if(options.setHash) window.location.hash = url;
 		updateEl(div, url, {onSuccess: function(){window.setTimeout(Navigate.loadContent.callback, 500)}});		
 	}
 

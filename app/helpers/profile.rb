@@ -11,5 +11,5 @@ def format_dummy_data(user_id)
 end
 
 def profile_link(user)
-  " onclick='Navigate.loadContent(\"#{user.username}\")' "
+  " onclick='Navigate.loadContent(\"/#{user.username}\")' "
 end
