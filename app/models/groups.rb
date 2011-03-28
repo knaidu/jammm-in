@@ -74,7 +74,7 @@ class Group < ActiveRecord::Base
   
   def set_promotion_code(force=false)
     raise "Promotion code already set. call set_promotion_code(true) to force a reset" if promotion_code and force == false
-    code = ("a".."z").map.shuffle.join("")
+    code = ("a".."z").map.shuffle.first(6).join("").upcase
     self.promotion_code = code
     self.save
   end
