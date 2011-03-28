@@ -1,5 +1,5 @@
-&nbsp;
-<%= partial(:"/common/jams", :locals => {:jams => @jams})%>
+<%= vspace %>
+<%= erb(:"/common/jams", :locals => {:jams => @jams})%>
 
 <% if @jams.empty? %>
   <div class="info-box">"<%= @group.name %>" does not have any jams.</div>
