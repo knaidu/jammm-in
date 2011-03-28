@@ -24,7 +24,7 @@ class String
   
   def gsub_href
     self.gsub(eval(DATA["href_regex"])) {|href|
-      "<a href='#{href}' class='default-color'>#{href}</a>"
+      "<a href='#{href}' target='_blank' class='default-color'>#{href}</a>"
     }
   end
   
