@@ -14,10 +14,12 @@
     </div>
   <% end %>
   
-  <div class='item container highlight' onclick='General.download("<%= @jam.file_handle %>")'>
-      <div class='icon'><%= icon "/images/24.png", 4, 24, true %></div>
-    <div class='text'>Download</div>
-  </div>
+  <a href="/file/<%= @jam.file_handle %>" class='no-change'>
+    <div class='item container highlight'>
+        <div class='icon'><%= icon "/images/24.png", 4, 24, true %></div>
+      <div class='text'>Download</div>
+    </div>
+  </a>
   
   <% if session_user? and @jam.displayable? %>
     <% if not session_user?.likes_jam?(@jam) %>

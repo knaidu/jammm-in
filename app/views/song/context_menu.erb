@@ -11,10 +11,12 @@
       <div class='text bold'>Collaborate</div>
   </div>
   
-  <div class='item container highlight' onclick='General.download("<%= @song.file_handle %>")'>
-      <div class='icon'><%= icon "/images/24.png", 4, 24, true %></div>
-    <div class='text'>Download</div>
-  </div>
+  <a href="/file/<%= @song.file_handle %>" class='no-change'>
+    <div class='item container highlight'>
+        <div class='icon'><%= icon "/images/24.png", 4, 24, true %></div>
+      <div class='text'>Download</div>
+    </div>
+  </a>
   
   <% if session_user? and not session_user?.likes_song?(@song) %>
     <div class='item container highlight' onclick='Song.Manage.like("<%= @song.id %>")'>

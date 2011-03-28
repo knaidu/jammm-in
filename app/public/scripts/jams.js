@@ -104,7 +104,7 @@ Jam.Manage.unpublish = function(id) {
 }.bind(Jam.Manage);
 
 Jam.Manage.publishPopup = function(id) {
-	Modal.load("/jam/" + id + "/manage/publish_popup", {minHeight: 140, minWidth: 600});
+	Modal.load("/jam/" + id + "/manage/publish_popup", {minHeight: '170px', minWidth: '630px'});
 }.bind(Jam.Manage);
 
 Jam.Manage.publishPopup.publish = function(id) {
