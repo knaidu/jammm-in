@@ -33,6 +33,15 @@
   </div>
 </div>
 
+<%= vspace 10 %>
+
+<% if @song.description %>
+<div class="info-box">
+  <div class="bold">About the Collaboration:</div> <%= vspace 10 %>
+  <%= @song.description.format_html %>
+</div>
+<% end %>
+
 <%= vspace 30 %>
 <div class='section-header'>Information</div>
 <% moreref = rand_id %>
