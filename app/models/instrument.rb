@@ -6,7 +6,7 @@ class Instrument < ActiveRecord::Base
   end
   
   def icon_image_url_big
-    return "/images/jam.png" unless image_url
+    return "/images/jam-big.png" unless image_url
     "/images/instruments/big/#{image_url}.png"
   end
   alias icon_image_url icon_image_url_big

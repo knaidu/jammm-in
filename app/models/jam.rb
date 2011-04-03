@@ -25,7 +25,7 @@ class Jam < ActiveRecord::Base
 
   include JamUtils
   
-  DEFAULT_JAM_IMAGE = "/images/jam.png"
+  DEFAULT_JAM_IMAGE = "/images/jam.png?id=1"
   
   def after_destroy
     self.children.each{|jam| jam.set_father(self.father)} # Set all its children's father to its father
