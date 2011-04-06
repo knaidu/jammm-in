@@ -8,21 +8,24 @@
 
 <h3>Artists <span class='slash'>/</span> <%= @user.username %></h3>
 <%= vspace 10 %>
+
 <div class='user-profile'>
   <div class='profile-picture'><img src='<%= @user.profile_picture_url %>'></div>
   <div class='content'>
-    <div style='position: absolute; width: 300px'>
-      <div class='field' style='font-size: 11px; width: 100px'>Name:</div> <%= @user.name %><%= vspace %>
-      <div class='field' style='font-size: 11px; width: 100px'>Location:</div> <%= @user.location %><%= vspace %>
-      <div class='field' style='font-size: 11px; width: 100px'>Follows:</div> <%= @user.following.count %><%= vspace %>
-    </div>
-    <div style='position: absolute; left: 350px'>
-      <div class='small-field' style='width: 80px'>Jams:</div> <%= @user.jam_count %><%= vspace %>
-      <div class='small-field' style='width: 80px'>Collaborations:</div> <%= @user.published_songs.count %> <%= vspace %>
-      <div class='small-field' style='width: 80px'>Followers:</div> <%= @user.followed_by.count %>
+    <div class='username'><%= @user.username %></div> <div class="name">- <%= @user.name %></div>
+    <div class="clear-both"></div>
+    <%= vspace %>
+    <div class="location"><%= @user.location %></div> <%= vspace 10 %>
+    <div class="s11">
+      <span class='gray'>Follows:</span> <%= @user.following.count %> <%= vspace %>
+      <span class='gray'>Followers:</span> <%= @user.followed_by.count %> <%= vspace %>
+      <span class='gray'>Jams:</span> <%= @user.jam_count %><%= vspace %>
+      <span class='gray'>Collaborations:</span> <%= @user.published_songs.count %> <%= vspace %>
     </div>
   </div>
 </div>
+
+
 
 <%= vspace 20 %>
 
