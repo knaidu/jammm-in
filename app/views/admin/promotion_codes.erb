@@ -1,0 +1,57 @@
+<%= erb(:"/body/header") %>
+  <div style='padding: 20px'>
+    <div class="page-header">Promotion Codes</div>
+    <%= vspace 20 %>
+    
+    <b>Create New Promotion Code</b>
+    <%= vspace 10 %>
+    <div class="s11">No of Invites:</div><%= vspace %> 
+    <select id='pc-invites'>
+      <option>50</option>
+      <option>80</option>
+      <option>100</option>
+      <option>150</option>
+      <option>200</option>
+      <option>250</option>
+      <option>400</option>
+      <option>600</option>
+      <option>800</option>
+      <option>1000</option>
+      <option>1200</option>
+      <option>1500</option>
+      <option>2000</option>
+    </select>
+    <%= vspace 10 %>
+    <input type='button' value='Create' onclick='Admin.PromotionCode.create()'>
+    <%= vspace 10 %>
+    <div class="light-line"></div>
+    <%= vspace 20 %>
+    
+    <div class="bold">List of Promotion Codes</div>
+    <%= vspace 10 %>
+    <% pcs = PromotionCode.all.sort_by(&:id) %>
+    <% unless pcs.empty? %>
+      <div style='margin-bottom: 20px'>
+        <div class='bold float-left' style='width: 300px;'>Link</div>
+        <div class="bold float-left" style='width: 200px'>Invites Remaining</div>
+      </div>
+      <div class="clear-both"></div>
+    <% end %>
+    
+    <% pcs.each{|pc| %>
+      <div class="display-inline-block" style='padding: 10px 0px; border-bottom: 1px solid #eee; min-height: 15px'>
+        <div class="float-left" style='width: 300px'><%= pc.signup_link %></div>
+        <div class="float-left" style='width: 200px'><%= pc.invites_remaining %></div>
+      </div>
+      <div class="clear-both"></div>
+    <% } %>
+    
+    <% if pcs.empty? %>
+      <div class="s11">There are no promotion codes created.</div>
+    <% end %>
+    
+  </div>
+  
+  <%= vspace 50 %>
+  
+<%= erb(:"/body/footer") %>

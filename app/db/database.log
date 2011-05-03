@@ -1,6 +1,6 @@
 SQL (0.2ms)  SET client_min_messages TO 'panic'
 SQL (0.1ms)  SET client_min_messages TO 'notice'
-SQL (1.0ms)  SELECT version FROM schema_migrations
+SQL (0.8ms)  SELECT version FROM schema_migrations
 Migrating to CreateTestTable (1)
 Migrating to CreateUserTable (2)
 Migrating to CreateSongsTable (3)
@@ -48,9 +48,9 @@ Migrating to AddTotalMemoryThumbnailToUser (44)
 Migrating to CreateGroupsTables (45)
 Migrating to CreateSoundcloudTable (46)
 Migrating to AddPromotionCodeToGroups (47)
-SQL (0.2ms)  BEGIN
-SQL (93.0ms)  ALTER TABLE "groups" ADD COLUMN "promotion_code" character varying(255)
-SQL (0.8ms)  ALTER TABLE "groups" ADD COLUMN "invites_remaining" integer
-SQL (0.3ms)  ALTER TABLE "groups" ADD COLUMN "website" character varying(255)
-SQL (13.2ms)  INSERT INTO schema_migrations (version) VALUES ('47')
-SQL (0.8ms)  COMMIT
+Migrating to CreatePromotionCodeTables (48)
+SQL (0.1ms)  BEGIN
+SQL (7.5ms)  CREATE TABLE "promotion_codes" ("id" serial primary key, "code" character varying(255), "invites_remaining" integer DEFAULT 50) 
+SQL (35.7ms)  CREATE TABLE "promotion_code_users" ("id" serial primary key, "promotion_code_id" integer, "user_id" integer) 
+SQL (0.4ms)  INSERT INTO schema_migrations (version) VALUES ('48')
+SQL (1.7ms)  COMMIT

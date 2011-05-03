@@ -39,3 +39,17 @@ post '/admin/broadcast_email/process' do
 #  erb(:"body/structure")
   User.broadcast_email(param?(:subject), param?(:body))
 end
+
+get '/admin/promotion_codes' do
+  allowed?(admins){
+    erb(:"/admin/promotion_codes")
+  }
+end
+
+post '/admin/promotion_codes/create' do
+  allowed?(admins) {
+    invites_remaining = param?(:invites_remaining)
+    PromotionCode.add(invites_remaining)
+    "Successfully created promotion code"
+  }
+end

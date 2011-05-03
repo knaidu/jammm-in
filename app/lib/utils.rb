@@ -394,3 +394,8 @@ def send_mails_to(subject, mail_number, users)
   bcc_list = users.map(&:email).compact.join(",")
   mail bug_mail_details.clone.update({:bcc => bcc_list})
 end
+
+# ADMIN
+def admins
+  ['prakashraman', 'tarunrs', 'karthik'].map{|u| User.with_username u}.compact
+end

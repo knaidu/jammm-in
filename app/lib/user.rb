@@ -3,10 +3,15 @@ module UserUtils
   def create_new_user(user_info)
     validate_username(user_info[:username])
     code = user_info[:code]
-    is_promotion_code = code.split(";")[1] == "group" ? true : false
-    if is_promotion_code
+    is_group_promotion_code = code.split(";")[1] == "group" ? true : false
+    is_promotion_code = code.split(";")[1] == "code" ? true : false
+    if is_group_promotion_code
       group = Group.group_from_code(code)
       raise "No more accounts may be creating using this promotion code. Please contact your groups administrator" if group.invites_remaining < 1
+    elsif is_promotion_code
+      pc = PromotionCode.pc_from_code_str(code)
+      raise "Please check the promotion code." unless pc
+      raise "No more accounts may be created using this promotion code." if pc.invites_remaining < 1
     else
       invite = Invite.extract_invite(user_info[:code])
     end
@@ -24,9 +29,12 @@ module UserUtils
     })
     invite.mark_as_used if user and (not is_promotion_code)
     user.send_acknowledgement
-    if is_promotion_code
+    if is_group_promotion_code
       group.add_user(user) 
       group.decrement_invites_remaining
+    elsif is_promotion_code
+      pc.decrement_invites_remaining
+      pc.register_user(user)
     end
     user
   end
